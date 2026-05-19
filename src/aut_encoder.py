@@ -217,11 +217,16 @@ def load_aut_from_safetensors(
     return model
 
 
-def freeze_aut(aut: AuTEncoder, unfreeze_top_n_layers: int = 0) -> AuTEncoder:
-    """Freeze AuT; optionally unfreeze the top N transformer blocks.
+def freeze_aut(
+    aut: AuTEncoder,
+    unfreeze_top_n_layers: int = 0,
+    unfreeze_proj: bool = False,
+) -> AuTEncoder:
+    """Freeze AuT; optionally unfreeze the top N transformer blocks and/or proj.
 
-    proj1/proj2 are kept frozen unless explicitly unfrozen — they're trained
-    for the original Qwen3-ASR LLM and serve as the bake-off baseline.
+    ``proj1`` / ``proj2`` were trained for Qwen3-Omni's LM and need
+    re-tuning for Qwen3-0.6B-Base. Unfreezing them with a low LR is the
+    cheapest way to close the domain-shift gap (research/11-phase0-progress.md).
     """
     for p in aut.parameters():
         p.requires_grad = False
@@ -229,6 +234,13 @@ def freeze_aut(aut: AuTEncoder, unfreeze_top_n_layers: int = 0) -> AuTEncoder:
         for blk in aut.layers[-unfreeze_top_n_layers:]:
             for p in blk.parameters():
                 p.requires_grad = True
+    if unfreeze_proj:
+        for p in aut.proj1.parameters():
+            p.requires_grad = True
+        for p in aut.proj2.parameters():
+            p.requires_grad = True
+        for p in aut.ln_post.parameters():
+            p.requires_grad = True
     return aut
 
 

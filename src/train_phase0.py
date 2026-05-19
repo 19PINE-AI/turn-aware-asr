@@ -51,7 +51,8 @@ class TrainConfig:
     warmup_steps: int = 10
     grad_clip: float = 1.0
     seed: int = 0
-    freeze_llm: bool = False  # Phase 0 minimal arm: only the adapter trains
+    freeze_llm: bool = False    # Phase 0 minimal arm: only the adapter trains
+    unfreeze_aut_proj: bool = False   # unfreeze AuT.proj1/proj2/ln_post (~1.9 M params)
     log_every: int = 5
     checkpoint_dir: str = "checkpoints/phase0-smoke"
 
@@ -67,9 +68,11 @@ class Phase0Model(nn.Module):
         logger.info("Loading AuT…")
         self.aut = load_aut_from_safetensors(cfg.aut_path, device="cpu", dtype=torch.bfloat16)
         if cfg.arm == "aut_frozen":
-            freeze_aut(self.aut, unfreeze_top_n_layers=0)
+            freeze_aut(self.aut, unfreeze_top_n_layers=0,
+                       unfreeze_proj=cfg.unfreeze_aut_proj)
         elif cfg.arm == "aut_unfrozen_top6":
-            freeze_aut(self.aut, unfreeze_top_n_layers=6)
+            freeze_aut(self.aut, unfreeze_top_n_layers=6,
+                       unfreeze_proj=cfg.unfreeze_aut_proj)
 
         # Domain adapter: AuT's proj2 was trained for Qwen3-Omni's LM, not
         # Qwen3-0.6B-Base. This 2-MLP+GELU projector maps the AuT output
@@ -187,6 +190,8 @@ def main():
     p.add_argument("--checkpoint-dir", default="checkpoints/phase0-smoke")
     p.add_argument("--freeze-llm", action="store_true",
                     help="Adapter-only training — Phase 0 minimal arm")
+    p.add_argument("--unfreeze-aut-proj", action="store_true",
+                    help="Unfreeze AuT.proj1/proj2/ln_post (closes Qwen3-Omni → Qwen3-Base shift)")
     p.add_argument("--log-every", type=int, default=5)
     args = p.parse_args()
 
@@ -194,6 +199,7 @@ def main():
         arm=args.arm, steps=args.steps, bsz=args.bsz, lr=args.lr,
         data_path=args.data, checkpoint_dir=args.checkpoint_dir,
         warmup_steps=args.warmup_steps, freeze_llm=args.freeze_llm,
+        unfreeze_aut_proj=args.unfreeze_aut_proj,
         log_every=args.log_every,
     )
     torch.manual_seed(cfg.seed)

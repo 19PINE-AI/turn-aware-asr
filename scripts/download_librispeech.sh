@@ -22,12 +22,8 @@ case "$split" in
 esac
 
 tar_path="$out_root/$split.tar.gz"
-if [ ! -f "$tar_path" ]; then
-    echo "Downloading $split from $url …"
-    curl -fL --progress-bar -o "$tar_path" "$url"
-else
-    echo "$tar_path already exists, skipping download"
-fi
+echo "Downloading/resuming $split from $url …"
+curl -fL -C - --retry 5 --retry-delay 10 --progress-bar -o "$tar_path" "$url"
 
 if [ ! -d "$out_root/LibriSpeech/$split" ]; then
     echo "Extracting…"
