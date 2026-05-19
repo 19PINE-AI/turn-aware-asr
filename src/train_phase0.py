@@ -54,6 +54,7 @@ class TrainConfig:
     freeze_llm: bool = False    # Phase 0 minimal arm: only the adapter trains
     unfreeze_aut_proj: bool = False   # unfreeze AuT.proj1/proj2/ln_post (~1.9 M params)
     log_every: int = 5
+    save_every: int = 2000           # periodic checkpoint
     checkpoint_dir: str = "checkpoints/phase0-smoke"
 
 
@@ -193,6 +194,9 @@ def main():
     p.add_argument("--unfreeze-aut-proj", action="store_true",
                     help="Unfreeze AuT.proj1/proj2/ln_post (closes Qwen3-Omni → Qwen3-Base shift)")
     p.add_argument("--log-every", type=int, default=5)
+    p.add_argument("--save-every", type=int, default=2000)
+    p.add_argument("--resume-from", default=None,
+                    help="Path to a prior checkpoint to resume from (loads trainable_state only)")
     args = p.parse_args()
 
     cfg = TrainConfig(
@@ -201,6 +205,7 @@ def main():
         warmup_steps=args.warmup_steps, freeze_llm=args.freeze_llm,
         unfreeze_aut_proj=args.unfreeze_aut_proj,
         log_every=args.log_every,
+        save_every=args.save_every,
     )
     torch.manual_seed(cfg.seed)
 
@@ -218,6 +223,13 @@ def main():
     n_trainable = sum(p.numel() for p in model.trainable_params())
     n_total = sum(p.numel() for p in model.parameters())
     logger.info("Trainable: %.1f M / %.1f M total", n_trainable / 1e6, n_total / 1e6)
+
+    if args.resume_from:
+        logger.info("Resuming from %s", args.resume_from)
+        ckpt = torch.load(args.resume_from, weights_only=False, map_location="cpu")
+        missing, unexpected = model.load_state_dict(ckpt["trainable_state"], strict=False)
+        if unexpected:
+            logger.warning("Unexpected keys in checkpoint: %s", unexpected[:3])
 
     optim = torch.optim.AdamW(model.trainable_params(), lr=cfg.lr, betas=(0.9, 0.95), weight_decay=0.1)
 
@@ -268,6 +280,30 @@ def main():
             logger.info("step %4d  loss %.4f  lr %.2e  %.2f s/step  free %.0f MB",
                          step, loss.item(), lr, dt,
                          torch.cuda.mem_get_info()[0] / 1e6)
+            # Loss-divergence watchdog: kill the run rather than waste hours
+            if not torch.isfinite(loss):
+                logger.error("Loss is %s — aborting", loss.item())
+                break
+            if loss.item() > 20.0 and step > cfg.warmup_steps + 100:
+                logger.error("Loss > 20 well past warmup — divergence; aborting")
+                break
+
+        # Periodic checkpoint (don't lose hours to a crash)
+        if step > 0 and step % cfg.save_every == 0:
+            ckpt_path = Path(cfg.checkpoint_dir) / f"{cfg.arm}_step{step}.pt"
+            ckpt_path.parent.mkdir(parents=True, exist_ok=True)
+            trainable_names = {n for n, p in model.named_parameters() if p.requires_grad}
+            trainable_state = {
+                n: p.detach().cpu()
+                for n, p in model.named_parameters()
+                if n in trainable_names
+            }
+            torch.save(
+                {"step": step, "trainable_state": trainable_state,
+                 "cfg": cfg.__dict__, "tokenizer_vocab_size": len(tokenizer)},
+                ckpt_path,
+            )
+            logger.info("Periodic checkpoint: %s", ckpt_path)
 
     # Save checkpoint — only the parameters that were actually trained,
     # plus the projector and endpoint head (small, useful for resume).
