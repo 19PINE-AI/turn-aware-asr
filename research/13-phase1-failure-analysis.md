@@ -7,10 +7,11 @@ Phase 1 ran the full 30 k-step recipe and failed the gate badly.
 | Run | Steps | LR | Data | Test-clean WER |
 |---|---|---|---|---|
 | Phase 0 bake-off (`aut_proj_unfrozen`) | 3 000 | 5e-5 | 3 k utt (10 h) | **91.82 %** |
-| Phase 1 retry @ step 2 500 | 2 500 | 1e-4 | 10 k utt (35 h) | 116.4 % |
-| Phase 1 final @ step 30 000 | 30 000 | 1e-4 | 10 k utt (35 h) | **99.64 %** |
+| Phase 1 retry @ step 2 500 (lr=1e-4) | 2 500 | 1e-4 | 10 k utt (35 h) | 116.4 % |
+| Phase 1 final @ step 30 000 (lr=1e-4) | 30 000 | 1e-4 | 10 k utt (35 h) | **99.64 %** |
+| Phase 1 retry with bake-off recipe (lr=5e-5) | 3 000 | 5e-5 | 10 k utt (35 h) | **92.04 %** |
 
-Phase 1 gate target was WER ≤ 30 %. **Failed by ~3×.**
+Phase 1 gate target was WER ≤ 30 %. **Failed by ~3×.** The retry confirms that ~92 % WER is the ceiling at this scale (3 × more data did not help when paired with the same step count — the LM-prior basin attracts the model long before the audio signal can guide it out).
 
 ## What the model actually does
 
