@@ -1,0 +1,17 @@
+{
+  "n_params_M": 0.328706,
+  "train_steps": 600,
+  "lr": 0.003,
+  "n_train": 88,
+  "n_eval": 22,
+  "metrics": {
+    "frame_precision": 0.8157894736842105,
+    "frame_recall": 0.22962962962962963,
+    "n_solo": 8,
+    "latency_ms_p50": -400.0,
+    "latency_ms_p95": -160.0,
+    "latency_ms_mean": -660.0,
+    "false_endpoint_rate": 0.3333333333333333,
+    "n_concat": 6
+  }
+}
