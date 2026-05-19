@@ -1,0 +1,24 @@
+# PyTorch installed separately via the CUDA wheel index — see README.
+# torch  / torchaudio
+
+transformers>=4.46
+tokenizers>=0.20
+accelerate>=0.34
+safetensors>=0.4.5
+
+# Audio + data
+soundfile
+librosa
+datasets
+numpy
+scipy
+
+# Eval
+jiwer
+spacy
+
+# Training infra
+wandb
+
+# Forced alignment for endpoint labels
+whisperx
