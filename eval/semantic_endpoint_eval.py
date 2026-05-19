@@ -32,6 +32,7 @@ from eval.metrics import wer
 from src.train_semantic_endpoint import (
     EAGER_TOK, END_TOK,
     load_base_model, extend_tokenizer_and_model,
+    apply_lora, freeze_except_lora_and_new_rows,
 )
 
 logger = logging.getLogger(__name__)
@@ -77,25 +78,49 @@ def main():
     logger.info("Loading data %s…", args.data)
     examples = torch.load(args.data, weights_only=False)
 
-    # Use a deterministic held-out split (last 20% by index)
-    n = len(examples)
-    split = int(0.8 * n)
-    eval_examples = examples[split:][: args.max_examples]
-    logger.info("Eval %d examples", len(eval_examples))
+    # Sample a balanced mix across schemas, using deterministic seed
+    import random as _r
+    rng = _r.Random(args.seed)
+    by_schema = {"single": [], "double": [], "disfluency": []}
+    for e in examples:
+        by_schema[e["schema"]].append(e)
+    for k in by_schema:
+        rng.shuffle(by_schema[k])
+
+    per_schema = max(1, args.max_examples // 3)
+    eval_examples = (
+        by_schema["single"][:per_schema]
+        + by_schema["double"][:per_schema]
+        + by_schema["disfluency"][:per_schema]
+    )
+    logger.info(
+        "Eval %d examples (single=%d, double=%d, disfluency=%d)",
+        len(eval_examples),
+        sum(1 for e in eval_examples if e["schema"] == "single"),
+        sum(1 for e in eval_examples if e["schema"] == "double"),
+        sum(1 for e in eval_examples if e["schema"] == "disfluency"),
+    )
 
     logger.info("Loading model + checkpoint…")
     model, tokenizer, processor = load_base_model()
     model = model.cuda().bfloat16()
     new_ids, eager_id, end_id = extend_tokenizer_and_model(model, tokenizer, processor)
 
+    # MUST apply LoRA before loading state — otherwise the lora_A/lora_B
+    # tensors in the checkpoint can't find a place to land and the model
+    # falls back to base-only inference (which doesn't emit the markers).
+    apply_lora(model.thinker, rank=16, alpha=32)
+    freeze_except_lora_and_new_rows(model, new_ids)
+
     ckpt = torch.load(args.checkpoint, weights_only=False, map_location="cpu")
     state = ckpt["trainable"]
-    # Load LoRA + embed/lm_head params
     missing, unexpected = model.load_state_dict(state, strict=False)
     if unexpected:
         logger.warning("Unexpected keys: %s", unexpected[:3])
-    logger.info("Loaded %s (step %d, %d tensors)",
-                 args.checkpoint, ckpt.get("step", -1), len(state))
+    n_lora_loaded = sum(1 for k in state.keys() if "lora_" in k)
+    logger.info("Loaded %s (step %d, %d tensors, %d LoRA)",
+                 args.checkpoint, ckpt.get("step", -1), len(state), n_lora_loaded)
+    model.eval()
 
     # Eval loop
     per = []

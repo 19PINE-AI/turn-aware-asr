@@ -252,7 +252,10 @@ def main():
 
     logger.info("Loading data %s…", args.data)
     examples = torch.load(args.data, weights_only=False)
-    logger.info("Loaded %d examples", len(examples))
+    # Filter out examples whose audio is > 12 s (memory-bound on shared GPU)
+    MAX_DUR_S = 12.0
+    examples = [e for e in examples if len(e["audio"]) <= int(MAX_DUR_S * 16000)]
+    logger.info("Loaded %d examples (filtered to ≤ %.0f s audio)", len(examples), MAX_DUR_S)
 
     logger.info("Loading Qwen3-ASR-0.6B base…")
     model, tokenizer, processor = load_base_model()
@@ -262,6 +265,12 @@ def main():
 
     apply_lora(model.thinker, rank=args.lora_r, alpha=args.lora_alpha)
     freeze_except_lora_and_new_rows(model, new_ids)
+
+    # Enable gradient checkpointing to fit on a shared GPU
+    model.thinker.model.gradient_checkpointing_enable()
+    # Make sure use_cache is off during training (checkpointing requires it)
+    if hasattr(model.thinker.model.config, "use_cache"):
+        model.thinker.model.config.use_cache = False
 
     n_trainable = sum(p.numel() for p in model.parameters() if p.requires_grad) / 1e6
     n_total = sum(p.numel() for p in model.parameters()) / 1e6
