@@ -1,48 +1,56 @@
 """Mel filterbank features matching the Qwen3-ASR AuT input.
 
-128-dim log-mel spectrogram, 10 ms hop, 25 ms window, 16 kHz mono.
-Output is (T, 128) where T = audio_len_samples // 160 + 1.
+Uses HF's WhisperFeatureExtractor verbatim — that's what Qwen3-ASR's
+`preprocessor_config.json` specifies:
+  feature_extractor_type: WhisperFeatureExtractor
+  feature_size: 128, hop_length: 160, n_fft: 400, chunk_length: 30 s
 
-This is identical to Whisper's frontend modulo the 128 mel bins (Whisper
-uses 80) — Qwen3-ASR matches the canonical Whisper-large-v3 setup.
+The standard Whisper extractor pads/truncates to a fixed 30 s window and
+returns (n_mels=128, n_frames=3000). For streaming we want variable-length;
+use ``log_mel`` for that path.
 """
 
+from __future__ import annotations
+from functools import lru_cache
+
+import numpy as np
 import torch
-import torchaudio
 
 
-_FBANK_CACHE: dict[tuple, torchaudio.transforms.MelSpectrogram] = {}
-
-
-def _mel_extractor(sample_rate: int, n_mels: int) -> torchaudio.transforms.MelSpectrogram:
-    key = (sample_rate, n_mels)
-    if key not in _FBANK_CACHE:
-        _FBANK_CACHE[key] = torchaudio.transforms.MelSpectrogram(
-            sample_rate=sample_rate,
-            n_fft=400,           # 25 ms at 16 kHz
-            hop_length=160,      # 10 ms at 16 kHz
-            n_mels=n_mels,
-            f_min=0.0,
-            f_max=sample_rate / 2,
-            power=2.0,
-        )
-    return _FBANK_CACHE[key]
+@lru_cache(maxsize=1)
+def _whisper_extractor():
+    """Cache the HF WhisperFeatureExtractor instance."""
+    from transformers import WhisperFeatureExtractor
+    return WhisperFeatureExtractor(
+        feature_size=128,
+        sampling_rate=16000,
+        hop_length=160,
+        chunk_length=30,
+        n_fft=400,
+    )
 
 
 def log_mel(
-    audio: torch.Tensor,
+    audio: torch.Tensor | np.ndarray,
     sample_rate: int = 16000,
-    n_mels: int = 128,
+    pad_to_30s: bool = False,
 ) -> torch.Tensor:
-    """audio: (T,) or (B, T) 16 kHz mono. Returns (..., T_frames, n_mels)."""
-    if audio.dim() == 1:
-        audio = audio.unsqueeze(0)
-        squeeze = True
-    else:
-        squeeze = False
-    mel = _mel_extractor(sample_rate, n_mels).to(audio.device)(audio)
-    # Log scaling with floor matching Whisper / Qwen3-Omni convention.
-    mel = mel.clamp(min=1e-10).log10()
-    mel = (mel + 4.0) / 4.0  # rough normalization; exact constants depend on AuT statistics
-    mel = mel.transpose(-1, -2)  # (B, T, n_mels)
-    return mel.squeeze(0) if squeeze else mel
+    """audio: (T,) 16 kHz mono. Returns (T_frames, 128).
+
+    If ``pad_to_30s`` is True, returns the fixed 3000-frame Whisper layout
+    (use for matching Qwen3-ASR's published inference). Otherwise returns
+    variable-length frames sized to the actual input.
+    """
+    if isinstance(audio, torch.Tensor):
+        audio = audio.detach().cpu().numpy().astype(np.float32)
+    extractor = _whisper_extractor()
+    if pad_to_30s:
+        feats = extractor(audio, sampling_rate=sample_rate, return_tensors="pt").input_features
+        # (1, 128, 3000) → (3000, 128)
+        return feats[0].T
+    # Variable length: skip the extractor's padding by computing only up to
+    # the actual audio length.
+    n_samples = audio.shape[-1]
+    feats = extractor(audio, sampling_rate=sample_rate, return_tensors="pt").input_features
+    n_frames = n_samples // 160 + 1
+    return feats[0, :, :n_frames].T  # (n_frames, 128)
