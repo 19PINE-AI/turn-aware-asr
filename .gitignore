@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Training artifacts (Phase 0+)
+checkpoints/
+runs/
+wandb/
+*.ckpt
+*.safetensors
+*.bin
+
+# Pre-tokenized data and audio caches
+data/
+cache/
+*.arrow
+*.parquet
+*.tar
+*.tar.gz
+
+# Eval outputs (re-runnable, large)
+eval/results/
+
+# Editor / OS
+.DS_Store
+.vscode/
+.idea/
