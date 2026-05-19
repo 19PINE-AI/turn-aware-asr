@@ -2,7 +2,7 @@
 
 Streaming context-aware VAD + ASR — a unified Kyutai-style delayed-streams model that replaces the cascaded VAD → ASR pipeline. Built on Qwen3-0.6B with the AuT audio encoder extracted from Qwen3-ASR-0.6B.
 
-**Status:** Phase 0 in progress. See `research/00-synthesis.md` for the current plan, `research/09-phase0-engineering-plan.md` for the day-by-day, and `streaming-vad-asr-plan.md` for the original research plan.
+**Status:** Backbone validated. Qwen3-ASR-0.6B reproduces the paper's 2.11% LibriSpeech test-clean WER (we measured 2.09% on 200 utts). Phase 1 fine-tuning was abandoned in favor of using the open-weights model directly — see `research/13-phase1-failure-analysis.md` and `research/14-qwen3asr-baseline-validated.md` for the pivot. Project differentiators (endpoint head, context-biasing benchmarks) are layered on top of this base.
 
 ## Key design choices
 
