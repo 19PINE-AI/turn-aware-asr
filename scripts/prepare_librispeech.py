@@ -62,12 +62,20 @@ def load_audio_16k(path: Path) -> torch.Tensor:
     return audio
 
 
-def prepare(split: str, raw_root: Path, out_dir: Path, max_utterances: int | None = None):
+def prepare(split: str, raw_root: Path, out_dir: Path, max_utterances: int | None = None,
+            skip_audio: bool = True):
+    """Walk the LibriSpeech tree, compute mels, save to data.pt.
+
+    skip_audio=True (default): only save mel + text. Cuts file size and
+    RAM use ~2× since training only ever reads mel.
+    """
     split_dir = raw_root / "LibriSpeech" / split
     if not split_dir.exists():
         raise FileNotFoundError(f"{split_dir} not found. Run scripts/download_librispeech.sh {split}")
 
-    audios, mels, texts = [], [], []
+    audios: list = []
+    mels: list = []
+    texts: list = []
     skipped = 0
     for i, (utt_id, flac, text) in enumerate(tqdm(list(iter_split(split_dir)), desc=f"prep:{split}")):
         if max_utterances is not None and i - skipped >= max_utterances:
@@ -82,14 +90,18 @@ def prepare(split: str, raw_root: Path, out_dir: Path, max_utterances: int | Non
             logger.warning("Skipping %s: %s", utt_id, e)
             skipped += 1
             continue
-        audios.append(audio)
-        mels.append(mel)
+        if not skip_audio:
+            audios.append(audio)
+        mels.append(mel.contiguous())
         texts.append(text)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "data.pt"
-    torch.save({"audio": audios, "mel": mels, "text": texts}, out_path)
-    logger.info("Saved %d utterances to %s (skipped %d)", len(audios), out_path, skipped)
+    payload = {"mel": mels, "text": texts}
+    if not skip_audio:
+        payload["audio"] = audios
+    torch.save(payload, out_path)
+    logger.info("Saved %d utterances to %s (skipped %d)", len(mels), out_path, skipped)
 
 
 def main():
