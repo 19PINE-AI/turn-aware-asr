@@ -29,6 +29,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from .aut_encoder import load_aut_from_safetensors, freeze_aut
 from .features import log_mel
+from .projector import AudioProjector
 
 logger = logging.getLogger(__name__)
 
@@ -50,6 +51,9 @@ class TrainConfig:
     warmup_steps: int = 10
     grad_clip: float = 1.0
     seed: int = 0
+    freeze_llm: bool = False  # Phase 0 minimal arm: only the adapter trains
+    log_every: int = 5
+    checkpoint_dir: str = "checkpoints/phase0-smoke"
 
 
 class Phase0Model(nn.Module):
@@ -67,11 +71,34 @@ class Phase0Model(nn.Module):
         elif cfg.arm == "aut_unfrozen_top6":
             freeze_aut(self.aut, unfreeze_top_n_layers=6)
 
+        # Domain adapter: AuT's proj2 was trained for Qwen3-Omni's LM, not
+        # Qwen3-0.6B-Base. This 2-MLP+GELU projector maps the AuT output
+        # distribution into Qwen3-Base's expected input distribution. Tiny
+        # (~2 M params) and trainable in all arms — see synthesis 00 §3.2.
+        self.adapter = AudioProjector(d_audio=1024, d_llm=1024).to(torch.bfloat16)
+
         logger.info("Loading Qwen3-0.6B-Base…")
         self.llm = AutoModelForCausalLM.from_pretrained(
             cfg.qwen3_path, dtype=torch.bfloat16
         )
+        # Resize embeddings for the new audio control tokens. The new rows
+        # (audio_start, audio_end, audio_pad) get random-init values; init
+        # them as the mean of existing embeddings + σ=0.02 noise to avoid
+        # the LM seeing wild OOV embeddings at step 0.
+        prev_vocab_size = self.llm.get_input_embeddings().weight.shape[0]
         self.llm.resize_token_embeddings(len(tokenizer))
+        with torch.no_grad():
+            inp = self.llm.get_input_embeddings().weight
+            mean_emb = inp[:prev_vocab_size].mean(dim=0)
+            for i in range(prev_vocab_size, inp.shape[0]):
+                inp[i] = mean_emb + torch.randn_like(mean_emb) * 0.02
+        if cfg.freeze_llm:
+            # Hard-freeze everything in the LLM, including the resized
+            # embedding matrix. The audio_pad embedding doesn't matter
+            # (it's overwritten by the adapter output in forward); the
+            # audio_start/end embeddings are now just well-init constants.
+            for p in self.llm.parameters():
+                p.requires_grad = False
         # Audio_pad ID after tokenizer extension
         self.audio_pad_id = tokenizer.convert_tokens_to_ids(AUDIO_PAD)
         self.audio_start_id = tokenizer.convert_tokens_to_ids(AUDIO_START)
@@ -90,7 +117,8 @@ class Phase0Model(nn.Module):
         """
         with torch.no_grad():
             aut_out = self.aut(mel.unsqueeze(0).to(device=device, dtype=torch.bfloat16))
-        audio_embeds = aut_out[0]  # (T_aud, 1024)
+        # Pass AuT output through the trainable domain adapter
+        audio_embeds = self.adapter(aut_out)[0]  # (T_aud, 1024)
         T_aud = audio_embeds.shape[0]
 
         # Build text input: <|audio_start|> [pad×T_aud] <|audio_end|> <transcript> <eos>
@@ -121,7 +149,8 @@ class Phase0Model(nn.Module):
             labels[i, :n] = lab
             attn_mask[i, :n] = 1
 
-        # Get text embeddings, then substitute audio_pad positions with AuT output.
+        # Get text embeddings, then substitute audio_pad positions with audio output.
+        # NOTE: batch_audio entries are already adapter-projected (see build_input).
         token_embeds = self.llm.get_input_embeddings()(input_ids)  # (B, L, d)
         for i in range(B):
             audio_embeds = batch_audio[i].to(token_embeds.dtype)  # (T_aud, d)
@@ -153,12 +182,20 @@ def main():
     p.add_argument("--steps", type=int, default=50)
     p.add_argument("--bsz", type=int, default=2)
     p.add_argument("--lr", type=float, default=1e-4)
+    p.add_argument("--warmup-steps", type=int, default=10)
     p.add_argument("--data", default="data/librispeech/test-clean/data.pt")
     p.add_argument("--checkpoint-dir", default="checkpoints/phase0-smoke")
+    p.add_argument("--freeze-llm", action="store_true",
+                    help="Adapter-only training — Phase 0 minimal arm")
+    p.add_argument("--log-every", type=int, default=5)
     args = p.parse_args()
 
-    cfg = TrainConfig(arm=args.arm, steps=args.steps, bsz=args.bsz, lr=args.lr,
-                       data_path=args.data)
+    cfg = TrainConfig(
+        arm=args.arm, steps=args.steps, bsz=args.bsz, lr=args.lr,
+        data_path=args.data, checkpoint_dir=args.checkpoint_dir,
+        warmup_steps=args.warmup_steps, freeze_llm=args.freeze_llm,
+        log_every=args.log_every,
+    )
     torch.manual_seed(cfg.seed)
 
     logger.info("Loading tokenizer + adding audio special tokens…")
@@ -221,27 +258,32 @@ def main():
         optim.step()
         optim.zero_grad()
         dt = time.perf_counter() - t0
-        if step % 5 == 0 or step == cfg.steps - 1:
+        if step % cfg.log_every == 0 or step == cfg.steps - 1:
             logger.info("step %4d  loss %.4f  lr %.2e  %.2f s/step  free %.0f MB",
                          step, loss.item(), lr, dt,
                          torch.cuda.mem_get_info()[0] / 1e6)
 
-    # Save checkpoint
+    # Save checkpoint — only the parameters that were actually trained,
+    # plus the projector and endpoint head (small, useful for resume).
     ckpt_path = Path(cfg.checkpoint_dir) / f"{cfg.arm}_step{cfg.steps}.pt"
+    trainable_names = {
+        n for n, p in model.named_parameters() if p.requires_grad
+    }
+    trainable_state = {
+        n: p.detach().cpu()
+        for n, p in model.named_parameters()
+        if n in trainable_names
+    }
     torch.save(
         {
             "step": cfg.steps,
-            "trainable_state": {
-                k: v.detach().cpu()
-                for k, v in model.state_dict().items()
-                if model.state_dict()[k].requires_grad if hasattr(model.state_dict()[k], 'requires_grad') else False
-            },
+            "trainable_state": trainable_state,
             "cfg": cfg.__dict__,
             "tokenizer_vocab_size": len(tokenizer),
         },
         ckpt_path,
     )
-    logger.info("Saved checkpoint to %s", ckpt_path)
+    logger.info("Saved checkpoint to %s (%d tensors)", ckpt_path, len(trainable_state))
 
 
 if __name__ == "__main__":

@@ -17,7 +17,10 @@ def wer(hypothesis: str, reference: str) -> float:
         jiwer.Strip(),
         jiwer.ReduceToListOfListOfWords(),
     ])
-    return jiwer.wer(reference, hypothesis, truth_transform=norm, hypothesis_transform=norm)
+    return jiwer.wer(
+        reference, hypothesis,
+        reference_transform=norm, hypothesis_transform=norm,
+    )
 
 
 def endpoint_latencies(

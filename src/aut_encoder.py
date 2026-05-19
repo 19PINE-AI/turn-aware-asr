@@ -148,10 +148,11 @@ class AuTEncoder(nn.Module):
         self.proj1 = nn.Linear(d_model, d_model, bias=True)
         self.proj2 = nn.Linear(d_model, out_dim, bias=True)
 
-        # Sinusoidal PE buffer — pre-encoder rate, applied after the conv stem
-        # to the downsampled features.
-        post_conv_pos = max_source_pos // 8 + 1  # post-encoder positions
-        pe = sinusoidal_pe(post_conv_pos, d_model)
+        # Sinusoidal PE buffer — generously sized. Computed at module init
+        # for the worst case (~4 min of audio at 12.5 Hz = 3000 frames). PE
+        # is purely a function of position so we can also recompute on the
+        # fly for unusually long inputs (see forward()).
+        pe = sinusoidal_pe(3000, d_model)
         self.register_buffer("positional_embedding", pe, persistent=False)
 
         self.window = window
@@ -171,9 +172,13 @@ class AuTEncoder(nn.Module):
         x = x.permute(0, 2, 1, 3).reshape(B_, T_out, C * F_out)
         x = self.conv_out(x)  # (B, T_out, d_model)
 
-        # Add sinusoidal PE (clip if longer than precomputed)
-        pe = self.positional_embedding[: x.shape[1]]
-        x = x + pe.unsqueeze(0)
+        # Add sinusoidal PE (recompute if longer than the precomputed buffer)
+        T = x.shape[1]
+        if T <= self.positional_embedding.shape[0]:
+            pe = self.positional_embedding[:T]
+        else:
+            pe = sinusoidal_pe(T, x.shape[-1]).to(device=x.device, dtype=x.dtype)
+        x = x + pe.unsqueeze(0).to(dtype=x.dtype)
 
         # Windowed non-causal attention
         attn_mask = _window_mask(x.shape[1], self.window, x.device)
