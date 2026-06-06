@@ -1,0 +1,88 @@
+{
+  "rows": [
+    {
+      "step": 3000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.4,
+      "end_correct_disfluency": 1.0,
+      "end_oversfire_disfluency": 0.0,
+      "wer_single": 6.667448782610544,
+      "wer_double": 9.46914366894058,
+      "wer_disfluency": 4.67775056713725
+    },
+    {
+      "step": 6000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.9,
+      "end_correct_disfluency": 1.0,
+      "end_oversfire_disfluency": 0.0,
+      "wer_single": 6.943918857074477,
+      "wer_double": 7.175009704190328,
+      "wer_disfluency": 6.341667347621097
+    },
+    {
+      "step": 9000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.9,
+      "end_correct_disfluency": 0.9333333333333333,
+      "end_oversfire_disfluency": 0.06666666666666667,
+      "wer_single": 8.310446746759462,
+      "wer_double": 14.9219334627079,
+      "wer_disfluency": 7.5472181016164885
+    },
+    {
+      "step": 12000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.7333333333333333,
+      "end_correct_disfluency": 1.0,
+      "end_oversfire_disfluency": 0.0,
+      "wer_single": 8.761257561367513,
+      "wer_double": 12.061900765462157,
+      "wer_disfluency": 7.827972262976036
+    },
+    {
+      "step": 15000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.5333333333333333,
+      "end_correct_disfluency": 1.0,
+      "end_oversfire_disfluency": 0.0,
+      "wer_single": 11.446257581433771,
+      "wer_double": 15.658522369348907,
+      "wer_disfluency": 8.020039147276554
+    },
+    {
+      "step": 18000,
+      "n_examples": 90,
+      "n_single": 30,
+      "n_double": 30,
+      "n_disfluency": 30,
+      "end_recall_single": 1.0,
+      "end_recall_double": 0.26666666666666666,
+      "end_correct_disfluency": 0.9333333333333333,
+      "end_oversfire_disfluency": 0.0,
+      "wer_single": 8.568573687612252,
+      "wer_double": 45.69951131499132,
+      "wer_disfluency": 29.83606459833435
+    }
+  ]
+}
