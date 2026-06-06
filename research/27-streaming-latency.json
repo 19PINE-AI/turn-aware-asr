@@ -1,0 +1,317 @@
+{
+  "checkpoint": "checkpoints/semantic_endpoint_v3_long/step6000.pt",
+  "summary": {
+    "n_examples": 30,
+    "n_detected": 30,
+    "detection_rate": 1.0,
+    "chunk_s": 0.5,
+    "latency_s_p50": -13.0771875,
+    "latency_s_p95": -3.405,
+    "latency_s_mean": -11.69490625,
+    "latency_s_min": -15.940999999999999,
+    "latency_s_max": -1.6800000000000002,
+    "median_chunk_inference_ms": 244.81882306281477
+  },
+  "per_example": [
+    {
+      "audio_end_s": 15.935,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.435,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 495.0527010951191,
+      "final_text": "STAFF <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.6278125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.1278125,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 236.34137213230133,
+      "final_text": "AND I USE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 12.235,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -11.735,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 243.7602151185274,
+      "final_text": "UP <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0671875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.5671875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 243.28584386967123,
+      "final_text": "WORE NOW <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.645,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -7.145,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 266.15431904792786,
+      "final_text": "THEIR PROMISE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.775,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.275,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 152.81869191676378,
+      "final_text": "THIS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.7073125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.2073125,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 243.58355696313083,
+      "final_text": "HOW <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 15.930875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.430875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 243.904187111184,
+      "final_text": "STUB <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 14.425,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.925,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 236.2059431616217,
+      "final_text": "TEN <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.495,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.995,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 265.5288469977677,
+      "final_text": "SO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 10.56175,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -10.06175,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 302.564499899745,
+      "final_text": "WHICH CAME <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -12.875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 251.14001496694982,
+      "final_text": "STORM <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 13.88,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.38,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 255.8405881281942,
+      "final_text": "AND UP <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.2749375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.7749375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 270.02867916598916,
+      "final_text": "STAFF <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.18,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -1.6800000000000002,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 268.05370301008224,
+      "final_text": "IT DON'T <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0863125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.5863125,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 317.13682296685874,
+      "final_text": "HE CONSUMED <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.0150625,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.515062499999999,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 269.69669410027564,
+      "final_text": "AND FLY <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.5771875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.0771875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 232.2327820584178,
+      "final_text": "WHICH HE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.905,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -3.405,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 222.41938579827547,
+      "final_text": "BUT <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 9.725,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -9.225,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 261.79890986531973,
+      "final_text": "STUB <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 12.121875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -11.621875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 247.57973104715347,
+      "final_text": "EN <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.4098125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.909812500000001,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 275.8892539422959,
+      "final_text": "BUT HAD <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 5.6689375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -5.1689375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 203.01482500508428,
+      "final_text": "ANY <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 8.075,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -7.574999999999999,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 245.73345901444554,
+      "final_text": "INSTEAD <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.187125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -10.687125,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 227.26361616514623,
+      "final_text": "BUT NO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.56,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -2.06,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 233.51674806326628,
+      "final_text": "THE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.355,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.855,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 229.3578980024904,
+      "final_text": "SIGNORO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 16.441,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.940999999999999,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 208.84724520146847,
+      "final_text": "STUB <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.555,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.055,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 221.68715693987906,
+      "final_text": "I BROUGHT <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.05,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -10.55,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 315.22957887500525,
+      "final_text": "WHEN THEY WERE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    }
+  ]
+}
