@@ -269,26 +269,23 @@ def main():
     holdout_examples: list = []
     if args.eval_every > 0:
         import random as _r
+        from collections import defaultdict as _dd
         _rng = _r.Random(12345)
-        by_schema: dict[str, list] = {"single": [], "double": [], "disfluency": []}
+        by_schema: dict[str, list] = _dd(list)
         for e in examples:
             by_schema[e["schema"]].append(e)
         for k in by_schema:
             _rng.shuffle(by_schema[k])
-        per_schema = max(1, args.eval_holdout_size // 3)
-        holdout_examples = (
-            by_schema["single"][:per_schema]
-            + by_schema["double"][:per_schema]
-            + by_schema["disfluency"][:per_schema]
-        )
+        n_schemas = max(1, len(by_schema))
+        per_schema = max(1, args.eval_holdout_size // n_schemas)
+        for k, pool in by_schema.items():
+            holdout_examples.extend(pool[:per_schema])
         holdout_keys = {id(e) for e in holdout_examples}
         examples = [e for e in examples if id(e) not in holdout_keys]
-        logger.info("Reserved %d holdout examples (S/D/F = %d/%d/%d); train set now %d",
-                     len(holdout_examples),
-                     sum(1 for e in holdout_examples if e["schema"] == "single"),
-                     sum(1 for e in holdout_examples if e["schema"] == "double"),
-                     sum(1 for e in holdout_examples if e["schema"] == "disfluency"),
-                     len(examples))
+        counts = {k: sum(1 for e in holdout_examples if e["schema"] == k)
+                   for k in by_schema}
+        logger.info("Reserved %d holdout examples %s; train set now %d",
+                     len(holdout_examples), counts, len(examples))
 
     logger.info("Loading Qwen3-ASR-0.6B base…")
     model, tokenizer, processor = load_base_model()
@@ -326,15 +323,15 @@ def main():
           - single: emit ≥ 1 end marker
           - double: emit ≥ 2 end markers
           - disfluency: emit exactly 1 end marker (no over-fire)
+          - truncated: emit ZERO markers (audio is incomplete)
 
-        Returns dict with end_recall_double, end_correct_disfluency, etc.
+        Returns dict with per-schema accuracies.
         """
         model.eval()
-        # Generation needs the cache; toggle back on
         if hasattr(model.thinker.model.config, "use_cache"):
             model.thinker.model.config.use_cache = True
-        s_hit = d_hit = f_correct = f_overfire = 0
-        s_n = d_n = f_n = 0
+        s_hit = d_hit = f_correct = f_overfire = t_correct = t_misfire = 0
+        s_n = d_n = f_n = t_n = 0
         with torch.no_grad():
             for e in holdout_examples:
                 audio = np.asarray(e["audio"], dtype=np.float32)
@@ -357,17 +354,21 @@ def main():
                     continue
                 gen_ids = out.sequences[0, inputs["input_ids"].shape[1]:].tolist()
                 n_end = sum(1 for t in gen_ids if t == end_id_)
-                if e["schema"] == "single":
+                sch = e["schema"]
+                if sch == "single":
                     s_n += 1
                     if n_end >= 1: s_hit += 1
-                elif e["schema"] == "double":
+                elif sch == "double":
                     d_n += 1
                     if n_end >= 2: d_hit += 1
-                else:  # disfluency
+                elif sch == "disfluency":
                     f_n += 1
                     if n_end == 1: f_correct += 1
                     if n_end >= 2: f_overfire += 1
-        # Reset state for training
+                elif sch == "truncated":
+                    t_n += 1
+                    if n_end == 0: t_correct += 1
+                    if n_end >= 1: t_misfire += 1
         model.train()
         if hasattr(model.thinker.model.config, "use_cache"):
             model.thinker.model.config.use_cache = False
@@ -376,6 +377,8 @@ def main():
             "double": d_hit / max(1, d_n),
             "disfl_correct": f_correct / max(1, f_n),
             "disfl_overfire": f_overfire / max(1, f_n),
+            "trunc_correct": t_correct / max(1, t_n),
+            "trunc_misfire": t_misfire / max(1, t_n),
         }
 
     best_score = -1.0
@@ -441,15 +444,23 @@ def main():
             t0_eval = time.perf_counter()
             m = _run_holdout_eval(model, eager_id, end_id)
             dt_eval = time.perf_counter() - t0_eval
-            # Track double-utt accuracy as the primary signal (the fragile metric).
-            # Add a small disfluency tiebreaker to favor checkpoints where
-            # over-fire rate is also low.
-            score = m["double"] - 0.5 * m["disfl_overfire"]
+            # Composite score: reward turn detection + disfluency correctness +
+            # truncated correctness; penalize disfluency over-fire and truncated
+            # mis-fire. Truncated is critical because mis-firing means the
+            # model breaks in streaming.
+            score = (
+                m["double"]
+                + 0.5 * m["disfl_correct"]
+                + 0.5 * m["trunc_correct"]
+                - 0.5 * m["disfl_overfire"]
+                - 0.5 * m["trunc_misfire"]
+            )
             eval_log.append({"step": step, "score": score, **m})
             logger.info("EVAL step %5d  single=%.2f  double=%.2f  disfl-✓=%.2f  "
-                         "disfl-✗=%.2f  score=%.3f  (%.1fs)",
+                         "disfl-✗=%.2f  trunc-✓=%.2f  trunc-✗=%.2f  score=%.3f  (%.1fs)",
                          step, m["single"], m["double"], m["disfl_correct"],
-                         m["disfl_overfire"], score, dt_eval)
+                         m["disfl_overfire"], m["trunc_correct"], m["trunc_misfire"],
+                         score, dt_eval)
             if score > best_score + 1e-6:
                 best_score = score
                 evals_since_best = 0

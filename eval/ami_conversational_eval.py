@@ -59,14 +59,22 @@ def decode_audio(blob: dict) -> tuple[np.ndarray, int]:
     raise ValueError(f"can't decode audio cell: keys={list(blob.keys())}")
 
 
-def load_ami_meetings(parquet_dir: Path, max_meetings: int | None = None
+def load_ami_meetings(parquet_dir: Path, max_meetings: int | None = None,
+                      restrict_to: set[str] | None = None
                       ) -> dict[str, list[dict]]:
-    """Group utterances by meeting_id, sorted by begin_time."""
+    """Group utterances by meeting_id, sorted by begin_time.
+
+    If `restrict_to` is given, only those meeting_ids are loaded — used to
+    enforce the train/eval meeting split when evaluating a model that was
+    trained on AMI.
+    """
     meetings: dict[str, list[dict]] = defaultdict(list)
     for pq_path in sorted(parquet_dir.glob("*.parquet")):
         logger.info("Reading %s…", pq_path.name)
         t = pq.read_table(pq_path)
         for row in t.to_pylist():
+            if restrict_to is not None and row["meeting_id"] not in restrict_to:
+                continue
             meetings[row["meeting_id"]].append(row)
     for mid in meetings:
         meetings[mid].sort(key=lambda r: r["begin_time"])
@@ -198,12 +206,22 @@ def main():
     p.add_argument("--max-dur-s", type=float, default=12.0)
     p.add_argument("--out", default="research/26-ami-conversational-eval.json")
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--restrict-to-meetings",
+                    help="Path to JSON file with 'eval_meeting_ids' list; only those meetings are used. "
+                         "Required when the model was trained on AMI to avoid contamination.")
     args = p.parse_args()
 
     rng = random.Random(args.seed)
 
+    restrict_to: set[str] | None = None
+    if args.restrict_to_meetings:
+        d = json.loads(Path(args.restrict_to_meetings).read_text())
+        restrict_to = set(d.get("eval_meeting_ids", []))
+        logger.info("Restricting to %d held-out meetings", len(restrict_to))
+
     logger.info("Loading AMI meetings…")
-    meetings = load_ami_meetings(Path(args.ami_dir), max_meetings=args.max_meetings)
+    meetings = load_ami_meetings(Path(args.ami_dir), max_meetings=args.max_meetings,
+                                  restrict_to=restrict_to)
 
     logger.info("Building examples…")
     examples = build_examples(meetings, rng, args.max_per_schema, args.max_dur_s)
