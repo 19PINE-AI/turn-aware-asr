@@ -1,0 +1,317 @@
+{
+  "checkpoint": "checkpoints/semantic_endpoint_v5_es/best.pt",
+  "summary": {
+    "n_examples": 30,
+    "n_detected": 30,
+    "detection_rate": 1.0,
+    "chunk_s": 0.5,
+    "latency_s_p50": 0.31999999999999984,
+    "latency_s_p95": 1.3781250000000007,
+    "latency_s_mean": -2.6449062499999996,
+    "latency_s_min": -15.430875,
+    "latency_s_max": 1.9450000000000003,
+    "median_chunk_inference_ms": 454.942379379645
+  },
+  "per_example": [
+    {
+      "audio_end_s": 15.935,
+      "first_end_chunk_idx": 33,
+      "first_end_t": 16.5,
+      "latency_s": 0.5649999999999995,
+      "n_chunks_run": 33,
+      "median_chunk_ms": 576.2784760445356,
+      "final_text": "AT THE TIME THIS CEREMONY AND THE WORDS THEY UTTERED MEANT NOTHING TO ME BUT LATER I CAME TO KNOW THAT THIS WAS THE CUSTOMARY GREETING BETWEEN GREEN MARTIERS HAD THE MEN BEEN STRANGERS AND THEREFORE UNABLE TO EXCHANGE NAMES <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.6278125,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": -10.1278125,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 271.354079246521,
+      "final_text": "AND I USED TO IMAGINE I WAS LIVING HERE BUT I NEVER REALLY EXPECTED I WOULD IT'S DELIGHTFUL <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 12.235,
+      "first_end_chunk_idx": 25,
+      "first_end_t": 12.5,
+      "latency_s": 0.26500000000000057,
+      "n_chunks_run": 25,
+      "median_chunk_ms": 585.0236751139164,
+      "final_text": "A PAUSE MISS CARLYLE WAS RUMINATING BUT SHE RETURNED TO THE CHARGE AS IF DIFFICULT TO BE CONVINCED YOU DEEM THAT THERE COULD BE NO POSSIBILITY OF AN ERROR YOU ARE SURE THAT SHE IS DEAD <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0671875,
+      "first_end_chunk_idx": 31,
+      "first_end_t": 15.5,
+      "latency_s": 0.4328125000000007,
+      "n_chunks_run": 31,
+      "median_chunk_ms": 691.5935310535133,
+      "final_text": "WERE NOW SENDING FLOWERS TO THE DEBAUTANTS AND CUTTING IN ON THE YOUNGER MEN AT BALLS HER HOUSE WAS STILL A RONDEVOUS BUT WAS FOR COUNCILS LIKE THE ONES WHO HAD PREEMPTED THE DRAWING ROOM THE LIBRARY AND THE MUSIC ROOM THAT AFTERNOON <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.645,
+      "first_end_chunk_idx": 17,
+      "first_end_t": 8.5,
+      "latency_s": 0.8550000000000004,
+      "n_chunks_run": 17,
+      "median_chunk_ms": 420.14899104833603,
+      "final_text": "THEY PROMISED OF MUTUAL FIDELITY AND HOW EVERY NIGHT SINCE HE HAD BEEN NEAR THEY HAD MET IN SOME NEIGHBORING RUINS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.775,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": -10.275,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 259.3370908871293,
+      "final_text": "THIS TIME JENNY POPPED HER HEAD OUT AND HER LITTLE EYES FAIRLY SNAPPED <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.7073125,
+      "first_end_chunk_idx": 19,
+      "first_end_t": 9.5,
+      "latency_s": -5.2073125000000005,
+      "n_chunks_run": 19,
+      "median_chunk_ms": 388.081684242934,
+      "final_text": "HOW COULD I STAND BY AND SEE LIFE TAKEN IT WAS BUT A LITTLE I SPENT ONLY HALF A BU TO SAVE THE CUB BUT HAD COST A FORTUNE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 15.930875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.430875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 202.34240405261517,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 14.425,
+      "first_end_chunk_idx": 29,
+      "first_end_t": 14.5,
+      "latency_s": 0.07499999999999929,
+      "n_chunks_run": 29,
+      "median_chunk_ms": 594.7815268300474,
+      "final_text": "TEN DAYS OF A RELIGIOUS ARGUMENT THREE TIMES A DAY WOULD BE INTOLERABLE BUT THE CHEERFUL VENZA WOULD HELP SHE NEVER EATS THE MIDDAY MEAL SAID SNAP SHE'S ON THE DECK HAVING ORANGE SHOES I GUESS IT'S THE OLD GAG ABOUT DIET <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.495,
+      "first_end_chunk_idx": 23,
+      "first_end_t": 11.5,
+      "latency_s": -3.994999999999999,
+      "n_chunks_run": 23,
+      "median_chunk_ms": 521.9252980314195,
+      "final_text": "SO TWO VERY REVERENDS GRACED THE SCENE AND THE TALL ARCHBISHOP STOOD BETWEEN BY PRAYER AND FASTING CHASTENED THE POPE HIMSELF WOULD HAVE COME FROM ROME BUT GARRIBALDI KEPT HIM AT HOME <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 10.56175,
+      "first_end_chunk_idx": 22,
+      "first_end_t": 11.0,
+      "latency_s": 0.43825000000000003,
+      "n_chunks_run": 22,
+      "median_chunk_ms": 522.8725902270526,
+      "final_text": "WHICH CAME FROM THE ESTATE OF PAULSAGARD AND THE MATERIAL THAT ALL IT PROMISED THESE CASES WERE ONE FOOT SQUARE AND FIFTEEN AND A HALF INCHES HIGH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.375,
+      "first_end_chunk_idx": 28,
+      "first_end_t": 14.0,
+      "latency_s": 0.625,
+      "n_chunks_run": 28,
+      "median_chunk_ms": 576.8345976248384,
+      "final_text": "SOME OF THE EARLIER VERSES HAVE BECOME ENTIRELY OBSOLETE AND IS WELL THEY HAVE FOR MANY WERE CRUDE AND SILLY AND OTHERS WERE COARSE IT IS SIMPLY A RESULT OF THE GREATER REFINEMENT OF MODERN CIVILIZATION <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 13.88,
+      "first_end_chunk_idx": 30,
+      "first_end_t": 15.0,
+      "latency_s": 1.1199999999999992,
+      "n_chunks_run": 30,
+      "median_chunk_ms": 716.6355589870363,
+      "final_text": "AND UP THE SLOPES OF THE WASSACCH ECCLIPSEING ALL THE LANDSCAPES IN ITS COURSE THE BENDING TREES THE DUST STREAMERS AND THE WILDE ONRUSH OF EVERYTHING MOVABLE GIVING IT AN IMPRECISEAL VISIBILITY THAT RENDERED IT GRAND AND INSPIRING <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.2749375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.7749375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 177.19445191323757,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.18,
+      "first_end_chunk_idx": 5,
+      "first_end_t": 2.5,
+      "latency_s": 0.31999999999999984,
+      "n_chunks_run": 5,
+      "median_chunk_ms": 175.66408310085535,
+      "final_text": "IT DON'T SOUND A BIT LIKE OTHER CLOCKS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0863125,
+      "first_end_chunk_idx": 25,
+      "first_end_t": 12.5,
+      "latency_s": -2.5863125,
+      "n_chunks_run": 25,
+      "median_chunk_ms": 516.9664341956377,
+      "final_text": "HE CAN USE ME ANY WAY HE WANTS HE WON'T TURN DOWN YOUR ASSISTANCE COME ALONG NED I LED THE CANADIAN INTO THE ROOM WHERE THE NAUTILUS'S MEN WERE PUTTING ON THEIR DIVING SUITS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.0150625,
+      "first_end_chunk_idx": 19,
+      "first_end_t": 9.5,
+      "latency_s": -6.515062499999999,
+      "n_chunks_run": 19,
+      "median_chunk_ms": 372.9436891153455,
+      "final_text": "AND FLY IN THE FACE OF THE CATECHISM WITHOUT SEVERE PROVOCATION IS YOUR HUSBAND AT HOME MISSUS POYSER YES SIR <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.5771875,
+      "first_end_chunk_idx": 16,
+      "first_end_t": 8.0,
+      "latency_s": -5.577187500000001,
+      "n_chunks_run": 16,
+      "median_chunk_ms": 418.79072855226696,
+      "final_text": "WHICH HE TOOK FOR THE OCEAN HE NO LONGER KNEW IN WHAT Direction THE SEA LAY HE RETRaced HIS STEPS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.905,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": 0.5950000000000002,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 232.2245012037456,
+      "final_text": "BY THE WAY GALLANT NED ARE YOU AFRAID OF SHARKS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 9.725,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -9.225,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 172.9244887828827,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 12.121875,
+      "first_end_chunk_idx": 27,
+      "first_end_t": 13.5,
+      "latency_s": 1.3781250000000007,
+      "n_chunks_run": 27,
+      "median_chunk_ms": 488.5149006731808,
+      "final_text": "ALL WERE LOADED WITH PASSENGERS AND FREIGHT FOR GNOME SCOUT BOATS HAD ALREADY BEEN SENT OUT TO INVESTIGATE AND FIND IF POSSIBLE A PASSAGE THROUGH THE ICE FIELDS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.4098125,
+      "first_end_chunk_idx": 35,
+      "first_end_t": 17.5,
+      "latency_s": 1.090187499999999,
+      "n_chunks_run": 35,
+      "median_chunk_ms": 819.252559915185,
+      "final_text": "BUT HAD SENT WORD THAT I WAS TO BE HIS AND THE COLONEL'S GUEST AT THEIR HOUSE WHILE I REMAINED IN CHICAGO I SPENT TWO OR THREE DAYS VERY PLEASANTLY IN THE GREAT CITY OF THE WEST MEETING SEVERAL OF THE GENTLEMAN WHO HAD BEEN OUT ON THE SHERIDON HUNT IN SEPTEMBER GENERAL STAGER <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 5.6689375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -5.1689375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 220.933070871979,
+      "final_text": "OH YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 8.075,
+      "first_end_chunk_idx": 17,
+      "first_end_t": 8.5,
+      "latency_s": 0.4250000000000007,
+      "n_chunks_run": 17,
+      "median_chunk_ms": 391.89577009528875,
+      "final_text": "INSTEAD OF SMOKING BEFORE OUR EYES AND NOSES ON THE TABLE TO RECORD SUCH LITTLE MATTERS WOULD INDEED BE TO CHRONICLE SMALL BEER <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.187125,
+      "first_end_chunk_idx": 23,
+      "first_end_t": 11.5,
+      "latency_s": 0.312875,
+      "n_chunks_run": 23,
+      "median_chunk_ms": 454.0783930569887,
+      "final_text": "BUT NONE OF THEM CAN DO IT AS WELL AS UNK BILLY POSSUM PRETENDING TO BE DEAD IN ORDER TO REMAIN ALIVE IS THE CLEVEREST THING UNK BILLY DOES <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.56,
+      "first_end_chunk_idx": 6,
+      "first_end_t": 3.0,
+      "latency_s": 0.43999999999999995,
+      "n_chunks_run": 6,
+      "median_chunk_ms": 228.8358062505722,
+      "final_text": "THE NEGOTIATIONS CAME TO A DEADLOCK <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.355,
+      "first_end_chunk_idx": 31,
+      "first_end_t": 15.5,
+      "latency_s": 1.1449999999999996,
+      "n_chunks_run": 31,
+      "median_chunk_ms": 620.5339967273176,
+      "final_text": "SIGNOR PASTRINI'S FACE ASSUMED AN EXPRESSION IMPOSSIBLE TO DESCRIBE AND PRAY ASKED FRANZ WHERE ARE THESE PISTOLS BLUNDERBUSSES AND OTHER DEADLY WEAPONS WITH WHICH YOU INTELL FILLING THE CARRIAGE NOT OUT OF MY ARMORY <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 16.441,
+      "first_end_chunk_idx": 23,
+      "first_end_t": 11.5,
+      "latency_s": -4.940999999999999,
+      "n_chunks_run": 23,
+      "median_chunk_ms": 543.7234039418399,
+      "final_text": "HER BLACK HAIR WAS COILLED IN A HEAVY KNOT TO THE BACK OF HER NECK HER CARMINE LIPS WERE PARTED WITH A MOCKING ALLURING SMILE THE EXOTIC PERFUME OF HER ENVELOPED ME <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.555,
+      "first_end_chunk_idx": 31,
+      "first_end_t": 15.5,
+      "latency_s": 1.9450000000000003,
+      "n_chunks_run": 31,
+      "median_chunk_ms": 641.8812498450279,
+      "final_text": "I BROUGHT MY LONG SWORD DOWN UPON THE GOLDEN CHAIN THAT WOULD HAVE BOUND THE CAGGIOTHORUS TO ANOTHER IN AN INSTANT ALL WAS CONFUSION A THOUSAND DRAWN SWORDS MINISHED ME FROM EVERY QUARTER <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.05,
+      "first_end_chunk_idx": 25,
+      "first_end_t": 12.5,
+      "latency_s": 1.4499999999999993,
+      "n_chunks_run": 25,
+      "median_chunk_ms": 455.80636570230126,
+      "final_text": "WHEN THEY WERE CONSCIOUS THAT THE ADVANTAGES OF THE STATION WITH WHICH IT WAS CONNECTED MUST BE RELINQUISHED AT A DETERMINATE PERIOD THAN WHEN THEY WERE PERMITTED TO ENTERTAIN A HOPE OF OBTAINING <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    }
+  ]
+}
