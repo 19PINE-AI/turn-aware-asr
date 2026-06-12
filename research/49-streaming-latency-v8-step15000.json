@@ -1,0 +1,317 @@
+{
+  "checkpoint": "checkpoints/semantic_endpoint_v8_es/step15000.pt",
+  "summary": {
+    "n_examples": 30,
+    "n_detected": 30,
+    "detection_rate": 1.0,
+    "chunk_s": 0.5,
+    "latency_s_p50": -10.409812500000001,
+    "latency_s_p95": -0.4049999999999998,
+    "latency_s_mean": -9.64490625,
+    "latency_s_min": -15.940999999999999,
+    "latency_s_max": -0.06000000000000005,
+    "median_chunk_inference_ms": 767.0322254998609
+  },
+  "per_example": [
+    {
+      "audio_end_s": 15.935,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.435,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 1404.095268342644,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.6278125,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -13.6278125,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 771.5701886918396,
+      "final_text": "AND I USED TO IMAGINE I WAS LIVING HERE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 12.235,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -11.735,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 437.3910636641085,
+      "final_text": "UP <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0671875,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": -9.5671875,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 991.3220582529902,
+      "final_text": "WEREN'T NOW SENDING FLOWERS TO THE DEBUTANTS AND CUTTING IN ON THE YOUNGER MEN AT BALLS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.645,
+      "first_end_chunk_idx": 15,
+      "first_end_t": 7.5,
+      "latency_s": -0.14499999999999957,
+      "n_chunks_run": 15,
+      "median_chunk_ms": 1249.1850811056793,
+      "final_text": "THEIR PROMISES OF MUTUAL FIDELITY AND HOW EVERY NIGHT SINCE HE HAD BEEN NEAR THEY HAD MET IN SOME NEIGHBORING RUINS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.775,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": -10.275,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 848.0807770974934,
+      "final_text": "THIS TIME JENNY POPPED HER HEAD OUT AND HER LITTLE EYES FAIRLY SNAPPED <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.7073125,
+      "first_end_chunk_idx": 6,
+      "first_end_t": 3.0,
+      "latency_s": -11.7073125,
+      "n_chunks_run": 6,
+      "median_chunk_ms": 1047.608869150281,
+      "final_text": "HOW COULD I STAND BY AND SEE LIFE TAKEN <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 15.930875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.430875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 759.2276316136122,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 14.425,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": -9.925,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 935.6904341839254,
+      "final_text": "TEN DAYS OF A RELIGIOUS ARGUMENT THREE TIMES A DAY WOULD BE INTOLERABLE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.495,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -14.995,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 702.2337620146573,
+      "final_text": "SO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 10.56175,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": -5.06175,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 1435.112252831459,
+      "final_text": "WHICH CAME FROM THE STATE OF POLSGARD IN JUTLAND AND THE MATERIAL DID ALL IT PROMISED <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -12.875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 573.8403592258692,
+      "final_text": "ST <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 13.88,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -11.88,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 751.2797929812223,
+      "final_text": "AND UP THE SLOPES OF THE WASSATCH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.2749375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -13.7749375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 703.937703743577,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.18,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -1.6800000000000002,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 789.9325881153345,
+      "final_text": "IT DOESN'T SIGHT <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 15.0863125,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -13.0863125,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 514.9283946957439,
+      "final_text": "HE CAN USE ME ANY WAY HE WANTS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.0150625,
+      "first_end_chunk_idx": 5,
+      "first_end_t": 2.5,
+      "latency_s": -13.515062499999999,
+      "n_chunks_run": 5,
+      "median_chunk_ms": 601.0527741163969,
+      "final_text": "AND FLY IN THE FACE OF THE CATECHISM <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.5771875,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -11.5771875,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 762.4942623078823,
+      "final_text": "WHICH SHE TOOK FOR THE OCEAN <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.905,
+      "first_end_chunk_idx": 7,
+      "first_end_t": 3.5,
+      "latency_s": -0.4049999999999998,
+      "n_chunks_run": 7,
+      "median_chunk_ms": 815.9123822115362,
+      "final_text": "BY THE WAY GALLANT NED ARE YOU AFRAID OF SHARKS <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 9.725,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -9.225,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 508.98979790508747,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 12.121875,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -11.621875,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 430.1930507645011,
+      "final_text": "OH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 16.4098125,
+      "first_end_chunk_idx": 12,
+      "first_end_t": 6.0,
+      "latency_s": -10.409812500000001,
+      "n_chunks_run": 12,
+      "median_chunk_ms": 1061.0167658887804,
+      "final_text": "BUT HAD SENT WORD THAT I WAS TO BE HIS AND THE COLONEL'S GUEST AT THEIR HOUSE WHILE I REMAINED IN CHICAGO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 5.6689375,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -5.1689375,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 597.2255510278046,
+      "final_text": "OH YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 8.075,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -6.074999999999999,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 713.396477047354,
+      "final_text": "INSTEAD OF SMOKING BEFORE OUR EYES <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.187125,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -10.687125,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 483.89992490410805,
+      "final_text": "BUT NO <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.56,
+      "first_end_chunk_idx": 5,
+      "first_end_t": 2.5,
+      "latency_s": -0.06000000000000005,
+      "n_chunks_run": 5,
+      "median_chunk_ms": 726.8573837354779,
+      "final_text": "THE NEGOTIATIONS CAME TO A DEADLOCK <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 14.355,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": -9.855,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 962.4996562488377,
+      "final_text": "SIGNOR PASTRINI'S FACE ASSUMED AN EXPRESSION IMPOSSIBLE TO DESCRIBE <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 16.441,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -15.940999999999999,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 896.6555702500045,
+      "final_text": "YEAH <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 13.555,
+      "first_end_chunk_idx": 13,
+      "first_end_t": 6.5,
+      "latency_s": -7.055,
+      "n_chunks_run": 13,
+      "median_chunk_ms": 1349.1991581395268,
+      "final_text": "I BROUGHT MY LONG SWORD DOWN UPON THE GOLDEN CHAIN THAT WOULD HAVE BOUND THE JEJRA THORIS TO ANOTHER <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 11.05,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": -6.550000000000001,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 1287.4295199289918,
+      "final_text": "WHEN THEY WERE CONSCIOUS THAT THE ADVANTAGES OF THE STATION WITH WHICH IT WAS CONNECTED <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    }
+  ]
+}
