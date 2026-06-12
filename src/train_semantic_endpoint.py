@@ -325,6 +325,7 @@ def main():
           - disfluency: emit exactly 1 end marker (no over-fire)
           - truncated: emit ZERO markers (audio is incomplete)
           - trailing_silence: emit ≥ 1 marker (audio is complete + silence)
+          - no_fire: emit ZERO markers (complete utt, no trailing silence)
 
         Returns dict with per-schema accuracies.
         """
@@ -333,7 +334,8 @@ def main():
             model.thinker.model.config.use_cache = True
         s_hit = d_hit = f_correct = f_overfire = t_correct = t_misfire = 0
         ts_hit = ts_under = 0
-        s_n = d_n = f_n = t_n = ts_n = 0
+        nf_correct = nf_misfire = 0
+        s_n = d_n = f_n = t_n = ts_n = nf_n = 0
         with torch.no_grad():
             for e in holdout_examples:
                 audio = np.asarray(e["audio"], dtype=np.float32)
@@ -375,6 +377,10 @@ def main():
                     ts_n += 1
                     if n_end >= 1: ts_hit += 1
                     else: ts_under += 1
+                elif sch == "no_fire":
+                    nf_n += 1
+                    if n_end == 0: nf_correct += 1
+                    if n_end >= 1: nf_misfire += 1
         model.train()
         if hasattr(model.thinker.model.config, "use_cache"):
             model.thinker.model.config.use_cache = False
@@ -387,6 +393,8 @@ def main():
             "trunc_misfire": t_misfire / max(1, t_n),
             "trail_correct": ts_hit / max(1, ts_n),
             "trail_underfire": ts_under / max(1, ts_n),
+            "no_fire_correct": nf_correct / max(1, nf_n),
+            "no_fire_misfire": nf_misfire / max(1, nf_n),
         }
 
     best_score = -1.0
@@ -462,17 +470,20 @@ def main():
                 + 0.5 * m["disfl_correct"]
                 + 0.5 * m["trunc_correct"]
                 + 0.5 * m["trail_correct"]
+                + 0.5 * m["no_fire_correct"]
                 - 0.5 * m["disfl_overfire"]
                 - 0.5 * m["trunc_misfire"]
                 - 0.5 * m["trail_underfire"]
+                - 0.5 * m["no_fire_misfire"]
             )
             eval_log.append({"step": step, "score": score, **m})
             logger.info("EVAL step %5d  S=%.2f D=%.2f disfl-✓=%.2f disfl-✗=%.2f "
                          "trunc-✓=%.2f trunc-✗=%.2f trail-✓=%.2f trail-✗=%.2f "
-                         "score=%.3f (%.1fs)",
+                         "nf-✓=%.2f nf-✗=%.2f score=%.3f (%.1fs)",
                          step, m["single"], m["double"], m["disfl_correct"],
                          m["disfl_overfire"], m["trunc_correct"], m["trunc_misfire"],
                          m["trail_correct"], m["trail_underfire"],
+                         m["no_fire_correct"], m["no_fire_misfire"],
                          score, dt_eval)
             if score > best_score + 1e-6:
                 best_score = score
