@@ -1,0 +1,1816 @@
+{
+  "summary": {
+    "tau": 0.3,
+    "k": 2,
+    "refractory_s": 1.5,
+    "n_meetings_used": 6,
+    "single": {
+      "n": 50,
+      "n_hit": 44,
+      "hit_rate": 0.88,
+      "avg_n_fires": 1.1
+    },
+    "double_turn_detection": {
+      "n": 50,
+      "n_hit": 19,
+      "hit_rate": 0.38,
+      "avg_n_fires": 1.58
+    },
+    "disfl_correct_1_fire": {
+      "n": 50,
+      "n_hit": 12,
+      "hit_rate": 0.24,
+      "avg_n_fires": 2.22
+    },
+    "disfl_overfire_rate": 0.76
+  },
+  "per_example": [
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        9
+      ],
+      "T": 18,
+      "text": "FUNKY SH STUFF LIKE THAT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        60
+      ],
+      "T": 72,
+      "text": "WONDER HOW MUCH OF THE MEETINGS IS TALKING ABOUT THE STUFF AT THE MEETINGS"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 23,
+      "text": "YEAH EXACTLY YEAH YEAH YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 14,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 10,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        25
+      ],
+      "T": 42,
+      "text": "LOOK AT ALL THIS STUFF MAN"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 3,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 14,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        22
+      ],
+      "T": 39,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 4,
+      "text": "RIGHT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        10
+      ],
+      "T": 37,
+      "text": "SO WHAT DO WE NEED TO TALK ABOUT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 7,
+      "text": "SHOULD WE"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 9,
+      "text": "HAS ANYBODY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        34,
+        59,
+        87
+      ],
+      "T": 113,
+      "text": "WELL SHOULD WE JUST GO AROUND AND EVERYONE SAYS WHAT THEY D WHAT THEY'VE BEEN DO"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        52
+      ],
+      "T": 58,
+      "text": "HAS ANYBODY DONE ANYTHING"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 21,
+      "text": "NOT A LOT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 3,
+      "text": "NO"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        12
+      ],
+      "T": 14,
+      "text": "WELL I HOPE SO"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 12,
+      "text": "HMM"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 5,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 8,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 15,
+      "text": "SOUNDS LIKE YOU'VE DONE SOME STUFF"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        22
+      ],
+      "T": 27,
+      "text": "YOU BETTER START"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        26
+      ],
+      "T": 34,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        19
+      ],
+      "T": 35,
+      "text": "UH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        19
+      ],
+      "T": 25,
+      "text": "SO"
+    },
+    {
+      "schema": "single",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 42,
+      "text": "WELL I'VE GOT A BROWSER NOW WHICH WHOOPS"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 3,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 2,
+      "text": "'KAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 7,
+      "text": "ALREADY GONE"
+    },
+    {
+      "schema": "single",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        26,
+        44
+      ],
+      "T": 51,
+      "text": "GOOD START"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 4,
+      "text": "MM-HMM"
+    },
+    {
+      "schema": "single",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        22,
+        51,
+        69
+      ],
+      "T": 72,
+      "text": "OH I DON'T MIND AS WELL"
+    },
+    {
+      "schema": "single",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        8,
+        26
+      ],
+      "T": 41,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        17
+      ],
+      "T": 24,
+      "text": "GOOD AT THIS"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        18
+      ],
+      "T": 23,
+      "text": "THIS WASN'T A GOOD START"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 13,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 4,
+      "text": "OKAY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 6,
+      "text": "SORRY"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 4,
+      "text": "YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        9
+      ],
+      "T": 14,
+      "text": "SO YEAH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        93
+      ],
+      "T": 100,
+      "text": "WE'VE GO A BROWSER WE'VE UM WHICH COMES UP AUTOMATICALLY WITH A TRANSCRIPTION BO"
+    },
+    {
+      "schema": "single",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        37,
+        70
+      ],
+      "T": 94,
+      "text": "AND THEN WHEN YOU GO ON THE MENU YOU CAN SELECT A SUMMARISATION BOX WHICH POPS U"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 5,
+      "text": "RIGHT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        27
+      ],
+      "T": 54,
+      "text": "UM AND A S I THINK THE SEARCH WORKS AS WELL SO YOU COULD POP UP A SEARCH"
+    },
+    {
+      "schema": "single",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        45,
+        67
+      ],
+      "T": 84,
+      "text": "AND IT LOADS UP UM JUST THE BACKGROUND WINDOW IS EMPTY AND UM SO WHEN YOU START"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        22
+      ],
+      "T": 63,
+      "text": "YOU HAVE TO EITHER OPEN OPEN A PARTICULAR OBSERVATION OR DO A SEARCH AND OPEN IT"
+    },
+    {
+      "schema": "single",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 8,
+      "text": "DOES THAT MAKE SENSE"
+    },
+    {
+      "schema": "single",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        13,
+        73,
+        91
+      ],
+      "T": 93,
+      "text": "UM THE TRANSCRIPTION BOX HAS GOT A SUMMARISE BUT BUTTON WHICH DOESN'T DO ANYTHIN"
+    },
+    {
+      "schema": "single",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        26,
+        61
+      ],
+      "T": 99,
+      "text": "UM NOW I WONDER WH HOW WE WANNA DO YOU KNOW WE WANT A POP UP WINDOW WITH THE SPE"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 29,
+      "gap_s": 1.0399999618530273,
+      "text_a": "YEAH",
+      "text_b": "OKAY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        28
+      ],
+      "T": 43,
+      "gap_s": 0.18999958038330078,
+      "text_a": "RIGHT",
+      "text_b": "SO WHAT DO WE NEED TO TALK ABOUT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 31,
+      "gap_s": 1.2599992752075195,
+      "text_a": "SHOULD WE",
+      "text_b": "HAS ANYBODY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        7,
+        26
+      ],
+      "T": 27,
+      "gap_s": 0.8799991607666016,
+      "text_a": "NO",
+      "text_b": "WELL I HOPE SO"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        14
+      ],
+      "T": 29,
+      "gap_s": 0.2800006866455078,
+      "text_a": "WELL I HOPE SO",
+      "text_b": "HMM"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 17,
+      "gap_s": 0.29000091552734375,
+      "text_a": "YEAH",
+      "text_b": "OKAY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        26,
+        51,
+        69
+      ],
+      "T": 71,
+      "gap_s": 0.4099998474121094,
+      "text_a": "SO",
+      "text_b": "WELL I'VE GOT A BROWSER NOW WHICH WHOOPS"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 23,
+      "gap_s": 1.1399993896484375,
+      "text_a": "'KAY",
+      "text_b": "ALREADY GONE"
+    },
+    {
+      "schema": "double",
+      "n_fires": 5,
+      "meeting_id": "EN2002a",
+      "events": [
+        7,
+        36,
+        54,
+        73,
+        91
+      ],
+      "T": 93,
+      "gap_s": 1.44000244140625,
+      "text_a": "MM-HMM",
+      "text_b": "OH I DON'T MIND AS WELL"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        24,
+        44
+      ],
+      "T": 50,
+      "gap_s": 0.3000030517578125,
+      "text_a": "GOOD AT THIS",
+      "text_b": "THIS WASN'T A GOOD START"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        26,
+        44,
+        62
+      ],
+      "T": 71,
+      "gap_s": 2.7900009155273438,
+      "text_a": "THIS WASN'T A GOOD START",
+      "text_b": "OKAY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 14,
+      "gap_s": 0.2999992370605469,
+      "text_a": "OKAY",
+      "text_b": "SORRY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 21,
+      "gap_s": 0.31999969482421875,
+      "text_a": "YEAH",
+      "text_b": "SO YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        37,
+        69,
+        94
+      ],
+      "T": 116,
+      "gap_s": 1.4200057983398438,
+      "text_a": "AND THEN WHEN YOU GO ON THE MENU YOU CAN SELECT A SUMMARISAT",
+      "text_b": "RIGHT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        5,
+        57
+      ],
+      "T": 61,
+      "gap_s": 0.23999786376953125,
+      "text_a": "RIGHT",
+      "text_b": "UM AND A S I THINK THE SEARCH WORKS AS WELL SO YOU COULD POP"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        64,
+        82
+      ],
+      "T": 92,
+      "gap_s": 1.7300033569335938,
+      "text_a": "YOU HAVE TO EITHER OPEN OPEN A PARTICULAR OBSERVATION OR DO ",
+      "text_b": "DOES THAT MAKE SENSE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        13,
+        89
+      ],
+      "T": 120,
+      "gap_s": 1.5400009155273438,
+      "text_a": "DOES THAT MAKE SENSE",
+      "text_b": "UM THE TRANSCRIPTION BOX HAS GOT A SUMMARISE BUT BUTTON WHIC"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        1
+      ],
+      "T": 7,
+      "gap_s": 0.06999969482421875,
+      "text_a": "D YEAH",
+      "text_b": "HMM"
+    },
+    {
+      "schema": "double",
+      "n_fires": 5,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        24,
+        48,
+        80,
+        100
+      ],
+      "T": 115,
+      "gap_s": 2.7099990844726562,
+      "text_a": "HMM",
+      "text_b": "EITHER WE CAN WHEN YOU CLICK ON THE THE I. D. ANY SORT OF I."
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        5,
+        23
+      ],
+      "T": 30,
+      "gap_s": 0.3300018310546875,
+      "text_a": "THE L THE LEFT CLICK OR THE RIGHT CLICK",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 21,
+      "gap_s": 1.040008544921875,
+      "text_a": "YEAH",
+      "text_b": "RIGHT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 25,
+      "gap_s": 0.07000732421875,
+      "text_a": "RIGHT",
+      "text_b": "CAN YOU USE DOUBLE CLICK OR"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        19
+      ],
+      "T": 43,
+      "gap_s": 0.1100006103515625,
+      "text_a": "YEAH I DON'T KNOW",
+      "text_b": "UM I THINK SO YEAH WHEN YOU LEFT CLICK IT"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        63,
+        81
+      ],
+      "T": 107,
+      "gap_s": 1.9399871826171875,
+      "text_a": "YOU CAN FOR EXAMPLE SET SET THE MARKER THERE SO THAT THE MM ",
+      "text_b": "UM SO WE CAN'T PUT IT ON LEFT CLICK"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        31
+      ],
+      "T": 56,
+      "gap_s": 0.6999969482421875,
+      "text_a": "WE COULD FOR EXAMPLE HAVE A LITTLE MENU THAT POPS UP",
+      "text_b": "YEAH IT MIGHT BE QUITE GOOD I SUPPOSE"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        29,
+        52
+      ],
+      "T": 60,
+      "gap_s": 0.350006103515625,
+      "text_a": "WHAT ELSE COULD WE HAVE IN THE MENU",
+      "text_b": "THAT'S A GOOD POINT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        8,
+        29
+      ],
+      "T": 35,
+      "gap_s": 0.7100067138671875,
+      "text_a": "IS A WINDOW",
+      "text_b": "IT OPENS A MENU"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        8
+      ],
+      "T": 21,
+      "gap_s": 0.1100006103515625,
+      "text_a": "IF YOU JUST YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 15,
+      "gap_s": 0.5800018310546875,
+      "text_a": "SO",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 13,
+      "gap_s": 0.3699951171875,
+      "text_a": "YEAH",
+      "text_b": "HMM"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 34,
+      "gap_s": 0.3699951171875,
+      "text_a": "HMM",
+      "text_b": "UM OR JUST YOU KNOW OR JUST THE BUTTON"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        25
+      ],
+      "T": 40,
+      "gap_s": 0.9900054931640625,
+      "text_a": "UM OR JUST YOU KNOW OR JUST THE BUTTON",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 15,
+      "gap_s": 0.290008544921875,
+      "text_a": "HMM",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 17,
+      "gap_s": 0.220001220703125,
+      "text_a": "YEAH",
+      "text_b": "IT'S MORE"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        10,
+        28
+      ],
+      "T": 43,
+      "gap_s": 1.5399932861328125,
+      "text_a": "IT'S MORE",
+      "text_b": "WELL OH YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        28
+      ],
+      "T": 39,
+      "gap_s": 0.260009765625,
+      "text_a": "YEAH",
+      "text_b": "THAT'S TRUE YEAH IT'S MORE INTUITIVE REALLY ISN'T IT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        90,
+        126
+      ],
+      "T": 142,
+      "gap_s": 1.07000732421875,
+      "text_a": "UM BUT ACTUALLY WHAT WE COULD DO IS ON IN THAT MENU AS WELL ",
+      "text_b": "HMM"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        9
+      ],
+      "T": 37,
+      "gap_s": 0.58001708984375,
+      "text_a": "YEP",
+      "text_b": "IS THAT GONNA BE USEFUL OR TOO MUCH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 22,
+      "gap_s": 0.739990234375,
+      "text_a": "OR",
+      "text_b": "I GUESS SO"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        26,
+        81
+      ],
+      "T": 99,
+      "gap_s": 0.94000244140625,
+      "text_a": "YEAH SO Y WHEN YOU RIGHT CLICK ON IT ONE ONE OPTION WILL BE ",
+      "text_b": "YEP"
+    },
+    {
+      "schema": "double",
+      "n_fires": 4,
+      "meeting_id": "EN2002a",
+      "events": [
+        13,
+        31,
+        56,
+        74
+      ],
+      "T": 75,
+      "gap_s": 2.910003662109375,
+      "text_a": "GET TO USE MY PEN",
+      "text_b": "BROWSING SORT OF THINGY"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        8
+      ],
+      "T": 27,
+      "gap_s": 1.20001220703125,
+      "text_a": "YEAH",
+      "text_b": "YEAH THAT'S TRUE"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        4,
+        22
+      ],
+      "T": 40,
+      "gap_s": 1.8900146484375,
+      "text_a": "YEAH",
+      "text_b": "I DON'T KNOW ABOUT THAT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        48
+      ],
+      "T": 80,
+      "gap_s": 1.139984130859375,
+      "text_a": "HMM",
+      "text_b": "WE DON'T WE'RE NOT ACTUALLY SURE WHAT THE USER WANTS WITH IT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        63
+      ],
+      "T": 74,
+      "gap_s": 0.3699951171875,
+      "text_a": "WE DON'T WE'RE NOT ACTUALLY SURE WHAT THE USER WANTS WITH IT",
+      "text_b": "YEAH YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 10,
+      "gap_s": 0.089996337890625,
+      "text_a": "YEAH YEAH",
+      "text_b": "RIGHT"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 12,
+      "gap_s": 0.329986572265625,
+      "text_a": "RIGHT",
+      "text_b": "YEAH WELL"
+    },
+    {
+      "schema": "double",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        18,
+        38
+      ],
+      "T": 45,
+      "gap_s": 0.800018310546875,
+      "text_a": "AND IN THAT WAY BUT I DON'T KNOW",
+      "text_b": "I MEAN WE'RE NOT EVEN THERE YET"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 59,
+      "gap_s": 1.46002197265625,
+      "text_a": "OH YEAH",
+      "text_b": "Y WE HAVE TO FIRST DEFINE WHAT WHAT HAPPENS WHEN YOU CLICK O"
+    },
+    {
+      "schema": "double",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        37,
+        58,
+        76
+      ],
+      "T": 86,
+      "gap_s": 0.239990234375,
+      "text_a": "Y WE HAVE TO FIRST DEFINE WHAT WHAT HAPPENS WHEN YOU CLICK O",
+      "text_b": "WE HAVE TO HAVE A SPEAKER CHARACTERISATION FIRST BEFORE WE C"
+    },
+    {
+      "schema": "double",
+      "n_fires": 0,
+      "meeting_id": "EN2002a",
+      "events": [],
+      "T": 45,
+      "gap_s": 0.189971923828125,
+      "text_a": "TRUE YEAH",
+      "text_b": "SO SHOULD WE TRY TRY TO DO A RIGHT CLICK WHEN YOU THEN"
+    },
+    {
+      "schema": "double",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        35,
+        53,
+        75
+      ],
+      "T": 77,
+      "gap_s": 2.709991455078125,
+      "text_a": "SO SHOULD WE TRY TRY TO DO A RIGHT CLICK WHEN YOU THEN",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 18,
+      "gap_s": 0.16998291015625,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "double",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        39
+      ],
+      "T": 47,
+      "gap_s": 0.329986572265625,
+      "text_a": "YEP",
+      "text_b": "SO WE COULD DO THAT IN A SIMILAR WAY DO IT RIGHT CLICK AS WE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 45,
+      "gap_s": 1.29998779296875,
+      "text_a": "RIGHT",
+      "text_b": "ACTUALLY YEAH LIKE UM ANOTHER COMMON THING"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        13,
+        31,
+        87
+      ],
+      "T": 100,
+      "gap_s": 2.8800048828125,
+      "text_a": "YEAH",
+      "text_b": "I DON'T SEE THERE'S ANYTHING OBVIOUS THAT WAS THAT WOULD BE "
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        24
+      ],
+      "T": 40,
+      "gap_s": 2.67999267578125,
+      "text_a": "YEP",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        9,
+        27,
+        56
+      ],
+      "T": 67,
+      "gap_s": 2.730010986328125,
+      "text_a": "HMM",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 4,
+      "meeting_id": "EN2002a",
+      "events": [
+        1,
+        28,
+        46,
+        64
+      ],
+      "T": 74,
+      "gap_s": 1.5999755859375,
+      "text_a": "I GUESS IT DEPENDS ON THE",
+      "text_b": "YEAH WHAT YOU'RE CLICKING ON"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        35,
+        53
+      ],
+      "T": 106,
+      "gap_s": 2.90997314453125,
+      "text_a": "BUT YEAH",
+      "text_b": "WE MIGHT WANT TO BE ABLE TO SAY OH JUST GIVE ME WHAT THAT PE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        9,
+        48
+      ],
+      "T": 54,
+      "gap_s": 1.1600341796875,
+      "text_a": "WELL P",
+      "text_b": "W WE JUST SAY NO FOR NOW AND PUT IT IN LATER OR SOMETHING"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 25,
+      "gap_s": 1.3199462890625,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        13,
+        31
+      ],
+      "T": 92,
+      "gap_s": 2.54998779296875,
+      "text_a": "UM",
+      "text_b": "YEAH WH WHAT DO PEOPLE THINK IN GENERAL ABOUT THE WINDOWS CL"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        5
+      ],
+      "T": 35,
+      "gap_s": 1.27001953125,
+      "text_a": "HMM",
+      "text_b": "SO LIKE HAVE A TAB THERE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        9,
+        27
+      ],
+      "T": 36,
+      "gap_s": 1.90997314453125,
+      "text_a": "YEAH YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 25,
+      "gap_s": 1.3299560546875,
+      "text_a": "PROBABLY YEAH",
+      "text_b": "HMM"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 20,
+      "gap_s": 1.1500244140625,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        4,
+        22
+      ],
+      "T": 33,
+      "gap_s": 2.0999755859375,
+      "text_a": "YEAH",
+      "text_b": "TRUE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        9,
+        46
+      ],
+      "T": 57,
+      "gap_s": 1.32000732421875,
+      "text_a": "SO D",
+      "text_b": "YEAH DO YOU WANNA DO THAT WITH SUMMARIES IN"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        35
+      ],
+      "T": 59,
+      "gap_s": 1.0999755859375,
+      "text_a": "PUT THE SUMMARIES IN IN THE SAME WINDOW",
+      "text_b": "MUTUALLY EXCLUSIVE WITH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        9
+      ],
+      "T": 38,
+      "gap_s": 1.22998046875,
+      "text_a": "MM-HMM",
+      "text_b": "W WHAT WHERE YOU DOING AGAIN"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        4,
+        22,
+        43
+      ],
+      "T": 53,
+      "gap_s": 2.91998291015625,
+      "text_a": "HMM",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        24,
+        42
+      ],
+      "T": 52,
+      "gap_s": 2.280029296875,
+      "text_a": "BUT",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        7
+      ],
+      "T": 23,
+      "gap_s": 1.0799560546875,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        38
+      ],
+      "T": 45,
+      "gap_s": 1.1800537109375,
+      "text_a": "YEAH",
+      "text_b": "YOU KNOW A BUNCH ABOUT FILE THINGS"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        12,
+        34
+      ],
+      "T": 45,
+      "gap_s": 1.3800048828125,
+      "text_a": "ABSOLUTELY YEAH",
+      "text_b": "SHOULD SHARE AS MUCH AS POSSIBLE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        19,
+        37
+      ],
+      "T": 58,
+      "gap_s": 1.9300537109375,
+      "text_a": "SHOULD WE I DON'T KNOW",
+      "text_b": "MEET UP AND SEE WHAT WE COULD DO"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        3,
+        27,
+        51
+      ],
+      "T": 53,
+      "gap_s": 1.489990234375,
+      "text_a": "RIGHT",
+      "text_b": "WELL WELL YOU'RE IN S. P. N. L. P. AND S. P. TWO RIGHT"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        3,
+        21,
+        39
+      ],
+      "T": 42,
+      "gap_s": 2.4300537109375,
+      "text_a": "HMM",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        3,
+        21
+      ],
+      "T": 37,
+      "gap_s": 1.5999755859375,
+      "text_a": "OH YEAH",
+      "text_b": "OKAY"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        12,
+        30,
+        48
+      ],
+      "T": 51,
+      "gap_s": 2.0999755859375,
+      "text_a": "THEY'VE GOT D",
+      "text_b": "THAT IS PRETTY BIZARRE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        18,
+        36
+      ],
+      "T": 52,
+      "gap_s": 2.22998046875,
+      "text_a": "YEAH YEAH",
+      "text_b": "THAT IS PRETTY BIZARRE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        6
+      ],
+      "T": 25,
+      "gap_s": 1.5699462890625,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 6,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        24,
+        47,
+        67,
+        96,
+        114
+      ],
+      "T": 126,
+      "gap_s": 2.3199462890625,
+      "text_a": "YEAH",
+      "text_b": "YEAH SO I DON'T KNOW IF YOU'VE LOOKED AT THE SEARCH QUERY S "
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        47
+      ],
+      "T": 92,
+      "gap_s": 1.3800048828125,
+      "text_a": "BECAUSE EVERY EVERY OF ALL OF THESE UM",
+      "text_b": "THESE FILES HAVE GOT UM THA AN I. D."
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        5,
+        23
+      ],
+      "T": 30,
+      "gap_s": 1.5699462890625,
+      "text_a": "RIGHT",
+      "text_b": "OKEYDOKE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        5,
+        23
+      ],
+      "T": 29,
+      "gap_s": 1.739990234375,
+      "text_a": "YEAH",
+      "text_b": "OH NO"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        3,
+        31
+      ],
+      "T": 42,
+      "gap_s": 1.1800537109375,
+      "text_a": "WELL F",
+      "text_b": "UH UM YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        8,
+        26,
+        44
+      ],
+      "T": 57,
+      "gap_s": 2.6600341796875,
+      "text_a": "WHO WAS DOING THAT",
+      "text_b": "OH REALLY"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        3
+      ],
+      "T": 23,
+      "gap_s": 0.780029296875,
+      "text_a": "DAMN",
+      "text_b": "YEAH YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        7,
+        25
+      ],
+      "T": 39,
+      "gap_s": 2.2900390625,
+      "text_a": "NO",
+      "text_b": "I DON"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 4,
+      "meeting_id": "EN2002a",
+      "events": [
+        43,
+        61,
+        79,
+        97
+      ],
+      "T": 98,
+      "gap_s": 2.4599609375,
+      "text_a": "DID WE WANNA MEET BEFORE WE TALK TO STEVE NEXT WEEK",
+      "text_b": "WELL I DUNNO"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        44,
+        66
+      ],
+      "T": 73,
+      "gap_s": 1.199951171875,
+      "text_a": "WELL ACTUALLY DO WE WANNA SET A DATE FOR INTERIM PROTOTYPE",
+      "text_b": "SPECIFICALLY A DATE"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 4,
+      "meeting_id": "EN2002a",
+      "events": [
+        9,
+        27,
+        48,
+        68
+      ],
+      "T": 71,
+      "gap_s": 1.7799072265625,
+      "text_a": "YEAH",
+      "text_b": "JUST LOOKING AT MY OWN DEADLINES"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 4,
+      "meeting_id": "EN2002a",
+      "events": [
+        6,
+        24,
+        65,
+        89
+      ],
+      "T": 111,
+      "gap_s": 1.969970703125,
+      "text_a": "YEAH",
+      "text_b": "IT WOULD BE NICE TO I DON'T KNOW MEET UP AND UH YOU CAN SORT"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 1,
+      "meeting_id": "EN2002a",
+      "events": [
+        4
+      ],
+      "T": 26,
+      "gap_s": 1.1099853515625,
+      "text_a": "YEAH",
+      "text_b": "YEAH"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        7,
+        25,
+        45
+      ],
+      "T": 47,
+      "gap_s": 2.159912109375,
+      "text_a": "YEAH",
+      "text_b": "YEAH THAT'S AN OPTION TOO"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        7,
+        26
+      ],
+      "T": 42,
+      "gap_s": 1.25,
+      "text_a": "YEAH",
+      "text_b": "SO WHAT TIME DO WE SAY"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 2,
+      "meeting_id": "EN2002a",
+      "events": [
+        8,
+        28
+      ],
+      "T": 31,
+      "gap_s": 1.3599853515625,
+      "text_a": "THAT'S CANCELLED",
+      "text_b": "OH REALLY"
+    },
+    {
+      "schema": "disfluency",
+      "n_fires": 3,
+      "meeting_id": "EN2002a",
+      "events": [
+        4,
+        34,
+        53
+      ],
+      "T": 56,
+      "gap_s": 1.260009765625,
+      "text_a": "YEAH",
+      "text_b": "I THINK IT WAS UP TO THE PROFESSOR WHETHER THEY DID IT OR NO"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "tau": 0.5,
+  "k": 2,
+  "refractory_s": 1.5,
+  "summary": {
+    "solo_ls": {
+      "n_total": 237,
+      "avg_events_per_utt": 1.1012658227848102,
+      "min_events": 0,
+      "max_events": 6,
+      "fire_rate": 0.9746835443037974,
+      "hit_last_we_rate": 0.9493670886075949
+    },
+    "concat": {
+      "n_total": 62,
+      "avg_events_per_utt": 2.1451612903225805,
+      "min_events": 1,
+      "max_events": 5,
+      "fire_rate": 1.0,
+      "hit_last_we_rate": 0.8870967741935484,
+      "found_both_rate": 0.3709677419354839,
+      "found_only_post_b_rate": 0.532258064516129,
+      "found_only_gap_rate": 0.08064516129032258,
+      "found_neither_rate": 0.016129032258064516
+    },
+    "solo_ami": {
+      "n_total": 76,
+      "avg_events_per_utt": 1.263157894736842,
+      "min_events": 1,
+      "max_events": 3,
+      "fire_rate": 1.0,
+      "hit_last_we_rate": 0.9078947368421053
+    }
+  }
+}
