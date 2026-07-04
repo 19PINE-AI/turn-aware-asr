@@ -255,6 +255,10 @@ def main():
                     help="v9: expected marker count per example = END_TOK count in its "
                          "target text (exact match per schema); score = mean of per-schema "
                          "exact rates. Works for any schema set.")
+    p.add_argument("--resume", action="store_true",
+                    help="resume from the latest step*.pt in --checkpoint-dir "
+                         "(trainable weights + optimizer + step + best_score). For "
+                         "surviving OOM kills on a shared box via an auto-restart wrapper.")
     p.add_argument("--early-stop-patience", type=int, default=4,
                     help="Stop training if no improvement after N evals")
     args = p.parse_args()
@@ -421,10 +425,55 @@ def main():
     best_score = -1.0
     evals_since_best = 0
     eval_log = []
+    start_step = 0
+
+    # Resume: on a shared box the OOM killer can take the process mid-run
+    # (see research notes — global OOM targets the user session). Frequent
+    # step*.pt saves + this resume make a kill cost only a few hundred steps.
+    if args.resume:
+        ckpts = sorted(Path(args.checkpoint_dir).glob("step*.pt"),
+                       key=lambda p: int(p.stem[4:]))
+        if ckpts:
+            latest = ckpts[-1]
+            rk = torch.load(latest, weights_only=False, map_location="cpu")
+            model.load_state_dict(rk["trainable"], strict=False)
+            if rk.get("optimizer") is not None:
+                try:
+                    optim.load_state_dict(rk["optimizer"])
+                except Exception as e:
+                    logger.warning("optimizer state not restored (%s); continuing", e)
+            start_step = int(rk.get("step", 0))
+            best_score = float(rk.get("best_score", -1.0))
+            elog = Path(args.checkpoint_dir) / "eval_log.json"
+            if elog.exists():
+                import json as _json
+                eval_log = _json.loads(elog.read_text())
+            logger.info("RESUMED from %s at step %d (best_score %.3f)",
+                         latest, start_step, best_score)
+        else:
+            logger.info("--resume set but no step*.pt found; starting fresh")
+
+    def _save_step(step, extra_best=False):
+        trainable = {n: p.detach().cpu()
+                     for n, p in model.named_parameters() if p.requires_grad}
+        payload = {
+            "step": step, "trainable": trainable,
+            "tokenizer_vocab_size": len(tokenizer),
+            "new_ids": new_ids, "eager_id": eager_id, "end_id": end_id,
+            "best_score": best_score, "optimizer": optim.state_dict(),
+        }
+        tmp = Path(args.checkpoint_dir) / f"step{step}.pt.tmp"
+        torch.save(payload, tmp)
+        tmp.rename(Path(args.checkpoint_dir) / f"step{step}.pt")
+        # keep only the latest 2 step*.pt to bound disk (optimizer state is large)
+        olds = sorted(Path(args.checkpoint_dir).glob("step*.pt"),
+                      key=lambda p: int(p.stem[4:]))[:-2]
+        for p in olds:
+            p.unlink(missing_ok=True)
 
     model.train()
     cursor = 0
-    for step in range(args.steps):
+    for step in range(start_step, args.steps):
         if cursor + args.bsz > len(indices):
             rng.shuffle(indices)
             cursor = 0
@@ -463,18 +512,8 @@ def main():
                          torch.cuda.mem_get_info()[0] / 1e6)
 
         if step > 0 and step % args.save_every == 0:
-            ckpt_path = Path(args.checkpoint_dir) / f"step{step}.pt"
-            trainable = {n: p.detach().cpu()
-                         for n, p in model.named_parameters() if p.requires_grad}
-            torch.save({
-                "step": step,
-                "trainable": trainable,
-                "tokenizer_vocab_size": len(tokenizer),
-                "new_ids": new_ids,
-                "eager_id": eager_id,
-                "end_id": end_id,
-            }, ckpt_path)
-            logger.info("Saved %s (%d tensors)", ckpt_path, len(trainable))
+            _save_step(step)
+            logger.info("Saved step%d.pt (resumable)", step)
 
         # Periodic held-out eval + early stopping
         if args.eval_every > 0 and step > 0 and step % args.eval_every == 0:
