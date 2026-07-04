@@ -131,22 +131,33 @@ def build_ls_pool(ls_dir: str, n_needed: int, rng: random.Random,
             "Qwen/Qwen3-ASR-0.6B", cache_dir="data/qwen3-asr-0.6b-pkg",
             max_inference_batch_size=8, max_new_tokens=256)
         cache_path.parent.mkdir(parents=True, exist_ok=True)
-        for i, flac in enumerate(tqdm(todo, desc="base-transcribe")):
-            try:
-                audio, sr = sf.read(flac, dtype="float32")
-                if sr != SR:
+        BATCH = 8   # matches max_inference_batch_size; ~4-6x over per-utt loop
+        for i in tqdm(range(0, len(todo), BATCH), desc="base-transcribe"):
+            batch_flacs = todo[i: i + BATCH]
+            audios, valid = [], []
+            for flac in batch_flacs:
+                try:
+                    audio, sr = sf.read(flac, dtype="float32")
+                    if sr != SR:
+                        cache[flac] = ""
+                        continue
+                    if audio.ndim > 1:
+                        audio = audio.mean(axis=-1)
+                    audios.append((audio.astype(np.float32), sr))
+                    valid.append(flac)
+                except Exception as e:
+                    logger.warning("read failed %s: %s", flac, e)
                     cache[flac] = ""
-                    continue
-                if audio.ndim > 1:
-                    audio = audio.mean(axis=-1)
-                res = asr.transcribe(audio=(audio.astype(np.float32), sr))
-                cache[flac] = (res[0].text or "") if res else ""
-            except Exception as e:
-                logger.warning("transcribe failed %s: %s", flac, e)
-                cache[flac] = ""
-            if (i + 1) % 100 == 0:
-                cache_path.write_text(json.dumps(cache))
-        cache_path.write_text(json.dumps(cache))
+            if audios:
+                try:
+                    res = asr.transcribe(audio=audios)
+                    for flac, r in zip(valid, res):
+                        cache[flac] = (r.text or "") if r is not None else ""
+                except Exception as e:
+                    logger.warning("batch transcribe failed (%d utts): %s", len(audios), e)
+                    for flac in valid:
+                        cache[flac] = ""
+            cache_path.write_text(json.dumps(cache))
         del asr
         torch.cuda.empty_cache()
 
