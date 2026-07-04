@@ -455,6 +455,10 @@ def main():
     p.add_argument("--use-train-meetings", action="store_true",
                     help="dev mode: draw stretches from TRAIN meetings (for early stopping)")
     p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--progress-file", default="",
+                    help="append per-stretch results here and resume from it on restart "
+                         "(stretch order is deterministic given --seed); survives the "
+                         "shared box's OOM kills")
     p.add_argument("--out", required=True)
     args = p.parse_args()
 
@@ -492,12 +496,21 @@ def main():
     if args.max_segment_chunks:
         mode += f"+maxseg{args.max_segment_chunks}"
     per = []
-    for st in tqdm(stretches, desc=f"replay[{mode}]"):
+    if args.progress_file and Path(args.progress_file).exists():
+        per = [json.loads(l) for l in Path(args.progress_file).read_text().splitlines() if l.strip()]
+        logger.info("Resuming from %s: %d stretches already done", args.progress_file, len(per))
+    for i, st in enumerate(tqdm(stretches, desc=f"replay[{mode}]")):
+        if i < len(per):
+            continue
         dec = StreamDecoder(model, processor, tokenizer, committed=not args.from_scratch)
-        per.append(run_stretch(dec, st, args.chunk_s,
-                                energy_gate=args.energy_gate, gate_rms=args.gate_rms,
-                                confirm_chunks=args.confirm_silent_chunks,
-                                max_segment_chunks=args.max_segment_chunks))
+        r = run_stretch(dec, st, args.chunk_s,
+                        energy_gate=args.energy_gate, gate_rms=args.gate_rms,
+                        confirm_chunks=args.confirm_silent_chunks,
+                        max_segment_chunks=args.max_segment_chunks)
+        per.append(r)
+        if args.progress_file:
+            with open(args.progress_file, "a") as f:
+                f.write(json.dumps(r) + "\n")
 
     summary = aggregate(per, args.chunk_s, mode)
     logger.info("== REPLAY SUMMARY ==")
