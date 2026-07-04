@@ -13,8 +13,11 @@ biasing should actually matter.
 
 - Data: `distil-whisper/earnings22`, 150 utterances sampled uniformly
   across the shard (`--shuffle`, for company/entity diversity).
-- Entities: spaCy `en_core_web_sm` NER (PERSON/ORG/PRODUCT/GPE) — a real
-  NER, not the LibriSpeech ALL-CAPS heuristic.
+- Entities: **LLM (Claude Haiku 4.5)** via `eval/llm_entities.py` — batched,
+  cached, Gemini fallback. Replaces the earlier spaCy `en_core_web_sm` NER,
+  which mislabeled domain proper nouns on mixed-case earnings speech (kept
+  generic tokens like "Q4", missed tickers). The LLM keeps only genuine
+  biasing hotwords — person/company/product/ticker/place names.
 - Base `Qwen/Qwen3-ASR-0.6B` (no fine-tuning), three conditions per utt:
   NO_CTX / RELEVANT (this utt's entities in the system prompt) /
   DISTRACTOR (a different utt's entities).
@@ -22,24 +25,35 @@ biasing should actually matter.
 
 ## Results
 
+150 utts, 37 entity-bearing (LLM keeps only genuine proper nouns, so the
+entity-bearing rate is lower than spaCy's — the recall metric is now over
+real hotwords).
+
 | Metric | Value | Target (research/00) |
 |---|---|---|
-| Entity recall, no context | 75.0 % | — |
-| **Entity recall, relevant prefix** | **95.5 %** | ≥ 80 % ✓ |
-| **Recall uplift** | **+20.5 pp** | — |
-| Distractor hallucination rate | 5.1 % | ≤ 3 % ✗ (close) |
+| Entity recall, no context | 66.7 % | — |
+| **Entity recall, relevant prefix** | **95.6 %** | ≥ 80 % ✓ |
+| **Recall uplift** | **+28.9 pp** | — |
+| Distractor hallucination rate | 3.7 % | ≤ 3 % ✗ (close) |
 | WER, no context | 15.3 % | — |
-| WER, relevant prefix | 14.9 % | — |
-| WER, distractor prefix | 16.8 % | — |
+| WER, relevant prefix | 15.0 % | — |
+| WER, distractor prefix | 17.1 % | — |
+
+*(spaCy-NER run, for reference — `research/63-earnings22-biasing-spacy.json`:
+recall 75.0 %→95.5 %, +20.5 pp uplift, 5.1 % hallucination. Cleaner LLM
+entities lower the no-context baseline and raise the uplift.)*
 
 ## Interpretation
 
-1. **Biasing delivers a large, real recall gain on hard audio.** 75 % →
-   95.5 % (+20.5 pp) — an order of magnitude more headroom than the
+1. **Biasing delivers a large, real recall gain on hard audio.** 66.7 % →
+   95.6 % (+28.9 pp) — an order of magnitude more headroom than the
    saturated LibriSpeech test showed (which moved 97.4 → 98.6 %). On
    entity-dense speech the context prefix is doing substantial work, and
-   95.5 % clears the ≥ 80 % target comfortably. This is the differentiator
-   number, now measured where it counts.
+   95.6 % clears the ≥ 80 % target comfortably. This is the differentiator
+   number, now measured where it counts. (With cleaner LLM-extracted
+   entities the effect is *larger* than the spaCy run's +20.5 pp: genuine
+   proper nouns are rarer, so the no-context baseline is lower and the
+   prefix contributes more.)
 2. **A relevant prefix also nudges WER down** (15.3 → 14.9 %), while a
    distractor prefix nudges it up (→ 16.8 %) — the model uses the prefix
    as a genuine domain signal, consistent with research/16.
