@@ -247,16 +247,27 @@ class StreamDecoder:
 
 # ---------------------------------------------------------------- scoring
 
-def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float) -> dict:
+def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
+                energy_gate: bool = False, gate_rms: float = 1e-3) -> dict:
+    """energy_gate models the production composition policy (research/60):
+    never START a segment on a silent chunk — the LM only decodes once
+    speech energy has been observed. Motivated by the v5 replay finding
+    that the LM hallucinates text + spams fires on silence-only segments
+    (all v1-v8 training examples begin with speech)."""
     audio = stretch["audio"]
     n_chunks = int(np.ceil(len(audio) / (chunk_s * SR)))
     fires: list[float] = []
     flushed: list[str] = []
     prev_marker_count = 0
     dec.reset_segment()
+    n_gated = 0
 
     for k in range(n_chunks):
         chunk = audio[int(k * chunk_s * SR): int((k + 1) * chunk_s * SR)]
+        if (energy_gate and dec.buffer is None and
+                (len(chunk) == 0 or float(np.sqrt(np.mean(chunk ** 2))) < gate_rms)):
+            n_gated += 1
+            continue
         text = dec.step(chunk)
         n_mark = text.count(END_TOK)
         if n_mark > prev_marker_count:
@@ -324,6 +335,8 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float) -> dict:
         "latencies_s": recalled,
         "wer": wer(hyp_words, ref_words),
         "median_chunk_ms": float(np.median(dec.compute_ms)) if dec.compute_ms else None,
+        "n_chunks_gated": n_gated,
+        "n_chunks_total": n_chunks,
     }
 
 
@@ -362,6 +375,9 @@ def main():
     p.add_argument("--chunk-s", type=float, default=0.5)
     p.add_argument("--from-scratch", action="store_true",
                     help="v3-v8 protocol: re-decode from scratch each chunk (default: committed-prefix)")
+    p.add_argument("--energy-gate", action="store_true",
+                    help="production composition policy: never start a segment on a silent chunk")
+    p.add_argument("--gate-rms", type=float, default=1e-3)
     p.add_argument("--use-train-meetings", action="store_true",
                     help="dev mode: draw stretches from TRAIN meetings (for early stopping)")
     p.add_argument("--seed", type=int, default=0)
@@ -395,10 +411,13 @@ def main():
     logger.info("Loaded %s (step %s)", args.checkpoint, ckpt.get("step"))
 
     mode = "from_scratch" if args.from_scratch else "committed_prefix"
+    if args.energy_gate:
+        mode += "+gate"
     per = []
     for st in tqdm(stretches, desc=f"replay[{mode}]"):
         dec = StreamDecoder(model, processor, tokenizer, committed=not args.from_scratch)
-        per.append(run_stretch(dec, st, args.chunk_s))
+        per.append(run_stretch(dec, st, args.chunk_s,
+                                energy_gate=args.energy_gate, gate_rms=args.gate_rms))
 
     summary = aggregate(per, args.chunk_s, mode)
     logger.info("== REPLAY SUMMARY ==")

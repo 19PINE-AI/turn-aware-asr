@@ -56,6 +56,8 @@ observables.
 | 4 | `pair_fire` | A *complete* + gap 0.3–2.5 s + B (+ tail sil on 2/3) | `A M B M` (or `A M B`) | 2500 |
 | 5 | `pair_hold` | A *incomplete* (same spk) + gap 0.3–2.5 s + B + tail sil | `A B M` | 1500 |
 | 6 | `long_sil` | utterance + 2–4 s silence | `text M` | 500 |
+| 7 | `silence_only` | pure silence 0.5–4 s | *(empty)* | 800 |
+| 8 | `lead_sil` | silence 0.5–2 s + utterance + tail sil | `text M` | 700 |
 
 `M` = `<EAGER_END_SPEECH><END_SPEECH>`. Sources: LibriSpeech
 (~/data/LibriSpeech) and AMI train meetings (md5 % 3 ∈ {0,1}) roughly
@@ -74,6 +76,14 @@ Design notes:
 - #6 guards the timeout region: silence far beyond 1.2 s must still hold
   the already-emitted marker (no marker spam), and keeps long-silence
   audio in-distribution for the replay eval.
+- #7/#8 added 2026-07-04 after the first replay-eval run (research/61):
+  v5 on real timelines hallucinates text and spams fires on silence-only
+  segments — corr(silence duration, spurious fires) = 0.997 — because
+  every v1–v8 example begins with speech. #7 teaches silence → empty
+  output; #8 teaches that segments starting mid-silence (the normal case
+  after a flush) transcribe and fire normally. The production system
+  additionally front-gates the LM with an energy check (`--energy-gate`
+  in the replay eval), but the model must also be safe without it.
 - Fire markers ride ~0.3–0.5 s into the pause by construction (the pause
   exists in the audio); single_sil tail of 0.3–1.2 s trains the same
   anchor v5 had.

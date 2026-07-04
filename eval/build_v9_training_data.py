@@ -224,10 +224,11 @@ def main():
              truncated=2000,
              pair_fire_diff=1000, pair_fire_same=500, pair_fire_ls=1000,
              pair_hold_ls=1000, pair_hold_ami=500,
-             long_sil_ls=250, long_sil_ami=250)
+             long_sil_ls=250, long_sil_ami=250,
+             silence_only=800, lead_sil=700)
 
     ls_needed = (N["single_sil_ls"] + N["truncated"] + 2 * N["pair_fire_ls"]
-                 + N["pair_hold_ls"] + N["long_sil_ls"])
+                 + N["pair_hold_ls"] + N["long_sil_ls"] + N["lead_sil"])
     ls_pool = build_ls_pool(args.ls_dir, ls_needed, rng, Path(args.transcripts_cache))
     ami_singles, ami_diff, ami_same = build_ami_pools(args.ami_dir, rng)
 
@@ -325,6 +326,21 @@ def main():
                                             sil(rng.uniform(2.0, 4.0))]),
                             f"{u['text']} {M}", "long_sil", "ami",
                             meeting_id=u["meeting_id"]))
+
+    # ---- silence_only: pure silence -> EMPTY target, no markers.
+    # Discovered by the replay eval (research/61): every v1-v8 example
+    # begins with speech, so on real timelines (mostly silence on a
+    # single-speaker channel) the model hallucinates text and spams fires.
+    for _ in range(N["silence_only"]):
+        examples.append(ex(sil(rng.uniform(0.5, 4.0)), "", "silence_only", "synth"))
+
+    # ---- lead_sil: silence BEFORE speech -> normal transcript + marker.
+    # Segments in deployment start mid-silence; leading silence must not
+    # change transcription or firing behavior.
+    for u in take_ls(N["lead_sil"]):
+        cat = np.concatenate([sil(rng.uniform(0.5, 2.0)),
+                              trim_tail_silence(u["audio"]), tail()])
+        examples.append(ex(cat, f"{u['text']} {M}", "lead_sil", "ls"))
 
     rng.shuffle(examples)
     counts = defaultdict(int)
