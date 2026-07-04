@@ -44,13 +44,49 @@ research/60: a trivial RMS check in front of the LM. Within-segment
 behavior (including post-speech silence for the fire decision) is
 untouched — the gate only stops the LM from decoding pure silence.
 
-*(results pending — arms running; table filled in below when complete)*
-
-| Model | Recall | P50 | P95 | False /speech-min | Resume-rate | WER | Chunks gated |
+| Model | Recall | P50 | P95 | False /speech-min | Silence spam | WER med | WER mean |
 |---|---|---|---|---|---|---|---|
-| v3 + gate | | | | | | | |
-| v5 + gate | | | | | | | |
-| v8 + gate | | | | | | | |
+| v3 + gate | 0.907 | 0.04 s | 0.25 s | 88.8 | 42 | 0.80 | 0.85 |
+| v5 + gate | 0.917 | 0.16 s | 0.89 s | 27.3 | 23 | 0.31 | 0.36 |
+| **v8 + gate** | **0.935** | **0.25 s** | **0.56 s** | **3.6** | 25 | **0.27** | 4.96 |
+
+The gate does exactly its job: silence spam ~1500 → ~25 and WER stops
+being hallucination-dominated (v5 3.03 → 0.36). What remains is real
+model behavior:
+
+- **v8-12k + gate is the best endpointer**: 0.935 recall, P50 0.25 s,
+  3.6 false/min, median WER 0.27. Caveat: its WER *mean* (4.96) is a
+  tail effect — corr(avg segment length, WER) = 0.66; the worst stretch
+  (57 s continuous speech, zero fires, segment never flushes) collapses
+  into a repetition loop under committed-prefix decoding (WER 61).
+  The production fix is a **max-segment force-flush** — the
+  bound-the-resident-state principle (Metronome) applied to the
+  committed text stream. v5, which flushes every phrase, never hits it.
+- **v5 + gate over-segments at phrase level** (27 false/min). A
+  per-chunk decode trace (worst stretch) shows these are not artifacts:
+  the model holds fire mid-phrase ("BUTTONS WITH" + pause → no fire)
+  and fires at prosodically/semantically complete phrase ends followed
+  by 0.3–0.7 s pauses ("…TO RECAP ", "…RUBBER BUTTONS ") — exactly its
+  trained rule. Whether the speaker continues after a complete phrase
+  is unknowable at decision time; phrase-vs-turn is a **policy
+  threshold**, not a model defect.
+- **v3 + gate fires 89×/speech-min** — the offline "meeting champion"
+  is unusable in causal streaming.
+
+## Confirmation-policy sweep (phrase-vs-turn dial)
+
+`--confirm-silent-chunks h`: a marker is a *candidate*; the system fire
+is accepted only after h further silent chunks (0.5 s each); resumed
+speech within the window cancels the candidate and the segment
+continues. Latency floor becomes ~(h+1)·0.5 s.
+
+*(sweep running: v5 h=1,2; v8 h=1 — table below filled when done)*
+
+| Arm | Recall | P50 | P95 | False /min | Cancelled | WER med |
+|---|---|---|---|---|---|---|
+| v5 gate+confirm1 | | | | | | |
+| v5 gate+confirm2 | | | | | | |
+| v8 gate+confirm1 | | | | | | |
 
 ## Consequences
 
