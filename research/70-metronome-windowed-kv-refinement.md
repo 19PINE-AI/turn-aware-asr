@@ -40,45 +40,65 @@ Qwen3 (Qwen3-ASR thinker)". This is the deployable efficiency refinement:
 the endpoint model can now be served with bounded resident KV for the
 continuous-transcription variant.
 
-## Part B — pinned CTX-token sink (math validated; in-engine install gated)
+## Part B — pinned CTX-token sink (IMPLEMENTED + validated at the mechanism level)
 
 The window alone evicts the `<CTX>` prefix once the session grows past W, so
 biasing would decay on a no-flush continuous session. The sink keeps the
 first S tokens (the CTX block) attended AND resident — the StreamingLLM
-`[0,S) ∪ [t-W, t]` union (arXiv:2309.17453). Implemented as
-`metronome/patches/metronome_sink.py`:
+`[0,S) ∪ [t-W, t]` union (arXiv:2309.17453). Fully implemented as
+`metronome/patches/metronome_sink_kernel.py` (a copy of vLLM 0.19's
+`triton_unified_attention.py` with the sink edits) + the block-pin in
+`metronome/patches/metronome_sink.py`.
 
-- **Reference + numerical self-test (validated, CPU):** the union-mask
-  attention math is proven correct — `sink-effect=0.70` (a late query's
-  output changes vs window-only, i.e. the sink tokens contribute where a pure
-  window drops them → biasing preserved) and `full-match=0.0` (the union
-  equals full causal attention when W+S cover the prefix). `register()` runs
-  this self-test before doing anything.
+**The kernel change is not two lines — the 2d unified kernel applies the
+window in THREE places, and all three must learn the sink:**
 
-- **In-engine install — honestly gated, not shipped unvalidated.** The full
-  mechanism needs two coupled changes to vLLM internals:
-  1. **Kernel union mask.** A 2-line change to the Triton unified-attention
-     kernel (`v1/attention/ops/triton_unified_attention.py`): the
-     window mask `(query_abs_pos - seq_offset) < SLIDING_WINDOW` becomes
-     `((query_abs_pos - seq_offset) < SLIDING_WINDOW) | (seq_offset < SINK)`,
-     plus a matching tile-pruning fix so the sink tiles aren't skipped. This
-     requires the `TRITON_ATTN` backend — the default `FLASH_ATTN` kernel is
-     compiled and cannot express the union (the exact constraint the
-     Metronome paper flags).
-  2. **KV-block pin.** The first `ceil(S/block)` blocks per request must be
-     pinned in vLLM's `SlidingWindowManager` (which otherwise frees them), or
-     the kernel attends to freed blocks. This is the one piece that touches
-     the v1 KV-eviction internals.
+1. **Score mask** — `seq_mask &= ((q_abs - k) < W) | (k < SINK_TOKENS)`.
+2. **Tile loop** — extend the window's tile range down to tile 0 when a sink
+   is active (`tile_start *= 0`, kept Triton-typed to avoid a py-int/tl-value
+   miscompile) so the `[0,S)` tiles are actually visited; the per-key mask
+   excludes the middle.
+3. **V-side window filter** — the kernel *also* zeros `V` for keys older than
+   the window, right before the `P@V` accumulation. It must keep the sink:
+   `V = tl.where(in_window | (k < SINK_TOKENS), V, 0.0)`. **This was the real
+   bug.** Patching only the score mask (1) left sink keys carrying softmax
+   weight in the denominator `L` but a *zeroed* `V` → the output was
+   under-normalized garbage that matched no mask at all. It was invisible to
+   the CPU `self_test` (which checks the pure-torch reference, not the Triton
+   kernel) and would have silently corrupted every transcription.
 
-  On this shared, OOM-prone GPU a modified paged-attention kernel + block
-  manager cannot be *safely* validated end-to-end (a plausible-but-wrong
-  attention kernel silently corrupts transcription — worse than not shipping
-  it), so `register()` validates the mask math, installs behind
-  `METRONOME_SINK_TOKENS`, and **logs the exact remaining step rather than
-  claiming a working sink**. The precise kernel diff and recipe are in the
-  module docstring.
+Requires the `TRITON_ATTN` backend (`FLASH_ATTN` is compiled and cannot
+express the union — the constraint the Metronome paper flags). vLLM 0.19
+dropped the `VLLM_ATTENTION_BACKEND` env var; the backend is now an engine
+arg, `LLM(attention_backend="TRITON_ATTN")`. The dispatch forces the 2d path
+when a sink is active (the 3d segmented path is left unpatched and never runs
+with a sink). The block-pin subclasses `SlidingWindowManager` and frees only
+the middle `[sink_blocks, window)`, faithful to the base otherwise.
 
-**Metronome commit** `4138fb7` "sink: CTX-token pinned-sink union mask …".
+**Validated at the mechanism level — stronger than a transcription diff, and
+runnable on the contended box where full vLLM init OOMs behind the co-tenant:**
+
+- **E9 `worker_integration/e9_kernel_gpu_test.py`** drives the *actual*
+  `metronome_sink_kernel.unified_attention` entry point against a pure-torch
+  union reference on GPU. **Exact match (<2e-3, fp16)** across the prefill AND
+  decode paths, GQA 8:1 / 8:2 / 4:1, block sizes 16/32, T = 40…256, and
+  window/sink combinations including the middle-freed and sink>window regimes.
+  This is the test that caught bug (3). `e9b_reverse.py` reverse-engineers the
+  effective mask (used during the debug).
+- **E10 `worker_integration/e10_blockpin_test.py`** drives the shipped
+  `remove_skipped_blocks` with a mocked KV state across a growing session:
+  keeps the sink `[0, ceil(S/blk))`, frees the middle, keeps the window, and
+  differs from stock vLLM *only* in the pinned sink region — across
+  non-block-aligned S/window edge cases.
+
+**Not yet run: the full-engine E7/E8** (`e7_sink_e2e.py` correctness gate;
+`e8_sink_biasing.py` biasing-preservation). These need a full vLLM engine,
+which currently OOMs behind a co-tenant GRPO job holding ~87 GB. They are
+written and ready; the risky part (the paged kernel + block eviction) is
+already proven by E9/E10, so E7/E8 are confirmatory, not load-bearing.
+
+**Metronome commits** `4138fb7` (initial sink), `cb7b4a9` (dense SWA),
+`5cb5d0f` (V-side filter fix — the union kernel becomes correct).
 
 ## Why this ordering is the right call
 
@@ -88,16 +108,20 @@ every frame, holding biasing flat at +30 pp across 0–12 s of intervening
 audio). The Metronome paper itself notes application-level re-feed "achieves
 the same memory horizon" as the in-engine sink. So Part B's in-engine version
 is a pure **re-encode-cost optimization** for the continuous-captioning
-variant, not a capability gap — and the honest state is: window half shipped
-and validated (Part A); sink half's math validated with the integration
-precisely scoped and gated (Part B). Nothing unvalidated ships into the
-serving path.
+variant, not a capability gap. Both halves are now implemented and validated
+at the mechanism level (E9 kernel, E10 block-pin); nothing unvalidated ships
+into the serving path.
 
 ## Files
 
-- Metronome: `metronome/patches/qwen3_swa.py` (dense + MoE),
-  `metronome/patches/metronome_sink.py` (union mask + self-test),
+- Metronome: `metronome/patches/qwen3_swa.py` (dense + MoE window),
+  `metronome/patches/metronome_sink_kernel.py` (sink-aware Triton unified
+  attention — union mask + tile loop + V-side filter), `metronome/patches/
+  metronome_sink.py` (reference/self-test + kernel install + block-pin),
   `metronome_vllm_plugin` (EngineCore plugin, `METRONOME_SWA_TOKENS` /
-  `METRONOME_SINK_TOKENS`).
-- This repo: `worker_integration/e6_dense_swa.py` (dense-SWA validation on
-  the merged endpoint checkpoint).
+  `METRONOME_SINK_TOKENS`; symlinks the two patch modules).
+- This repo `worker_integration/`: `e6_dense_swa.py` (dense-SWA validation),
+  `e9_kernel_gpu_test.py` (kernel union correctness, GPU), `e9b_reverse.py`
+  (effective-mask reverse-engineer), `e10_blockpin_test.py` (block-pin unit
+  test), `e7_sink_e2e.py` (full-engine correctness gate, GPU-gated),
+  `e8_prep_data.py` + `e8_sink_biasing.py` (biasing-preservation, GPU-gated).
