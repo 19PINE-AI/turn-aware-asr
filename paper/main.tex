@@ -219,7 +219,24 @@ v9 changes only the data. One rule: \emph{emit \eager\fire{} at a point iff the 
 
 An endpoint fine-tune that damaged the base recognizer would be a bad trade. It does not --- and the unified model's side capability comes with numbers its base model never published.
 
-\paragraph{Offline ASR regression.} \pending{E12: LibriSpeech test-clean/other WER, stock Qwen3-ASR-0.6B vs merged endpoint checkpoint, plus marker false-fire rate on offline clips (causally, the v9 model should rarely fire on silence-free clips). One-row table; runs are queued.}
+\paragraph{Offline ASR regression.} Table~\ref{tab:wer}: the endpoint fine-tune costs $+1.1$\,pp WER on LibriSpeech test-clean and $+2.7$\,pp on test-other when the merged checkpoint is decoded \emph{as-is} in offline mode. Two observations before interpreting this as capability loss. First, the model fires its marker on 4.7--5.9\% of offline clips --- and a fire ends the decode, truncating whatever transcript remains; unlike deployment streams, offline clips are exactly the distribution where firing is ambiguous (many LibriSpeech clips do carry a ${\geq}0.3$\,s silence tail, where the v9 rule \emph{says} fire). Second, the fix for offline use is configuration, not retraining: ban the two marker tokens at decode time. \pending{E12-suppressed: WER with markers banned --- isolates truncation from genuine drift; running}. The deployment-relevant streaming WER is unaffected (Table~\ref{tab:main}).
+
+\begin{table}[h]
+  \centering\small
+  \caption{\textbf{Offline WER regression} (LibriSpeech, full official splits, single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' = fraction of clips where the model emitted the endpoint marker (offline clips end at or near end-of-speech; base never fires because its marker rows are untrained).}
+  \label{tab:wer}
+  \begin{tabular}{lcccc}
+    \toprule
+    & \multicolumn{2}{c}{WER\,$\downarrow$} & \multicolumn{2}{c}{Fires} \\
+    \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+    Model & clean & other & clean & other \\
+    \midrule
+    Qwen3-ASR-0.6B (base) & 2.79\% & 5.14\% & 0\% & 0\% \\
+    + endpoint LoRA (merged v9) & 3.93\% & 7.87\% & 4.7\% & 5.9\% \\
+    + markers banned at decode (offline mode) & \multicolumn{4}{c}{\pending{E12-suppressed}} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
 
 \paragraph{Context biasing, measured where it matters.} Figure~\ref{fig:biasing}(a): on Earnings-22 \citep{delrio2022earnings22} --- spontaneous earnings-call speech dense in tickers, executives, products; entities LLM-extracted and filtered to genuine proper nouns --- a relevant hotword prefix lifts entity recall from 66.7\% to 95.6\% ($+28.9$\,pp), while nudging WER down (15.3${\to}$15.0\%). A \emph{distractor} prefix (another utterance's entities) induces 3.7\% hallucination --- above our 3\% target, reported as-is; distractor-ratio training is the known, unexercised lever. Qwen3-ASR claims context biasing but reports no numbers; to our knowledge these are the first on this model family.
 

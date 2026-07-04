@@ -1,0 +1,15 @@
+{
+  "model": "checkpoints/merged/qwen3-asr-0.6b-endpoint-v9",
+  "results": {
+    "test-clean": {
+      "n": 2620,
+      "wer": 0.03925745587340231,
+      "marker_fire_rate": 0.04732824427480916
+    },
+    "test-other": {
+      "n": 2939,
+      "wer": 0.07869247081749231,
+      "marker_fire_rate": 0.05852330724736305
+    }
+  }
+}

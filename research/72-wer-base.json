@@ -1,0 +1,15 @@
+{
+  "model": "Qwen/Qwen3-ASR-0.6B",
+  "results": {
+    "test-clean": {
+      "n": 2620,
+      "wer": 0.02786442483262325,
+      "marker_fire_rate": 0.0
+    },
+    "test-other": {
+      "n": 2939,
+      "wer": 0.05135357163326519,
+      "marker_fire_rate": 0.0
+    }
+  }
+}

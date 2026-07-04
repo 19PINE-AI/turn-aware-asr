@@ -51,6 +51,10 @@ def main():
     ap.add_argument("--gpu-mem", type=float, default=0.28)
     ap.add_argument("--batch", type=int, default=32)
     ap.add_argument("--limit", type=int, default=0, help="0 = full split")
+    ap.add_argument("--suppress-markers", action="store_true",
+                    help="ban the endpoint marker tokens at decode time (offline mode): "
+                         "isolates how much of any WER delta is marker emission ending "
+                         "decodes early vs. genuine capability loss")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -60,7 +64,10 @@ def main():
               gpu_memory_utilization=args.gpu_mem, max_model_len=8192,
               enable_prefix_caching=False, limit_mm_per_prompt={"audio": 1},
               enforce_eager=True)
-    sp = SamplingParams(temperature=0.0, max_tokens=440, skip_special_tokens=False)
+    kw = {}
+    if args.suppress_markers:
+        kw["bad_words"] = [EAGER, END]
+    sp = SamplingParams(temperature=0.0, max_tokens=440, skip_special_tokens=False, **kw)
 
     results = {}
     for split in args.splits.split(","):
