@@ -1,15 +1,38 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
+
+% ── Encoding ──
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% ── Professional preprint style (shared arxiv.sty template):
+%    Palatino body + matching math, Helvetica-clone sans headings, a ruled
+%    centred title block, and a slim running header. It also provides page
+%    geometry, so no separate geometry package is loaded here.
+\usepackage{arxiv}
+
+% ── Content packages ──
+\usepackage{natbib}
+\usepackage{url}
 \usepackage{booktabs}
+\usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
-\usepackage[round]{natbib}
-\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\tcbuselibrary{skins,breakable}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
+
+% ── hyperref loaded late, then coloured to match the palette ──
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=arxivaccent,
+  citecolor=arxivaccent,
+  urlcolor=arxivaccent,
+  filecolor=arxivaccent,
+  breaklinks=true,
+}
+
 \graphicspath{{figures/}}
 
 % pending numbers (E12 offline WER regression, E13 fresh-set replay)
@@ -18,9 +41,17 @@
 \newcommand{\eager}{\texttt{<EAGER\_END\_SPEECH>}}
 \newcommand{\ctx}{\texttt{<CTX>}}
 
-\title{\textbf{Turn-Aware Streaming ASR in One Small Open Model:\\ Causal Labels for End-of-Turn Detection}}
-\author{Bojie Li\\ \texttt{boj@19pine.ai}}
-\date{July 2026}
+\title{Turn-Aware Streaming ASR in One Small Open Model:\\ Causal Labels for End-of-Turn Detection}
+
+% Author email (not for publication): Noah Shi <noahshi@cs.washington.edu>
+\author{%
+  \begin{tabular}{@{}c@{\hspace{4em}}c@{}}
+    Bojie Li & Noah Shi \\
+    Pine AI & University of Washington
+  \end{tabular}%
+}
+\date{}
+\runningtitle{Turn-Aware Streaming ASR in One Small Open Model}
 
 \begin{document}
 \maketitle
@@ -254,8 +285,17 @@ Candidates we believe are affected: turn-taking policies for full-duplex agents 
 
 Single-speaker, single-channel English; the mixed-channel meeting shape is future work. Semantic completeness labels come from a heuristic transcript classifier (fillers, connectives, short-utterance rules); a learned completeness judge is the obvious next lever on the residual 3\% recall gap. Distractor hallucination (3.7\%) exceeds our 3\% target. Quick resumes are always segmented (resume rate 1.0); merging them costs $+0.5$\,s via the confirm knob or requires post-hoc fusion. Concurrency numbers are contention-caveated lower bounds from a shared GPU. The benchmark's 25 stretches (96 turn-final boundaries) were used during development; the fresh-stretch confirmation run is \pending{E13}. Offline WER regression is \pending{E12}.
 
+% ════════════════════════════════════════════════════════════
+\section*{Acknowledgements}
+% ════════════════════════════════════════════════════════════
+
+This paper was produced using Pine Copilot's voice-directed \emph{whisper coding} workflow~\citep{pineai2026whispercoding}, in which the authors specify, discuss, and review the work by voice while a coding agent---Claude Code with Claude Opus 4.8---carries out the planning, coding, experiments, and paper writing.
+We thank BSQL Networking for hosting the NVIDIA RTX PRO 6000 GPU.
+
 \bibliographystyle{plainnat}
 \bibliography{refs}
+
+\clearpage
 
 \appendix
 

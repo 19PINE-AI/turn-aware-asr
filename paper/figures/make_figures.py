@@ -23,8 +23,18 @@ OKABE = {
     "red": "#D55E00", "purple": "#CC79A7", "sky": "#56B4E9",
     "grey": "#808080", "yellow": "#F0E442", "black": "#111111",
 }
+import matplotlib.font_manager as fm
+for _f in ("/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-regular.otf",
+           "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-bold.otf",
+           "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-italic.otf",
+           "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyrepagella-bolditalic.otf"):
+    try:
+        fm.fontManager.addfont(_f)
+    except Exception:
+        pass
 plt.rcParams.update({
     "font.family": "serif",
+    "font.serif": ["TeX Gyre Pagella", "DejaVu Serif"],
     "font.size": 9,
     "axes.titlesize": 9.5,
     "axes.labelsize": 9,
