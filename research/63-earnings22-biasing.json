@@ -1,0 +1,2304 @@
+{
+  "model": "Qwen/Qwen3-ASR-0.6B",
+  "backend": "pkg",
+  "dataset": "distil-whisper/earnings22",
+  "summary": {
+    "n_utterances": 150,
+    "wer_no_ctx": 15.328467153284672,
+    "wer_relevant": 14.927007299270073,
+    "wer_distractor": 16.751824817518248,
+    "entity_recall_no_ctx": 0.75,
+    "entity_recall_relevant": 0.9545454545454546,
+    "entity_recall_uplift_pp": 20.45454545454546,
+    "distractor_entity_count": 178,
+    "distractor_hallucination_rate": 0.05056179775280899
+  },
+  "per_utterance": [
+    {
+      "utt_id": "4482311-34",
+      "ref": "Very strong demand in the US and Europe for champagne with the gradual reopening of restaurants um, resumption of tourism.",
+      "ref_entities": [
+        "US"
+      ],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Very strong demand in the US and Europe for champagne with the gradual reopening of restaurants, resumption of tourism.",
+      "hyp_relevant": "There is very strong demand in the US and Europe for champagne with the gradual reopening of restaurants, resumption of tourism.",
+      "hyp_distractor": "There is very strong demand in the US and Europe for champagne with the gradual reopening of restaurants, resumption of tourism.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-60",
+      "ref": "And this is obviously to the disadvantage of the reported, uh, SMB growth.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "Gustavo Dudamel",
+        "Paris"
+      ],
+      "hyp_no_ctx": "And this is obviously to the disadvantage of the reported SMB growth.",
+      "hyp_relevant": "And this is obviously to the disadvantage of the reported SMB growth.",
+      "hyp_distractor": "And this is obviously to the disadvantage of the reported SMB growth.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-79",
+      "ref": "Those strategic partnerships are a major driver for our long term growth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Nigo"
+      ],
+      "hyp_no_ctx": "Those strategic partnerships are a major driver for our long-term growth.",
+      "hyp_relevant": "Those strategic partnerships are a major driver for our long-term growth.",
+      "hyp_distractor": "Those strategic partnerships are a major driver for our long-term growth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-298",
+      "ref": "Which leads me to the share buyback program.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Max"
+      ],
+      "hyp_no_ctx": "Which leads me to the share buyback.",
+      "hyp_relevant": "Which leads me to the share buyback.",
+      "hyp_distractor": "Which leads me to the share buyback program.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-123",
+      "ref": "Well uh, Chaumet needs no introduction.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Well, Shmur needs no introduction.",
+      "hyp_relevant": "Well, Shmur needs no introduction.",
+      "hyp_distractor": "Well, Q4 needs no introduction.",
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 1.0
+    },
+    {
+      "utt_id": "4482311-88",
+      "ref": "Great uh, Japanese artistic director, Nigo, and the first show was held this past weekend.",
+      "ref_entities": [
+        "Nigo"
+      ],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Great Japanese artistic director Nigo and the first show was held this past weekend.",
+      "hyp_relevant": "Great Japanese artistic director Nigo and the first show was held this past weekend.",
+      "hyp_distractor": "Great Japanese artistic director Nigo and the first show was held this past weekend.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-478",
+      "ref": "Now of course, uh, the uh, the products of Tiffany are iconic.",
+      "ref_entities": [
+        "Tiffany"
+      ],
+      "distractor_entities": [
+        "IoT"
+      ],
+      "hyp_no_ctx": "Now of course, the products of Tiffany are iconic.",
+      "hyp_relevant": "Now, of course, the products of Tiffany are iconic.",
+      "hyp_distractor": "Now, of course, the products of Tiffany are iconic.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-23",
+      "ref": "This regards our commitment for the environment.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "As regards our commitment for the environment.",
+      "hyp_relevant": "As regards our commitment for the environment.",
+      "hyp_distractor": "As regards our commitment for the environment, I.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-125",
+      "ref": "Um, uh, we believe that the prospects are very good.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "OT",
+        "AR"
+      ],
+      "hyp_no_ctx": "Japan, and we believe that the prospects are very good.",
+      "hyp_relevant": "Japan, and we believe that the prospects are very good.",
+      "hyp_distractor": "Japan, and we believe that the prospects are very good.",
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.5
+    },
+    {
+      "utt_id": "4482311-500",
+      "ref": "And I'm fine with other brands doing it, uh, fine, let them do this, they want to generate revenue uh, in this cheap way but they want to they have to produce revenue figures.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "US"
+      ],
+      "hyp_no_ctx": "And I'm fine with other brands doing it. Fine, let them do this. They want to generate revenue in this cheap way, but they want to they have to produce revenue figures.",
+      "hyp_relevant": "And I'm fine with other brands doing it. Fine, let them do this. They want to generate revenue in this cheap way, but they want to they have to produce revenue figures.",
+      "hyp_distractor": "And I'm fine with other brands doing it. Fine, let them do this. They want to generate revenue in this cheap way, but they want to they have to produce revenue figures.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-114",
+      "ref": "We come to the SMB business, page 14.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "hyp_no_ctx": "We come to the SMB business page fourteen.",
+      "hyp_relevant": "We come to the SMB business page fourteen.",
+      "hyp_distractor": "We come to the SMB business page fourteen.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.5
+    },
+    {
+      "utt_id": "4482311-119",
+      "ref": "Hublot continues to grow with several iconic uh, watches including that with .",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Ublox continues to grow with several iconic watches, including that with Murakami.",
+      "hyp_relevant": "Ublox continues to grow with several iconic watches, including that with Murakami.",
+      "hyp_distractor": "Ublox continues to grow with several iconic watches, including that with Murakami.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-433",
+      "ref": "And then uh, who is going to replace Vir- Virginia at uh, Louis Vuitton.",
+      "ref_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "distractor_entities": [
+        "Paris"
+      ],
+      "hyp_no_ctx": "And then who is going to replace Virginia Bloom at Louis Vuitton?",
+      "hyp_relevant": "And then who is going to replace Virginia Blon at Louis Vuitton?",
+      "hyp_distractor": "And then who is going to replace Virginia Bloom at Louis Vuitton?",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-89",
+      "ref": "Moving to perfumes and cosmetics.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Moving to perfumes and cosmetics.",
+      "hyp_relevant": "Moving to perfumes and cosmetics.",
+      "hyp_distractor": "Moving to perfumes and cosmetics.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-274",
+      "ref": "And clearly that means this healthy cash flow adds to an already strong liquidity position as you can see in the next chart.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "hyp_no_ctx": "Clearly, that means this healthy cash flow adds to an already strong liquidity position, as you can see in the next chart.",
+      "hyp_relevant": "Clearly, that means this healthy cash flow adds to an already strong liquidity position, as you can see in the next chart.",
+      "hyp_distractor": "And clearly, that means this healthy cash flow adds to an already strong liquidity position, as you can see in the next chart.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-517",
+      "ref": "Thank you.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "Thank you.",
+      "hyp_relevant": "Thank you.",
+      "hyp_distractor": "Thank you.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-142",
+      "ref": "Due to increased monetization as well as more competition at the low end, our ecosystem has been declining.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Max"
+      ],
+      "hyp_no_ctx": "Due to increased monetization as well as more competition at the low end, our ecosystem has been declining.",
+      "hyp_relevant": "Due to increased monetization as well as more competition at the low end, our ecosystem has been declining.",
+      "hyp_distractor": "Due to increased monetization as well as more competition at the low end, our ecosystem has been declining.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-250",
+      "ref": "Uh, the closing of the acquisition of the businesses from Danaher has also been taking place in 2020, uh, and hasn't been that, that small.",
+      "ref_entities": [
+        "Danaher"
+      ],
+      "distractor_entities": [
+        "Ford"
+      ],
+      "hyp_no_ctx": "The closing of the acquisition of the businesses from Danaher has also been taking place in two thousand and twenty, and hasn't been that that small.",
+      "hyp_relevant": "The closing of the acquisition of the businesses from Danaher has also been taking place in two thousand and twenty, and hasn't been that that small.",
+      "hyp_distractor": "The closing of the acquisition of the businesses from Danaher has also been taking place in two thousand and twenty, and hasn't been that that small.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-694",
+      "ref": "Um, how is that looking in, in the fourth quarter and how are you thinking about the trends progressing into FY 22?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Paris"
+      ],
+      "hyp_no_ctx": "How is that looking in the fourth quarter? And how are you thinking about the trends progressing into FY Twenty Two?",
+      "hyp_relevant": "How is that looking in the fourth quarter? And how are you thinking about the trends progressing into FY Twenty Two?",
+      "hyp_distractor": "How is that looking in the fourth quarter? And how are you thinking about the trends progressing into FY Twenty Two?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-305",
+      "ref": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, uh, and so forth.",
+      "ref_entities": [
+        "EU"
+      ],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+      "hyp_relevant": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+      "hyp_distractor": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-174",
+      "ref": "Within REMAX we also introduced the task force to upgrade our website and digital marketing.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+      "hyp_relevant": "Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+      "hyp_distractor": "Within Remax, we also introduced the task force to upgrade our website and digital marketing. All.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-338",
+      "ref": "Your first question is coming from George Webb at Morgan Stanley.",
+      "ref_entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "The first question is coming from George Webb at Morgan Stanley.",
+      "hyp_relevant": "The first question is coming from George Webb at Morgan Stanley.",
+      "hyp_distractor": "The first question is coming from George Webb at Morgan Stanley.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-78",
+      "ref": "Not only producing great uh, shows, the um, couture in uh, Paris and others such as the bag here which is the um, and it's um, um, on a waiting list just about everywhere.",
+      "ref_entities": [
+        "Paris"
+      ],
+      "distractor_entities": [
+        "US"
+      ],
+      "hyp_no_ctx": "Not only producing great shows, the couture in Paris and others such as the bag here, which is the medal first and it's on a waiting list just about everywhere.",
+      "hyp_relevant": "Not only producing great shows, the couture in Paris and others such as the bag here, which is the model first and it's on a waiting list just about everywhere.",
+      "hyp_distractor": "Not only producing great shows, the couture in Paris and others such as the bag here, which is the model first, and it's on a waiting list just about everywhere.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 1.0
+    },
+    {
+      "utt_id": "4483589-669",
+      "ref": "Yeah, I think maybe for my side to add to this.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "OT",
+        "AR"
+      ],
+      "hyp_no_ctx": "Planes. Yeah, I think maybe from my side to add to this.",
+      "hyp_relevant": "Planes. Yeah, I think maybe from my side to add to this.",
+      "hyp_distractor": "Um, uh, planes. Yeah, I think maybe from my side to add to this.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-497",
+      "ref": "And I can fit one more in.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Ford"
+      ],
+      "hyp_no_ctx": "And I if I could fit one more in.",
+      "hyp_relevant": "And I if I could fit one more in.",
+      "hyp_distractor": "And I if I could fit one more in.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-369",
+      "ref": "A, uh, obviously continues upsell into the install base, more use cases, more embedded products, uh, cross selling activities scale going on.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "A obviously continues upsell into the install base, more use cases, more embedded products, cross selling activities going on, so.",
+      "hyp_relevant": "A obviously continues upsell into the install base, more use cases, more embedded products, cross selling activities going on, so.",
+      "hyp_distractor": "A obviously continues upsell into the install base, more use cases, more embedded products, cross selling activities going on, so.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-295",
+      "ref": "Uh, so finally, uh, we consistently maintained a strong cash flow and I think the profitable growth in the enterprise, as well as the SMB business in combination, uh, with our now well balanced billings and costs grow cost growth will further boost cash generation going forward.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "CapEx"
+      ],
+      "hyp_no_ctx": "So finally, we consistently maintain this strong cash flow, and I think the profitable growth in the enterprise as well as the SMB business in combination with our now well balanced billings and cost growth will further boost cash generation going forward.",
+      "hyp_relevant": "So finally, we consistently maintain this strong cash flow, and I think the profitable growth in the enterprise as well as the SMB business in combination with our now well balanced billings and cost growth will further boost cash generation going forward.",
+      "hyp_distractor": "So finally, we consistently maintain this strong cash flow, and I think the profitable growth in the enterprise as well as the SMB business in combination with our now well balanced billings and cost growth will further boost cash generation going forward.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-616",
+      "ref": "I don't think so frankly.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Gustavo Dudamel",
+        "Paris"
+      ],
+      "hyp_no_ctx": "I don't think so frankly.",
+      "hyp_relevant": "I don't think so frankly.",
+      "hyp_distractor": "I don't think so. Frankly.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-313",
+      "ref": "Uh, having acquired uh, uh, made an acquisition with 16 billion that year, so we worked hard to bring that debt down, it's above what we had in 2017 after the acquisition of Jean Patou but uh, we are close enough uh, to that uh, to that level.",
+      "ref_entities": [
+        "Jean Patou"
+      ],
+      "distractor_entities": [
+        "ASP"
+      ],
+      "hyp_no_ctx": "Having acquired a maiden acquisition when sixteen billion that year, so we worked hard to bring that debt down. It's above what we had in 2017 after the acquisition of Dior Couture, but we are close enough to that level.",
+      "hyp_relevant": "Having acquired a maiden acquisition with sixteen billion that year, so we worked hard to bring that debt down. It's above what we had in 2017 after the acquisition of Jean Patou, but we are close enough to that level.",
+      "hyp_distractor": "Having acquired a maiden acquisition when sixteen billion that year, so we worked hard to bring that debt down. It's above what we had in 2017 after the acquisition of Dior Couture, but we are close enough to that level.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-237",
+      "ref": "That's good to see.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "CFO"
+      ],
+      "hyp_no_ctx": "That's good to see.",
+      "hyp_relevant": "That's good to see.",
+      "hyp_distractor": "That's good to see.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-579",
+      "ref": "Arnault.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Ford"
+      ],
+      "hyp_no_ctx": "Mister Arnold.",
+      "hyp_relevant": "Mister Arnold.",
+      "hyp_distractor": "Mr. Arnold.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-615",
+      "ref": "Uh, now in margin, uh, you expressed it as having less confidence.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "OT",
+        "AR"
+      ],
+      "hyp_no_ctx": "Now, in terms of margin, you expressed it as having less confidence.",
+      "hyp_relevant": "Now, in terms of margin, you expressed it as having less confidence.",
+      "hyp_distractor": "Now, in terms of margin, you expressed it as having less confidence. I.",
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.5
+    },
+    {
+      "utt_id": "4482311-15",
+      "ref": "I don't believe that they will uh, fully resume before the year 2023, or possibly even 24.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "I don't believe that they will fully resume before the year 2023, or possibly even 2024.",
+      "hyp_relevant": "I don't believe that they will fully resume before the year 2023, or possibly even 2024.",
+      "hyp_distractor": "I don't believe that they will fully resume before the year 2023, or possibly even 2024.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-77",
+      "ref": "Fendi, big success from day one but accentuated since the arrival Kim Jones.",
+      "ref_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+      "hyp_relevant": "Fendi, big success from day one, but accentuated since the arrival of Kim Jones.",
+      "hyp_distractor": "Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+      "recall_no_ctx": 0.5,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-140",
+      "ref": "Let's um, mention in closing this presentation, the two uh, major Parisian stores.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Max"
+      ],
+      "hyp_no_ctx": "Let's mention, in closing this presentation, the two major Parisian stores.",
+      "hyp_relevant": "Let's mention, in closing this presentation, the two major Parisian stores.",
+      "hyp_distractor": "Let's mention, in closing this presentation, the two major Parisian stores.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-117",
+      "ref": "Um, wonderful watch, it's uh, so successful that it's difficult to to find.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Tiffany"
+      ],
+      "hyp_no_ctx": "Watch, wonderful watch. It's so successful that it's difficult to to find.",
+      "hyp_relevant": "Watch, wonderful watch. It's so successful that it's difficult to to find.",
+      "hyp_distractor": "Watch, wonderful watch. It's so successful that it's difficult to to find.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-146",
+      "ref": "We've got off to a good start, nevertheless, we need to remain vigilant.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Ford"
+      ],
+      "hyp_no_ctx": "Got off to a good start, nevertheless we need to remain vigilant.",
+      "hyp_relevant": "Got off to a good start, nevertheless we need to remain vigilant.",
+      "hyp_distractor": "Got off to a good start. Nevertheless, we need to remain vigilant.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-550",
+      "ref": "So overall, very pleased with, with the momentum which we've seen.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "US"
+      ],
+      "hyp_no_ctx": "So overall, very pleased with with the momentum which we've seen.",
+      "hyp_relevant": "So overall, very pleased with with the momentum which we've seen.",
+      "hyp_distractor": "So overall, very pleased with with the momentum which we've seen.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-420",
+      "ref": "H- here, this was a big one and thanks to the good work of our CFO, we've uh, more or less paid off uh, the- the- the- th- the cost of that, the price of that acquisition.",
+      "ref_entities": [
+        "CFO"
+      ],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "Here this was a big one, and thanks to the good work of our CFO, we've more or less bit off the the the the cost of that that price of that acquisition.",
+      "hyp_relevant": "Here this was a big one, and thanks to the good work of our CFO, we've more or less bit off the the the the cost of that that price of that acquisition.",
+      "hyp_distractor": "Here this was a big one, and thanks to the good work of our CFO, we've more or less bit off the cost of that price of that acquisition.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-750",
+      "ref": "And it's often not, at this point I know, I mean, later and future might be more relevant, but at the moment, with so many customers where, uh, there is a contact and there is a license in our SMB base and whether you call that a new logo, despite the fact that maybe there's this few 1000 Euro license there, I think this is such a significant move upwards.",
+      "ref_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "distractor_entities": [
+        "IoT"
+      ],
+      "hyp_no_ctx": "Enterprise. And it's also not at this point. I know. I mean, later in future might be more relevant, but at the moment, with so many customers where there is a contact and there is a license in our SMB base, and whether you call that a new logo, despite the fact that maybe there is a few thousand euro license there, I think this is such a significant move upwards.",
+      "hyp_relevant": "Enterprise. And it's also not at this point. I know. I mean, later in future might be more relevant, but at the moment, with so many customers where there is a contact and there is a license in our SMB base, and whether you call that a new logo, despite the fact that maybe there is a few thousand euro license there, I think this is such a significant move upwards.",
+      "hyp_distractor": "Enterprise. And it's also not at this point. I know. I mean, later in future might be more relevant, but at the moment, with so many customers where there is a contact and there is a license in our SMB base, and whether you call that a new logo, despite the fact that maybe there is a few thousand euro license there, I think this is such a significant move upwards.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-522",
+      "ref": "Perfect.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "US"
+      ],
+      "hyp_no_ctx": "perfeito",
+      "hyp_relevant": "perfeito",
+      "hyp_distractor": "Perfect.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-250",
+      "ref": "And here we are looking at 2.3 percentage points, so remarkable performance.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "And here you are looking at two point three percentage points. So a remarkable performance.",
+      "hyp_relevant": "And here you are looking at two point three percentage points. So a remarkable performance.",
+      "hyp_distractor": "And here you are looking at two point three percentage points. So a remarkable performance.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-394",
+      "ref": "I mean, uh, do you have any gaps that need to be filled uh, for the group?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ASP"
+      ],
+      "hyp_no_ctx": "I mean, are there any gaps that need to be filled for the group? Well.",
+      "hyp_relevant": "I mean, are there any gaps that need to be filled for the group? Well.",
+      "hyp_distractor": "I mean, do are there any gaps that need to be filled for the group? Well.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-524",
+      "ref": "Great talking to you.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "NSF International"
+      ],
+      "hyp_no_ctx": "Great talking to you.",
+      "hyp_relevant": "Great talking to you.",
+      "hyp_distractor": "Great talking to you.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-604",
+      "ref": "That explains why growth is higher than those who sell more ordinary uh, products that are a lot cheaper.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "That explains why growth is higher than those who sell more ordinary products that are a lot cheaper, but.",
+      "hyp_relevant": "That explains why growth is higher than those who sell more ordinary products that are a lot cheaper, but.",
+      "hyp_distractor": "That explains why growth is higher than those who sell more ordinary products that are a lot cheaper, but.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-363",
+      "ref": "That being said, in the second half, we, uh, recovered quite substan- quite significantly.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "That being said, in the second half we recovered quite quite significantly.",
+      "hyp_relevant": "That being said, in the second half we recovered quite quite significantly.",
+      "hyp_distractor": "That being said, in the second half we recovered quite quite significantly. So.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-199",
+      "ref": "So again, much more in line with our reported billings growth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp_no_ctx": "So again, much more in line with our reported billing growth.",
+      "hyp_relevant": "So again, much more in line with our reported billing growth.",
+      "hyp_distractor": "So again, much more in line with our reported billings growth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-154",
+      "ref": "Can't tell you that I uh, favor one or other of the explanations, but those are the two that we have uh, heard and listened to.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "I can't tell you that I favor one or other the explanations, but those are the two that we have heard and listened to.",
+      "hyp_relevant": "I can't tell you that I favor one or other the explanations, but those are the two that we have heard and listened to.",
+      "hyp_distractor": "I can't tell you that I favor one or other the explanations, but those are the two that we have heard and listened to.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-493",
+      "ref": "And, and then of course that distorts the picture here and there a little bit but with the overall growth rate, the track record, you see except for the COVID quarters, I think it's, it's impressive.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "hyp_no_ctx": "And then of course that distorts the picture here and there a little bit. But with the overall growth rate, the track record you see, except for the, COVID quarters, I think it's impressive.",
+      "hyp_relevant": "And then of course that distorts the picture here and there a little bit. But with the overall growth rate, the track record you see, except for the, COVID quarters, I think it's impressive.",
+      "hyp_distractor": "And then of course that distorts the picture here and there a little bit. But with the overall growth rate, the track record you see, except for the COVID quarters, I think it's impressive.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-377",
+      "ref": "Question arrived.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "NSF International"
+      ],
+      "hyp_no_ctx": "Question arrive.",
+      "hyp_relevant": "Question arrive.",
+      "hyp_distractor": "Question arrive.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-162",
+      "ref": "We're um, confident thanks to our values, our creativity, constant quest for quality, the spirit of uh, um, enterprise, the entrepreneurial spirit that motivates everyone, it's on company.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Paris"
+      ],
+      "hyp_no_ctx": "We're confident. Thanks to our values, our creativity, constant quest for quality, the spirit of enterprise, the entrepreneurial spirit that motivates everyone. It's more than.",
+      "hyp_relevant": "We're confident. Thanks to our values, our creativity, constant quest for quality, the spirit of enterprise, the entrepreneurial spirit that motivates everyone. It's more than.",
+      "hyp_distractor": "We're confident. Thanks to our values, our creativity, constant quest for quality, the spirit of enterprise, the entrepreneurial spirit that motivates everyone. It's more than.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-165",
+      "ref": "We look after them, uh, we motivate them such that they want to remain with us and they have long term motivation.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "We look after them, we motivate them such that they want to remain with us and they have long term motivation.",
+      "hyp_relevant": "We look after them, we motivate them such that they want to remain with us and they have long term motivation.",
+      "hyp_distractor": "We look after them, we motivate them such that they want to remain with us and they have long term motivation. I.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-559",
+      "ref": "The- the sales in our stores and boutiques are increasing um, naturally and we're seizing um, opportunities um, as and when they arise at the right time.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "So the sales in our stores and boutiques are increasing naturally, and we're seizing opportunities as and when they arise at the right time.",
+      "hyp_relevant": "So the sales in our stores and boutiques are increasing naturally, and we're seizing opportunities as and when they arise at the right time.",
+      "hyp_distractor": "So the sales in our stores and boutiques are increasing naturally, and we're seizing opportunities as and when they arise at the right time.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-501",
+      "ref": "Maybe in the short run this- it looks good, but it's pretty bad in the long run.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "Maybe in the short run it looks good, but it's pretty bad in the long run.",
+      "hyp_relevant": "Maybe in the short run it looks good, but it's pretty bad in the long run.",
+      "hyp_distractor": "Maybe in the short run it looks good, but it's pretty bad in the long run.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-49",
+      "ref": "Moving now to fashion and leather goods.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "Moving out of fashion and leather goods.",
+      "hyp_relevant": "Moving out of fashion and leather goods.",
+      "hyp_distractor": "Moving now of fashion and leather goods, while.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-63",
+      "ref": "Uh, I would start with development of the number of our customers.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "I would start with the development of the number of our customers.",
+      "hyp_relevant": "I would start with the development of the number of our customers.",
+      "hyp_distractor": "I would start with the development of the number of our customers.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-404",
+      "ref": "Why- uh, what uh, causes uh, our customers to uh, aspire to acquire our products, whether they be European or or- or Asian?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Why? What causes our customers to aspire to acquire our products, whether they be European or Asian?",
+      "hyp_relevant": "Why? What causes our customers to aspire to acquire our products, whether they be European or Asian?",
+      "hyp_distractor": "Why? What causes our customers to aspire to acquire our products, whether they be European or Asian?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-301",
+      "ref": "Uh, i- i- if uh, you 125 billion uh, 40% in total equity is not bad.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "If you look at 125 billion, 40% in total equity is not bad.",
+      "hyp_relevant": "If you look at 125 billion, 40% in total equity is not bad.",
+      "hyp_distractor": "If you look at one hundred twenty-five billion, forty percent in total equity is not bad.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-205",
+      "ref": "Now, back to the uh, geographical areas and looking at uh, the uh, development quarter on quarter.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "Now back to the geographical areas and looking at the development quarter on quarter.",
+      "hyp_relevant": "Now back to the geographical areas and looking at the development quarter on quarter.",
+      "hyp_distractor": "Now back to the geographical areas and looking at the development quarter on quarter.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-84",
+      "ref": "The great success is clearly our collaboration with NSF International.",
+      "ref_entities": [
+        "NSF International"
+      ],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "The great success is clearly our collaboration with NSF International.",
+      "hyp_relevant": "The great success is clearly our collaboration with NSF International.",
+      "hyp_distractor": "The great success is clearly our collaboration with NSF International.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-602",
+      "ref": "Yeah, maybe it's just on UB Max with you, because I think all of those three founders play a, people a very important role within the organization.",
+      "ref_entities": [
+        "Max"
+      ],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Maybe it's just a newbie makes really because I think all of those three founders play a very important role within the organization.",
+      "hyp_relevant": "On that end, yeah, maybe it's just a newbie Max really because I think all of those three founders play a very important role within the organization.",
+      "hyp_distractor": "On that end, yeah, maybe it's just a newbie makes really because I think all of those three founders play a very important role within the organization.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-439",
+      "ref": "Uh, it may have happened, what, maybe two or three times in the history of the group.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "It may have happened what maybe two or three times in the history of the group.",
+      "hyp_relevant": "It may have happened what maybe two or three times in the history of the group.",
+      "hyp_distractor": "It may have happened what maybe two or three times in the history of the group.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-108",
+      "ref": "With our software ABB provides remote support for their clients who heavily use connected devices such as robots and industrial machines.",
+      "ref_entities": [
+        "ABB"
+      ],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "With our software, ABB provides remote support for their clients who heavily use connected devices such as robots and industrial machines.",
+      "hyp_relevant": "With our software, ABB provides remote support for their clients who heavily use connected devices such as robots and industrial machines.",
+      "hyp_distractor": "With our software, ABB provides remote support for their clients who heavily use connected devices such as robots and industrial machines.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-9",
+      "ref": "And in fact, we uh, saw an acceleration of growth in um, Q4 because in our uh, fashion and leather goods business uh, for example, we saw year um, uh, annual organic growth on the year, 47%, and in Q4 a growth versus uh, 2019 of 51%.",
+      "ref_entities": [
+        "Q4"
+      ],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "And in fact, we saw an acceleration of growth in Q4 because in our fashion and leather goods business, for example, we saw year annual organic growth on the year of 47% and in Q4 a growth versus 2019 of 51%. So.",
+      "hyp_relevant": "And in fact, we saw an acceleration of growth in Q4 because in our fashion and leather goods business, for example, we saw year annual organic growth on the year of 47% and in Q4 a growth versus 2019 of 51%. So.",
+      "hyp_distractor": "And in fact, we saw an acceleration of growth in Q4 because in our fashion and leather goods business, for example, we saw year annual organic growth on the year of 47% and in Q4 a growth versus 2019 of 51%. So.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 1.0
+    },
+    {
+      "utt_id": "4483589-496",
+      "ref": "That's, that's great.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ASP"
+      ],
+      "hyp_no_ctx": "That's that's great.",
+      "hyp_relevant": "That's that's great.",
+      "hyp_distractor": "That's that's great.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-505",
+      "ref": "And I think, um, we can do many things there.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "And I think we can do many things there.",
+      "hyp_relevant": "And I think we can do many things there.",
+      "hyp_distractor": "And I think um we we can do many things there.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-397",
+      "ref": "Good afternoon, and also congratulations on the numbers and indeed, uh, the new emissions initiative.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "CFO"
+      ],
+      "hyp_no_ctx": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative.",
+      "hyp_relevant": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative.",
+      "hyp_distractor": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-631",
+      "ref": "So, um, in line with the top line.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Ford"
+      ],
+      "hyp_no_ctx": "also in line with the top line",
+      "hyp_relevant": "also in line with the top line",
+      "hyp_distractor": "also in line mit der Topline so",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-672",
+      "ref": "We revised our guidance, we revised our mid term plans, we gave details around value creation in enterprise and SMB, and it's about delivering on this, uh, in the short term.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "We revised our guidance. We revised our midterm plans. We gave details around, value creation in enterprise and SMB, and it's about delivering on this, in the short term.",
+      "hyp_relevant": "We revised our guidance. We revised our midterm plans. We gave details around value creation in enterprise and SMB, and it's about delivering on this in the short term. So.",
+      "hyp_distractor": "We revised our guidance. We revised our midterm plans. We gave details around value creation in enterprise and SMB, and it's about delivering on this in the short term. So.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-306",
+      "ref": "Important to note, the vast majority of the shares will be canceled, uh, and therefore the share count of the company will be reduced accordingly, so roughly by 10%.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Important to note, the vast majority of the shares will be cancelled, and therefore the share count of the company will be reduced accordingly, so roughly by 10%.",
+      "hyp_relevant": "Important to note, the vast majority of the shares will be cancelled, and therefore the share count of the company will be reduced accordingly, so roughly by 10%.",
+      "hyp_distractor": "Important to note, the vast majority of the shares will be cancelled, and therefore the share count of the company will be reduced accordingly, so roughly by 10%.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-31",
+      "ref": "We revised our capital allocation and announced this morning a share buyback program of up to 300 million Euro, uh, or a maximum of 20 million shares which is equivalent to nearly 10% of our outstanding share.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "We revised our capital allocation and announced this morning a share buyback program of up to 300 million euro, or a maximum of 20 million shares, which is equivalent to nearly 10 of our outstanding shares.",
+      "hyp_relevant": "We revised our capital allocation and announced this morning a share buyback program of up to 300 million euro, or a maximum of 20 million shares, which is equivalent to nearly 10 of our outstanding shares.",
+      "hyp_distractor": "We revised our capital allocation and announced this morning a share buyback program of up to 300 million euro, or a maximum of 20 million shares, which is equivalent to nearly 10 of our outstanding shares.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-465",
+      "ref": "And, and is that sort of baked into your, uh, expectations or not?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "And is that sort of baked into your expectations or not?",
+      "hyp_relevant": "And is that sort of baked into your expectations or not?",
+      "hyp_distractor": "And is that sort of baked into your expectations or not?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-660",
+      "ref": "What are you going to do with the significant cash you're going to generate over next couple of years?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "What are you going to do with the significant cash you are going to generate over next couple of years?",
+      "hyp_relevant": "What are you going to do with the significant cash you are going to generate over next couple of years?",
+      "hyp_distractor": "What are you going to do with the significant cash you are going to generate over the next couple of years?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-437",
+      "ref": "It may happen, but very rarely indeed.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "It may happen, but very rarely indeed.",
+      "hyp_relevant": "It may happen, but very rarely indeed.",
+      "hyp_distractor": "It may happen, but very rarely indeed.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-287",
+      "ref": "So wrapping it up, on the next slide, uh, quickly highlighting the cash profile of TeamViewer.",
+      "ref_entities": [
+        "TeamViewer"
+      ],
+      "distractor_entities": [
+        "NSF International"
+      ],
+      "hyp_no_ctx": "So wrapping it up on the next slide. Quickly highlighting the cash profile of Team UoN.",
+      "hyp_relevant": "So wrapping it up on the next slide. Quickly highlighting the cash profile of TeamViewer.",
+      "hyp_distractor": "So wrapping it up on the next slide. Quickly highlighting the cash profile of Team U.N.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-202",
+      "ref": "Yeah.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Yes.",
+      "hyp_relevant": "Yes.",
+      "hyp_distractor": "Yes.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-277",
+      "ref": "Regarding uh, selective retailing uh, we were uh, losing money last year, now we are back to uh, in the black.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Jean Patou"
+      ],
+      "hyp_no_ctx": "Regarding selective retailing, we were losing money last year. Now we are back to in the black.",
+      "hyp_relevant": "Regarding selective retailing, we were losing money last year. Now we are back to in the black.",
+      "hyp_distractor": "Regarding selective retailing, we were losing money last year. Now we're back to in the black.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-193",
+      "ref": "I think as you know, the revenue growth rate has been below billings growth rate due to the base effect from the discontinued, uh, perpetual license business model.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp_no_ctx": "I think, as you know, the revenue growth rate has been below building's growth rate, due to the base effect from the discontinued perpetual license business model.",
+      "hyp_relevant": "I think, as you know, the revenue growth rate has been below building's growth rate, due to the base effect from the discontinued perpetual license business model.",
+      "hyp_distractor": "I think, as you know, the revenue growth rate has been below building's growth rate, due to the base effect from the discontinued perpetual license business model.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-119",
+      "ref": "Secondly, we can see in the upper right corner that we were able to steadily increase our ASP again after a dip in the second quarter.",
+      "ref_entities": [
+        "ASP"
+      ],
+      "distractor_entities": [
+        "Jean Patou"
+      ],
+      "hyp_no_ctx": "Secondly, we can see in the upper right corner that we were able to steadily increase our ASP again after a dip in the second quarter.",
+      "hyp_relevant": "Secondly, we can see in the upper right corner that we were able to steadily increase our ASP again after a dip in the second quarter.",
+      "hyp_distractor": "Secondly, we can see in the upper right corner that we were able to steadily increase our ASP again after a dip in the second quarter.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-240",
+      "ref": "Um, second question, just on the COVID revenues, um, so, uh, beyond 22, uh, I know you've said nothing in the guidance for 25, but should we anticipate 23 being a, uh, a fade towards nothing, uh, in 25 or a steep dropdown in 23?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Nigo"
+      ],
+      "hyp_no_ctx": "Um, second question just on the COVID revenues, um. So beyond twenty two, I know you've said nothing in the guidance, for twenty five, but should we anticipate twenty three being a a fade towards nothing in twenty five or a steep drop down in twenty three?",
+      "hyp_relevant": "Um, second question just on the COVID revenues, um. So beyond twenty two, I know you've said nothing in the guidance, for twenty five, but should we anticipate twenty three being a a fade towards nothing in twenty five or a steep drop down in twenty three?",
+      "hyp_distractor": "Um, second question just on the COVID revenues, um. So beyond twenty-two, I know you've said nothing in the guidance, for twenty-five, but should we anticipate twenty-three being a a fade towards nothing in twenty-five or a steep drop down in twenty-three?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-345",
+      "ref": "Well, to answer your first uh, question, this regards uh, growth with US and um, and European um, customers.",
+      "ref_entities": [
+        "US"
+      ],
+      "distractor_entities": [
+        "Max"
+      ],
+      "hyp_no_ctx": "Well, to answer your first question as regards growth with US and European customers.",
+      "hyp_relevant": "Well, to answer your first question as regards growth with US and European customers.",
+      "hyp_distractor": "Well, to answer your first question as regards growth with US and European customers.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-268",
+      "ref": "A very strong cash conversion in the fourth quarter and also actually benefiting from lower CapEx and, and interest payments.",
+      "ref_entities": [
+        "CapEx"
+      ],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "A very strong cash conversion in the fourth quarter, and also actually benefiting from lower capex and interest payments.",
+      "hyp_relevant": "A very strong cash conversion in the fourth quarter, and also actually benefiting from lower CapEx and interest payments.",
+      "hyp_distractor": "A very strong cash conversion in the fourth quarter, and also actually benefiting from lower capex and interest payments.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-350",
+      "ref": "Is anything specific going on there?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Head count increases. Is there anything specific going?",
+      "hyp_relevant": "Head count increases. Is there anything specific going?",
+      "hyp_distractor": "Head count increases. Is there anything specific going?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-105",
+      "ref": "I think this, this case a great example of our customer engagement software TeamViewer engage that has been added to our portfolio through the acquisition of also in early 2021.",
+      "ref_entities": [
+        "TeamViewer"
+      ],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "I think this is this case a great example of our customer engagement software team, You Engage, that has been added to our portfolio through the acquisition of Sileon, also in early 2021.",
+      "hyp_relevant": "I think this is this case a great example of our customer engagement software, TeamViewer Engage, that has been added to our portfolio through the acquisition of Thaleon, also in early 2021.",
+      "hyp_distractor": "I think this is this case a great example of our customer engagement software team, You are engaged, that has been added to our portfolio through the acquisition of Salleon, also in early 2021.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-600",
+      "ref": "But I, what is not true is that enterprise is suppressing our margin that, uh, we have found the enterprise investments, back, back in the year so to say and ramped up our sales force and also our R&D, product management and the like.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "hyp_no_ctx": "But what is not true is that enterprise is suppressing our margin. That we have done the enterprise investments back back in the years, so to say, and ramped up our sales force and also our R and D product management and the like.",
+      "hyp_relevant": "But what is not true is that enterprise is suppressing our margin. That we have done the enterprise investments back back in the years, so to say, and ramped up our sales force and also our R and D product management and the like.",
+      "hyp_distractor": "But what is not true is that Enterprise is suppressing our margin. That we have done the Enterprise investments back back in the years, so to say, and ramped up our sales force and also our R and D product management and the like.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-638",
+      "ref": "I mean, that's hardly material contributions from that so all of the goals which you have seen is pretty much organic growth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Paris"
+      ],
+      "hyp_no_ctx": "I mean that's hardly material contributions from that. So all the growth which you have seen is pretty much organic growth.",
+      "hyp_relevant": "I mean that's hardly material contributions from that. So all the growth which you have seen is pretty much organic growth.",
+      "hyp_distractor": "I mean that's hardly material contributions from that. So all the growth which you have seen is pretty much organic growth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-68",
+      "ref": "But before we get to some of the use cases, I would like to present the development of billings in the enterprise business.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Nigo"
+      ],
+      "hyp_no_ctx": "But before we get to some of the use cases, I would like to present the development of billings in the enterprise business.",
+      "hyp_relevant": "But before we get to some of the use cases, I would like to present the development of billings in the enterprise business.",
+      "hyp_distractor": "But before we get to some of the use cases, I would like to present the development of Billings in the enterprise business.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-720",
+      "ref": "The importance is that we sell more use cases to, uh, larger organizations.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "The importance is that we sell more use cases to, larger organizations.",
+      "hyp_relevant": "The importance is that we sell more use cases to, larger organizations.",
+      "hyp_distractor": "The importance is that we sell more use cases to larger organizations.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-130",
+      "ref": "Selective retailing\u2026",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "Selective retailing.",
+      "hyp_relevant": "Selective retailing.",
+      "hyp_distractor": "Selective retailing.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-94",
+      "ref": "I invite you all to uh, test it.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Perfume. I invite you all to test it.",
+      "hyp_relevant": "Perfume. I invite you all to test it.",
+      "hyp_distractor": "Perfume. I invite you all to test it.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-123",
+      "ref": "More than 10 million Euros of the incremental enterprise billings in 2021 are actually coming from former SMB customers.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "More than ten million euro of the incremental enterprise billings in 2021 are actually coming from former SMB customers.",
+      "hyp_relevant": "More than ten million euro of the incremental enterprise billings in 2021 are actually coming from former SMB customers.",
+      "hyp_distractor": "More than ten million euro of the incremental enterprise billings in 2021 are actually coming from former SMB customers.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-287",
+      "ref": "And all in all, we're looking at uh, 49% uh, improvement.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ABB"
+      ],
+      "hyp_no_ctx": "And all in all, we're looking at the forty-nine percent improvement.",
+      "hyp_relevant": "And all in all, we're looking at the forty-nine percent improvement.",
+      "hyp_distractor": "And all in all, we're looking at the forty-nine percent improvement.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-226",
+      "ref": "The quality performance of the net retention rate showed, uh, as I said, a strong improvement in the fourth quarter coming up 205% and therefore pushing the overall net retention rate for the full year to 98%.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "The quarterly performance of the net retention rate showed, as I said, a strong improvement in the fourth quarter, coming up to 105 percent, and therefore pushing the overall net retention rate for the full year to 98 percent.",
+      "hyp_relevant": "The quarterly performance of the net retention rate showed, as I said, a strong improvement in the fourth quarter, coming up to 105 percent, and therefore pushing the overall net retention rate for the full year to 98 percent.",
+      "hyp_distractor": "The quarterly performance of the net retention rate showed, as I said, a strong improvement in the fourth quarter, coming up to 105 percent, and therefore pushing the overall net retention rate for the full year to 98 percent.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-763",
+      "ref": "Are you able to break down the yearly active devices by device types and how that has evolved over time, has IoT become a bigger part of, of these devices and if so, does that imply the free base creation device actually have struck a bit more?",
+      "ref_entities": [
+        "IoT"
+      ],
+      "distractor_entities": [
+        "NSF International"
+      ],
+      "hyp_no_ctx": "Are you able to break down the yearly active devices by device types and how that has evolved over time, as IoT become a bigger part of these devices and if so does that imply the free base for traditional device actually have shrunk a bit more.",
+      "hyp_relevant": "Are you able to break down the yearly active devices by device types and how that has evolved over time, as IoT has become a bigger part of of these devices and if so does that imply the free base for traditional device actually have shrunk a bit more.",
+      "hyp_distractor": "Are you able to break down the yearly active devices by device types and how that has evolved over time, as IoT become a bigger part of of these devices and if so does that imply the free base for traditional device actually have shrunk a bit more.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-520",
+      "ref": "Hi, thank you very much.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "CFO"
+      ],
+      "hyp_no_ctx": "Hi. Thank you very much.",
+      "hyp_relevant": "Hi. Thank you very much.",
+      "hyp_distractor": "Hi. Thank you very much.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-58",
+      "ref": "Of course, there were garments, products, shoes, leather goods, also music, images um, an orchestra that was uh, the um, conductor that he himself had uh, chosen, had picked before passing away, um, he wasn't expecting that but this uh, lead conductor, Gustavo Dudamel, who now um, is the conductor of the Paris opera.",
+      "ref_entities": [
+        "Gustavo Dudamel",
+        "Paris"
+      ],
+      "distractor_entities": [
+        "IoT"
+      ],
+      "hyp_no_ctx": "Of course, there were garments, products, shoes, leather goods, or so music, images. An orchestra that was the conducted that he himself had chosen had picked before passing away. He wasn't expecting that, but this lead conductor, Gustave Eguilen, who now is the conductor of the Paris Opera.",
+      "hyp_relevant": "Of course, there were garments, products, shoes, leather goods, or so music, images, an orchestra that was the conducted that he himself had chosen, had picked before passing away. He wasn't expecting that, but this lead conductor, Gustavo Dudamel, who now is the conductor of the Paris Opera.",
+      "hyp_distractor": "Of course, there were garments, products, shoes, leather goods, or so music, images, an orchestra that was the conducted that he himself had chosen, had picked before passing away. He wasn't expecting that, but this lead conductor, Gustave Eguilen, who now is the conductor of the Paris Opera.",
+      "recall_no_ctx": 0.5,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-58",
+      "ref": "The SMB business also grew nicely in the fourth quarter with 9%, uh, and 12% for the year, respectively.",
+      "ref_entities": [
+        "SMB"
+      ],
+      "distractor_entities": [
+        "ABB"
+      ],
+      "hyp_no_ctx": "The SMB business also grew nicely in the fourth quarter, with nine percent, and twelve percent for the year respectively.",
+      "hyp_relevant": "The SMB business also grew nicely in the fourth quarter, with nine percent, and twelve percent for the year respectively.",
+      "hyp_distractor": "The SMB business also grew nicely in the fourth quarter, with nine percent, and twelve percent for the year respectively.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-183",
+      "ref": "So look, all in all, not much of a currency in- effect in 2021.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "In half, so all in all, not much of a currency in effect in 2021.",
+      "hyp_relevant": "In half, so all in all, not much of a currency in effect in 2021.",
+      "hyp_distractor": "In half, so all in all, not much of a currency in effect in 2021.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-106",
+      "ref": "The last great example of how to use our solution is, uh, shown on slide 13.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "The last great example of how to use our solution is shown on slide thirteen.",
+      "hyp_relevant": "The last great example of how to use our solution is shown on slide thirteen.",
+      "hyp_distractor": "The last great example of how to use our solution is shown on slide thirteen.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-157",
+      "ref": "Of course, that can be different, uh, as it has been for most of the more recent acquisitions, like the businesses that we have acquired from Danaher and, uh, others that we have mentioned here today already.",
+      "ref_entities": [
+        "Danaher"
+      ],
+      "distractor_entities": [
+        "US"
+      ],
+      "hyp_no_ctx": "Of course, that can be different, as it has been for most of the more recent acquisitions, like the businesses that we have acquired from Danaher, and others that we have mentioned here today already.",
+      "hyp_relevant": "Of course, that can be different, as it has been for most of the more recent acquisitions, like the businesses that we have acquired from Danaher and others that we have mentioned here today already.",
+      "hyp_distractor": "Of course, that can be different, as it has been for most of the more recent acquisitions, like the businesses that we have acquired from Danaher, and others that we have mentioned here today already.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 1.0
+    },
+    {
+      "utt_id": "4483589-387",
+      "ref": "Um, so overall very pleased with what we've been seeing.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "So, overall, very pleased with what we've been seeing.",
+      "hyp_relevant": "So, overall, very pleased with what we've been seeing.",
+      "hyp_distractor": "So, overall, very pleased with what we've been seeing.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-388",
+      "ref": "But obviously it's also the fourth quarter and it's important to see that pipeline conversion the fourth quarter.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "But obviously, it's also the fourth quarter, and it's important to see that pipeline conversion the fourth quarter.",
+      "hyp_relevant": "But obviously, it's also the fourth quarter, and it's important to see that pipeline conversion the fourth quarter.",
+      "hyp_distractor": "But obviously, it's also the fourth quarter, and it's important to see that pipeline conversion. The fourth quarter.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-19",
+      "ref": "Before we dive into the, uh, fourth quarter and full year business update, uh, I would like you to take a step back from our perspective.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "Before we dive into the fourth quarter and full year business update, I would like to take a step back from our perspective.",
+      "hyp_relevant": "Before we dive into the fourth quarter and full year business update, I would like to take a step back from our perspective.",
+      "hyp_distractor": "Before we dive into the fourth quarter and full year business update, I would like to take a step back from our perspective.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-533",
+      "ref": "Uh, that's, uh, the other competition I would say is more on price.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "TeamViewer"
+      ],
+      "hyp_no_ctx": "That's the other competition. I would say is more in price.",
+      "hyp_relevant": "That's the other competition. I would say is more in price.",
+      "hyp_distractor": "That's the other competition. I would say is more in price.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-767",
+      "ref": "Um, uh, free user base breakdown, I don't know that we wouldn't go to that detail, we have different metrics, uh, around the free user base of course, but I think that's, that's nothing which we want to disclose.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Tiffany"
+      ],
+      "hyp_no_ctx": "Free user base breakdown. No, that we wouldn't go to that detail. We have different metrics around the free user base, of course, but I think that that's nothing which we which we would want to disclose.",
+      "hyp_relevant": "Free user base breakdown. No, that we wouldn't go to that detail. We have different metrics around the free user base, of course, but I think that that's nothing which we which we would want to disclose.",
+      "hyp_distractor": "Um, free user base breakdown. No, that we wouldn't go to that detail. We have different metrics around the free user base, of course, but I think that that's nothing which we which we would want to disclose.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-407",
+      "ref": "Um, are you expecting any impact from, from that lower sales headcount?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ASP"
+      ],
+      "hyp_no_ctx": "You expecting any impact from from that lower sales headcount.",
+      "hyp_relevant": "You expecting any impact from from that lower sales headcount.",
+      "hyp_distractor": "Um, you expecting any impact from from that lower sales headcount.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-492",
+      "ref": "Let's put it that way.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp_no_ctx": "Let's put it that way.",
+      "hyp_relevant": "Let's put it that way.",
+      "hyp_distractor": "Let's put it that way.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-707",
+      "ref": "Uh, predominantly more bias towards OT especially, obviously, the frontline solutions as well, or the whole AR suite.",
+      "ref_entities": [
+        "OT",
+        "AR"
+      ],
+      "distractor_entities": [
+        "NSF International"
+      ],
+      "hyp_no_ctx": "Predominantly more bias towards OT, especially obviously the frontline solutions as well, or the whole AR suite.",
+      "hyp_relevant": "Predominantly more bias towards OT, especially obviously the frontline solutions as well, or the whole AR suite.",
+      "hyp_distractor": "Predominantly more bias towards OT, especially obviously the frontline solutions as well, or the whole AR suite.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-423",
+      "ref": "And uh, for the questions\u2026",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Are there for the questions? Yeah.",
+      "hyp_relevant": "Are there for the questions? Yeah.",
+      "hyp_distractor": "Are there for the questions? Yeah.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-564",
+      "ref": "And then maybe on the share buyback and M&A, uh, look, I think the key question for us was, how are we dealing with a significant cash position we build up over last couple of years, leverage down 1.3 times.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ABB"
+      ],
+      "hyp_no_ctx": "And then maybe on the share buyback and M and A, look. I think the key question for us was, how are we dealing with the significant cash position we built up over the last couple of years, leveraged out one point three times.",
+      "hyp_relevant": "And then maybe on the share buyback and M and A, look. I think the key question for us was, how are we dealing with the significant cash position we built up over the last couple of years, leveraged out one point three times.",
+      "hyp_distractor": "And then maybe on the share buyback and M and A. Look, I think the key question for us was, how are we dealing with this existing cash position? We built up over the last couple of years, leveraged out one point three times.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-156",
+      "ref": "Both brands truly global provide an unrivaled reach and marketing power for TeamViewer.",
+      "ref_entities": [
+        "TeamViewer"
+      ],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "Both brands, are truly global, provide an unrivaled reach and marketing power for Timur.",
+      "hyp_relevant": "Both brands, are truly global. Provide an unrivaled reach and marketing power for TeamViewer.",
+      "hyp_distractor": "Both brands, are truly global. Provide an unrivaled reach and marketing power for Timur.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482249-247",
+      "ref": "So thanks very much.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "hyp_no_ctx": "So thanks very much.",
+      "hyp_relevant": "So thanks very much.",
+      "hyp_distractor": "So thanks very much.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-259",
+      "ref": "But also in sales and marketing and R&D, we invested strongly but generally speaking much more in line with billings growth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "CapEx"
+      ],
+      "hyp_no_ctx": "But also in sales and marketing and R&D, we invested strongly. But generally speaking, much more in line with Billings growth.",
+      "hyp_relevant": "But also in sales and marketing and R&D, we invested strongly. But generally speaking, much more in line with Billings growth.",
+      "hyp_distractor": "But also in sales and marketing and R&D, we invested strongly. But generally speaking, much more in line with Billings' growth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-337",
+      "ref": "'Cause if we look at the figures in Europe, Europe was um, up in Q4 with no tourists, at least no Chinese visitors.",
+      "ref_entities": [
+        "Q4"
+      ],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Because if we look at the figures in Europe, Europe was up in Q4 with no tourists, at least no Chinese visitors.",
+      "hyp_relevant": "Because if we look at the figures in Europe, Europe was up in Q4 with no tourists, at least no Chinese visitors.",
+      "hyp_distractor": "Because if we look at the figures in Europe, Europe was up in Q4 with no tourists, at least no Chinese visitors.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-33",
+      "ref": "So strong in fact that uh, as regards the uh, shipments that uh, we are uh, um, allocating to several regions.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "ASP"
+      ],
+      "hyp_no_ctx": "So strong in fact that as regards the shipments that we are allocating to several regions.",
+      "hyp_relevant": "So strong in fact that as regards the shipments that we are allocating to several regions.",
+      "hyp_distractor": "So strong in fact that, as regards the shipments, that we are allocating to several regions.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-409",
+      "ref": "And then just secondly, um, I guess a slightly broader question on the outlook for ' 22.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Gustavo Dudamel",
+        "Paris"
+      ],
+      "hyp_no_ctx": "And then just secondly, I guess a slightly broader question on the outlook for 2020.",
+      "hyp_relevant": "And then just secondly, I guess a slightly broader question on the outlook for 2020.",
+      "hyp_distractor": "And then just secondly, I guess a slightly broader question on the outlook for 2022. Near.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-393",
+      "ref": "Uh, but um, do you have priorities in terms of uh, possible future consolidations in wines and spirits or cosmetics or\u2026",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Tiffany"
+      ],
+      "hyp_no_ctx": "But do you have priorities in terms of possible future consolidations in wines and spirits, or cosmetics, or?",
+      "hyp_relevant": "But do you have priorities in terms of possible future consolidations in wines and spirits, or cosmetics, or?",
+      "hyp_distractor": "But do you have priorities in terms of possible future consolidations in wines and spirits, or cosmetics, or?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-390",
+      "ref": "Uh, do you think it is realistic?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "Do you think it is realistic?",
+      "hyp_relevant": "Do you think it is realistic?",
+      "hyp_distractor": "Do you think it is realistic?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-296",
+      "ref": "And if you sum all of this up, I think TeamViewer clearly has a highly attractive financial profile.",
+      "ref_entities": [
+        "TeamViewer"
+      ],
+      "distractor_entities": [
+        "Paris"
+      ],
+      "hyp_no_ctx": "And if you sum all of that up, I think Team UER clearly has a highly attractive financial profile, and.",
+      "hyp_relevant": "And if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile, and.",
+      "hyp_distractor": "And if you sum all of that up, I think Team UER clearly has a highly attractive financial profile, and.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-395",
+      "ref": "Uh, that- that's about it, but going forward its growth will be, will be slower.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "hyp_no_ctx": "That that's about it. But going forward, that growth will be will be slower.",
+      "hyp_relevant": "That that's about it. But going forward, that growth will be will be slower.",
+      "hyp_distractor": "That that's about it. But going forward, that growth will be will be slower.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-294",
+      "ref": "Last year, there was no uh, changes in the value, it was more or less stable but now it's up 500 million, the value is up uh, th- this year.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Nigo"
+      ],
+      "hyp_no_ctx": "Last year there was no changes in the value. It was more stable, but now it's up 500 million. The value is up this year.",
+      "hyp_relevant": "Last year there was no changes in the value. It was more stable, but now it's up 500 million. The value is up this year.",
+      "hyp_distractor": "Last year there was no changes in the value. It was more stable, but now it's up 500 million. The value is up this year.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-302",
+      "ref": "Uh, now looking at the the cash flow, uh, the and that is significant.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "Now looking at the the cash flow, and that is a significant.",
+      "hyp_relevant": "Now looking at the the cash flow, and that is a significant.",
+      "hyp_distractor": "Now looking at the the cash flow, and that is a significant.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-406",
+      "ref": "Now uh, regarding the prices, of course you shouldn't- you shouldn't go too far.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "Now, regarding the prices, of course, you shouldn't you shouldn't go too far.",
+      "hyp_relevant": "Now, regarding the prices, of course, you shouldn't you shouldn't go too far.",
+      "hyp_distractor": "Now, regarding the prices, of course, you shouldn't you shouldn't go too far.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-479",
+      "ref": "That's nice.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "That's nice.",
+      "hyp_relevant": "That's nice.",
+      "hyp_distractor": "That's nice.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-227",
+      "ref": "Uh, as you know, that's been quite a roller coaster year in terms of net retention rate and its development.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "As you know, that's been quite a roller coaster year in terms of net retention rate and its development.",
+      "hyp_relevant": "As you know, that's been quite a roller coaster year in terms of net retention rate and its development.",
+      "hyp_distractor": "As you know, that's been quite a roller coaster year in terms of net retention rate and its development.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-774",
+      "ref": "All right, thank you.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "Meaningful. Alright, thank you.",
+      "hyp_relevant": "Meaningful. Alright, thank you.",
+      "hyp_distractor": "It's very meaningful. Alright. Thank you.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-575",
+      "ref": "That's really a shame but if uh, things next um, year improve um, I promise you we'll taste the um, best champagne in the world, the Ruinart 2004.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp_no_ctx": "That's really a shame, but if things next year improve, I promise you we'll taste the best champagne in the world, the Rh\u00f4ne 2004.",
+      "hyp_relevant": "That's really a shame, but if things next year improve, I promise you we'll taste the best champagne in the world, the Rh\u00f4ne 2004.",
+      "hyp_distractor": "That's really a shame, but if things next year improve, I promise you we'll taste the best champagne in the world, the Rh\u00f4ne 2004.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-126",
+      "ref": "I'll come to that later.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Q4"
+      ],
+      "hyp_no_ctx": "I come to that later.",
+      "hyp_relevant": "I come to that later.",
+      "hyp_distractor": "I can do that later.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-22",
+      "ref": "And we uh, commit to supporting individuals in difficultly and we've assisted several hundred thousand during the course of the year.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "And we commit to supporting individuals in difficulty, and we've assisted several hundred thousand during the course of the year.",
+      "hyp_relevant": "And we commit to supporting individuals in difficulty, and we've assisted several hundred thousand during the course of the year.",
+      "hyp_distractor": "And we commit to supporting individuals in difficulty, and we've assisted several hundred thousand during the course of the year.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-678",
+      "ref": "And that's totally not on the rise at the moment, so therefore we feel without after quite some discussions with investors over time, uh, we should do this now because it's a good timing and, uh, we don't need the funds.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "And that's totally not on the rise at the moment. So therefore, we feel, we felt after quite some discussions with investors over time, we should do this now because it's a good timing and we don't need the funds.",
+      "hyp_relevant": "And that's totally not on the rise at the moment. So therefore, we feel, we felt after quite some discussions with investors over time, we should do this now because it's a good timing and we don't need the funds.",
+      "hyp_distractor": "And that's totally not on the rise at the moment. So therefore, we feel we felt after quite some discussions with investors over time, we should do this now because it's a good timing and we don't need the funds.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-627",
+      "ref": "Now we have the cost freeze implemented as Oliver mentioned or the cost pause, as Oliver mentioned.",
+      "ref_entities": [
+        "Oliver"
+      ],
+      "distractor_entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp_no_ctx": "Now we have the cost trees implemented, as already mentioned, or the cost ports, as already mentioned.",
+      "hyp_relevant": "Now we have the cost trees implemented, as Oliver mentioned, or the cost ports, as Oliver mentioned.",
+      "hyp_distractor": "Now we have the cost trees implemented, as always mentioned, or the cost ports, as always mentioned.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-202",
+      "ref": "We came out at the high end of our pre release numbers with 257 million Euro adjusted EBITDA or a 47% margin.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "CapEx"
+      ],
+      "hyp_no_ctx": "We came out at the high end of our pre-release numbers with 257 million euro adjusted EBITDA, or a 47% margin.",
+      "hyp_relevant": "We came out at the high end of our pre-release numbers with 257 million euro adjusted EBITDA, or a 47% margin.",
+      "hyp_distractor": "We came out at the high end of our pre-release numbers with 257 million euro adjusted EBITDA, or a 47% margin.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-604",
+      "ref": "Uh, so great to have them on board and, and it's good to see that their, that their roles have actually increased in importance.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "So great to have them on board, and it's good to see that their roles have actually increased in.",
+      "hyp_relevant": "So great to have them on board, and it's good to see that their roles have actually increased in.",
+      "hyp_distractor": "So great to have them on board, and it's good to see that their roles have actually increased in.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-592",
+      "ref": "Um, uh, and the other half being classical and engagement, manage connectivity, uh, customer interaction, um, products and so forth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Nigo"
+      ],
+      "hyp_no_ctx": "Um, uh, and the other half, uh, being classical tensor and engagement, manage connectivity, uh, customer interaction, um, products and so forth.",
+      "hyp_relevant": "Um, uh, and the other half, uh, being classical tensor and engagement, manage connectivity, uh, customer interaction, um, products and so forth.",
+      "hyp_distractor": "Um. Uh, and the other half being classical tensor and engagement management connectivity, customer interaction products and so forth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-181",
+      "ref": "Um, and of course, th- there's a a- plus a structure impact uh, to plus 10% percent vis-a-vis 2020 and the currency effect only 2%.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "And of course, there's a plus a structure impact, plus ten percent vis-a-vis 2020, and the currency effect only two percent.",
+      "hyp_relevant": "And of course, there's a plus a structure impact, plus ten percent vis-a-vis 2020, and the currency effect only two percent.",
+      "hyp_distractor": "And of course, there's a plus a structure impact: plus ten percent vis-a-vis 2020, and the currency effect only two percent.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-167",
+      "ref": "And then of course combine it with all other elements of the branding partnership.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp_no_ctx": "And then of course combine it with all other elements of the branding partnership.",
+      "hyp_relevant": "And then of course combine it with all other elements of the branding partnership.",
+      "hyp_distractor": "And then of course combine it with all other elements of the branding partnership.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-409",
+      "ref": "Let me just uh, uh, give you an example.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Jean Patou"
+      ],
+      "hyp_no_ctx": "Let me just give you an example.",
+      "hyp_relevant": "Let me just give you an example.",
+      "hyp_distractor": "Let me just give you an example.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-75",
+      "ref": "And whilst being um, contained, they have delivered remarkable growth.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "EU"
+      ],
+      "hyp_no_ctx": "And whilst being contained, they have delivered remarkable growth.",
+      "hyp_relevant": "And whilst being contained, they have delivered remarkable growth.",
+      "hyp_distractor": "And whilst being contained, they have delivered remarkable growth.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-35",
+      "ref": "Um, let me summarize some highlights of the fourth quarter and also the entire financial year.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "OT",
+        "AR"
+      ],
+      "hyp_no_ctx": "Let me summarize some highlights of the fourth quarter, and also the entire financial year.",
+      "hyp_relevant": "Let me summarize some highlights of the fourth quarter, and also the entire financial year.",
+      "hyp_distractor": "Let me summarize some highlights of the fourth quarter, and also the entire financial year.",
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.5
+    },
+    {
+      "utt_id": "4483589-99",
+      "ref": "We provide extensive state of the art augmented reality to Ford, to Ford's diagnostics teams, which must go through complex technical issues when checking vehicles.",
+      "ref_entities": [
+        "Ford"
+      ],
+      "distractor_entities": [
+        "CFO"
+      ],
+      "hyp_no_ctx": "We provide extensive state-of-the-art augmented reality port to Ford's diagnostics team, which must go through complex technical issues when checking vehicles.",
+      "hyp_relevant": "We provide extensive state-of-the-art augmented reality port to Ford's diagnostics team, which must go through complex technical issues when checking vehicles.",
+      "hyp_distractor": "We provide extensive state-of-the-art augmented reality port to Ford's diagnostics team, which must go through complex technical issues when checking vehicles.",
+      "recall_no_ctx": 1.0,
+      "recall_relevant": 1.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-193",
+      "ref": "And in Q4 significant growth uh, 22%.",
+      "ref_entities": [
+        "Q4"
+      ],
+      "distractor_entities": [
+        "Tiffany"
+      ],
+      "hyp_no_ctx": "And then Q four significant growth, twenty two.",
+      "hyp_relevant": "And then Q four significant growth, twenty two.",
+      "hyp_distractor": "And then Q four significant growth, twenty two.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 0.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-131",
+      "ref": "Well um, I'll uh, skip over DFS.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Well, um, I'll skip over DFS.",
+      "hyp_relevant": "Well, um, I'll skip over DFS.",
+      "hyp_distractor": "Well, um, I'll skip over DFS.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-641",
+      "ref": "They don't, they- they didn't come with billing, which are now absorbed and would, uh, kind of the evaluate the organic growth , that's absolutely not the case.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Oliver"
+      ],
+      "hyp_no_ctx": "They don't. They didn't come with billings, which are now absorbed and would kind of devalue the organic growth performance. That's absolutely not the case.",
+      "hyp_relevant": "They don't. They didn't come with billings, which are now absorbed and would kind of devalue the organic growth performance. That's absolutely not the case.",
+      "hyp_distractor": "They don't. They didn't come with billings, which are now absorbed and would kind of devalue the organic growth performance. That's absolutely not the case.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-317",
+      "ref": "We invested 13 uh, billion in um, uh, well, mostly it was Tiffany.",
+      "ref_entities": [
+        "Tiffany"
+      ],
+      "distractor_entities": [
+        "Gustavo Dudamel",
+        "Paris"
+      ],
+      "hyp_no_ctx": "We invested, thirteen billion in. Well, mostly it was.",
+      "hyp_relevant": "We invested, thirteen billion in. Well, mostly it was.",
+      "hyp_distractor": "We invested, thirteen billion in. Well, mostly it was.",
+      "recall_no_ctx": 0.0,
+      "recall_relevant": 0.0,
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-148",
+      "ref": "This is for us not really surprising as we need to bear in mind that the number of 283 million includes a significant number of devices active during severe lockdown restrictions, actually the fourth quarter of 2020 and the first quarter of 2021.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Danaher"
+      ],
+      "hyp_no_ctx": "This is for us not really surprising, as we need to bear in mind that the number of 283 million includes a significant number of devices active during severe lockdown restrictions, especially the fourth quarter of 2020 and then the first quarter of 2021.",
+      "hyp_relevant": "This is for us not really surprising, as we need to bear in mind that the number of 283 million includes a significant number of devices active during severe lockdown restrictions, especially the fourth quarter of 2020 and then the first quarter of 2021.",
+      "hyp_distractor": "This is for us not really surprising, as we need to bear in mind that the number of 283 million includes a significant number of devices active during severe lockdown restrictions, especially the fourth quarter of 2020 and then the first quarter of 2021.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-658",
+      "ref": "Yeah.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "Max"
+      ],
+      "hyp_no_ctx": "Twenty twenty.",
+      "hyp_relevant": "Twenty twenty.",
+      "hyp_distractor": "The user will provide an audio recording. Transcribe it verbatim. The recording may contain these proper nouns or named entities: Max.",
+      "hallucination_distractor_count": 1,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 1.0
+    },
+    {
+      "utt_id": "4483589-147",
+      "ref": "Also the number of monthly active devices has stabilized again, the one indicator which is still in expected decline is the number of yearly active devices.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Also, the number of monthly active devices has stabilized again. The one indicator which is still in expected decline is the number of yearly active devices.",
+      "hyp_relevant": "Also, the number of monthly active devices has stabilized again. The one indicator which is still in expected decline is the number of yearly active devices.",
+      "hyp_distractor": "Also, the number of monthly active devices has stabilized again. The one indicator which is still in expected decline is the number of yearly active devices.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-26",
+      "ref": "30% of our materials are now uh, recycled and in packaging, in particular, we have an objective of reaching 70% by 2030.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB",
+        "Euro"
+      ],
+      "hyp_no_ctx": "Thirty percent of our materials are now recycled, and in packaging in particular, we have an objective of reaching seventy percent by 2030.",
+      "hyp_relevant": "Thirty percent of our materials are now recycled, and in packaging in particular, we have an objective of reaching seventy percent by 2030.",
+      "hyp_distractor": "Thirty percent of our materials are now recycled, and in packaging in particular, we have an objective of reaching seventy percent by 2030.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 2,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4483589-725",
+      "ref": "Right.",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Right.",
+      "hyp_relevant": "Right.",
+      "hyp_distractor": "Right.",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    },
+    {
+      "utt_id": "4482311-387",
+      "ref": "Um, how- wh- what do you expect?",
+      "ref_entities": [],
+      "distractor_entities": [
+        "SMB"
+      ],
+      "hyp_no_ctx": "Selling, how? What do you expect?",
+      "hyp_relevant": "Selling, how? What do you expect?",
+      "hyp_distractor": "Selling, how? What do you expect?",
+      "hallucination_distractor_count": 0,
+      "hallucination_distractor_total": 1,
+      "hallucination_distractor_rate": 0.0
+    }
+  ]
+}
