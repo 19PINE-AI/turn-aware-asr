@@ -20,12 +20,16 @@ and measure entity recall vs age. If PIN's advantage over NOPIN holds as
 age grows, biasing survives session length; if it decays, the prefix loses
 grip across intervening audio.
 
-Runs under system python3.10 (vLLM). Accuracy metric — unaffected by any
-GPU co-tenant.
+Runs under the project .venv (python3.11, qwen_asr transformers backend) —
+NOT vLLM. E4 measures biasing ACCURACY (a model-behavior property), not the
+serving path, so it uses the same working transcription path as
+eval/earnings22_biasing (where spaCy en_core_web_sm is installed). This
+also sidesteps vLLM's CUDA-fork startup and keeps the metric clean of any
+GPU co-tenant contention.
 
 Usage:
-    PYTHONPATH=/home/ubuntu/streaming-vad-asr python3 -m worker_integration.e4_pinned_ctx \
-        --model Qwen/Qwen3-ASR-0.6B --n-utts 60 --out research/69-e4-pinned-ctx.json
+    .venv/bin/python -m worker_integration.e4_pinned_ctx \
+        --n-utts 60 --out research/69-e4-pinned-ctx.json
 """
 from __future__ import annotations
 import argparse, json, logging, random
@@ -35,7 +39,7 @@ import numpy as np
 
 from eval.earnings22_biasing import (
     iter_earnings22, extract_entities, build_system_prompt, entity_recall,
-    decode_audio, DEFAULT_DATA_GLOB,
+    decode_audio, DEFAULT_DATA_GLOB, Transcriber,
 )
 
 logger = logging.getLogger(__name__)
@@ -52,27 +56,15 @@ def to_16k(audio: np.ndarray, sr: int) -> np.ndarray:
     return audio.astype("float32")
 
 
-def build_prompt(context: str) -> str:
-    return (f"<|im_start|>system\n{context}<|im_end|>\n"
-            "<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n"
-            "<|im_start|>assistant\n")
-
-
-def strip_meta(text: str) -> str:
-    import re
-    text = re.sub(r"^language\s+\S+\s*<asr_text>", "", text)
-    return text.replace("<|im_end|>", "").strip()
-
-
 def main():
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     p = argparse.ArgumentParser()
     p.add_argument("--model", default="Qwen/Qwen3-ASR-0.6B")
+    p.add_argument("--backend", default="pkg", choices=["pkg", "native"])
     p.add_argument("--data-glob", default=DEFAULT_DATA_GLOB)
     p.add_argument("--n-utts", type=int, default=60)
     p.add_argument("--window-s", type=float, default=16.0)
     p.add_argument("--ages", default="0,4,8,12")
-    p.add_argument("--gpu-mem", type=float, default=0.15)
     p.add_argument("--seed", type=int, default=0)
     p.add_argument("--out", default="research/69-e4-pinned-ctx.json")
     args = p.parse_args()
@@ -106,11 +98,7 @@ def main():
         a = np.concatenate(buf)
         return a[-int(age_s * SR):]  # exactly age_s seconds
 
-    from vllm import LLM, SamplingParams
-    llm = LLM(model=args.model, trust_remote_code=True,
-              gpu_memory_utilization=args.gpu_mem, max_model_len=8192,
-              enable_prefix_caching=True, limit_mm_per_prompt={"audio": 1})
-    sp = SamplingParams(temperature=0.0, max_tokens=128, skip_special_tokens=False)
+    tx = Transcriber(backend=args.backend, model_name=args.model)
 
     win = int(args.window_s * SR)
     per = []
@@ -121,9 +109,7 @@ def main():
             windowed = full[-win:] if len(full) > win else full
             outs = {}
             for arm, ctx in [("pin", build_system_prompt(t["entities"])), ("nopin", "")]:
-                req = {"prompt": build_prompt(ctx), "multi_modal_data": {"audio": [(windowed, SR)]}}
-                o = llm.generate([req], sampling_params=sp, use_tqdm=False)
-                hyp = strip_meta(o[0].outputs[0].text)
+                hyp = tx.transcribe((windowed, SR), context=ctx)
                 hits, tot = entity_recall(hyp, t["entities"])
                 outs[arm] = {"hyp": hyp, "hits": hits, "total": tot}
             rec["by_age"][str(age)] = outs

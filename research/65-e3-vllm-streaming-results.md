@@ -40,19 +40,32 @@ Two conclusions:
    artificial bottleneck; vLLM's prefix caching makes the streaming
    endpoint real-time-viable.
 
-## Caveats
+## WER cleanup (resolved): max-segment force-flush
 
-- **WER**: E3 `wer_mean` = 2.54 vs the transformers 1.43. The gap is a
-  scoring artifact, not a serving regression: with `skip_special_tokens=
-  False` (required so the markers survive detok — see E1/research below),
-  residual marker/format tokens leak into the flushed transcript text and
-  inflate WER. The endpoint metrics are unaffected. A follow-up should
-  strip the two marker tokens + the `language English<asr_text>` prefix in
-  the vLLM decoder's flush path before WER (one-line fix in
-  `VLLMStreamDecoder`).
-- **P95 compute (413 ms)** is dominated by the longest bounded re-feed
-  windows; a hard `window_s`/`max_buffer_s` cap (already in
-  `qwen3asr_stream.py`) or a smaller chunk would tighten it further.
+The first E3 run had `wer_mean` = 2.54 (median 0.32). Diagnosis: **not** a
+special-token scoring artifact — median WER already matched the
+transformers re-baseline; the mean was dragged up by **2 of 25 stretches**
+where v9 fired 0–few times, so the segment never flushed, grew unbounded,
+and committed-prefix decoding fell into a repetition loop (WER 31.7, 24.5).
+Same failure class as v8's WER-mean 4.96 (research/61). Fix: re-run with
+`--max-segment-chunks 40` (force-flush at 20 s — the Metronome
+bound-the-resident-state principle at the text level).
+
+| Metric | E3 (unbounded) | **E3 + maxseg-40** |
+|---|---|---|
+| Boundary recall | 0.948 | **0.958** |
+| Latency P50 | 0.39 s | 0.39 s |
+| False fires / min | 0.76 | 0.54 |
+| **WER mean** | **2.54** | **1.29** |
+| Compute/chunk median | 84 ms | 97 ms |
+| **Compute/chunk P95** | **413 ms** | **117 ms** |
+
+The bound fixes the WER tail (2.54 → 1.29, matching transformers' 1.43)
+**and** the latency tail (P95 413 → 117 ms — bounded segments give bounded
+per-chunk decode time), with no endpoint-metric cost (recall/latency/false
+fires all held or improved). This is the shipping configuration:
+`v9 + gate + max-segment force-flush`. Result:
+`research/65-e3-replay-vllm-v9gate-maxseg40.json`.
 - Single-stream measurement. Multi-session throughput / the schedulable
   concurrency N* is E5 (needs the Metronome gateway + a solo GPU for clean
   numbers; the OOM-churning co-tenant here precludes them).
