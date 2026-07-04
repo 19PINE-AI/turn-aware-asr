@@ -1,0 +1,251 @@
+{
+  "summary": {
+    "n": 30,
+    "single_segment_wer": 0.03760066034343252,
+    "chunked_wer": 0.8795078920934506,
+    "delta_pp": 84.1907231750018,
+    "decision": "use_bounded_refeed"
+  },
+  "per_utt": [
+    {
+      "ref": "GOD DID NOT MIND THEM AND THAT WAS A VERY COMFORTING REFLECTION FOR POOR WEAK PEOPLE LIKE HIMSELF TO GO ON TRYING WAS POSSIBLE EVEN FOR HIM ALTHOUGH HE KNEW HE COULD NOT ALWAYS PROMISE HIMSELF SUCCESS",
+      "seg_hyp": "God did not mind them, and that was a very comforting reflection for poor weak people like himself. To go on trying was possible even for him, although he knew he could not always promise himself success. <EAGER_END_SPEECH><END_SPEECH>",
+      "chk_hyp": "God did not mind",
+      "n_chunks": 33,
+      "seg_wer": 0.02702702702702703,
+      "chk_wer": 0.8918918918918919
+    },
+    {
+      "ref": "LIVID LIGHT OF A JUDGEMENT DAY THE GIRL MOREOVER WAS NOT PRONE TO TAKE FOR GRANTED THAT SHE HERSELF LIVED IN THE MIND OF OTHERS",
+      "seg_hyp": "Vivid light of a judgment day. The girl, moreover, was not prone to take for granted that she herself lived in the mind of others.",
+      "chk_hyp": "Vivid light of a judgment",
+      "n_chunks": 18,
+      "seg_wer": 0.08,
+      "chk_wer": 0.88
+    },
+    {
+      "ref": "A BOARD SIGN INFORMED US IT WAS SIMPLY TURKEY CREEK I COULDN'T SEE ANY TURKEYS BUT THERE WAS GOOD PASTURAGE AROUND THE HOT TRIP THROUGH THE TIMBER MADE US ALL HUNGRY",
+      "seg_hyp": "A board sign informed us, \"It was simply Turkey Creek.\" I couldn't see any turkeys, but there was good pasturage around. The hot trip through the timber made us all hungry.",
+      "chk_hyp": "I couldn't see any turkeys, but there was good path",
+      "n_chunks": 26,
+      "seg_wer": 0.0,
+      "chk_wer": 0.7096774193548387
+    },
+    {
+      "ref": "IN A CITY WITH A HUNDRED AND FIFTY DEATHS A WEEK AND SOMETIMES EVEN BETTER AN UNDERTAKER SAT ON THE COUNCIL A CITY THAT WAS ABOUT TO EXPROPRIATE LAND AND TO SPEND FOUR HUNDRED THOUSAND DOLLARS FOR A NEW CEMETERY HAD AN UNDERTAKER",
+      "seg_hyp": "In a city with a hundred and fifty deaths a week, and sometimes even better, an undertaker sat on the council. A city that was about to expropriate land and to spend four hundred thousand dollars for a new cemetery had an undertaker.",
+      "chk_hyp": "In a city with a hundred",
+      "n_chunks": 31,
+      "seg_wer": 0.0,
+      "chk_wer": 0.8604651162790697
+    },
+    {
+      "ref": "THERE THE TRAVELLING COMPANION STOPPED AND DRAWING OUT A LITTLE PIPE FROM UNDER HIS JACKET",
+      "seg_hyp": "There, the traveling companion stopped, and drawing out a little pipe from under his jacket.",
+      "chk_hyp": "There, the",
+      "n_chunks": 11,
+      "seg_wer": 0.06666666666666667,
+      "chk_wer": 0.8666666666666667
+    },
+    {
+      "ref": "AT LENGTH SHE PERSUADED HIM TO DO HER BIDDING HE NEARLY FAINTED HIMSELF WITH HORROR WHEN HE FOUND THAT AFTER THE CRUEL BLOW WHICH LOPPED HER FOOT OFF SHE LAY AS ONE LIFELESS BUT HE HELD THE SEVERED FOOT OVER THE CAULDRON AND AS DROPS OF BLOOD FELL FROM IT",
+      "seg_hyp": "At length, she persuaded him to do her bidding. He nearly fainted himself with horror when he found that after the cruel blow which lopped her foot off, she lay as one lifeless. But he held the severed foot over the cauldron, and as drops of blood fell from it.",
+      "chk_hyp": "AT LENGTH SHE PERSUDED HIM TO DO HER FORTY",
+      "n_chunks": 29,
+      "seg_wer": 0.0,
+      "chk_wer": 0.86
+    },
+    {
+      "ref": "INSTEAD OF SMOKING BEFORE OUR EYES AND NOSES ON THE TABLE TO RECORD SUCH LITTLE MATTERS WOULD INDEED BE TO CHRONICLE SMALL BEER",
+      "seg_hyp": "Instead of smoking before our eyes and noses on the table, to record such little manners would indeed be to chronicle a small beer.",
+      "chk_hyp": "IN STAY",
+      "n_chunks": 17,
+      "seg_wer": 0.08695652173913043,
+      "chk_wer": 1.0
+    },
+    {
+      "ref": "SOFTLY DETACHED A BIT OF PLASTER FROM THE WALL WRAPPED THE PAPER ROUND IT AND TOSSED THE WHOLE THROUGH THE CREVICE INTO THE MIDDLE OF THE DEN IT WAS HIGH TIME THENARDIER HAD CONQUERED HIS LAST FEARS OR HIS LAST SCRUPLES",
+      "seg_hyp": "Softly detached a bit of plaster from the wall, wrapped the paper round it, and tossed the hole through the crevice into the middle of the den. It was high time. Tenardier had conquered his last fears, or his last scruples.",
+      "chk_hyp": "SOFTLY DETACHED A BIT OF PLAST",
+      "n_chunks": 32,
+      "seg_wer": 0.04878048780487805,
+      "chk_wer": 0.8780487804878049
+    },
+    {
+      "ref": "YES THAT WAS IT SAYS JANE WITH A BIG BREATH AND THEN HE FLEW US ALL AWAY TO THE NEVERLAND AND THE FAIRIES AND THE PIRATES AND THE REDSKINS AND THE MERMAID'S LAGOON",
+      "seg_hyp": "Yes, that was it,\" says Jane, \"with a big breath.\" And then he flew us all away to the Neverland and the fairies and the pirates and the redskins and the mermaids' lagoon.",
+      "chk_hyp": "YES, THAT WAS IT",
+      "n_chunks": 22,
+      "seg_wer": 0.0,
+      "chk_wer": 0.8787878787878788
+    },
+    {
+      "ref": "AND THERE WAS SOME SATISFACTION IN CONSIDERING WITH WHAT SELF DENYING GENEROUS FRIENDSHIP SHE HAD ALWAYS WISHED AND PROMOTED THE MATCH BUT IT WAS A BLACK MORNING'S WORK FOR HER",
+      "seg_hyp": "And there was some satisfaction in considering with what self-denying, generous friendship she had always wished and promoted the match. But it was a black morning's work for her.",
+      "chk_hyp": "And there was",
+      "n_chunks": 27,
+      "seg_wer": 0.06666666666666667,
+      "chk_wer": 0.9
+    },
+    {
+      "ref": "THE CONTRAST WAS TOO STRIKING BUT HE ALONE HYACINTH'S ONLY HELP SURELY SHE WOULD APPRECIATE HIS MAGNANIMITY ALSO AS HE HAD TOLD HIMSELF A MOMENT AGO",
+      "seg_hyp": "The contrast was too striking, but he alone, Hyacinth's only help. Surely, she would appreciate his magnanimity. Also, as he had told himself a moment ago.",
+      "chk_hyp": "The contrast was too",
+      "n_chunks": 28,
+      "seg_wer": 0.0,
+      "chk_wer": 0.8461538461538461
+    },
+    {
+      "ref": "THE PART WHICH IS FIRST BORN TO LIFE IN MAN AND THAT THE OTHER PARTS AS YOUNGER BRETHREN AND SERVANTS IN HIS FAMILY HAVE A DEPENDANCE UPON IT IT IS REASON THAT THE PRINCIPAL CARE BE HAD OF IT",
+      "seg_hyp": "The part which is first born to life in man, and that the other parts, as younger brethren and servants in his family, have a dependence upon it, it is reason that the principal care be had of it.",
+      "chk_hyp": "The part which has",
+      "n_chunks": 28,
+      "seg_wer": 0.02564102564102564,
+      "chk_wer": 0.9230769230769231
+    },
+    {
+      "ref": "AN EXPRESSION WHICH SEEMED TO IMPLY THAT SHE UNDERSTOOD ALL HER MOTHER'S AMOROUS AND PECUNIARY RELATIONSHIPS WITH THE INTIMATE SECRETARY MOREOVER",
+      "seg_hyp": "An expression which seemed to imply that she understood all her mother's amorous and pecuniary relationships with that intimate secretary. Moreover.",
+      "chk_hyp": "An expression which seemed",
+      "n_chunks": 19,
+      "seg_wer": 0.047619047619047616,
+      "chk_wer": 0.8095238095238095
+    },
+    {
+      "ref": "WAS RICH AND IMPOSING THOUGH STRICTLY AFTER THE SIMPLE FASHIONS OF THE TRIBE HIS ROBE WAS OF THE FINEST SKINS WHICH HAD BEEN DEPRIVED OF THEIR FUR",
+      "seg_hyp": "Was rich in imposing, though strictly after the simple fashions of the tribe, his robe was of the finest skins, which had been deprived of their fur.",
+      "chk_hyp": "Was a",
+      "n_chunks": 22,
+      "seg_wer": 0.037037037037037035,
+      "chk_wer": 0.9629629629629629
+    },
+    {
+      "ref": "BUT THE LAKE YOUR HIGHNESS SAID THE CHAMBERLAIN WHO ROUSED BY THE NOISE CAME IN IN HIS NIGHTCAP GO AND DROWN YOURSELF IN IT SHE SAID THIS WAS THE LAST RUDENESS OF WHICH THE PRINCESS WAS EVER GUILTY",
+      "seg_hyp": "But the lake, your highness,\" said the chamberlain, \"who roused by the noise came in in his nightcap. Go and drown yourself in it,\" she said. \"This was the last rudeness of which the princess was ever guilty.\"",
+      "chk_hyp": "But the lake, you're hunting",
+      "n_chunks": 32,
+      "seg_wer": 0.0,
+      "chk_wer": 0.9210526315789473
+    },
+    {
+      "ref": "LUCK HAS FOLLOWED ME ALL THE WAY SAID LEIF SEE WHAT I HAVE BROUGHT HOME THE GREENLANDERS LOOKED LUMBER LUMBER THEY CRIED OH IT IS BETTER STUFF THAN GOLD",
+      "seg_hyp": "Luck has followed me all the way,\" said Leaf, \"see what I have brought home.\" The Greenlanders looked, \"Lumber, lumber,\" they cried, \"oh, it is better stuff than gold.\"",
+      "chk_hyp": "Luck has followed me",
+      "n_chunks": 27,
+      "seg_wer": 0.034482758620689655,
+      "chk_wer": 0.8620689655172413
+    },
+    {
+      "ref": "DO SHOUTED EDWARD VALIANTLY I SHOULD I SHOULD I SHOULD",
+      "seg_hyp": "Due,\" shouted Edward valiantly, \"I should, I should, I should.\"",
+      "chk_hyp": "Do Shackit Edward",
+      "n_chunks": 14,
+      "seg_wer": 0.1,
+      "chk_wer": 0.8
+    },
+    {
+      "ref": "AND PROMISED THAT HE SHOULD ENTER HIS BODYGUARD ON THE CONDITION THAT HE WOULD UNDERTAKE ANY SERVICE WHICH WAS ESPECIALLY DIFFICULT OR DANGEROUS THIS WAS JUST WHAT AMEER ALI WANTED AND HE AGREED TO DO WHATEVER THE KING MIGHT WISH",
+      "seg_hyp": "And promised that he should enter his body guard on the condition that he would undertake any service which was especially difficult or dangerous. This is just what Amirali wanted, and he agreed to do whatever the king might wish. <EAGER_END_SPEECH><END_SPEECH>",
+      "chk_hyp": "And promised that he should",
+      "n_chunks": 26,
+      "seg_wer": 0.15,
+      "chk_wer": 0.875
+    },
+    {
+      "ref": "SHE AND HER HUSBAND SLIPPED AWAY SOON ON HORSEBACK AND WE WERE TOLD THAT WE WERE TO STAY AT OUR NEIGHBOR'S UNTIL THEY RETURNED FOR US",
+      "seg_hyp": "She and her husband slipped away soon on horseback, and we were told that we were to stay at our neighbors until they returned for us. <EAGER_END_SPEECH><END_SPEECH>",
+      "chk_hyp": "She and",
+      "n_chunks": 17,
+      "seg_wer": 0.038461538461538464,
+      "chk_wer": 0.9230769230769231
+    },
+    {
+      "ref": "AND THE METALS PRODUCED IN THE MINES AND THE PLANTS GROW IN THE FIELDS AND IN GENERAL HOW ALL THE BODIES WHICH ARE COMMONLY DENOMINATED MIXED OR COMPOSITE MIGHT BE GENERATED AND AMONG OTHER THINGS IN THE DISCOVERIES ALLUDED TO",
+      "seg_hyp": "And the metals produced in the mines, and the plants grown in the fields and in general, how all the bodies which are commonly denominated mixed or composite might be generated and, among other things, in the discoveries alluded to.",
+      "chk_hyp": "AND IN GENERAL HOW WOULD",
+      "n_chunks": 29,
+      "seg_wer": 0.025,
+      "chk_wer": 0.9
+    },
+    {
+      "ref": "AND IN ITS GYRE HAD NOT TURNED WHOLLY ROUND BEFORE ANOTHER IN A RING ENCLOSED IT AND MOTION JOINED TO MOTION SONG TO SONG SONG THAT AS GREATLY DOTH TRANSCEND OUR MUSES OUR SIRENS IN THOSE DULCET CLARIONS AS PRIMAL SPLENDOUR THAT WHICH IS REFLECTED",
+      "seg_hyp": "And in its gyre had not turned wholly round before another in a ring enclosed it, and motion joined to motion, song to song, song that is greatly doth transcend our muses, our sirens in those dulset clarians, as primal splendor that which is reflected.",
+      "chk_hyp": "And in it,",
+      "n_chunks": 32,
+      "seg_wer": 0.08888888888888889,
+      "chk_wer": 0.9333333333333333
+    },
+    {
+      "ref": "CHAPTER TWELVE KARA LAY BACK ON HIS DOWN PILLOWS WITH A SNEER ON HIS FACE AND HIS BRAIN VERY BUSY WHAT STARTED THE TRAIN OF THOUGHT HE DID NOT KNOW BUT AT THAT MOMENT HIS MIND WAS VERY FAR AWAY",
+      "seg_hyp": "Chapter Twelve. Kara lay back on his down pillows with a sneer on his face and his brain very busy. What started the train of thought? He did not know, but at that moment, his mind was very far away.",
+      "chk_hyp": "Chapter Twelve",
+      "n_chunks": 27,
+      "seg_wer": 0.0,
+      "chk_wer": 0.95
+    },
+    {
+      "ref": "NO BERNARD AND I ARE LIKE BROTHER AND SISTER BUT HE IS DEAD",
+      "seg_hyp": "No, Bernard and I are like brother and sister, but he is dead.",
+      "chk_hyp": "NO BRUNARD AND I ARE LIKE BRUH",
+      "n_chunks": 9,
+      "seg_wer": 0.0,
+      "chk_wer": 0.6153846153846154
+    },
+    {
+      "ref": "A DAWNING LOOK OF TERROR IN THE EYES THAT HELD FASCINATED ON JIMMIE DALE YOU CUR SAID JIMMIE DALE AGAIN YOU CUR WITH YOUR DEVIL'S WORK A YEAR AGO YOU SAW THIS NIGHT COMING",
+      "seg_hyp": "A dawning look of terror in the eyes that held fascinated on Jimmie Dale, \"You cur,\" said Jimmie Dale again, \"you cur.\" With your devil's work, a year ago you saw does knight coming.",
+      "chk_hyp": "A donning look",
+      "n_chunks": 28,
+      "seg_wer": 0.058823529411764705,
+      "chk_wer": 0.9411764705882353
+    },
+    {
+      "ref": "TEN MINUTES WHICH APPEARED SO MANY AGES TO DUNCAN MIGHT HAVE PASSED IN THIS MANNER AND THE WARRIORS WERE FAIRLY ENVELOPED IN A CLOUD OF WHITE SMOKE BEFORE ANY OF THEM SPOKE",
+      "seg_hyp": "Ten minutes, which appeared so many ages to Duncan, might have passed in this manner, and the warriors were fairly enveloped in a cloud of white smoke before any of them spoke.",
+      "chk_hyp": "Ten minutes, which appeared",
+      "n_chunks": 24,
+      "seg_wer": 0.0,
+      "chk_wer": 0.875
+    },
+    {
+      "ref": "WILL COME YOUR SON PIERO POOR IN MONEY BECAUSE FROM THE FUNDS OF THE REPUBLIC YOU HAVE KEPT UP THE MAGNIFICENCE OF YOUR FAMILY AND THE CREDIT OF YOUR BUSINESS HOUSES POOR IN COURAGE BECAUSE YOU HAVE ROBBED THE RIGHTFUL MAGISTRATES OF THE AUTHORITY WHICH WAS CONSTITUTIONALLY THEIRS",
+      "seg_hyp": "Will come your son, Piero. Poor in money because from the funds of the republic you have kept up the magnificence of your family and the credit of your business houses, poor in courage because you have robbed the rightful magistrates of the authority which was constitutionally theirs.",
+      "chk_hyp": "WILL COME YOUR SON",
+      "n_chunks": 30,
+      "seg_wer": 0.0,
+      "chk_wer": 0.9166666666666666
+    },
+    {
+      "ref": "THREE WEEKS HAD PASSED SINCE THE MURDER AT MISTER WEISHAUPT'S THREE WEEKS THE MOST AGITATED THAT HAD BEEN KNOWN IN THIS SEQUESTERED CITY WE FELT OURSELVES SOLITARY AND THROWN UPON OUR OWN RESOURCES",
+      "seg_hyp": "Three weeks had passed since the murder at Mister Weissopf's. Three weeks\u2014the most agitated that had been known in this sequestered city, we felt ourselves solitary and thrown upon our own resources.",
+      "chk_hyp": "Three weeks had",
+      "n_chunks": 27,
+      "seg_wer": 0.09090909090909091,
+      "chk_wer": 0.9090909090909091
+    },
+    {
+      "ref": "ARGYLE HAS THE GREATEST MEANS OF ANNOYING ME AND OF ALL PLACES HOLLAND IS THAT WHENCE A BLOW MAY BE BEST AIMED AGAINST ME THE DUTCH ENVOYS ASSURED HIS MAJESTY THAT WHAT HE HAD SAID SHOULD INSTANTLY BE COMMUNICATED TO THE GOVERNMENT",
+      "seg_hyp": "Argyle has the greatest means of annoying me, and of all places, Holland is that whence a blow may be best aimed against me. The Dutch envoy assured his Majesty that what he had said should instantly be communicated to the government.",
+      "chk_hyp": "Our recoil has the greatest",
+      "n_chunks": 33,
+      "seg_wer": 0.023809523809523808,
+      "chk_wer": 0.9523809523809523
+    },
+    {
+      "ref": "SO DID I REGARD MY SUFFERING WITH MYSTERIOUS PLEASURE I REGARDED IT AS THE SYMBOL OF LIFE IN GENERAL I BELIEVED THAT I WAS SEEING AND FEELING THE EVERLASTING DISCORD",
+      "seg_hyp": "So did I regard my suffering with mysterious pleasure. I regarded it as the symbol of life in general. I believed that I was seeing and feeling the everlasting discord.",
+      "chk_hyp": "So that I would",
+      "n_chunks": 30,
+      "seg_wer": 0.0,
+      "chk_wer": 0.9
+    },
+    {
+      "ref": "HIS ROOM WAS KEPT EXACTLY AS HE HAD LEFT IT AND WAS REGULARLY DUSTED AND PUT INTO ORDER BY DIXON MISSUS HALE'S MAID WHO TOUCHED NO OTHER PART OF THE HOUSEHOLD WORK",
+      "seg_hyp": "His room was kept exactly as he had left it, and it was regularly dusted and put into order by Dixon, Missus Hale's maid, who touched no other part of the household work.",
+      "chk_hyp": "His room was kept exactly",
+      "n_chunks": 25,
+      "seg_wer": 0.03125,
+      "chk_wer": 0.84375
+    }
+  ]
+}
