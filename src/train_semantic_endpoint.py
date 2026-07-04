@@ -251,6 +251,10 @@ def main():
                     help="If > 0, run held-out eval every N steps; save best.pt by double-utt accuracy")
     p.add_argument("--eval-holdout-size", type=int, default=60,
                     help="N held-out examples (balanced across schemas) reserved from training")
+    p.add_argument("--score-spec", choices=["legacy", "v9"], default="legacy",
+                    help="v9: expected marker count per example = END_TOK count in its "
+                         "target text (exact match per schema); score = mean of per-schema "
+                         "exact rates. Works for any schema set.")
     p.add_argument("--early-stop-patience", type=int, default=4,
                     help="Stop training if no improvement after N evals")
     args = p.parse_args()
@@ -336,6 +340,8 @@ def main():
         ts_hit = ts_under = 0
         nf_correct = nf_misfire = 0
         s_n = d_n = f_n = t_n = ts_n = nf_n = 0
+        # v9 spec: exact / over / under vs the target's own marker count
+        v9_counts: dict[str, list[int]] = {}   # schema -> [n, exact, over, under]
         with torch.no_grad():
             for e in holdout_examples:
                 audio = np.asarray(e["audio"], dtype=np.float32)
@@ -359,6 +365,14 @@ def main():
                 gen_ids = out.sequences[0, inputs["input_ids"].shape[1]:].tolist()
                 n_end = sum(1 for t in gen_ids if t == end_id_)
                 sch = e["schema"]
+                if args.score_spec == "v9":
+                    want = e["text"].count(END_TOK)
+                    c = v9_counts.setdefault(sch, [0, 0, 0, 0])
+                    c[0] += 1
+                    c[1] += int(n_end == want)
+                    c[2] += int(n_end > want)
+                    c[3] += int(n_end < want)
+                    continue
                 if sch == "single":
                     s_n += 1
                     if n_end >= 1: s_hit += 1
@@ -384,6 +398,13 @@ def main():
         model.train()
         if hasattr(model.thinker.model.config, "use_cache"):
             model.thinker.model.config.use_cache = False
+        if args.score_spec == "v9":
+            out_m: dict[str, float] = {}
+            for sch, (n, exact, over, under) in sorted(v9_counts.items()):
+                out_m[f"{sch}_exact"] = exact / max(1, n)
+                out_m[f"{sch}_over"] = over / max(1, n)
+                out_m[f"{sch}_under"] = under / max(1, n)
+            return out_m
         return {
             "single": s_hit / max(1, s_n),
             "double": d_hit / max(1, d_n),
@@ -460,6 +481,35 @@ def main():
             t0_eval = time.perf_counter()
             m = _run_holdout_eval(model, eager_id, end_id)
             dt_eval = time.perf_counter() - t0_eval
+            if args.score_spec == "v9":
+                exact_keys = [k for k in m if k.endswith("_exact")]
+                score = sum(m[k] for k in exact_keys) / max(1, len(exact_keys))
+                eval_log.append({"step": step, "score": score, **m})
+                logger.info("EVAL step %5d  %s  score=%.3f (%.1fs)", step,
+                             " ".join(f"{k[:-6]}={m[k]:.2f}" for k in sorted(exact_keys)),
+                             score, dt_eval)
+                if score > best_score + 1e-6:
+                    best_score = score
+                    evals_since_best = 0
+                    best_path = Path(args.checkpoint_dir) / "best.pt"
+                    trainable = {n: p.detach().cpu()
+                                 for n, p in model.named_parameters() if p.requires_grad}
+                    torch.save({
+                        "step": step, "trainable": trainable,
+                        "tokenizer_vocab_size": len(tokenizer),
+                        "new_ids": new_ids, "eager_id": eager_id, "end_id": end_id,
+                    }, best_path)
+                    logger.info("New best (v9 score %.3f) -> %s", score, best_path)
+                else:
+                    evals_since_best += 1
+                    if evals_since_best >= args.early_stop_patience:
+                        logger.info("Early stop at step %d (no improvement in %d evals)",
+                                     step, evals_since_best)
+                        break
+                import json as _json
+                (Path(args.checkpoint_dir) / "eval_log.json").write_text(
+                    _json.dumps(eval_log, indent=2))
+                continue
             # Composite score: reward turn detection + disfluency correctness +
             # truncated correctness + trailing-silence emission;
             # penalize disfluency over-fire, truncated mis-fire,

@@ -224,7 +224,14 @@ class StreamDecoder:
                     break
                 k += 1
         text_in = self.prompt + prefix
-        inputs = self.processor(text=[text_in], audio=[self.buffer],
+        # The feature extractor's reflection padding needs a minimum input
+        # length; a fresh segment whose first chunk is a tiny stream tail
+        # can be shorter. Zero-pad the FED copy only (silence-equivalent).
+        feed = self.buffer
+        min_len = int(0.3 * SR)
+        if len(feed) < min_len:
+            feed = np.concatenate([feed, np.zeros(min_len - len(feed), dtype=np.float32)])
+        inputs = self.processor(text=[text_in], audio=[feed],
                                 return_tensors="pt", padding=True)
         inputs = {k: v.to(device).bfloat16() if torch.is_floating_point(v) else v.to(device)
                   for k, v in inputs.items()}
