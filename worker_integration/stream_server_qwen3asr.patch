@@ -1,0 +1,45 @@
+# Patch: add the Qwen3-ASR endpoint checkpoint to Metronome's model_prompts().
+#
+# Apply to ~/metronome/worker/stream_server.py::model_prompts (and the mirror in
+# ~/metronome/metronome/backends/vllm_backend.py — _mm_prompt / fd_step_stream — if the
+# resident/chunked path is used for the E2 chunked arm).
+#
+# The Qwen3-ASR chat template (data/qwen3-asr-0.6b/chat_template.json) differs from the
+# omni/minicpm templates in three ways, all reflected below:
+#   1. Context/hotwords go in the SYSTEM block (NOT "You are a helpful assistant"); the
+#      pinned-sink region is exactly this block (research/60 fact 6). Default empty.
+#   2. There is NO instruction text (INSTR = ""): Qwen3-ASR is a transcription model,
+#      not an instruct chat model — an instruction string would be out-of-distribution.
+#   3. The audio placeholder is <|audio_start|><|audio_pad|><|audio_end|>.
+#
+# NOTE: adding this branch makes the EXISTING resident/chunked _run_session path
+# (self.APH * len(chunks)) serve Qwen3-ASR — that is precisely the E2 *chunked* arm and
+# the OOD-risk path (AuT windows fall at chunk edges). The RECOMMENDED v1 path is
+# bounded-re-feed with ONE placeholder over the bounded buffer
+# (worker_integration/qwen3asr_stream.Qwen3ASRStreamSession); see research/64 for the
+# session-loop wiring.
+
+--- a/worker/stream_server.py
++++ b/worker/stream_server.py
+@@ def model_prompts(model: str):
+     m = (model or "").lower()
++    if "qwen3" in m and "asr" in m:
++        # Qwen3-ASR (incl. the merged endpoint checkpoint). System block carries the
++        # optional context/hotwords (pinned-sink region); no instruction text.
++        aph = "<|audio_start|><|audio_pad|><|audio_end|>"
++        head = "<|im_start|>system\n<|im_end|>\n<|im_start|>user\n"
++        # (HEAD, APH, INSTR, ASST, TRAIL)
++        return head, aph, "", \
++            "<|im_end|>\n<|im_start|>assistant\n", "\n"
+     if "qwen3" in m and "omni" in m:
+         aph = "<|audio_start|><|audio_pad|><|audio_end|>"
+         head = "<|im_start|>system\nYou are a helpful assistant.<|im_end|>\n<|im_start|>user\n"
+
+# --- SamplingParams caveat (research/60 risk: markers under vLLM sampling) -------------
+# Wherever the ASR session's SamplingParams is built, use greedy WITHOUT special-token
+# suppression so the reserved-range marker ids (<EAGER_END_SPEECH>=151705,
+# <END_SPEECH>=151706) are emitted and survive detokenization:
+#     SamplingParams(temperature=0.0, max_tokens=96, ignore_eos=False)
+# and detokenize with skip_special_tokens=False for the marker-scanning path (the
+# session in qwen3asr_stream.py scans the text form, so a plain .text read is fine as
+# long as the markers are not in the tokenizer's added-special set with a blank piece).

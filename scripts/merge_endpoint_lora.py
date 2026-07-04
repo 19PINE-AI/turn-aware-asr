@@ -77,7 +77,34 @@ def main():
 
     out = Path(args.out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    model.save_pretrained(out, safe_serialization=True)
+
+    # Qwen3-ASR ships a generation_config that pairs sampling params
+    # (temperature/top_p/top_k) with do_sample=False; transformers' strict
+    # validation rejects that on save_pretrained. Null the sampling fields so
+    # the greedy (do_sample=False) config is valid; fall back to dropping the
+    # generation_config entirely if that isn't enough (vLLM sets sampling per
+    # request anyway; eos/pad come from the model config + tokenizer).
+    def _sanitize_gc(m):
+        gc = getattr(m, "generation_config", None)
+        if gc is None:
+            return
+        for f in ("temperature", "top_p", "top_k", "typical_p", "top_a"):
+            if getattr(gc, f, None) is not None:
+                setattr(gc, f, None)
+        gc.do_sample = False
+    for mod in (model, getattr(model, "thinker", None)):
+        if mod is not None:
+            _sanitize_gc(mod)
+    try:
+        model.save_pretrained(out, safe_serialization=True)
+    except ValueError as e:
+        if "GenerationConfig" not in str(e):
+            raise
+        logger.warning("generation_config still invalid (%s); dropping it for save", e)
+        model.generation_config = None
+        if getattr(model, "thinker", None) is not None:
+            model.thinker.generation_config = None
+        model.save_pretrained(out, safe_serialization=True)
     tokenizer.save_pretrained(out)
     processor.save_pretrained(out)
     logger.info("Saved merged checkpoint to %s", out)

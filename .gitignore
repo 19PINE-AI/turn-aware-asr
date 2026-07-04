@@ -28,3 +28,6 @@ eval/results/
 .DS_Store
 .vscode/
 .idea/
+
+# merged inference checkpoints (large, re-derivable via scripts/merge_endpoint_lora.py)
+checkpoints/merged/
