@@ -91,14 +91,28 @@ runnable on the contended box where full vLLM init OOMs behind the co-tenant:**
   differs from stock vLLM *only* in the pinned sink region — across
   non-block-aligned S/window edge cases.
 
-**Not yet run: the full-engine E7/E8** (`e7_sink_e2e.py` correctness gate;
-`e8_sink_biasing.py` biasing-preservation). These need a full vLLM engine,
-which currently OOMs behind a co-tenant GRPO job holding ~87 GB. They are
-written and ready; the risky part (the paged kernel + block eviction) is
-already proven by E9/E10, so E7/E8 are confirmatory, not load-bearing.
+**Full-engine correctness gate (E7) — PASSED.** With the GPU free, the full
+sink (sink-aware kernel + block-pin, `S=8192` covers-all, `W=512`, TRITON) in
+the real vLLM engine on the merged Qwen3-ASR endpoint model produces
+transcriptions **identical to the full-attention FLASH baseline** — including
+the 44 s probe that window-only-512 garbles (the sink extends the attention
+span past the window). The patched paged kernel + block eviction do not corrupt
+the serving path. Two init-time deadlocks had to be fixed first, both from
+eager CUDA init during EngineCore plugin-load (before the worker's device
+init), which hung the engine in `gpu_input_batch`:
+  1. `register()` called `self_test()`, whose `torch.manual_seed()` initializes
+     the CUDA context. Removed from the serving path (E9/E10 validate the math
+     out-of-band; `python -m metronome_sink` still runs it for a dev check).
+  2. `_install_kernel` imported `metronome_sink_kernel` eagerly (Triton runtime
+     + `torch.finfo(fp8_dtype())`). Now a lazy wrapper defers the import to the
+     first attention forward.
+These are why the sink-covers-all config initially failed while the FLASH
+baseline and window-only (Part A) succeeded — the failure was in the sink
+*install*, at a layer before the kernel/block-pin ever execute.
 
 **Metronome commits** `4138fb7` (initial sink), `cb7b4a9` (dense SWA),
-`5cb5d0f` (V-side filter fix — the union kernel becomes correct).
+`5cb5d0f` (V-side filter fix — the union kernel becomes correct),
+`d3992a6` (init-deadlock fix — no CUDA init during plugin-load).
 
 ## Why this ordering is the right call
 
