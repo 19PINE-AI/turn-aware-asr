@@ -249,6 +249,50 @@ class StreamDecoder:
 
 # ---------------------------------------------------------------- scoring
 
+def score_fires(fires: list[float], events: list[dict]) -> dict:
+    """Score a list of fire timestamps against a stretch's boundary events.
+
+    Extracted from run_stretch so alternative policies (e.g. the VAD/silence-
+    timeout baselines in eval/timeout_baseline_eval.py) are scored with the
+    byte-identical rules used for the LM arms."""
+    bounds = []
+    for i, e in enumerate(events):
+        if e["boundary"] == "merged":
+            continue
+        # hit window must not reach into the next utterance's speech
+        nxt = events[i + 1]["begin_s"] if i + 1 < len(events) else float("inf")
+        bounds.append((e["end_s"], e["boundary"], min(e["end_s"] + TOL_LATE, nxt + TOL_EARLY)))
+    speech = [(e["begin_s"], e["end_s"]) for e in events]
+
+    def in_speech(t: float) -> bool:
+        return any(b + 0.1 < t < e + TOL_EARLY for b, e in speech)
+
+    hits, resume_fires, false_fires, dup_fires = [], [], [], []
+    claimed: set[int] = set()
+    for f in sorted(fires):
+        matched = False
+        for bi, (bt, btype, wend) in enumerate(bounds):
+            if bt - TOL_EARLY <= f <= wend:
+                if bi in claimed:
+                    dup_fires.append(f)
+                else:
+                    claimed.add(bi)
+                    (hits if btype == "turn_final" else resume_fires).append((f, bt))
+                matched = True
+                break
+        if not matched:
+            (false_fires if in_speech(f) else dup_fires).append(f)
+
+    return {
+        "hits": hits, "resume_fires": resume_fires, "false_fires": false_fires,
+        "dup_fires": dup_fires,
+        "turn_bounds": [b for b in bounds if b[1] == "turn_final"],
+        "cont_bounds": [b for b in bounds if b[1] == "continuation"],
+        "recalled": [f - bt for f, bt in hits],
+        "speech_s": sum(e - b for b, e in speech),
+    }
+
+
 def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
                 energy_gate: bool = False, gate_rms: float = 1e-3,
                 confirm_chunks: int = 0, max_segment_chunks: int = 0) -> dict:
@@ -330,40 +374,16 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
     if dec.raw:
         flushed.append(clean(dec.raw).replace(EAGER_TOK, ""))
 
-    # --- score fires against boundaries
+    scored = score_fires(fires, stretch["events"])
+    hits = scored["hits"]
+    resume_fires = scored["resume_fires"]
+    false_fires = scored["false_fires"]
+    dup_fires = scored["dup_fires"]
+    turn_bounds = scored["turn_bounds"]
+    cont_bounds = scored["cont_bounds"]
+    recalled = scored["recalled"]
+    speech_s = scored["speech_s"]
     events = stretch["events"]
-    bounds = []
-    for i, e in enumerate(events):
-        if e["boundary"] == "merged":
-            continue
-        # hit window must not reach into the next utterance's speech
-        nxt = events[i + 1]["begin_s"] if i + 1 < len(events) else float("inf")
-        bounds.append((e["end_s"], e["boundary"], min(e["end_s"] + TOL_LATE, nxt + TOL_EARLY)))
-    speech = [(e["begin_s"], e["end_s"]) for e in events]
-
-    def in_speech(t: float) -> bool:
-        return any(b + 0.1 < t < e + TOL_EARLY for b, e in speech)
-
-    hits, resume_fires, false_fires, dup_fires, late_info = [], [], [], [], []
-    claimed: set[int] = set()
-    for f in sorted(fires):
-        matched = False
-        for bi, (bt, btype, wend) in enumerate(bounds):
-            if bt - TOL_EARLY <= f <= wend:
-                if bi in claimed:
-                    dup_fires.append(f)
-                else:
-                    claimed.add(bi)
-                    (hits if btype == "turn_final" else resume_fires).append((f, bt))
-                matched = True
-                break
-        if not matched:
-            (false_fires if in_speech(f) else dup_fires).append(f)
-
-    turn_bounds = [b for b in bounds if b[1] == "turn_final"]
-    cont_bounds = [b for b in bounds if b[1] == "continuation"]
-    recalled = [f - bt for f, bt in hits]
-    speech_s = sum(e - b for b, e in speech)
 
     hyp_words = " ".join(t.replace(END_TOK, " ") for t in flushed)
     ref_words = " ".join(e["text"] for e in events)
