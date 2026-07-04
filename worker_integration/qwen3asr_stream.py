@@ -319,12 +319,17 @@ class Qwen3ASRStreamSession:
 # GPU-contention risk: a second engine OOM-crashes the resident one).
 
 def vllm_sampling_params(max_tokens: int = 96):
-    """SamplingParams for greedy endpoint decoding. CRITICAL: no bad_words / special-
-    token suppression, so the reserved-range marker ids (EAGER_ID / END_ID) are
-    allowed to be emitted and survive detokenization (research/60 risk: markers under
-    vLLM sampling). TODO(GPU): import inside the engine process."""
+    """SamplingParams for greedy endpoint decoding. CRITICAL: skip_special_tokens
+    MUST be False — the markers are reserved-slot special tokens (151705/151706)
+    and vLLM's default (True) strips them from .text even though the model emits
+    them. VERIFIED in E1b (worker_integration/e1_vllm_validate.py): with
+    skip_special_tokens=False the merged v9 checkpoint fires <END_SPEECH> on
+    speech+silence and stays silent on silence / speech-without-silence. Callers
+    that scan .text for markers depend on this; a token-id scan is the robust
+    alternative. TODO(GPU): import inside the engine process."""
     from vllm import SamplingParams  # noqa: local import; vLLM only present on GPU box
-    return SamplingParams(temperature=0.0, max_tokens=max_tokens, ignore_eos=False)
+    return SamplingParams(temperature=0.0, max_tokens=max_tokens,
+                          ignore_eos=False, skip_special_tokens=False)
 
 
 def vllm_generate_fn(engine, sampling_params=None) -> GenerateFn:

@@ -33,8 +33,11 @@ def load_16k(path):
 
 
 def prompt():
-    # Matches qwen3_asr_realtime.py / chat_template: one audio placeholder segment.
-    return ("<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n"
+    # MUST match the v9 training chat template EXACTLY, incl. the empty system
+    # block — the model learned marker emission conditioned on this prompt.
+    # (apply_chat_template([{system,''},{user,[audio]}], add_generation_prompt=True))
+    return ("<|im_start|>system\n<|im_end|>\n"
+            "<|im_start|>user\n<|audio_start|><|audio_pad|><|audio_end|><|im_end|>\n"
             "<|im_start|>assistant\n")
 
 
@@ -49,7 +52,15 @@ def main():
     llm = LLM(model=args.model, trust_remote_code=True,
               gpu_memory_utilization=args.gpu_mem_util, max_model_len=4096,
               enable_prefix_caching=True, limit_mm_per_prompt={"audio": 1})
-    sp = SamplingParams(temperature=0.0, max_tokens=96)
+    # CRITICAL: the markers are reserved-slot special tokens; without
+    # skip_special_tokens=False vLLM strips them from .text even though the
+    # model emits them. We also scan raw token_ids to be certain.
+    sp = SamplingParams(temperature=0.0, max_tokens=96, skip_special_tokens=False)
+
+    tok = llm.get_tokenizer()
+    EAGER_ID = tok.convert_tokens_to_ids(EAGER)
+    END_ID = tok.convert_tokens_to_ids(END)
+    print(f"marker ids: EAGER={EAGER_ID} END={END_ID}")
 
     speech = load_16k(args.flac)
     sil = np.zeros(int(0.5 * SR), dtype="float32")
@@ -61,10 +72,14 @@ def main():
     for name, audio in probes.items():
         req = {"prompt": prompt(), "multi_modal_data": {"audio": [(audio, SR)]}}
         out = llm.generate([req], sampling_params=sp, use_tqdm=False)
-        text = out[0].outputs[0].text
-        has_end = END in text
+        o = out[0].outputs[0]
+        text = o.text
+        ids = list(o.token_ids)
+        n_end_ids = ids.count(END_ID)
+        n_eager_ids = ids.count(EAGER_ID)
         print(f"\n### {name}")
-        print(f"    n_END={text.count(END)}  n_EAGER={text.count(EAGER)}  fired={has_end}")
+        print(f"    text n_END={text.count(END)} n_EAGER={text.count(EAGER)} | "
+              f"token_ids n_END={n_end_ids} n_EAGER={n_eager_ids}  fired={n_end_ids>0}")
         print(f"    text: {text[:200]!r}")
 
     print("\nE1B_DONE")

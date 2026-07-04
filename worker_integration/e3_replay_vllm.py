@@ -118,7 +118,7 @@ def main():
                  gpu_memory_utilization=args.gpu_mem, max_model_len=8192,
                  enable_prefix_caching=True, limit_mm_per_prompt={"audio": 1})
     tokenizer = engine.get_tokenizer()
-    sp = SamplingParams(temperature=0.0, max_tokens=96, ignore_eos=False)
+    sp = SamplingParams(temperature=0.0, max_tokens=96, ignore_eos=False, skip_special_tokens=False)  # markers are special tokens (E1b)
 
     per, all_ms = [], []
     for st in stretches:

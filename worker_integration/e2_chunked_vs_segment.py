@@ -90,7 +90,7 @@ def main():
     engine = LLM(model=args.model_dir, trust_remote_code=True,
                  gpu_memory_utilization=args.gpu_mem, max_model_len=8192,
                  enable_prefix_caching=True, limit_mm_per_prompt={"audio": 256})
-    sp = SamplingParams(temperature=0.0, max_tokens=256, ignore_eos=False)
+    sp = SamplingParams(temperature=0.0, max_tokens=256, ignore_eos=False, skip_special_tokens=False)  # markers are special tokens (E1b)
 
     def strip(t: str) -> str:
         import re
