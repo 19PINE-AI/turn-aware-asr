@@ -60,6 +60,12 @@
 Every voice interface has to answer one deceptively hard question in real time: \emph{has the user finished talking?} Commercial systems are converging on \emph{turn-aware streaming ASR} --- a single model that transcribes while deciding end-of-turn from semantics rather than from a silence timeout (Deepgram Flux, OpenAI's semantic VAD) --- but every member of the class is closed, and nothing about how to train one has been published. We build one in the open: Qwen3-ASR-0.6B, LoRA-fine-tuned to emit an end-of-turn marker inside its transcription stream, trained on one GPU from ${\sim}12$k synthesized examples. Getting there took eight failed versions spent chasing an apparent recall-vs-precision trade-off: checkpoints good at firing were bad at holding, checkpoints good at holding would not fire, and training runs oscillated between the two modes. The frontier never existed. It was manufactured by \emph{clairvoyant labels} --- supervision whose correct value depends on audio \emph{after} the decision point --- injected in two distinct ways by offline evaluations and the training pools derived from them. Rebuilding the data under a single principle, \textbf{every label must be computable from the causal prefix}, with architecture, recipe, and scale unchanged, eliminates the oscillation and yields one checkpoint that dominates all eight predecessors on a deployment-matched streaming benchmark: 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires per speech-minute, no inference-time crutches. Fixed silence timeouts --- the deployed alternative --- need $3\times$ the latency and $5\times$ the false fires to match that recall. The same model keeps its base abilities (\pending{E12: offline WER unchanged}) and delivers a capability its base model reports no numbers for: a text context prefix lifts hotword recall by $+28.9$\,pp on Earnings-22, an advantage that stays flat as the session grows. Everything runs on stock vLLM at 84\,ms per 0.5\,s chunk. The failure mode we diagnose is not specific to speech: any streaming decision task trained on offline-labeled data can inherit it. Stop training streaming models to see the future.
 \end{abstract}
 
+\begin{center}
+\small
+Code: \url{https://github.com/19PINE-AI/turn-aware-asr} \quad\textbar\quad Website: \url{https://01.me/research/turn-aware-asr}
+\end{center}
+\vspace{-0.6em}
+
 \section{Introduction}
 \label{sec:intro}
 
@@ -335,6 +341,6 @@ Ungated arms, the full confirm-horizon sweep ($h{\in}\{0,1,2\}$; $h{=}2$ over-su
 
 \section{Reproducibility}
 \label{app:repro}
-Hardware: one RTX Pro 6000 (Blackwell), shared with an unrelated co-tenant workload throughout (all GPU jobs wrapped in retry/resume; the v9 training run survived four OOM kills via checkpoint resume with ${\leq}750$ steps lost each). Training: LoRA $r{=}16$, $\alpha{=}32$, batch 8, best checkpoint at step 7.5k selected by the holdout composite. Evaluation and serving: vLLM 0.19, \texttt{skip\_special\_tokens=False} (the markers are reserved special tokens and are otherwise silently stripped --- a gotcha worth one sentence). Code, the label-spec builder, the replay benchmark, and the merged checkpoint will be released. \pending{release URL}
+Hardware: one RTX Pro 6000 (Blackwell), shared with an unrelated co-tenant workload throughout (all GPU jobs wrapped in retry/resume; the v9 training run survived four OOM kills via checkpoint resume with ${\leq}750$ steps lost each). Training: LoRA $r{=}16$, $\alpha{=}32$, batch 8, best checkpoint at step 7.5k selected by the holdout composite. Evaluation and serving: vLLM 0.19, \texttt{skip\_special\_tokens=False} (the markers are reserved special tokens and are otherwise silently stripped --- a gotcha worth one sentence). Code, the label-spec builder, the replay benchmark, and the merged checkpoint are released at \url{https://github.com/19PINE-AI/turn-aware-asr}.
 
 \end{document}
