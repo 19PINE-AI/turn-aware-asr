@@ -247,15 +247,22 @@ def main():
     tail = lambda: sil(rng.uniform(0.3, 1.2))
 
     # ---- single_sil + complete_nosil (paired on the SAME utterances)
-    ls_iter = iter(ls_pool)
+    # Draw LS utts from a reshuffling bag: without replacement until the
+    # pool is exhausted, then reshuffle and continue. train-clean-100 yields
+    # only ~4.3k utts in the 2.5-9 s window, fewer than the ~7.5k LS draws
+    # the schema mix needs, so a one-pass iterator starved the schemas
+    # consumed last (pair_hold, long_sil, lead_sil). Cross-schema reuse of an
+    # utterance is benign — each schema is a different transformation, and
+    # none of these LS utts appear in the AMI held-out eval.
+    _ls_bag: list[dict] = []
 
     def take_ls(n: int) -> list[dict]:
         out = []
-        for _ in range(n):
-            try:
-                out.append(next(ls_iter))
-            except StopIteration:
-                break
+        while len(out) < n:
+            if not _ls_bag:
+                _ls_bag.extend(ls_pool)
+                rng.shuffle(_ls_bag)
+            out.append(_ls_bag.pop())
         return out
     ss_ls = take_ls(N["single_sil_ls"])
     ss_ami = ami_singles[: N["single_sil_ami"]]
