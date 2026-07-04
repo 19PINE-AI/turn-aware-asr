@@ -14,7 +14,7 @@
 \newcommand{\eager}{\texttt{<EAGER\_END\_SPEECH>}}
 \newcommand{\ctx}{\texttt{<CTX>}}
 
-\title{\textbf{The Pareto Frontier That Wasn't:\\ Causal Labels for Streaming Speech Endpointing}}
+\title{\textbf{Turn-Aware Streaming ASR in One Small Open Model:\\ Causal Labels for End-of-Turn Detection}}
 \author{Bojie Li\\ \texttt{boj@19pine.ai}}
 \date{July 2026}
 
@@ -22,15 +22,15 @@
 \maketitle
 
 \begin{abstract}
-Every voice interface has to answer one deceptively hard question in real time: \emph{has the user finished talking?} We add streaming endpoint detection to a unified ASR model (Qwen3-ASR-0.6B) by fine-tuning it to emit an end-of-turn marker, and spend eight successive versions chasing an apparent recall-vs-precision trade-off: checkpoints good at firing were bad at holding, checkpoints good at holding would not fire, training runs oscillated between the two modes, and the record pointed to shipping two separate models. The frontier never existed. We show it was manufactured by \emph{clairvoyant labels} --- supervision whose correct value depends on audio \emph{after} the decision point --- which our offline evaluations and offline-derived training pools injected in two distinct ways. Rebuilding the training data under a single principle, \textbf{every label must be computable from the causal prefix}, with the architecture, recipe, and scale unchanged, eliminates the training oscillation and yields one checkpoint that dominates all eight predecessors on a deployment-matched streaming replay benchmark: 0.97 boundary recall at 0.39\,s median latency and 0.3 false fires per speech-minute, with no inference-time crutches. The same model retains its base abilities \todo{E12 WER numbers} and delivers the capability its base model reports no numbers for: a text context prefix lifts hotword recall by +28.9\,pp on Earnings-22, an advantage that stays flat as the session grows. Everything runs on stock vLLM at 84\,ms per 0.5\,s chunk. Fixed silence timeouts --- the deployed alternative --- need $3\times$ the latency and $5\times$ the false fires to match this recall. The failure mode we diagnose is not specific to speech: any streaming decision task trained on offline-labeled data can inherit it. Stop training streaming models to see the future.
+Every voice interface has to answer one deceptively hard question in real time: \emph{has the user finished talking?} Commercial systems are converging on \emph{turn-aware streaming ASR} --- a single model that transcribes while deciding end-of-turn from semantics rather than a silence timeout (Deepgram Flux, OpenAI's semantic VAD) --- but these models are closed, and nothing about how to train one has been published. We build one in the open: Qwen3-ASR-0.6B, LoRA-fine-tuned to emit an end-of-turn marker inside its transcription stream, trained on one GPU from $\sim$12k synthesized examples. Getting there took eight failed versions spent chasing an apparent recall-vs-precision trade-off: checkpoints good at firing were bad at holding, checkpoints good at holding would not fire, training runs oscillated between the two modes, and the record pointed to shipping two separate models. The frontier never existed. We show it was manufactured by \emph{clairvoyant labels} --- supervision whose correct value depends on audio \emph{after} the decision point --- which our offline evaluations and offline-derived training pools injected in two distinct ways. Rebuilding the training data under a single principle, \textbf{every label must be computable from the causal prefix}, with the architecture, recipe, and scale unchanged, eliminates the training oscillation and yields one checkpoint that dominates all eight predecessors on a deployment-matched streaming replay benchmark: 0.97 boundary recall at 0.39\,s median latency and 0.3 false fires per speech-minute, with no inference-time crutches. The same model retains its base abilities \todo{E12 WER numbers} and delivers the capability its base model reports no numbers for: a text context prefix lifts hotword recall by +28.9\,pp on Earnings-22, an advantage that stays flat as the session grows. Everything runs on stock vLLM at 84\,ms per 0.5\,s chunk. Fixed silence timeouts --- the deployed alternative --- need $3\times$ the latency and $5\times$ the false fires to match this recall. The failure mode we diagnose is not specific to speech: any streaming decision task trained on offline-labeled data can inherit it. Stop training streaming models to see the future.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:intro}
 
-A voice agent that cannot tell when you have finished speaking is unusable in two symmetric ways: it interrupts you mid-thought, or it stares at you after you stop. As full-duplex assistants proliferate, this endpointing decision --- fire an end-of-turn event now, or wait --- has become the load-bearing interaction primitive, and the industry default remains a cascade: a voice-activity detector plus a fixed silence timeout.
+A voice agent that cannot tell when you have finished speaking is unusable in two symmetric ways: it interrupts you mid-thought, or it stares at you after you stop. As full-duplex assistants proliferate, this endpointing decision --- fire an end-of-turn event now, or wait --- has become the load-bearing interaction primitive. The industry default remains a cascade (a voice-activity detector plus a fixed silence timeout), but the frontier commercial systems have moved the decision \emph{into} the recognizer: Deepgram's Flux emits \texttt{EagerEndOfTurn} events from the ASR model itself, and OpenAI's Realtime API offers a \texttt{semantic\_vad} mode. We call this class \textbf{turn-aware streaming ASR}: one model that transcribes while deciding, from semantics and silence jointly, whether the turn is over. Every member of the class is closed --- no weights, no recipe, no account of what makes the training work.
 
-This paper is about a bug in how such streaming decisions get \emph{supervised}, told through the eight model versions it cost us. We fine-tune a small open unified ASR model to emit an endpoint marker token inside its transcription stream, so that one model transcribes, detects the end of turn, and accepts a biasing context prefix. Versions v1--v8 of this model traced out what looked like a fundamental capability trade-off: checkpoints that fired promptly at turn ends also fired spuriously mid-utterance; checkpoints that never fired spuriously would not fire at all on clean turn ends. Holdout curves during training \emph{oscillated} between these two modes (Figure~\ref{fig:oscillation}, left). The project record at v8 concluded the two behaviors lay on a Pareto frontier and recommended shipping two checkpoints, one per deployment.
+This paper builds a turn-aware streaming ASR model in the open, and reports the one thing about training it that we believe the closed builders each rediscovered privately: a bug in how streaming decisions get \emph{supervised}, told through the eight model versions it cost us. We fine-tune a small open unified ASR model (Qwen3-ASR-0.6B) to emit an endpoint marker token inside its transcription stream, so that one model transcribes, detects the end of turn, and accepts a biasing context prefix. Versions v1--v8 of this model traced out what looked like a fundamental capability trade-off: checkpoints that fired promptly at turn ends also fired spuriously mid-utterance; checkpoints that never fired spuriously would not fire at all on clean turn ends. Holdout curves during training \emph{oscillated} between these two modes (Figure~\ref{fig:oscillation}, left). The project record at v8 concluded the two behaviors lay on a Pareto frontier and recommended shipping two checkpoints, one per deployment.
 
 The frontier was a mirage. Both the offline evaluations and the training pools derived from them contained what we call \textbf{clairvoyant labels}: targets whose correct value is a function of audio that arrives \emph{after} the moment the streaming model must act. Two independent instances (\S\ref{sec:phantom}): (i) offline evaluation clips are cut at the end of speech, so ``a complete utterance with no trailing silence'' is labeled \emph{fire} by the offline pool and \emph{hold} by the streaming pool --- opposite targets on causally identical prefixes; (ii) ``pause inside a turn'' vs.\ ``pause between turns'' were labeled by \emph{who speaks next}, information that does not exist at decision time. A model trained on such pools is not underfitting; it is faithfully fitting a contradiction, and it expresses that contradiction as bimodal oscillation during training and as phantom trade-offs across checkpoints.
 
@@ -70,16 +70,16 @@ Section~\ref{sec:checklist} distills the general lesson into a four-question che
 
 \begin{table}[t]
   \centering\small
-  \caption{Capability matrix. ``Cascade'' = VAD + silence timeout + separate ASR, the deployed default. \todo{finalize citations/claims for the Qwen3-ASR and Kyutai columns}}
+  \caption{The landscape. ``Cascade'' = VAD + silence timeout + separate ASR, the deployed default and our measured baseline (\S\ref{sec:v9}). Deepgram Flux and OpenAI \texttt{semantic\_vad} are the closed members of the turn-aware class this work opens. \todo{finalize citations/claims per column}}
   \label{tab:matrix}
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lccccc}
     \toprule
-    & This work & Qwen3-ASR & Kyutai STT & Cascade \\
+    & This work & Flux / \texttt{sem.\_vad} & Qwen3-ASR & Kyutai STT & Cascade \\
     \midrule
-    Streaming ASR & \checkmark & \checkmark & \checkmark & \checkmark \\
-    Semantic endpointing & \checkmark & --- & --- & timeout only \\
-    Context biasing (numbers) & \checkmark\ (+28.9\,pp) & claimed, unreported & --- & ASR-dependent \\
-    Single model & \checkmark & \checkmark & \checkmark & --- \\
+    Streaming ASR & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
+    Semantic end-of-turn & \checkmark & \checkmark & --- & --- & timeout only \\
+    Context biasing (numbers) & \checkmark\ (+28.9\,pp) & --- & claimed, unreported & --- & ASR-dependent \\
+    Open weights + recipe & \checkmark & --- & weights only & weights only & \checkmark \\
     \bottomrule
   \end{tabular}
 \end{table}
