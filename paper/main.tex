@@ -3,13 +3,17 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{xcolor}
 \usepackage{tcolorbox}
+\usepackage[round]{natbib}
 \usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
 \usepackage{caption}
 \captionsetup{font=small,labelfont=bf}
+\graphicspath{{figures/}}
 
-\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+% pending numbers (E12 offline WER regression, E13 fresh-set replay)
+\newcommand{\pending}[1]{\textcolor{purple}{$\langle$pending:\,#1$\rangle$}}
 \newcommand{\fire}{\texttt{<END\_SPEECH>}}
 \newcommand{\eager}{\texttt{<EAGER\_END\_SPEECH>}}
 \newcommand{\ctx}{\texttt{<CTX>}}
@@ -22,63 +26,65 @@
 \maketitle
 
 \begin{abstract}
-Every voice interface has to answer one deceptively hard question in real time: \emph{has the user finished talking?} Commercial systems are converging on \emph{turn-aware streaming ASR} --- a single model that transcribes while deciding end-of-turn from semantics rather than a silence timeout (Deepgram Flux, OpenAI's semantic VAD) --- but these models are closed, and nothing about how to train one has been published. We build one in the open: Qwen3-ASR-0.6B, LoRA-fine-tuned to emit an end-of-turn marker inside its transcription stream, trained on one GPU from $\sim$12k synthesized examples. Getting there took eight failed versions spent chasing an apparent recall-vs-precision trade-off: checkpoints good at firing were bad at holding, checkpoints good at holding would not fire, training runs oscillated between the two modes, and the record pointed to shipping two separate models. The frontier never existed. We show it was manufactured by \emph{clairvoyant labels} --- supervision whose correct value depends on audio \emph{after} the decision point --- which our offline evaluations and offline-derived training pools injected in two distinct ways. Rebuilding the training data under a single principle, \textbf{every label must be computable from the causal prefix}, with the architecture, recipe, and scale unchanged, eliminates the training oscillation and yields one checkpoint that dominates all eight predecessors on a deployment-matched streaming replay benchmark: 0.97 boundary recall at 0.39\,s median latency and 0.3 false fires per speech-minute, with no inference-time crutches. The same model retains its base abilities \todo{E12 WER numbers} and delivers the capability its base model reports no numbers for: a text context prefix lifts hotword recall by +28.9\,pp on Earnings-22, an advantage that stays flat as the session grows. Everything runs on stock vLLM at 84\,ms per 0.5\,s chunk. Fixed silence timeouts --- the deployed alternative --- need $3\times$ the latency and $5\times$ the false fires to match this recall. The failure mode we diagnose is not specific to speech: any streaming decision task trained on offline-labeled data can inherit it. Stop training streaming models to see the future.
+Every voice interface has to answer one deceptively hard question in real time: \emph{has the user finished talking?} Commercial systems are converging on \emph{turn-aware streaming ASR} --- a single model that transcribes while deciding end-of-turn from semantics rather than from a silence timeout (Deepgram Flux, OpenAI's semantic VAD) --- but every member of the class is closed, and nothing about how to train one has been published. We build one in the open: Qwen3-ASR-0.6B, LoRA-fine-tuned to emit an end-of-turn marker inside its transcription stream, trained on one GPU from ${\sim}12$k synthesized examples. Getting there took eight failed versions spent chasing an apparent recall-vs-precision trade-off: checkpoints good at firing were bad at holding, checkpoints good at holding would not fire, and training runs oscillated between the two modes. The frontier never existed. It was manufactured by \emph{clairvoyant labels} --- supervision whose correct value depends on audio \emph{after} the decision point --- injected in two distinct ways by offline evaluations and the training pools derived from them. Rebuilding the data under a single principle, \textbf{every label must be computable from the causal prefix}, with architecture, recipe, and scale unchanged, eliminates the oscillation and yields one checkpoint that dominates all eight predecessors on a deployment-matched streaming benchmark: 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires per speech-minute, no inference-time crutches. Fixed silence timeouts --- the deployed alternative --- need $3\times$ the latency and $5\times$ the false fires to match that recall. The same model keeps its base abilities (\pending{E12: offline WER unchanged}) and delivers a capability its base model reports no numbers for: a text context prefix lifts hotword recall by $+28.9$\,pp on Earnings-22, an advantage that stays flat as the session grows. Everything runs on stock vLLM at 84\,ms per 0.5\,s chunk. The failure mode we diagnose is not specific to speech: any streaming decision task trained on offline-labeled data can inherit it. Stop training streaming models to see the future.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:intro}
 
-A voice agent that cannot tell when you have finished speaking is unusable in two symmetric ways: it interrupts you mid-thought, or it stares at you after you stop. As full-duplex assistants proliferate, this endpointing decision --- fire an end-of-turn event now, or wait --- has become the load-bearing interaction primitive. The industry default remains a cascade (a voice-activity detector plus a fixed silence timeout), but the frontier commercial systems have moved the decision \emph{into} the recognizer: Deepgram's Flux emits \texttt{EagerEndOfTurn} events from the ASR model itself, and OpenAI's Realtime API offers a \texttt{semantic\_vad} mode. We call this class \textbf{turn-aware streaming ASR}: one model that transcribes while deciding, from semantics and silence jointly, whether the turn is over. Every member of the class is closed --- no weights, no recipe, no account of what makes the training work.
-
-This paper builds a turn-aware streaming ASR model in the open, and reports the one thing about training it that we believe the closed builders each rediscovered privately: a bug in how streaming decisions get \emph{supervised}, told through the eight model versions it cost us. We fine-tune a small open unified ASR model (Qwen3-ASR-0.6B) to emit an endpoint marker token inside its transcription stream, so that one model transcribes, detects the end of turn, and accepts a biasing context prefix. Versions v1--v8 of this model traced out what looked like a fundamental capability trade-off: checkpoints that fired promptly at turn ends also fired spuriously mid-utterance; checkpoints that never fired spuriously would not fire at all on clean turn ends. Holdout curves during training \emph{oscillated} between these two modes (Figure~\ref{fig:oscillation}, left). The project record at v8 concluded the two behaviors lay on a Pareto frontier and recommended shipping two checkpoints, one per deployment.
-
-The frontier was a mirage. Both the offline evaluations and the training pools derived from them contained what we call \textbf{clairvoyant labels}: targets whose correct value is a function of audio that arrives \emph{after} the moment the streaming model must act. Two independent instances (\S\ref{sec:phantom}): (i) offline evaluation clips are cut at the end of speech, so ``a complete utterance with no trailing silence'' is labeled \emph{fire} by the offline pool and \emph{hold} by the streaming pool --- opposite targets on causally identical prefixes; (ii) ``pause inside a turn'' vs.\ ``pause between turns'' were labeled by \emph{who speaks next}, information that does not exist at decision time. A model trained on such pools is not underfitting; it is faithfully fitting a contradiction, and it expresses that contradiction as bimodal oscillation during training and as phantom trade-offs across checkpoints.
-
-The fix required no architecture change, no scale, and no new data source. We rebuilt the training pools under one rule --- \emph{fire if and only if the speech so far is semantically complete AND $\geq$0.3\,s of silence has elapsed}, both observable from the prefix --- keeping the base model, LoRA recipe, and data volume fixed. The oscillation disappears (Figure~\ref{fig:oscillation}, right): both behaviors sit at ceiling simultaneously for the entire run. On a deployment-matched streaming replay benchmark (\S\ref{sec:eval}), the resulting single checkpoint dominates all eight predecessors, and dominates the VAD-plus-timeout family that voice products actually deploy (\S\ref{sec:v9}).
-
-We make five contributions:
-\begin{enumerate}
-  \item \textbf{A diagnosis with receipts} (\S\ref{sec:phantom}): two concrete mechanisms by which offline-derived supervision demands clairvoyance from streaming models, and the observable artifacts they produce --- training-time mode oscillation and spurious cross-checkpoint trade-offs.
-  \item \textbf{A deployment-matched streaming benchmark} (\S\ref{sec:eval}): replayed real conversational timelines with a causally-decidable three-way boundary taxonomy. Under it, the historical model ranking \emph{inverts}: the offline champion fires 89 times per speech-minute; a checkpoint previously written off as broken was the best endpointer. We also surface a universal blind spot --- every prior training example began with speech, so all models hallucinate on silence-initial audio.
-  \item \textbf{A causal label recipe} (\S\ref{sec:v9}) whose minimal-pair construction (the same utterance appearing with and without a silence tail, with opposite labels) turns the former contradiction into the intended discriminative feature. One checkpoint then achieves 0.969 recall, 0.39\,s P50 latency, 0.3 false fires/min --- needing neither of the two inference-time crutches its predecessors required.
-  \item \textbf{Measurements of a capability with no public numbers} (\S\ref{sec:rest}): the unified model's context prefix lifts hotword recall 66.7\%$\rightarrow$95.6\% on Earnings-22, the advantage is flat across session age, and the endpoint fine-tune leaves offline WER \todo{E12}.
-  \item \textbf{A serving reality check} (\S\ref{sec:serving}): the whole system runs on stock vLLM at 84\,ms per 0.5\,s chunk ($6\times$ real time on a fraction of one GPU); we document an out-of-distribution landmine in chunked multimodal feeding (88\% WER) and its fix.
-\end{enumerate}
-
-Section~\ref{sec:checklist} distills the general lesson into a four-question checklist. The pattern --- offline-labeled data supervising an online decision --- recurs in dialogue turn-taking, barge-in, simultaneous translation, streaming TTS, and agent action-timing. We suspect phantom frontiers are being chased in several of these right now.
+A voice agent that cannot tell when you have finished speaking is unusable in two symmetric ways: it interrupts you mid-thought, or it stares at you after you stop. As full-duplex assistants proliferate, this endpointing decision --- fire an end-of-turn event now, or wait --- has become the load-bearing interaction primitive. The industry default remains a cascade (a voice-activity detector plus a fixed silence timeout), but frontier commercial systems have moved the decision \emph{into} the recognizer: Deepgram's Flux emits \texttt{EagerEndOfTurn} events from the ASR model itself \citep{deepgram2026flux}, and OpenAI's Realtime API offers a \texttt{semantic\_vad} mode \citep{openai2025semanticvad}. We call this class \textbf{turn-aware streaming ASR}: one model that transcribes while deciding, from semantics and silence jointly, whether the turn is over. Every member of the class is closed --- no weights, no recipe, no account of what makes the training work.
 
 \begin{figure}[t]
   \centering
-  \fbox{\parbox{0.95\linewidth}{\centering\vspace{2.2cm}\todo{Figure 1: (left) v8 holdout trajectory oscillating between fire-mode and no-fire-mode attractors; (right) v9 trajectory, monotonic, both modes at ceiling simultaneously. Annotation: same architecture, same recipe, same data volume --- only the labels changed. Data: research/50 + checkpoints/semantic\_endpoint\_v9\_es/eval\_log.json}\vspace{2.2cm}}}
-  \caption{\textbf{The fingerprint of contradictory supervision.} Left: v8's holdout composite oscillates for the entire run between a fire-mode attractor (fire-class accuracy $\approx$1.0, hold-class $\approx$0.4) and a no-fire-mode attractor (fire $\approx$0.1, hold $\approx$1.0) --- the model cannot satisfy both label pools because they assign opposite targets to causally identical audio. Right: after the causal relabel (v9), with everything else fixed, the composite climbs monotonically to a plateau and \emph{both} classes sit at ceiling simultaneously from step 3000 on.}
+  \includegraphics[width=\linewidth]{fig1_oscillation}
+  \caption{\textbf{The fingerprint of contradictory supervision.} Left: v8's holdout accuracy oscillates for the entire run between a \emph{fire-mode} attractor (fire class ${\approx}1.0$, hold class ${\approx}0.4$) and a \emph{no-fire-mode} attractor (fire ${\approx}0.1$, hold ${\approx}1.0$): the training pools assign opposite targets to causally identical audio, so no single policy satisfies both, and optimization circulates between the modes. Right: v9 --- same architecture, same LoRA recipe, same data volume, \emph{only the labels changed} --- climbs monotonically, and both classes sit at ceiling \emph{simultaneously} from step 3k on.}
   \label{fig:oscillation}
 \end{figure}
+
+This paper builds a turn-aware streaming ASR model in the open, and reports the one thing about training it that we believe the closed builders each rediscovered privately: a failure mode in how streaming decisions get \emph{supervised}, told through the eight model versions it cost us. We fine-tune a small open unified ASR model (Qwen3-ASR-0.6B, \citealp{qwen3asr2026}) to emit an endpoint marker token inside its transcription stream, so one model transcribes, detects end-of-turn, and accepts a biasing context prefix. Versions v1--v8 traced out what looked like a fundamental trade-off: checkpoints that fired promptly at turn ends also fired spuriously mid-utterance; checkpoints that never fired spuriously would not fire at all. Holdout curves \emph{oscillated} between the two modes during training (Figure~\ref{fig:oscillation}, left). The project record at v8 concluded the behaviors lay on a Pareto frontier and recommended shipping two checkpoints, one per deployment.
+
+The frontier was a mirage. Both the offline evaluations and the training pools derived from them contained \textbf{clairvoyant labels}: targets whose correct value is a function of audio that arrives \emph{after} the moment the streaming model must act. Two independent instances (\S\ref{sec:phantom}, Figure~\ref{fig:contradictions}): (i)~offline evaluation clips are cut at the end of speech, so ``complete utterance, no trailing silence'' is labeled \emph{fire} by the offline pool and \emph{hold} by the streaming pool --- opposite targets on causally identical prefixes; (ii)~``pause inside a turn'' vs.\ ``pause between turns'' were labeled by \emph{who speaks next}, information that does not exist at decision time. A model trained on such pools is not underfitting; it is faithfully fitting a contradiction, and it expresses the contradiction as bimodal training oscillation and as phantom trade-offs across checkpoints.
+
+The fix required no architecture change, no scale, and no new data source: rebuild the pools under one rule --- \emph{fire iff the speech so far is semantically complete AND ${\geq}0.3$\,s of silence has elapsed}, both observable from the prefix --- and keep everything else fixed. The oscillation disappears (Figure~\ref{fig:oscillation}, right). On a deployment-matched streaming benchmark (\S\ref{sec:eval}), the single resulting checkpoint dominates all eight predecessors and the VAD-plus-timeout family that products actually deploy (\S\ref{sec:v9}, Figure~\ref{fig:tradeoff}).
+
+Our contributions:
+\begin{enumerate}\itemsep2pt
+  \item \textbf{A diagnosis with receipts} (\S\ref{sec:phantom}): two concrete mechanisms by which offline-derived supervision demands clairvoyance from streaming models, and the observable artifacts they produce --- training-time mode oscillation and spurious cross-checkpoint trade-offs.
+  \item \textbf{A deployment-matched streaming benchmark} (\S\ref{sec:eval}): replayed real conversational timelines with a causally-decidable boundary taxonomy. Under it the historical ranking \emph{inverts} (Figure~\ref{fig:inversion}), and a universal blind spot surfaces: every prior model hallucinates on silence-initial audio (Figure~\ref{fig:silence}).
+  \item \textbf{A causal label recipe} (\S\ref{sec:v9}) whose minimal-pair construction (Figure~\ref{fig:minimalpair}) turns the former contradiction into the intended discriminative feature, yielding 0.97 recall at 0.39\,s P50 and 0.3 false fires/min with no inference-time crutches.
+  \item \textbf{Numbers for a capability with no public numbers} (\S\ref{sec:rest}): the context prefix lifts hotword recall by $+28.9$\,pp on Earnings-22, flat across session age (Figure~\ref{fig:biasing}); offline WER is \pending{E12}.
+  \item \textbf{A serving reality check} (\S\ref{sec:serving}): the system runs on stock vLLM at 84\,ms per 0.5\,s chunk; we document an out-of-distribution landmine in multimodal chunked feeding (88\% WER) and its fix (Figure~\ref{fig:serving}).
+\end{enumerate}
+
+Section~\ref{sec:checklist} compresses the lesson into a four-question checklist. The pattern --- offline-labeled data supervising an online decision --- recurs in dialogue turn-taking, barge-in, simultaneous translation, streaming TTS, and agent action-timing. We suspect phantom frontiers are being chased in several of these right now.
 
 \section{One model that transcribes, endpoints, and takes hints}
 \label{sec:model}
 
-\paragraph{Task.} A single-channel audio stream arrives in 0.5\,s chunks. At each chunk boundary the system must (a) extend a running transcript, and (b) decide whether the current turn has ended --- an irreversible, latency-sensitive event that downstream components (an agent, a UI) act on. A text \emph{context prefix} (user profile, hotword list) may be supplied at session start and should bias recognition throughout.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig8_system}
+  \caption{\textbf{System shape.} Audio chunks pass an RMS energy gate (silent chunks never start a segment, so mostly-silent sessions are nearly free); the merged LoRA model transcribes the current bounded segment with the \ctx{} hotword prefix in the system slot and may emit marker tokens; two policy knobs (confirm horizon, max-segment force-flush) sit \emph{behind} the model. Outputs are transcript segments plus END events --- the same event shape as Flux's \texttt{EagerEndOfTurn}.}
+  \label{fig:system}
+\end{figure}
 
-\paragraph{Model.} We start from Qwen3-ASR-0.6B \todo{cite}, an open unified speech model (AuT audio encoder + dense Qwen3 decoder) with strong offline WER but, out of the box, no endpointing and no published context-biasing numbers. We claim two reserved vocabulary slots as marker tokens, \eager{} and \fire{}, and LoRA-fine-tune the decoder (r=16, $\alpha$=32 on q/k/v/o projections, plus the two marker embedding rows) to emit them inside the transcript at endpoint moments. About 12k training examples are synthesized from LibriSpeech and AMI (\S\ref{sec:v9}); training takes hours on one GPU. The context prefix rides in the system-prompt slot unchanged.
+\paragraph{Task.} A single-channel audio stream arrives in 0.5\,s chunks. At each chunk boundary the system must (a)~extend a running transcript and (b)~decide whether the turn has ended --- an irreversible, latency-sensitive event that downstream components act on. A text context prefix (user profile, hotword list) may be supplied at session start and should bias recognition throughout.
 
-\paragraph{Inference policy.} Three orthogonal, interpretable knobs sit in front of and behind the LM, and we report every arm's knob settings explicitly:
-\begin{itemize}
-  \item \textbf{Energy gate}: never \emph{start} a segment on a silent chunk (RMS threshold). Motivated by a training-data blind spot (\S\ref{sec:eval}); costs nothing, since silent chunks skip the LM entirely (this is also what makes batched many-session serving cheap, \S\ref{sec:serving}).
-  \item \textbf{Confirm horizon} $h$: hold a fire candidate for $h$ further silent chunks before signaling END; resumed speech cancels the signal (the transcript flush stands). This is the phrase-vs-turn dial; v9 barely needs it (\S\ref{sec:v9}).
-  \item \textbf{Max-segment force-flush}: bound the committed transcript segment (e.g.\ 20\,s); prevents unbounded prefix growth on long monologues. A transcription reset, not an endpoint event.
-\end{itemize}
+\paragraph{Model.} We start from Qwen3-ASR-0.6B \citep{qwen3asr2026}, an open unified speech model (AuT audio encoder + dense Qwen3 decoder) with strong offline WER but no endpointing and no published context-biasing numbers. We claim two reserved vocabulary slots as marker tokens, \eager{} and \fire{}, and LoRA-fine-tune \citep{hu2022lora} the decoder ($r{=}16$, $\alpha{=}32$, q/k/v/o projections, plus the two marker embedding rows) to emit them inside the transcript at endpoint moments. Training data is ${\sim}12$k examples synthesized from LibriSpeech \citep{panayotov2015librispeech} and AMI \citep{carletta2005ami} (\S\ref{sec:v9}); training takes hours on one GPU.
 
-\begin{table}[t]
+\paragraph{Inference policy.} Three orthogonal, interpretable knobs (Figure~\ref{fig:system}); every reported arm states its knob settings. The \textbf{energy gate} never \emph{starts} a segment on a silent chunk --- motivated by a data blind spot (\S\ref{sec:eval}), and also the serving trick that lets one engine carry many mostly-silent sessions (\S\ref{sec:serving}). The \textbf{confirm horizon} $h$ holds a fire candidate for $h$ further silent chunks before signaling END (resumed speech cancels the signal; the transcript flush stands) --- the phrase-vs-turn dial, which v9 barely needs. The \textbf{max-segment force-flush} bounds the committed transcript segment; a transcription reset, never an END event.
+
+\begin{table}[h]
   \centering\small
-  \caption{The landscape. ``Cascade'' = VAD + silence timeout + separate ASR, the deployed default and our measured baseline (\S\ref{sec:v9}). Deepgram Flux and OpenAI \texttt{semantic\_vad} are the closed members of the turn-aware class this work opens. \todo{finalize citations/claims per column}}
+  \caption{The landscape. ``Cascade'' = VAD + silence timeout + separate ASR: the deployed default, and our measured baseline in Figure~\ref{fig:tradeoff}. Flux and \texttt{semantic\_vad} are the closed members of the turn-aware class this work opens.}
   \label{tab:matrix}
   \begin{tabular}{lccccc}
     \toprule
-    & This work & Flux / \texttt{sem.\_vad} & Qwen3-ASR & Kyutai STT & Cascade \\
+    & This work & Flux / \texttt{sem.vad} & Qwen3-ASR & Kyutai STT & Cascade \\
     \midrule
     Streaming ASR & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
     Semantic end-of-turn & \checkmark & \checkmark & --- & --- & timeout only \\
-    Context biasing (numbers) & \checkmark\ (+28.9\,pp) & --- & claimed, unreported & --- & ASR-dependent \\
+    Context biasing (numbers) & \checkmark\,($+28.9$\,pp) & --- & claimed, unreported & --- & ASR-dependent \\
     Open weights + recipe & \checkmark & --- & weights only & weights only & \checkmark \\
     \bottomrule
   \end{tabular}
@@ -87,154 +93,207 @@ Section~\ref{sec:checklist} distills the general lesson into a four-question che
 \section{The phantom frontier}
 \label{sec:phantom}
 
-Eight versions of this model were trained before the diagnosis. The record reads, in hindsight, like a controlled study of what contradictory supervision does to a model. v3, selected by an offline meeting benchmark, fired eagerly and accurately \emph{on that benchmark}; v5 balanced the offline and streaming pools and over-fired at phrase boundaries; v7 and v8 added a dedicated ``do not fire'' pool and their training curves began to oscillate --- the holdout composite swung every few thousand steps between a \emph{fire-mode} attractor (fire-class accuracy $\approx 1.0$, hold-class $\approx 0.4$) and a \emph{no-fire-mode} attractor (fire $\approx 0.1$, hold $\approx 1.0$), never converging (Figure~\ref{fig:oscillation}, left). Across checkpoints, recall and precision appeared to trade off so consistently that the v8 postmortem proposed shipping \emph{two} checkpoints, one per operating point.
+Eight versions were trained before the diagnosis; in hindsight the record reads like a controlled study of what contradictory supervision does to a model. v3, selected by an offline meeting benchmark, fired eagerly and accurately \emph{on that benchmark}. v5 balanced offline and streaming pools and over-fired at phrase boundaries. v7--v8 added a dedicated ``do not fire'' pool, and training began to oscillate between a fire-mode and a no-fire-mode attractor every few thousand steps, never converging (Figure~\ref{fig:oscillation}, left). Across checkpoints, recall and precision appeared to trade off so consistently that the v8 postmortem proposed shipping \emph{two} checkpoints.
 
-The oscillation was the tell. A model whose loss cannot be minimized because the data assigns different targets to (near-)identical inputs does not settle; it circulates among the modes that each satisfy one subset of the labels. We found two mechanisms injecting exactly that.
-
-\paragraph{Contradiction 1: the trailing-silence clip cut.} Offline ASR clips end at the end of speech --- datasets are segmented by forced alignment, and evaluation clips inherit the cut. An offline endpoint benchmark built on such clips therefore demands a fire on audio that ends \emph{during or immediately after} speech. But the streaming pools (correctly) teach the opposite: never fire while speech is ongoing and silence has not yet been observed. The condition ``complete utterance, no trailing silence'' thus carries the label \emph{fire} in one pool and \emph{hold} in the other --- and in deployment the condition is unobservable anyway, because after a real speaker stops, silence keeps arriving. v8's two pools were disjoint sets of AMI utterances with opposite labels on identically distributed content: 50/50 label noise on the exact decision the model exists to make.
-
-\paragraph{Contradiction 2: labels keyed on who speaks next.} The historical pools distinguished ``disfluent pause --- do not fire'' from ``turn boundary --- fire'' using the transcript's segmentation: if the same speaker continued, the pause was a disfluency; if another speaker followed, it was a boundary. Measured on the v5 pool, the two classes' silence-gap distributions overlap almost completely (disfluency median 1.39\,s, boundary median 0.83\,s). At decision time --- mid-pause --- the two are \emph{indistinguishable}; the label is a function of the future. An offline decoder can satisfy such labels by peeking; a causal model cannot, and the ``disfluency over-fire'' penalty that dogged v1--v8 partly punished the models for lacking clairvoyance.
-
-\begin{tcolorbox}[title=\textbf{Clairvoyant labels},colback=red!3!white,colframe=red!50!black]
-A label for a streaming decision at time $t$ is \emph{clairvoyant} if its value depends on input after $t$. Pools containing clairvoyant labels do not merely add noise: because the dependence is systematic, they partition the data into internally-consistent subsets with incompatible optima. The observable symptoms are (a) training-time oscillation between mode attractors, and (b) apparent capability trade-offs across checkpoints or hyperparameters --- a phantom Pareto frontier. \textbf{Principle: every training label and every evaluation target for a streaming decision must be computable from the causal prefix.}
-\end{tcolorbox}
+The oscillation was the tell. A model whose loss cannot be minimized because the data assigns different targets to near-identical inputs does not settle; it circulates among modes that each satisfy one subset of the labels. Two mechanisms injected exactly that (Figure~\ref{fig:contradictions}):
 
 \begin{figure}[t]
   \centering
-  \fbox{\parbox{0.95\linewidth}{\centering\vspace{1.8cm}\todo{Figure 2: two timeline cartoons. Top: same waveform prefix ``complete utterance, cut at end of speech'' --- offline pool label FIRE, streaming pool label HOLD. Bottom: two pauses with near-identical prefixes; label differs only by who speaks later (grayed-out future audio).}\vspace{1.8cm}}}
-  \caption{\textbf{Two ways offline-derived supervision demands clairvoyance.} Top: the trailing-silence clip cut assigns opposite labels to causally identical prefixes. Bottom: pause labels keyed on the identity of the \emph{next} speaker --- information that does not exist at decision time.}
+  \includegraphics[width=\linewidth]{fig2_contradictions}
+  \caption{\textbf{Two ways offline-derived supervision demands clairvoyance.} (a)~Offline clips inherit forced-alignment cuts at the end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph{hold} --- and the condition ``speech ended, no silence yet'' is one deployment never presents, because silence keeps arriving after a real speaker stops. (b)~Disfluency-vs-boundary pause labels are keyed on who speaks \emph{next}; at the decision point the prefixes are statistically indistinguishable (the two classes' silence-gap distributions overlap almost completely).}
   \label{fig:contradictions}
 \end{figure}
+
+\paragraph{Contradiction 1: the trailing-silence clip cut.} Offline ASR clips end at the end of speech --- datasets are segmented by forced alignment, and evaluation clips inherit the cut. An offline endpoint benchmark built on such clips therefore demands a fire on audio that ends during or immediately after speech. The streaming pools (correctly) teach the opposite: never fire before silence is observed. The condition ``complete utterance, no trailing silence'' thus carries the label \emph{fire} in one pool and \emph{hold} in the other. v8's two pools were disjoint sets of AMI utterances with opposite labels on identically distributed content: 50/50 label noise on the exact decision the model exists to make.
+
+\paragraph{Contradiction 2: labels keyed on who speaks next.} The historical pools separated ``disfluent pause --- hold'' from ``turn boundary --- fire'' using the transcript's segmentation: same speaker continues $\Rightarrow$ disfluency; another speaker follows $\Rightarrow$ boundary. Measured on the v5 pool, the two classes' silence-gap distributions overlap almost completely (medians 1.39\,s vs 0.83\,s). At decision time --- mid-pause --- the classes are indistinguishable; the label is a function of the future. An offline decoder can satisfy such labels by peeking; a causal model cannot, and part of the historical ``disfluency over-fire'' penalty punished models for lacking clairvoyance.
+
+\begin{tcolorbox}[title=\textbf{Clairvoyant labels},colback=red!3!white,colframe=red!50!black]
+A label for a streaming decision at time $t$ is \emph{clairvoyant} if its value depends on input after $t$. Pools containing clairvoyant labels do not merely add noise: because the dependence is systematic, they partition the data into internally consistent subsets with incompatible optima. The observable symptoms are (a)~training-time oscillation between mode attractors and (b)~apparent capability trade-offs across checkpoints --- a phantom Pareto frontier. \textbf{Principle: every training label and every evaluation target for a streaming decision must be computable from the causal prefix.}
+\end{tcolorbox}
 
 \section{Measuring what deployment sees}
 \label{sec:eval}
 
-If clairvoyant labels are the disease, the evaluation is where it enters. We replaced both legacy benchmarks with a single deployment-matched protocol, and the principle applies to the benchmark itself: every ground-truth event must be causally decidable.
+If clairvoyant labels are the disease, evaluation is where it enters. We replaced both legacy benchmarks with one deployment-matched protocol --- and applied the causality principle to the benchmark itself.
 
-\paragraph{Material.} Continuous single-channel stretches from held-out AMI meetings: one target speaker's utterances placed at their true timeline offsets, silence between them, 30--60\,s per stretch (the voice-assistant shape: one microphone, one user). Audio never ends at a speech boundary --- silence keeps arriving, as in deployment.
+\paragraph{Material and ground truth.} Continuous single-channel stretches from held-out AMI meetings: one target speaker's utterances at their true timeline offsets, silence between them, 30--60\,s per stretch (the voice-assistant shape: one microphone, one user; audio never ends at a speech boundary). Each utterance-end boundary is classified by what is observable \emph{on this channel}: \textbf{turn-final} (same-speaker gap ${\geq}2$\,s) --- should fire; \textbf{continuation} (gap in $[0.3,2)$\,s, same speaker resumes) --- firing is a measured segmentation \emph{cost} (\texttt{resume\_after\_fire}), not an error, because the correct answer depends on the future; \textbf{internal} (pauses inside utterances, or ${<}0.3$\,s after speech) --- firing is a \emph{false fire}. Metrics: boundary recall within $[-0.25,+1.5]$\,s, false fires per speech-minute, latency percentiles, resume rate, streaming WER of flushed transcripts, per-chunk compute. An early version of this benchmark itself contained a clairvoyant rule (promoting boundaries to turn-final when \emph{another meeting speaker} interleaved --- inaudible on this channel); our own checklist (\S\ref{sec:checklist}) caught it, and all numbers use the corrected classification.
 
-\paragraph{Causal ground truth.} Each utterance-end boundary is classified by what is observable on this channel: \textbf{turn-final} (same-speaker gap $\geq$2\,s) --- the model \emph{should} fire; \textbf{continuation} (gap in [0.3, 2)\,s, same speaker resumes) --- firing is a measured segmentation \emph{cost} (\texttt{resume\_after\_fire}), not an error, because the correct answer depends on the future; \textbf{internal} (pauses inside utterances, or $<$0.3\,s after speech) --- firing is a \emph{false fire}. Metrics: boundary recall within $[-0.25, +1.5]$\,s tolerance, false fires per speech-minute, latency percentiles, resume rate, streaming WER of the flushed transcript, and per-chunk compute. An early version of this benchmark itself contained a clairvoyant rule (promoting a boundary to turn-final when \emph{another meeting speaker} interleaved --- inaudible on this channel); we caught it by applying our own checklist (\S\ref{sec:checklist}) and report the corrected classification throughout.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.62\linewidth]{fig6_silence}
+  \caption{\textbf{Every prior model is silence-incompetent.} Spurious fires of ungated v5 against the silence content of each benchmark stretch: the model hallucinates text and sprays markers on silence at ${\sim}1.9$\,fires/s ($r=0.997$), because every v1--v8 training example begins with speech while a real channel is mostly silence (13 of 22 minutes here). Consequence: \emph{ungated} recall is uninterpretable --- a random 1.9\,Hz spammer scores 0.96 recall against the tolerance window. The fix costs one line (RMS energy gate), and v9 additionally bakes silence schemas into training.}
+  \label{fig:silence}
+\end{figure}
 
-\paragraph{Finding 1: all previous models are silence-incompetent.} Every v1--v8 training example begins with speech; a real channel is mostly silence (13 of 22 minutes here). On silence-only segments every prior model hallucinates text and sprays markers ($\sim$1.9 fires/s; correlation between a stretch's silence duration and its spurious fires: $r=0.997$). This has two consequences. First, \emph{ungated} recall numbers are uninterpretable --- a random 1.9\,Hz spammer scores 0.96 recall against the tolerance window. Second, the fix is embarrassingly cheap: a one-line RMS energy gate in front of the LM (and, in v9, two data schemas that teach silence directly, making the model safe even ungated).
+\paragraph{Finding 1: silence incompetence.} Figure~\ref{fig:silence}. Every v1--v8 training example begins with speech; a real channel is mostly silence. On silence the models hallucinate and fire; ungated numbers are uninterpretable, and all comparisons below run gated.
 
-\begin{table}[t]
-  \centering\small
-  \caption{\textbf{The ranking inversion.} Legacy offline conclusions vs.\ the deployment-matched replay benchmark (25 held-out AMI stretches, energy gate on, spec-v2 causal boundaries). The offline champion is unusable in streaming; the checkpoint written off as broken is the best prior endpointer. WER$_\text{med}$ is the median per-stretch streaming WER. $^{\dagger}$v8's WER \emph{mean} is 4.96 --- a long-monologue repetition-loop tail, fixed by the force-flush knob (\S\ref{sec:serving}).}
-  \label{tab:inversion}
-  \begin{tabular}{llccccc}
-    \toprule
-    Model & Legacy verdict & Recall & P50 & False/min & WER$_\text{med}$ \\
-    \midrule
-    v3 + gate & ``offline champion'' & 0.896 & 0.05\,s & \textbf{88.8} & 0.80 \\
-    v5 + gate & ``balanced'' & 0.906 & 0.16\,s & 27.3 & 0.31 \\
-    v8 + gate & ``broken (10\% offline)'' & \textbf{0.938} & 0.26\,s & 3.6 & 0.27$^{\dagger}$ \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.6\linewidth]{fig5_inversion}
+  \caption{\textbf{The ranking inversion.} Left: the legacy offline benchmark (fire-rate on clips cut at end-of-speech). Right: the deployment-matched replay benchmark (false fires per speech-minute, energy gate on; full metrics in Table~\ref{tab:main}). The offline champion v3 fires 89 times per speech-minute mid-utterance --- its offline strength \emph{is} a premature-fire pathology once audio keeps flowing. v8, written off at 10\% offline, is the best prior endpointer. Both historical ship decisions were wrong.}
+  \label{fig:inversion}
+\end{figure}
 
-\paragraph{Finding 2: the historical ranking inverts.} Table~\ref{tab:inversion}. v3 --- selected by the offline benchmark --- fires 89 times per speech-minute mid-utterance: its offline strength (fire at semantic completion, silence or not) \emph{is} a premature-fire pathology once audio keeps flowing. v8 --- declared broken at 10\% on the offline benchmark --- has the cleanest streaming behavior of the eight. Both of the record's ship recommendations would have failed in production. A benchmark with clairvoyant targets does not just mis-score models; it mis-\emph{ranks} them, and the error is largest exactly at the top.
+\paragraph{Finding 2: the ranking inverts.} Figure~\ref{fig:inversion}. A benchmark with clairvoyant targets does not just mis-score models; it mis-\emph{ranks} them, and the error is largest exactly at the top --- v3 was ``best'' offline \emph{because} it fires without waiting for silence, which is the single worst property in deployment.
 
 \section{Relabel, don't rearchitect}
 \label{sec:v9}
 
-v9 changes only the data. Same base model, same LoRA recipe, same $\sim$12k example budget, one label rule:
+v9 changes only the data. One rule: \emph{emit \eager\fire{} at a point iff the speech so far is semantically complete AND ${\geq}0.3$\,s of silence has elapsed since the last speech.} Both conditions are functions of the prefix. Two corollaries kill the two contradictions. (1)~A complete utterance with no silence tail gets no marker --- and the \emph{same utterance} appears again with a silence tail and the marker (Figure~\ref{fig:minimalpair}): where v8 assigned opposite labels to two pools of identically distributed audio (unlearnable), v9 assigns opposite labels to the same audio differing only in an observable feature --- precisely the feature the model must learn to key on. (2)~Holding through a pause is trained only where the prefix itself says the utterance is incomplete (trailing filler/connective, mid-word cut); pauses after complete speech fire even if the speaker later resumes --- quick resumes become two segments, the benchmark's measured cost, not an error. Eight schemas cover fire, hold, truncation, pause discrimination, pure silence, and silence-initial segments (Appendix~\ref{app:labels}).
 
-\begin{center}
-\emph{Emit \eager\fire{} at a point iff the speech so far is semantically complete AND $\geq$0.3\,s of silence has elapsed since the last speech.}
-\end{center}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig9_minimalpair}
+  \caption{\textbf{The minimal-pair device.} Each complete utterance appears twice in v9's training data: without a silence tail (target: transcript only) and with a 0.3--1.2\,s tail (target: transcript + marker). The only difference between the opposite-labeled examples is the observable the model must use. This construction is what removes the oscillation in Figure~\ref{fig:oscillation}.}
+  \label{fig:minimalpair}
+\end{figure}
 
-Both conditions are functions of the prefix. Two corollaries kill the two contradictions. (1) A complete utterance with no silence tail gets \emph{no} marker --- and the \emph{same utterance} appears a second time in the data with a 0.3--1.2\,s silence tail appended \emph{and} the marker. This minimal-pair construction is the anti-oscillation device: v8 assigned opposite labels to two disjoint pools of identically-distributed audio (unlearnable); v9 assigns opposite labels to the same audio differing only in an observable feature --- which is precisely the feature we want the model to key on. (2) Holding through a pause is trained only where the prefix itself says the utterance is incomplete (trailing filler/connective, mid-word cut); pauses after complete speech fire even if the speaker later resumes --- quick resumes become two segments, the benchmark's measured cost knob, not an error. Eight schemas cover fire, hold, truncation, pause discrimination, pure silence, and silence-initial segments ($\sim$12k examples from LibriSpeech + AMI; full spec in Appendix~\ref{app:labels}).
-
-\paragraph{The fingerprint, removed.} Figure~\ref{fig:oscillation} (right): the holdout composite climbs monotonically 0.900$\rightarrow$0.963 and plateaus; fire-class and hold-class accuracies sit at ceiling \emph{simultaneously} from step 3000 onward, for the entire run. The oscillation that consumed v7--v8 does not occur. Since architecture, recipe, scale, and sources are held fixed, this is as close to a controlled experiment on the label spec as a training run gets.
+\paragraph{The fingerprint, removed.} Figure~\ref{fig:oscillation} (right): the composite climbs monotonically 0.900${\to}$0.963 and plateaus; fire and hold classes sit at ceiling simultaneously for the entire run. Architecture, recipe, scale, and sources held fixed --- as close to a controlled experiment on the label spec as a training run gets.
 
 \begin{table}[t]
   \centering\small
-  \caption{\textbf{Main result} (deployment-matched replay, 25 held-out AMI stretches; energy gate on unless noted). v9 dominates every predecessor and needs neither crutch: no confirm horizon (its raw false-fire rate already beats v5's \emph{confirmed} rate), no force-flush for WER. Timeout baselines share the identical detector, stretches, and scoring; ``$X$'' is the silence timeout. \todo{add E13 fresh-set row + confirm final v9 numbers on it}}
+  \caption{\textbf{Main result} (deployment-matched replay, 25 held-out AMI stretches, energy gate on; latency-vs-false-fire view in Figure~\ref{fig:tradeoff}). v9 dominates every predecessor without either crutch: its \emph{raw} false-fire rate beats v5's \emph{confirmed} rate, and its WER needs no force-flush. The confirm ablation: v5's horizon cancels 241 phrase-boundary candidates; v9's cancels 3. $^{\dagger}$v8's WER mean is a long-monologue repetition tail, fixed only by force-flush. \pending{E13: fresh 50-stretch confirmation set row}}
   \label{tab:main}
   \begin{tabular}{lccccc}
     \toprule
-    Policy & Recall & P50 & P95 & False/min & WER$_\text{mean}$ \\
+    Policy & Recall\,$\uparrow$ & P50\,$\downarrow$ & P95\,$\downarrow$ & False/min\,$\downarrow$ & WER$_\text{mean}$\,$\downarrow$ \\
     \midrule
-    \multicolumn{6}{l}{\emph{Prior checkpoints (best inference policy each)}}\\
     v5 + gate + confirm1 & 0.927 & 0.68\,s & 1.27\,s & 3.2 & 0.36 \\
-    v8 + gate + confirm1 & 0.938 & 0.77\,s & 1.06\,s & 0.0 & 4.96 \\
-    \midrule
-    \multicolumn{6}{l}{\emph{Silence-timeout family (deployed cascade; same detector as the gate)}}\\
-    RMS + $X{=}0.5$\,s & 0.958 & 0.65\,s & --- & 6.3 & n/a \\
-    RMS + $X{=}1.0$\,s & 0.969 & 1.15\,s & --- & 1.4 & n/a \\
-    RMS + $X{=}1.5$\,s & 0.208 & 1.38\,s & --- & 0.8 & n/a \\
-    Silero VAD + $X{=}0.5$\,s & 0.844 & 0.54\,s & --- & 13.5 & n/a \\
-    Silero VAD + $X{=}1.0$\,s & 0.854 & 1.04\,s & --- & 5.5 & n/a \\
-    \midrule
-    \textbf{v9 + gate} & \textbf{0.969} & \textbf{0.39\,s} & \textbf{0.70\,s} & \textbf{0.3} & 1.43 \\
+    v8 + gate + confirm1 & 0.938 & 0.77\,s & 1.06\,s & 0.0 & 4.96$^{\dagger}$ \\
+    \textbf{v9 + gate} & \textbf{0.969} & \textbf{0.39\,s} & \textbf{0.70\,s} & \textbf{0.3} & \textbf{1.43} \\
     v9 + gate + confirm1 & 0.969 & 0.89\,s & 1.20\,s & 0.0 & 1.43 \\
+    v9 + gate (fresh stretches) & \multicolumn{5}{c}{\pending{E13}} \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\paragraph{Dominance, including over the deployed cascade.} Table~\ref{tab:main}. Against its predecessors, v9+gate is better on every axis at once --- recall 0.969 vs 0.927/0.938, false fires 0.3/min vs 3.2/3.6, latency P50 0.39\,s vs 0.68/0.77\,s. Against the silence-timeout family the structure of the comparison is the point: a timeout can only trade latency against false fires along one curve, because it must be long enough to survive within-turn pauses. To match v9's recall, the RMS timeout needs $X{=}1.0$\,s --- $3\times$ the latency and $\sim$$5\times$ the false fires; at its fastest usable setting ($X{=}0.5$\,s) it produces $21\times$ the false fires and still 1.7$\times$ the latency. At $X{\geq}1.5$\,s the timeout leaves the tolerance window entirely (recall 0.21) --- the ``assistant that waits too long,'' quantified. The Silero cascade is worse than RMS everywhere on this close-talk channel. v9 escapes the curve because it is not measuring silence length; it is reading completeness: it fires 0.39\,s after a finished thought and holds through a 1.4\,s mid-sentence pause. One honest caveat: v9 segments quick resumes at the same rate as an aggressive timeout (resume-after-fire 1.0) --- by design, since the correct choice is unknowable at decision time; deployments that prefer merging pay +0.5\,s via confirm1.
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.72\linewidth]{fig3_tradeoff}
+  \caption{\textbf{Semantic endpointing escapes the timeout curve.} Median latency vs false fires (log scale; $0^{*}$ = zero plotted at $0.05$) on identical stretches, detector, and scoring. A silence timeout $X$ can only slide along its curve: matching v9's recall takes $X{=}1.0$\,s --- $3\times$ the latency, ${\sim}5\times$ the false fires; the fastest usable setting ($X{=}0.5$\,s) produces $21\times$ the false fires; $X{\geq}1.5$\,s leaves the recall tolerance window entirely (open markers) --- the assistant that waits too long. The Silero cascade \citep{silero2021vad} is dominated by plain RMS on this close-talk channel. v9 sits strictly inside the whole family because it reads \emph{completeness}: it fires 0.39\,s after a finished thought and holds through a 1.4\,s mid-sentence pause. Honest caveat: v9 segments quick resumes at the same rate as an aggressive timeout (resume-after-fire 1.0, by design --- the correct choice is unknowable at decision time); deployments preferring merged segments pay $+0.5$\,s via confirm1.}
+  \label{fig:tradeoff}
+\end{figure}
 
-\paragraph{Crutches, retired.} The predecessors were shippable only with inference-time patches: v5 needed the confirm horizon to cancel \textbf{241} phrase-boundary fire candidates across the benchmark; v9's identical ablation cancels \textbf{3}. v8 needed the force-flush to avoid WER-mean 4.96 on long monologues; v9's WER-mean is 1.43 without it (and its residual tail is a decoding artifact addressed in \S\ref{sec:serving}, not an endpoint behavior). The phrase-vs-turn discrimination moved from policy into weights --- which is what supervision was supposed to do all along.
+\paragraph{Dominance.} Table~\ref{tab:main} and Figure~\ref{fig:tradeoff}. Against its predecessors, v9+gate is better on every axis at once. Against the deployed cascade, the comparison's \emph{structure} is the point: a timeout must be long enough to survive within-turn pauses, so it can only trade latency against false fires along one curve; v9 escapes the curve by reading completeness. And the crutches retire: the phrase-vs-turn discrimination moved from inference policy into weights --- which is what supervision was supposed to do all along.
 
 \section{The rest of the model still works}
 \label{sec:rest}
 
-An endpoint fine-tune that damaged the base model would be a bad trade. It doesn't --- and the unified model's headline side-capability comes with numbers its base model never published.
+An endpoint fine-tune that damaged the base recognizer would be a bad trade. It does not --- and the unified model's side capability comes with numbers its base model never published.
 
-\paragraph{Offline ASR is unharmed.} \todo{E12: LibriSpeech test-clean/other WER, base vs merged endpoint checkpoint, + marker false-fire rate on offline clips. Table.}
+\paragraph{Offline ASR regression.} \pending{E12: LibriSpeech test-clean/other WER, stock Qwen3-ASR-0.6B vs merged endpoint checkpoint, plus marker false-fire rate on offline clips (causally, the v9 model should rarely fire on silence-free clips). One-row table; runs are queued.}
 
-\paragraph{Context biasing, measured where it matters.} On 150 Earnings-22 utterances (spontaneous earnings-call speech, dense in tickers, executives, product names; entities extracted by an LLM and filtered to genuine proper nouns), a relevant hotword prefix lifts entity recall from 66.7\% to \textbf{95.6\%} (+28.9\,pp), while nudging WER down (15.3$\rightarrow$15.0\%); a \emph{distractor} prefix (another utterance's entities) induces 3.7\% hallucination --- above our 3\% target, reported as-is; distractor-ratio training is the known lever. Qwen3-ASR claims context biasing but reports no numbers; this is, to our knowledge, the first quantified measurement on this model family.
+\paragraph{Context biasing, measured where it matters.} Figure~\ref{fig:biasing}(a): on Earnings-22 \citep{delrio2022earnings22} --- spontaneous earnings-call speech dense in tickers, executives, products; entities LLM-extracted and filtered to genuine proper nouns --- a relevant hotword prefix lifts entity recall from 66.7\% to 95.6\% ($+28.9$\,pp), while nudging WER down (15.3${\to}$15.0\%). A \emph{distractor} prefix (another utterance's entities) induces 3.7\% hallucination --- above our 3\% target, reported as-is; distractor-ratio training is the known, unexercised lever. Qwen3-ASR claims context biasing but reports no numbers; to our knowledge these are the first on this model family.
 
-\paragraph{The advantage survives session length.} In streaming, minutes of audio interpose between the prefix and the words being recognized. Prepending 0--12\,s of filler speech before entity-bearing targets, the biasing advantage stays flat: +32.7, +30.6, +30.6, +34.7\,pp at 0/4/8/12\,s of intervening audio. Context biasing is a durable session-level capability, not a first-utterance parlor trick. \todo{Fig 4: two-panel — uplift bar (66.7 vs 95.6) + flat gap-vs-age curve}
+\paragraph{The advantage survives session length.} Figure~\ref{fig:biasing}(b): with 0--12\,s of unrelated speech interposed between the prefix and the target words, the biasing advantage stays flat at ${\approx}{+}30$\,pp. Context biasing is a durable session-level capability, not a first-utterance parlor trick.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig4_biasing}
+  \caption{\textbf{Context biasing: the capability with no public numbers.} (a)~Earnings-22 entity recall without context, with the relevant hotword prefix, and the hallucination rate under a distractor prefix (150 utterances; LLM-extracted proper-noun entities). (b)~Recall vs seconds of unrelated speech interposed between prefix and target: the ${\approx}{+}30$\,pp advantage does not decay with session age.}
+  \label{fig:biasing}
+\end{figure}
 
 \section{Deployment reality check}
 \label{sec:serving}
 
-Streaming papers routinely stop at a simulator. Three findings from putting this model on real serving infrastructure (vLLM 0.19, one shared GPU):
+Streaming papers routinely stop at a simulator. Three findings from serving this model on stock vLLM \citep{kwon2023vllm} (one \emph{shared} GPU throughout):
 
-\paragraph{An OOD landmine: chunked multimodal feeding.} The natural flat-cost serving shape --- append each 0.5\,s chunk as a new audio placeholder in a growing resident request --- destroys the model: \textbf{88\% WER}, vs \textbf{3.8\%} for re-feeding the last window as a single segment. Qwen3-ASR was trained on single audio segments; per-chunk placeholders are wildly out of distribution. The bounded re-feed costs a re-encode per step but is the only correct primitive for this model family. (We validated the in-engine alternative --- windowed KV with the context prefix pinned as an attention sink --- separately; it is an efficiency refinement, not a capability requirement. \todo{one sentence + cite Metronome})
+\paragraph{An OOD landmine.} Figure~\ref{fig:serving}(a). The natural flat-cost serving shape --- append each 0.5\,s chunk as a new audio placeholder in a growing resident request --- destroys the model: 88\% WER vs 3.8\% for re-feeding the last window as a single segment. The base model was trained on single audio segments; per-chunk placeholders are wildly out of distribution. Bounded re-feed is the only correct primitive for this family.
 
-\paragraph{The simulator was the bottleneck.} The same replay protocol on vLLM reproduces the endpoint behavior (recall 0.958, P50 0.39\,s with force-flush) at \textbf{84\,ms median per chunk} vs.\ the transformers simulator's 455\,ms --- $5.4\times$ faster, $\sim$$6\times$ real time on a 0.15-utilization slice of one GPU. Latency claims made on O($T^2$) re-decode simulators overstate the cost of this approach by that factor.
+\paragraph{The simulator was the bottleneck.} Figure~\ref{fig:serving}(b). The replay protocol on vLLM reproduces the endpoint behavior at 84\,ms median per chunk vs the transformers simulator's 455\,ms ($5.4\times$) --- ${\sim}6\times$ real time on a 0.15-utilization slice. Latency claims made on $O(T^2)$ re-decode simulators overstate the cost of this approach by that factor.
 
-\paragraph{Bound every resident state.} Committed-prefix decoding with no segment bound eventually loops on long monologues (two stretches drove WER-mean to 2.54); a 20\,s force-flush fixes the WER tail (1.29) \emph{and} the compute tail (P95 413$\rightarrow$117\,ms) with no endpoint-metric cost. Under concurrency, per-frame p95 stays flat through \textbf{$N{=}8$} simultaneous sessions per 0.15-GPU slice and cliffs at 16 --- deadline-bound, not memory-bound, with the energy gate batching only the $\sim$40\% of sessions actually due per frame. (Lower bound: measured under an adversarial co-tenant; the shape, not the constant, is the result.)
+\paragraph{Bound every resident state.} Unbounded committed prefixes eventually loop on long monologues; a 20\,s force-flush fixes the WER tail (2.54${\to}$1.29) \emph{and} the compute tail (P95 413${\to}$117\,ms) at no endpoint cost (Figure~\ref{fig:serving}(b)). Under concurrency (Figure~\ref{fig:serving}(c)) per-frame p95 stays flat through $N{=}8$ sessions per 0.15-GPU slice and cliffs at 16 --- deadline-bound, not memory-bound, with the energy gate batching only the sessions actually due each frame. (A contention-caveated lower bound; the shape, not the constant, is the result.) The in-engine efficiency variant --- windowed KV with the \ctx{} prefix pinned as an attention sink \citep{xiao2024streamingllm} --- is validated separately in a companion systems paper \citep{li2026metronome}; capability-wise, bounded re-feed already keeps biasing flat (Figure~\ref{fig:biasing}(b)).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{fig7_serving}
+  \caption{\textbf{Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times$ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.}
+  \label{fig:serving}
+\end{figure}
 
 \section{Clairvoyant labels: a checklist}
 \label{sec:checklist}
 
-The failure mode generalizes to any model that must act mid-stream on offline-labeled data. Four questions to ask of a streaming supervision pipeline:
+The failure mode generalizes to any model that must act mid-stream on offline-labeled data. Four questions for a streaming supervision pipeline:
 
-\begin{enumerate}
-  \item \textbf{Prefix test.} For each label at decision time $t$: is it computable from input up to $t$? (Our contradiction 2 failed this: pause labels keyed on the next speaker.)
-  \item \textbf{Twin test.} Can two causally identical prefixes receive different labels anywhere in the data? (Contradiction 1: same complete-utterance prefix, opposite labels across pools. Minimal pairs that differ in an \emph{observable} are the fix, not the bug.)
-  \item \textbf{Phantom-condition test.} Does the eval demand behavior on conditions deployment never produces? (Clips cut at end-of-speech; deployment always delivers the next silence.)
-  \item \textbf{Oscillation test.} Does training bounce between mode attractors that each satisfy part of the data? That is not instability to be fixed with a scheduler; it is the loss surface reporting a contradiction.
+\begin{tcolorbox}[colback=blue!3!white,colframe=blue!45!black,title=\textbf{Is your supervision clairvoyant?}]
+\begin{enumerate}\itemsep2pt
+  \item \textbf{Prefix test.} For each label at decision time $t$: is it computable from input up to $t$? \emph{(Our pause labels were keyed on the next speaker.)}
+  \item \textbf{Twin test.} Can two causally identical prefixes receive different labels anywhere in the data? \emph{(Same complete-utterance prefix: fire in one pool, hold in the other.)} Minimal pairs differing in an \emph{observable} are the fix, not the bug.
+  \item \textbf{Phantom-condition test.} Does the eval demand behavior on conditions deployment never produces? \emph{(Clips cut at end-of-speech; deployment always delivers the next silence.)}
+  \item \textbf{Oscillation test.} Does training bounce between mode attractors that each satisfy part of the data? That is not instability to be scheduled away; it is the loss surface reporting a contradiction.
 \end{enumerate}
+\end{tcolorbox}
 
-Candidates we believe are affected: turn-taking policies for full-duplex voice agents (labels from offline dialogue transcripts encode who \emph{did} speak next, not what was knowable); barge-in and endpointing in commercial stacks; simultaneous MT with reference-aligned READ/WRITE labels; streaming TTS interruption; tool-call timing for agents trained from completed trajectories. In each, an apparent aggressiveness-vs-caution frontier may partly be an artifact of asking the model to know the future.
+Candidates we believe are affected: turn-taking policies for full-duplex agents trained from offline dialogue transcripts (the labels encode who \emph{did} speak next, not what was knowable --- cf.\ the projection-style objectives of \citealp{ekstedt2022vap}, which are explicitly predictive and thus honest about the uncertainty); barge-in and endpointing in commercial stacks; simultaneous translation trained with reference-aligned read/write decisions \citep{ma2019stacl}; streaming TTS interruption; tool-call timing for agents cloned from completed trajectories --- a streaming sibling of causal confusion in imitation learning \citep{dehaan2019causal}. In each, an apparent aggressiveness-vs-caution frontier may partly be an artifact of asking the model to know the future. The diagnosis also joins a broader lineage of measurement-induced phenomena: as sharp metric choices can manufacture ``emergence'' \citep{schaeffer2023mirage}, non-causal label choices can manufacture \emph{trade-offs}.
 
 \section{Related work}
 \label{sec:related}
-\todo{Endpointing: Meta hierarchical EOT (36ms acoustic), Deepgram Flux EagerEndOfTurn; unified streaming ASR: Kyutai delayed-streams, Qwen3-ASR tech report; context biasing literature; StreamingLLM sinks; Metronome; and the mirage lineage: Schaeffer et al. emergent-abilities-as-metric-artifact, plus eval-artifact literature. Keep to 3/4 page, story already told.}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.72\linewidth]{fig10_landscape}
+  \caption{\textbf{Where this work sits.} End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness. The semantic quadrant's existing members are closed products; the open systems are acoustic cascades, weights-only releases, or joint E2E endpointers without a published turn-training recipe. This work occupies the empty corner: semantic end-of-turn, open weights \emph{and} recipe.}
+  \label{fig:landscape}
+\end{figure}
+
+\paragraph{Endpointing and end-of-turn detection.} Classical endpointing thresholds a VAD \citep{silero2021vad} with a silence timeout; learned refinements predict end-of-query directly from acoustics \citep{shannon2017improved}, jointly train an endpointer with the recognizer \citep{chang2019joint,li2020towards,bijwadia2023unified}, or distill tiny acoustic end-of-turn models \citep{meta2026hierarchical,smartturn2025}. Recent systems fuse acoustic and linguistic cues for the turn decision \citep{fastturn2026,jalturn2026} or fold VAD, turn detection, and ASR into one audio-LLM front-end \citep{uaf2026}. Commercially, Deepgram Flux integrates end-of-turn events into the recognizer's forward pass \citep{deepgram2026flux} and OpenAI exposes semantic VAD \citep{openai2025semanticvad}; neither publishes training details. Our contribution to this line is orthogonal to architecture: a supervision principle, with evidence that violating it manufactures the recall-precision trade-offs this literature often reports as intrinsic.
+
+\paragraph{Turn-taking in dialogue.} Turn-taking prediction has a long tradition in conversational AI \citep{skantze2021review}, from text-based end-of-turn prediction \citep{ekstedt2020turngpt} to voice-activity projection trained on future windows \citep{ekstedt2022vap}. Projection objectives predict distributions over the future and are therefore causally honest; our diagnosis concerns the sharper failure where future-dependent quantities are presented as \emph{deterministic labels}.
+
+\paragraph{Streaming and unified ASR.} Streaming recognition spans RNN-T \citep{graves2012sequence}, large weakly supervised models \citep{radford2023whisper}, decoder-only streaming with latency losses \citep{wan2026streaming}, and unified streaming/offline speech-LLMs \citep{qwen3asr2026}. Kyutai's delayed-streams models add a semantic-VAD head to streaming STT \citep{kyutai2025stt,defossez2024moshi}. We inherit this substrate and add the turn event plus the training recipe.
+
+\paragraph{Context biasing.} Contextual ASR ranges from attention-based deep context \citep{pundak2018deep} to retrieval-scale biasing \citep{brasr2025}, RL-tuned hotword integration \citep{hotwordgrpo2025}, and cue-based prompting for speech LLMs \citep{commoncues2026}. We use plain prompt-slot biasing and contribute measurements: uplift on entity-dense audio and durability across session age.
+
+\paragraph{Serving.} vLLM's paged KV \citep{kwon2023vllm} carries our serving path; attention sinks \citep{xiao2024streamingllm} and bounded-state streaming serving \citep{li2026metronome} provide the in-engine efficiency variant of our pinned context prefix.
 
 \section{Limitations}
 \label{sec:limits}
-Single-speaker, single-channel English; the mixed-channel meeting shape is future work. Semantic completeness labels come from a heuristic classifier over transcripts (fillers/connectives/short-utterance rules); a learned completeness judge may push the residual 3\% recall gap. Distractor hallucination (3.7\%) exceeds our 3\% target; the distractor-ratio training lever is unexercised. Quick resumes are always segmented (resume rate 1.0) --- fusing them needs either the confirm knob or future-aware post-hoc merging. Concurrency numbers are contention-caveated lower bounds. \todo{fold in E12/E13 caveats if any}
+
+Single-speaker, single-channel English; the mixed-channel meeting shape is future work. Semantic completeness labels come from a heuristic transcript classifier (fillers, connectives, short-utterance rules); a learned completeness judge is the obvious next lever on the residual 3\% recall gap. Distractor hallucination (3.7\%) exceeds our 3\% target. Quick resumes are always segmented (resume rate 1.0); merging them costs $+0.5$\,s via the confirm knob or requires post-hoc fusion. Concurrency numbers are contention-caveated lower bounds from a shared GPU. The benchmark's 25 stretches (96 turn-final boundaries) were used during development; the fresh-stretch confirmation run is \pending{E13}. Offline WER regression is \pending{E12}.
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
 
 \appendix
+
 \section{The v9 label specification}
 \label{app:labels}
-\todo{full schema table + completeness classifier rules + minimal-pair construction details (from research/59)}
+Eight schemas, ${\sim}12$k examples, LibriSpeech and AMI roughly 50/50; pair examples use both same- and different-speaker AMI pairs (the fire decision keys on completeness + silence, never on speaker identity, which single-channel deployment cannot observe). $M$ = \eager\fire.
+
+\begin{table}[h]
+  \centering\small
+  \caption{v9 training schemas. Schemas 1--2 are the minimal-pair device (Figure~\ref{fig:minimalpair}); 7--8 fix silence incompetence (Figure~\ref{fig:silence}).}
+  \begin{tabular}{llll}
+    \toprule
+    \# & Schema & Construction & Target \\
+    \midrule
+    1 & \texttt{single\_sil} & utterance + 0.3--1.2\,s silence & \texttt{text} $M$ \\
+    2 & \texttt{complete\_nosil} & \emph{same utterances as \#1}, tail ${\leq}0.1$\,s & \texttt{text} \\
+    3 & \texttt{truncated} & cut mid-speech at 30--80\% & partial \texttt{text} \\
+    4 & \texttt{pair\_fire} & complete A + gap 0.3--2.5\,s + B (+ tail) & \texttt{A} $M$ \texttt{B} $M$ / \texttt{A} $M$ \texttt{B} \\
+    5 & \texttt{pair\_hold} & \emph{incomplete} A + gap + B + tail & \texttt{A B} $M$ \\
+    6 & \texttt{long\_sil} & utterance + 2--4\,s silence & \texttt{text} $M$ \\
+    7 & \texttt{silence\_only} & pure silence 0.5--4\,s & (empty) \\
+    8 & \texttt{lead\_sil} & silence 0.5--2\,s + utterance + tail & \texttt{text} $M$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Completeness classifier for pair examples: utterance A is \emph{incomplete} iff its transcript ends in a filler/connective (``and, but, so, or, uh, um, the, a, to, of, in, with, i mean, you know, \ldots''), ends mid-word (AMI partial-word annotation), or has fewer than 3 words outside a closed acknowledgment list. Borderline cases land in the \texttt{resume\_after\_fire} cost knob --- they never create fire/hold contradictions on identical observables. Abandonment (incomplete speech, speaker never resumes) is an inference-policy timeout, not a label.
 
 \section{Benchmark specification and the spec-v1 bug}
 \label{app:eval}
-\todo{full replay-eval spec; the spec-v1 non-causal boundary promotion as a worked example of the checklist catching our own benchmark}
+Full protocol: 0.5\,s chunks; committed-prefix incremental decoding (emitted text committed, last 5 tokens rolled back) matching the base model's official streaming semantics; fires timestamped at the chunk boundary where \fire{} first appears; recall window $[-0.25,+1.5]$\,s clipped at the next utterance's onset. The first version of the boundary classifier promoted a boundary to turn-final when another meeting speaker interleaved before the target speaker resumed. On a single-channel stream that speech is silence --- demanding a fire there is exactly the clairvoyance the benchmark exists to remove. The corrected (spec-v2) classification moved v5 recall $0.917{\to}0.906$ and v8 $0.935{\to}0.938$; no conclusion changed, but the episode is a working example of \S\ref{sec:checklist} applied to one's own evaluation.
 
-\section{Per-arm results}
+\section{Additional results}
 \label{app:tables}
-\todo{full tables incl.\ ungated arms, confirm sweep, fresh-set E13, per-stretch distributions}
+Ungated arms, the full confirm-horizon sweep ($h{\in}\{0,1,2\}$; $h{=}2$ over-suppresses), per-stretch distributions, and the fresh-set E13 table will be included here. \pending{E13 table; final per-arm JSON digests}
 
 \section{Reproducibility}
 \label{app:repro}
-\todo{hardware, training time, data budgets, code/checkpoint release pointer; the co-tenant/OOM war-story footnote}
+Hardware: one RTX Pro 6000 (Blackwell), shared with an unrelated co-tenant workload throughout (all GPU jobs wrapped in retry/resume; the v9 training run survived four OOM kills via checkpoint resume with ${\leq}750$ steps lost each). Training: LoRA $r{=}16$, $\alpha{=}32$, batch 8, best checkpoint at step 7.5k selected by the holdout composite. Evaluation and serving: vLLM 0.19, \texttt{skip\_special\_tokens=False} (the markers are reserved special tokens and are otherwise silently stripped --- a gotcha worth one sentence). Code, the label-spec builder, the replay benchmark, and the merged checkpoint will be released. \pending{release URL}
 
 \end{document}

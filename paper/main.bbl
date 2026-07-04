@@ -1,0 +1,223 @@
+\begin{thebibliography}{35}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{authors}(2025)]{hotwordgrpo2025}
+{authors}.
+\newblock Contextual biasing for {LLM}-based {ASR} with hotword retrieval and
+  reinforcement learning.
+\newblock \emph{arXiv preprint arXiv:2512.21828}, 2025.
+
+\bibitem[{authors}(2026)]{commoncues2026}
+{authors}.
+\newblock Contextual biasing in speech {LLMs} with common word cues.
+\newblock \emph{arXiv preprint arXiv:2604.12398}, 2026.
+
+\bibitem[Bijwadia et~al.(2023)Bijwadia, Chang, Li, Sainath, Zhang, and
+  He]{bijwadia2023unified}
+Shaan Bijwadia, Shuo-Yiin Chang, Bo~Li, Tara~N. Sainath, Chao Zhang, and
+  Yanzhang He.
+\newblock Unified end-to-end speech recognition and endpointing for fast and
+  efficient speech systems.
+\newblock In \emph{IEEE SLT}, 2023.
+
+\bibitem[{BR-ASR authors}(2025)]{brasr2025}
+{BR-ASR authors}.
+\newblock {BR-ASR}: Efficient and scalable bias retrieval for contextual
+  biasing.
+\newblock In \emph{Interspeech}, 2025.
+\newblock arXiv:2505.19179.
+
+\bibitem[Carletta et~al.(2005)]{carletta2005ami}
+Jean Carletta et~al.
+\newblock The {AMI} meeting corpus: A pre-announcement.
+\newblock In \emph{International Workshop on Machine Learning for Multimodal
+  Interaction}, 2005.
+
+\bibitem[Chang et~al.(2019)Chang, Prabhavalkar, He, Sainath, and
+  Simko]{chang2019joint}
+Shuo-Yiin Chang, Rohit Prabhavalkar, Yanzhang He, Tara~N. Sainath, and Gabor
+  Simko.
+\newblock Joint endpointing and decoding with end-to-end models.
+\newblock In \emph{ICASSP}, 2019.
+
+\bibitem[de~Haan et~al.(2019)de~Haan, Jayaraman, and Levine]{dehaan2019causal}
+Pim de~Haan, Dinesh Jayaraman, and Sergey Levine.
+\newblock Causal confusion in imitation learning.
+\newblock In \emph{NeurIPS}, 2019.
+
+\bibitem[{Deepgram}(2026)]{deepgram2026flux}
+{Deepgram}.
+\newblock Flux: Conversational speech recognition with model-integrated
+  end-of-turn detection.
+\newblock Product documentation, \url{https://deepgram.com}, 2026.
+
+\bibitem[D{\'e}fossez et~al.(2024)D{\'e}fossez, Mazar{\'e}, Orsini, Royer,
+  P{\'e}rez, J{\'e}gou, Grave, and Zeghidour]{defossez2024moshi}
+Alexandre D{\'e}fossez, Laurent Mazar{\'e}, Manu Orsini, Am{\'e}lie Royer,
+  Patrick P{\'e}rez, Herv{\'e} J{\'e}gou, Edouard Grave, and Neil Zeghidour.
+\newblock Moshi: a speech-text foundation model for real-time dialogue.
+\newblock \emph{arXiv preprint arXiv:2410.00037}, 2024.
+
+\bibitem[Del~Rio et~al.(2022)Del~Rio, Ha, McNamara, Miller, and
+  Chandra]{delrio2022earnings22}
+Miguel Del~Rio, Peter Ha, Quinten McNamara, Corey Miller, and Shipra Chandra.
+\newblock Earnings-22: A practical benchmark for accents in the wild.
+\newblock \emph{arXiv preprint arXiv:2203.15591}, 2022.
+
+\bibitem[Ekstedt and Skantze(2020)]{ekstedt2020turngpt}
+Erik Ekstedt and Gabriel Skantze.
+\newblock {TurnGPT}: a transformer-based language model for predicting
+  turn-taking in spoken dialog.
+\newblock In \emph{Findings of EMNLP}, 2020.
+
+\bibitem[Ekstedt and Skantze(2022)]{ekstedt2022vap}
+Erik Ekstedt and Gabriel Skantze.
+\newblock Voice activity projection: Self-supervised learning of turn-taking
+  events.
+\newblock In \emph{Interspeech}, 2022.
+
+\bibitem[Graves(2012)]{graves2012sequence}
+Alex Graves.
+\newblock Sequence transduction with recurrent neural networks.
+\newblock \emph{arXiv preprint arXiv:1211.3711}, 2012.
+
+\bibitem[Hu et~al.(2022)Hu, Shen, Wallis, Allen-Zhu, Li, Wang, Wang, and
+  Chen]{hu2022lora}
+Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
+  Wang, Lu~Wang, and Weizhu Chen.
+\newblock {LoRA}: Low-rank adaptation of large language models.
+\newblock In \emph{ICLR}, 2022.
+
+\bibitem[{JAL-Turn authors}(2026)]{jalturn2026}
+{JAL-Turn authors}.
+\newblock {JAL-Turn}: Joint acoustic-linguistic turn-taking prediction for
+  full-duplex dialogue.
+\newblock \emph{arXiv preprint arXiv:2603.26515}, 2026.
+
+\bibitem[Kwon et~al.(2023)Kwon, Li, Zhuang, Sheng, Zheng, Yu, Gonzalez, Zhang,
+  and Stoica]{kwon2023vllm}
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody~Hao Yu,
+  Joseph Gonzalez, Hao Zhang, and Ion Stoica.
+\newblock Efficient memory management for large language model serving with
+  {PagedAttention}.
+\newblock In \emph{SOSP}, 2023.
+
+\bibitem[{Kyutai Labs}(2025)]{kyutai2025stt}
+{Kyutai Labs}.
+\newblock Kyutai {STT}: Streaming speech-to-text with delayed streams modeling.
+\newblock \url{https://github.com/kyutai-labs/delayed-streams-modeling}, 2025.
+
+\bibitem[Li et~al.(2020)Li, Chang, Sainath, Pang, He, Strohman, and
+  Wu]{li2020towards}
+Bo~Li, Shuo-Yiin Chang, Tara~N. Sainath, Ruoming Pang, Yanzhang He, Trevor
+  Strohman, and Yonghui Wu.
+\newblock Towards fast and accurate streaming end-to-end asr.
+\newblock In \emph{ICASSP}, 2020.
+
+\bibitem[Li(2026)]{li2026metronome}
+Bojie Li.
+\newblock Metronome: Bounded-state serving for real-time multimodal streams,
+  2026.
+\newblock Companion paper, under submission.
+
+\bibitem[Ma et~al.(2019)Ma, Huang, Xiong, Zheng, Liu, Zheng, Zhang, He, Liu,
+  Li, Wu, and Wang]{ma2019stacl}
+Mingbo Ma, Liang Huang, Hao Xiong, Renjie Zheng, Kaibo Liu, Baigong Zheng,
+  Chuanqiang Zhang, Zhongjun He, Hairong Liu, Xing Li, Hua Wu, and Haifeng
+  Wang.
+\newblock {STACL}: Simultaneous translation with implicit anticipation and
+  controllable latency using prefix-to-prefix framework.
+\newblock In \emph{ACL}, 2019.
+
+\bibitem[{Meta AI}(2026)]{meta2026hierarchical}
+{Meta AI}.
+\newblock Hierarchical end-of-turn detection with primary speaker segmentation.
+\newblock \emph{arXiv preprint arXiv:2603.13379}, 2026.
+
+\bibitem[{OpenAI}(2025)]{openai2025semanticvad}
+{OpenAI}.
+\newblock Semantic {VAD} in the realtime {API}.
+\newblock Product documentation, \url{https://platform.openai.com/docs}, 2025.
+
+\bibitem[Panayotov et~al.(2015)Panayotov, Chen, Povey, and
+  Khudanpur]{panayotov2015librispeech}
+Vassil Panayotov, Guoguo Chen, Daniel Povey, and Sanjeev Khudanpur.
+\newblock Librispeech: an {ASR} corpus based on public domain audio books.
+\newblock In \emph{ICASSP}, 2015.
+
+\bibitem[{Pipecat team}(2025)]{smartturn2025}
+{Pipecat team}.
+\newblock Smart turn: an open turn-detection model.
+\newblock \url{https://github.com/pipecat-ai/smart-turn}, 2025.
+
+\bibitem[Pundak et~al.(2018)Pundak, Sainath, Prabhavalkar, Kannan, and
+  Zhao]{pundak2018deep}
+Golan Pundak, Tara~N. Sainath, Rohit Prabhavalkar, Anjuli Kannan, and Ding
+  Zhao.
+\newblock Deep context: End-to-end contextual speech recognition.
+\newblock In \emph{IEEE SLT}, 2018.
+
+\bibitem[{Qwen Team}(2026)]{qwen3asr2026}
+{Qwen Team}.
+\newblock {Qwen3-ASR} technical report.
+\newblock \emph{arXiv preprint arXiv:2601.21337}, 2026.
+
+\bibitem[Radford et~al.(2023)Radford, Kim, Xu, Brockman, McLeavey, and
+  Sutskever]{radford2023whisper}
+Alec Radford, Jong~Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and
+  Ilya Sutskever.
+\newblock Robust speech recognition via large-scale weak supervision.
+\newblock In \emph{ICML}, 2023.
+
+\bibitem[Schaeffer et~al.(2023)Schaeffer, Miranda, and
+  Koyejo]{schaeffer2023mirage}
+Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo.
+\newblock Are emergent abilities of large language models a mirage?
+\newblock In \emph{NeurIPS}, 2023.
+
+\bibitem[Shannon et~al.(2017)Shannon, Simko, Chang, and
+  Parada]{shannon2017improved}
+Matt Shannon, Gabor Simko, Shuo-Yiin Chang, and Carolina Parada.
+\newblock Improved end-of-query detection for streaming speech recognition.
+\newblock In \emph{Interspeech}, 2017.
+
+\bibitem[{Silero Team}(2021)]{silero2021vad}
+{Silero Team}.
+\newblock Silero {VAD}: pre-trained enterprise-grade voice activity detector.
+\newblock \url{https://github.com/snakers4/silero-vad}, 2021.
+
+\bibitem[Skantze(2021)]{skantze2021review}
+Gabriel Skantze.
+\newblock Turn-taking in conversational systems and human-robot interaction: A
+  review.
+\newblock \emph{Computer Speech \& Language}, 67, 2021.
+
+\bibitem[{UAF authors}(2026)]{uaf2026}
+{UAF authors}.
+\newblock {UAF}: A unified audio front-end {LLM} for joint {VAD}, turn
+  detection, speaker recognition and {ASR}.
+\newblock \emph{arXiv preprint arXiv:2604.19221}, 2026.
+
+\bibitem[Wan(2026)]{wan2026streaming}
+et~al. Wan.
+\newblock Streaming speech recognition with decoder-only {LLMs} and latency
+  optimization.
+\newblock \emph{arXiv preprint arXiv:2601.22779}, 2026.
+
+\bibitem[Wang(2026)]{fastturn2026}
+et~al. Wang.
+\newblock Fastturn: Unifying acoustic and streaming semantic cues for
+  low-latency and robust turn detection.
+\newblock \emph{arXiv preprint arXiv:2604.01897}, 2026.
+
+\bibitem[Xiao et~al.(2024)Xiao, Tian, Chen, Han, and
+  Lewis]{xiao2024streamingllm}
+Guangxuan Xiao, Yuandong Tian, Beidi Chen, Song Han, and Mike Lewis.
+\newblock Efficient streaming language models with attention sinks.
+\newblock In \emph{ICLR}, 2024.
+
+\end{thebibliography}
