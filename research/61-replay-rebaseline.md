@@ -59,12 +59,9 @@ conclusions unchanged.)
 
 | Model | Recall | P50 | P95 | False /speech-min | Silence spam | WER med | WER mean |
 |---|---|---|---|---|---|---|---|
-| v3 + gate | *(rerun pending)* | | | | | | |
+| v3 + gate | 0.896 | 0.05 s | 0.25 s | 88.8 | 42 | 0.80 | 0.85 |
 | v5 + gate | 0.906 | 0.16 s | 0.89 s | 27.3 | 23 | 0.31 | 0.36 |
 | **v8 + gate** | **0.938** | **0.26 s** | **0.56 s** | **3.6** | 25 | **0.27** | 4.96 |
-
-(spec-v1 gated numbers, for reference: v3 0.907 / P50 0.04 s / 88.8
-false-min; v5 0.917; v8 0.935.)
 
 The gate does exactly its job: silence spam ~1500 → ~25 and WER stops
 being hallucination-dominated (v5 3.03 → 0.36). What remains is real
@@ -102,16 +99,54 @@ text unbounded through continuous speech and degraded decoding to a
 repetition loop — recall collapsed to .44. That was a bug in the eval
 policy, not the model.)
 
-*(full sweep re-running under the corrected policy: v5 h=1,2; v8 h=1.
-5-stretch smoke preview, v5 h=1: recall ~0.86, false/min 27.3→3.2,
-P50 ~0.83 s — a ~9× false-fire reduction for one recall point and
-+0.5 s latency. Table filled when the 25-stretch arms land.)*
-
 | Arm | Recall | P50 | P95 | False /min | Cancelled | WER med |
 |---|---|---|---|---|---|---|
-| v5 gate+confirm1 | | | | | | |
-| v5 gate+confirm2 | | | | | | |
-| v8 gate+confirm1 | | | | | | |
+| v5 gate (h=0) | 0.906 | 0.16 s | 0.89 s | 27.3 | 0 | 0.31 |
+| **v5 gate+confirm1** | **0.927** | 0.68 s | 1.27 s | **3.2** | 241 | **0.31** |
+| v5 gate+confirm2 | 0.812 | 1.15 s | 1.42 s | 1.1 | 269 | 0.31 |
+| v8 gate (h=0) | 0.938 | 0.26 s | 0.56 s | 3.6 | 0 | 0.27 |
+| **v8 gate+confirm1** | **0.938** | 0.77 s | 1.06 s | **0.0** | 47 | 0.27\* |
+
+\* v8 WER *mean* stays 4.96 — the confirm policy does not touch the
+unbounded-segment repetition tail (needs max-segment force-flush).
+
+The sweep behaves as a clean latency-vs-false-fire dial:
+
+- **h=1 strictly dominates h=0 for v5**: recall *rises* 0.906 → 0.927
+  (deferring the fire lets the segment gather the boundary inside
+  tolerance) while false fires drop 27.3 → 3.2/min, for +0.5 s P50.
+- **h=1 zeroes v8's false fires** (3.6 → 0.0) at unchanged recall 0.938,
+  P95 1.06 s (inside the 1.2 s target).
+- **h=2 over-suppresses** (v5 recall 0.812, P50 1.15 s): 1.0 s of
+  required silence starts cancelling genuine turn-final fires and blows
+  the latency budget. h=1 is the operating point.
+
+## Operating-point decision
+
+Two shippable points, both `gate + confirm1`, differing by which LoRA:
+
+- **v5 + gate + confirm1** — recall 0.927, P50 0.68 s / P95 1.27 s,
+  3.2 false/min, **WER 0.31 (mean 0.36)**. Best all-round: v5's
+  phrase-level flushing keeps segments short, so committed-prefix
+  decoding never enters the repetition loop, and the confirm policy
+  suppresses exactly the phrase-boundary over-fires that were v5's only
+  weakness. P95 is 0.07 s over the 1.2 s target — acceptable, tightened
+  by a smaller chunk (0.25 s) or the max-segment flush.
+- **v8 + gate + confirm1** — recall 0.938, P50 0.77 s / P95 1.06 s,
+  **0.0 false/min**, but WER mean 4.96 until a max-segment force-flush
+  is added (v8 rarely flushes mid-turn, so long monologues grow an
+  unbounded committed prefix and the decoder loops). Best endpoint
+  precision; ships only with the force-flush.
+
+Recommendation: **v5 + gate + confirm1 is the v1 endpoint policy** (no
+extra engine work needed), with v8 + gate + confirm1 + force-flush as
+the precision-oriented alternative once the flush lands. Both make
+research/50's dual-checkpoint conclusion obsolete: a single checkpoint +
+a 2-parameter inference policy (energy gate, confirm horizon) serves both
+the low-latency-assistant and clean-transcription targets. v9 (trained
+on the causal spec, with silence schemas baked in) should reduce the
+gate/confirm burden further and is the next checkpoint to run through
+this exact eval.
 
 ## Consequences
 

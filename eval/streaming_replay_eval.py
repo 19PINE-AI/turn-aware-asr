@@ -251,7 +251,7 @@ class StreamDecoder:
 
 def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
                 energy_gate: bool = False, gate_rms: float = 1e-3,
-                confirm_chunks: int = 0) -> dict:
+                confirm_chunks: int = 0, max_segment_chunks: int = 0) -> dict:
     """energy_gate models the production composition policy (research/60):
     never START a segment on a silent chunk — the LM only decodes once
     speech energy has been observed. Motivated by the v5 replay finding
@@ -315,6 +315,17 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
                 prev_marker_count = 0
                 continue
         prev_marker_count = n_mark
+
+        # Max-segment force-flush: bound the committed prefix (Metronome
+        # bound-the-resident-state at the text level). Without it, a model
+        # that rarely flushes mid-turn (v8) grows an unbounded prefix on
+        # long monologues and committed-prefix decoding loops. No END fire
+        # is emitted — this is a transcription reset, not an endpoint.
+        if max_segment_chunks and dec.buffer is not None and \
+                len(dec.buffer) >= max_segment_chunks * chunk_s * SR:
+            flushed.append(clean(dec.raw).replace(EAGER_TOK, ""))
+            dec.reset_segment()
+            prev_marker_count = 0
 
     if dec.raw:
         flushed.append(clean(dec.raw).replace(EAGER_TOK, ""))
@@ -416,6 +427,11 @@ def main():
     p.add_argument("--confirm-silent-chunks", type=int, default=0,
                     help="accept a marker only after this many further silent chunks "
                          "(phrase-vs-turn dial; adds h*chunk_s latency)")
+    p.add_argument("--max-segment-chunks", type=int, default=0,
+                    help="force-flush the transcript (no END fire) once a segment "
+                         "reaches this many chunks — bounds the committed prefix so "
+                         "committed-prefix decoding can't loop on long monologues "
+                         "(0 = unbounded). e.g. 40 = 20 s at chunk_s=0.5")
     p.add_argument("--use-train-meetings", action="store_true",
                     help="dev mode: draw stretches from TRAIN meetings (for early stopping)")
     p.add_argument("--seed", type=int, default=0)
@@ -453,12 +469,15 @@ def main():
         mode += "+gate"
     if args.confirm_silent_chunks:
         mode += f"+confirm{args.confirm_silent_chunks}"
+    if args.max_segment_chunks:
+        mode += f"+maxseg{args.max_segment_chunks}"
     per = []
     for st in tqdm(stretches, desc=f"replay[{mode}]"):
         dec = StreamDecoder(model, processor, tokenizer, committed=not args.from_scratch)
         per.append(run_stretch(dec, st, args.chunk_s,
                                 energy_gate=args.energy_gate, gate_rms=args.gate_rms,
-                                confirm_chunks=args.confirm_silent_chunks))
+                                confirm_chunks=args.confirm_silent_chunks,
+                                max_segment_chunks=args.max_segment_chunks))
 
     summary = aggregate(per, args.chunk_s, mode)
     logger.info("== REPLAY SUMMARY ==")
