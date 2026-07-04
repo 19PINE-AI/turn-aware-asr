@@ -1,0 +1,2286 @@
+{
+  "model": "Qwen/Qwen3-ASR-0.6B",
+  "summary": {
+    "n_targets": 40,
+    "window_s": 16.0,
+    "ages": [
+      0.0,
+      4.0,
+      8.0,
+      12.0
+    ],
+    "by_age": {
+      "0.0": {
+        "pin_recall": 0.8979591836734694,
+        "nopin_recall": 0.5714285714285714,
+        "pin_minus_nopin_pp": 32.6530612244898
+      },
+      "4.0": {
+        "pin_recall": 0.8367346938775511,
+        "nopin_recall": 0.5306122448979592,
+        "pin_minus_nopin_pp": 30.612244897959183
+      },
+      "8.0": {
+        "pin_recall": 0.8775510204081632,
+        "nopin_recall": 0.5714285714285714,
+        "pin_minus_nopin_pp": 30.612244897959183
+      },
+      "12.0": {
+        "pin_recall": 0.8979591836734694,
+        "nopin_recall": 0.5510204081632653,
+        "pin_minus_nopin_pp": 34.693877551020414
+      }
+    }
+  },
+  "per_target": [
+    {
+      "ref": "Well uh, Chaumet needs no introduction.",
+      "entities": [
+        "Chaumet"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Well, Chaumet needs no introduction.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Well, Shmur needs no introduction.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And then Q four significant growth, twenty two percent. Well, Chaumet needs no introduction.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And then Q four significant growth, twenty two percent. Well, Shome needs no introduction.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Your expectations are not, and as you know, that's been quite a rollercoaster year in terms of net retention rate and its development. Well, Chaumet needs no introduction.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Your expectations or not, and as you know, that's been quite a roller coaster year in terms of net retention rate and its development. Well, Shome needs no introduction.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Thank you, please. It may happen, but very rarely indeed. As regards our commitment for the environment, maybe in the short run it looks good, but it's pretty bad in the long run. Well, Chaumet needs no introduction.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Thank you, please. It may happen, but very rarely indeed as regards our commitment for the environment. Maybe in the short run it looks good, but it's pretty bad in the long run. Well, Shome needs no introduction.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Now of course, uh, the uh, the products of Tiffany are iconic.",
+      "entities": [
+        "Tiffany"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Now, of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Now of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "At the forty-nine percent improvement. Now of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "At the forty-nine percent improvement. Now of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "To test it, what are you going to do with the significant cash you are going to generate over the next couple of years? Of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "To test it. What are you going to do with the significant cash you are going to generate over the next couple of years? Of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Presentation with the outlook for 2022. We'll come to that later. And while it's being contained, they have delivered remarkable growth. Now, of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Presentation with the outlook for 2022. We'll come to that later. And whilst being contained, they have delivered remarkable growth. Of course, the products of Tiffany are iconic.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "And then uh, who is going to replace Vir- Virginia at uh, Louis Vuitton.",
+      "entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And then who is going to replace Virginia Blon at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "And then who is going to replace Virginia Bloom at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "It may have happened what maybe two or three times in the history of the group, but and then who is going to replace Virginia Blown at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "It may have happened what maybe two or three times in the history of the group, but and then who is going to replace Virginia Blown at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "The new emissions initiative, but obviously it's also the fourth quarter, and it's important to see that pipeline conversion the fourth quarter. And then who is going to replace Virginia Blown at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "The new emissions initiative, but obviously it's also the fourth quarter and it's important to see that pipeline conversion the fourth quarter. And then who is going to replace Virginia Blun at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "For 2022. That being said, in the second half, we recovered quite quite significantly. And on and on, we're looking at a 49% improvement. And then who is going to replace Virginia Blown at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "For 2022. That being said, in the second half we recovered quite quite significantly. And on and on we're looking at a 49% improvement. And then who is going to replace Virginia Blown at Louis Vuitton?",
+            "hits": 2,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, uh, and so forth.",
+      "entities": [
+        "EU"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "I would start with the development of the number of our customers. Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I would start with the development of the number of our customers. Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "As you know, that's been quite a rollercoaster year in terms of net retention rate and its development. And I could fit one more in. Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "As you know, that's been quite a rollercoaster year in terms of net retention rate and its development. And I could fit one more in. Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "And then of course combine it with all other elements of the branding partnership. Maybe in the short run it looks good, but it's pretty bad in the long run. Obviously the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And then of course combine it with all other elements of the branding partnership. Maybe in the short run it looks good, but it's pretty bad in the long run. Obviously the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, and so forth.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Within REMAX we also introduced the task force to upgrade our website and digital marketing.",
+      "entities": [
+        "REMAX"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Within REMAX, we also introduced the task force to upgrade our website and digital marketing. All.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. Within REMAX, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Effect in 2021. Now looking at the the cash flow. And that is a significant. Within REMAX, we also introduced the task force to upgrade our website and digital marketing. All.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Effect in 2021. Now looking at the the cash flow. And that is a significant. Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "The branding partnership. That's there. The competition I would say is more in price. It's also not what we expected. Frankly, yeah. Now in terms of margin, you expressed it as having less confidence. Within REMAX, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "The branding partnership. That's there. The competition I would say is more in price. It's also not what we expected. Frankly. Yeah. Now in terms of margin, you expressed it as having less confidence. Within Remax, we also introduced the task force to upgrade our website and digital marketing.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Your first question is coming from George Webb at Morgan Stanley.",
+      "entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "It may have happened what maybe two or three times in the history of the group. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "It may have happened what maybe two or three times in the history of the group. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Now, regarding the prices, of course, you shouldn't you shouldn't go too far. Moving to perfumes and cosmetics. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Now, regarding the prices, of course, you shouldn't you shouldn't go too far. Moving to perfumes and cosmetics. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Frankly, yeah. And then Q four significant growth, uh, twenty two percent. Do you think it is realistic? And I think um we we can do many things there. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Frankly, yeah. And then Q4 significant growth, 22%. Do you think it is realistic? And I think we can do many things there. The first question is coming from George Webb at Morgan Stanley.",
+            "hits": 2,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "Fendi, big success from day one but accentuated since the arrival Kim Jones.",
+      "entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Fendi, big success from day one, but accentuated since the arrival of Kim Jones.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Of how to use our solution is shown on slide thirteen. Fendi, big success from day one, but accentuated since the arrival of Kim Jones.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Of how to use our solution is shown on slide thirteen. Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative. Head count increases. Is there anything specific going on? Fendi, big success from day one, but accentuated since the arrival of Kim Jones.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative. Have count increases. Is there anything specific going on? Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "From from that lower sales headcount. Let's put it that way. Let's move on and conclude my presentation with the outlook for 2022. Fendi, big success from day one, but accentuated since the arrival of Kim Jones.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "From from that lower sales headcount. Let's put it that way. Let's move on and conclude my presentation with the outlook for 2022. Fendi, big success from day one, but accentuated since the arrival of Kim Jong.",
+            "hits": 1,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "The great success is clearly our collaboration with NSF International.",
+      "entities": [
+        "NSF International"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "In the second half, we recovered quite significantly. A great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In the second half, we recovered quite significantly. A great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Selective retailing. I mean that's hardly material contributions from that. So all of the growth which you have seen is pretty much organic growth. The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Selective retailing. I mean, that's hardly material contributions from that. So all of the growth which you have seen is pretty much organic growth. The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Hi, thank you very much. Maybe in the short run it looks good, but it's pretty bad in the long run. We come to the SMB business, page fourteen. The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Hi, thank you very much. Maybe in the short run it looks good, but it's pretty bad in the long run. We come to the SMB business, page fourteen. The great success is clearly our collaboration with NSF International.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Yeah, maybe it's just on UB Max with you, because I think all of those three founders play a, people a very important role within the organization.",
+      "entities": [
+        "UB Max"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "On that end, yeah, maybe it's just the UB Max really because I think all of those three founders play a very important role within the organization.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Maybe it's just a newbie makes really because I think all of those three founders play a very important role within the organization.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. On that, then. Maybe it's just a new BMX, really, because I think all of those three founders play a very important role within the organization.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. On that, then. Maybe just a new remark, actually, because I think all of those three founders play a very important role within the organisation.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Our solution is shown on slide thirteen. Let's move on and conclude my presentation with the outlook for 2022. Leonard, then. Yeah, maybe just a new remark, actually, because I think all of those three founders play a very important role within the organisation.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Our solution is shown on slide thirteen. Let's move on and conclude my presentation with the outlook for 2022. Leonard then. Yeah, maybe just a new remark, actually, because I think all of those three founders play a very important role within the organisation.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Term growth, the plans. Yeah, I think maybe for my side to add to this. Now regarding the prices, of course you shouldn't you shouldn't go too far. On that end. Yeah, maybe just on UB Max really because I think all of those three founders play a very important role within the organization.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Term growth, the plans. Yeah, I think maybe for my side to add to this. Now regarding the prices, of course you shouldn't you shouldn't go too far. On that end. Yeah, maybe just on Yubim actually because I think all of those three founders play a very important role within the organisation.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "So wrapping it up, on the next slide, uh, quickly highlighting the cash profile of TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "So wrapping it up on the next slide. Quickly highlighting the cash profile of TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "So wrapping it up on the next slide. Quickly highlighting the cash profile of Team Yor.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Contain they have delivered remarkable growth. So wrapping it up on the next slide, quickly highlighting the cash profile of TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Contain. They have delivered remarkable growth. So wrapping it up on the next slide. Quickly highlighting the cash profile of Team Yuan.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Going to generate our next couple of years. Now looking at the the cash flow, and that is a significant. So wrapping it up on the next slide. Quickly highlighting the cash profile of TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Going to generate our next couple of years. Now looking at the the cash flow, and that is a significant. So wrapping it up on the next slide. Quickly highlighting the cash profile of Team Union.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Give you an example. I can do that later. Thanks very much. Let's put it that way. Those strategic partnerships are a major driver for our long-term growth. So wrapping it up on the next slide. Quickly highlighting the cash profile of TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Give you an example. I'll do that later. Thanks very much. Let's put it that way. Those strategic partnerships are a major driver for our long-term growth. So wrapping it up on the next slide, quickly highlighting the cash profile of Team U.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Both brands truly global provide an unrivaled reach and marketing power for TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Both brands, are truly global. Provide an unrivaled reach and marketing power for TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Both brands, are truly global, provide an unrivaled reach and marketing power for Timur.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "You expecting any impact from from that lower sales headcount? Both brands, are truly global, provide an unrivalled reach and marketing power for TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "You expecting any impact from from that lower sales headcount? Both brands, are truly global, provide an unrivalled reach and marketing power for Timur.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Tested. Let me just give you an example of selling. How what do you expect? Both brands are truly global. Provide an unrivaled reach and marketing power for TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Tested. Let me just give you an example of selling. How? What do you expect? Both brands are truly global, provide an unrivaled reach and marketing power for Timur.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "I think the price is, of course, you shouldn't, you shouldn't go too far. That's great. And now looking at the the cash flow. And that is a significant. Both brands are truly global, provide an unrivalled reach and marketing power for TeamViewer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "The prices, of course, you shouldn't, you shouldn't go too far. That's great. And now looking at the the cash flow. And that is a significant. Both brands, are truly global, provide an unrivalled reach and marketing power for Timur.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "And if you sum all of this up, I think TeamViewer clearly has a highly attractive financial profile.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile, and.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And if you sum all of that up, I think Team UER clearly has a highly attractive financial profile.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "What do you expect? This moving to perfumes and cosmetics. And if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "What do you expect? This moving to perfumes and cosmetics. And if you sum all of that up, I think Team Ua clearly has a highly attractive financial profile.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Let's move on and conclude my presentation with the outlook for 2022. So, all very pleased with what we've been seeing. But and if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile. And.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Let's move on and conclude my presentation with the outlook for 2022. So, all very pleased with what we've been seeing. But and if you sum all of that up, I think Team Europe clearly has a highly attractive financial profile. And.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "So question arrived, and then of course combine it with all other elements of the branding partnership. Now in terms of margin, you expressed it as having less confidence, and if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Question arrived, and then of course combine it with all other elements of the branding partnership. Now in terms of margin, you expressed it as having less confidence, and if you sum all of that up, I think TeamViewer clearly has a highly attractive financial profile.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Now we have the cost freeze implemented as Oliver mentioned or the cost pause, as Oliver mentioned.",
+      "entities": [
+        "Oliver"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Now we have the cost trees implemented, as Oliver mentioned, or the cost ports, as Oliver mentioned.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Now we have the cost trees implemented, as Oliver mentioned, or the cost ports, as Oliver mentioned.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Not much, of a currency in effect in 2021. Now we have the cost freeze implemented, as Oliver mentioned, or the cost pause, as Oliver mentioned.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Not much, of a currency in effect in 2021. Now we have the cost freeze implemented as already mentioned, or the cost pause as already mentioned.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Real contributions from that. So all of the growth which you have seen is pretty much organic growth. Plants. Yeah, I think maybe from outside to add to this. Now we have the cost trees implemented as Oliver mentioned, or the cost ports. As Oliver mentioned.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Contributions from that. So all of the growth which you have seen is pretty much organic growth. Plants. Yeah, I think maybe from outside to add to this. Now we have the cost trees implemented as already mentioned or the cost ports. As already mentioned.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "I'll keep it to two, please. And Oliver, we're looking at a 49% improvement. And thank you for this presentation. Congratulations on the performance. Now we have the cost trees implemented, as Oliver mentioned, or the cost pause, as Oliver mentioned.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I'll give it to you, please. And all and all, we're looking at a 49% improvement. And thank you for this presentation. Congratulations on the performance. Now we have the cost trees implemented, as already mentioned, or the cost pause, as already mentioned.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Well um, I'll uh, skip over DFS.",
+      "entities": [
+        "DFS"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Well, um, I'll skip over DFS.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Well, um, I'll skip over DFS.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Tested. And I if I could fit one more in, I'll well um I'll uh skip over DFS.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Tested. And I if I could fit one more in, I'll well um I'll skip over DFS.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Maybe two or three times in the history of the group. The last great example of how to use our solution is shown on slide thirteen. Well, I'll step over DFS.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Maybe two or three times in the history of the group. The last great example of how to use our solution is shown on slide thirteen. Well, I'll step over DFS.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "I don't think so, frankly. The last great example of how to use our solution is shown on slide thirteen. Well, I'll skip over DFS.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I don't think so, frankly. The last great example of how to use our solution is shown on slide thirteen. Well, I'll skip over DFS.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "We invested 13 uh, billion in um, uh, well, mostly it was Tiffany.",
+      "entities": [
+        "Tiffany"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "We invested, thirteen billion in. Well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "We invested, thirteen billion in. Well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "There. Let me just give you an example. We invested thirteen billion in. Well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Let me just give you an example. We invested thirteen billion in, well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Presentation and congratulations on the performance. And have sort of all in all not much of a currency in effect in twenty twenty one. We invested thirteen billion in, well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Presentation and congratulations on the performance. And have sort of all in all not much of a currency in effect in 2021. We invested 13 billion in, well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Other elements of the branding partnership. That's there. The competition I would say is more in price. The last great example of how to use our solution is shown on slide thirteen. We invested thirteen billion in. Well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Other elements of the branding partnership. That, there, the competition I would say is more in price. The last great example of how to use our solution is shown on slide thirteen. We invested thirteen billion in. Well, mostly it was.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "I really look forward to tasting the Ruinart 2004 uh, Rose next year.",
+      "entities": [
+        "Ruinart"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "I'm really look forward to tasting the Ruinart 2004, ros\u00e9 next year.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I'm really look forward to tasting the Huinau 2004, ros\u00e9 next year.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And it's important to see that pipeline conversion in the fourth quarter. I'm really look forward to tasting the Ruinart 2004, Ros\u00e9 next year.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And it's important to see that pipeline conversion the fourth quarter. I'm really look forward to tasting the Huinao 2004, rose next year.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "It was the development of the number of our customers. I mean, that's hardly material contributions from that. So all the growth which you have seen is pretty much organic growth. I'm really look forward to tasting the Ruinart 2004, ros\u00e9 next year.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "It was the development of the number of our customers. I mean, that's hardly material contribution from that. So all the growth which you have seen is pretty much organic growth. I'm really look forward to tasting the Huina 2004, ros\u00e9 next year.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "More in price, and then of course combine it with all other elements of the branding partnership. And is that sort of baked into your expectations or not? I'm really look forward to tasting the Ruinart 2004, rose next year.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "More in price, and then of course combine it with all other elements of the branding partnership. And is that sort of baked into your expectations or not? I'm really look forward to tasting the Huinar 2004, rose next year.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Guiony, was able to uh, to pay it off very quickly.",
+      "entities": [
+        "Guiony"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "M. Guiony was able to, to pay it off very quickly, but.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Mister. Guirioni was able to, to pay it off very quickly, but.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Almost very pleased with what we've been seeing. But question arrived. We, Mister Guiony, was able to to pay it off very quickly. But.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Almost very pleased with what we've been seeing. But question arrived. We, Mister Guirioni, was able to to pay it off very quickly.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "I would start with the development of the number of our customers. And here we are looking at two point three percentage points. So remarkable performance. Great talking to you, Mr. Guiony. Was able to, to pay it off very quickly. But.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I would start with the development of the number of our customers. And here you are looking at 2.3 percentage points. So remarkable performance. Great talking to you, Mr. Guirioni was able to, to pay it off very quickly.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Percentage points. So a remarkable performance as regards our commitment for the environment. You expecting any impact from from that lower sales headcount? Mr Guiony was able to to pay it off very quickly.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Percentage points, so remarkable performance as regards our commitment for the environment. You expecting any impact from from that lower sales headcount? Mr. Guirani was able to to pay it off very quickly.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Angelina, you you you\u2026",
+      "entities": [
+        "Angelina"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Angelina, you you you.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Angelina, you you you.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "In the short run, it looks good, but it's pretty bad in the long run. Angelina, you you you.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In the short run, it looks good, but it's pretty bad, in the long run. Angelina, you you you.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Retailing moving to perfumes and cosmetics or planes. Yeah I think maybe for my side to add to this. Angelina you you you.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Active retailing moving to perfumes and cosmetics or planes. Yeah I think maybe for my side to add to this. Angelina you you you.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Do you think it is realistic? As you know, that's been quite a roller coaster year in terms of net retention rate and its development. That's good to see. I'll give it to you, please. Angelina, you, you, you.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Do you think it is realistic? As you know, that's been quite a roller coaster year in terms of net retention rate and its development. It's good to see. I'll give it to you, please. Angela, you, you, you.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Starting with the United States then.",
+      "entities": [
+        "United States"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Starting with the United States, then.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Starting with the United States, then.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "In terms of margin, you expressed it as having less confidence. I starting with the United States then.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In terms of margin, you expressed it as having less confidence. I starting with the United States then.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Thank you for this presentation. Congratulations on the performance. As regards our commitment for the environment, I start with the United States. Then.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Thank you for this presentation. Congratulations on the performance as regards our commitment for the environment. I start with the United States then.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Have delivered remarkable growth. Plans. Yeah, I think maybe from my side to add to this, it's ultimately not what we expected. Frankly, yeah, that's about it. But going forward, that growth will be will be slower. Starting with the United States then.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Have delivered remarkable growth. Plants. Yeah, I think maybe from my side to add to this. It's ultimately not what we expected. Frankly, yeah. That's about it. But going forward, that growth will be will be slower. Starting with the United States then.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Uh, the three UB Max founders are all still on board.",
+      "entities": [
+        "UB Max"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "The three UB Max founders are all still on board.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "The three UBMAX founders are all still on board.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And thank you for this presentation. And congratulations on the performance. The three UB Max founders are all still on board.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And thank you for this presentation. And congratulations on the performance. The three UBMAX founders are all still on board.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "They have delivered remarkable growth. All in all, not much of a currency in effect in 2021. The three UB Max founders are all still on board.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "They have delivered remarkable growth. All in all, not much of a currency in effect in 2021. The three UBMAX founders are all still on board.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "What are you going to do with the significant cash you are going to generate over the next couple of years? And whilst being contained, they have delivered remarkable growth. The three UB Max founders are all still on board.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "What are you going to do with the significant cash you are going to generate over the next couple of years? And whilst being contained, they have delivered remarkable growth. The three UBMAX founders are all still on board.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "The next question is come from Mohammed at Goldman Sachs.",
+      "entities": [
+        "Mohammed",
+        "Goldman Sachs"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "The next question is coming from.",
+            "hits": 0,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "The next question is coming from.",
+            "hits": 0,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "The cash flow. The and that is a significant.",
+            "hits": 0,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "The cash flow, and that is a significant.",
+            "hits": 0,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Hi, thank you very much. Moving now of fashion and leather goods. Welcome. Hi, thank you very much. The next question is coming from.",
+            "hits": 0,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Hi, thank you very much. Moving now of fashion and leather goods. Welcome. Hi, thank you very much. The next question is coming.",
+            "hits": 0,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Of the branding partnership. Question arrived. And then Q4 significant growth, 22%. That being said, in the second half we recovered quite quite significantly. So the next question is coming.",
+            "hits": 0,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Of the branding partnership. Question arrived. And then Q4 significant growth, 22%. That being said, in the second half we recovered quite quite significantly. So the next question is coming.",
+            "hits": 0,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "Bulgari uh, was very successful in its stores.",
+      "entities": [
+        "Bulgari"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Bulgari was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Bulgari was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Yeah, we. Do you think it is realistic? Bulgari was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Do you think it is realistic? Bulgaria was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "In the fourth quarter, and it's important to see that pipeline converging the fourth quarter. Let me just give you an example: Bulgari was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In the fourth quarter, and it's important to see that pipeline converging the fourth quarter. Let me just give you an example. Bulgaria was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "It's important to see that pipeline converting the fourth quarter. Moving out of fashion and leather goods. I mean that's hardly material contributions from that. So all of the growth which you have seen is pretty much organic growth. Bulgari was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "It's important to see that pipeline convert into fourth quarter. Moving out of fashion and leather goods. I mean that's hardly material contributions from that. So all of the growth which you have seen is pretty much organic growth. Bulgaria was very successful in its stores.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "A- and I think especially the Americas team, uh, converted their pipeline very well.",
+      "entities": [
+        "Americas"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Time, and I think especially the Americas team converted their pipeline very well.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Time, and I think especially the America team converted their pipeline very well.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "To tested. Thanks very much. Time, and I think especially the Americas team converted their pipeline very well.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "To tested. Thanks very much. Time, and I think especially the America team converted their pipeline very well.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "That's about it. But going forward, that growth will be will be slower. Let's move on and conclude my presentation with the outlook for 2022. In time, and I think especially the Americas team converted their pipeline very well.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That's about it. But going forward, that growth will be will be slower. Let's move on and conclude my presentation with the outlook for 2022. In time, and I think especially the Americas team converted their pipeline very well.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative plans. Yeah, I think maybe from my side to add to this. That's great, and time. And I think especially the Americas team converted their pipeline very well.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative plans. Yeah, I think maybe from my side to add to this. That's great, and time. And I think especially the America team converted their pipeline very well.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "That is the spirit of Louis Vuitton.",
+      "entities": [
+        "Louis Vuitton"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "That is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "You expecting any impact from from that lower sales headcount? That is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "You expecting any impact from from that lower sales headcount? That is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "To test it, but obviously it's also the fourth quarter, and it's important to see that pipeline conversion. The fourth quarter, that is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "To test it, but obviously it's also the fourth quarter, and it's important to see that pipeline conversion the fourth quarter. That is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "That way, and I think we can do many things there. And then Q four significant growth, twenty two percent. Great talking to you. Question arrived. We had is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That way, and I think we can do many things there. And then Q four significant growth, twenty two percent. Great talking to you. We thought is the spirit of Louis Vuitton.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Uh, steadily generating high teens growth in combination with strong profitability and very strong cash flows, as, as Stefan pointed out.",
+      "entities": [
+        "Stefan"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Steadily generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Stably generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Regarding the prices, of course, you shouldn't go too far. Stefani generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Regarding the prices, of course, you shouldn't go too far. Steadily generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "I don't think so, frankly. Now looking at the cash flow, and that is a significant. Steadily generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I don't think so, frankly. Now looking at the cash flow, and that is a significant. Steadily generating high teens growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Do that later. So, all very pleased with the momentum which we have seen. And I think we can do many things. There, steadily generating high teams growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Do that later. So, all very pleased with the momentum which we have seen. And I think we can do many things. There, steadily generating high teams growth, in combination with strong profitability and very strong cash flows, as Stefan pointed out.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "I think in EMEA, we are slightly behind.",
+      "entities": [
+        "EMEA"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "I think in EMEA we are slightly behind.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I think in Emira we are slightly behind.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Let me just give you an example. I think in EMEA we are slightly behind.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Let me just give you an example. I think in Emirati we are slightly behind.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Can do that later. Now, in terms of margin, you expressed it as having less confidence. I think in EMEA we are slightly behind.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Can do that later. Now in terms of margin, you expressed it as having less confidence. I think in Emira we are slightly behind.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "That that's about it, but going forward, that growth will be will be slower. So again, much more in line with our reported earnings growth. As regards our commitment for the environment, I think in EMEA we are slightly behind.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That's about it. But going forward, that growth will be will be slower. So again, much more in line with our reported buildings growth. As regards our commitment for the environment, I think in Emira we are slightly behind.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Louis Vuitton sells culture to the Americans and to uh, Europeans.",
+      "entities": [
+        "Louis Vuitton",
+        "Americans",
+        "Europeans"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Vuitton sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          },
+          "nopin": {
+            "hyp": "Vito sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Give you an example. So I'm very pleased with what we've been seeing. But Vuitton sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          },
+          "nopin": {
+            "hyp": "So I'm very pleased with what we've been seeing. But Vito sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. And thank you for this presentation. Congratulations on the performance. Louis Vuitton sells culture to the Americans and to Europeans.",
+            "hits": 3,
+            "total": 3
+          },
+          "nopin": {
+            "hyp": "And conclude my presentation with the outlook for 2022. And thank you for this presentation. Congratulations on the performance. Vito sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "In 2021, that's the other competition. I would say is more in price. Do you think it is realistic moving to perfumes and cosmetics? Louis Vuitton sells culture to the Americans and to Europeans.",
+            "hits": 3,
+            "total": 3
+          },
+          "nopin": {
+            "hyp": "In 2021. That's the other competition I would say is more in price. Do you think it is realistic moving to perfumes and cosmetics or? Vito sells culture to the Americans and to Europeans.",
+            "hits": 2,
+            "total": 3
+          }
+        }
+      }
+    },
+    {
+      "ref": "Uh, and despite the low on that subscriber number in Q4, new billing slightly went up to 20 million Euro.",
+      "entities": [
+        "Q4",
+        "Euro"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And despite the lower net subscriber number in Q4, new billing slightly went up to 20 million euro.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "And despite the lower net subscriber number in Q four, new billing slightly went up to twenty million euro.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "The share buyback. I don't think so, frankly. Let's put it that way. And despite the lower net subscriber number in Q four, new billing slightly went up to twenty million euro.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "The share buyback. I don't think so, frankly. Let's put it that way. And despite the lower net subscriber number in Q four, new billing slightly went up to twenty million euro.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "There's a competition. I would say it's more in price. And whilst being contained, they have delivered remarkable growth. And despite the lower net subscriber number in Q four, new billing slightly went up to 20 million euro.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "There's a competition. I would say it's more in price. And whilst being contained, they have delivered remarkable growth. And despite the lower net subscriber number in Q four, new billing slightly went up to 20 million euro.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Are you going to do with the significant cash you're going to generate over next couple of years? Plans. Yeah, I think maybe from outside to add to this. And despite the lower net subscriber number in Q4, new billing slightly went up to 20 million euro.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Are you going to do with the significant cash you're going to generate over next couple of years? Plans. Yeah, I think maybe from outside to add to this. And despite the lower net subscriber number in Q four, new billing slightly went up to twenty million euro.",
+            "hits": 1,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "Let's move on to the Americas.",
+      "entities": [
+        "Americas"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Contain they have delivered remarkable growth. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Contain. They have delivered remarkable growth. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "So frankly, as regards our commitment for the environment, that's the other competition. I would say is more in price. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "So frankly, as regards our commitment for the environment, that's the other competition. I would say is more in price. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "To the share buyback. Great talking to you. Then here we are looking at two point three percentage points. So remarkable performance. Now looking at the the cash flow. And that is a significant. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Great talking to you. Then here we are looking at 2.3 percentage points, so remarkable performance. Now looking at the the cash flow. And that is a significant. Let's move on to the Americas.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "And I think it was, this was a progress across all use cases and across all the sizes, uh, in the US.",
+      "entities": [
+        "US"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "In the second half, we recovered quite significantly, and I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In the second half, we recovered quite significantly, and I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Regarding the prices, of course you shouldn't, you shouldn't go too far. And then of course combine it with all other elements of the branding partnership. And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Regarding the prices, of course you shouldn't, you shouldn't go too far. And then of course combine it with all other elements of the branding partnership. And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "And thank you for this presentation. Congratulations on the performance. Do you think it is realistic? Which leads me to the share buyback. And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And thank you for this presentation. Congratulations on the performance. Do you think it is realistic? Which leads me to the share buyback. And I think this was a progress across all use cases and across all deal sizes in the US.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "You have the uh, line T.",
+      "entities": [
+        "T"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "You have the, lion T. But.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "You have the lion T.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Not much, of a currency effect in twenty twenty one. You have the LNT, but.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Not much, of a currency in effect in 2021. You have the LNT, but.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Specifically, you expecting any impact from from that lower sales headcount? And I if I can fit one more in. You have the T.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Specific. You expecting any impact from from that lower sales headcount? And I if I can fit one more in. You have the L T.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Contain. They have delivered remarkable growth. Maybe in the short run it looks good, but it's pretty bad in the long run. Moving to perfumes and cosmetics, or you have the lion tea.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Contain. They have delivered remarkable growth. Maybe in the short run it looks good, but it's pretty bad in the long run. Moving to perfumes and cosmetics, or you have the lion tea.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "And lastly, Zenith.",
+      "entities": [
+        "Zenith"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Then lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Then lastly, zenith.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "The buildings growth. Moving to perfumes and cosmetics, or then lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Bilings growth. Moving to perfumes and cosmetics, or lastly, zenith.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Two or three times in the history of the group. Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative. And lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Two or three times in the history of the group. Good afternoon, and also congratulations on the numbers and indeed the new emissions initiative. Lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Here we are looking at two point three percentage points, so a remarkable performance. We come to the SMB business, page fourteen, and all in all, we're looking at a forty nine percent improvement. Then lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Here we are looking at two point three percentage points, so a remarkable performance. We come to the SMB business, page fourteen, and all in all, we are looking at a forty nine percent improvement. Then lastly, Zenith.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "It's the watch that I'm wearing here, the Carerra Porsche uh, watch.",
+      "entities": [
+        "Carerra",
+        "Porsche"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "It's the watch that I'm wearing here. The Carerra Porsche.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "It's the watch that I'm wearing here, the Carrera Porsche.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Is that we sell more use cases to larger organizations? It's the watch that I'm wearing here. The Carrella Porsche.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Is that we sell more use cases to larger organizations? It's the watch that I'm wearing here. The Carrera Porsche.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Commitment for the environment. That's the other competition. I would say is more in price. And I could fit one more in. It's the watch that I'm wearing here. The Carrella Porsche.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Commitment for the environment. That's the other competition. I would say is more in price. And I could fit one more in. It's the watch that I'm wearing here, the Carrera Porsche.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Will be slower. What are you going to do with the significant cash you're going to generate over the next couple of years? Great talking to you. Maybe in the short run it looks good, but it's pretty bad in the long run. It's the watch that I'm wearing here, the Carrella Porsche.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Will be slower. What are you going to do with the significant cash you're going to generate over the next couple of years? Great talking to you. Maybe in the short run it looks good, but it's pretty bad in the long run. It's the watch that I'm wearing here, the Carrera Porsche.",
+            "hits": 1,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "And then maybe just a follow up because you mentioned enterprise, um, has been, had a reshuffling in, in Europe.",
+      "entities": [
+        "Europe"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And then maybe just a follow-up because you mentioned Enterprise, had had a reshuffle in in Europe.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And then maybe just a follow up because you mentioned enterprise, had had a reshuffle in in Europe.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Congratulations on the numbers and indeed the new emissions initiative, and then maybe just a follow-up because you mentioned enterprise had had a reshuffle in in Europe.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Congratulations on the numbers and indeed the new emissions initiative, and then maybe just a follow-up because you mentioned enterprise had had a reshuffle in in Europe.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "It's not what we expected, frankly. Now regarding the prices, of course, you shouldn't you shouldn't go too far. Selective retailing. And then maybe just a follow-up because you mentioned Enterprise had had a reshuffling in in Europe.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "It's not what we expected, frankly. Now regarding the prices, of course you shouldn't you shouldn't go too far. Selective retailing. And then maybe just a follow up because you mentioned Enterprise had had a reshuffling in in Europe.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Remarkable growth. That's also not what we expected. Frankly, yeah. Let's move on and conclude my presentation with the outlook for 2022. And then maybe just a follow up because you mentioned enterprise. Had we had a reshuffle in in Europe, is.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Remarkable growth. It's also not what we expected. Frankly, yeah. Let's move on and conclude my presentation with the outlook for 2022. And then maybe just a follow up because you mentioned enterprise. Had we had a reshuffle in in Europe.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "So uh, growth uh, picked up mostly in Q4, that's the retail uh, business of Bulgari, fine performance.",
+      "entities": [
+        "Bulgari",
+        "Q4"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "So growth picked up mostly in Q four. That's the retail business of Bulgari. Fine performance.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "So growth picked up mostly in Q four. That's the retail business of Bulgaria. Fine performance.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "We've been seeing, but so overall very pleased with the momentum which we've seen. So growth picked up mostly in Q four. That's the retail business of Bulgari. Fine performance.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "We've been seeing, but so overall very pleased with the momentum which we've seen. So growth picked up mostly in Q four. That's the retail business. Very fine performance.",
+            "hits": 0,
+            "total": 2
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "Do you think it is realistic? That being said, in the second half we recovered quite quite significantly. So growth picked up mostly in Q4. That's the retail business of Bulgari. Fine performance.",
+            "hits": 2,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "Do you think it is realistic? That being said, in the second half we recovered quite quite significantly. So growth picked up mostly in Q4. That's the retail business. Fine performance.",
+            "hits": 1,
+            "total": 2
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "All right, thank you. We come to the SMB business page fourteen. I'll do that later. Do you think it is realistic? So growth picked up mostly in Q four. That's the retail business of Bulgari. Fine performance.",
+            "hits": 1,
+            "total": 2
+          },
+          "nopin": {
+            "hyp": "All right, thank you. We come to the SMB business page fourteen. I'll do that later. Do you think it is realistic? So growth picked up mostly in Q four. That's the retail business. Of Bulgaria fine performance.",
+            "hits": 1,
+            "total": 2
+          }
+        }
+      }
+    },
+    {
+      "ref": "I think Oliver talked about in his presentation, what we see in terms of trend equity and the positive impact there.",
+      "entities": [
+        "Oliver"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "I think Oliver talked about in his presentation what we see in terms of brand equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I think Oliver talked about in his presentation what we see in terms of brand equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "And then Q four significant growth, twenty two percent. I think Oliver talked about in his presentation, what we see in terms of trend equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And then Q four significant growth, twenty two percent. I think Oliver talked about in his presentation, what we see in terms of friend equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "We have seen, and I think we can do many things there. Hi, thank you very much. I think Oliver talked about in his presentation what we see in terms of trend equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "We've seen and I think we can do many things there. Hi, thank you very much. I think Oliver talked about in his presentation what we see in terms of trend equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "I don't think so. Frankly, that's there. The competition I would say is more in price. Let's move on and conclude my presentation with the outlook for 2022. I think Oliver talked about in his presentation, what we see in terms of France equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I don't think so, frankly. That, therefore, competition I would say is more in price. Let's move on and conclude my presentation with the outlook for 2022. I think Oliver talked about in his presentation, what we see in terms of France equity and the positive impact there.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "Thank you very much, Rainer.",
+      "entities": [
+        "Rainer"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "Thank you very much, Rainer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Thank you very much, Rhaina.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Contributions from that. So all of the growth which you have seen is pretty much organic growth. Thank you very much, Rainer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Contributions from that. So all of the growth which you have seen is pretty much organic growth. Thank you very much, Rhaina.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "You are looking at 2.3 percentage points, so a remarkable performance. Those strategic partnerships are a major driver for our long-term growth. Thank you very much, Rainer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "You are looking at 2.3 percentage points, so a remarkable performance. Those strategic partnerships are a major driver for our long-term growth. Thank you very much, Rhina.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Retailing. Do you think it is realistic? It may happen, but very rarely indeed. It's also not what we expected, frankly. Yeah. So I'm very pleased with what we've been seeing. But thank you very much, Rainer.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Retailing. Do you think it is realistic? It may happen, but very rarely indeed. It's also not what we expected, frankly. Yeah. So I'm very pleased with what we've been seeing. But thank you very much, Rana.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "The next question comes from uh, Edward .",
+      "entities": [
+        "Edward"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "The next question comes from Edward.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "The next question comes from Edouard Huber.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "At the forty-nine percent improvement. The next question comes from Edward.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "At the forty-nine percent improvement. The next question comes from Edouard Huber.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "With the outlook for 2022, it may have happened what maybe two or three times in the history of the group, but the next question comes from Edward.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "With the outlook for 2022. It may have happened what maybe two or three times in the history of the group, but the next question comes from Edouard.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "Indeed, the new emissions initiative, and is that sort of baked into your expectations or not? And whilst being contained, they have delivered remarkable growth. The next question comes from Edward.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Indeed, the new emissions initiative, and is that sort of baked into your expectations or not? And whilst being contained, they have delivered remarkable growth. The next question comes from Edouard.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "And then in terms of why cancel, not keep them for M&A currency.",
+      "entities": [
+        "M&A"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "And then, in terms of why cancel, not keep them for M&A currency.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "And then in terms of why cancel, not keep them for M and A currency.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "In the short run, it looks good, but it's pretty bad in the long run. And then in terms of why cancel, not keep them for M&A currency.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "In the short run, it looks good, but it's pretty bad in the long run. And then in terms of why cancel, not keep them for M and A currency.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "You expressed it as having less confidence. The last great example of how to use our solution is shown on slide thirteen. And then in terms of why cancel not keep them for M&A currency.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "You expressed it as having less confidence. The last great example of how to use our solution is shown on slide thirteen. And then in terms of why cancel not keep them for M and A currency.",
+            "hits": 0,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "That's about it. But going forward, that growth will be will be slower. Those strategic partnerships are a major driver for our long-term growth. The importance is that we sell more use cases to larger organizations. And then in terms of why cancel not keep them for M&A currency.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That's about it. But going forward, that growth will be will be slower. Those strategic partnerships are a major driver for our long term growth. The importance is that we sell more use cases to larger organizations. And then in terms of why cancel not keep them for M and A currency.",
+            "hits": 0,
+            "total": 1
+          }
+        }
+      }
+    },
+    {
+      "ref": "I mean, we're not t- too much , we've got great locations like ones in New York.",
+      "entities": [
+        "New York"
+      ],
+      "by_age": {
+        "0.0": {
+          "pin": {
+            "hyp": "I mean we're not too much of a we got great locations like why is in New York.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "I mean we're not too much of a we got great locations like why is in New York.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "4.0": {
+          "pin": {
+            "hyp": "Uh, planes. Yeah, I think maybe from my side to add to this. I mean, we're not too much of a. We got great locations, like why is in New York.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "Planes. Yeah, I think maybe from my side to add to this. I mean, we're not too much of a. We got great locations, like why is in New York.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "8.0": {
+          "pin": {
+            "hyp": "We can do many things there. That's nice. As regards our commitment for the environment, I mean we're not too much of a. We got great locations, likewise in New York.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "We can do many things there. That's nice. As regards our commitment for the environment, I mean we're not too much of a. We got great locations, likewise in New York.",
+            "hits": 1,
+            "total": 1
+          }
+        },
+        "12.0": {
+          "pin": {
+            "hyp": "That's good to see. As you know, that's been quite a roller coaster year in terms of net retention rate and its development. I mean, we're not too much about. We got great locations like one is in New York.",
+            "hits": 1,
+            "total": 1
+          },
+          "nopin": {
+            "hyp": "That's good to see. As you know, that's been quite a roller coaster year in terms of net retention rate and its development. I mean, we're not too much about. We got great locations like one is in New York.",
+            "hits": 1,
+            "total": 1
+          }
+        }
+      }
+    }
+  ]
+}
