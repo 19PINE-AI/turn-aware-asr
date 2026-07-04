@@ -1,0 +1,254 @@
+{
+  "summary": {
+    "tag": "WIN",
+    "swa": 128,
+    "sink": 0,
+    "backend": "TRITON_ATTN",
+    "ctx_mode": "pin",
+    "n_targets": 26,
+    "age_s": 12.0,
+    "entity_hits": 0,
+    "entity_total": 30,
+    "recall": 0.0
+  },
+  "per_target": [
+    {
+      "ref": "Well uh, Chaumet needs no introduction.",
+      "entities": [
+        "Chaumet"
+      ],
+      "hyp": "\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ufffd\uc774\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558\ud558",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Now of course, uh, the uh, the products of Tiffany are iconic.",
+      "entities": [
+        "Tiffany"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffdpanepanepanepanepanepaneperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperperper",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "And then uh, who is going to replace Vir- Virginia at uh, Louis Vuitton.",
+      "entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758\uc8fc\uc758",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, uh, and so forth.",
+      "entities": [
+        "EU"
+      ],
+      "hyp": "\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\u0438\u0445\u0431\u0438\u0445\u0438\u0445\u0431\u0438\u0445\u0431\u0431\u0431\u0431\u0431\u0431hoheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheelsheels",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Within REMAX we also introduced the task force to upgrade our website and digital marketing.",
+      "entities": [
+        "REMAX"
+      ],
+      "hyp": "isonisonisonisonisonisonisonisonison._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._._",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Your first question is coming from George Webb at Morgan Stanley.",
+      "entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ubcf4\ufffd\ufffd\ufffd\ufffd\ubcf4\ufffd\ufffd\ufffd\ufffd\ubcf4",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "Fendi, big success from day one but accentuated since the arrival Kim Jones.",
+      "entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp": "\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019\u2019ymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymmymm",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "The great success is clearly our collaboration with NSF International.",
+      "entities": [
+        "NSF International"
+      ],
+      "hyp": "roadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradrad",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Yeah, maybe it's just on UB Max with you, because I think all of those three founders play a, people a very important role within the organization.",
+      "entities": [
+        "UB Max"
+      ],
+      "hyp": "._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "So wrapping it up, on the next slide, uh, quickly highlighting the cash profile of TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "\ud488\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Both brands truly global provide an unrivaled reach and marketing power for TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc\uc8fc",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "And if you sum all of this up, I think TeamViewer clearly has a highly attractive financial profile.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\u044c\u0435\uc81c\u044c\u0435\uc81c\uc81c\uc81c",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Now we have the cost freeze implemented as Oliver mentioned or the cost pause, as Oliver mentioned.",
+      "entities": [
+        "Oliver"
+      ],
+      "hyp": "\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76chyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhyhy",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Well um, I'll uh, skip over DFS.",
+      "entities": [
+        "DFS"
+      ],
+      "hyp": "\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c\ud76c",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "We invested 13 uh, billion in um, uh, well, mostly it was Tiffany.",
+      "entities": [
+        "Tiffany"
+      ],
+      "hyp": "\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488\ud488",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "I really look forward to tasting the Ruinart 2004 uh, Rose next year.",
+      "entities": [
+        "Ruinart"
+      ],
+      "hyp": "}\n\n\n}\n\n\n}\n\n\n}\n\n\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432\u0438\u0432",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Guiony, was able to uh, to pay it off very quickly.",
+      "entities": [
+        "Guiony"
+      ],
+      "hyp": "roadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachroadbachbachroadbachroadbachbachroadbachbachroadbachbachroadbachbachroadbachbachroadbachbachbachroadbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbachbach",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Angelina, you you you\u2026",
+      "entities": [
+        "Angelina"
+      ],
+      "hyp": "inteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteinteconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconreconrecon",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Starting with the United States then.",
+      "entities": [
+        "United States"
+      ],
+      "hyp": "endendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreendreconreconreconreconreconreconreconrecon",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Uh, the three UB Max founders are all still on board.",
+      "entities": [
+        "UB Max"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ud76c\ud76c\ud76c\ud76c\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "The next question is come from Mohammed at Goldman Sachs.",
+      "entities": [
+        "Mohammed",
+        "Goldman Sachs"
+      ],
+      "hyp": "']\n\n\n']\n\n\n']\n\n\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ud788\u0445\ud788\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8\ud5c8",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "Bulgari uh, was very successful in its stores.",
+      "entities": [
+        "Bulgari"
+      ],
+      "hyp": "']\n\n']\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._\n\n._",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "A- and I think especially the Americas team, uh, converted their pipeline very well.",
+      "entities": [
+        "Americas"
+      ],
+      "hyp": "']\n\n\n\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544\uc544",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "That is the spirit of Louis Vuitton.",
+      "entities": [
+        "Louis Vuitton"
+      ],
+      "hyp": "\ufffd\ufffd\ufffd\ufffd\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc870\uc8fc\uc758\uc870",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Uh, steadily generating high teens growth in combination with strong profitability and very strong cash flows, as, as Stefan pointed out.",
+      "entities": [
+        "Stefan"
+      ],
+      "hyp": "\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774\uc774",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "I think in EMEA, we are slightly behind.",
+      "entities": [
+        "EMEA"
+      ],
+      "hyp": "roadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadroadradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradradrad",
+      "hits": 0,
+      "total": 1
+    }
+  ]
+}

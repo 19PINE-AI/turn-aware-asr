@@ -110,6 +110,32 @@ These are why the sink-covers-all config initially failed while the FLASH
 baseline and window-only (Part A) succeeded — the failure was in the sink
 *install*, at a layer before the kernel/block-pin ever execute.
 
+**Biasing-preservation (E8) — the sink rescues the windowed collapse.**
+`e8_sink_biasing.py` runs three engine configs over 26 entity-bearing
+Earnings-22 targets, each with 12 s of filler audio prepended (so the `<CTX>`
+hotword system prompt sits ~200 audio tokens behind the words being decoded),
+`ctx_mode=pin` in all three:
+
+| arm  | config                    | entity recall | transcription |
+|------|---------------------------|:-------------:|---------------|
+| FULL | no window (CTX attended)  | **0.367**     | coherent      |
+| WIN  | W=128, no sink            | **0.000**     | **garbage** (`�이�이…하하…`) |
+| SINK | W=128, sink=80 (CTX pinned)| **0.133**    | coherent      |
+
+The bare window (WIN) doesn't just evict CTX — it **collapses into garbage**
+(the classic StreamingLLM attention-sink failure: with no stable low-position
+anchor, the windowed softmax degenerates). Adding the pinned sink (SINK)
+**restores coherent transcription** and recovers real entity recall
+(0.133 vs 0.000) — the in-engine confirmation that the sink both stabilizes
+windowed attention AND keeps the CTX attended. SINK stays below FULL (0.367)
+because W=128 still truncates the *middle* audio, and Qwen3-ASR's decoder needs
+the full audio to transcribe — so the sink's efficiency regime fits the
+**streaming/incremental-decode** variant (rolling window over recent audio +
+pinned CTX), not full-clip prefill with a window smaller than the clip. The
+capability (biasing surviving session length) is the same one E4/research/69
+proved flat at +30 pp via application-level re-feed; E8 shows the in-engine
+sink delivers it without re-encoding CTX.
+
 **Metronome commits** `4138fb7` (initial sink), `cb7b4a9` (dense SWA),
 `5cb5d0f` (V-side filter fix — the union kernel becomes correct),
 `d3992a6` (init-deadlock fix — no CUDA init during plugin-load).

@@ -1,0 +1,254 @@
+{
+  "summary": {
+    "tag": "SINK",
+    "swa": 128,
+    "sink": 80,
+    "backend": "TRITON_ATTN",
+    "ctx_mode": "pin",
+    "n_targets": 26,
+    "age_s": 12.0,
+    "entity_hits": 4,
+    "entity_total": 30,
+    "recall": 0.13333333333333333
+  },
+  "per_target": [
+    {
+      "ref": "Well uh, Chaumet needs no introduction.",
+      "entities": [
+        "Chaumet"
+      ],
+      "hyp": "OKAY MAYBE FOR MY OUTSIDE TO ADD TO THIS UH WELL UM SHOW ME NEEDS NO INTRODUCTION",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Now of course, uh, the uh, the products of Tiffany are iconic.",
+      "entities": [
+        "Tiffany"
+      ],
+      "hyp": "MM  AH HI THANK YOU VERY MUCH",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "And then uh, who is going to replace Vir- Virginia at uh, Louis Vuitton.",
+      "entities": [
+        "Virginia",
+        "Louis Vuitton"
+      ],
+      "hyp": "OTHER ELEMENTS OF THE BRANDING PARTNERSHIP THAT'S UH THERE ARE THE COMPONENTS OF THE BRANDING PARTNERSHIP",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "Obviously, the whole buyback program will be carried out in accordance with EU regulations and other applicable rules, uh, and so forth.",
+      "entities": [
+        "EU"
+      ],
+      "hyp": "IS CHALLENGING YEARS HAVE CALLED INCREASES IS IT IT IT IT",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Within REMAX we also introduced the task force to upgrade our website and digital marketing.",
+      "entities": [
+        "REMAX"
+      ],
+      "hyp": "YEAH AND ON AND ON WE ARE LOOKING AT UH FOURTEEN NINE",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Your first question is coming from George Webb at Morgan Stanley.",
+      "entities": [
+        "George Webb",
+        "Morgan Stanley"
+      ],
+      "hyp": "I DON'T SEE ANY INDICATION THAT THIS WOULD CHANGE UH EVEN AT AT THE FIRST QUESTION IS COMING FROM GEORGE WEBB AT MORGAN STANLEY YOU'RE",
+      "hits": 2,
+      "total": 2
+    },
+    {
+      "ref": "Fendi, big success from day one but accentuated since the arrival Kim Jones.",
+      "entities": [
+        "Fendi",
+        "Kim Jones"
+      ],
+      "hyp": "SO THERE'S HAVING LESS CONFIDENCE I SAY THANKS VERY MUCH AND AND",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "The great success is clearly our collaboration with NSF International.",
+      "entities": [
+        "NSF International"
+      ],
+      "hyp": "I'LL NOW LOOKING AT THE THE CASH FLOW",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Yeah, maybe it's just on UB Max with you, because I think all of those three founders play a, people a very important role within the organization.",
+      "entities": [
+        "UB Max"
+      ],
+      "hyp": "A PRETTY GOOD AS YOU CAN SEE  IT MAY HAPPEN BUT VERY RARELY",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "So wrapping it up, on the next slide, uh, quickly highlighting the cash profile of TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "GOAHEAD GOOD ONE",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Both brands truly global provide an unrivaled reach and marketing power for TeamViewer.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "HERE WE ARE LOOKING AT TWO POINT THREE PERCENTAGE POINTS SO REMARKABLE",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "And if you sum all of this up, I think TeamViewer clearly has a highly attractive financial profile.",
+      "entities": [
+        "TeamViewer"
+      ],
+      "hyp": "SO PRETTY GOOD AS YOU CAN SEE BUT UH IT WASN'T SUCH AN EXPENSIVE",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Now we have the cost freeze implemented as Oliver mentioned or the cost pause, as Oliver mentioned.",
+      "entities": [
+        "Oliver"
+      ],
+      "hyp": "SO I HAVE TO BAKE INTO YOUR UH EXPECTATIONS OR NOT AND IT DID IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT IT",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Well um, I'll uh, skip over DFS.",
+      "entities": [
+        "DFS"
+      ],
+      "hyp": "FALING WHAT UH I WOULD START WITH A DEVELOPMENT OF THE NUMBER OF OUR CUSTOMERS",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "We invested 13 uh, billion in um, uh, well, mostly it was Tiffany.",
+      "entities": [
+        "Tiffany"
+      ],
+      "hyp": "PLEASE WITH WITH THE MOMENTUM WHICH WE HAVE SEEN OR LET'S PUT IT THAT WAY",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "I really look forward to tasting the Ruinart 2004 uh, Rose next year.",
+      "entities": [
+        "Ruinart"
+      ],
+      "hyp": "BEING SAYS IN THE SECOND HALF WE UH RECOVERED QUITE SET TEA",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Guiony, was able to uh, to pay it off very quickly.",
+      "entities": [
+        "Guiony"
+      ],
+      "hyp": "OBVIOUSLY IT'S ALSO THE FOURTH QUARTER AND IT'S IMPORTANT TO SEE THAT IT'S ALSO THE FOURTH QUARTER",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Angelina, you you you\u2026",
+      "entities": [
+        "Angelina"
+      ],
+      "hyp": "WHAT IT MAY HAPPEN BUT VERY RARLY INDEED  SO I UH WE HAVE A STRONG RETENTION RATE IN OUR END UP RISE BUSINESS OR WHAT IT'S A HUNDRED FIVE PERCENT",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Starting with the United States then.",
+      "entities": [
+        "United States"
+      ],
+      "hyp": "S safety in the global food industry and the adjacent",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Uh, the three UB Max founders are all still on board.",
+      "entities": [
+        "UB Max"
+      ],
+      "hyp": "JUST UH THE SECOND TOPIC WOULD BE UM TO DISCUSS MARGINAL IMPACT OF THE ACQUISITIONS WHICH WE'VE DONE UH UH THE THREE YUBIMAX FOUNDERS ARE ALL STILL ON BOARD",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "The next question is come from Mohammed at Goldman Sachs.",
+      "entities": [
+        "Mohammed",
+        "Goldman Sachs"
+      ],
+      "hyp": "BUT OPPOSITE IT'S ALSO THE FOURTH QUARTER AND IT'S IMPORTANT TOO TO YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU YOU",
+      "hits": 0,
+      "total": 2
+    },
+    {
+      "ref": "Bulgari uh, was very successful in its stores.",
+      "entities": [
+        "Bulgari"
+      ],
+      "hyp": "BULGARI UH WAS VERY SUCCESSFUL IN IT STORES",
+      "hits": 1,
+      "total": 1
+    },
+    {
+      "ref": "A- and I think especially the Americas team, uh, converted their pipeline very well.",
+      "entities": [
+        "Americas"
+      ],
+      "hyp": "POINT THREE PERCENTAGE POINTS SO A REMARKABLE PERFORMANCE MAYBE IN THE SHORT TERM",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "That is the spirit of Louis Vuitton.",
+      "entities": [
+        "Louis Vuitton"
+      ],
+      "hyp": "SO OVER ALL VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY VERY",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "Uh, steadily generating high teens growth in combination with strong profitability and very strong cash flows, as, as Stefan pointed out.",
+      "entities": [
+        "Stefan"
+      ],
+      "hyp": "GO AHEAD  GOOD SELECTIVE RETAIL RETAIL RETAIL RETAIL RETAIL RETAIL",
+      "hits": 0,
+      "total": 1
+    },
+    {
+      "ref": "I think in EMEA, we are slightly behind.",
+      "entities": [
+        "EMEA"
+      ],
+      "hyp": "THEY HAVE DELIVERED A REMARKABLE GROWTH NOW WE'VE JUST JUST ST LIT EMBEDDAU OF HOW TO USE OUR SOLUTION IS UH SHOWN ON SLIDE THIRTEEN UH I THINK IN EMEA WE ARE LIT LIGHTLY BEHIND",
+      "hits": 1,
+      "total": 1
+    }
+  ]
+}
