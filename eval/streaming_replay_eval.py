@@ -258,12 +258,16 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
     that the LM hallucinates text + spams fires on silence-only segments
     (all v1-v8 training examples begin with speech).
 
-    confirm_chunks=h treats a marker as a CANDIDATE: the system-level fire
-    is accepted only after h further silent chunks (phrase-vs-turn policy
-    dial found in the first gated run — spontaneous speech is full of
-    complete phrases + 0.3-0.7 s pauses where the speaker continues).
-    Latency cost is +h*chunk_s on accepted fires; resumed speech within
-    the window cancels the candidate (no flush, segment continues)."""
+    confirm_chunks=h decouples TRANSCRIPT flushes from the END signal:
+    every terminal marker still flushes its segment (transcription is
+    continuous), but the system-level END fire is signaled only after h
+    further silent chunks; resumed speech within the window discards the
+    END signal (the flush stands — it was a phrase boundary). This is the
+    phrase-vs-turn policy dial: spontaneous speech is full of complete
+    phrases + 0.3-0.7 s pauses where the speaker continues. Latency cost
+    is +h*chunk_s on accepted fires. (An earlier version cancelled the
+    flush too, which left segments unbounded during continuous speech —
+    committed text grew for 50+ s and decoding degraded.)"""
     audio = stretch["audio"]
     n_chunks = int(np.ceil(len(audio) / (chunk_s * SR)))
     fires: list[float] = []
@@ -285,43 +289,36 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
             n_gated += 1
             continue
 
-        # resolve a pending candidate before decoding this chunk
+        # resolve a pending END candidate before decoding this chunk
+        # (its segment was already flushed at the marker)
         if pending_fire is not None:
             if not chunk_silent(k):
-                pending_fire = None      # speech resumed — cancel candidate
+                pending_fire = None      # speech resumed — phrase, not turn
                 n_cancelled += 1
             elif k - pending_fire >= confirm_chunks:
                 fires.append((k + 1) * chunk_s)
-                seg_text = clean(dec.raw).replace(EAGER_TOK, "")
-                flushed.append(seg_text)
-                dec.reset_segment()
-                prev_marker_count = 0
                 pending_fire = None
-                n_gated += int(energy_gate)   # this silent chunk starts no segment
-                continue
-            else:
-                continue                  # still confirming; skip decode
+                if dec.buffer is None:
+                    n_gated += int(energy_gate)  # silent chunk, no segment open
+                    continue
 
         text = dec.step(chunk)
         n_mark = text.count(END_TOK)
         if n_mark > prev_marker_count:
             after = text.rsplit(END_TOK, 1)[1].replace(EAGER_TOK, "").strip()
-            if confirm_chunks > 0:
-                if not after:
-                    pending_fire = k      # candidate; confirm on silence
-                # markers with trailing text stay textual (mid-stream A M B)
-            else:
-                t_fire = (k + 1) * chunk_s
-                fires.extend([t_fire] * (n_mark - prev_marker_count))
-                # flush rule (research/58): clean flush only when the marker
-                # is terminal — otherwise the boundary is textual and the
-                # buffer keeps growing until a clean flush.
-                if not after:
-                    seg_text = text.replace(EAGER_TOK, "")
-                    flushed.append(seg_text)
-                    dec.reset_segment()
-                    prev_marker_count = 0
-                    continue
+            if confirm_chunks == 0:
+                fires.extend([(k + 1) * chunk_s] * (n_mark - prev_marker_count))
+            elif not after:
+                pending_fire = k          # END candidate; confirm on silence
+            # flush rule (research/58): clean flush only when the marker
+            # is terminal — otherwise the boundary is textual and the
+            # buffer keeps growing until a clean flush.
+            if not after:
+                seg_text = text.replace(EAGER_TOK, "")
+                flushed.append(seg_text)
+                dec.reset_segment()
+                prev_marker_count = 0
+                continue
         prev_marker_count = n_mark
 
     if dec.raw:
