@@ -248,12 +248,20 @@ class StreamDecoder:
 # ---------------------------------------------------------------- scoring
 
 def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
-                energy_gate: bool = False, gate_rms: float = 1e-3) -> dict:
+                energy_gate: bool = False, gate_rms: float = 1e-3,
+                confirm_chunks: int = 0) -> dict:
     """energy_gate models the production composition policy (research/60):
     never START a segment on a silent chunk — the LM only decodes once
     speech energy has been observed. Motivated by the v5 replay finding
     that the LM hallucinates text + spams fires on silence-only segments
-    (all v1-v8 training examples begin with speech)."""
+    (all v1-v8 training examples begin with speech).
+
+    confirm_chunks=h treats a marker as a CANDIDATE: the system-level fire
+    is accepted only after h further silent chunks (phrase-vs-turn policy
+    dial found in the first gated run — spontaneous speech is full of
+    complete phrases + 0.3-0.7 s pauses where the speaker continues).
+    Latency cost is +h*chunk_s on accepted fires; resumed speech within
+    the window cancels the candidate (no flush, segment continues)."""
     audio = stretch["audio"]
     n_chunks = int(np.ceil(len(audio) / (chunk_s * SR)))
     fires: list[float] = []
@@ -261,6 +269,12 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
     prev_marker_count = 0
     dec.reset_segment()
     n_gated = 0
+    n_cancelled = 0
+    pending_fire: int | None = None      # chunk idx of candidate marker
+
+    def chunk_silent(idx: int) -> bool:
+        c = audio[int(idx * chunk_s * SR): int((idx + 1) * chunk_s * SR)]
+        return len(c) == 0 or float(np.sqrt(np.mean(c ** 2))) < gate_rms
 
     for k in range(n_chunks):
         chunk = audio[int(k * chunk_s * SR): int((k + 1) * chunk_s * SR)]
@@ -268,21 +282,44 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
                 (len(chunk) == 0 or float(np.sqrt(np.mean(chunk ** 2))) < gate_rms)):
             n_gated += 1
             continue
-        text = dec.step(chunk)
-        n_mark = text.count(END_TOK)
-        if n_mark > prev_marker_count:
-            t_fire = (k + 1) * chunk_s
-            fires.extend([t_fire] * (n_mark - prev_marker_count))
-            # flush rule (research/58): clean flush only when the marker is
-            # terminal — otherwise the boundary is textual and the buffer
-            # keeps growing until a clean flush.
-            after = text.rsplit(END_TOK, 1)[1].replace(EAGER_TOK, "").strip()
-            if not after:
-                seg_text = text.replace(EAGER_TOK, "")
+
+        # resolve a pending candidate before decoding this chunk
+        if pending_fire is not None:
+            if not chunk_silent(k):
+                pending_fire = None      # speech resumed — cancel candidate
+                n_cancelled += 1
+            elif k - pending_fire >= confirm_chunks:
+                fires.append((k + 1) * chunk_s)
+                seg_text = clean(dec.raw).replace(EAGER_TOK, "")
                 flushed.append(seg_text)
                 dec.reset_segment()
                 prev_marker_count = 0
+                pending_fire = None
+                n_gated += int(energy_gate)   # this silent chunk starts no segment
                 continue
+            else:
+                continue                  # still confirming; skip decode
+
+        text = dec.step(chunk)
+        n_mark = text.count(END_TOK)
+        if n_mark > prev_marker_count:
+            after = text.rsplit(END_TOK, 1)[1].replace(EAGER_TOK, "").strip()
+            if confirm_chunks > 0:
+                if not after:
+                    pending_fire = k      # candidate; confirm on silence
+                # markers with trailing text stay textual (mid-stream A M B)
+            else:
+                t_fire = (k + 1) * chunk_s
+                fires.extend([t_fire] * (n_mark - prev_marker_count))
+                # flush rule (research/58): clean flush only when the marker
+                # is terminal — otherwise the boundary is textual and the
+                # buffer keeps growing until a clean flush.
+                if not after:
+                    seg_text = text.replace(EAGER_TOK, "")
+                    flushed.append(seg_text)
+                    dec.reset_segment()
+                    prev_marker_count = 0
+                    continue
         prev_marker_count = n_mark
 
     if dec.raw:
@@ -337,6 +374,7 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
         "median_chunk_ms": float(np.median(dec.compute_ms)) if dec.compute_ms else None,
         "n_chunks_gated": n_gated,
         "n_chunks_total": n_chunks,
+        "n_cancelled_candidates": n_cancelled,
     }
 
 
@@ -378,6 +416,9 @@ def main():
     p.add_argument("--energy-gate", action="store_true",
                     help="production composition policy: never start a segment on a silent chunk")
     p.add_argument("--gate-rms", type=float, default=1e-3)
+    p.add_argument("--confirm-silent-chunks", type=int, default=0,
+                    help="accept a marker only after this many further silent chunks "
+                         "(phrase-vs-turn dial; adds h*chunk_s latency)")
     p.add_argument("--use-train-meetings", action="store_true",
                     help="dev mode: draw stretches from TRAIN meetings (for early stopping)")
     p.add_argument("--seed", type=int, default=0)
@@ -413,11 +454,14 @@ def main():
     mode = "from_scratch" if args.from_scratch else "committed_prefix"
     if args.energy_gate:
         mode += "+gate"
+    if args.confirm_silent_chunks:
+        mode += f"+confirm{args.confirm_silent_chunks}"
     per = []
     for st in tqdm(stretches, desc=f"replay[{mode}]"):
         dec = StreamDecoder(model, processor, tokenizer, committed=not args.from_scratch)
         per.append(run_stretch(dec, st, args.chunk_s,
-                                energy_gate=args.energy_gate, gate_rms=args.gate_rms))
+                                energy_gate=args.energy_gate, gate_rms=args.gate_rms,
+                                confirm_chunks=args.confirm_silent_chunks))
 
     summary = aggregate(per, args.chunk_s, mode)
     logger.info("== REPLAY SUMMARY ==")
