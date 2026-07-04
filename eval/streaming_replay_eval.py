@@ -278,29 +278,24 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
     n_cancelled = 0
     pending_fire: int | None = None      # chunk idx of candidate marker
 
-    def chunk_silent(idx: int) -> bool:
-        c = audio[int(idx * chunk_s * SR): int((idx + 1) * chunk_s * SR)]
-        return len(c) == 0 or float(np.sqrt(np.mean(c ** 2))) < gate_rms
-
     for k in range(n_chunks):
         chunk = audio[int(k * chunk_s * SR): int((k + 1) * chunk_s * SR)]
-        if (energy_gate and dec.buffer is None and
-                (len(chunk) == 0 or float(np.sqrt(np.mean(chunk ** 2))) < gate_rms)):
-            n_gated += 1
-            continue
+        silent = len(chunk) == 0 or float(np.sqrt(np.mean(chunk ** 2))) < gate_rms
 
-        # resolve a pending END candidate before decoding this chunk
-        # (its segment was already flushed at the marker)
+        # Resolve a pending END candidate FIRST — before the energy gate,
+        # which would otherwise skip the very silent chunks that confirm it
+        # (the candidate's segment was already flushed at the marker).
         if pending_fire is not None:
-            if not chunk_silent(k):
+            if not silent:
                 pending_fire = None      # speech resumed — phrase, not turn
                 n_cancelled += 1
             elif k - pending_fire >= confirm_chunks:
                 fires.append((k + 1) * chunk_s)
                 pending_fire = None
-                if dec.buffer is None:
-                    n_gated += int(energy_gate)  # silent chunk, no segment open
-                    continue
+
+        if energy_gate and dec.buffer is None and silent:
+            n_gated += 1
+            continue
 
         text = dec.step(chunk)
         n_mark = text.count(END_TOK)
