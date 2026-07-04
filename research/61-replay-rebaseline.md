@@ -112,6 +112,6 @@ continues. Latency floor becomes ~(h+1)·0.5 s.
 ## Files
 
 - `research/61-replay-{v3,v5,v8}.json` — ungated arms
-- `research/61-replay-{v3,v5,v8}gate.json` — gated arms
+- `research/61-replay-{v3,v5,v8}gate.json (spec v2; -specv1 files = earlier non-causal interleave classification)` — gated arms
 - `eval/streaming_replay_eval.py` — driver (committed-prefix,
   `--energy-gate`, `--from-scratch`)

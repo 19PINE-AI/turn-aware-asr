@@ -140,25 +140,27 @@ def build_stretches(meetings: dict[str, list[dict]], rng: random.Random,
                 ok = False
                 break
             audio[off:off + n] = clip[:n]
-            # classify the boundary at this utterance's end
+            # classify the boundary at this utterance's end — CAUSALLY for
+            # single-channel material: only the same-speaker gap is
+            # observable on this channel. (Spec v2: an earlier version also
+            # promoted boundaries to turn_final when another speaker
+            # interleaved in the meeting, but that speech is silence on
+            # this channel — demanding a fire there is non-causal, the
+            # exact mistake research/58 catalogs in the legacy evals.)
             if j + 1 < len(group):
                 gap = float(group[j + 1]["begin_time"]) - ue
             else:
                 gap = float("inf")      # stream ends in silence
-            interleave = any(
-                u2["speaker_id"] != spk
-                and ue < float(u2["begin_time"]) < ue + max(gap, 0.0)
-                for u2 in all_utts
-            )
-            if gap < T_MERGE and not interleave:
+            if gap < T_MERGE:
                 btype = "merged"
-            elif gap >= T_TURN or interleave:
+            elif gap >= T_TURN:
                 btype = "turn_final"
             else:
                 btype = "continuation"
             events.append({
                 "begin_s": ub - t0, "end_s": ue - t0,
-                "text": u["text"].strip(), "boundary": btype, "gap_s": gap,
+                "text": u["text"].strip(), "boundary": btype,
+                "gap_s": gap if gap != float("inf") else None,
             })
         if not ok:
             continue
@@ -375,6 +377,9 @@ def run_stretch(dec: StreamDecoder, stretch: dict, chunk_s: float,
         "n_chunks_gated": n_gated,
         "n_chunks_total": n_chunks,
         "n_cancelled_candidates": n_cancelled,
+        # raw material for offline re-scoring (no GPU re-run needed)
+        "fires_s": sorted(fires),
+        "events": [{k: v for k, v in e.items()} for e in events],
     }
 
 
