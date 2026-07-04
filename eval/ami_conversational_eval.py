@@ -209,6 +209,11 @@ def main():
     p.add_argument("--restrict-to-meetings",
                     help="Path to JSON file with 'eval_meeting_ids' list; only those meetings are used. "
                          "Required when the model was trained on AMI to avoid contamination.")
+    p.add_argument("--append-silence-s", type=float, default=0.0,
+                    help="Seconds of silence appended to every example's audio. In deployment, "
+                         "audio never ends at the forced-alignment boundary — silence keeps "
+                         "arriving after the speaker stops. 0.0 reproduces the historical "
+                         "(deployment-unrealistic) protocol where clips are cut at end-of-speech.")
     args = p.parse_args()
 
     rng = random.Random(args.seed)
@@ -241,9 +246,12 @@ def main():
     model.eval()
     logger.info("Loaded %s (step %d)", args.checkpoint, ckpt.get("step", -1))
 
+    tail = np.zeros(int(args.append_silence_s * 16000), dtype=np.float32)
+
     per: list[dict] = []
     for i, e in enumerate(tqdm(examples, desc="ami-eval")):
-        hyp = transcribe(model, processor, tokenizer, e["audio"])
+        audio = np.concatenate([e["audio"], tail]) if len(tail) else e["audio"]
+        hyp = transcribe(model, processor, tokenizer, audio)
         n_end = hyp.count(END_TOK)
         n_eager = hyp.count(EAGER_TOK)
         r = {
@@ -302,6 +310,7 @@ def main():
     # Save without audio bytes (would blow up the JSON)
     Path(args.out).write_text(json.dumps({
         "checkpoint": args.checkpoint,
+        "append_silence_s": args.append_silence_s,
         "summary": summary,
         "per_example": per,
     }, indent=2))
