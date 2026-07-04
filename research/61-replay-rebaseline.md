@@ -2,11 +2,16 @@
 
 First run of the unified streaming-replay eval (design research/58,
 driver `eval/streaming_replay_eval.py`): 25 single-speaker stretches from
-held-out AMI meetings (22.2 min audio, 108 turn-final + 15 continuation
-boundaries), 0.5 s chunks, committed-prefix decoding, marker fires
-timestamped and scored causally.
+held-out AMI meetings (22.2 min audio; under spec-v2 causal
+classification, 96 turn-final + 27 continuation boundaries), 0.5 s
+chunks, committed-prefix decoding, marker fires timestamped and scored
+causally.
 
 ## Ungated results (LM alone on the raw channel)
+
+*(spec-v1 boundary classification; recall here is uninterpretable
+regardless of spec — see finding 1 — so these arms were not re-run under
+spec v2. Read them only for the false-fire / spam / WER columns.)*
 
 | Model | Recall | P50 | P95 | False fires /speech-min | Silence-spam fires | WER |
 |---|---|---|---|---|---|---|
@@ -44,11 +49,22 @@ research/60: a trivial RMS check in front of the LM. Within-segment
 behavior (including post-speech silence for the fire decision) is
 untouched — the gate only stops the LM from decoding pure silence.
 
+Numbers below are **spec v2** (causal single-channel boundary
+classification: 96 turn-final + 27 continuation; the earlier spec-v1
+promoted a boundary to turn-final when another meeting speaker
+interleaved, but that speech is silence on this channel, so requiring a
+fire there was itself non-causal — the exact error class research/58
+catalogs. Reclassification moved v5 recall .917→.906, v8 .935→.938:
+conclusions unchanged.)
+
 | Model | Recall | P50 | P95 | False /speech-min | Silence spam | WER med | WER mean |
 |---|---|---|---|---|---|---|---|
-| v3 + gate | 0.907 | 0.04 s | 0.25 s | 88.8 | 42 | 0.80 | 0.85 |
-| v5 + gate | 0.917 | 0.16 s | 0.89 s | 27.3 | 23 | 0.31 | 0.36 |
-| **v8 + gate** | **0.935** | **0.25 s** | **0.56 s** | **3.6** | 25 | **0.27** | 4.96 |
+| v3 + gate | *(rerun pending)* | | | | | | |
+| v5 + gate | 0.906 | 0.16 s | 0.89 s | 27.3 | 23 | 0.31 | 0.36 |
+| **v8 + gate** | **0.938** | **0.26 s** | **0.56 s** | **3.6** | 25 | **0.27** | 4.96 |
+
+(spec-v1 gated numbers, for reference: v3 0.907 / P50 0.04 s / 88.8
+false-min; v5 0.917; v8 0.935.)
 
 The gate does exactly its job: silence spam ~1500 → ~25 and WER stops
 being hallucination-dominated (v5 3.03 → 0.36). What remains is real
@@ -75,12 +91,21 @@ model behavior:
 
 ## Confirmation-policy sweep (phrase-vs-turn dial)
 
-`--confirm-silent-chunks h`: a marker is a *candidate*; the system fire
-is accepted only after h further silent chunks (0.5 s each); resumed
-speech within the window cancels the candidate and the segment
-continues. Latency floor becomes ~(h+1)·0.5 s.
+`--confirm-silent-chunks h` separates the transcript flush from the END
+signal: every terminal marker still flushes its segment (transcription
+stays continuous), but the system-level END is emitted only after h
+further silent chunks (0.5 s each). If speech resumes within the window
+the END is discarded — it was a phrase boundary, not a turn — while the
+flush stands. Latency floor on accepted fires becomes ~(h+1)·0.5 s.
+(An earlier version also cancelled the flush, which left the committed
+text unbounded through continuous speech and degraded decoding to a
+repetition loop — recall collapsed to .44. That was a bug in the eval
+policy, not the model.)
 
-*(sweep running: v5 h=1,2; v8 h=1 — table below filled when done)*
+*(full sweep re-running under the corrected policy: v5 h=1,2; v8 h=1.
+5-stretch smoke preview, v5 h=1: recall ~0.86, false/min 27.3→3.2,
+P50 ~0.83 s — a ~9× false-fire reduction for one recall point and
++0.5 s latency. Table filled when the 25-stretch arms land.)*
 
 | Arm | Recall | P50 | P95 | False /min | Cancelled | WER med |
 |---|---|---|---|---|---|---|
