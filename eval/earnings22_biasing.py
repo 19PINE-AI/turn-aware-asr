@@ -274,12 +274,18 @@ class Transcriber:
 # --------------------------------------------------------------------------
 
 def load_utterances(data_glob: str, n_utts: int,
-                    shuffle: bool = False, seed: int = 0) -> list[dict]:
-    utts = []
-    for u in tqdm(iter_earnings22(data_glob, n_utts, shuffle=shuffle, seed=seed),
-                  total=n_utts, desc="load"):
-        u["entities"] = extract_entities(u["ref"])
-        utts.append(u)
+                    shuffle: bool = False, seed: int = 0,
+                    entity_backend: str = "llm",
+                    entity_cache: str | None = None) -> list[dict]:
+    utts = list(iter_earnings22(data_glob, n_utts, shuffle=shuffle, seed=seed))
+    if entity_backend == "llm":
+        from eval.llm_entities import extract_entities_llm
+        ents = extract_entities_llm([u["ref"] for u in utts], cache_path=entity_cache)
+        for u, e in zip(utts, ents):
+            u["entities"] = e
+    else:  # spacy | heuristic (per-text, dated NER)
+        for u in tqdm(utts, desc="entities"):
+            u["entities"] = extract_entities(u["ref"])
     return utts
 
 
@@ -310,6 +316,12 @@ def main():
                    help="sample utterances uniformly across the whole shard "
                         "(all earnings calls) for entity/company diversity, "
                         "instead of the first n-utts in file order.")
+    p.add_argument("--entity-backend", default="llm",
+                   choices=["llm", "spacy", "heuristic"],
+                   help="named-entity extractor for hotwords. llm = Claude "
+                        "Haiku 4.5 (default, best on domain proper nouns); "
+                        "spacy = en_core_web_sm; heuristic = ALL-CAPS.")
+    p.add_argument("--entity-cache", default="data/earnings22/llm_entities.json")
     p.add_argument("--dry-run", action="store_true",
                    help="Data pipeline only: extract entities, build the three "
                         "conditions, print samples. Loads NO model, uses NO GPU.")
@@ -318,7 +330,9 @@ def main():
     rng = random.Random(args.seed)
 
     utts = load_utterances(args.data_glob, args.n_utts,
-                           shuffle=args.shuffle, seed=args.seed)
+                           shuffle=args.shuffle, seed=args.seed,
+                           entity_backend=args.entity_backend,
+                           entity_cache=args.entity_cache)
     has_ents = build_conditions(utts, rng)
     logger.info("Loaded %d utterances; %d have >= 1 named entity", len(utts), len(has_ents))
 

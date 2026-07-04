@@ -71,20 +71,26 @@ def main():
     rng = random.Random(args.seed)
     ages = [float(a) for a in args.ages.split(",")]
 
-    # Collect entity-bearing targets + a filler pool, all 16 kHz.
-    targets, fillers = [], []
-    for u in iter_earnings22(args.data_glob, args.n_utts * 6, shuffle=True, seed=args.seed):
+    # Decode a candidate pool, then batch-extract entities with the LLM
+    # (Haiku 4.5) rather than the dated spaCy NER. Entity-bearing clips of the
+    # right length become targets; the rest are filler.
+    from eval.llm_entities import extract_entities_llm
+    cand = []
+    for u in iter_earnings22(args.data_glob, args.n_utts * 8, shuffle=True, seed=args.seed):
         au = to_16k(*decode_audio(u["audio_bytes"]))
-        dur = len(au) / SR
-        ents = extract_entities(u["ref"])
-        if ents and 1.0 <= dur <= 8.0:
-            targets.append({"audio": au, "ref": u["ref"], "entities": ents})
-        elif 1.0 <= dur <= 6.0:
-            fillers.append(au)
-        if len(targets) >= args.n_utts and len(fillers) >= 40:
+        cand.append({"audio": au, "ref": u["ref"], "dur": len(au) / SR})
+        if len(cand) >= args.n_utts * 8:
             break
-    targets = targets[: args.n_utts]
-    logger.info("E4: %d entity-bearing targets, %d filler clips", len(targets), len(fillers))
+    ent_lists = extract_entities_llm([c["ref"] for c in cand],
+                                     cache_path="data/earnings22/llm_entities.json")
+    targets, fillers = [], []
+    for c, ents in zip(cand, ent_lists):
+        if ents and 1.0 <= c["dur"] <= 8.0 and len(targets) < args.n_utts:
+            targets.append({"audio": c["audio"], "ref": c["ref"], "entities": ents})
+        elif 1.0 <= c["dur"] <= 6.0 and len(fillers) < 60:
+            fillers.append(c["audio"])
+    logger.info("E4: %d entity-bearing targets, %d filler clips (LLM entities)",
+                len(targets), len(fillers))
 
     def prior_audio(age_s: float) -> np.ndarray:
         if age_s <= 0 or not fillers:
