@@ -478,11 +478,15 @@ def fig10_landscape():
 
     pt(1.6, 7.6, "WebRTC / Silero VAD\n+ timeout cascades", OKABE["grey"])
     pt(3.4, 2.6, "commercial cascades\n(classic endpointing)", OKABE["grey"])
-    pt(6.4, 2.0, "learned acoustic EOT\n(Helwani et al., Smart Turn)", OKABE["sky"])
+    pt(2.6, 1.6, "learned acoustic EOT\n(Helwani et al.)", OKABE["sky"])
+    pt(2.7, 6.0, "Smart Turn (acoustic\nEOT, open recipe)", OKABE["sky"])
+    pt(5.9, 6.9, "text EOU on separate STT\n(LiveKit, TEN)", OKABE["orange"])
     pt(8.4, 3.4, "Deepgram Flux,\nOpenAI semantic_vad", OKABE["purple"])
-    pt(6.2, 6.0, "joint E2E endpointing\n(RNN-T + </s>)", OKABE["orange"])
-    pt(5.6, 7.9, "Kyutai STT\n(semantic-VAD head)", OKABE["blue"])
-    pt(8.5, 8.3, "this work", OKABE["green"], fs=9, weight="bold", marker="*", ms=260)
+    pt(7.3, 2.0, "UAF\n(paper only)", OKABE["purple"])
+    pt(6.3, 5.2, "joint E2E endpointing\n(RNN-T + </s>)", OKABE["orange"])
+    pt(6.9, 7.9, "Kyutai STT (semantic-VAD\nhead, weights only)", OKABE["blue"])
+    pt(8.3, 6.8, "Parakeet-EOU (in-transcript\ntoken, recipe undocumented)", OKABE["blue"])
+    pt(8.7, 8.7, "this work", OKABE["green"], fs=9, weight="bold", marker="*", ms=260)
     save(fig, "fig10_landscape")
 
 

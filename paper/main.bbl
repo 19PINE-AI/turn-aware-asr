@@ -1,9 +1,14 @@
-\begin{thebibliography}{36}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{AssemblyAI}(2025)]{assemblyai2025universalstreaming}
+{AssemblyAI}.
+\newblock Universal-streaming: speech-to-text with intelligent endpointing.
+\newblock Product documentation, \url{https://www.assemblyai.com/docs}, 2025.
 
 \bibitem[Bijwadia et~al.(2023)Bijwadia, Chang, Li, Sainath, Zhang, and
   He]{bijwadia2023unified}
@@ -49,6 +54,13 @@ Alexandre D{\'e}fossez, Laurent Mazar{\'e}, Manu Orsini, Am{\'e}lie Royer,
 Miguel Del~Rio, Peter Ha, Quinten McNamara, Corey Miller, and Shipra Chandra.
 \newblock Earnings-22: A practical benchmark for accents in the wild.
 \newblock \emph{arXiv preprint arXiv:2203.15591}, 2022.
+
+\bibitem[Durmus et~al.(2026)Durmus, Cen, Pacheco, Okan, and
+  Orhon]{contextualearnings2026}
+Berkin Durmus, Chen Cen, Eduardo Pacheco, Arda Okan, and Atila Orhon.
+\newblock Contextual earnings-22: A speech recognition benchmark with custom
+  vocabulary in the wild.
+\newblock arXiv preprint arXiv:2604.07354, 2026.
 
 \bibitem[Ekstedt and Skantze(2020)]{ekstedt2020turngpt}
 Erik Ekstedt and Gabriel Skantze.
@@ -109,6 +121,12 @@ Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody~Hao Yu,
 \newblock Kyutai {STT}: Streaming speech-to-text with delayed streams modeling.
 \newblock \url{https://github.com/kyutai-labs/delayed-streams-modeling}, 2025.
 
+\bibitem[Levinson and Torreira(2015)]{levinson2015timing}
+Stephen~C. Levinson and Francisco Torreira.
+\newblock Timing in turn-taking and its implications for processing models of
+  language.
+\newblock \emph{Frontiers in Psychology}, 6:\penalty0 731, 2015.
+
 \bibitem[Li et~al.(2020)Li, Chang, Sainath, Pang, He, Strohman, and
   Wu]{li2020towards}
 Bo~Li, Shuo-Yiin Chang, Tara~N. Sainath, Ruoming Pang, Yanzhang He, Trevor
@@ -128,6 +146,19 @@ Yadong Li, Guoxin Wu, Haiping Hou, and Biye Li.
   interaction.
 \newblock \emph{arXiv preprint arXiv:2604.19221}, 2026.
 
+\bibitem[{LiveKit}(2025)]{livekit2025turndetector}
+{LiveKit}.
+\newblock Improving voice {AI}'s turn detection with transformers.
+\newblock \url{https://github.com/livekit/agents}, model
+  \texttt{livekit/turn-detector}, 2025.
+
+\bibitem[{LiveKit}(2026)]{livekit2026eou}
+{LiveKit}.
+\newblock Improved end-of-turn model cuts voice {AI} interruptions 39\%.
+\newblock Blog post,
+  \url{https://livekit.com/blog/improved-end-of-turn-model-cuts-voice-ai-interruptions-39}.
+  Accessed 2026-07-05, 2026.
+
 \bibitem[Ma et~al.(2019)Ma, Huang, Xiong, Zheng, Liu, Zheng, Zhang, He, Liu,
   Li, Wu, and Wang]{ma2019stacl}
 Mingbo Ma, Liang Huang, Hao Xiong, Renjie Zheng, Kaibo Liu, Baigong Zheng,
@@ -143,6 +174,14 @@ Sashi Novitasari, Takashi Fukuda, Kurata Gakuto, and George Saon.
 \newblock Contextual biasing for {ASR} in speech {LLM} with common word cues
   and bias word position prediction.
 \newblock \emph{arXiv preprint arXiv:2604.12398}, 2026.
+
+\bibitem[{NVIDIA}(2026)]{nvidia2026parakeeteou}
+{NVIDIA}.
+\newblock Parakeet-realtime-eou-120m: streaming {ASR} with end-of-utterance
+  prediction.
+\newblock Model card,
+  \url{https://huggingface.co/nvidia/parakeet_realtime_eou_120m-v1}. Accessed
+  2026-07-05, 2026.
 
 \bibitem[{OpenAI}(2025)]{openai2025semanticvad}
 {OpenAI}.
@@ -182,6 +221,12 @@ Alec Radford, Jong~Wook Kim, Tao Xu, Greg Brockman, Christine McLeavey, and
 \newblock Robust speech recognition via large-scale weak supervision.
 \newblock In \emph{ICML}, 2023.
 
+\bibitem[Raux and Eskenazi(2008)]{raux2008optimizing}
+Antoine Raux and Maxine Eskenazi.
+\newblock Optimizing endpointing thresholds using dialogue features in a spoken
+  dialogue system.
+\newblock In \emph{Proceedings of SIGdial}, 2008.
+
 \bibitem[Schaeffer et~al.(2023)Schaeffer, Miranda, and
   Koyejo]{schaeffer2023mirage}
 Rylan Schaeffer, Brando Miranda, and Sanmi Koyejo.
@@ -211,6 +256,22 @@ Gabriel Skantze.
 \newblock Turn-taking in conversational systems and human-robot interaction: A
   review.
 \newblock \emph{Computer Speech \& Language}, 67, 2021.
+
+\bibitem[Stivers et~al.(2009)Stivers, Enfield, Brown, Englert, Hayashi,
+  Heinemann, Hoymann, Rossano, de~Ruiter, Yoon, and
+  Levinson]{stivers2009universals}
+Tanya Stivers, Nicholas~J. Enfield, Penelope Brown, Christina Englert, Makoto
+  Hayashi, Trine Heinemann, Gertie Hoymann, Federico Rossano, Jan~Peter
+  de~Ruiter, Kyung-Eun Yoon, and Stephen~C. Levinson.
+\newblock Universals and cultural variation in turn-taking in conversation.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 106\penalty0
+  (26):\penalty0 10587--10592, 2009.
+
+\bibitem[{TEN Team}(2025)]{ten2025turndetection}
+{TEN Team}.
+\newblock {TEN} turn detection: turn detection for full-duplex dialogue
+  communication.
+\newblock \url{https://github.com/TEN-framework/ten-turn-detection}, 2025.
 
 \bibitem[Wan et~al.(2026)Wan, Zhang, Zhang, Xiong, Gao, and
   Ye]{wan2026streaming}
