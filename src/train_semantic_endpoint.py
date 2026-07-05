@@ -300,6 +300,9 @@ def main():
     p.add_argument("--optimizer", choices=["adamw", "muon"], default="adamw",
                    help="muon: Muon (Newton-Schulz orthogonalized momentum) on the "
                         "2-D LoRA matrices, AdamW on marker rows + 1-D params.")
+    p.add_argument("--muon-lr", type=float, default=2e-2,
+                   help="LR for the Muon group; ~100x the AdamW LR because the "
+                        "orthogonalized update has ~unit norm.")
     p.add_argument("--lora-r", type=int, default=16)
     p.add_argument("--lora-alpha", type=int, default=32)
     p.add_argument("--save-every", type=int, default=500)
@@ -394,33 +397,40 @@ def main():
 
     optimizers = []
     if args.optimizer == "muon":
-        # Muon on the 2-D LoRA factors; AdamW on everything else.
-        optimizers.append(Muon(lora_mtx, lr=args.lr, momentum=0.95))
+        # Muon on the 2-D LoRA factors; AdamW on everything else. Muon needs a
+        # much larger base LR (orthogonalized update ~unit norm).
+        mu = Muon(lora_mtx, lr=args.muon_lr, momentum=0.95)
+        mu.base_lr = args.muon_lr
+        optimizers.append(mu)
         adamw_params = [{"params": decay, "weight_decay": 0.01},
                         {"params": no_decay, "weight_decay": 0.0}]
-        optimizers.append(torch.optim.AdamW(
-            [g for g in adamw_params if g["params"]],
-            lr=args.lr, betas=(0.9, 0.95)))
-        logger.info("Muon on %d LoRA matrices; AdamW on %d decay + %d no-decay",
-                    len(lora_mtx), len(decay), len(no_decay))
+        aw = torch.optim.AdamW([g for g in adamw_params if g["params"]],
+                               lr=args.lr, betas=(0.9, 0.95))
+        aw.base_lr = args.lr
+        optimizers.append(aw)
+        logger.info("Muon(lr=%.3g) on %d LoRA matrices; AdamW(lr=%.3g) on %d decay + %d no-decay",
+                    args.muon_lr, len(lora_mtx), args.lr, len(decay), len(no_decay))
     else:
         groups = [{"params": lora_mtx + decay, "weight_decay": 0.01},
                   {"params": no_decay, "weight_decay": 0.0}]
-        optimizers.append(torch.optim.AdamW(
-            [g for g in groups if g["params"]],
-            lr=args.lr, betas=(0.9, 0.95)))
+        aw = torch.optim.AdamW([g for g in groups if g["params"]],
+                               lr=args.lr, betas=(0.9, 0.95))
+        aw.base_lr = args.lr
+        optimizers.append(aw)
         logger.info("AdamW: %d decay(+LoRA) / %d no-decay params",
                     len(lora_mtx) + len(decay), len(no_decay))
     optim = optimizers[0]   # primary (for resume compat / logging)
 
-    def lr_at(step: int) -> float:
+    def lr_factor(step: int) -> float:
+        """Warmup×cosine multiplier in [0,1] applied to each opt's base_lr."""
         if step < args.warmup:
-            return args.lr * (step + 1) / max(1, args.warmup)
+            return (step + 1) / max(1, args.warmup)
         if args.lr_schedule == "cosine":
-            prog = (step - args.warmup) / max(1, args.steps - args.warmup)
-            prog = min(1.0, max(0.0, prog))
-            return args.lr_min + 0.5 * (args.lr - args.lr_min) * (1 + math.cos(math.pi * prog))
-        return args.lr
+            prog = min(1.0, max(0.0, (step - args.warmup) / max(1, args.steps - args.warmup)))
+            # decay toward lr_min/lr as a fraction of base
+            floor = args.lr_min / args.lr
+            return floor + 0.5 * (1 - floor) * (1 + math.cos(math.pi * prog))
+        return 1.0
 
     rng = np.random.default_rng(0)
     indices = np.arange(len(examples))
@@ -590,10 +600,11 @@ def main():
             logger.warning("Skipping batch (input build failed): %s", e)
             continue
 
-        lr = lr_at(step)
+        factor = lr_factor(step)
         for opt in optimizers:
             for g in opt.param_groups:
-                g["lr"] = lr
+                g["lr"] = opt.base_lr * factor
+        lr = optim.base_lr * factor    # for logging (primary optimizer)
 
         t0 = time.perf_counter()
         # Forward goes through the wrapper's thinker
