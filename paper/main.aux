@@ -105,26 +105,27 @@
 \newlabel{sec:dictation}{{9}{14}{Closing the loop on \S \ref {sec:motivation}: one model that also dictates}{section.9}{}}
 \@writefile{toc}{\contentsline {paragraph}{The conversational model fails the dictation probe --- as predicted.}{14}{paragraph*.30}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Dictation schemas close the endpointing gap.}{14}{paragraph*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The intrusion trap, and the causal fix.}{14}{paragraph*.32}\protected@file@percent }
-\citation{kwon2023vllm}
+\@writefile{toc}{\contentsline {paragraph}{The intrusion trap, and the causal fix on a second axis.}{14}{paragraph*.32}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature end-of-turn fires per dictated 10-digit number, final-boundary recall (window $+1.75$\,s), digit accuracy; exact-match on spelled names/emails without/with the user-profile context; and the wrong-profile intrusion rate. Adding dictation schemas beats every timeout on premature fires but, trained on matching profiles only, copies a wrong profile 11.3\% of the time; distractor-ratio training (context and audio disagree, target follows audio) removes that at no cost --- one unified model. Residual dictation misses are $\sim $5 fires landing $\sim $2\,s after speech end, just outside the window.\relax }}{15}{table.caption.33}\protected@file@percent }
 \newlabel{tab:dictation}{{7}{15}{\textbf {Dictation and spelled-entity probes.} Premature end-of-turn fires per dictated 10-digit number, final-boundary recall (window $+1.75$\,s), digit accuracy; exact-match on spelled names/emails without/with the user-profile context; and the wrong-profile intrusion rate. Adding dictation schemas beats every timeout on premature fires but, trained on matching profiles only, copies a wrong profile 11.3\% of the time; distractor-ratio training (context and audio disagree, target follows audio) removes that at no cost --- one unified model. Residual dictation misses are $\sim $5 fires landing $\sim $2\,s after speech end, just outside the window.\relax }{table.caption.33}{}}
 \@writefile{toc}{\contentsline {paragraph}{One model, four behaviors.}{15}{paragraph*.34}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Deployment reality check}{15}{section.10}\protected@file@percent }
-\newlabel{sec:serving}{{10}{15}{Deployment reality check}{section.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{An OOD landmine.}{15}{paragraph*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The simulator was the bottleneck.}{15}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{One honest distinction: which frontiers are phantom.}{15}{paragraph*.35}\protected@file@percent }
+\citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)\nobreakspace  {}Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }}{16}{figure.caption.38}\protected@file@percent }
-\newlabel{fig:serving}{{9}{16}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }{figure.caption.38}{}}
-\@writefile{toc}{\contentsline {paragraph}{Bound every resident state.}{16}{paragraph*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Deployment reality check}{16}{section.10}\protected@file@percent }
+\newlabel{sec:serving}{{10}{16}{Deployment reality check}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{An OOD landmine.}{16}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The simulator was the bottleneck.}{16}{paragraph*.37}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bound every resident state.}{16}{paragraph*.38}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {11}Lessons for streaming supervision: a checklist}{16}{section.11}\protected@file@percent }
 \newlabel{sec:checklist}{{11}{16}{Lessons for streaming supervision: a checklist}{section.11}{}}
 \citation{ekstedt2022vap}
 \citation{ma2019stacl}
 \citation{dehaan2019causal}
 \citation{schaeffer2023mirage}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)\nobreakspace  {}Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }}{17}{figure.caption.39}\protected@file@percent }
+\newlabel{fig:serving}{{9}{17}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }{figure.caption.39}{}}
 \citation{silero2021vad}
 \citation{raux2008optimizing}
 \citation{shannon2017improved}
@@ -139,14 +140,16 @@
 \citation{deepgram2026flux}
 \citation{openai2025semanticvad}
 \citation{assemblyai2025universalstreaming}
-\@writefile{toc}{\contentsline {section}{\numberline {12}Related work}{17}{section.12}\protected@file@percent }
-\newlabel{sec:related}{{12}{17}{Related work}{section.12}{}}
-\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.40}\protected@file@percent }
 \citation{skantze2021review}
 \citation{ekstedt2020turngpt}
 \citation{ekstedt2022vap}
 \citation{stivers2009universals}
 \citation{levinson2015timing}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph  {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }}{18}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:landscape}{{10}{18}{\textbf {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }{figure.caption.40}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Related work}{18}{section.12}\protected@file@percent }
+\newlabel{sec:related}{{12}{18}{Related work}{section.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{18}{paragraph*.41}\protected@file@percent }
 \citation{graves2012sequence}
 \citation{radford2023whisper}
 \citation{wan2026streaming}
@@ -158,14 +161,15 @@
 \citation{hotwordgrpo2025}
 \citation{commoncues2026}
 \citation{contextualearnings2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph  {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }}{18}{figure.caption.39}\protected@file@percent }
-\newlabel{fig:landscape}{{10}{18}{\textbf {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }{figure.caption.39}{}}
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.41}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.43}\protected@file@percent }
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{19}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{19}{paragraph*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{19}{paragraph*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serving.}{19}{paragraph*.45}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Limitations}{19}{section.13}\protected@file@percent }
+\newlabel{sec:limits}{{13}{19}{Limitations}{section.13}{}}
 \citation{pineai2026whispercoding}
 \bibstyle{plainnat}
 \bibdata{refs}
@@ -173,9 +177,6 @@
 \bibcite{bijwadia2023unified}{{2}{2023}{{Bijwadia et~al.}}{{Bijwadia, Chang, Li, Sainath, Zhang, and He}}}
 \bibcite{carletta2005ami}{{3}{2005}{{Carletta et~al.}}{{}}}
 \bibcite{chang2019joint}{{4}{2019}{{Chang et~al.}}{{Chang, Prabhavalkar, He, Sainath, and Simko}}}
-\@writefile{toc}{\contentsline {paragraph}{Serving.}{19}{paragraph*.44}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {13}Limitations}{19}{section.13}\protected@file@percent }
-\newlabel{sec:limits}{{13}{19}{Limitations}{section.13}{}}
 \bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
 \bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
 \bibcite{defossez2024moshi}{{7}{2024}{{D{\'e}fossez et~al.}}{{D{\'e}fossez, Mazar{\'e}, Orsini, Royer, P{\'e}rez, J{\'e}gou, Grave, and Zeghidour}}}
@@ -218,25 +219,25 @@
 \bibcite{fastturn2026}{{44}{2026}{{Wang et~al.}}{{Wang, Xue, He, Hu, Wang, Wu, Ji, Zheng, Chen, Zhu, and Xie}}}
 \bibcite{xiao2024streamingllm}{{45}{2024}{{Xiao et~al.}}{{Xiao, Tian, Chen, Han, and Lewis}}}
 \bibcite{jalturn2026}{{46}{2026}{{Yang et~al.}}{{Yang, Pan, Qiu, and Bai}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{23}{appendix.A}\protected@file@percent }
-\newlabel{app:labels}{{A}{23}{Label-specification details}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{23}{appendix.B}\protected@file@percent }
-\newlabel{app:eval}{{B}{23}{Benchmark specification and the corrected classifier}{appendix.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{23}{appendix.C}\protected@file@percent }
-\newlabel{app:tables}{{C}{23}{Additional results}{appendix.C}{}}
-\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{23}{paragraph*.45}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{23}{paragraph*.47}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{23}{paragraph*.49}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{24}{table.caption.46}\protected@file@percent }
-\newlabel{tab:appconfirm}{{8}{24}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.46}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{24}{table.caption.48}\protected@file@percent }
-\newlabel{tab:apptimeout}{{9}{24}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.48}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{24}{appendix.D}\protected@file@percent }
-\newlabel{app:recipe}{{D}{24}{Training-recipe notes}{appendix.D}{}}
-\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{24}{paragraph*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{24}{appendix.A}\protected@file@percent }
+\newlabel{app:labels}{{A}{24}{Label-specification details}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{24}{appendix.B}\protected@file@percent }
+\newlabel{app:eval}{{B}{24}{Benchmark specification and the corrected classifier}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{24}{appendix.C}\protected@file@percent }
+\newlabel{app:tables}{{C}{24}{Additional results}{appendix.C}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{24}{paragraph*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{24}{paragraph*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{24}{paragraph*.50}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{25}{table.caption.47}\protected@file@percent }
+\newlabel{tab:appconfirm}{{8}{25}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.47}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{25}{table.caption.49}\protected@file@percent }
+\newlabel{tab:apptimeout}{{9}{25}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.49}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{25}{appendix.D}\protected@file@percent }
+\newlabel{app:recipe}{{D}{25}{Training-recipe notes}{appendix.D}{}}
+\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{25}{paragraph*.51}\protected@file@percent }
 \citation{jordan2024muon}
-\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{25}{paragraph*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{25}{paragraph*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{25}{appendix.E}\protected@file@percent }
-\newlabel{app:repro}{{E}{25}{Reproducibility}{appendix.E}{}}
-\gdef \@abspage@last{25}
+\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{26}{paragraph*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{26}{paragraph*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{26}{appendix.E}\protected@file@percent }
+\newlabel{app:repro}{{E}{26}{Reproducibility}{appendix.E}{}}
+\gdef \@abspage@last{26}
