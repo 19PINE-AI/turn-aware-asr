@@ -478,7 +478,7 @@ def fig10_landscape():
 
     pt(1.6, 7.6, "WebRTC / Silero VAD\n+ timeout cascades", OKABE["grey"])
     pt(3.4, 2.6, "commercial cascades\n(classic endpointing)", OKABE["grey"])
-    pt(6.4, 2.0, "learned acoustic EOT\n(Meta hier., Smart Turn)", OKABE["sky"])
+    pt(6.4, 2.0, "learned acoustic EOT\n(Helwani et al., Smart Turn)", OKABE["sky"])
     pt(8.4, 3.4, "Deepgram Flux,\nOpenAI semantic_vad", OKABE["purple"])
     pt(6.2, 6.0, "joint E2E endpointing\n(RNN-T + </s>)", OKABE["orange"])
     pt(5.6, 7.9, "Kyutai STT\n(semantic-VAD head)", OKABE["blue"])
