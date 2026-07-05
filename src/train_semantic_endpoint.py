@@ -261,6 +261,9 @@ def main():
                     help="resume from the latest step*.pt in --checkpoint-dir "
                          "(trainable weights + optimizer + step + best_score). For "
                          "surviving OOM kills on a shared box via an auto-restart wrapper.")
+    p.add_argument("--snapshot-evals", action="store_true",
+                   help="Save a trainable-only snap_step{N}.pt at every eval "
+                        "(for post-hoc checkpoint selection on probe axes).")
     p.add_argument("--early-stop-patience", type=int, default=4,
                     help="Stop training if no improvement after N evals")
     args = p.parse_args()
@@ -529,6 +532,18 @@ def main():
                 logger.info("EVAL step %5d  %s  score=%.3f (%.1fs)", step,
                              " ".join(f"{k[:-6]}={m[k]:.2f}" for k in sorted(exact_keys)),
                              score, dt_eval)
+                # Snapshot trainable-only weights at every eval so checkpoint
+                # selection can use the real probe/intrusion/replay axes
+                # post-hoc (the composite score does not see intrusion). Gated
+                # on --snapshot-evals to avoid disk churn on other runs.
+                if args.snapshot_evals:
+                    snap = {n: p.detach().cpu()
+                            for n, p in model.named_parameters() if p.requires_grad}
+                    torch.save({"step": step, "trainable": snap,
+                                "tokenizer_vocab_size": len(tokenizer),
+                                "new_ids": new_ids, "eager_id": eager_id,
+                                "end_id": end_id},
+                               Path(args.checkpoint_dir) / f"snap_step{step}.pt")
                 if score > best_score + 1e-6:
                     best_score = score
                     evals_since_best = 0

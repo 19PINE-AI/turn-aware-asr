@@ -157,7 +157,32 @@ def build_digit_examples(fsdd_dir: Path, rng: random.Random,
 
 # ------------------------------------------------------------------ spelled
 
-def spelled_items(rng: random.Random, n_name: int, n_email: int) -> list[dict]:
+def choose_ctx(first: str, last: str, email: str, people: list, k: int,
+               rng: random.Random, distractor_frac: float) -> tuple[str, str]:
+    """Pick a context slot for a spelled example. Returns (ctx, ctx_kind).
+
+    Three-way split (distractor_frac D controls the conflict share):
+      - distractor (prob D): profile of a DIFFERENT identity; the target still
+        comes from the AUDIO, so the model is trained that audio overrides a
+        conflicting context. This is the anti-intrusion signal (research/75:
+        long training makes the model copy whatever profile it is given).
+      - matching   (prob (1-D)/2): profile of THIS identity (ctx helps spelling).
+      - empty      (prob (1-D)/2): no profile (baseline capability).
+    With D=0 this reduces to the v10/v11 50/50 match/empty behavior."""
+    r = rng.random()
+    if r < distractor_frac:
+        # a plausibly-formed profile for someone else entirely
+        j = (k + 17) % len(people)
+        df, dl = people[j]
+        de = email_of(df, dl, rng.choice(DOMAINS))
+        return make_ctx(df, dl, de, rng), "distractor"
+    if r < distractor_frac + (1.0 - distractor_frac) / 2:
+        return make_ctx(first, last, email, rng), "match"
+    return "", "empty"
+
+
+def spelled_items(rng: random.Random, n_name: int, n_email: int,
+                  distractor_frac: float = 0.0) -> list[dict]:
     """Utterance specs (text to synthesize + target + ctx) before TTS."""
     specs = []
     people = TRAIN_PEOPLE * ((max(n_name, n_email) // len(TRAIN_PEOPLE)) + 1)
@@ -170,10 +195,11 @@ def spelled_items(rng: random.Random, n_name: int, n_email: int) -> list[dict]:
             f"This is {first} {last}, spelled {spelled(last)}.",
             f"The last name is {last}. {spelled(last)}.",
         ])
+        ctx, ctx_kind = choose_ctx(first, last, email, people, k, rng, distractor_frac)
         specs.append({
             "kind": "spell_name", "utt": lead,
             "target": lead,                      # verbatim; entity is in-place
-            "ctx": make_ctx(first, last, email, rng) if rng.random() < 0.5 else "",
+            "ctx": ctx, "ctx_kind": ctx_kind,
         })
     for k in range(n_email):
         first, last = people[k + 3]
@@ -186,10 +212,11 @@ def spelled_items(rng: random.Random, n_name: int, n_email: int) -> list[dict]:
                    f"{spelled(b)}, at {domain_spoken(domain)}.")
         else:
             utt = f"My email address is {a} dot {b} at {domain_spoken(domain)}."
+        ctx, ctx_kind = choose_ctx(first, last, email, people, k + 3, rng, distractor_frac)
         specs.append({
             "kind": "spell_email", "utt": utt,
             "target": f"My email address is {email}.",   # normalized form
-            "ctx": make_ctx(first, last, email, rng) if rng.random() < 0.5 else "",
+            "ctx": ctx, "ctx_kind": ctx_kind,
         })
     return specs
 
@@ -229,7 +256,8 @@ def synth_spelled(specs: list[dict], cache_dir: Path, rng: random.Random) -> lis
             audio = np.concatenate(
                 [audio, np.zeros(int(rng.uniform(0.3, 1.0) * SR), dtype=np.float32)])
             text = f"{spec['target']} {M}"
-        out.append(ex(audio, text, spec["kind"], "edge_tts", ctx=spec["ctx"]))
+        out.append(ex(audio, text, spec["kind"], "edge_tts", ctx=spec["ctx"],
+                      ctx_kind=spec.get("ctx_kind", "")))
     return out
 
 
@@ -249,6 +277,12 @@ def main():
                    help="Duplicate this fraction of pair_hold examples "
                         "(v11: preserve the conversational hold share against "
                         "dilution by the new schemas)")
+    p.add_argument("--distractor-frac", type=float, default=0.0,
+                   help="Fraction of spelled examples whose context holds a "
+                        "DIFFERENT identity while the target follows the audio "
+                        "(v12: anti-intrusion signal). NOTE: use a fresh "
+                        "--tts-cache dir when changing this, since the cache is "
+                        "keyed by spec index and the rng draw order shifts.")
     p.add_argument("--seed", type=int, default=10)
     args = p.parse_args()
     rng = random.Random(args.seed)
@@ -261,7 +295,10 @@ def main():
                                  args.n_digit_fire, args.n_digit_nosil)
     logger.info("Built %d digit examples", len(digit))
 
-    specs = spelled_items(rng, args.n_spell_name, args.n_spell_email)
+    specs = spelled_items(rng, args.n_spell_name, args.n_spell_email,
+                          distractor_frac=args.distractor_frac)
+    from collections import Counter as _C
+    logger.info("spelled ctx mix: %s", _C(s["ctx_kind"] for s in specs))
     spell = synth_spelled(specs, Path(args.tts_cache), rng)
     logger.info("Built %d spelled examples", len(spell))
 
@@ -281,7 +318,9 @@ def main():
     (out_dir / "build_meta.json").write_text(json.dumps({
         "v9_source": args.v9, "n_v9": len(v9_examples),
         "n_digit": len(digit), "n_spell": len(spell),
-        "seed": args.seed,
+        "seed": args.seed, "distractor_frac": args.distractor_frac,
+        "dup_pair_hold": args.dup_pair_hold,
+        "spell_ctx_mix": dict(Counter(e.get("ctx_kind", "") for e in spell)),
         "schema_counts": dict(Counter(e["schema"] for e in examples)),
     }, indent=1))
     logger.info("Wrote %s (%d examples)", out_dir / "data.pt", len(examples))
