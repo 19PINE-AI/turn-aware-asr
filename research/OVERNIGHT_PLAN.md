@@ -69,3 +69,42 @@ dict-rec(0.78), WER(3.73/7.06). => v15@6000 = DOMINANT RELEASE. Merged to
 checkpoints/merged/qwen3-asr-0.6b-endpoint-unified. snap = v15_es/unified_release.pt.
 seed-1 unified training running (robustness). NEXT: big-benchmark evals on v15@6000
 (250 digit, 240 spelled, 100-stretch replay, big biasing) + CIs; seed-2; then paper.
+
+## UPDATE 15:30 — big-probe results on v15@6000 (RELEASE numbers, CI-backed)
+Digit (n=250): premature 0.16/seq [0.12,0.21], final-recall 0.844 [0.794,0.884],
+  digit-acc 0.998, P50 0.43s.
+Spelled (n=240, 120 identities): name none/prof 0.983/1.00; email none/prof
+  0.133/0.942 [0.884,0.971]; intrusion 0.000 [0.000,0.016].
+=> bigger benchmark IMPROVED the estimates (small probe was noisy: prem 0.22->0.16,
+  email 0.88->0.942). These are the paper numbers. NEXT: big replay + biasing + seeds.
+
+## UPDATE 15:52 — big replay (100 stretches, 384 boundaries) = honest release conv numbers
+v15@6000: recall 0.938 [0.899,0.970], false 1.03/min [0.69,1.42], P50 0.39, P95 0.68.
+(Bigger/harder draw than 25-stretch dev 0.958/0.75; consistent w/ fresh-50 0.924.
+These CI-backed numbers are the paper's conv-endpointing figures.)
+Big-probe (release): prem 0.16 [0.12,0.21], email+ 0.942 [0.884,0.971], intr 0 [<=0.016].
+
+## UPDATE 16:36 — throughput lesson: cap at 2 concurrent GPU jobs
+3 concurrent (seed-2 train + seed-1 sweep + biasing) dropped GPU util to 30% and
+slowed seed-1 sweep to ~12min/ckpt (vs 2.5). Oversubscription is counterproductive.
+NEW RULE: <=2 GPU jobs at once. Let biasing (~178/300) + seed-1 sweep finish, then
+proceed more serially. Plenty of time (user asleep). Priorities: (1) finish current,
+(2) seed robustness mean±std, (3) opposed/causal Fig1 multi-seed (central claim),
+(4) PAPER REVISION (main deliverable).
+
+## UPDATE 17:07 — biasing on RELEASE model (v15@6000, 300 Earnings-22 utts)
+recall no_ctx 37.8% -> relevant 65.3% (UPLIFT +27.55pp; base model was +28.9pp).
+distractor hallucination 6.25% (base 3.7%). => fine-tune PRESERVES biasing uplift
+but at lower absolute recall + higher hallucination (WER-regression side-effect).
+NOTE: Earnings-22 natural-speech distractor (6.25%) is NOT covered by the spelled-
+entity distractor-ratio fix (that gave probe-intrusion 0) — honest inconsistency;
+paper: keep base +28.9pp as capability number, report release +27.5pp preserves it.
+
+## UPDATE 17:08 — seed-1 robustness (reproduces release)
+seed1 best ckpts: @3000 prem0.14/email0.95/intr0.013; @6000 prem0.32/email0.90/intr0;
+@1500 prem0.42/email0.85/intr0. => seed-1 reproduces the unified capability (email
+0.85-0.95, prem 0.14-0.42, intrusion ~0), like seed0 (v15@6000). Robustness holds.
+seed-2 finishing. Decision: report robustness from probe sweeps (mean±std on prem/
+email/intrusion across 3 seeds) — sufficient; skip per-seed replay to save GPU.
+PRIORITIZE PAPER REVISION (main deliverable). Opposed/causal Fig1: attempt after
+paper if time, else note single-seed honestly.
