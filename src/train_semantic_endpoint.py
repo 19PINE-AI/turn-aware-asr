@@ -324,11 +324,18 @@ def main():
     p.add_argument("--snapshot-evals", action="store_true",
                    help="Save a trainable-only snap_step{N}.pt at every eval "
                         "(for post-hoc checkpoint selection on probe axes).")
+    p.add_argument("--seed", type=int, default=0,
+                   help="Seeds torch (marker-row init) + the data-shuffle rng, "
+                        "for multi-seed replication of a recipe.")
     p.add_argument("--early-stop-patience", type=int, default=4,
                     help="Stop training if no improvement after N evals")
     args = p.parse_args()
 
     device = "cuda" if torch.cuda.is_available() else "cpu"
+
+    torch.manual_seed(args.seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(args.seed)
 
     logger.info("Loading data %s…", args.data)
     examples = torch.load(args.data, weights_only=False)
@@ -432,7 +439,7 @@ def main():
             return floor + 0.5 * (1 - floor) * (1 + math.cos(math.pi * prog))
         return 1.0
 
-    rng = np.random.default_rng(0)
+    rng = np.random.default_rng(args.seed)
     indices = np.arange(len(examples))
 
     Path(args.checkpoint_dir).mkdir(parents=True, exist_ok=True)
