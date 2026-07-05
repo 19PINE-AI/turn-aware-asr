@@ -455,6 +455,55 @@ def fig9_minimalpair():
     save(fig, "fig9_minimalpair")
 
 
+# ================================================================ F11: one principle, two axes
+def fig11_twoaxes():
+    fig, axes = plt.subplots(2, 1, figsize=(6.9, 3.5))
+    for ax in axes:
+        ax.set_xlim(0, 12.4); ax.set_ylim(-0.35, 2.35); ax.axis("off")
+
+    def chip(ax, x, y, txt, color):
+        ax.text(x, y, txt, fontsize=7.6, va="center", ha="center", weight="bold",
+                color="white", bbox=dict(boxstyle="round,pad=0.22", fc=color, ec="none"))
+
+    # ---- Panel A: temporal axis (minimal pair, +/- silence tail)
+    ax = axes[0]
+    ax.text(0.0, 2.18, "Temporal axis: target must not depend on the future  "
+            "(fix: same utterance $\\pm$ observable silence)", fontsize=8.4, weight="bold")
+    for row, (tail, tgt, lab, lc) in enumerate([
+            (False, "target: …kitchen", "HOLD", OKABE["blue"]),
+            (True,  "target: …kitchen ⟨M⟩", "FIRE", OKABE["red"])]):
+        y = 1.5 - row * 0.95
+        timeline(ax, 0.4, 6.6, y)
+        speech_block(ax, 0.6, 4.5, y, label="“…off in the kitchen”")
+        if tail:
+            ax.add_patch(Rectangle((4.62, y - 0.10), 1.15, 0.2, fc="#efe6c8",
+                                   ec="#c9a227", lw=0.8, zorder=3))
+            ax.text(5.2, y + 0.30, "+silence", fontsize=6.4, ha="center", color="#8a6d1a")
+        ax.text(7.0, y, tgt, fontsize=7.4, va="center", family="monospace")
+        chip(ax, 11.6, y, lab, lc)
+
+    # ---- Panel B: contextual axis (counterfactual, matching vs disagreeing ctx)
+    ax = axes[1]
+    ax.text(0.0, 2.18, "Contextual axis: target must not be copied from context  "
+            "(fix: same audio $\\pm$ a disagreeing context)", fontsize=8.4, weight="bold")
+    for row, (ctxt, ctxc, tgt, lab, lc) in enumerate([
+            ("ctx: profile = Kowalski", "#e2f0e5",
+             "target: kowalski", "GROUND", OKABE["green"]),
+            ("ctx: profile = Nguyen (wrong)", "#f6e0d8",
+             "target: kowalski", "IGNORE ctx", OKABE["green"])]):
+        y = 1.5 - row * 0.95
+        timeline(ax, 0.4, 6.6, y)
+        speech_block(ax, 0.6, 4.5, y, label="audio spells “K-O-W…”")
+        ax.text(0.6, y + 0.42, ctxt, fontsize=6.4, ha="left",
+                bbox=dict(boxstyle="round,pad=0.15", fc=ctxc, ec="#999999", lw=0.5))
+        ax.text(7.0, y, tgt, fontsize=7.4, va="center", family="monospace")
+        chip(ax, 11.6, y, lab, lc)
+    ax.text(6.2, -0.22, "naive data (context always matches) $\\Rightarrow$ model copies context "
+            "$\\Rightarrow$ 40% wrong-profile intrusion; the counterfactual twin removes it",
+            fontsize=6.6, ha="center", color="#444444")
+    save(fig, "fig11_twoaxes")
+
+
 # ================================================================ F10: landscape quadrant
 def fig10_landscape():
     fig, ax = plt.subplots(figsize=(5.6, 3.0))
@@ -494,7 +543,7 @@ if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     for fn in [fig1_oscillation, fig2_contradictions, fig3_tradeoff, fig4_biasing,
                fig5_inversion, fig6_silence, fig7_serving, fig8_system, fig9_minimalpair,
-               fig10_landscape]:
+               fig10_landscape, fig11_twoaxes]:
         try:
             fn()
         except Exception:
