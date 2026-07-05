@@ -108,3 +108,10 @@ seed-2 finishing. Decision: report robustness from probe sweeps (mean±std on pr
 email/intrusion across 3 seeds) — sufficient; skip per-seed replay to save GPU.
 PRIORITIZE PAPER REVISION (main deliverable). Opposed/causal Fig1: attempt after
 paper if time, else note single-seed honestly.
+
+## UPDATE 17:36 — multi-seed status + finish paper
+3-seed RELEASE robustness DONE (tab:seeds): prem 0.17±0.03, email 0.90±0.04, intr
+0.004±0.006 — recipe is seed-robust (the key multi-seed result). Oscillation-contrast
+multi-seed IMPOSSIBLE: v8 opposed-pools data needs v6 chain (deleted); noted as future
+work in limits. causal seed-1 (v9) training as a monotone-reproduces data point.
+NOW: finish paper (consistency grep + de-densify + recompile). Paper 28pp compiles.
