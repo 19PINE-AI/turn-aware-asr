@@ -115,3 +115,15 @@ paper if time, else note single-seed honestly.
 multi-seed IMPOSSIBLE: v8 opposed-pools data needs v6 chain (deleted); noted as future
 work in limits. causal seed-1 (v9) training as a monotone-reproduces data point.
 NOW: finish paper (consistency grep + de-densify + recompile). Paper 28pp compiles.
+
+## UPDATE 17:55 — PAPER REVISION COMPLETE (main deliverable done)
+Committed 504ee72 + probe-align. 28pp, compiles clean (0 undefined, no real overfull).
+DONE: (1) unified-model story w/ release big-benchmark CI numbers throughout Sec 9;
+(2) consistency pass (release 0.938/1.03/0.16/0.94/3.73-7.06; plain-ASR replay now
+exercised; multi-seed done; biasing base+28.9/release+27.5 both labeled; 0.24->0.16);
+(3) de-densified held-out paragraph -> tables; (4) figs regenerated (fig3 both
+operating points, fig11 two-axes); (5) tab:seeds robustness (prem0.17±0.03,
+email0.90±0.04, intr0.004±0.006). Rigor added: 100-stretch replay+CIs, 250/240 probes
++CIs, 3-seed robustness, release biasing. REMAINING (optional): causal seed-1 finishing
+(monotone-reproduces private check, not in paper); opposed multi-seed impossible (data
+gone, noted as future work). Release ckpt: checkpoints/merged/qwen3-asr-0.6b-endpoint-unified.
