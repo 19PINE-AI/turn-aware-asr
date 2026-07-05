@@ -35,8 +35,6 @@
 
 \graphicspath{{figures/}}
 
-% pending numbers (E12 offline WER regression, E13 fresh-set replay)
-\newcommand{\pending}[1]{\textcolor{purple}{$\langle$pending:\,#1$\rangle$}}
 \newcommand{\fire}{\texttt{<END\_SPEECH>}}
 \newcommand{\eager}{\texttt{<EAGER\_END\_SPEECH>}}
 \newcommand{\ctx}{\texttt{<CTX>}}
@@ -115,13 +113,14 @@ Section~\ref{sec:checklist} compresses the lesson into a four-question checklist
   \centering\small
   \caption{The landscape. ``Cascade'' = VAD + silence timeout + separate ASR: the deployed default, and our measured baseline in Figure~\ref{fig:tradeoff}. Flux and \texttt{semantic\_vad} are the closed members of the turn-aware class this work opens.}
   \label{tab:matrix}
-  \begin{tabular}{lccccc}
+  \setlength{\tabcolsep}{4.5pt}
+  \begin{tabular}{@{}lccccc@{}}
     \toprule
     & This work & Flux / \texttt{sem.vad} & Qwen3-ASR & Kyutai STT & Cascade \\
     \midrule
     Streaming ASR & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark \\
     Semantic end-of-turn & \checkmark & \checkmark & --- & --- & timeout only \\
-    Context biasing (numbers) & \checkmark\,($+28.9$\,pp) & --- & claimed, unreported & --- & ASR-dependent \\
+    Context biasing (numbers) & \checkmark\,($+28.9$\,pp) & --- & unreported & --- & ASR-dep. \\
     Open weights + recipe & \checkmark & --- & weights only & weights only & \checkmark \\
     \bottomrule
   \end{tabular}

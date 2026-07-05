@@ -5,14 +5,14 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[{authors}(2025)]{hotwordgrpo2025}
-{authors}.
+\bibitem[{arXiv 2512.21828}(2025)]{hotwordgrpo2025}
+{arXiv 2512.21828}.
 \newblock Contextual biasing for {LLM}-based {ASR} with hotword retrieval and
   reinforcement learning.
 \newblock \emph{arXiv preprint arXiv:2512.21828}, 2025.
 
-\bibitem[{authors}(2026)]{commoncues2026}
-{authors}.
+\bibitem[{arXiv 2604.12398}(2026)]{commoncues2026}
+{arXiv 2604.12398}.
 \newblock Contextual biasing in speech {LLMs} with common word cues.
 \newblock \emph{arXiv preprint arXiv:2604.12398}, 2026.
 
@@ -24,8 +24,8 @@ Shaan Bijwadia, Shuo-Yiin Chang, Bo~Li, Tara~N. Sainath, Chao Zhang, and
   efficient speech systems.
 \newblock In \emph{IEEE SLT}, 2023.
 
-\bibitem[{BR-ASR authors}(2025)]{brasr2025}
-{BR-ASR authors}.
+\bibitem[{BR-ASR}(2025)]{brasr2025}
+{BR-ASR}.
 \newblock {BR-ASR}: Efficient and scalable bias retrieval for contextual
   biasing.
 \newblock In \emph{Interspeech}, 2025.
@@ -92,8 +92,8 @@ Edward~J. Hu, Yelong Shen, Phillip Wallis, Zeyuan Allen-Zhu, Yuanzhi Li, Shean
 \newblock {LoRA}: Low-rank adaptation of large language models.
 \newblock In \emph{ICLR}, 2022.
 
-\bibitem[{JAL-Turn authors}(2026)]{jalturn2026}
-{JAL-Turn authors}.
+\bibitem[{JAL-Turn}(2026)]{jalturn2026}
+{JAL-Turn}.
 \newblock {JAL-Turn}: Joint acoustic-linguistic turn-taking prediction for
   full-duplex dialogue.
 \newblock \emph{arXiv preprint arXiv:2603.26515}, 2026.
@@ -204,20 +204,20 @@ Gabriel Skantze.
   review.
 \newblock \emph{Computer Speech \& Language}, 67, 2021.
 
-\bibitem[{UAF authors}(2026)]{uaf2026}
-{UAF authors}.
+\bibitem[{UAF}(2026)]{uaf2026}
+{UAF}.
 \newblock {UAF}: A unified audio front-end {LLM} for joint {VAD}, turn
   detection, speaker recognition and {ASR}.
 \newblock \emph{arXiv preprint arXiv:2604.19221}, 2026.
 
-\bibitem[Wan(2026)]{wan2026streaming}
-et~al. Wan.
+\bibitem[Wan et~al.(2026)]{wan2026streaming}
+Wan et~al.
 \newblock Streaming speech recognition with decoder-only {LLMs} and latency
   optimization.
 \newblock \emph{arXiv preprint arXiv:2601.22779}, 2026.
 
-\bibitem[Wang(2026)]{fastturn2026}
-et~al. Wang.
+\bibitem[Wang et~al.(2026)Wang, Xue, He, et~al.]{fastturn2026}
+Wang, Xue, He, et~al.
 \newblock Fastturn: Unifying acoustic and streaming semantic cues for
   low-latency and robust turn detection.
 \newblock \emph{arXiv preprint arXiv:2604.01897}, 2026.

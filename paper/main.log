@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  4 JUL 2026 13:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  5 JUL 2026 01:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -723,7 +723,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 34.
 Package hyperref Info: Option `breaklinks' set `true' on input line 34.
-LaTeX Font Info:    Trying to load font information for T1+ppl on input line 56
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 54
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ppl.fd
@@ -737,24 +737,24 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -790,18 +790,18 @@ LaTeX Font Info:    ... okay on input line 56.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \microtypecontext on input line 56.
-Package microtype Info: Applying patch `item' on input line 56.
-Package microtype Info: Applying patch `toc' on input line 56.
-Package microtype Info: Applying patch `eqnum' on input line 56.
-Package microtype Info: Applying patch `footnote' on input line 56.
+LaTeX Info: Redefining \microtypecontext on input line 54.
+Package microtype Info: Applying patch `item' on input line 54.
+Package microtype Info: Applying patch `toc' on input line 54.
+Package microtype Info: Applying patch `eqnum' on input line 54.
+Package microtype Info: Applying patch `footnote' on input line 54.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 56.
+LaTeX Info: Redefining \showhyphens on input line 54.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -834,7 +834,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -847,40 +847,40 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 54.
+LaTeX Info: Redefining \pageref on input line 54.
+LaTeX Info: Redefining \nameref on input line 54.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 5
-8.
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-58.
+56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-58.
+56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-58.
+56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-58.
+56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -890,57 +890,53 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 58.
+(Font)              scaled to size 12.50409pt on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 58.
+(Font)              scaled to size 9.37807pt on input line 56.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 58.
+(Font)              scaled to size 7.29405pt on input line 56.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 58.
+(Font)              scaled to size 12.50409pt on input line 56.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 58.
+(Font)              scaled to size 9.37807pt on input line 56.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 58.
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 59
+(Font)              scaled to size 7.29405pt on input line 56.
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 57
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 59.
+(Font)              scaled to size 9.85492pt on input line 57.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `phv' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 9.85492pt on input line 59.
+(Font)              scaled to size 9.85492pt on input line 57.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 60.
+(Font)              scaled to size 10.42007pt on input line 58.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 60.
+(Font)              scaled to size 7.91925pt on input line 58.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 60.
+(Font)              scaled to size 6.25204pt on input line 58.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 10.42007pt on input line 60.
+(Font)              scaled to size 10.42007pt on input line 58.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.91925pt on input line 60.
+(Font)              scaled to size 7.91925pt on input line 58.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 6.25204pt on input line 60.
-LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 10.79993pt on input line 63.
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 10.79993pt on input line 63.
+(Font)              scaled to size 6.25204pt on input line 58.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 6
-6.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -950,84 +946,99 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
-(Font)              scaled to size 8.09995pt on input line 67.
+(Font)              scaled to size 10.79993pt on input line 67.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 67.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.09995pt on input line 71.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 <figures//fig1_oscillation.pdf, id=82, 405.2396pt x 184.6072pt>
 File: figures//fig1_oscillation.pdf Graphic file (type pdf)
 <use figures//fig1_oscillation.pdf>
-Package pdftex.def Info: figures//fig1_oscillation.pdf  used on input line 70.
+Package pdftex.def Info: figures//fig1_oscillation.pdf  used on input line 74.
 (pdftex.def)             Requested size: 448.0749pt x 204.1305pt.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 79.
-LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 79.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 79.
-LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 79.
  [2 <./figures//fig1_oscillation.pdf>]
-<figures//fig8_system.pdf, id=156, 377.66385pt x 122.53378pt>
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 83.
+LaTeX Font Info:    Font shape `U/msa/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 83.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 11.40997pt on input line 83.
+LaTeX Font Info:    Font shape `U/msb/m/n' will be
+(Font)              scaled to size 8.33606pt on input line 83.
+<figures//fig8_system.pdf, id=159, 377.66385pt x 122.53378pt>
 File: figures//fig8_system.pdf Graphic file (type pdf)
 <use figures//fig8_system.pdf>
-Package pdftex.def Info: figures//fig8_system.pdf  used on input line 97.
+Package pdftex.def Info: figures//fig8_system.pdf  used on input line 101.
 (pdftex.def)             Requested size: 448.0749pt x 145.37949pt.
  [3]
-Overfull \hbox (83.27855pt too wide) in paragraph at lines 112--122
+Overfull \hbox (9.71886pt too wide) in paragraph at lines 117--127
  [][] 
  []
 
-<figures//fig2_contradictions.pdf, id=194, 389.35461pt x 199.3652pt>
+[4 <./figures//fig8_system.pdf>]
+<figures//fig2_contradictions.pdf, id=283, 389.35461pt x 199.3652pt>
 File: figures//fig2_contradictions.pdf Graphic file (type pdf)
 <use figures//fig2_contradictions.pdf>
 Package pdftex.def Info: figures//fig2_contradictions.pdf  used on input line 1
-33.
+38.
 (pdftex.def)             Requested size: 448.0749pt x 229.4355pt.
-[4 <./figures//fig8_system.pdf>] [5 <./figures//fig2_contradictions.pdf>]
-<figures//fig6_silence.pdf, id=376, 274.00124pt x 184.33574pt>
+ [5 <./figures//fig2_contradictions.pdf>]
+<figures//fig6_silence.pdf, id=378, 274.00124pt x 184.33574pt>
 File: figures//fig6_silence.pdf Graphic file (type pdf)
 <use figures//fig6_silence.pdf>
-Package pdftex.def Info: figures//fig6_silence.pdf  used on input line 155.
+Package pdftex.def Info: figures//fig6_silence.pdf  used on input line 160.
 (pdftex.def)             Requested size: 277.80424pt x 186.89203pt.
-<figures//fig5_inversion.pdf, id=378, 260.53334pt x 164.26971pt>
+<figures//fig5_inversion.pdf, id=380, 260.53334pt x 164.26971pt>
 File: figures//fig5_inversion.pdf Graphic file (type pdf)
 <use figures//fig5_inversion.pdf>
-Package pdftex.def Info: figures//fig5_inversion.pdf  used on input line 164.
+Package pdftex.def Info: figures//fig5_inversion.pdf  used on input line 169.
 (pdftex.def)             Requested size: 268.84767pt x 169.51048pt.
 
-[6]
-<figures//fig9_minimalpair.pdf, id=393, 389.35461pt x 105.83942pt>
+[6] [7 <./figures//fig6_silence.pdf> <./figures//fig5_inversion.pdf>]
+<figures//fig9_minimalpair.pdf, id=552, 389.35461pt x 105.83942pt>
 File: figures//fig9_minimalpair.pdf Graphic file (type pdf)
 <use figures//fig9_minimalpair.pdf>
-Package pdftex.def Info: figures//fig9_minimalpair.pdf  used on input line 178.
+Package pdftex.def Info: figures//fig9_minimalpair.pdf  used on input line 183.
 
 (pdftex.def)             Requested size: 448.0749pt x 121.80318pt.
- [7 <./figures//fig6_silence.pdf> <./figures//fig5_inversion.pdf>]
-<figures//fig3_tradeoff.pdf, id=556, 347.62608pt x 218.7273pt>
+<figures//fig3_tradeoff.pdf, id=562, 347.62608pt x 218.7273pt>
 File: figures//fig3_tradeoff.pdf Graphic file (type pdf)
 <use figures//fig3_tradeoff.pdf>
-Package pdftex.def Info: figures//fig3_tradeoff.pdf  used on input line 204.
+Package pdftex.def Info: figures//fig3_tradeoff.pdf  used on input line 209.
 (pdftex.def)             Requested size: 322.61447pt x 202.98706pt.
  [8 <./figures//fig9_minimalpair.pdf>]
-<figures//fig4_biasing.pdf, id=663, 405.2992pt x 184.01122pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9 <./figures//fig3_tradeoff.pdf>]
+<figures//fig4_biasing.pdf, id=748, 405.2992pt x 184.01122pt>
 File: figures//fig4_biasing.pdf Graphic file (type pdf)
 <use figures//fig4_biasing.pdf>
-Package pdftex.def Info: figures//fig4_biasing.pdf  used on input line 224.
+Package pdftex.def Info: figures//fig4_biasing.pdf  used on input line 246.
 (pdftex.def)             Requested size: 448.0749pt x 203.43779pt.
- [9 <./figures//fig3_tradeoff.pdf>]
-<figures//fig7_serving.pdf, id=754, 421.86671pt x 182.59291pt>
+ [10 <./figures//fig4_biasing.pdf>]
+<figures//fig7_serving.pdf, id=849, 421.86671pt x 182.59291pt>
 File: figures//fig7_serving.pdf Graphic file (type pdf)
 <use figures//fig7_serving.pdf>
-Package pdftex.def Info: figures//fig7_serving.pdf  used on input line 242.
+Package pdftex.def Info: figures//fig7_serving.pdf  used on input line 264.
 (pdftex.def)             Requested size: 448.0749pt x 193.94597pt.
- [10 <./figures//fig4_biasing.pdf>] [11 <./figures//fig7_serving.pdf>]
-<figures//fig10_landscape.pdf, id=936, 330.98718pt x 184.53003pt>
+ [11 <./figures//fig7_serving.pdf>]
+<figures//fig10_landscape.pdf, id=938, 330.98718pt x 184.53003pt>
 File: figures//fig10_landscape.pdf Graphic file (type pdf)
 <use figures//fig10_landscape.pdf>
-Package pdftex.def Info: figures//fig10_landscape.pdf  used on input line 268.
+Package pdftex.def Info: figures//fig10_landscape.pdf  used on input line 290.
 (pdftex.def)             Requested size: 322.61447pt x 179.86958pt.
- [12 <./figures//fig10_landscape.pdf>] (./main.bbl [13] [14]
+ [12]
+Overfull \hbox (0.55934pt too wide) in paragraph at lines 301--302
+[][]\T1/ppl/m/n/10.95 (-20) 2018[][]] to retrieval-scale bi-as-ing [[][]BR-ASR[
+][], [][]2025[][]], RL-tuned hot-word in-te-gra-tion [[][]arXiv 2512.21828[][],
+
+ []
+
+[13 <./figures//fig10_landscape.pdf>] (./main.bbl [14]
 Underfull \hbox (badness 10000) in paragraph at lines 153--159
 []\T1/ppl/m/n/10.95 (+20) Pine AI.  Pine AI: The most nat-u-ral human-computer 
 in-ter-face is
@@ -1045,8 +1056,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--159
 ace-[]is-[]your-[]voice$[][]\T1/ppl/m/n/10.95 (+20) .  Ac-cessed
  []
 
-) [15]
-Overfull \hbox (1.50615pt too wide) in paragraph at lines 329--330
+[15]) [16]
+Overfull \hbox (1.50615pt too wide) in paragraph at lines 352--353
 \T1/ppl/m/n/10.95 (-20) tamped at the chunk bound-ary where \T1/cmtt/m/n/10.95 
 <END_SPEECH> \T1/ppl/m/n/10.95 (-20) first ap-pears; re-call win-dow $\OT1/zplm
 /m/n/10.95 [\OMS/zplm/m/n/10.95 ^^@\OT1/ppl/m/n/10.95 (-20) 0.25, \OT1/zplm/m/n
@@ -1054,37 +1065,37 @@ Overfull \hbox (1.50615pt too wide) in paragraph at lines 329--330
 0) s
  []
 
-[16
+[17
 
-] [17] (./main.aux)
+] [18] [19] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 27B1710C84B4E59E6A09A4C12C398AD3;2492.
  ) 
 Here is how much of TeX's memory you used:
- 29102 strings out of 480171
- 558154 string characters out of 5894489
- 878241 words of memory out of 5000000
- 45928 multiletter control sequences out of 15000+600000
- 545501 words of font info for 475 fonts, out of 8000000 for 9000
+ 29149 strings out of 480171
+ 558640 string characters out of 5894489
+ 891248 words of memory out of 5000000
+ 45932 multiletter control sequences out of 15000+600000
+ 548184 words of font info for 499 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 83i,12n,80p,2230b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/ubuntu/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1095.60
-0pk> </home/ubuntu/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.
-600pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/ubuntu
-/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1095.600pk></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvet
-ic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (17 pages, 434380 bytes).
+ 83i,12n,80p,2405b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
+e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpaz
+o/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on main.pdf (19 pages, 499688 bytes).
 PDF statistics:
- 1312 PDF objects out of 1440 (max. 8388607)
- 514 compressed objects within 6 object streams
- 111 named destinations out of 1000 (max. 500000)
- 81583 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 1257 PDF objects out of 1440 (max. 8388607)
+ 540 compressed objects within 6 object streams
+ 119 named destinations out of 1000 (max. 500000)
+ 83631 words of extra memory for PDF output out of 89155 (max. 10000000)
 
