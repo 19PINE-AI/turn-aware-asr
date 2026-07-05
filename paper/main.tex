@@ -190,7 +190,7 @@ v9 changes only the data. One rule: \emph{emit \eager\fire{} at a point iff the 
 
 \begin{table}[t]
   \centering\small
-  \caption{\textbf{Main result} (deployment-matched replay, 25 held-out AMI stretches, energy gate on; latency-vs-false-fire view in Figure~\ref{fig:tradeoff}). v9 dominates every predecessor without either crutch: its \emph{raw} false-fire rate beats v5's \emph{confirmed} rate, and its WER needs no force-flush. The confirm ablation: v5's horizon cancels 241 phrase-boundary candidates; v9's cancels 3. $^{\dagger}$v8's WER mean is a long-monologue repetition tail, fixed only by force-flush. \pending{E13: fresh 50-stretch confirmation set row}}
+  \caption{\textbf{Main result} (deployment-matched replay, energy gate on; latency-vs-false-fire view in Figure~\ref{fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). v9 dominates every predecessor without either crutch: its \emph{raw} false-fire rate beats v5's \emph{confirmed} rate, and its WER needs no force-flush. The confirm ablation: v5's horizon cancels 241 phrase-boundary candidates; v9's cancels 3. Last row: a \emph{fresh} $2\times$-larger stretch set (seed changed, 50 stretches, 184 boundaries) drawn after all development ended --- latency and false fires hold; recall dips 4.5\,pp (\S\ref{sec:limits}). $^{\dagger}$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (v9 fresh-set WER \emph{median} 0.30, matching the development set; the \S\ref{sec:serving} force-flush bounds this tail).}
   \label{tab:main}
   \begin{tabular}{lccccc}
     \toprule
@@ -200,7 +200,7 @@ v9 changes only the data. One rule: \emph{emit \eager\fire{} at a point iff the 
     v8 + gate + confirm1 & 0.938 & 0.77\,s & 1.06\,s & 0.0 & 4.96$^{\dagger}$ \\
     \textbf{v9 + gate} & \textbf{0.969} & \textbf{0.39\,s} & \textbf{0.70\,s} & \textbf{0.3} & \textbf{1.43} \\
     v9 + gate + confirm1 & 0.969 & 0.89\,s & 1.20\,s & 0.0 & 1.43 \\
-    v9 + gate (fresh stretches) & \multicolumn{5}{c}{\pending{E13}} \\
+    v9 + gate (fresh 50-stretch set) & 0.924 & 0.42\,s & 0.70\,s & 0.2 & 4.63$^{\dagger}$ \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -306,7 +306,7 @@ Candidates we believe are affected: turn-taking policies for full-duplex agents 
 \section{Limitations}
 \label{sec:limits}
 
-Single-speaker, single-channel English; the mixed-channel meeting shape is future work. Semantic completeness labels come from a heuristic transcript classifier (fillers, connectives, short-utterance rules); a learned completeness judge is the obvious next lever on the residual 3\% recall gap. Distractor hallucination (3.7\%) exceeds our 3\% target. Quick resumes are always segmented (resume rate 1.0); merging them costs $+0.5$\,s via the confirm knob or requires post-hoc fusion. Concurrency numbers are contention-caveated lower bounds from a shared GPU. The benchmark's 25 stretches (96 turn-final boundaries) were used during development; the fresh-stretch confirmation run is \pending{E13}. Offline WER regression is \pending{E12}.
+Single-speaker, single-channel English; the mixed-channel meeting shape is future work. Semantic completeness labels come from a heuristic transcript classifier (fillers, connectives, short-utterance rules); a learned completeness judge is the obvious next lever on the residual recall gap. Distractor hallucination (3.7\%) exceeds our 3\% target. Quick resumes are always segmented (resume rate 1.0); merging them costs $+0.5$\,s via the confirm knob or requires post-hoc fusion. Concurrency numbers are contention-caveated lower bounds from a shared GPU. The 25-stretch benchmark (96 turn-final boundaries) was reused across development, so we drew a fresh $2\times$-larger set (seed changed, 50 stretches, 184 boundaries) after all development ended: latency, false fires, and WER median reproduce, while recall drops $0.969{\to}0.924$ (Table~\ref{tab:main}) --- consistent with mild adaptive overfitting to the development set plus a harder draw; we report both and treat the fresh set as the honest operating estimate. The endpoint fine-tune also costs offline WER (\S\ref{sec:rest}): mixing plain ASR data into the fine-tune is the standard, unexercised mitigation.
 
 % ════════════════════════════════════════════════════════════
 \section*{Acknowledgements}
@@ -407,7 +407,7 @@ Full protocol: 0.5\,s chunks; committed-prefix incremental decoding (emitted tex
   \end{tabular}
 \end{table}
 
-\paragraph{Fresh-set confirmation.} \pending{E13: v9+gate on the seed-1, 50-stretch set (running); to be read against the seed-1 timeout rows above}
+\paragraph{Fresh-set confirmation.} v9+gate on the seed-1 set: recall 0.924, P50 0.42\,s, P95 0.70\,s, 0.21 false fires/min, resume 0.91, WER median 0.30 / mean 4.63 (three long-monologue stretches enter the no-flush repetition loop; the \S\ref{sec:serving} force-flush is the documented fix). Read against the seed-1 timeout rows above: the cascade can reach higher recall on this set (0.978--0.989 at $X{\in}\{0.5,1.0\}$\,s) but only at $1.7$--$2.9\times$ v9's latency and $3$--$22\times$ its false fires --- and no timeout setting reaches v9's $(0.42\,\text{s},\,0.21/\text{min})$ corner at \emph{any} recall. The 4.5\,pp recall drop from the development set is an honest generalization gap discussed in \S\ref{sec:limits}.
 
 \section{Reproducibility}
 \label{app:repro}

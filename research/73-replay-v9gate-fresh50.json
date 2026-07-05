@@ -1,0 +1,4684 @@
+{
+  "checkpoint": "checkpoints/semantic_endpoint_v9_es/best.pt",
+  "summary": {
+    "mode": "committed_prefix+gate",
+    "chunk_s": 0.5,
+    "n_stretches": 50,
+    "n_turn_bounds": 184,
+    "n_cont_bounds": 74,
+    "boundary_recall": 0.9239130434782609,
+    "false_fires_per_speech_min": 0.20652800069198918,
+    "resume_after_fire_rate": 0.9054054054054054,
+    "dup_or_silence_fires_total": 36,
+    "wer_mean": 4.632692569623834,
+    "median_chunk_ms": 191.55067764222622,
+    "latency_s_p50": 0.420013427734375,
+    "latency_s_p95": 0.6999969482421875,
+    "latency_s_mean": 0.41117601449437
+  },
+  "per_stretch": [
+    {
+      "meeting_id": "IS1000a",
+      "speaker_id": "MIO016",
+      "duration_s": 61.43000030517578,
+      "speech_s": 11.069976806640625,
+      "n_turn_bounds": 6,
+      "n_cont_bounds": 1,
+      "n_fires": 9,
+      "n_hits": 6,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 2,
+      "latencies_s": [
+        0.220001220703125,
+        0.5499954223632812,
+        0.34000396728515625,
+        0.17000579833984375,
+        0.34999847412109375,
+        0.06999969482421875
+      ],
+      "wer": 0.3333333333333333,
+      "median_chunk_ms": 179.19866368174553,
+      "n_chunks_gated": 93,
+      "n_chunks_total": 123,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.5,
+        12.0,
+        29.5,
+        29.5,
+        38.5,
+        38.5,
+        41.0,
+        50.0,
+        59.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.48999786376953125,
+          "text": "MM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 0.48999786376953125,
+          "end_s": 3.279998779296875,
+          "text": "YOURS IS WELL",
+          "boundary": "turn_final",
+          "gap_s": 6.069999694824219
+        },
+        {
+          "begin_s": 9.349998474121094,
+          "end_s": 11.450004577636719,
+          "text": "YEAH BUT THE THE MIC SHOULD NOT",
+          "boundary": "turn_final",
+          "gap_s": 16.660003662109375
+        },
+        {
+          "begin_s": 28.110008239746094,
+          "end_s": 29.159996032714844,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 7.4000091552734375
+        },
+        {
+          "begin_s": 36.56000518798828,
+          "end_s": 37.01000213623047,
+          "text": "MM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 37.01000213623047,
+          "end_s": 38.01000213623047,
+          "text": "CAN'T HELP YOU WITH THAT",
+          "boundary": "continuation",
+          "gap_s": 1.8800048828125
+        },
+        {
+          "begin_s": 39.89000701904297,
+          "end_s": 40.829994201660156,
+          "text": "OKAY IT'S Y YEAH",
+          "boundary": "turn_final",
+          "gap_s": 8.580001831054688
+        },
+        {
+          "begin_s": 49.409996032714844,
+          "end_s": 49.650001525878906,
+          "text": "RIGHT",
+          "boundary": "turn_final",
+          "gap_s": 7.2700042724609375
+        },
+        {
+          "begin_s": 56.920005798339844,
+          "end_s": 58.93000030517578,
+          "text": "THEN PRESS UH AL",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3007d",
+      "speaker_id": "MTD027ID",
+      "duration_s": 49.3800048828125,
+      "speech_s": 6.470008850097656,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 0,
+      "n_fires": 6,
+      "n_hits": 5,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 1,
+      "latencies_s": [
+        0.6699981689453125,
+        0.4199981689453125,
+        0.2899932861328125,
+        0.3699951171875,
+        0.1199951171875
+      ],
+      "wer": 0.7777777777777778,
+      "median_chunk_ms": 180.1037946715951,
+      "n_chunks_gated": 82,
+      "n_chunks_total": 99,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        8.0,
+        34.5,
+        40.0,
+        47.0,
+        47.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.3300018310546875,
+          "text": "YO",
+          "boundary": "turn_final",
+          "gap_s": 5.680000305175781
+        },
+        {
+          "begin_s": 6.010002136230469,
+          "end_s": 7.5800018310546875,
+          "text": "EVALUATION CRITERIA",
+          "boundary": "turn_final",
+          "gap_s": 24.910003662109375
+        },
+        {
+          "begin_s": 32.49000549316406,
+          "end_s": 34.21000671386719,
+          "text": "OOPS",
+          "boundary": "turn_final",
+          "gap_s": 3.8899993896484375
+        },
+        {
+          "begin_s": 38.100006103515625,
+          "end_s": 39.6300048828125,
+          "text": "SOME CREATIVE UH",
+          "boundary": "turn_final",
+          "gap_s": 5.92999267578125
+        },
+        {
+          "begin_s": 45.55999755859375,
+          "end_s": 46.480010986328125,
+          "text": "OH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 46.480010986328125,
+          "end_s": 46.8800048828125,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2009c",
+      "speaker_id": "MEE094",
+      "duration_s": 47.489999413490295,
+      "speech_s": 7.899997711181641,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 0,
+      "n_fires": 3,
+      "n_hits": 3,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.3299999237060547,
+        0.4300006628036499,
+        0.5100005865097046
+      ],
+      "wer": 0.625,
+      "median_chunk_ms": 155.43524269014597,
+      "n_chunks_gated": 76,
+      "n_chunks_total": 95,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        24.5,
+        45.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.6700000762939453,
+          "text": "YEAH IT SAYS",
+          "boundary": "turn_final",
+          "gap_s": 18.24999964237213
+        },
+        {
+          "begin_s": 18.919999718666077,
+          "end_s": 24.06999933719635,
+          "text": "IS IT SLIDING PAST",
+          "boundary": "turn_final",
+          "gap_s": 18.840002059936523
+        },
+        {
+          "begin_s": 42.91000139713287,
+          "end_s": 44.989999413490295,
+          "text": "YES",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2006b",
+      "speaker_id": "MEO086",
+      "duration_s": 44.15999889373779,
+      "speech_s": 4.049999237060547,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 0,
+      "n_fires": 3,
+      "n_hits": 3,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.6000003814697266,
+        0.3599996566772461,
+        0.840001106262207
+      ],
+      "wer": 0.29411764705882354,
+      "median_chunk_ms": 204.57273675128818,
+      "n_chunks_gated": 77,
+      "n_chunks_total": 89,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        9.5,
+        42.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.39999961853027344,
+          "text": "CHEERS",
+          "boundary": "turn_final",
+          "gap_s": 7.570000648498535
+        },
+        {
+          "begin_s": 7.970000267028809,
+          "end_s": 9.140000343322754,
+          "text": "IT SHOULD BE THIS ONE HERE",
+          "boundary": "turn_final",
+          "gap_s": 30.03999900817871
+        },
+        {
+          "begin_s": 39.179999351501465,
+          "end_s": 41.65999889373779,
+          "text": "DO YOU RECKON THIS STANDS FOR LAMBDA OR YEAH OKAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1007b",
+      "speaker_id": "MIO072",
+      "duration_s": 35.0,
+      "speech_s": 7.290008544921875,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 1,
+      "n_fires": 5,
+      "n_hits": 4,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.8199920654296875,
+        0.209991455078125,
+        0.6999969482421875,
+        0.5
+      ],
+      "wer": 0.5333333333333333,
+      "median_chunk_ms": 188.60186729580164,
+      "n_chunks_gated": 48,
+      "n_chunks_total": 70,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.5,
+        4.0,
+        7.5,
+        17.5,
+        33.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.9600067138671875,
+          "text": "JUST GO TO EXPLORER",
+          "boundary": "continuation",
+          "gap_s": 1.6199951171875
+        },
+        {
+          "begin_s": 2.5800018310546875,
+          "end_s": 3.1800079345703125,
+          "text": "OR OPEN",
+          "boundary": "turn_final",
+          "gap_s": 2.6100006103515625
+        },
+        {
+          "begin_s": 5.790008544921875,
+          "end_s": 7.290008544921875,
+          "text": "PARTICIPANT TWO",
+          "boundary": "turn_final",
+          "gap_s": 7.9199981689453125
+        },
+        {
+          "begin_s": 15.210006713867188,
+          "end_s": 16.800003051757812,
+          "text": "OPEN UH",
+          "boundary": "turn_final",
+          "gap_s": 13.05999755859375
+        },
+        {
+          "begin_s": 29.860000610351562,
+          "end_s": 32.5,
+          "text": "SLIDE SHOW VIEW SLIDE SHOW",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2008a",
+      "speaker_id": "FEE032",
+      "duration_s": 58.459991455078125,
+      "speech_s": 18.91998291015625,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 3,
+      "n_fires": 8,
+      "n_hits": 5,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.529998779296875,
+        0.19000244140625,
+        0.420013427734375,
+        0.410003662109375,
+        0.540008544921875
+      ],
+      "wer": 0.2033898305084746,
+      "median_chunk_ms": 182.34688602387905,
+      "n_chunks_gated": 67,
+      "n_chunks_total": 117,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        5.0,
+        32.0,
+        40.5,
+        46.5,
+        52.5,
+        54.5,
+        56.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.470001220703125,
+          "text": "WELL",
+          "boundary": "turn_final",
+          "gap_s": 2.44000244140625
+        },
+        {
+          "begin_s": 2.910003662109375,
+          "end_s": 4.80999755859375,
+          "text": "OH MY GOD IT'S BETTER THAN WHAT I'M GONNA BE ABLE TO DO",
+          "boundary": "turn_final",
+          "gap_s": 25.040008544921875
+        },
+        {
+          "begin_s": 29.850006103515625,
+          "end_s": 31.579986572265625,
+          "text": "TAKE MY CONTRAPTIONS WITH ME",
+          "boundary": "turn_final",
+          "gap_s": 2.230010986328125
+        },
+        {
+          "begin_s": 33.80999755859375,
+          "end_s": 35.279998779296875,
+          "text": "ALRIGHT I'M JESSY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 35.279998779296875,
+          "end_s": 39.959991455078125,
+          "text": "I'M FROM AROUND D. C. ISH SORT OF IN THE U. S.",
+          "boundary": "continuation",
+          "gap_s": 0.94000244140625
+        },
+        {
+          "begin_s": 40.899993896484375,
+          "end_s": 46.089996337890625,
+          "text": "AND WE'RE GONNA KEEP THE DEEP SEA SORT OF THEME GOING ON ANIMAL",
+          "boundary": "turn_final",
+          "gap_s": 4.05999755859375
+        },
+        {
+          "begin_s": 50.149993896484375,
+          "end_s": 52.0,
+          "text": "DON'T REALLY KNOW HOW TO DRAW THIS",
+          "boundary": "continuation",
+          "gap_s": 0.579986572265625
+        },
+        {
+          "begin_s": 52.579986572265625,
+          "end_s": 53.69000244140625,
+          "text": "JUST WHERE CAN I",
+          "boundary": "continuation",
+          "gap_s": 1.75
+        },
+        {
+          "begin_s": 55.44000244140625,
+          "end_s": 55.959991455078125,
+          "text": "MM",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2013c",
+      "speaker_id": "FEE049",
+      "duration_s": 59.06999969482422,
+      "speech_s": 55.349998474121094,
+      "n_turn_bounds": 1,
+      "n_cont_bounds": 1,
+      "n_fires": 2,
+      "n_hits": 1,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.43000030517578125
+      ],
+      "wer": 0.056910569105691054,
+      "median_chunk_ms": 193.41981457546353,
+      "n_chunks_gated": 7,
+      "n_chunks_total": 119,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        46.5,
+        57.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 2.9699974060058594,
+          "text": "HI KATE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 2.9699974060058594,
+          "end_s": 5.55999755859375,
+          "text": "OKAY CARRY ON",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.55999755859375,
+          "end_s": 12.569999694824219,
+          "text": "ALRIGHT UM THIS IS THE BEGINNING OF THE THIRD MEETING THE CONCEPTUAL DESIGN MEETING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 12.569999694824219,
+          "end_s": 23.330001831054688,
+          "text": "UM OUR AGENDA SHOULD BE UM THAT WE'RE OPENING THE MEETING I HAVE THE MINUTES FROM THE PREVIOUS MEETING ARE ON THE SHARED F DRIVE AT THIS POINT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 23.330001831054688,
+          "end_s": 27.400001525878906,
+          "text": "UM AND WE SHOULD EACH HAVE A PRESENTATION TO MAKE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.400001525878906,
+          "end_s": 32.279998779296875,
+          "text": "UM WE HAVE CERTAIN DECISIONS TO MAKE AND WE HAVE FORTY MINUTES TOTAL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 32.279998779296875,
+          "end_s": 45.29999542236328,
+          "text": "IT'S TWENTY FIVE AFTER TWO AT THE MOMENT SO FORTY MINUTES IS FIVE AFTER THREE UM WHICH I'LL BE KEEPING AN EYE ON THE CLOCK FOR US",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 45.29999542236328,
+          "end_s": 45.909996032714844,
+          "text": "OKAY",
+          "boundary": "continuation",
+          "gap_s": 1.220001220703125
+        },
+        {
+          "begin_s": 47.12999725341797,
+          "end_s": 56.56999969482422,
+          "text": "UM THERE ARE THE DECISIONS WE HAVE TO TURN TO BUT WE'LL COME BACK TO THEM IN A MINUTE AFTER I TAKE US TO THE",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3007d",
+      "speaker_id": "MTD025PM",
+      "duration_s": 58.69000244140625,
+      "speech_s": 52.459991455078125,
+      "n_turn_bounds": 1,
+      "n_cont_bounds": 3,
+      "n_fires": 2,
+      "n_hits": 0,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [],
+      "wer": 17.478632478632477,
+      "median_chunk_ms": 209.23271868377924,
+      "n_chunks_gated": 2,
+      "n_chunks_total": 118,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        15.0,
+        18.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 3.7600021362304688,
+          "text": "WOULDN'T WANNA BE PROJECT MANAGER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 3.7600021362304688,
+          "end_s": 5.0,
+          "text": "UH WHAT WE GOING TO DO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.0,
+          "end_s": 8.010002136230469,
+          "text": "UM ONCE AGAIN I'M UH GONNA TAKE MINUTES",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 8.010002136230469,
+          "end_s": 10.870002746582031,
+          "text": "SO UM NO PRESENTATION FOR ME",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 10.870002746582031,
+          "end_s": 14.55999755859375,
+          "text": "UH FIRST WE HAVE A PROTOTYPE PRESENTATION BY G. AND G.",
+          "boundary": "continuation",
+          "gap_s": 1.1500015258789062
+        },
+        {
+          "begin_s": 15.709999084472656,
+          "end_s": 18.160003662109375,
+          "text": "AFTERWARDS SOME UH",
+          "boundary": "continuation",
+          "gap_s": 1.2699966430664062
+        },
+        {
+          "begin_s": 19.43000030517578,
+          "end_s": 25.279998779296875,
+          "text": "EVAL EVAL EVALU EVALUATION S SORRY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 25.279998779296875,
+          "end_s": 27.449996948242188,
+          "text": "UH EVALUATION CRIT CRITERIA",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.449996948242188,
+          "end_s": 37.00999450683594,
+          "text": "UH IN COMBINATION WITH THE FINANCE I UM UH I RECEIVED UH A AN UH AN EXCEL UH FILE",
+          "boundary": "continuation",
+          "gap_s": 1.3100128173828125
+        },
+        {
+          "begin_s": 38.32000732421875,
+          "end_s": 41.28999328613281,
+          "text": "WHICH WE HAVE TO FILL IN LATER ON",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 41.28999328613281,
+          "end_s": 42.970001220703125,
+          "text": "UM YOU SEE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.970001220703125,
+          "end_s": 49.27000427246094,
+          "text": "UH AND THEN WE MUST SEE UH IF WE UH STAY UNDER THE TWELVE AND A HALF EURO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 49.27000427246094,
+          "end_s": 56.19000244140625,
+          "text": "SO THAT'S UH THAT'S A BIG L SO LET'S UH WAIT IT UH UM WE HAVE WE HAVE MUST UH",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3007c",
+      "speaker_id": "MTD027ID",
+      "duration_s": 33.500001430511475,
+      "speech_s": 19.470001697540283,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 2,
+      "n_fires": 5,
+      "n_hits": 3,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.5,
+        0.4400010108947754,
+        0.4999985694885254
+      ],
+      "wer": 0.2777777777777778,
+      "median_chunk_ms": 184.15665719658136,
+      "n_chunks_gated": 23,
+      "n_chunks_total": 67,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        12.0,
+        26.5,
+        29.5,
+        31.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.5,
+          "text": "HELLO",
+          "boundary": "turn_final",
+          "gap_s": 2.119999885559082
+        },
+        {
+          "begin_s": 2.619999885559082,
+          "end_s": 5.259999752044678,
+          "text": "UM PROJECT MANAGER I HAVE SOMETHING TO TELL YOU",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.259999752044678,
+          "end_s": 7.759999752044678,
+          "text": "I HAVE A LITTLE PROBLEMS WITH MY LAPTOP",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 7.759999752044678,
+          "end_s": 11.559998989105225,
+          "text": "AND UH S S S SO I HAD A LITTLE LESS TIME TO COMPLETE",
+          "boundary": "turn_final",
+          "gap_s": 7.430000305175781
+        },
+        {
+          "begin_s": 18.989999294281006,
+          "end_s": 22.05000066757202,
+          "text": "NO A LITTLE PROBLEM UH BIG PROBLEM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 22.05000066757202,
+          "end_s": 26.140000820159912,
+          "text": "I JUST THOUGHT UM IT DIDN'T WORK ANYMORE",
+          "boundary": "continuation",
+          "gap_s": 0.9399986267089844
+        },
+        {
+          "begin_s": 27.079999446868896,
+          "end_s": 28.989999294281006,
+          "text": "THE ENTIRE WINDOWS UH",
+          "boundary": "continuation",
+          "gap_s": 1.0400009155273438
+        },
+        {
+          "begin_s": 30.03000020980835,
+          "end_s": 31.000001430511475,
+          "text": "IT IT HUNG",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2009c",
+      "speaker_id": "FEE083",
+      "duration_s": 48.7400016784668,
+      "speech_s": 20.0600004196167,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 1,
+      "n_fires": 37,
+      "n_hits": 5,
+      "n_resume_fires": 1,
+      "n_false_fires": 1,
+      "n_dup_or_silence_fires": 30,
+      "latencies_s": [
+        0.2799997329711914,
+        0.26000022888183594,
+        0.3100013732910156,
+        0.3699989318847656,
+        0.2599983215332031
+      ],
+      "wer": 0.6417910447761194,
+      "median_chunk_ms": 182.67671903595328,
+      "n_chunks_gated": 52,
+      "n_chunks_total": 98,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        2.0,
+        11.5,
+        20.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.0,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        26.5,
+        33.0,
+        38.5,
+        46.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 6.300000190734863,
+          "text": "I MEAN IF YOU'RE EVER YOU KNOW LATE 'CAUSE OF THAT IT'S NOT WE'LL FIND A WAY AROUND IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 6.300000190734863,
+          "end_s": 11.220000267028809,
+          "text": "AND I'VE PUT YOU GUYS ON MONDAYS AT THIS TIME FOR MY CONVENIENCE BUT IT'S NOT LIKE IT'S IMPORTANT THAT",
+          "boundary": "turn_final",
+          "gap_s": 7.800000190734863
+        },
+        {
+          "begin_s": 19.020000457763672,
+          "end_s": 19.6200008392334,
+          "text": "REALLY",
+          "boundary": "continuation",
+          "gap_s": 1.239999771118164
+        },
+        {
+          "begin_s": 20.860000610351562,
+          "end_s": 23.09000015258789,
+          "text": "I REALLY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 23.09000015258789,
+          "end_s": 23.920000076293945,
+          "text": "GREAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 23.920000076293945,
+          "end_s": 25.739999771118164,
+          "text": "I WAS TH SO WHAT'D THEY HAVE TO DO BACK UP",
+          "boundary": "turn_final",
+          "gap_s": 6.289999008178711
+        },
+        {
+          "begin_s": 32.029998779296875,
+          "end_s": 32.689998626708984,
+          "text": "AH",
+          "boundary": "turn_final",
+          "gap_s": 4.850002288818359
+        },
+        {
+          "begin_s": 37.540000915527344,
+          "end_s": 38.130001068115234,
+          "text": "NASTY",
+          "boundary": "turn_final",
+          "gap_s": 6.0
+        },
+        {
+          "begin_s": 44.130001068115234,
+          "end_s": 44.7400016784668,
+          "text": "YEAH YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 44.7400016784668,
+          "end_s": 46.2400016784668,
+          "text": "GO I WE'RE GLAD THEY'LL LOOK AFTER THAT BIT",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2009d",
+      "speaker_id": "FEE083",
+      "duration_s": 62.059998989105225,
+      "speech_s": 48.94999647140503,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 1,
+      "n_fires": 5,
+      "n_hits": 4,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.75,
+        0.26999902725219727,
+        0.6000008583068848,
+        0.9400010108947754
+      ],
+      "wer": 0.15822784810126583,
+      "median_chunk_ms": 192.687401548028,
+      "n_chunks_gated": 19,
+      "n_chunks_total": 125,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        7.5,
+        44.5,
+        47.5,
+        60.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.25,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 2.0399999618530273
+        },
+        {
+          "begin_s": 2.2899999618530273,
+          "end_s": 4.450000286102295,
+          "text": "SO THIS WAS THAT FACE TO FACE MEETING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 4.450000286102295,
+          "end_s": 6.96999979019165,
+          "text": "UM BUT IT UH IT DOESN'T",
+          "boundary": "continuation",
+          "gap_s": 1.8100004196166992
+        },
+        {
+          "begin_s": 8.78000020980835,
+          "end_s": 19.230000972747803,
+          "text": "THERE ISN'T TH SO THERE ARE THINGS IN THE EYE TRACKER RECORD THAT WE DEFINITELY DON'T WANT IN THE G. D. F. FORMAT UM LIKE THE FRAME RATE EYE MOVEMENT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 19.230000972747803,
+          "end_s": 29.339999675750732,
+          "text": "YOU KNOW WE WE UH UH I WE'RE IF WE'RE EXPECTING THE G. D. F. FORMAT TO BE UM SORT OF A PARSED VERSION OF EVENTS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 29.339999675750732,
+          "end_s": 34.340001583099365,
+          "text": "AND YOU KNOW THERE'S JUST TOO MUCH RAW FRAME F FRAME RATE STUFF COMING OUT OF THIS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 34.340001583099365,
+          "end_s": 38.80000066757202,
+          "text": "YOU WOULDN'T PROB YOU WOULDN'T WANT IT IN THIS KIND OF FORMAT FOR UP TRANSLATION TO THE OTHER THINGS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 38.80000066757202,
+          "end_s": 40.96000051498413,
+          "text": "YEAH WE YEAH YOU CAN GET BACK TO IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 40.96000051498413,
+          "end_s": 42.27000188827515,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.27000188827515,
+          "end_s": 43.180001735687256,
+          "text": "WE'RE NOT THROWING ANYTHING AWAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 43.180001735687256,
+          "end_s": 44.2300009727478,
+          "text": "THIS IS JUST THE STUFF",
+          "boundary": "turn_final",
+          "gap_s": 2.3400001525878906
+        },
+        {
+          "begin_s": 46.57000112533569,
+          "end_s": 46.899999141693115,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 4.420001983642578
+        },
+        {
+          "begin_s": 51.32000112533569,
+          "end_s": 52.05000066757202,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 52.05000066757202,
+          "end_s": 59.559998989105225,
+          "text": "BUT THE TH BUT THE WAY TO THINK OF THIS IS THIS IS THE DATA THAT WE WANT TO BE ABLE TO ANALYSE AGAINST THE OTHER TRACKS OF DATA",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1009c",
+      "speaker_id": "FIO089",
+      "duration_s": 48.82000732421875,
+      "speech_s": 36.8299560546875,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 1,
+      "n_fires": 5,
+      "n_hits": 3,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 1,
+      "latencies_s": [
+        0.55999755859375,
+        0.25,
+        0.17999267578125
+      ],
+      "wer": 0.08181818181818182,
+      "median_chunk_ms": 197.22060952335596,
+      "n_chunks_gated": 20,
+      "n_chunks_total": 98,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        30.5,
+        32.5,
+        32.5,
+        36.5,
+        46.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 4.57000732421875,
+          "text": "WELL UM LOOKS LIKE WE STILL HAVE QUITE A CHOICE OF THINGS OUT THERE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 4.57000732421875,
+          "end_s": 8.54998779296875,
+          "text": "UM WHAT UH I'M NO SUGGESTION'S BAD",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 8.54998779296875,
+          "end_s": 11.4100341796875,
+          "text": "BUT UH WE'RE GONNA HAVE TO NARROW IT DOWN A LITTLE MORE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 11.4100341796875,
+          "end_s": 19.69000244140625,
+          "text": "I DON'T THINK THAT WE CAN GET UH THE T SHAPE IS GOOD THE CHILD ONE IS GOOD THE TOO BIG TO MISPLACE I THINK IT'S JUST FUNNY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 19.69000244140625,
+          "end_s": 27.77001953125,
+          "text": "UM I DON'T THINK THAT'S GONNA BE OUR IMPULSE PURCHASE AT THE CHECKOUT COUNTER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.77001953125,
+          "end_s": 30.0999755859375,
+          "text": "IT'S IT'S GONNA BE A LITTLE BIT TOO UNWIELDY",
+          "boundary": "continuation",
+          "gap_s": 1.12005615234375
+        },
+        {
+          "begin_s": 31.22003173828125,
+          "end_s": 31.70001220703125,
+          "text": "YEAH MM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 31.70001220703125,
+          "end_s": 31.94000244140625,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.45001220703125
+        },
+        {
+          "begin_s": 34.3900146484375,
+          "end_s": 35.79998779296875,
+          "text": "HAVE TO COME BACK TO THAT LATER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 35.79998779296875,
+          "end_s": 36.25,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 5.91998291015625
+        },
+        {
+          "begin_s": 42.16998291015625,
+          "end_s": 46.05999755859375,
+          "text": "NO I THINK HER PRESENTATION WAS GOOD AND SHE REALLY EXPLORED ALL THE OPTIONS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 46.05999755859375,
+          "end_s": 46.32000732421875,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1001d",
+      "speaker_id": "MIO043",
+      "duration_s": 55.279998779296875,
+      "speech_s": 26.97999668121338,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 2,
+      "n_fires": 1,
+      "n_hits": 1,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.3400001525878906
+      ],
+      "wer": 142.57894736842104,
+      "median_chunk_ms": 2336.3968948833644,
+      "n_chunks_gated": 9,
+      "n_chunks_total": 111,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.1599998474121094,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 4.859999656677246
+        },
+        {
+          "begin_s": 6.0199995040893555,
+          "end_s": 16.43000030517578,
+          "text": "JE CROIX QUE C'EST DOMMAGE DE LE IT WILL BE SAD TO DESTROY THIS PROTOTYPE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 16.43000030517578,
+          "end_s": 19.0,
+          "text": "IT REALLY LOOKS LIKE A BANANA",
+          "boundary": "continuation",
+          "gap_s": 1.739999771118164
+        },
+        {
+          "begin_s": 20.739999771118164,
+          "end_s": 22.78999900817871,
+          "text": "IT IS A BANANA",
+          "boundary": "turn_final",
+          "gap_s": 17.850000381469727
+        },
+        {
+          "begin_s": 40.63999938964844,
+          "end_s": 40.869998931884766,
+          "text": "MM",
+          "boundary": "continuation",
+          "gap_s": 1.3500022888183594
+        },
+        {
+          "begin_s": 42.220001220703125,
+          "end_s": 46.56999969482422,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 46.56999969482422,
+          "end_s": 48.7599983215332,
+          "text": "HI",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 48.7599983215332,
+          "end_s": 52.779998779296875,
+          "text": "SO WE ARE HERE FOR THE DETAILED DESIGN MEETING",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3007c",
+      "speaker_id": "MTD028ME",
+      "duration_s": 43.13000011444092,
+      "speech_s": 8.770002365112305,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 3,
+      "n_fires": 8,
+      "n_hits": 5,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.3299999237060547,
+        0.25999927520751953,
+        0.7599992752075195,
+        0.5999994277954102,
+        0.36999988555908203
+      ],
+      "wer": 0.2857142857142857,
+      "median_chunk_ms": 175.91161280870438,
+      "n_chunks_gated": 62,
+      "n_chunks_total": 87,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.5,
+        24.5,
+        26.5,
+        29.5,
+        31.5,
+        33.0,
+        36.5,
+        41.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.1700000762939453,
+          "text": "HEY PROJECT MANAGER",
+          "boundary": "turn_final",
+          "gap_s": 20.83000087738037
+        },
+        {
+          "begin_s": 22.000000953674316,
+          "end_s": 24.47000026702881,
+          "text": "WHAT WAS IT PROBLEM",
+          "boundary": "continuation",
+          "gap_s": 1.1499996185302734
+        },
+        {
+          "begin_s": 25.619999885559082,
+          "end_s": 26.24000072479248,
+          "text": "THE LAPTOP",
+          "boundary": "turn_final",
+          "gap_s": 2.1300010681152344
+        },
+        {
+          "begin_s": 28.370001792907715,
+          "end_s": 29.280001640319824,
+          "text": "IT HANG HUNG",
+          "boundary": "continuation",
+          "gap_s": 1.5999984741210938
+        },
+        {
+          "begin_s": 30.880000114440918,
+          "end_s": 31.350001335144043,
+          "text": "HA HA",
+          "boundary": "continuation",
+          "gap_s": 0.7700004577636719
+        },
+        {
+          "begin_s": 32.120001792907715,
+          "end_s": 32.24000072479248,
+          "text": "OH",
+          "boundary": "turn_final",
+          "gap_s": 2.779998779296875
+        },
+        {
+          "begin_s": 35.019999504089355,
+          "end_s": 35.90000057220459,
+          "text": "PROJECT MANAGER",
+          "boundary": "turn_final",
+          "gap_s": 2.5999984741210938
+        },
+        {
+          "begin_s": 38.499999046325684,
+          "end_s": 40.63000011444092,
+          "text": "YOU'RE OUR PROJECT MANAGER",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IB4011",
+      "speaker_id": "MIO046",
+      "duration_s": 51.94000244140625,
+      "speech_s": 39.83001708984375,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 3,
+      "n_fires": 7,
+      "n_hits": 3,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 1,
+      "latencies_s": [
+        0.18000030517578125,
+        0.4500007629394531,
+        0.55999755859375
+      ],
+      "wer": 0.16161616161616163,
+      "median_chunk_ms": 177.62105306610465,
+      "n_chunks_gated": 18,
+      "n_chunks_total": 104,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.0,
+        3.0,
+        13.5,
+        15.5,
+        39.5,
+        43.5,
+        50.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.8199996948242188,
+          "text": "YEP",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.8199996948242188,
+          "end_s": 2.8199996948242188,
+          "text": "UM",
+          "boundary": "turn_final",
+          "gap_s": 2.509998321533203
+        },
+        {
+          "begin_s": 5.329998016357422,
+          "end_s": 8.40999984741211,
+          "text": "SO HELLO EVERYBODY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 8.40999984741211,
+          "end_s": 13.060001373291016,
+          "text": "SO UH YOU EVERYBODY HAD THE A AGENDA FOR TODAY YOU RECEIVED IT OR",
+          "boundary": "continuation",
+          "gap_s": 1.8299980163574219
+        },
+        {
+          "begin_s": 14.889999389648438,
+          "end_s": 15.049999237060547,
+          "text": "YEP",
+          "boundary": "turn_final",
+          "gap_s": 2.4300003051757812
+        },
+        {
+          "begin_s": 17.479999542236328,
+          "end_s": 25.209999084472656,
+          "text": "SO THE GOAL FOR TODAY IS TO DECIDE FOR A MOVIE TO PROJECT AT THE END OF THE MONTH SO FOR THIS MONTH OF OF APRIL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 25.209999084472656,
+          "end_s": 36.290000915527344,
+          "text": "AND ALSO DISCUSS THE CONTENT FOR AN ADVER ADVERTISING POSTERS AND UM I I WILL PRESENT YOU THREE DES DIFFERENT DESIGN WE'LL DISCUSS IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 36.290000915527344,
+          "end_s": 39.30000305175781,
+          "text": "SO FIRST WE HAVE TO DECIDE FOR UM A MOVIE",
+          "boundary": "continuation",
+          "gap_s": 0.8599929809570312
+        },
+        {
+          "begin_s": 40.159996032714844,
+          "end_s": 43.220001220703125,
+          "text": "SO I THINK WE ALL PREPARED DOCUMENTS",
+          "boundary": "continuation",
+          "gap_s": 1.9799957275390625
+        },
+        {
+          "begin_s": 45.19999694824219,
+          "end_s": 49.44000244140625,
+          "text": "SO I PROPOSE THAT WE START WITH UH PRESENTATION AGNES UH SENT",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1009c",
+      "speaker_id": "FIE088",
+      "duration_s": 60.39999771118164,
+      "speech_s": 47.3799934387207,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 4,
+      "n_fires": 7,
+      "n_hits": 3,
+      "n_resume_fires": 4,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.5600013732910156,
+        0.20000076293945312,
+        0.10000228881835938
+      ],
+      "wer": 0.07142857142857142,
+      "median_chunk_ms": 169.80714350938797,
+      "n_chunks_gated": 19,
+      "n_chunks_total": 121,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        3.0,
+        7.5,
+        29.0,
+        39.0,
+        48.5,
+        58.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.4499969482421875,
+          "text": "OKAY",
+          "boundary": "continuation",
+          "gap_s": 1.470001220703125
+        },
+        {
+          "begin_s": 1.9199981689453125,
+          "end_s": 2.75,
+          "text": "HELLO EVERYONE",
+          "boundary": "continuation",
+          "gap_s": 1.7999992370605469
+        },
+        {
+          "begin_s": 4.549999237060547,
+          "end_s": 6.939998626708984,
+          "text": "UM HOW UH HOW WE DOING",
+          "boundary": "turn_final",
+          "gap_s": 2.0900001525878906
+        },
+        {
+          "begin_s": 9.029998779296875,
+          "end_s": 16.009998321533203,
+          "text": "UH FIRST WE GOING UH OVER THE MINUTES OF THE LAST MEETING MORE OR LESS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 16.009998321533203,
+          "end_s": 28.45999526977539,
+          "text": "UM IN THE LAST MEETING UH THE MARKETING MANAGER HAD PRESENTED UH HER METHOD OF WORKING MEANING GATHERING I SUGGESTIONS",
+          "boundary": "continuation",
+          "gap_s": 1.2700042724609375
+        },
+        {
+          "begin_s": 29.729999542236328,
+          "end_s": 38.79999923706055,
+          "text": "FROM EVERYONE TO SEE HOW SHE BEST COULD MARKET UH THIS THIS PRODUCT AT THE WITHIN THE BUDGET UH THAT WAS GIVEN",
+          "boundary": "turn_final",
+          "gap_s": 2.339996337890625
+        },
+        {
+          "begin_s": 41.13999557495117,
+          "end_s": 47.95999526977539,
+          "text": "UH IN GENERAL THE IDEA IS THAT IT SHOULD BE SOMETHING THAT IS NOT DIFFICULT TO USE",
+          "boundary": "continuation",
+          "gap_s": 1.5500030517578125
+        },
+        {
+          "begin_s": 49.5099983215332,
+          "end_s": 54.32999801635742,
+          "text": "UM IT'S ALSO AN ITEM THAT PEOPLE LOSE A LOT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 54.32999801635742,
+          "end_s": 57.89999771118164,
+          "text": "SO WE SHOULD ADDRESS THAT",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1007b",
+      "speaker_id": "MIO075",
+      "duration_s": 56.019996643066406,
+      "speech_s": 7.439994812011719,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 1,
+      "n_fires": 4,
+      "n_hits": 3,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.6300048828125,
+        0.6399993896484375,
+        0.48000335693359375
+      ],
+      "wer": 0.3125,
+      "median_chunk_ms": 180.7585940696299,
+      "n_chunks_gated": 93,
+      "n_chunks_total": 113,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        13.5,
+        48.5,
+        54.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.3699951171875,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 12.230003356933594
+        },
+        {
+          "begin_s": 12.599998474121094,
+          "end_s": 12.860000610351562,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 32.37999725341797
+        },
+        {
+          "begin_s": 45.23999786376953,
+          "end_s": 47.099998474121094,
+          "text": "YEAH ALRIGHT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 47.099998474121094,
+          "end_s": 48.05999755859375,
+          "text": "SO UH",
+          "boundary": "continuation",
+          "gap_s": 1.470001220703125
+        },
+        {
+          "begin_s": 49.529998779296875,
+          "end_s": 53.519996643066406,
+          "text": "WELL I HAVE A POWERPOINT PR PRESENTATION STORED IN MY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2015c",
+      "speaker_id": "FEE060",
+      "duration_s": 57.95001220703125,
+      "speech_s": 8.15008544921875,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 2,
+      "n_fires": 5,
+      "n_hits": 3,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.04998779296875,
+        0.21002197265625,
+        0.0999755859375
+      ],
+      "wer": 0.14814814814814814,
+      "median_chunk_ms": 208.90517439693213,
+      "n_chunks_gated": 97,
+      "n_chunks_total": 116,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        0.5,
+        32.5,
+        38.5,
+        47.5,
+        54.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.45001220703125,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 31.54998779296875
+        },
+        {
+          "begin_s": 32.0,
+          "end_s": 32.28997802734375,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 4.36004638671875
+        },
+        {
+          "begin_s": 36.6500244140625,
+          "end_s": 37.6300048828125,
+          "text": "LIKE THE SKIN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 37.6300048828125,
+          "end_s": 38.4000244140625,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 8.4599609375
+        },
+        {
+          "begin_s": 46.8599853515625,
+          "end_s": 47.1500244140625,
+          "text": "OKAY",
+          "boundary": "continuation",
+          "gap_s": 1.7099609375
+        },
+        {
+          "begin_s": 48.8599853515625,
+          "end_s": 52.20001220703125,
+          "text": "SO THE ACTUAL REMOTE WOULD BE HARD PLASTIC AND THE CASINGS RUBBER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 52.20001220703125,
+          "end_s": 52.67999267578125,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 52.67999267578125,
+          "end_s": 54.0,
+          "text": "AND THE BUTTONS OBVIOUSLY ARE RUBBER",
+          "boundary": "continuation",
+          "gap_s": 1.219970703125
+        },
+        {
+          "begin_s": 55.219970703125,
+          "end_s": 55.45001220703125,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1000d",
+      "speaker_id": "MIO016",
+      "duration_s": 62.070003509521484,
+      "speech_s": 21.69001007080078,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 2,
+      "n_fires": 5,
+      "n_hits": 3,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.1999969482421875,
+        0.4699974060058594,
+        0.4299964904785156
+      ],
+      "wer": 0.4,
+      "median_chunk_ms": 142.21469312906265,
+      "n_chunks_gated": 38,
+      "n_chunks_total": 125,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        6.0,
+        22.0,
+        47.5,
+        51.0,
+        60.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 2.3800010681152344,
+          "text": "I GUESS I HAVE TO CHANGE THE PEN OTHERWISE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 2.3800010681152344,
+          "end_s": 5.8000030517578125,
+          "text": "WILL BE COMPLETELY DIFFERENT",
+          "boundary": "turn_final",
+          "gap_s": 11.64999771118164
+        },
+        {
+          "begin_s": 17.450000762939453,
+          "end_s": 17.950000762939453,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 17.950000762939453,
+          "end_s": 21.53000259399414,
+          "text": "AND DO YOU THINK IT'S",
+          "boundary": "turn_final",
+          "gap_s": 4.80999755859375
+        },
+        {
+          "begin_s": 26.34000015258789,
+          "end_s": 26.460002899169922,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 19.04999542236328
+        },
+        {
+          "begin_s": 45.5099983215332,
+          "end_s": 47.40999984741211,
+          "text": "YEAH",
+          "boundary": "continuation",
+          "gap_s": 1.2300033569335938
+        },
+        {
+          "begin_s": 48.6400032043457,
+          "end_s": 50.630001068115234,
+          "text": "SO WHAT CAN YOU",
+          "boundary": "continuation",
+          "gap_s": 1.1399993896484375
+        },
+        {
+          "begin_s": 51.77000045776367,
+          "end_s": 59.570003509521484,
+          "text": "YEAH WE WILL YEAH SO I WILL BE ABLE TO TO SUMMARIZE UH OUR MEETING",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2009c",
+      "speaker_id": "MEE095",
+      "duration_s": 57.03999853134155,
+      "speech_s": 34.87999963760376,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 1,
+      "n_fires": 1,
+      "n_hits": 1,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.559999942779541
+      ],
+      "wer": 18.28,
+      "median_chunk_ms": 283.9128593914211,
+      "n_chunks_gated": 11,
+      "n_chunks_total": 115,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.440000057220459,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 6.279999732971191
+        },
+        {
+          "begin_s": 6.71999979019165,
+          "end_s": 7.12000036239624,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 7.12000036239624,
+          "end_s": 9.839999675750732,
+          "text": "WELL UH I WAS EXPECTING TO GET YEAH THOUGH AND I DID DID MAKE IT IN TIME",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 9.839999675750732,
+          "end_s": 12.099999904632568,
+          "text": "BUT IT JUST JUST 'CAUSE ALL THE LEAVES AND THINGS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 12.099999904632568,
+          "end_s": 13.989999294281006,
+          "text": "UM THE STRA THE TRAINS WEREN'T STOPPING AT THE STATIONS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 13.989999294281006,
+          "end_s": 15.890000820159912,
+          "text": "SO THEY DECIDED TO PUT SPEED RESTRICTIONS ON",
+          "boundary": "continuation",
+          "gap_s": 1.5799999237060547
+        },
+        {
+          "begin_s": 17.470000743865967,
+          "end_s": 17.97999906539917,
+          "text": "YEP",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 17.97999906539917,
+          "end_s": 19.15999937057495,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 19.15999937057495,
+          "end_s": 22.489999294281006,
+          "text": "'CAUSE APAR APAR APPARENTLY P UH I'M NOT SURE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 22.489999294281006,
+          "end_s": 27.579999446868896,
+          "text": "UM THE AND THEY'RE BUSSING PEOPLE INTO STATION HAVE PARTICULAR PROBLEMS ON IT 'CAUSE IT'S ON A 'CAUSE IT'S ON A HILL OR SOMETHING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.579999446868896,
+          "end_s": 34.09999990463257,
+          "text": "UM SO I HAD SO I HAD TO BUS PEOPLE IN FROM LIKE STATIONS EITHER SIDE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 34.09999990463257,
+          "end_s": 34.809998989105225,
+          "text": "YES YES",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 34.809998989105225,
+          "end_s": 38.87000036239624,
+          "text": "BUT YEAH AT L AT LEAST IT WAS SPEED RESTRICTIONS INSTEAD OF LIKE TRAINS FLYING PAST INTO BARRIERS AND THINGS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 38.87000036239624,
+          "end_s": 40.87000036239624,
+          "text": "SO",
+          "boundary": "turn_final",
+          "gap_s": 2.3400001525878906
+        },
+        {
+          "begin_s": 43.21000051498413,
+          "end_s": 43.910001277923584,
+          "text": "OH F YEAH",
+          "boundary": "turn_final",
+          "gap_s": 9.459999084472656
+        },
+        {
+          "begin_s": 53.37000036239624,
+          "end_s": 54.53999853134155,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3009d",
+      "speaker_id": "MTD033PM",
+      "duration_s": 54.87000274658203,
+      "speech_s": 40.33000946044922,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 4,
+      "n_fires": 7,
+      "n_hits": 3,
+      "n_resume_fires": 4,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.5,
+        0.2899971008300781,
+        0.6299972534179688
+      ],
+      "wer": 0.19607843137254902,
+      "median_chunk_ms": 198.10182694345713,
+      "n_chunks_gated": 21,
+      "n_chunks_total": 110,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.5,
+        7.5,
+        10.0,
+        20.0,
+        38.0,
+        50.0,
+        53.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.0,
+          "text": "UH FOURTH MEETING",
+          "boundary": "turn_final",
+          "gap_s": 4.8300018310546875
+        },
+        {
+          "begin_s": 5.8300018310546875,
+          "end_s": 6.920001983642578,
+          "text": "SOME EXTRA DECIDING",
+          "boundary": "continuation",
+          "gap_s": 1.1899986267089844
+        },
+        {
+          "begin_s": 8.110000610351562,
+          "end_s": 9.710002899169922,
+          "text": "WELL",
+          "boundary": "turn_final",
+          "gap_s": 2.30999755859375
+        },
+        {
+          "begin_s": 12.020000457763672,
+          "end_s": 14.730003356933594,
+          "text": "I'LL SHOW YOU THE NOTES AGAIN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 14.730003356933594,
+          "end_s": 16.210002899169922,
+          "text": "VERY INTERESTING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 16.210002899169922,
+          "end_s": 19.480003356933594,
+          "text": "WELL YOU'LL YOU TWO WILL UH PRESENT US YOUR PROTOTYPE",
+          "boundary": "continuation",
+          "gap_s": 1.0799980163574219
+        },
+        {
+          "begin_s": 20.560001373291016,
+          "end_s": 24.060001373291016,
+          "text": "THEN UM I GUESS THAT'S YOUR BIT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 24.060001373291016,
+          "end_s": 28.990001678466797,
+          "text": "I I DIDN'T S SEE ANYTHING ABOUT IT SO I ALREADY UH THOUGHT YOU UH YOU WERE TO DO THAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 28.990001678466797,
+          "end_s": 30.459999084472656,
+          "text": "SO THE YOU'RE UH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 30.459999084472656,
+          "end_s": 37.73999786376953,
+          "text": "I'LL SHOW YOU HOW WE'RE GOING TO DO WITH FINANCING THIS UH DESIGN",
+          "boundary": "continuation",
+          "gap_s": 1.4300003051757812
+        },
+        {
+          "begin_s": 39.16999816894531,
+          "end_s": 43.44000244140625,
+          "text": "AND THEN WE'LL EVALUATE AFTER AFTER WE HAVE REDESIGNED IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 43.44000244140625,
+          "end_s": 46.540000915527344,
+          "text": "BECAUSE UH WELL WE'LL SEE ABOUT THE COSTS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 46.540000915527344,
+          "end_s": 49.590003967285156,
+          "text": "UM WE'LL UH EVALUATE OUR P OUR UH PRODUCTION",
+          "boundary": "continuation",
+          "gap_s": 1.1999969482421875
+        },
+        {
+          "begin_s": 50.790000915527344,
+          "end_s": 52.37000274658203,
+          "text": "AND THEN UH WE CAN CLOSE",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3012c",
+      "speaker_id": "MTD045PM",
+      "duration_s": 61.95999813079834,
+      "speech_s": 13.099991798400879,
+      "n_turn_bounds": 7,
+      "n_cont_bounds": 2,
+      "n_fires": 9,
+      "n_hits": 7,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.1099996566772461,
+        0.4499998092651367,
+        0.4399995803833008,
+        0.2500009536743164,
+        0.3900003433227539,
+        0.48000049591064453,
+        0.040001869201660156
+      ],
+      "wer": 0.38095238095238093,
+      "median_chunk_ms": 194.17976401746273,
+      "n_chunks_gated": 89,
+      "n_chunks_total": 124,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.5,
+        10.5,
+        13.0,
+        16.0,
+        20.0,
+        31.0,
+        47.5,
+        57.5,
+        59.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.5399999618530273,
+          "text": "HELLO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.5399999618530273,
+          "end_s": 3.390000343322754,
+          "text": "SO ARE YOU D WHAT WERE J YOU GUYS DISCUSSING",
+          "boundary": "turn_final",
+          "gap_s": 4.399999618530273
+        },
+        {
+          "begin_s": 7.789999961853027,
+          "end_s": 9.010001182556152,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 9.010001182556152,
+          "end_s": 10.420001029968262,
+          "text": "DID YOU FIND ANYTHING NEW",
+          "boundary": "continuation",
+          "gap_s": 1.8699989318847656
+        },
+        {
+          "begin_s": 12.289999961853027,
+          "end_s": 12.550000190734863,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.1299991607666016
+        },
+        {
+          "begin_s": 14.679999351501465,
+          "end_s": 15.5600004196167,
+          "text": "GREAT GREAT",
+          "boundary": "turn_final",
+          "gap_s": 3.489999771118164
+        },
+        {
+          "begin_s": 19.050000190734863,
+          "end_s": 19.749999046325684,
+          "text": "COME ON",
+          "boundary": "turn_final",
+          "gap_s": 9.5
+        },
+        {
+          "begin_s": 29.249999046325684,
+          "end_s": 30.609999656677246,
+          "text": "WHAT'S UH HERE",
+          "boundary": "turn_final",
+          "gap_s": 15.810001373291016
+        },
+        {
+          "begin_s": 46.42000102996826,
+          "end_s": 47.019999504089355,
+          "text": "AND THERE WE ARE",
+          "boundary": "turn_final",
+          "gap_s": 8.140003204345703
+        },
+        {
+          "begin_s": 55.16000270843506,
+          "end_s": 57.309996604919434,
+          "text": "WHAT THE F OH YEAH UH",
+          "boundary": "continuation",
+          "gap_s": 1.0200042724609375
+        },
+        {
+          "begin_s": 58.33000087738037,
+          "end_s": 59.45999813079834,
+          "text": "IT DOESN'T DO WHAT I WANT IT",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2002a",
+      "speaker_id": "FEE005",
+      "duration_s": 58.660003662109375,
+      "speech_s": 37.450008392333984,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 1,
+      "n_fires": 6,
+      "n_hits": 5,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.4299964904785156,
+        0.12999725341796875,
+        0.6599960327148438,
+        0.6599960327148438,
+        0.339996337890625
+      ],
+      "wer": 0.23711340206185566,
+      "median_chunk_ms": 183.935122564435,
+      "n_chunks_gated": 37,
+      "n_chunks_total": 118,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        4.0,
+        27.0,
+        31.5,
+        52.0,
+        56.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.5700035095214844,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 2.5699996948242188
+        },
+        {
+          "begin_s": 3.140003204345703,
+          "end_s": 3.5400009155273438,
+          "text": "RIGHT",
+          "boundary": "continuation",
+          "gap_s": 1.4500007629394531
+        },
+        {
+          "begin_s": 4.990001678466797,
+          "end_s": 9.930000305175781,
+          "text": "UM WELL THIS IS THE KICK OFF MEETING FOR OUR OUR PROJECT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 9.930000305175781,
+          "end_s": 17.1300048828125,
+          "text": "UM AND UM THIS IS JUST WHAT WE'RE GONNA BE DOING OVER THE NEXT TWENTY FIVE MINUTES",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 17.1300048828125,
+          "end_s": 24.0,
+          "text": "UM SO FIRST OF ALL JUST TO KIND OF MAKE SURE THAT WE ALL KNOW EACH OTHER I'M LAURA AND I'M THE PROJECT MANAGER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 24.0,
+          "end_s": 26.87000274658203,
+          "text": "DO YOU WANT TO INTRODUCE YOURSELF AGAIN",
+          "boundary": "turn_final",
+          "gap_s": 3.5199966430664062
+        },
+        {
+          "begin_s": 30.389999389648438,
+          "end_s": 30.840003967285156,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 8.040000915527344
+        },
+        {
+          "begin_s": 38.8800048828125,
+          "end_s": 39.590003967285156,
+          "text": "GREAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 39.590003967285156,
+          "end_s": 42.06000518798828,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.06000518798828,
+          "end_s": 48.150001525878906,
+          "text": "UM SO WE'RE DESIGNING A NEW REMOTE CONTROL AND UM OH I HAVE TO RECORD WHO'S HERE ACTUALLY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 48.150001525878906,
+          "end_s": 51.340003967285156,
+          "text": "SO THAT'S DAVID ANDREW AND CRAIG ISN'T IT",
+          "boundary": "turn_final",
+          "gap_s": 3.1299972534179688
+        },
+        {
+          "begin_s": 54.470001220703125,
+          "end_s": 56.160003662109375,
+          "text": "AND YOU ALL ARRIVED ON TIME",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2008b",
+      "speaker_id": "FEE029",
+      "duration_s": 62.269996643066406,
+      "speech_s": 42.23998260498047,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 5,
+      "n_fires": 9,
+      "n_hits": 4,
+      "n_resume_fires": 5,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.529998779296875,
+        0.5900039672851562,
+        0.48000335693359375,
+        0.23000335693359375
+      ],
+      "wer": 0.15217391304347827,
+      "median_chunk_ms": 199.62008204311132,
+      "n_chunks_gated": 29,
+      "n_chunks_total": 125,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        4.5,
+        11.0,
+        12.5,
+        15.5,
+        18.0,
+        26.0,
+        32.5,
+        34.5,
+        60.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.75,
+          "text": "GOOD TO SEE YOU ALL AGAIN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.75,
+          "end_s": 3.970001220703125,
+          "text": "LET'S SEE IF THAT COMES UP",
+          "boundary": "turn_final",
+          "gap_s": 4.579998016357422
+        },
+        {
+          "begin_s": 8.549999237060547,
+          "end_s": 10.15999984741211,
+          "text": "THIS IS OUR FUNCTIONAL DESIGN MEETING",
+          "boundary": "continuation",
+          "gap_s": 1.2400016784667969
+        },
+        {
+          "begin_s": 11.400001525878906,
+          "end_s": 11.979999542236328,
+          "text": "UM",
+          "boundary": "continuation",
+          "gap_s": 1.3899993896484375
+        },
+        {
+          "begin_s": 13.369998931884766,
+          "end_s": 14.909996032714844,
+          "text": "JUST A SEC WHILE MY POWERPOINT COMES UP",
+          "boundary": "turn_final",
+          "gap_s": 2.19000244140625
+        },
+        {
+          "begin_s": 17.099998474121094,
+          "end_s": 17.519996643066406,
+          "text": "ET VOILA",
+          "boundary": "turn_final",
+          "gap_s": 4.530006408691406
+        },
+        {
+          "begin_s": 22.050003051757812,
+          "end_s": 22.720001220703125,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 22.720001220703125,
+          "end_s": 25.339996337890625,
+          "text": "MM UM WE PUT THE FASHION IN ELECTRONICS",
+          "boundary": "continuation",
+          "gap_s": 0.7700042724609375
+        },
+        {
+          "begin_s": 26.110000610351562,
+          "end_s": 27.62000274658203,
+          "text": "LET'S START",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.62000274658203,
+          "end_s": 32.19000244140625,
+          "text": "OKAY OUR AGENDA TODAY UM JUST CHECK THE TIME IT'S TWELVE THIRTEEN",
+          "boundary": "continuation",
+          "gap_s": 1.3199996948242188
+        },
+        {
+          "begin_s": 33.51000213623047,
+          "end_s": 34.13999938964844,
+          "text": "UM",
+          "boundary": "continuation",
+          "gap_s": 1.5100021362304688
+        },
+        {
+          "begin_s": 35.650001525878906,
+          "end_s": 38.709999084472656,
+          "text": "I'M GONNA DO AN OPENING TALK ABOUT UM DID YOU ALL GET THE MINUTES",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 38.709999084472656,
+          "end_s": 39.58000183105469,
+          "text": "I E MAILED THEM TO YOU",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 39.58000183105469,
+          "end_s": 41.849998474121094,
+          "text": "I'M ALSO PUTTING 'EM THEM IN THE SHARED FOLDER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 41.849998474121094,
+          "end_s": 47.909996032714844,
+          "text": "SO UM THEN I WE'LL TALK ABOUT OUR GENERAL OBJECTIVES AND HAVE YOUR THREE PRESENTATIONS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 47.909996032714844,
+          "end_s": 54.69000244140625,
+          "text": "UM I'LL TALK ABOUT THE NEW PROJECT REQUIREMENTS I'VE JUST RECEIVED AND THEN WE HAVE TO MAKE A DECISION ON OUR REMOTE CONTROL FUNCTIONS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 54.69000244140625,
+          "end_s": 56.30000305175781,
+          "text": "FINALLY WE'LL JUST CLOSE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 56.30000305175781,
+          "end_s": 59.769996643066406,
+          "text": "WE'RE STARTING THIS MEETING AT APPROXIMATELY TWELVE THIRTEEN AND WE HAVE FORTY MINUTES",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2014b",
+      "speaker_id": "FEE055",
+      "duration_s": 32.15998840332031,
+      "speech_s": 6.4900054931640625,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 0,
+      "n_fires": 4,
+      "n_hits": 4,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.5,
+        0.2599945068359375,
+        0.6399993896484375,
+        0.8400115966796875
+      ],
+      "wer": 0.42857142857142855,
+      "median_chunk_ms": 201.53486682102084,
+      "n_chunks_gated": 47,
+      "n_chunks_total": 65,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        6.0,
+        18.0,
+        30.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.5,
+          "text": "WHAT IS IT",
+          "boundary": "turn_final",
+          "gap_s": 3.1699981689453125
+        },
+        {
+          "begin_s": 3.6699981689453125,
+          "end_s": 5.7400054931640625,
+          "text": "I THINK YOU'VE GOT TO DO UM CONTROL F. EIGHT",
+          "boundary": "turn_final",
+          "gap_s": 9.199996948242188
+        },
+        {
+          "begin_s": 14.94000244140625,
+          "end_s": 17.360000610351562,
+          "text": "SHIFT F. EIGHT",
+          "boundary": "turn_final",
+          "gap_s": 10.79998779296875
+        },
+        {
+          "begin_s": 28.159988403320312,
+          "end_s": 29.659988403320312,
+          "text": "AH THERE IT'S DOING SOMETHING",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2013d",
+      "speaker_id": "FEE049",
+      "duration_s": 53.39999771118164,
+      "speech_s": 22.979997634887695,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 3,
+      "n_fires": 8,
+      "n_hits": 5,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.23999977111816406,
+        0.23999786376953125,
+        0.5,
+        0.4699974060058594,
+        0.10000228881835938
+      ],
+      "wer": 0.15151515151515152,
+      "median_chunk_ms": 197.3698576912284,
+      "n_chunks_gated": 52,
+      "n_chunks_total": 107,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        7.5,
+        14.0,
+        19.0,
+        23.0,
+        25.5,
+        30.0,
+        43.5,
+        51.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 7.260000228881836,
+          "text": "UM ALMOST THERE'S ONE MORE THING I HAVE TO GET OUT OF THE I HAVE TO MAKE SURE THAT THIS ATTACHMENT WILL OPEN",
+          "boundary": "turn_final",
+          "gap_s": 6.079999923706055
+        },
+        {
+          "begin_s": 13.34000015258789,
+          "end_s": 13.760002136230469,
+          "text": "AH HA",
+          "boundary": "turn_final",
+          "gap_s": 3.9399986267089844
+        },
+        {
+          "begin_s": 17.700000762939453,
+          "end_s": 18.209999084472656,
+          "text": "OKAY",
+          "boundary": "continuation",
+          "gap_s": 1.9300003051757812
+        },
+        {
+          "begin_s": 20.139999389648438,
+          "end_s": 22.549999237060547,
+          "text": "WE'LL OPEN THAT WHEN THE TIME IS RIGHT",
+          "boundary": "continuation",
+          "gap_s": 1.2400016784667969
+        },
+        {
+          "begin_s": 23.790000915527344,
+          "end_s": 25.0,
+          "text": "IN THE MEANTIME",
+          "boundary": "turn_final",
+          "gap_s": 2.0400009155273438
+        },
+        {
+          "begin_s": 27.040000915527344,
+          "end_s": 29.53000259399414,
+          "text": "CLOSING THINGS DOWN OKAY",
+          "boundary": "turn_final",
+          "gap_s": 11.439998626708984
+        },
+        {
+          "begin_s": 40.970001220703125,
+          "end_s": 42.900001525878906,
+          "text": "LET'S SEE WHAT THIS THING DOES",
+          "boundary": "continuation",
+          "gap_s": 1.25
+        },
+        {
+          "begin_s": 44.150001525878906,
+          "end_s": 48.61000442504883,
+          "text": "DOES IT COME UP TOGETHER OR DISAPPEAR ONE OF THEM OR WHAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 48.61000442504883,
+          "end_s": 50.89999771118164,
+          "text": "AH WE CAME UP TOGETHER WE'RE GOOD",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1005b",
+      "speaker_id": "MIO055",
+      "duration_s": 61.5099983215332,
+      "speech_s": 38.70999526977539,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 4,
+      "n_fires": 8,
+      "n_hits": 4,
+      "n_resume_fires": 4,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.5100021362304688,
+        0.5499992370605469,
+        0.6700019836425781,
+        0.4900016784667969
+      ],
+      "wer": 0.2988505747126437,
+      "median_chunk_ms": 178.412145934999,
+      "n_chunks_gated": 37,
+      "n_chunks_total": 124,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        7.5,
+        14.5,
+        20.0,
+        37.0,
+        43.0,
+        45.0,
+        48.0,
+        59.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 4.5,
+          "text": "SO UM NICE TO SEE YOU AGAIN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 4.5,
+          "end_s": 5.8600006103515625,
+          "text": "UH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.8600006103515625,
+          "end_s": 6.989997863769531,
+          "text": "SO UH",
+          "boundary": "turn_final",
+          "gap_s": 3.2800025939941406
+        },
+        {
+          "begin_s": 10.270000457763672,
+          "end_s": 14.259998321533203,
+          "text": "TOD UH FOR THIS MEETING I WILL TAKE THE NOTES AND DO THE MINUTES",
+          "boundary": "continuation",
+          "gap_s": 1.3500022888183594
+        },
+        {
+          "begin_s": 15.610000610351562,
+          "end_s": 19.810001373291016,
+          "text": "UH SO WE WILL SEE OUR THREE PRESENTATIONS",
+          "boundary": "continuation",
+          "gap_s": 1.4199981689453125
+        },
+        {
+          "begin_s": 21.229999542236328,
+          "end_s": 36.45000076293945,
+          "text": "UM WE WILL START WITH THE UH MANAGER EXPERT WI WHO WILL TALK ABOUT UH USER RE REQUIREMENTS WHATS USER NEEDS AND WHAT IT DESIRE FOR THIS DEVI DEVICE",
+          "boundary": "turn_final",
+          "gap_s": 3.220001220703125
+        },
+        {
+          "begin_s": 39.67000198364258,
+          "end_s": 40.40999984741211,
+          "text": "YEP",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 40.40999984741211,
+          "end_s": 41.27000045776367,
+          "text": "OH I DON'T THINK SO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 41.27000045776367,
+          "end_s": 42.78999710083008,
+          "text": "I THINK YOU HAVE TO COME HERE",
+          "boundary": "continuation",
+          "gap_s": 1.25
+        },
+        {
+          "begin_s": 44.03999710083008,
+          "end_s": 44.380001068115234,
+          "text": "I DUNNO",
+          "boundary": "continuation",
+          "gap_s": 1.9300003051757812
+        },
+        {
+          "begin_s": 46.310001373291016,
+          "end_s": 47.32999801635742,
+          "text": "I THINK IT SHOULD STAY",
+          "boundary": "turn_final",
+          "gap_s": 7.849998474121094
+        },
+        {
+          "begin_s": 55.179996490478516,
+          "end_s": 59.0099983215332,
+          "text": "SHOULD STAY IN THE SQUARE HERE",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3010a",
+      "speaker_id": "MTD037PM",
+      "duration_s": 61.810001373291016,
+      "speech_s": 57.41999816894531,
+      "n_turn_bounds": 1,
+      "n_cont_bounds": 2,
+      "n_fires": 3,
+      "n_hits": 1,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.18999862670898438
+      ],
+      "wer": 0.09836065573770492,
+      "median_chunk_ms": 175.23243743926287,
+      "n_chunks_gated": 8,
+      "n_chunks_total": 124,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        19.5,
+        35.0,
+        59.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.4900016784667969,
+          "text": "SO WELCOME",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.4900016784667969,
+          "end_s": 4.350002288818359,
+          "text": "THE FIRST KICK OFF MEETING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 4.350002288818359,
+          "end_s": 5.060001373291016,
+          "text": "WHAT SHALL WE DO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.060001373291016,
+          "end_s": 11.050003051757812,
+          "text": "FIRST THE OPENING THEN THE REST",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 11.050003051757812,
+          "end_s": 12.0,
+          "text": "WHAT ARE WE GOING TO DO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 12.0,
+          "end_s": 14.830001831054688,
+          "text": "WE M HAVE TO MAKE A NEW REMOTE CONTROL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 14.830001831054688,
+          "end_s": 19.01000213623047,
+          "text": "IT HAS TO BE ORIGINAL TRENDY AND USER FRIENDLY",
+          "boundary": "continuation",
+          "gap_s": 0.3999977111816406
+        },
+        {
+          "begin_s": 19.40999984741211,
+          "end_s": 23.570003509521484,
+          "text": "SO WE WILL GET BACK TH ON THAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 23.570003509521484,
+          "end_s": 27.150005340576172,
+          "text": "FIRST WE HAVE TO MAKE A FUNCTIONAL DESIGN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.150005340576172,
+          "end_s": 33.119998931884766,
+          "text": "AFTER THAT WE HAVE TO MAKE A CONCEPTUAL DESIGN AND THEN AFTER THAT A DETAILED DESIGN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 33.119998931884766,
+          "end_s": 34.90999984741211,
+          "text": "SO WE'LL DISCUSS THAT LATER",
+          "boundary": "continuation",
+          "gap_s": 1.4900054931640625
+        },
+        {
+          "begin_s": 36.40000534057617,
+          "end_s": 38.53000259399414,
+          "text": "FIRST WE HAVE A LOOK AT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 38.53000259399414,
+          "end_s": 45.22000503540039,
+          "text": "SO FIRST TO WE HAVE TO MAKE A SMALL PAINTING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 45.22000503540039,
+          "end_s": 48.60000228881836,
+          "text": "WHAT HAVE DO WE HAVE TO DO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 48.60000228881836,
+          "end_s": 52.42000198364258,
+          "text": "FIRST YOU CAN SAVE THE DOCUMENTS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 52.42000198364258,
+          "end_s": 55.79000473022461,
+          "text": "WE HAVE TO DO THAT EVERY TIME WE MAKE SOMETHING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 55.79000473022461,
+          "end_s": 57.72000503540039,
+          "text": "YOU CAN PRINT IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 57.72000503540039,
+          "end_s": 59.310001373291016,
+          "text": "NO",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IN1005",
+      "speaker_id": "MIO023",
+      "duration_s": 32.98999786376953,
+      "speech_s": 5.579994201660156,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 0,
+      "n_fires": 5,
+      "n_hits": 4,
+      "n_resume_fires": 0,
+      "n_false_fires": 1,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.3400001525878906,
+        0.7700004577636719,
+        0.19000244140625,
+        0.5100021362304688
+      ],
+      "wer": 0.3076923076923077,
+      "median_chunk_ms": 189.04340406879783,
+      "n_chunks_gated": 50,
+      "n_chunks_total": 66,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        2.5,
+        7.0,
+        10.5,
+        11.5,
+        31.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 2.1599998474121094,
+          "text": "SO IS IT CORRECT OR NO",
+          "boundary": "turn_final",
+          "gap_s": 3.8400001525878906
+        },
+        {
+          "begin_s": 6.0,
+          "end_s": 6.229999542236328,
+          "text": "HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.1300010681152344
+        },
+        {
+          "begin_s": 8.360000610351562,
+          "end_s": 10.05999755859375,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 10.05999755859375,
+          "end_s": 11.30999755859375,
+          "text": "WELL SO WE HOPE",
+          "boundary": "turn_final",
+          "gap_s": 18.94000244140625
+        },
+        {
+          "begin_s": 30.25,
+          "end_s": 30.48999786376953,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1009c",
+      "speaker_id": "FIO084",
+      "duration_s": 59.3299560546875,
+      "speech_s": 4.48992919921875,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 1,
+      "n_fires": 2,
+      "n_hits": 1,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.72003173828125
+      ],
+      "wer": 0.875,
+      "median_chunk_ms": 2303.1674791127443,
+      "n_chunks_gated": 90,
+      "n_chunks_total": 119,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        47.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.27996826171875,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 45.47003173828125
+        },
+        {
+          "begin_s": 45.75,
+          "end_s": 46.30999755859375,
+          "text": "YEAH MAYBE",
+          "boundary": "continuation",
+          "gap_s": 1.3900146484375
+        },
+        {
+          "begin_s": 47.70001220703125,
+          "end_s": 48.42999267578125,
+          "text": "PARTICIPANT TWO",
+          "boundary": "turn_final",
+          "gap_s": 5.47998046875
+        },
+        {
+          "begin_s": 53.90997314453125,
+          "end_s": 55.7099609375,
+          "text": "UH THE NEXT ONE SORRY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 55.7099609375,
+          "end_s": 56.8299560546875,
+          "text": "IT'S IT WAS THE OLD ONE",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1000a",
+      "speaker_id": "FIE081",
+      "duration_s": 61.9599609375,
+      "speech_s": 14.26007080078125,
+      "n_turn_bounds": 6,
+      "n_cont_bounds": 2,
+      "n_fires": 9,
+      "n_hits": 6,
+      "n_resume_fires": 2,
+      "n_false_fires": 1,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.6400146484375,
+        0.550048828125,
+        0.46002197265625,
+        0.25,
+        0.1700439453125,
+        0.5400390625
+      ],
+      "wer": 0.28,
+      "median_chunk_ms": 207.9922640696168,
+      "n_chunks_gated": 86,
+      "n_chunks_total": 124,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        7.0,
+        9.5,
+        10.0,
+        13.5,
+        34.0,
+        41.0,
+        52.5,
+        60.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.42999267578125,
+          "text": "MM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 0.42999267578125,
+          "end_s": 0.80999755859375,
+          "text": "YEAH",
+          "boundary": "continuation",
+          "gap_s": 0.97998046875
+        },
+        {
+          "begin_s": 1.78997802734375,
+          "end_s": 6.3599853515625,
+          "text": "I THINK FOR US IT'S JUST LIKE A NORMAL WHITEBOARD BUT THEY'LL BE RECORDING WHAT WE WRITE DOWN",
+          "boundary": "turn_final",
+          "gap_s": 2.41998291015625
+        },
+        {
+          "begin_s": 8.77996826171875,
+          "end_s": 9.65997314453125,
+          "text": "MM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 9.65997314453125,
+          "end_s": 9.80999755859375,
+          "text": "MM",
+          "boundary": "continuation",
+          "gap_s": 1.0899658203125
+        },
+        {
+          "begin_s": 10.89996337890625,
+          "end_s": 12.949951171875,
+          "text": "BUT FOR US IT'S JUST LIKE A NORMAL WHITEBOARD",
+          "boundary": "turn_final",
+          "gap_s": 20.3699951171875
+        },
+        {
+          "begin_s": 33.3199462890625,
+          "end_s": 33.53997802734375,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 6.5
+        },
+        {
+          "begin_s": 40.03997802734375,
+          "end_s": 40.75,
+          "text": "I HAVE TO DRAW",
+          "boundary": "turn_final",
+          "gap_s": 7.52996826171875
+        },
+        {
+          "begin_s": 48.27996826171875,
+          "end_s": 51.239990234375,
+          "text": "M MY MY FAVOURITE ANIMAL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 51.239990234375,
+          "end_s": 52.3299560546875,
+          "text": "SORRY THIS IS ALL TANGLED UP HERE",
+          "boundary": "turn_final",
+          "gap_s": 6.30999755859375
+        },
+        {
+          "begin_s": 58.63995361328125,
+          "end_s": 59.4599609375,
+          "text": "THAT'S BETTER",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2011c",
+      "speaker_id": "FEE042",
+      "duration_s": 60.25,
+      "speech_s": 29.499984741210938,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 2,
+      "n_fires": 5,
+      "n_hits": 4,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.459991455078125,
+        0.2299957275390625,
+        0.529998779296875,
+        0.25
+      ],
+      "wer": 0.036585365853658534,
+      "median_chunk_ms": 194.56730410456657,
+      "n_chunks_gated": 53,
+      "n_chunks_total": 121,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.0,
+        6.5,
+        38.5,
+        54.0,
+        58.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.3100128173828125,
+          "text": "HMM",
+          "boundary": "continuation",
+          "gap_s": 1.6999969482421875
+        },
+        {
+          "begin_s": 2.010009765625,
+          "end_s": 2.540008544921875,
+          "text": "YES",
+          "boundary": "turn_final",
+          "gap_s": 3.2299957275390625
+        },
+        {
+          "begin_s": 5.7700042724609375,
+          "end_s": 6.2700042724609375,
+          "text": "SURE",
+          "boundary": "turn_final",
+          "gap_s": 20.0
+        },
+        {
+          "begin_s": 26.270004272460938,
+          "end_s": 30.389999389648438,
+          "text": "SO I'VE BEEN LOOKING AT THE COMPONENTS DESIGN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 30.389999389648438,
+          "end_s": 32.09001159667969,
+          "text": "UM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 32.09001159667969,
+          "end_s": 37.970001220703125,
+          "text": "MOSTLY BY CONSULTING REMOTE CONTROL DIAGRAMS FROM THE INTERNET AND ALSO BY INCORPORATING DESIGN IDEAS FROM THE LAST PROJECT MEETING",
+          "boundary": "turn_final",
+          "gap_s": 2.0900115966796875
+        },
+        {
+          "begin_s": 40.06001281738281,
+          "end_s": 45.71000671386719,
+          "text": "UM SO WE NEED SOME CUSTOM DESIGN PARTS AND OTHER PARTS WE'LL JUST USE STANDARD",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 45.71000671386719,
+          "end_s": 53.63999938964844,
+          "text": "UM I ASSUME WE'LL BE CUSTOM DESIGNING OUR CASE PROBABLY A HARD PLASTIC OR SOME OTHER MATERIAL CASE TO PROTECT THE REMOTE AND THE LOCATOR",
+          "boundary": "continuation",
+          "gap_s": 1.230010986328125
+        },
+        {
+          "begin_s": 54.87001037597656,
+          "end_s": 57.75,
+          "text": "AND WE'LL NEED TO CUSTOM DESI DESIGN A CIRCUIT BOARD",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1009d",
+      "speaker_id": "FIO089",
+      "duration_s": 60.27001953125,
+      "speech_s": 10.910003662109375,
+      "n_turn_bounds": 9,
+      "n_cont_bounds": 0,
+      "n_fires": 9,
+      "n_hits": 9,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.6300048828125,
+        0.449981689453125,
+        0.66998291015625,
+        0.30999755859375,
+        0.519989013671875,
+        0.459991455078125,
+        0.259979248046875,
+        0.5,
+        0.22998046875
+      ],
+      "wer": 0.13043478260869565,
+      "median_chunk_ms": 183.44552535563707,
+      "n_chunks_gated": 88,
+      "n_chunks_total": 121,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        6.5,
+        12.0,
+        15.0,
+        18.0,
+        23.0,
+        26.5,
+        34.0,
+        58.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.3699951171875,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 5.290008544921875
+        },
+        {
+          "begin_s": 5.660003662109375,
+          "end_s": 6.050018310546875,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 5.009979248046875
+        },
+        {
+          "begin_s": 11.05999755859375,
+          "end_s": 11.33001708984375,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 3.089996337890625
+        },
+        {
+          "begin_s": 14.420013427734375,
+          "end_s": 14.69000244140625,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.46002197265625
+        },
+        {
+          "begin_s": 17.1500244140625,
+          "end_s": 17.480010986328125,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 4.730010986328125
+        },
+        {
+          "begin_s": 22.21002197265625,
+          "end_s": 22.540008544921875,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.20001220703125
+        },
+        {
+          "begin_s": 24.740020751953125,
+          "end_s": 25.350006103515625,
+          "text": "MM-HMM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 25.350006103515625,
+          "end_s": 26.240020751953125,
+          "text": "GOOD",
+          "boundary": "turn_final",
+          "gap_s": 2.03997802734375
+        },
+        {
+          "begin_s": 28.279998779296875,
+          "end_s": 33.5,
+          "text": "YOU USED TO HAVE ALL THE BUTTONS",
+          "boundary": "turn_final",
+          "gap_s": 22.040008544921875
+        },
+        {
+          "begin_s": 55.540008544921875,
+          "end_s": 57.77001953125,
+          "text": "OH THAT'S GOOD NO THAT'S NICE AND FRIENDLY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2007c",
+      "speaker_id": "MEE025",
+      "duration_s": 51.540000915527344,
+      "speech_s": 21.93000030517578,
+      "n_turn_bounds": 2,
+      "n_cont_bounds": 0,
+      "n_fires": 2,
+      "n_hits": 2,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.470001220703125,
+        0.45999908447265625
+      ],
+      "wer": 0.19444444444444445,
+      "median_chunk_ms": 166.87839198857546,
+      "n_chunks_gated": 58,
+      "n_chunks_total": 104,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        17.0,
+        49.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.23999786376953125,
+          "text": "RIGHT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 0.23999786376953125,
+          "end_s": 2.1299972534179688,
+          "text": "HELLO EVERYBODY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 2.1299972534179688,
+          "end_s": 6.69000244140625,
+          "text": "BACK AGAIN FOR ANOTHER WONDERFUL MEETING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 6.69000244140625,
+          "end_s": 14.580001831054688,
+          "text": "IS UH EVERYONE READY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 14.580001831054688,
+          "end_s": 16.529998779296875,
+          "text": "OKAY WE C WE CAN HOLD ON FOR A MINUTE",
+          "boundary": "turn_final",
+          "gap_s": 27.110000610351562
+        },
+        {
+          "begin_s": 43.63999938964844,
+          "end_s": 49.040000915527344,
+          "text": "I FIGURED WITH THE SPAM THING IF YOU CAN'T BEAT IT JOIN IN",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2013c",
+      "speaker_id": "FEE050",
+      "duration_s": 38.239990234375,
+      "speech_s": 18.32000732421875,
+      "n_turn_bounds": 2,
+      "n_cont_bounds": 1,
+      "n_fires": 3,
+      "n_hits": 2,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.27996826171875,
+        0.260009765625
+      ],
+      "wer": 0.017857142857142856,
+      "median_chunk_ms": 217.92902937158942,
+      "n_chunks_gated": 39,
+      "n_chunks_total": 77,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        8.0,
+        32.0,
+        36.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 5.60003662109375,
+          "text": "YEAH I I THINK WE'RE GONNA HAVE SOME TROUBLE WHEN WE GET DOWN TO THE COMPONENT DESIGN ON THIS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 5.60003662109375,
+          "end_s": 7.72003173828125,
+          "text": "SPONGY IS GONNA BE DIFFICULT I'M AFRAID",
+          "boundary": "turn_final",
+          "gap_s": 15.80999755859375
+        },
+        {
+          "begin_s": 23.530029296875,
+          "end_s": 29.010009765625,
+          "text": "YEAH I MEAN BASICALLY WE CAN MAKE THESE THINGS OUT OF WOOD TITANIUM PLASTIC OR RUBBER",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 29.010009765625,
+          "end_s": 31.9000244140625,
+          "text": "I SUPPOSE RUBBER IS THE CLOSEST TO SPONGY YEAH",
+          "boundary": "continuation",
+          "gap_s": 1.6099853515625
+        },
+        {
+          "begin_s": 33.510009765625,
+          "end_s": 35.739990234375,
+          "text": "I WAS THINKING TITANIUM MYSELF",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1007d",
+      "speaker_id": "MIO049",
+      "duration_s": 59.05000305175781,
+      "speech_s": 27.010013580322266,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 3,
+      "n_fires": 6,
+      "n_hits": 3,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.45999908447265625,
+        0.45999908447265625,
+        0.4499969482421875
+      ],
+      "wer": 0.2978723404255319,
+      "median_chunk_ms": 174.78062538430095,
+      "n_chunks_gated": 59,
+      "n_chunks_total": 119,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        8.5,
+        21.0,
+        23.5,
+        30.5,
+        33.5,
+        57.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 8.020000457763672,
+          "text": "SO IN LAST MEETING WE HAVE DISCUSSED THE CONCEPTUAL DESIGN AND WE ASKED YOU TO PREPARE A PROTOTYPE FOR THE",
+          "boundary": "continuation",
+          "gap_s": 1.1499977111816406
+        },
+        {
+          "begin_s": 9.169998168945312,
+          "end_s": 16.19000244140625,
+          "text": "FOR THE REMOTE CONTROL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 16.19000244140625,
+          "end_s": 18.659996032714844,
+          "text": "SO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 18.659996032714844,
+          "end_s": 20.93000030517578,
+          "text": "SO LET'S SEE THE WHAT",
+          "boundary": "continuation",
+          "gap_s": 1.3899993896484375
+        },
+        {
+          "begin_s": 22.31999969482422,
+          "end_s": 23.040000915527344,
+          "text": "DID YOU PREPARE",
+          "boundary": "turn_final",
+          "gap_s": 4.239997863769531
+        },
+        {
+          "begin_s": 27.279998779296875,
+          "end_s": 30.389999389648438,
+          "text": "SH SHARE FOLDER FOR TH YOUR PRESENTATION",
+          "boundary": "continuation",
+          "gap_s": 1.279998779296875
+        },
+        {
+          "begin_s": 31.669998168945312,
+          "end_s": 33.040000915527344,
+          "text": "BECAUSE I HAVE HERE",
+          "boundary": "turn_final",
+          "gap_s": 21.479995727539062
+        },
+        {
+          "begin_s": 54.519996643066406,
+          "end_s": 56.55000305175781,
+          "text": "OKAY JUST ONE",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2005a",
+      "speaker_id": "FEO084",
+      "duration_s": 28.19000244140625,
+      "speech_s": 1.1100006103515625,
+      "n_turn_bounds": 2,
+      "n_cont_bounds": 1,
+      "n_fires": 3,
+      "n_hits": 2,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.18000030517578125,
+        0.30999755859375
+      ],
+      "wer": 0.4,
+      "median_chunk_ms": 204.15779761970043,
+      "n_chunks_gated": 52,
+      "n_chunks_total": 57,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        2.5,
+        26.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.5199966430664062,
+          "text": "YEAH MM-HMM",
+          "boundary": "continuation",
+          "gap_s": 1.5900039672851562
+        },
+        {
+          "begin_s": 2.1100006103515625,
+          "end_s": 2.3199996948242188,
+          "text": "HMM",
+          "boundary": "turn_final",
+          "gap_s": 22.98999786376953
+        },
+        {
+          "begin_s": 25.30999755859375,
+          "end_s": 25.69000244140625,
+          "text": "THANK YOU",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3003c",
+      "speaker_id": "MTD009PM",
+      "duration_s": 57.04000282287598,
+      "speech_s": 50.65000343322754,
+      "n_turn_bounds": 2,
+      "n_cont_bounds": 0,
+      "n_fires": 3,
+      "n_hits": 2,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 1,
+      "latencies_s": [
+        0.23999977111816406,
+        0.45999717712402344
+      ],
+      "wer": 0.3,
+      "median_chunk_ms": 176.34553322568536,
+      "n_chunks_gated": 11,
+      "n_chunks_total": 115,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        15.0,
+        40.0,
+        55.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.4499988555908203,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.4499988555908203,
+          "end_s": 2.989999771118164,
+          "text": "UH GOOD AFTERNOON",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 2.989999771118164,
+          "end_s": 7.1100006103515625,
+          "text": "THIS IS OUR THIRD MEETING ALREADY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 7.1100006103515625,
+          "end_s": 9.670000076293945,
+          "text": "I HOPE YOU ENJOYED YOUR LUNCH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 9.670000076293945,
+          "end_s": 12.19999885559082,
+          "text": "I DID ANYWAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 12.19999885559082,
+          "end_s": 14.760000228881836,
+          "text": "UM LET'S SEE",
+          "boundary": "turn_final",
+          "gap_s": 3.5900001525878906
+        },
+        {
+          "begin_s": 18.350000381469727,
+          "end_s": 21.829999923706055,
+          "text": "PRESENTATION THREE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 21.829999923706055,
+          "end_s": 27.17999839782715,
+          "text": "OKAY THIS IS UM THE SECOND PHASE UH WE'RE GOING TO DISCUSS TODAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 27.17999839782715,
+          "end_s": 30.35999870300293,
+          "text": "IT'S THE CONCEPTUAL DESIGN MEETING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 30.35999870300293,
+          "end_s": 39.69000053405762,
+          "text": "AND A FEW POINTS OF INTEREST IN THIS MEETING UM ARE THE CONCEPTUAL SPECIFICATION OF COMPONENTS",
+          "boundary": "merged",
+          "gap_s": 0.2999992370605469
+        },
+        {
+          "begin_s": 39.989999771118164,
+          "end_s": 42.82999610900879,
+          "text": "UH CONCEPTUAL SPECIFICATION OF DESIGN",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.82999610900879,
+          "end_s": 44.96000099182129,
+          "text": "AND ALSO TREND WATCHING",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 44.96000099182129,
+          "end_s": 54.54000282287598,
+          "text": "UM THESE ARE HOPEFULLY THE POINTS YOU ADDRESSED IN UH YOUR PRE UH PRESENTATIONS YOU'RE GOING TO SHOW ME IN A FEW MINUTES",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2015d",
+      "speaker_id": "FEE058",
+      "duration_s": 49.10999298095703,
+      "speech_s": 10.490005493164062,
+      "n_turn_bounds": 6,
+      "n_cont_bounds": 1,
+      "n_fires": 7,
+      "n_hits": 6,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.43000030517578125,
+        0.69000244140625,
+        0.29000091552734375,
+        0.5100021362304688,
+        0.32999420166015625,
+        0.39000701904296875
+      ],
+      "wer": 0.3333333333333333,
+      "median_chunk_ms": 190.41395373642445,
+      "n_chunks_gated": 72,
+      "n_chunks_total": 99,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        10.5,
+        13.0,
+        22.0,
+        26.5,
+        37.0,
+        47.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.5699996948242188,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": 6.659996032714844
+        },
+        {
+          "begin_s": 7.2299957275390625,
+          "end_s": 7.790000915527344,
+          "text": "UM YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 7.790000915527344,
+          "end_s": 10.330001831054688,
+          "text": "I JUST GOT A FEW SLIDES SO SHOW THEM",
+          "boundary": "continuation",
+          "gap_s": 1.2199935913085938
+        },
+        {
+          "begin_s": 11.549995422363281,
+          "end_s": 12.30999755859375,
+          "text": "THANK YOU",
+          "boundary": "turn_final",
+          "gap_s": 7.510002136230469
+        },
+        {
+          "begin_s": 19.81999969482422,
+          "end_s": 21.709999084472656,
+          "text": "DO YOU WANT TO PRESENT IT",
+          "boundary": "turn_final",
+          "gap_s": 3.1300048828125
+        },
+        {
+          "begin_s": 24.840003967285156,
+          "end_s": 25.98999786376953,
+          "text": "YEAH HERE WE ARE",
+          "boundary": "turn_final",
+          "gap_s": 8.759994506835938
+        },
+        {
+          "begin_s": 34.74999237060547,
+          "end_s": 36.670005798339844,
+          "text": "MANGO SHAPE",
+          "boundary": "turn_final",
+          "gap_s": 8.839996337890625
+        },
+        {
+          "begin_s": 45.51000213623047,
+          "end_s": 46.60999298095703,
+          "text": "THE L. E. D.",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1007d",
+      "speaker_id": "MIO072",
+      "duration_s": 27.139999389648438,
+      "speech_s": 3.5800018310546875,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 0,
+      "n_fires": 4,
+      "n_hits": 4,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.470001220703125,
+        0.2299957275390625,
+        0.3199920654296875,
+        0.3600006103515625
+      ],
+      "wer": 0.21428571428571427,
+      "median_chunk_ms": 206.5700339153409,
+      "n_chunks_gated": 43,
+      "n_chunks_total": 55,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.0,
+        7.0,
+        19.5,
+        25.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 2.529998779296875,
+          "text": "IS IT AN ONLY A SINGLE MIC OR A MICROPHONE ARRAY",
+          "boundary": "turn_final",
+          "gap_s": 3.9600067138671875
+        },
+        {
+          "begin_s": 6.4900054931640625,
+          "end_s": 6.7700042724609375,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 12.05999755859375
+        },
+        {
+          "begin_s": 18.830001831054688,
+          "end_s": 19.180007934570312,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 5.0399932861328125
+        },
+        {
+          "begin_s": 24.220001220703125,
+          "end_s": 24.639999389648438,
+          "text": "OKAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IB4005",
+      "speaker_id": "MIO036",
+      "duration_s": 60.12998962402344,
+      "speech_s": 33.93998718261719,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 3,
+      "n_fires": 4,
+      "n_hits": 2,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.220001220703125,
+        0.3800048828125
+      ],
+      "wer": 15.893617021276595,
+      "median_chunk_ms": 220.85984889417887,
+      "n_chunks_gated": 40,
+      "n_chunks_total": 121,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        0.5,
+        21.0,
+        23.0,
+        33.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.279998779296875,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": 16.379989624023438
+        },
+        {
+          "begin_s": 16.659988403320312,
+          "end_s": 20.279998779296875,
+          "text": "UH ACTUALLY MARTIN IS FIFTY PER CENT TIME",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 20.279998779296875,
+          "end_s": 20.55999755859375,
+          "text": "YEAH",
+          "boundary": "continuation",
+          "gap_s": 1.5800018310546875
+        },
+        {
+          "begin_s": 22.139999389648438,
+          "end_s": 22.6199951171875,
+          "text": "NO",
+          "boundary": "turn_final",
+          "gap_s": 2.4799957275390625
+        },
+        {
+          "begin_s": 25.099990844726562,
+          "end_s": 28.829986572265625,
+          "text": "OH BECAUSE YOU WOULD SAY THAT SHE'S AN ASSISTANT PROFESSOR OR SOMETHING LIKE THAT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 28.829986572265625,
+          "end_s": 29.319992065429688,
+          "text": "OH OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 29.319992065429688,
+          "end_s": 30.009994506835938,
+          "text": "YEAH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 30.009994506835938,
+          "end_s": 33.03999328613281,
+          "text": "BUT UM YEAH MAYBE THAT'S",
+          "boundary": "continuation",
+          "gap_s": 1.7400054931640625
+        },
+        {
+          "begin_s": 34.779998779296875,
+          "end_s": 38.12998962402344,
+          "text": "YEAH THERE ARE FULL PROFESSORS AND ASSISTANT PROFESSORS IF YOU WANT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 38.12998962402344,
+          "end_s": 42.97999572753906,
+          "text": "AND YEAH IT'S TRUE THAT SHE'S AN ASSISTANT PROFESSOR BUT UH WELL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.97999572753906,
+          "end_s": 47.90998840332031,
+          "text": "WE SEE MAYBE WE CAN MOVE A LITTLE BIT AROUND JUST TO GIVE HER UH",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 47.90998840332031,
+          "end_s": 55.0,
+          "text": "WELL ALSO AT LEAST MAYBE NOT A UH AN OFFICE ALONE BUT AT LEAST WITH JUST ONE PERSON NOT TWO",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 55.0,
+          "end_s": 55.65998840332031,
+          "text": "WE'LL SEE",
+          "boundary": "continuation",
+          "gap_s": 1.510009765625
+        },
+        {
+          "begin_s": 57.16999816894531,
+          "end_s": 57.62998962402344,
+          "text": "MM-HMM",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2009c",
+      "speaker_id": "MEE034",
+      "duration_s": 61.12999725341797,
+      "speech_s": 41.04999542236328,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 3,
+      "n_fires": 6,
+      "n_hits": 3,
+      "n_resume_fires": 3,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.3600006103515625,
+        0.40999603271484375,
+        0.37000274658203125
+      ],
+      "wer": 0.08547008547008547,
+      "median_chunk_ms": 203.7556329742074,
+      "n_chunks_gated": 34,
+      "n_chunks_total": 123,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        15.5,
+        19.0,
+        39.5,
+        49.5,
+        59.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.6399993896484375,
+          "text": "I'LL GO FIRST",
+          "boundary": "turn_final",
+          "gap_s": 10.540000915527344
+        },
+        {
+          "begin_s": 11.180000305175781,
+          "end_s": 13.099998474121094,
+          "text": "NO NATHAN'S FINE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 13.099998474121094,
+          "end_s": 15.090003967285156,
+          "text": "IT'S EITHER NATHAN OR PARTICIPANT TWO",
+          "boundary": "turn_final",
+          "gap_s": 2.8799972534179688
+        },
+        {
+          "begin_s": 17.970001220703125,
+          "end_s": 18.470001220703125,
+          "text": "UH",
+          "boundary": "continuation",
+          "gap_s": 1.94000244140625
+        },
+        {
+          "begin_s": 20.410003662109375,
+          "end_s": 23.389999389648438,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 23.389999389648438,
+          "end_s": 24.099998474121094,
+          "text": "UM",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 24.099998474121094,
+          "end_s": 35.37000274658203,
+          "text": "BASICALLY WHAT I'M GONNA HAVE TO TALK TO YOU ABOUT TODAY IS UM COMPONENT DESIGN AND IT'S BEEN BROUGHT TO MY ATTENTION THAT WE MAY BE SOMEWHAT LIMITED AS TO WHAT WE CAN DO BECAUSE OF WHAT OUR MANUFACTURER OFFERS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 35.37000274658203,
+          "end_s": 39.159996032714844,
+          "text": "SO BASICALLY WHAT I'M GONNA BE DOING IS TALKING TO YOU ABOUT THAT",
+          "boundary": "continuation",
+          "gap_s": 1.260009765625
+        },
+        {
+          "begin_s": 40.420005798339844,
+          "end_s": 43.29999542236328,
+          "text": "UM COMPONENTS OF A REMOTE CONTROL OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 43.29999542236328,
+          "end_s": 49.20000457763672,
+          "text": "WE'VE ALREADY KIND OF GONE OVER THIS BUT WE'RE GONNA HAVE TO GET INTO MORE DETAIL AND PROBABLY HAVE TO REACH SOME CONCLUSIONS SOME TIME SOON",
+          "boundary": "continuation",
+          "gap_s": 0.959991455078125
+        },
+        {
+          "begin_s": 50.159996032714844,
+          "end_s": 58.62999725341797,
+          "text": "ENERGY SOURCE UM OUR MANUFACTURER OFFERS A VARIETY OF ENERGY SOURCES YOUR STANDARD BATTERY SOLAR CELLS",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "EN2006b",
+      "speaker_id": "MEE089",
+      "duration_s": 45.469998836517334,
+      "speech_s": 6.59999942779541,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 0,
+      "n_fires": 5,
+      "n_hits": 5,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.11999988555908203,
+        0.34999990463256836,
+        0.19999933242797852,
+        0.17000055313110352,
+        0.530001163482666
+      ],
+      "wer": 0.5294117647058824,
+      "median_chunk_ms": 127.99592781811953,
+      "n_chunks_gated": 74,
+      "n_chunks_total": 91,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.5,
+        11.0,
+        23.0,
+        37.0,
+        43.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 1.1800003051757812,
+          "text": "GREAT THANK YOU",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 1.1800003051757812,
+          "end_s": 1.380000114440918,
+          "text": "YEP",
+          "boundary": "turn_final",
+          "gap_s": 8.349999904632568
+        },
+        {
+          "begin_s": 9.730000019073486,
+          "end_s": 10.650000095367432,
+          "text": "SORRY MM YEP",
+          "boundary": "turn_final",
+          "gap_s": 10.970000267028809
+        },
+        {
+          "begin_s": 21.62000036239624,
+          "end_s": 22.80000066757202,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 11.439998626708984
+        },
+        {
+          "begin_s": 34.239999294281006,
+          "end_s": 36.8299994468689,
+          "text": "UH YES COURSE OF COURSE IT IS YEAH",
+          "boundary": "turn_final",
+          "gap_s": 5.6100006103515625
+        },
+        {
+          "begin_s": 42.44000005722046,
+          "end_s": 42.969998836517334,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2014d",
+      "speaker_id": "MEE056",
+      "duration_s": 27.02999997138977,
+      "speech_s": 7.789999723434448,
+      "n_turn_bounds": 2,
+      "n_cont_bounds": 1,
+      "n_fires": 3,
+      "n_hits": 2,
+      "n_resume_fires": 1,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.29000020027160645,
+        0.4700000286102295
+      ],
+      "wer": 0.09375,
+      "median_chunk_ms": 123.53886291384697,
+      "n_chunks_gated": 37,
+      "n_chunks_total": 55,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.5,
+        22.5,
+        25.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 3.2099997997283936,
+          "text": "NO YOU'LL HA HAVE TO OPEN IT UP FROM ELSEWHERE",
+          "boundary": "turn_final",
+          "gap_s": 15.230000019073486
+        },
+        {
+          "begin_s": 18.43999981880188,
+          "end_s": 20.300000429153442,
+          "text": "YEAH YOU HAVE TO YOU HAVE TO CLOSE THAT WINDOW",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 20.300000429153442,
+          "end_s": 22.290000200271606,
+          "text": "'CAUSE THAT'S THE SAVE ONE ISN'T IT SO",
+          "boundary": "continuation",
+          "gap_s": 1.510000228881836
+        },
+        {
+          "begin_s": 23.800000429153442,
+          "end_s": 24.52999997138977,
+          "text": "AND THEN FIND IT",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IN1008",
+      "speaker_id": "MIO100",
+      "duration_s": 25.610015869140625,
+      "speech_s": 23.110015869140625,
+      "n_turn_bounds": 1,
+      "n_cont_bounds": 0,
+      "n_fires": 2,
+      "n_hits": 1,
+      "n_resume_fires": 0,
+      "n_false_fires": 1,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.389984130859375
+      ],
+      "wer": 0.23728813559322035,
+      "median_chunk_ms": 195.5632595345378,
+      "n_chunks_gated": 5,
+      "n_chunks_total": 52,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        18.5,
+        23.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 10.92999267578125,
+          "text": "OKAY UH FOR FOR UH THE NOISE SENSITIVE TABLE PROJECT UM WE DECIDED TO UM TO TAKE THE NOISE UH AS INPUT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 10.92999267578125,
+          "end_s": 15.08001708984375,
+          "text": "AND UH GIVE A FEEDBACK UH WITH LEDS ON THE TABLE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 15.08001708984375,
+          "end_s": 19.8900146484375,
+          "text": "SO THIS IS UH ONE OF THE THE POSSIBILITIES THAT WERE OFFERED TO US",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 19.8900146484375,
+          "end_s": 23.110015869140625,
+          "text": "BUT UH WE DECIDED TO DO TO DO UH IT THIS WAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2004b",
+      "speaker_id": "MEO015",
+      "duration_s": 44.1300048828125,
+      "speech_s": 4.989990234375,
+      "n_turn_bounds": 4,
+      "n_cont_bounds": 0,
+      "n_fires": 3,
+      "n_hits": 3,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.42999267578125,
+        0.3599853515625,
+        0.8599853515625
+      ],
+      "wer": 0.3333333333333333,
+      "median_chunk_ms": 182.55907529965043,
+      "n_chunks_gated": 77,
+      "n_chunks_total": 89,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        1.0,
+        8.0,
+        15.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.57000732421875,
+          "text": "YEP",
+          "boundary": "turn_final",
+          "gap_s": 3.84002685546875
+        },
+        {
+          "begin_s": 4.4100341796875,
+          "end_s": 4.8900146484375,
+          "text": "'KAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 4.8900146484375,
+          "end_s": 7.6400146484375,
+          "text": "IT CAN BE OKAY THAT'S OKAY WITH ME",
+          "boundary": "turn_final",
+          "gap_s": 5.5
+        },
+        {
+          "begin_s": 13.1400146484375,
+          "end_s": 14.1400146484375,
+          "text": "FURTHER",
+          "boundary": "turn_final",
+          "gap_s": 27.29998779296875
+        },
+        {
+          "begin_s": 41.44000244140625,
+          "end_s": 41.6300048828125,
+          "text": "OOPS",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "TS3010a",
+      "speaker_id": "MTD039UID",
+      "duration_s": 58.09001159667969,
+      "speech_s": 1.6900177001953125,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 0,
+      "n_fires": 3,
+      "n_hits": 3,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.2899932861328125,
+        0.17999267578125,
+        0.4099884033203125
+      ],
+      "wer": 0.2,
+      "median_chunk_ms": 200.4916239529848,
+      "n_chunks_gated": 111,
+      "n_chunks_total": 117,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        0.5,
+        4.5,
+        56.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.2100067138671875,
+          "text": "HMM",
+          "boundary": "turn_final",
+          "gap_s": 2.8600006103515625
+        },
+        {
+          "begin_s": 3.07000732421875,
+          "end_s": 4.32000732421875,
+          "text": "THAT'S UH STRANGE",
+          "boundary": "turn_final",
+          "gap_s": 51.03999328613281
+        },
+        {
+          "begin_s": 55.36000061035156,
+          "end_s": 55.59001159667969,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IS1009d",
+      "speaker_id": "FIO084",
+      "duration_s": 51.8800048828125,
+      "speech_s": 39.100006103515625,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 1,
+      "n_fires": 2,
+      "n_hits": 2,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.329986572265625,
+        0.699981689453125
+      ],
+      "wer": 22.0,
+      "median_chunk_ms": 233.9449361898005,
+      "n_chunks_gated": 14,
+      "n_chunks_total": 104,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        0.5,
+        5.0
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 0.170013427734375,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 3.8800048828125
+        },
+        {
+          "begin_s": 4.050018310546875,
+          "end_s": 4.300018310546875,
+          "text": "YEAH",
+          "boundary": "turn_final",
+          "gap_s": 4.67999267578125
+        },
+        {
+          "begin_s": 8.980010986328125,
+          "end_s": 12.120025634765625,
+          "text": "UH SO THIS IS OUR WHAT UH WE HAVE MADE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 12.120025634765625,
+          "end_s": 16.490020751953125,
+          "text": "THIS IS A MODEL OF THE REMOTE CONTROL WHICH WE ARE GOING TO BUILD",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 16.490020751953125,
+          "end_s": 34.20001220703125,
+          "text": "UH THIS IS US IN A SNAIL SHAPE SO UH IT IT IS ATTRACTIVE UM AND IT'S IT'S BLUE IN COLOUR UH BRIGHT AND UH IT HAS YELLOW BUTTONS AND ALL THE DIFFERENT COLOUR BUTTONS SO IT IS A UH UH A LOOKS WISE IT IS BEAUTIFUL",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 34.20001220703125,
+          "end_s": 37.02001953125,
+          "text": "UH AND ALSO COMPACT IN SHAPE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 37.02001953125,
+          "end_s": 44.010009765625,
+          "text": "UH UM AND ALSO I IT IT WILL BE EASILY FIT INTO INTO THE HANDS AND YOU CAN ACCESS ALL THE BUTTONS EASILY",
+          "boundary": "continuation",
+          "gap_s": 1.720001220703125
+        },
+        {
+          "begin_s": 45.730010986328125,
+          "end_s": 49.3800048828125,
+          "text": "YEAH OOPS SORRY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "IN1005",
+      "speaker_id": "MIE080",
+      "duration_s": 57.099998474121094,
+      "speech_s": 45.81999588012695,
+      "n_turn_bounds": 3,
+      "n_cont_bounds": 2,
+      "n_fires": 4,
+      "n_hits": 2,
+      "n_resume_fires": 2,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.2599983215332031,
+        0.279998779296875
+      ],
+      "wer": 2.6551724137931036,
+      "median_chunk_ms": 202.35013728961349,
+      "n_chunks_gated": 13,
+      "n_chunks_total": 115,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        5.5,
+        8.5,
+        13.0,
+        32.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 2.700000762939453,
+          "text": "YOU NEVER KNOW WHETHER YOU'VE GOT THESE THINGS ON RIGHT OR NOT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 2.700000762939453,
+          "end_s": 4.970001220703125,
+          "text": "YOU NEVER KNOW WHETHER THEY'RE ON RIGHT OR NOT",
+          "boundary": "continuation",
+          "gap_s": 1.8499984741210938
+        },
+        {
+          "begin_s": 6.819999694824219,
+          "end_s": 8.240001678466797,
+          "text": "FEELS WRONG",
+          "boundary": "turn_final",
+          "gap_s": 3.3199996948242188
+        },
+        {
+          "begin_s": 11.560001373291016,
+          "end_s": 12.720001220703125,
+          "text": "OKAY SO I DON'T NEED THAT",
+          "boundary": "turn_final",
+          "gap_s": 3.270000457763672
+        },
+        {
+          "begin_s": 15.990001678466797,
+          "end_s": 17.15999984741211,
+          "text": "OKAY",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 17.15999984741211,
+          "end_s": 28.75,
+          "text": "SO DAVID CAME IN TO ME AND TO SAY UH I SOMETHING WE'D BEEN TALKING ABOUT FOR A WHILE WAS SOME STUFF I'D BEEN WORKING ON ABOUT USING THESE TOPIC MODELS WITH UH WITH NETWORKS",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 28.75,
+          "end_s": 32.38999938964844,
+          "text": "WITH N THINGS WITH LINKS BETWEEN THEM DOCUMENTS THAT ARE LINKED",
+          "boundary": "continuation",
+          "gap_s": 0.34000396728515625
+        },
+        {
+          "begin_s": 32.730003356933594,
+          "end_s": 36.83000183105469,
+          "text": "UH N UH IT'S ACTUALLY IT'S RELATED TO RAPPLE",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 36.83000183105469,
+          "end_s": 42.160003662109375,
+          "text": "BUT IT'S NOT ACTUALLY THAT TH THIS IS SOMETHING I HAVEN'T ACTUALLY BEEN WORKING ON FOR A COUPLE OF MONTHS NOW",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 42.160003662109375,
+          "end_s": 46.33000183105469,
+          "text": "UH JUST BECAUSE I CAME UP WITH SOMETHING MORE INTERESTING THAT I'VE BEEN WORKING ON",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 46.33000183105469,
+          "end_s": 54.599998474121094,
+          "text": "BUT UH TH AT THE TIME BASICALLY I'D BEEN TRYING TO USE P. L. S. A. AND THOSE TYPES OF MODELS ON WEB PAGES",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    },
+    {
+      "meeting_id": "ES2014d",
+      "speaker_id": "MEE053",
+      "duration_s": 56.50000045821071,
+      "speech_s": 17.49000046774745,
+      "n_turn_bounds": 5,
+      "n_cont_bounds": 0,
+      "n_fires": 5,
+      "n_hits": 5,
+      "n_resume_fires": 0,
+      "n_false_fires": 0,
+      "n_dup_or_silence_fires": 0,
+      "latencies_s": [
+        0.4500000663101673,
+        0.4199996180832386,
+        0.6400008387863636,
+        0.6700015254318714,
+        0.4999995417892933
+      ],
+      "wer": 0.575,
+      "median_chunk_ms": 184.72013156861067,
+      "n_chunks_gated": 71,
+      "n_chunks_total": 113,
+      "n_cancelled_candidates": 0,
+      "fires_s": [
+        3.5,
+        13.0,
+        22.5,
+        35.5,
+        54.5
+      ],
+      "events": [
+        {
+          "begin_s": 0.0,
+          "end_s": 3.0499999336898327,
+          "text": "SO IS WHY NOT SAVE THAT",
+          "boundary": "turn_final",
+          "gap_s": 6.690000295639038
+        },
+        {
+          "begin_s": 9.74000022932887,
+          "end_s": 12.580000381916761,
+          "text": "DO YOU WANT TO REPLACE EXISTING FILE NO",
+          "boundary": "turn_final",
+          "gap_s": 6.129999160766602
+        },
+        {
+          "begin_s": 18.709999542683363,
+          "end_s": 21.859999161213636,
+          "text": "I ACTUALLY TRIED TO TRANSFER IT TO MY DOCUMENTS BUT",
+          "boundary": "turn_final",
+          "gap_s": 11.489999771118164
+        },
+        {
+          "begin_s": 33.3499989323318,
+          "end_s": 34.82999847456813,
+          "text": "SPREADSHEET",
+          "boundary": "turn_final",
+          "gap_s": 12.200000762939453
+        },
+        {
+          "begin_s": 47.02999923750758,
+          "end_s": 50.18000076338649,
+          "text": "YEAH BUT I'VE TA UH RIGHT I'LL JUST RE DO IT",
+          "boundary": "merged",
+          "gap_s": 0.0
+        },
+        {
+          "begin_s": 50.18000076338649,
+          "end_s": 54.00000045821071,
+          "text": "THAT'S THE EASIEST WAY",
+          "boundary": "turn_final",
+          "gap_s": null
+        }
+      ]
+    }
+  ]
+}
