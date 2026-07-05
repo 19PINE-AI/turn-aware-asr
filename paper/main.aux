@@ -52,14 +52,14 @@
 \@writefile{toc}{\contentsline {paragraph}{Task.}{5}{paragraph*.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Model.}{5}{paragraph*.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Inference policy.}{5}{paragraph*.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}The training recipe: one causal rule}{5}{section.4}\protected@file@percent }
-\newlabel{sec:recipe}{{4}{5}{The training recipe: one causal rule}{section.4}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces The landscape (verified July 2026; details in \S  \ref  {sec:related}). ``Turn detectors'' = Smart Turn (acoustic), LiveKit and TEN (text/audio EOU): separate models beside a recognizer. ``Cascade'' = VAD + silence timeout + separate ASR, the deployed default and our measured baseline in Figure\nobreakspace  {}\ref  {fig:tradeoff}. Kyutai STT's semantic-VAD head and Parakeet's \texttt  {<EOU>} token are open-weights capabilities without published training accounts; Smart Turn is the one fully open recipe, but it does not transcribe.\relax }}{6}{table.caption.6}\protected@file@percent }
 \newlabel{tab:matrix}{{1}{6}{The landscape (verified July 2026; details in \S \ref {sec:related}). ``Turn detectors'' = Smart Turn (acoustic), LiveKit and TEN (text/audio EOU): separate models beside a recognizer. ``Cascade'' = VAD + silence timeout + separate ASR, the deployed default and our measured baseline in Figure~\ref {fig:tradeoff}. Kyutai STT's semantic-VAD head and Parakeet's \texttt {<EOU>} token are open-weights capabilities without published training accounts; Smart Turn is the one fully open recipe, but it does not transcribe.\relax }{table.caption.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {The minimal-pair device.} Each complete utterance appears twice in the training data: without a silence tail (target: transcript only) and with a 0.3--1.2\,s tail (target: transcript + marker). The only difference between the opposite-labeled examples is the observable the model must key on. This construction is what removes the training pathology of Figure\nobreakspace  {}\ref  {fig:oscillation}.\relax }}{6}{figure.caption.7}\protected@file@percent }
 \newlabel{fig:minimalpair}{{3}{6}{\textbf {The minimal-pair device.} Each complete utterance appears twice in the training data: without a silence tail (target: transcript only) and with a 0.3--1.2\,s tail (target: transcript + marker). The only difference between the opposite-labeled examples is the observable the model must key on. This construction is what removes the training pathology of Figure~\ref {fig:oscillation}.\relax }{figure.caption.7}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \texttt  {<EAGER\_END\_SPEECH>}\texttt  {<END\_SPEECH>}. Schemas 1--2 are the minimal-pair device (Figure\nobreakspace  {}\ref  {fig:minimalpair}); 4--5 teach pause discrimination from the \emph  {prefix} (hold only when the words so far are incomplete); 7--8 cover the silence-heavy channel shape that pure-utterance corpora never show (\S  \ref  {sec:eval}).\relax }}{6}{table.caption.8}\protected@file@percent }
-\newlabel{tab:schemas}{{2}{6}{The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \eager \fire . Schemas 1--2 are the minimal-pair device (Figure~\ref {fig:minimalpair}); 4--5 teach pause discrimination from the \emph {prefix} (hold only when the words so far are incomplete); 7--8 cover the silence-heavy channel shape that pure-utterance corpora never show (\S \ref {sec:eval}).\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}The training recipe: one causal rule}{6}{section.4}\protected@file@percent }
+\newlabel{sec:recipe}{{4}{6}{The training recipe: one causal rule}{section.4}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \texttt  {<EAGER\_END\_SPEECH>}\texttt  {<END\_SPEECH>}. Schemas 1--2 are the minimal-pair device (Figure\nobreakspace  {}\ref  {fig:minimalpair}); 4--5 teach pause discrimination from the \emph  {prefix} (hold only when the words so far are incomplete); 7--8 cover the silence-heavy channel shape that pure-utterance corpora never show (\S  \ref  {sec:eval}).\relax }}{7}{table.caption.8}\protected@file@percent }
+\newlabel{tab:schemas}{{2}{7}{The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \eager \fire . Schemas 1--2 are the minimal-pair device (Figure~\ref {fig:minimalpair}); 4--5 teach pause discrimination from the \emph {prefix} (hold only when the words so far are incomplete); 7--8 cover the silence-heavy channel shape that pure-utterance corpora never show (\S \ref {sec:eval}).\relax }{table.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe (clairvoyant labels), holdout accuracy oscillates for the entire run between a \emph  {fire-mode} attractor (fire class ${\approx }1.0$, hold class ${\approx }0.4$) and a \emph  {no-fire-mode} attractor (fire ${\approx }0.1$, hold ${\approx }1.0$): the pools assign opposite targets to causally identical audio, so no single policy satisfies both. Right: the causal recipe of \S  \ref  {sec:recipe} --- same architecture, same LoRA recipe, same data volume, \emph  {only the labels changed} --- climbs monotonically, and both classes sit at ceiling \emph  {simultaneously} from step 3k on.\relax }}{7}{figure.caption.9}\protected@file@percent }
 \newlabel{fig:oscillation}{{4}{7}{\textbf {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe (clairvoyant labels), holdout accuracy oscillates for the entire run between a \emph {fire-mode} attractor (fire class ${\approx }1.0$, hold class ${\approx }0.4$) and a \emph {no-fire-mode} attractor (fire ${\approx }0.1$, hold ${\approx }1.0$): the pools assign opposite targets to causally identical audio, so no single policy satisfies both. Right: the causal recipe of \S \ref {sec:recipe} --- same architecture, same LoRA recipe, same data volume, \emph {only the labels changed} --- climbs monotonically, and both classes sit at ceiling \emph {simultaneously} from step 3k on.\relax }{figure.caption.9}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}What went wrong eight times: clairvoyant labels}{7}{section.5}\protected@file@percent }
@@ -67,9 +67,9 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Two ways offline-derived supervision demands clairvoyance.} (a)\nobreakspace  {}Offline clips inherit forced-alignment cuts at the end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph  {hold} --- and the condition ``speech ended, no silence yet'' is one deployment never presents, because silence keeps arriving after a real speaker stops. (b)\nobreakspace  {}Disfluency-vs-boundary pause labels are keyed on who speaks \emph  {next}; at the decision point the prefixes are statistically indistinguishable (the two classes' silence-gap distributions overlap almost completely).\relax }}{8}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:contradictions}{{5}{8}{\textbf {Two ways offline-derived supervision demands clairvoyance.} (a)~Offline clips inherit forced-alignment cuts at the end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph {hold} --- and the condition ``speech ended, no silence yet'' is one deployment never presents, because silence keeps arriving after a real speaker stops. (b)~Disfluency-vs-boundary pause labels are keyed on who speaks \emph {next}; at the decision point the prefixes are statistically indistinguishable (the two classes' silence-gap distributions overlap almost completely).\relax }{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {paragraph}{Mechanism 1: the trailing-silence clip cut.}{8}{paragraph*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Mechanism 2: labels keyed on who speaks next.}{8}{paragraph*.12}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {The supervision-composition record.} Eight recipes, one architecture; each row adds one labeled pool (cumulative). ``Early'' latencies are negative: the model fires seconds before the turn ends. Every fix moved the model \emph  {along} the apparent frontier, never off it --- until the labels themselves changed.\relax }}{9}{table.caption.13}\protected@file@percent }
 \newlabel{tab:composition}{{3}{9}{\textbf {The supervision-composition record.} Eight recipes, one architecture; each row adds one labeled pool (cumulative). ``Early'' latencies are negative: the model fires seconds before the turn ends. Every fix moved the model \emph {along} the apparent frontier, never off it --- until the labels themselves changed.\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {paragraph}{Mechanism 2: labels keyed on who speaks next.}{9}{paragraph*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The record, and the intervention that falsified the frontier.}{9}{paragraph*.14}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }}{10}{table.caption.15}\protected@file@percent }
 \newlabel{tab:silappend}{{4}{10}{\textbf {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }{table.caption.15}{}}
@@ -78,11 +78,11 @@
 \newlabel{sec:eval}{{6}{10}{Measuring what deployment sees}{section.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{Material and ground truth.}{10}{paragraph*.17}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Finding 1: silence incompetence.}{10}{paragraph*.19}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Finding 2: the ranking inverts.}{10}{paragraph*.21}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Silence incompetence.} Spurious fires of the ungated mixed-pools model against the silence content of each benchmark stretch: the model hallucinates text and sprays markers on silence at ${\sim }1.9$\,fires/s ($r=0.997$), because every pre-diagnosis training example begins with speech while a real channel is mostly silence (13 of 22 minutes here). Consequence: \emph  {ungated} recall is uninterpretable --- a random 1.9\,Hz spammer scores 0.96 recall against the tolerance window. The fix costs one line (RMS energy gate), and the causal recipe additionally bakes silence schemas into training (Table\nobreakspace  {}\ref  {tab:schemas}, \#7--8).\relax }}{11}{figure.caption.18}\protected@file@percent }
 \newlabel{fig:silence}{{6}{11}{\textbf {Silence incompetence.} Spurious fires of the ungated mixed-pools model against the silence content of each benchmark stretch: the model hallucinates text and sprays markers on silence at ${\sim }1.9$\,fires/s ($r=0.997$), because every pre-diagnosis training example begins with speech while a real channel is mostly silence (13 of 22 minutes here). Consequence: \emph {ungated} recall is uninterpretable --- a random 1.9\,Hz spammer scores 0.96 recall against the tolerance window. The fix costs one line (RMS energy gate), and the causal recipe additionally bakes silence schemas into training (Table~\ref {tab:schemas}, \#7--8).\relax }{figure.caption.18}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {The ranking inversion.} Left: the legacy offline benchmark (fire-rate on clips cut at end-of-speech). Right: the deployment-matched replay benchmark (false fires per speech-minute, energy gate on; full metrics in Table\nobreakspace  {}\ref  {tab:main}). The offline champion fires 89 times per speech-minute mid-utterance --- its offline strength \emph  {is} a premature-fire pathology once audio keeps flowing. The opposed-pools model, written off at 10\% offline, is the best prior endpointer. Both historical ship decisions were wrong.\relax }}{11}{figure.caption.20}\protected@file@percent }
 \newlabel{fig:inversion}{{7}{11}{\textbf {The ranking inversion.} Left: the legacy offline benchmark (fire-rate on clips cut at end-of-speech). Right: the deployment-matched replay benchmark (false fires per speech-minute, energy gate on; full metrics in Table~\ref {tab:main}). The offline champion fires 89 times per speech-minute mid-utterance --- its offline strength \emph {is} a premature-fire pathology once audio keeps flowing. The opposed-pools model, written off at 10\% offline, is the best prior endpointer. Both historical ship decisions were wrong.\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {paragraph}{Finding 2: the ranking inverts.}{11}{paragraph*.21}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}Endpointing results}{11}{section.7}\protected@file@percent }
 \newlabel{sec:results}{{7}{11}{Endpointing results}{section.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{Dominance, and escaping the curve.}{11}{paragraph*.23}\protected@file@percent }
@@ -99,24 +99,31 @@
 \newlabel{fig:biasing}{{8}{13}{\textbf {Context biasing: the capability with no public numbers.} (a)~Earnings-22 entity recall without context, with the relevant hotword prefix, and the hallucination rate under a distractor prefix (150 utterances; LLM-extracted proper-noun entities). (b)~Recall vs seconds of unrelated speech interposed between prefix and target: the ${\approx }{+}30$\,pp advantage does not decay with session age.\relax }{figure.caption.27}{}}
 \@writefile{toc}{\contentsline {paragraph}{The advantage survives session length.}{13}{paragraph*.26}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Offline ASR cost --- measured and attributed.}{13}{paragraph*.28}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Offline WER regression} (LibriSpeech, full official splits, single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' = fraction of clips where the model emitted the endpoint marker (offline clips end at or near end-of-speech; base never fires because its marker rows are untrained).\relax }}{14}{table.caption.29}\protected@file@percent }
+\newlabel{tab:wer}{{6}{14}{\textbf {Offline WER regression} (LibriSpeech, full official splits, single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' = fraction of clips where the model emitted the endpoint marker (offline clips end at or near end-of-speech; base never fires because its marker rows are untrained).\relax }{table.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Closing the loop on \S  \ref  {sec:motivation}: dictation and spelled entities}{14}{section.9}\protected@file@percent }
+\newlabel{sec:dictation}{{9}{14}{Closing the loop on \S \ref {sec:motivation}: dictation and spelled entities}{section.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{The flagship model fails the dictation probe --- as predicted.}{14}{paragraph*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Five schemas close the gap.}{14}{paragraph*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The cost surface, reported as-is.}{14}{paragraph*.33}\protected@file@percent }
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Offline WER regression} (LibriSpeech, full official splits, single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' = fraction of clips where the model emitted the endpoint marker (offline clips end at or near end-of-speech; base never fires because its marker rows are untrained).\relax }}{14}{table.caption.29}\protected@file@percent }
-\newlabel{tab:wer}{{6}{14}{\textbf {Offline WER regression} (LibriSpeech, full official splits, single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' = fraction of clips where the model emitted the endpoint marker (offline clips end at or near end-of-speech; base never fires because its marker rows are untrained).\relax }{table.caption.29}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {9}Deployment reality check}{14}{section.9}\protected@file@percent }
-\newlabel{sec:serving}{{9}{14}{Deployment reality check}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{An OOD landmine.}{14}{paragraph*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The simulator was the bottleneck.}{14}{paragraph*.31}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Bound every resident state.}{14}{paragraph*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Lessons for streaming supervision: a checklist}{14}{section.10}\protected@file@percent }
-\newlabel{sec:checklist}{{10}{14}{Lessons for streaming supervision: a checklist}{section.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Left: premature end-of-turn fires per dictated 10-digit number and final-boundary behavior (window $+1.75$\,s). Right: exact-match rates on spelled names and emails without/with the user-profile context, and the wrong-profile intrusion rate. The dictation-extended model beats every timeout on premature fires while keeping sub-second final latency; its residual misses are $\sim $6 shredded-by-premature and $\sim $5 fires landing $\sim $2\,s after speech end, just outside the window.\relax }}{15}{table.caption.32}\protected@file@percent }
+\newlabel{tab:dictation}{{7}{15}{\textbf {Dictation and spelled-entity probes.} Left: premature end-of-turn fires per dictated 10-digit number and final-boundary behavior (window $+1.75$\,s). Right: exact-match rates on spelled names and emails without/with the user-profile context, and the wrong-profile intrusion rate. The dictation-extended model beats every timeout on premature fires while keeping sub-second final latency; its residual misses are $\sim $6 shredded-by-premature and $\sim $5 fires landing $\sim $2\,s after speech end, just outside the window.\relax }{table.caption.32}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Deployment reality check}{15}{section.10}\protected@file@percent }
+\newlabel{sec:serving}{{10}{15}{Deployment reality check}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{An OOD landmine.}{15}{paragraph*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The simulator was the bottleneck.}{15}{paragraph*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Bound every resident state.}{15}{paragraph*.36}\protected@file@percent }
 \citation{ekstedt2022vap}
 \citation{ma2019stacl}
 \citation{dehaan2019causal}
 \citation{schaeffer2023mirage}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)\nobreakspace  {}Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }}{15}{figure.caption.33}\protected@file@percent }
-\newlabel{fig:serving}{{9}{15}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)\nobreakspace  {}Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }}{16}{figure.caption.37}\protected@file@percent }
+\newlabel{fig:serving}{{9}{16}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }{figure.caption.37}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Lessons for streaming supervision: a checklist}{16}{section.11}\protected@file@percent }
+\newlabel{sec:checklist}{{11}{16}{Lessons for streaming supervision: a checklist}{section.11}{}}
 \citation{silero2021vad}
 \citation{raux2008optimizing}
 \citation{shannon2017improved}
@@ -131,16 +138,16 @@
 \citation{deepgram2026flux}
 \citation{openai2025semanticvad}
 \citation{assemblyai2025universalstreaming}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph  {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }}{17}{figure.caption.38}\protected@file@percent }
+\newlabel{fig:landscape}{{10}{17}{\textbf {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Related work}{17}{section.12}\protected@file@percent }
+\newlabel{sec:related}{{12}{17}{Related work}{section.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.39}\protected@file@percent }
 \citation{skantze2021review}
 \citation{ekstedt2020turngpt}
 \citation{ekstedt2022vap}
 \citation{stivers2009universals}
 \citation{levinson2015timing}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph  {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }}{16}{figure.caption.34}\protected@file@percent }
-\newlabel{fig:landscape}{{10}{16}{\textbf {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {11}Related work}{16}{section.11}\protected@file@percent }
-\newlabel{sec:related}{{11}{16}{Related work}{section.11}{}}
-\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{16}{paragraph*.35}\protected@file@percent }
 \citation{graves2012sequence}
 \citation{radford2023whisper}
 \citation{wan2026streaming}
@@ -155,12 +162,12 @@
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{17}{paragraph*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{17}{paragraph*.37}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{17}{paragraph*.38}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Serving.}{17}{paragraph*.39}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {12}Limitations}{17}{section.12}\protected@file@percent }
-\newlabel{sec:limits}{{12}{17}{Limitations}{section.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.40}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.41}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {13}Limitations}{18}{section.13}\protected@file@percent }
+\newlabel{sec:limits}{{13}{18}{Limitations}{section.13}{}}
 \citation{pineai2026whispercoding}
 \bibstyle{plainnat}
 \bibdata{refs}
@@ -209,19 +216,19 @@
 \bibcite{fastturn2026}{{43}{2026}{{Wang et~al.}}{{Wang, Xue, He, Hu, Wang, Wu, Ji, Zheng, Chen, Zhu, and Xie}}}
 \bibcite{xiao2024streamingllm}{{44}{2024}{{Xiao et~al.}}{{Xiao, Tian, Chen, Han, and Lewis}}}
 \bibcite{jalturn2026}{{45}{2026}{{Yang et~al.}}{{Yang, Pan, Qiu, and Bai}}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{22}{appendix.A}\protected@file@percent }
-\newlabel{app:labels}{{A}{22}{Label-specification details}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{22}{appendix.B}\protected@file@percent }
-\newlabel{app:eval}{{B}{22}{Benchmark specification and the corrected classifier}{appendix.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{22}{appendix.C}\protected@file@percent }
-\newlabel{app:tables}{{C}{22}{Additional results}{appendix.C}{}}
-\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{22}{paragraph*.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{22}{paragraph*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{22}{paragraph*.44}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{23}{table.caption.41}\protected@file@percent }
-\newlabel{tab:appconfirm}{{7}{23}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.41}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{23}{table.caption.43}\protected@file@percent }
-\newlabel{tab:apptimeout}{{8}{23}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.43}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Reproducibility}{23}{appendix.D}\protected@file@percent }
-\newlabel{app:repro}{{D}{23}{Reproducibility}{appendix.D}{}}
-\gdef \@abspage@last{23}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{23}{appendix.A}\protected@file@percent }
+\newlabel{app:labels}{{A}{23}{Label-specification details}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{23}{appendix.B}\protected@file@percent }
+\newlabel{app:eval}{{B}{23}{Benchmark specification and the corrected classifier}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{23}{appendix.C}\protected@file@percent }
+\newlabel{app:tables}{{C}{23}{Additional results}{appendix.C}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{23}{paragraph*.44}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{23}{paragraph*.46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{23}{paragraph*.48}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{24}{table.caption.45}\protected@file@percent }
+\newlabel{tab:appconfirm}{{8}{24}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.45}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{24}{table.caption.47}\protected@file@percent }
+\newlabel{tab:apptimeout}{{9}{24}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.47}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Reproducibility}{24}{appendix.D}\protected@file@percent }
+\newlabel{app:repro}{{D}{24}{Reproducibility}{appendix.D}{}}
+\gdef \@abspage@last{24}

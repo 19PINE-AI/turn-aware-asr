@@ -97,9 +97,33 @@ def ex(audio: np.ndarray, text: str, schema: str, source: str, **extra) -> dict:
 
 # ------------------------------------------------------------------ digits
 
+def trim_edges(clip: np.ndarray, thresh: float = 5e-3, keep_ms: int = 40) -> np.ndarray:
+    """Trim FSDD clip edge silence so within-group gaps are controlled by us,
+    not by the recordings (v11: probe misses traced to uncontrolled gaps)."""
+    rms = np.sqrt(np.convolve(clip ** 2, np.ones(160) / 160, mode="same"))
+    nz = np.nonzero(rms > thresh)[0]
+    if not len(nz):
+        return clip
+    a = max(0, nz[0] - int(SR * keep_ms / 1000))
+    b = min(len(clip), nz[-1] + int(SR * keep_ms / 1000))
+    return clip[a:b]
+
+
+def groups_for(k: int) -> tuple[int, ...]:
+    """Group a k-digit prefix the way a caller dictates it (3-3-4 pattern)."""
+    full, out = [3, 3, 4], []
+    for g in full:
+        if k <= 0:
+            break
+        out.append(min(g, k))
+        k -= min(g, k)
+    return tuple(out)
+
+
 def build_digit_examples(fsdd_dir: Path, rng: random.Random,
                          n_hold: int, n_fire: int, n_nosil: int) -> list[dict]:
     pool = load_fsdd(fsdd_dir, TRAIN_FSDD_SPEAKERS)
+    pool = {d: [trim_edges(c) for c in v] for d, v in pool.items()}
     logger.info("FSDD train pool sizes: %s", {d: len(v) for d, v in pool.items()})
     out = []
     # fire + hold share digit sequences (minimal-pair discipline)
@@ -109,15 +133,18 @@ def build_digit_examples(fsdd_dir: Path, rng: random.Random,
         if k < n_fire:
             audio, meta = build_digit_sequence(
                 pool, digits, rng, groups=(3, 3, 4),
-                pause_range=(0.4, 1.2), tail_s=rng.uniform(0.4, 1.2))
+                pause_range=(0.4, 1.2), gap_range=(0.05, 0.35),
+                tail_s=rng.uniform(0.4, 2.0))
             out.append(ex(audio, f"{meta['text']} {M}", "digit_fire", "fsdd"))
         if k < n_hold:
-            n_kept = rng.choice([3, 6])
+            # v11: ANY prefix length 1..9 (probe misses showed fires after a
+            # single leading digit — training had only 3/6-digit holds)
+            n_kept = rng.choice([1, 2, 3, 4, 5, 6, 7, 8, 9])
             part = digits[:n_kept]
-            groups = (3,) if n_kept == 3 else (3, 3)
             audio, meta = build_digit_sequence(
-                pool, part, rng, groups=groups,
-                pause_range=(0.4, 1.2), tail_s=rng.uniform(0.5, 1.5))
+                pool, part, rng, groups=groups_for(n_kept),
+                pause_range=(0.4, 1.2), gap_range=(0.05, 0.35),
+                tail_s=rng.uniform(0.5, 1.5))
             out.append(ex(audio, meta["text"], "digit_hold", "fsdd"))
     for _ in range(n_nosil):
         digits = [rng.randrange(10) for _ in range(10)]
@@ -218,6 +245,10 @@ def main():
     p.add_argument("--n-digit-nosil", type=int, default=200)
     p.add_argument("--n-spell-name", type=int, default=280)
     p.add_argument("--n-spell-email", type=int, default=280)
+    p.add_argument("--dup-pair-hold", type=float, default=0.0,
+                   help="Duplicate this fraction of pair_hold examples "
+                        "(v11: preserve the conversational hold share against "
+                        "dilution by the new schemas)")
     p.add_argument("--seed", type=int, default=10)
     args = p.parse_args()
     rng = random.Random(args.seed)
@@ -235,6 +266,11 @@ def main():
     logger.info("Built %d spelled examples", len(spell))
 
     examples = list(v9_examples) + digit + spell
+    if args.dup_pair_hold > 0:
+        ph = [e for e in examples if e["schema"] == "pair_hold"]
+        extra = rng.sample(ph, int(len(ph) * args.dup_pair_hold))
+        examples += [dict(e) for e in extra]
+        logger.info("Oversampled pair_hold: +%d copies", len(extra))
     rng.shuffle(examples)
     from collections import Counter
     logger.info("v10 schema counts: %s", Counter(e["schema"] for e in examples))

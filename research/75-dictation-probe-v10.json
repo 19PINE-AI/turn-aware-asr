@@ -1,0 +1,1716 @@
+{
+ "checkpoint": "checkpoints/semantic_endpoint_v10_es/best.pt",
+ "confirm_silent_chunks": 0,
+ "digit": {
+  "summary": {
+   "n_items": 50,
+   "premature_per_seq": 0.8,
+   "seqs_with_any_premature": 0.5,
+   "final_recall": 0.74,
+   "final_latency_p50": 0.573,
+   "digit_acc_mean": 0.948,
+   "runtime_s": 190.8
+  },
+  "timeout_baselines": [
+   {
+    "X": 0.5,
+    "premature_per_seq": 2.0,
+    "final_recall": 1.0,
+    "final_latency_s": 0.5
+   },
+   {
+    "X": 1.0,
+    "premature_per_seq": 0.74,
+    "final_recall": 1.0,
+    "final_latency_s": 1.0
+   }
+  ],
+  "per_item": [
+   {
+    "id": 0,
+    "n_fires": 1,
+    "fires_s": [
+     7.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.41999999999999993,
+    "digit_acc": 1.0,
+    "hyp": "nine eight one five one four two three five one  "
+   },
+   {
+    "id": 1,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.641,
+    "digit_acc": 1.0,
+    "hyp": "six zero eight three two nine zero three five zero  "
+   },
+   {
+    "id": 2,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.3930000000000007,
+    "digit_acc": 1.0,
+    "hyp": "seven seven two seven two three four zero four eight  "
+   },
+   {
+    "id": 3,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     2.0
+    ],
+    "n_premature": 2,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one   nine seven   three two nine four four eight two"
+   },
+   {
+    "id": 4,
+    "n_fires": 1,
+    "fires_s": [
+     2.0
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.9,
+    "hyp": "six, seven, eight, two   nine seven two eight four eight four"
+   },
+   {
+    "id": 5,
+    "n_fires": 1,
+    "fires_s": [
+     7.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.25100000000000033,
+    "digit_acc": 1.0,
+    "hyp": "two seven one nine three zero five two three zero  "
+   },
+   {
+    "id": 6,
+    "n_fires": 3,
+    "fires_s": [
+     1.0,
+     2.5,
+     4.0
+    ],
+    "n_premature": 3,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.9,
+    "hyp": "five   three four   nine   five three one two four eight"
+   },
+   {
+    "id": 7,
+    "n_fires": 4,
+    "fires_s": [
+     0.5,
+     1.5,
+     2.0,
+     9.0
+    ],
+    "n_premature": 3,
+    "final_recall": 1,
+    "final_latency_s": 1.0899999999999999,
+    "digit_acc": 0.8,
+    "hyp": "good   zero   x.   one zero one five six seven zero  "
+   },
+   {
+    "id": 8,
+    "n_fires": 4,
+    "fires_s": [
+     0.5,
+     1.5,
+     2.0,
+     4.5
+    ],
+    "n_premature": 4,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.7,
+    "hyp": "three   four   eight   'til the hill   nine eight six nine"
+   },
+   {
+    "id": 9,
+    "n_fires": 1,
+    "fires_s": [
+     2.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "three eight six   six four three four six four seven"
+   },
+   {
+    "id": 10,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5820000000000007,
+    "digit_acc": 0.8,
+    "hyp": "six and five   four one one nine two eight five three four  "
+   },
+   {
+    "id": 11,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6349999999999998,
+    "digit_acc": 1.0,
+    "hyp": "three zero five six two five six seven eight seven  "
+   },
+   {
+    "id": 12,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5730000000000004,
+    "digit_acc": 1.0,
+    "hyp": "seven two three six nine three three zero three one  "
+   },
+   {
+    "id": 13,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4939999999999998,
+    "digit_acc": 1.0,
+    "hyp": "four two seven three zero two eight zero three three  "
+   },
+   {
+    "id": 14,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6740000000000004,
+    "digit_acc": 1.0,
+    "hyp": "eight one eight zero three one eight six zero seven  "
+   },
+   {
+    "id": 15,
+    "n_fires": 1,
+    "fires_s": [
+     7.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4450000000000003,
+    "digit_acc": 1.0,
+    "hyp": "eight six eight eight two nine six one seven six  "
+   },
+   {
+    "id": 16,
+    "n_fires": 3,
+    "fires_s": [
+     1.0,
+     2.5,
+     9.0
+    ],
+    "n_premature": 2,
+    "final_recall": 1,
+    "final_latency_s": 0.7899999999999991,
+    "digit_acc": 0.9,
+    "hyp": "tho   zero zero   nine seven one zero seven zero six  "
+   },
+   {
+    "id": 17,
+    "n_fires": 3,
+    "fires_s": [
+     1.0,
+     2.5,
+     9.0
+    ],
+    "n_premature": 2,
+    "final_recall": 1,
+    "final_latency_s": 0.7219999999999995,
+    "digit_acc": 0.9,
+    "hyp": "hey   five six   four six five nine eight one nine  "
+   },
+   {
+    "id": 18,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six two five three zero seven nine six eight nine  "
+   },
+   {
+    "id": 19,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.7080000000000002,
+    "digit_acc": 1.0,
+    "hyp": "zero eight zero one seven nine four four zero three  "
+   },
+   {
+    "id": 20,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two six eight one two six zero seven three five  "
+   },
+   {
+    "id": 21,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.7930000000000001,
+    "digit_acc": 1.0,
+    "hyp": "six four zero five nine nine one nine nine seven  "
+   },
+   {
+    "id": 22,
+    "n_fires": 2,
+    "fires_s": [
+     2.0,
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "four seven nine   six four five three six three seven  "
+   },
+   {
+    "id": 23,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.33500000000000085,
+    "digit_acc": 1.0,
+    "hyp": "eight two two five three one zero one zero one  "
+   },
+   {
+    "id": 24,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5719999999999992,
+    "digit_acc": 1.0,
+    "hyp": "six   four eight one nine four seven four nine three  "
+   },
+   {
+    "id": 25,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     2.0
+    ],
+    "n_premature": 2,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.9,
+    "hyp": "a. th.ree   one two   three one seven seven zero five one"
+   },
+   {
+    "id": 26,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.7210000000000001,
+    "digit_acc": 1.0,
+    "hyp": "one eight two one three five two six six seven  "
+   },
+   {
+    "id": 27,
+    "n_fires": 2,
+    "fires_s": [
+     0.5,
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5709999999999997,
+    "digit_acc": 1.0,
+    "hyp": "nine   five four three five two one nine nine five  "
+   },
+   {
+    "id": 28,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5079999999999991,
+    "digit_acc": 1.0,
+    "hyp": "three   seven seven six seven nine two nine eight six  "
+   },
+   {
+    "id": 29,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.43299999999999983,
+    "digit_acc": 1.0,
+    "hyp": "one zero seven seven two seven six four three five  "
+   },
+   {
+    "id": 30,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5020000000000007,
+    "digit_acc": 1.0,
+    "hyp": "six   seven one eight six seven nine one six five  "
+   },
+   {
+    "id": 31,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6669999999999998,
+    "digit_acc": 1.0,
+    "hyp": "seven eight eight five zero five one four two five  "
+   },
+   {
+    "id": 32,
+    "n_fires": 3,
+    "fires_s": [
+     1.0,
+     2.0,
+     9.0
+    ],
+    "n_premature": 2,
+    "final_recall": 1,
+    "final_latency_s": 0.6329999999999991,
+    "digit_acc": 0.9,
+    "hyp": "one   to   three seven six four two three one nine  "
+   },
+   {
+    "id": 33,
+    "n_fires": 1,
+    "fires_s": [
+     7.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.681,
+    "digit_acc": 1.0,
+    "hyp": "seven four one four four nine eight seven two five  "
+   },
+   {
+    "id": 34,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.27800000000000047,
+    "digit_acc": 1.0,
+    "hyp": "five eight five three three six nine nine zero nine  "
+   },
+   {
+    "id": 35,
+    "n_fires": 2,
+    "fires_s": [
+     0.5,
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.673,
+    "digit_acc": 0.9,
+    "hyp": "five   three six eight seven seven eight one four one  "
+   },
+   {
+    "id": 36,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     8.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.5570000000000004,
+    "digit_acc": 1.0,
+    "hyp": "eight five three three seven zero five one three six  "
+   },
+   {
+    "id": 37,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.40200000000000014,
+    "digit_acc": 1.0,
+    "hyp": "seven nine five six zero one six three eight seven  "
+   },
+   {
+    "id": 38,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.3800000000000008,
+    "digit_acc": 1.0,
+    "hyp": "seven five one eight eight three seven five seven eight  "
+   },
+   {
+    "id": 39,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4339999999999993,
+    "digit_acc": 1.0,
+    "hyp": "eight two six four five six eight four four four  "
+   },
+   {
+    "id": 40,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five seven seven zero eight three one six three four  "
+   },
+   {
+    "id": 41,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.27699999999999925,
+    "digit_acc": 1.0,
+    "hyp": "zero one zero two one six zero six four four  "
+   },
+   {
+    "id": 42,
+    "n_fires": 3,
+    "fires_s": [
+     0.5,
+     1.5,
+     9.5
+    ],
+    "n_premature": 2,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.8,
+    "hyp": "fine   one   six three three two four three seven  "
+   },
+   {
+    "id": 43,
+    "n_fires": 3,
+    "fires_s": [
+     1.0,
+     2.5,
+     9.5
+    ],
+    "n_premature": 2,
+    "final_recall": 1,
+    "final_latency_s": 0.8360000000000003,
+    "digit_acc": 1.0,
+    "hyp": "five   seven two   four zero two eight four four nine  "
+   },
+   {
+    "id": 44,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     8.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.2889999999999997,
+    "digit_acc": 1.0,
+    "hyp": "four three four one six eight eight nine zero six  "
+   },
+   {
+    "id": 45,
+    "n_fires": 2,
+    "fires_s": [
+     1.0,
+     2.0
+    ],
+    "n_premature": 2,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "eight   seven four   two four three two nine one two"
+   },
+   {
+    "id": 46,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5979999999999999,
+    "digit_acc": 1.0,
+    "hyp": "nine two eight eight one eight six five one three  "
+   },
+   {
+    "id": 47,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6110000000000007,
+    "digit_acc": 1.0,
+    "hyp": "six three one zero seven zero eight eight four zero  "
+   },
+   {
+    "id": 48,
+    "n_fires": 1,
+    "fires_s": [
+     8.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6630000000000003,
+    "digit_acc": 1.0,
+    "hyp": "nine three nine one one six seven three nine zero  "
+   },
+   {
+    "id": 49,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 0.0,
+    "hyp": "four, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two, two,"
+   }
+  ]
+ },
+ "spelled": {
+  "summary": {
+   "name_none": 1.0,
+   "name_profile": 1.0,
+   "name_distractor": 0.975,
+   "email_none": 0.125,
+   "email_profile": 0.9,
+   "email_distractor": 0.075,
+   "email_spelled_none": 0.2,
+   "email_spelled_profile": 0.85,
+   "email_natural_none": 0.05,
+   "email_natural_profile": 0.95,
+   "intrusion_rate": 0.05
+  },
+  "per_item": [
+   {
+    "id": 0,
+    "kind": "name",
+    "style": "spelled",
+    "target": "kowalski",
+    "hyp_none": "My name is Anna Kowalski. That is spelled K, O, W, A, L, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Anna Kowalski. That is spelled K, O, W, A, L, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Anna Kowalski. That is spelled K, O, W, A, L, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 1,
+    "kind": "email",
+    "style": "spelled",
+    "target": "anna.kowalski@meridianhealth.org",
+    "hyp_none": "My email address is anna.kowalski@meridianhealth.org.   ",
+    "hit_none": 1,
+    "hyp_profile": "My email address is anna.kowalski@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is anna.kowalski@meridianhealth.org.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 2,
+    "kind": "name",
+    "style": "spelled",
+    "target": "szymanski",
+    "hyp_none": "My name is Markas Samanski. That is spelled S, Z, Y, M, A, N, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Marcus Szymanski. That is spelled S, Z, Y, M, A, N, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Markus Szymanski. That is spelled S, Z, Y, M, A, N, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 3,
+    "kind": "email",
+    "style": "natural",
+    "target": "marcus.szymanski@acmecorp.io",
+    "hyp_none": "My email address is markus.samanski@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is marcus.szymanski@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is markus.szymanski@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 4,
+    "kind": "name",
+    "style": "spelled",
+    "target": "nguyen",
+    "hyp_none": "My name is Lynn Gueyne. That is spelled N, G, U, Y, E, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Linh Nguyen. That is spelled N, G, U, Y, E, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Linn Guey. That is spelled N, G, U, Y, E, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 5,
+    "kind": "email",
+    "style": "spelled",
+    "target": "linh.nguyen@meridianhealth.org",
+    "hyp_none": "My email address is lin.h.nh.gu.ye.n@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is linh.nguyen@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is linaugustine@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 6,
+    "kind": "name",
+    "style": "spelled",
+    "target": "gallagher",
+    "hyp_none": "My name is Shavon Gallagher. That is spelled G, A, L, L, A, G, H, E, R.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Siobhan Gallagher. That is spelled G, A, L, L, A, G, H, E, R.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Shyvan Gallagher. That is spelled G, A, L, L, A, G, H, E, R.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 7,
+    "kind": "email",
+    "style": "natural",
+    "target": "siobhan.gallagher@acmecorp.io",
+    "hyp_none": "My email address is shivan.gallagher@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is siobhan.gallagher@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is shivon.galleger@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 8,
+    "kind": "name",
+    "style": "spelled",
+    "target": "bjornstad",
+    "hyp_none": "My name is Eric Biernstad. That is spelled B, J, O, R, N, S, T, A, D, E.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Erik Bjornstad. That is spelled B, J, O, R, N, S, T, A, D, E.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Eric Bjornsstedt. That is spelled B, J, O, R, N, S, T, A, D, E.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 9,
+    "kind": "email",
+    "style": "spelled",
+    "target": "erik.bjornstad@meridianhealth.org",
+    "hyp_none": "My email address is erik.bjornstedt@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is erik.bjornstad@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is erik.bjornsted@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 10,
+    "kind": "name",
+    "style": "spelled",
+    "target": "venkatesan",
+    "hyp_none": "My name is Priya Venkatesh A. N. That is spelled V, E, N, K, A, T, E, S, A, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Priya Venkatesan. That is spelled V, E, N, K, A, T, E, S, A, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Priya Venkatesh A. N. That is spelled V, E, N, K, A, T, E, S, A, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 11,
+    "kind": "email",
+    "style": "natural",
+    "target": "priya.venkatesan@gmail.com",
+    "hyp_none": "My email address is priya.benkejanson@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is priya.venkatesan@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is priya.benkejason@gmail.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 12,
+    "kind": "name",
+    "style": "spelled",
+    "target": "oshaughnessy",
+    "hyp_none": "My name is Declan O'Shannessy. That is spelled O, S, H, A, U, G, H, N, E, S, S, Y.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Declan O'Shaughnessy. That is spelled O, S, H, A, U, G, H, N, E, S, S, Y.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Declan O'Shannessy. That is spelled O, S, H, A, U, G, H, N, E, S, S, Y.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 13,
+    "kind": "email",
+    "style": "spelled",
+    "target": "declan.oshaughnessy@outlook.com",
+    "hyp_none": "My email address is declan.ohshawnescy@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is declan.oshaughnessy@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is declan.ochasmukeh@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 14,
+    "kind": "name",
+    "style": "spelled",
+    "target": "beauchamp",
+    "hyp_none": "My name is Mirea B\u0435\u0447\u0430um. That is spelled B, E, A, U, C, H, A, M, P.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Mireille Beauchamp. That is spelled B, E, A, U, C, H, A, M, P.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Mirea B\u0435\u0447\u0430ump. That is spelled B, E, A, U, C, H, A, M, P.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 15,
+    "kind": "email",
+    "style": "natural",
+    "target": "mireille.beauchamp@outlook.com",
+    "hyp_none": "My email address is mirey.beacham@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is mireille.beauchamp@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is mireille.beacham@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 16,
+    "kind": "name",
+    "style": "spelled",
+    "target": "wojciechowski",
+    "hyp_none": "My name is Tomasz Wojcikowski. That is spelled W, O, J, C, I, E, C, H, O, W, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Tomasz Wojciechowski. That is spelled W, O, J, C, I, E, C, H, O, W, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Tomasz Wojcikowski. That is spelled W, O, J, C, I, E, C, H, O, W, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 17,
+    "kind": "email",
+    "style": "spelled",
+    "target": "tomasz.wojciechowski@outlook.com",
+    "hyp_none": "My email address is tomasz.wojcikowski@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is tomasz.wojciechowski@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is tomaz.wojcicechoww.s.ki@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 18,
+    "kind": "name",
+    "style": "spelled",
+    "target": "nibhriain",
+    "hyp_none": "My name is Ewa Nibhrainen. That is spelled N, I, B, H, R, I, A, I, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Aoife Ni Bhriain. That is spelled N, I, B, H, R, I, A, I, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Ewa Nibberian. That is spelled N, I, B, H, R, I, A, I, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 19,
+    "kind": "email",
+    "style": "natural",
+    "target": "aoife.nibhriain@meridianhealth.org",
+    "hyp_none": "My email address is etha.nibryan@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is e. a. nibhriain@meridianhealth.org.   ",
+    "hit_profile": 0,
+    "hyp_distractor": "My email address is etha.nibryan@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 20,
+    "kind": "name",
+    "style": "spelled",
+    "target": "kjaergaard",
+    "hyp_none": "My name is Humeric Jagergaard. That is spelled K, J, A, E, R, G, A, A, R, D.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Henrik Kjaergaard. That is spelled K, J, A, E, R, G, A, A, R, D.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Katerine Jagergardt. That is spelled K, J, A, E, R, G, A, A, R, D.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 21,
+    "kind": "email",
+    "style": "spelled",
+    "target": "henrik.kjaergaard@pine.ai",
+    "hyp_none": "My email address is henrik.kjagergaard@pine.ai.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is henrik.kjaergaard@pine.ai.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is henrik.kjagergaard@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 22,
+    "kind": "name",
+    "style": "spelled",
+    "target": "izquierdo",
+    "hyp_none": "My name is Himei Na Iskeyardo. That is spelled I, Z, Q, U, I, E, R, D, O.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Ximena Izquierdo. That is spelled I, Z, Q, U, I, E, R, D, O.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Himei Na Isquierdo. That is spelled I, Z, Q, U, I, E, R, D, O.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 23,
+    "kind": "email",
+    "style": "natural",
+    "target": "ximena.izquierdo@meridianhealth.org",
+    "hyp_none": "My email address is hemanne.iskierdo@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is ximena.izquierdo@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is himena.iskierdo@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 24,
+    "kind": "name",
+    "style": "spelled",
+    "target": "featherstonhaugh",
+    "hyp_none": "My name is Bartholomew Fancher. That is spelled F, E, A, T, H, E, R, S, T, O, N, H, A, U, G, H.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Bartholomew Featherstonhaugh. That is spelled F, E, A, T, H, E, R, S, T, O, N, H, A, U, G, H.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Bartholomew Fancher. That is spelled F, E, A, T, H, E, R, S, T, O, N, H, A, U, G, H.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 25,
+    "kind": "email",
+    "style": "spelled",
+    "target": "bartholomew.featherstonhaugh@gmail.com",
+    "hyp_none": "My email address is bartholmew.fanshaw@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is bartholomew.featherstonhaugh@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is bartholme.wang@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 26,
+    "kind": "name",
+    "style": "spelled",
+    "target": "caulfield",
+    "hyp_none": "My name is Serafim Caulfield. That is spelled C, A, U, L, F, I, E, L, D.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Saoirse Caulfield. That is spelled C, A, U, L, F, I, E, L, D.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Serafim Caulfield. That is spelled C, A, U, L, F, I, E, L, D.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 27,
+    "kind": "email",
+    "style": "natural",
+    "target": "saoirse.caulfield@meridianhealth.org",
+    "hyp_none": "My email address is sasha.cullfield@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is saoirse.caulfield@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is svera.caulfield@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 28,
+    "kind": "name",
+    "style": "spelled",
+    "target": "blaszczyk",
+    "hyp_none": "My name is Piotr Blazzyk. That is spelled B, L, A, S, Z, C, Z, Y, K.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Piotr Blaszczyk. That is spelled B, L, A, S, Z, C, Z, Y, K.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Piotr Blazszyk. That is spelled B, L, A, S, Z, C, Z, Y, K.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 29,
+    "kind": "email",
+    "style": "spelled",
+    "target": "piotr.blaszczyk@acmecorp.io",
+    "hyp_none": "My email address is piotr.blazek@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is piotr.blaszczyk@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is pietr.blazsicz@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 30,
+    "kind": "name",
+    "style": "spelled",
+    "target": "thorvaldsen",
+    "hyp_none": "My name is Ingrid Thorvaldsen. That is spelled T, H, O, R, V, A, L, D, S, E, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Ingrid Thorvaldsson. That is spelled T, H, O, R, V, A, L, D, S, E, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Ingrid Torv\u00e5lsen. That is spelled T, H, O, R, V, A, L, D, S, E, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 31,
+    "kind": "email",
+    "style": "natural",
+    "target": "ingrid.thorvaldsen@acmecorp.io",
+    "hyp_none": "My email address is ingrid.torvalsson@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is ingrid.thorvaldsen@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is ingrid.torvalsson@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 32,
+    "kind": "name",
+    "style": "spelled",
+    "target": "llewellyn",
+    "hyp_none": "My name is Riele Weyn. That is spelled L, L, E, W, E, L, L, Y, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Rhys Llewellyn. That is spelled L, L, E, W, E, L, L, Y, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Gwendolyn Postlethwaite. That is spelled L, L, E, W, E, L, L, Y, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 33,
+    "kind": "email",
+    "style": "spelled",
+    "target": "rhys.llewellyn@meridianhealth.org",
+    "hyp_none": "My email address is reese.llewellyn@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is rhi.s.llewellyn@meridianhealth.org.   ",
+    "hit_profile": 0,
+    "hyp_distractor": "My email address is reese.llewellyn@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 34,
+    "kind": "name",
+    "style": "spelled",
+    "target": "zielinska",
+    "hyp_none": "My name is Katarzyna Zielinska. That is spelled Z, I, E, L, I, N, S, K, A.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Katarzyna Zielinska. That is spelled Z, I, E, L, I, N, S, K, A.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Katarzyna Zielinska. That is spelled Z, I, E, L, I, N, S, K, A.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 35,
+    "kind": "email",
+    "style": "natural",
+    "target": "katarzyna.zielinska@gmail.com",
+    "hyp_none": "My email address is katarzyna.zielinska@gmail.com.   ",
+    "hit_none": 1,
+    "hyp_profile": "My email address is katarzyna.zielinska@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is katarzyna.zielinska@gmail.com.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 36,
+    "kind": "name",
+    "style": "spelled",
+    "target": "macgiolla",
+    "hyp_none": "My name is Owen MacGiallo. That is spelled M, A, C, G, I, O, L, L, A.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Eoin Mac Giolla. That is spelled M, A, C, G, I, O, L, L, A.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Owen MacGiallo. That is spelled M, A, C, G, I, O, L, L, A.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 37,
+    "kind": "email",
+    "style": "spelled",
+    "target": "eoin.macgiolla@gmail.com",
+    "hyp_none": "My email address is oien.macgiallo@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is oin.macgiolla@gmail.com.   ",
+    "hit_profile": 0,
+    "hyp_distractor": "My email address is oinn.macgiallo@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 38,
+    "kind": "name",
+    "style": "spelled",
+    "target": "duchesne",
+    "hyp_none": "My name is Marguerite Duchesne. That is spelled D, U, C, H, E, S, N, E.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Marguerite Duchesne. That is spelled D, U, C, H, E, S, N, E.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Marguerite Duchesne. That is spelled D, U, C, H, E, S, N, E.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 39,
+    "kind": "email",
+    "style": "natural",
+    "target": "marguerite.duchesne@gmail.com",
+    "hyp_none": "My email address is marguerite.duchene@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is marguerite.duchesne@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is marguerite.duchesne@gmail.com.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 40,
+    "kind": "name",
+    "style": "spelled",
+    "target": "oskarsson",
+    "hyp_none": "My name is Vanessa Carson. That is spelled O, S, K, A, R, S, S, O, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Sven Oskarsson. That is spelled O, S, K, A, R, S, S, O, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Spenner Skarsten. That is spelled O, S, K, A, R, S, S, O, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 41,
+    "kind": "email",
+    "style": "spelled",
+    "target": "sven.oskarsson@acmecorp.io",
+    "hyp_none": "My email address is spen.oskaren@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is sven.oskarsson@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is spen.fitzwilliam@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 42,
+    "kind": "name",
+    "style": "spelled",
+    "target": "whelan",
+    "hyp_none": "My name is Niaof Wehlen. That is spelled W, H, E, L, A, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Niamh Whelan. That is spelled W, H, E, L, A, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Nia of Weyland. That is spelled W, H, E, L, A, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 43,
+    "kind": "email",
+    "style": "natural",
+    "target": "niamh.whelan@acmecorp.io",
+    "hyp_none": "My email address is niaf.wyman@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is niamh.whelan@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is neva.weyland@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 44,
+    "kind": "name",
+    "style": "spelled",
+    "target": "przybylski",
+    "hyp_none": "My name is Casimier Purbzikiewicz. That is spelled P, R, Z, Y, B, Y, L, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Casimir Przybylski. That is spelled P, R, Z, Y, B, Y, L, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Casimier Prazzybiewl. I'm a customer since 2024.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 45,
+    "kind": "email",
+    "style": "spelled",
+    "target": "casimir.przybylski@pine.ai",
+    "hyp_none": "My email address is casimier.perbilske@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is casimier.przybylski@pine.ai.   ",
+    "hit_profile": 0,
+    "hyp_distractor": "My email address is casimier.przybiewlsskai@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 46,
+    "kind": "name",
+    "style": "spelled",
+    "target": "postlethwaite",
+    "hyp_none": "My name is Gwendolen Pothwaeit. That is spelled P, O, S, T, L, E, T, H, W, A, I, T, E.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Gwendolyn Postlethwaite. That is spelled P, O, S, T, L, E, T, H, W, A, I, T, E.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Gwendolen Postleitner. That is spelled P, O, S, T, L, E, T, H, W, A, I, T, E.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 47,
+    "kind": "email",
+    "style": "natural",
+    "target": "gwendolyn.postlethwaite@outlook.com",
+    "hyp_none": "My email address is gwendolen.posseltwheat@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is gwendolyn.postlethwaite@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is gwendolen.pawson@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 48,
+    "kind": "name",
+    "style": "spelled",
+    "target": "sondergaard",
+    "hyp_none": "My name is Lars Ondergaard. That is spelled S, O, N, D, E, R, G, A, A, R, D.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Lars Sondergaard. That is spelled S, O, N, D, E, R, G, A, A, R, D.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Lars S\u00f8ndergaard. That is spelled S, O, N, D, E, R, G, A, A, R, D.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 49,
+    "kind": "email",
+    "style": "spelled",
+    "target": "lars.sondergaard@pine.ai",
+    "hyp_none": "My email address is lars.sondergaard@pine.ai.   ",
+    "hit_none": 1,
+    "hyp_profile": "My email address is lars.sondergaard@pine.ai.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is lars.sondergaard@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 50,
+    "kind": "name",
+    "style": "spelled",
+    "target": "kavanagh",
+    "hyp_none": "My name is Royce Kavanagh. That is spelled K, A, V, A, N, A, G, H.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Roisin Kavanagh. That is spelled K, A, V, A, N, A, G, H.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Roycein Kavanagh. That is spelled K, A, V, A, N, A, G, H.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 51,
+    "kind": "email",
+    "style": "natural",
+    "target": "roisin.kavanagh@outlook.com",
+    "hyp_none": "My email address is reynolds.cavanaugh@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is roisin.kavanagh@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is reynolds.kavanaugh@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 52,
+    "kind": "name",
+    "style": "spelled",
+    "target": "grzegorczyk",
+    "hyp_none": "My name is Bigniew Grzegorzewicz. That is spelled G, R, Z, E, G, O, R, C, Z, Y, K.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Zbigniew Grzegorzczyk. That is spelled G, R, Z, E, G, O, R, C, Z, Y, K.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Bignievee Grzeczkowski. That is spelled G, R, Z, E, G, O, R, C, Z, Y, K.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 53,
+    "kind": "email",
+    "style": "spelled",
+    "target": "zbigniew.grzegorczyk@gmail.com",
+    "hyp_none": "My email address is bigniev.grzegeckowski@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is zbigniew.grzegorczyk@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is clodagh.meehan@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 1
+   },
+   {
+    "id": 54,
+    "kind": "name",
+    "style": "spelled",
+    "target": "fitzwilliam",
+    "hyp_none": "My name is May Fitzwilliam. That is spelled F, I, T, Z, W, I, L, L, I, A, M.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Maeve Fitzwilliam. That is spelled F, I, T, Z, W, I, L, L, I, A, M.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is May Fitzwilliam. That is spelled F, I, T, Z, W, I, L, L, I, A, M.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 55,
+    "kind": "email",
+    "style": "natural",
+    "target": "maeve.fitzwilliam@meridianhealth.org",
+    "hyp_none": "My email address is mave.fitzwilliam@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is maeve.fitzwilliam@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is nave.fitswilliam@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 56,
+    "kind": "name",
+    "style": "spelled",
+    "target": "vestergaard",
+    "hyp_none": "My name is Anders Vestergaard. That is spelled V, E, S, T, E, R, G, A, A, R, D.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Anders Vestergaard. That is spelled V, E, S, T, E, R, G, A, A, R, D.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Anders Vestergaard. That is spelled V, E, S, T, E, R, G, A, A, R, D.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 57,
+    "kind": "email",
+    "style": "spelled",
+    "target": "anders.vestergaard@outlook.com",
+    "hyp_none": "My email address is anders.steurer@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is anders.vestergaard@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is anders.steurer@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 58,
+    "kind": "name",
+    "style": "spelled",
+    "target": "brennan",
+    "hyp_none": "My name is Orlif Brennan. That is spelled B, R, E, N, N, A, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Orlaith Brennan. That is spelled B, R, E, N, N, A, N, E.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Orlif Brennan. That is spelled B, R, E, N, N, A, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 59,
+    "kind": "email",
+    "style": "natural",
+    "target": "orlaith.brennan@acmecorp.io",
+    "hyp_none": "My email address is orlif.brennen@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is orlaith.brennan@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is orlif.brennan@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 60,
+    "kind": "name",
+    "style": "spelled",
+    "target": "szczepanski",
+    "hyp_none": "My name is Wojciech Zsicczek. That is spelled S, Z, C, Z, E, P, A, N, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Wojtek Szczepanski. That is spelled S, Z, C, Z, E, P, A, N, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Wojciech Zsyczczek. That is spelled S, Z, C, Z, E, P, A, N, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 61,
+    "kind": "email",
+    "style": "spelled",
+    "target": "wojtek.szczepanski@outlook.com",
+    "hyp_none": "My email address is voytech.szczepanfska@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is wojtek.szczepanski@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is voytech.gaponski@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 62,
+    "kind": "name",
+    "style": "spelled",
+    "target": "rutherford",
+    "hyp_none": "My name is the Saul Rutherford. That is spelled R, U, T, H, E, R, F, O, R, D.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Isolde Rutherford. That is spelled R, U, T, H, E, R, F, O, R, D.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Thessel Rutherfod. That is spelled R, U, T, H, E, R, F, O, R, D.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 63,
+    "kind": "email",
+    "style": "natural",
+    "target": "isolde.rutherford@outlook.com",
+    "hyp_none": "My email address is asoul.rutherford@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is isolde.rutherford@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is kozlov.rutherford@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 64,
+    "kind": "name",
+    "style": "spelled",
+    "target": "haraldsen",
+    "hyp_none": "My name is Bjorn Haraldsen. That is spelled H, A, R, A, L, D, S, E, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Bjorn Haraldsen. That is spelled H, A, R, A, L, D, S, E, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Bjorn Haraldsen. That is spelled H, A, R, A, L, D, S, E, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 65,
+    "kind": "email",
+    "style": "spelled",
+    "target": "bjorn.haraldsen@acmecorp.io",
+    "hyp_none": "My email address is bjorn.haraldsen@acmecorp.io.   ",
+    "hit_none": 1,
+    "hyp_profile": "My email address is bjorn.haraldsen@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is beatrix.vandermeulen@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 1
+   },
+   {
+    "id": 66,
+    "kind": "name",
+    "style": "spelled",
+    "target": "meehan",
+    "hyp_none": "My name is Claudia Meehan. That is spelled M, E, E, H, A, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Clodagh Meehan. That is spelled M, E, E, H, A, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Cleda Meehan. That is spelled M, E, E, H, A, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 67,
+    "kind": "email",
+    "style": "natural",
+    "target": "clodagh.meehan@meridianhealth.org",
+    "hyp_none": "My email address is clydia.meyer@meridianhealth.org.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is clodagh.meehan@meridianhealth.org.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is clydia.meyer@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 68,
+    "kind": "name",
+    "style": "spelled",
+    "target": "wisniewski",
+    "hyp_none": "My name is Stanislaw Wiskiec. That is spelled W, I, S, N, I, E, W, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Stanislaw Wisniewski. That is spelled W, I, S, N, I, E, W, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Dariusz Szymanski. That is spelled W, I, S, N, I, E, W, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 69,
+    "kind": "email",
+    "style": "spelled",
+    "target": "stanislaw.wisniewski@pine.ai",
+    "hyp_none": "My email address is stanislaw.wisniewski@pine.ai.   ",
+    "hit_none": 1,
+    "hyp_profile": "My email address is stanislaw.wisniewski@pine.ai.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is stanislaw.wismani@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 70,
+    "kind": "name",
+    "style": "spelled",
+    "target": "winterbourne",
+    "hyp_none": "My name is Imagine Winterborn. That is spelled W, I, N, T, E, R, B, O, U, R, N, E.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Imogen Winterbourne. That is spelled W, I, N, T, E, R, B, O, U, R, N, E.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Imagine Winterborn. That is spelled W, I, N, T, E, R, B, O, U, R, N, E.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 71,
+    "kind": "email",
+    "style": "natural",
+    "target": "imogen.winterbourne@gmail.com",
+    "hyp_none": "My email address is imogen.winterborn@gmail.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is imogen.winterbourne@gmail.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is linh.nguyen@meridianhealth.org.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 1
+   },
+   {
+    "id": 72,
+    "kind": "name",
+    "style": "spelled",
+    "target": "solheim",
+    "hyp_none": "My name is Gunnar S\u00f8lheim. That is spelled S, O, L, H, E, I, M.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Gunnar Solheim. That is spelled S, O, L, H, E, I, M.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Gunnar S\u00f8lheim. That is spelled S, O, L, H, E, I, M.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 73,
+    "kind": "email",
+    "style": "spelled",
+    "target": "gunnar.solheim@pine.ai",
+    "hyp_none": "My email address is gunnar.sohlheim@pine.ai.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is gunnar.solheim@pine.ai.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is gunnar.sohlheim@pine.ai.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 74,
+    "kind": "name",
+    "style": "spelled",
+    "target": "donohue",
+    "hyp_none": "My name is Ashling Donohue. That is spelled D, O, N, O, H, U, E, and.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Aisling Donohue. That is spelled D, O, N, O, H, U, E, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Ashling Donohue. That is spelled D, O, N, O, H, U, E, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 75,
+    "kind": "email",
+    "style": "natural",
+    "target": "aisling.donohue@acmecorp.io",
+    "hyp_none": "My email address is ashley.gardner@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is aisling.donohue@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is ashleying.donahue@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 76,
+    "kind": "name",
+    "style": "spelled",
+    "target": "jablonski",
+    "hyp_none": "My name is Christoph Jablonski. That is spelled J, A, B, L, O, N, S, K, I.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Krzysztof Jablonski. That is spelled J, A, B, L, O, N, S, K, I.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Christoph Jablonski. That is spelled J, A, B, L, O, N, S, K, I.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 77,
+    "kind": "email",
+    "style": "spelled",
+    "target": "krzysztof.jablonski@acmecorp.io",
+    "hyp_none": "My email address is krzyzantowf@acmecorp.io.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is krzysztof.jablonski@acmecorp.io.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is christoph.jablonski@acmecorp.io.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 78,
+    "kind": "name",
+    "style": "spelled",
+    "target": "vandermeulen",
+    "hyp_none": "My name is Beatrice Vandermullen. That is spelled V, A, N, D, E, R, M, E, U, L, E, N.   ",
+    "hit_none": 1,
+    "hyp_profile": "My name is Beatrix Van Der Meeulen. That is spelled V, A, N, D, E, R, M, E, U, L, E, N.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My name is Beatrice Vandermullen. That is spelled V, A, N, D, E, R, M, E, U, L, E, N.   ",
+    "hit_distractor": 1,
+    "intrusion_distractor": 0
+   },
+   {
+    "id": 79,
+    "kind": "email",
+    "style": "natural",
+    "target": "beatrix.vandermeulen@outlook.com",
+    "hyp_none": "My email address is beatrice.vandermullen@outlook.com.   ",
+    "hit_none": 0,
+    "hyp_profile": "My email address is beatrix.vandermeulen@outlook.com.   ",
+    "hit_profile": 1,
+    "hyp_distractor": "My email address is declan.oshaughnessy@outlook.com.   ",
+    "hit_distractor": 0,
+    "intrusion_distractor": 1
+   }
+  ]
+ }
+}
