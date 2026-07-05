@@ -39,6 +39,51 @@ EAGER_TOK = "<EAGER_END_SPEECH>"
 ASSISTANT_PREFIX_TOKENS = ["<|im_start|>", "assistant", "\n"]
 
 
+def _zeropower_via_newtonschulz5(G: torch.Tensor, steps: int = 5, eps: float = 1e-7):
+    """Newton-Schulz orthogonalization of a 2-D matrix (Muon core)."""
+    a, b, c = 3.4445, -4.7750, 2.0315
+    X = G.bfloat16()
+    X = X / (X.norm() + eps)
+    transposed = G.size(0) > G.size(1)
+    if transposed:
+        X = X.T
+    for _ in range(steps):
+        A = X @ X.T
+        B = b * A + c * (A @ A)
+        X = a * X + B @ X
+    if transposed:
+        X = X.T
+    return X.to(G.dtype)
+
+
+class Muon(torch.optim.Optimizer):
+    """Minimal Muon (Jordan et al.): SGD-momentum whose update is orthogonalized
+    by a Newton-Schulz iteration. For 2-D matrices only (here the LoRA factors);
+    AdamW handles the rest. Shape-scaled so wide/tall matrices step evenly."""
+
+    def __init__(self, params, lr=2e-4, momentum=0.95, nesterov=True, ns_steps=5):
+        super().__init__(list(params),
+                         dict(lr=lr, momentum=momentum, nesterov=nesterov, ns_steps=ns_steps))
+
+    @torch.no_grad()
+    def step(self):
+        for group in self.param_groups:
+            mom = group["momentum"]
+            for p in group["params"]:
+                if p.grad is None:
+                    continue
+                g = p.grad
+                st = self.state[p]
+                buf = st.get("mom")
+                if buf is None:
+                    buf = st["mom"] = torch.zeros_like(g)
+                buf.mul_(mom).add_(g)
+                upd = g.add(buf, alpha=mom) if group["nesterov"] else buf
+                upd = _zeropower_via_newtonschulz5(upd, steps=group["ns_steps"])
+                scale = max(1.0, p.size(0) / p.size(1)) ** 0.5
+                p.add_(upd, alpha=-group["lr"] * scale)
+
+
 def load_base_model(cache_dir: str = "data/qwen3-asr-0.6b-pkg"):
     """Load Qwen3-ASR-0.6B via the qwen-asr package and return (model, tokenizer, processor)."""
     import json as _json
@@ -243,6 +288,18 @@ def main():
     p.add_argument("--bsz", type=int, default=2)
     p.add_argument("--lr", type=float, default=2e-4)
     p.add_argument("--warmup", type=int, default=100)
+    p.add_argument("--lr-schedule", choices=["constant", "cosine"], default="constant",
+                   help="cosine: decay lr -> --lr-min over (steps-warmup) after warmup "
+                        "(v13: sharpen the final checkpoint on precision metrics).")
+    p.add_argument("--lr-min", type=float, default=2e-5)
+    p.add_argument("--no-wd-on-embeddings", action="store_true",
+                   help="Put embed_tokens/lm_head in a weight_decay=0 group. AdamW "
+                        "decoupled wd otherwise shrinks the WHOLE 155M-row embedding "
+                        "and head every step (only 2 rows get gradients), degrading "
+                        "the base model (~2.4%% over 12k steps). v13 fix.")
+    p.add_argument("--optimizer", choices=["adamw", "muon"], default="adamw",
+                   help="muon: Muon (Newton-Schulz orthogonalized momentum) on the "
+                        "2-D LoRA matrices, AdamW on marker rows + 1-D params.")
     p.add_argument("--lora-r", type=int, default=16)
     p.add_argument("--lora-alpha", type=int, default=32)
     p.add_argument("--save-every", type=int, default=500)
@@ -319,10 +376,51 @@ def main():
     n_total = sum(p.numel() for p in model.parameters()) / 1e6
     logger.info("Trainable %.2f M / Total %.2f M", n_trainable, n_total)
 
-    optim = torch.optim.AdamW(
-        [p for p in model.parameters() if p.requires_grad],
-        lr=args.lr, betas=(0.9, 0.95), weight_decay=0.01,
-    )
+    # ---- param groups: keep decoupled weight decay OFF the embedding/head
+    # matrices (only 2 rows get gradients; AdamW would decay all 155M rows).
+    decay, no_decay, lora_mtx = [], [], []
+    for n, prm in model.named_parameters():
+        if not prm.requires_grad:
+            continue
+        is_embed = ("embed_tokens" in n) or ("lm_head" in n)
+        if is_embed:
+            (no_decay if args.no_wd_on_embeddings else decay).append(prm)
+        elif "lora_" in n and prm.ndim == 2:
+            lora_mtx.append(prm)
+        elif prm.ndim < 2:
+            no_decay.append(prm)
+        else:
+            decay.append(prm)
+
+    optimizers = []
+    if args.optimizer == "muon":
+        # Muon on the 2-D LoRA factors; AdamW on everything else.
+        optimizers.append(Muon(lora_mtx, lr=args.lr, momentum=0.95))
+        adamw_params = [{"params": decay, "weight_decay": 0.01},
+                        {"params": no_decay, "weight_decay": 0.0}]
+        optimizers.append(torch.optim.AdamW(
+            [g for g in adamw_params if g["params"]],
+            lr=args.lr, betas=(0.9, 0.95)))
+        logger.info("Muon on %d LoRA matrices; AdamW on %d decay + %d no-decay",
+                    len(lora_mtx), len(decay), len(no_decay))
+    else:
+        groups = [{"params": lora_mtx + decay, "weight_decay": 0.01},
+                  {"params": no_decay, "weight_decay": 0.0}]
+        optimizers.append(torch.optim.AdamW(
+            [g for g in groups if g["params"]],
+            lr=args.lr, betas=(0.9, 0.95)))
+        logger.info("AdamW: %d decay(+LoRA) / %d no-decay params",
+                    len(lora_mtx) + len(decay), len(no_decay))
+    optim = optimizers[0]   # primary (for resume compat / logging)
+
+    def lr_at(step: int) -> float:
+        if step < args.warmup:
+            return args.lr * (step + 1) / max(1, args.warmup)
+        if args.lr_schedule == "cosine":
+            prog = (step - args.warmup) / max(1, args.steps - args.warmup)
+            prog = min(1.0, max(0.0, prog))
+            return args.lr_min + 0.5 * (args.lr - args.lr_min) * (1 + math.cos(math.pi * prog))
+        return args.lr
 
     rng = np.random.default_rng(0)
     indices = np.arange(len(examples))
@@ -492,9 +590,10 @@ def main():
             logger.warning("Skipping batch (input build failed): %s", e)
             continue
 
-        lr = args.lr * min(1.0, (step + 1) / max(1, args.warmup))
-        for g in optim.param_groups:
-            g["lr"] = lr
+        lr = lr_at(step)
+        for opt in optimizers:
+            for g in opt.param_groups:
+                g["lr"] = lr
 
         t0 = time.perf_counter()
         # Forward goes through the wrapper's thinker
@@ -507,8 +606,10 @@ def main():
         torch.nn.utils.clip_grad_norm_(
             [p for p in model.parameters() if p.requires_grad], 1.0
         )
-        optim.step()
-        optim.zero_grad()
+        for opt in optimizers:
+            opt.step()
+        for opt in optimizers:
+            opt.zero_grad()
         dt = time.perf_counter() - t0
 
         if step % args.log_every == 0:

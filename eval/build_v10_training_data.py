@@ -58,7 +58,12 @@ M = f"{EAGER_TOK}{END_TOK}"
 
 TRAIN_VOICES = ["en-US-AriaNeural", "en-US-ChristopherNeural",
                 "en-GB-SoniaNeural", "en-AU-NatashaNeural",
-                "en-US-MichelleNeural", "en-GB-RyanNeural"]
+                "en-US-MichelleNeural", "en-GB-RyanNeural",
+                # v13: wider voice variety to lift the spelled-email ceiling
+                "en-US-EricNeural", "en-US-RogerNeural", "en-US-SteffanNeural",
+                "en-US-AnaNeural", "en-CA-ClaraNeural", "en-CA-LiamNeural",
+                "en-GB-LibbyNeural", "en-GB-MaisieNeural", "en-IE-ConnorNeural",
+                "en-GB-ThomasNeural", "en-US-BrianNeural", "en-US-EmmaNeural"]
 
 # Disjoint from PROBE_PEOPLE in build_dictation_probes.py.
 TRAIN_PEOPLE = [
@@ -121,7 +126,8 @@ def groups_for(k: int) -> tuple[int, ...]:
 
 
 def build_digit_examples(fsdd_dir: Path, rng: random.Random,
-                         n_hold: int, n_fire: int, n_nosil: int) -> list[dict]:
+                         n_hold: int, n_fire: int, n_nosil: int,
+                         fire_tail: tuple[float, float] = (0.4, 2.0)) -> list[dict]:
     pool = load_fsdd(fsdd_dir, TRAIN_FSDD_SPEAKERS)
     pool = {d: [trim_edges(c) for c in v] for d, v in pool.items()}
     logger.info("FSDD train pool sizes: %s", {d: len(v) for d, v in pool.items()})
@@ -131,10 +137,13 @@ def build_digit_examples(fsdd_dir: Path, rng: random.Random,
     for k in range(n_seq):
         digits = [rng.randrange(10) for _ in range(10)]
         if k < n_fire:
+            # v13: shorter fire tail so the final fire lands promptly (inside
+            # the +1.75 s scoring window); v12's 2.0 s tail taught the model to
+            # wait ~2 s after the last digit, dropping in-window final recall.
             audio, meta = build_digit_sequence(
                 pool, digits, rng, groups=(3, 3, 4),
                 pause_range=(0.4, 1.2), gap_range=(0.05, 0.35),
-                tail_s=rng.uniform(0.4, 2.0))
+                tail_s=rng.uniform(*fire_tail))
             out.append(ex(audio, f"{meta['text']} {M}", "digit_fire", "fsdd"))
         if k < n_hold:
             # v11: ANY prefix length 1..9 (probe misses showed fires after a
@@ -271,6 +280,9 @@ def main():
     p.add_argument("--n-digit-fire", type=int, default=450)
     p.add_argument("--n-digit-hold", type=int, default=450)
     p.add_argument("--n-digit-nosil", type=int, default=200)
+    p.add_argument("--digit-fire-tail-min", type=float, default=0.4)
+    p.add_argument("--digit-fire-tail-max", type=float, default=2.0,
+                   help="v13: set to ~1.0 so digit final fires land in-window.")
     p.add_argument("--n-spell-name", type=int, default=280)
     p.add_argument("--n-spell-email", type=int, default=280)
     p.add_argument("--dup-pair-hold", type=float, default=0.0,
@@ -292,7 +304,9 @@ def main():
     logger.info("Loaded %d v9 examples", len(v9_examples))
 
     digit = build_digit_examples(Path(args.fsdd), rng, args.n_digit_hold,
-                                 args.n_digit_fire, args.n_digit_nosil)
+                                 args.n_digit_fire, args.n_digit_nosil,
+                                 fire_tail=(args.digit_fire_tail_min,
+                                            args.digit_fire_tail_max))
     logger.info("Built %d digit examples", len(digit))
 
     specs = spelled_items(rng, args.n_spell_name, args.n_spell_email,

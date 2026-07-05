@@ -1,0 +1,113 @@
+{
+ "rows": [
+  {
+   "step": 1500,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step1500.pt",
+   "digit": {
+    "premature_per_seq": 0.08,
+    "final_recall": 0.94,
+    "digit_acc": 0.996,
+    "final_lat_p50": 0.59
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.675,
+   "name_none": 1.0,
+   "email_none": 0.175,
+   "intrusion": 0.0
+  },
+  {
+   "step": 3000,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step3000.pt",
+   "digit": {
+    "premature_per_seq": 0.46,
+    "final_recall": 0.6,
+    "digit_acc": 0.994,
+    "final_lat_p50": 0.47
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.8,
+   "name_none": 1.0,
+   "email_none": 0.1,
+   "intrusion": 0.0
+  },
+  {
+   "step": 4500,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step4500.pt",
+   "digit": {
+    "premature_per_seq": 0.3,
+    "final_recall": 0.74,
+    "digit_acc": 1.0,
+    "final_lat_p50": 0.494
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.8,
+   "name_none": 0.975,
+   "email_none": 0.075,
+   "intrusion": 0.0
+  },
+  {
+   "step": 6000,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step6000.pt",
+   "digit": {
+    "premature_per_seq": 0.28,
+    "final_recall": 0.72,
+    "digit_acc": 0.992,
+    "final_lat_p50": 0.498
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.85,
+   "name_none": 1.0,
+   "email_none": 0.1,
+   "intrusion": 0.0
+  },
+  {
+   "step": 7500,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step7500.pt",
+   "digit": {
+    "premature_per_seq": 0.14,
+    "final_recall": 0.82,
+    "digit_acc": 0.99,
+    "final_lat_p50": 0.524
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.725,
+   "name_none": 0.975,
+   "email_none": 0.1,
+   "intrusion": 0.0
+  },
+  {
+   "step": 9000,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step9000.pt",
+   "digit": {
+    "premature_per_seq": 0.3,
+    "final_recall": 0.74,
+    "digit_acc": 0.998,
+    "final_lat_p50": 0.494
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.725,
+   "name_none": 1.0,
+   "email_none": 0.075,
+   "intrusion": 0.013
+  },
+  {
+   "step": 10500,
+   "path": "checkpoints/semantic_endpoint_v12_es/snap_step10500.pt",
+   "digit": {
+    "premature_per_seq": 0.6,
+    "final_recall": 0.5,
+    "digit_acc": 0.978,
+    "final_lat_p50": 0.494
+   },
+   "name_profile": 1.0,
+   "email_profile": 0.65,
+   "name_none": 1.0,
+   "email_none": 0.075,
+   "intrusion": 0.0
+  }
+ ],
+ "gate": "prem<=0.6,email+>=0.85,intrusion<=0.06",
+ "winners": [
+  6000
+ ]
+}
