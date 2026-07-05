@@ -225,8 +225,14 @@ def fig3_tradeoff():
                     xytext=off, fontsize=6.2, color=OKABE["grey"])
     ax.scatter([0.39], [0.323], s=230, color=OKABE["green"], marker="*",
                zorder=4, edgecolor="black", lw=0.5)
-    ax.annotate("causal + gate\nR=0.97", (0.39, 0.323), textcoords="offset points",
-                xytext=(-12, 12), fontsize=7.4, weight="bold", color=OKABE["green"])
+    ax.annotate("causal endpointer\nR=0.97", (0.39, 0.323), textcoords="offset points",
+                xytext=(-14, 10), fontsize=7.0, weight="bold", color=OKABE["green"])
+    # released unified model (all four behaviors): a little endpointing precision
+    # traded for dictation + context + intrusion-resistance
+    ax.scatter([0.39], [1.03], s=150, color=OKABE["sky"], marker="D",
+               zorder=4, edgecolor="black", lw=0.5)
+    ax.annotate("unified release\nR=0.94", (0.39, 1.03), textcoords="offset points",
+                xytext=(6, 4), fontsize=7.0, weight="bold", color="#1f6f9e")
 
     ax.set_yscale("log")
     ax.set_yticks([0.05, 0.3, 1, 3, 10, 30])

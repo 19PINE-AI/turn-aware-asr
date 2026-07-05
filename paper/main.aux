@@ -121,14 +121,14 @@
 \@writefile{toc}{\contentsline {paragraph}{An OOD landmine.}{17}{paragraph*.38}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The simulator was the bottleneck.}{17}{paragraph*.39}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Bound every resident state.}{17}{paragraph*.40}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {11}Lessons for streaming supervision: a checklist}{17}{section.11}\protected@file@percent }
-\newlabel{sec:checklist}{{11}{17}{Lessons for streaming supervision: a checklist}{section.11}{}}
 \citation{ekstedt2022vap}
 \citation{ma2019stacl}
 \citation{dehaan2019causal}
 \citation{schaeffer2023mirage}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)\nobreakspace  {}Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }}{18}{figure.caption.41}\protected@file@percent }
 \newlabel{fig:serving}{{10}{18}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk audio placeholders are out-of-distribution for a model trained on single segments (88\% WER); bounded re-feed of the last window costs a re-encode but is correct (3.8\%). (b)~Per-chunk compute: the vLLM path is $5.4\times $ faster than the transformers simulator used for all pre-serving latency numbers; the max-segment force-flush also bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16 --- the deadline binds, not memory.\relax }{figure.caption.41}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11}Lessons for streaming supervision: a checklist}{18}{section.11}\protected@file@percent }
+\newlabel{sec:checklist}{{11}{18}{Lessons for streaming supervision: a checklist}{section.11}{}}
 \citation{silero2021vad}
 \citation{raux2008optimizing}
 \citation{shannon2017improved}
@@ -143,16 +143,16 @@
 \citation{deepgram2026flux}
 \citation{openai2025semanticvad}
 \citation{assemblyai2025universalstreaming}
-\citation{skantze2021review}
-\citation{ekstedt2020turngpt}
-\citation{ekstedt2022vap}
-\citation{stivers2009universals}
-\citation{levinson2015timing}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph  {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }}{19}{figure.caption.42}\protected@file@percent }
 \newlabel{fig:landscape}{{11}{19}{\textbf {Where this work sits} (verified July 2026). End-of-turn systems by decision signal (acoustic silence vs.\ in-model semantics) and openness (weights \emph {and} recipe). The semantic in-model quadrant's open corner is thinly populated: Kyutai STT ships a semantic-VAD head and Parakeet-EOU an in-transcript token, both without published training accounts; Smart Turn opens a full recipe but is a detector, not a recognizer; LiveKit and TEN classify downstream of a separate STT. This work contributes the missing combination: in-transcript semantic end-of-turn with open weights, open recipe, and measured context biasing.\relax }{figure.caption.42}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {12}Related work}{19}{section.12}\protected@file@percent }
 \newlabel{sec:related}{{12}{19}{Related work}{section.12}{}}
 \@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{19}{paragraph*.43}\protected@file@percent }
+\citation{skantze2021review}
+\citation{ekstedt2020turngpt}
+\citation{ekstedt2022vap}
+\citation{stivers2009universals}
+\citation{levinson2015timing}
 \citation{graves2012sequence}
 \citation{radford2023whisper}
 \citation{wan2026streaming}
@@ -239,8 +239,9 @@
 \newlabel{app:recipe}{{D}{26}{Training-recipe notes}{appendix.D}{}}
 \@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{26}{paragraph*.53}\protected@file@percent }
 \citation{jordan2024muon}
-\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{27}{paragraph*.54}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{27}{paragraph*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{27}{paragraph*.54}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{27}{paragraph*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{27}{paragraph*.56}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{27}{appendix.E}\protected@file@percent }
 \newlabel{app:repro}{{E}{27}{Reproducibility}{appendix.E}{}}
-\gdef \@abspage@last{27}
+\gdef \@abspage@last{28}
