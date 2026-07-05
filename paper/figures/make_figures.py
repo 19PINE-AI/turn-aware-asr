@@ -87,7 +87,7 @@ def fig1_oscillation():
     hold = [e["no_fire_correct"] for e in v8]
     ax.plot(steps, fire, "-o", ms=3.5, color=OKABE["red"], label="fire class (single)")
     ax.plot(steps, hold, "-s", ms=3.5, color=OKABE["blue"], label="hold class (no-fire)")
-    ax.set_title("v8: clairvoyant labels", fontsize=9.5)
+    ax.set_title("opposed-pools: clairvoyant labels", fontsize=9.5)
     ax.set_xlabel("training step (k)")
     ax.set_ylabel("holdout accuracy")
     ax.set_ylim(0, 1.08)
@@ -112,7 +112,7 @@ def fig1_oscillation():
     ax.axvline(7.5, color=OKABE["green"], lw=0.8, ls=":")
     ax.text(7.7, 0.42, "selected (step 7.5k)", fontsize=7, color=OKABE["green"],
             va="bottom", rotation=90)
-    ax.set_title("v9: causal labels (only the data changed)", fontsize=9.5)
+    ax.set_title("causal labels (only the supervision changed)", fontsize=9.5)
     ax.set_xlabel("training step (k)")
     ax.legend(loc="lower center", fontsize=7.2)
     save(fig, "fig1_oscillation")
@@ -216,16 +216,16 @@ def fig3_tradeoff():
     fam(rms, OKABE["orange"], "RMS + timeout", "o")
     fam(sil, OKABE["purple"], "Silero VAD + timeout", "^")
 
-    # prior checkpoints (best policies) and v9
-    priors = [("v5+gate+confirm1", 0.68, 3.2, 0.927, (7, -13)),
-              ("v8+gate+confirm1", 0.77, 0.05, 0.938, (6, 2))]
+    # prior checkpoints (best policies) and the causal model
+    priors = [("mixed-pools + confirm h=1", 0.68, 3.2, 0.927, (7, -13)),
+              ("opposed-pools + confirm h=1", 0.77, 0.05, 0.938, (6, 2))]
     for name, lat, ff, rec, off in priors:
         ax.scatter([lat], [ff], s=40, color=OKABE["grey"], marker="D", zorder=3)
         ax.annotate(f"{name}\nR={rec:.2f}", (lat, ff), textcoords="offset points",
                     xytext=off, fontsize=6.2, color=OKABE["grey"])
     ax.scatter([0.39], [0.323], s=230, color=OKABE["green"], marker="*",
                zorder=4, edgecolor="black", lw=0.5)
-    ax.annotate("v9 + gate\nR=0.97", (0.39, 0.323), textcoords="offset points",
+    ax.annotate("causal + gate\nR=0.97", (0.39, 0.323), textcoords="offset points",
                 xytext=(-12, 12), fontsize=7.4, weight="bold", color=OKABE["green"])
 
     ax.set_yscale("log")
@@ -282,11 +282,11 @@ def fig4_biasing():
 
 # ================================================================ F5: ranking inversion
 def fig5_inversion():
-    fig, ax = plt.subplots(figsize=(4.6, 2.9))
-    models = ["v3", "v5", "v8"]
-    offline = {"v3": 100, "v5": 82, "v8": 10}      # offline single-turn fire rate (%)
-    stream_ff = {"v3": 88.8, "v5": 27.3, "v8": 3.6}  # false fires / min (lower better)
-    colors = {"v3": OKABE["red"], "v5": OKABE["orange"], "v8": OKABE["blue"]}
+    fig, ax = plt.subplots(figsize=(4.9, 2.9))
+    models = ["offline-labeled", "mixed-pools", "opposed-pools"]
+    offline = {"offline-labeled": 100, "mixed-pools": 82, "opposed-pools": 10}      # offline single-turn fire rate (%)
+    stream_ff = {"offline-labeled": 88.8, "mixed-pools": 27.3, "opposed-pools": 3.6}  # false fires / min (lower better)
+    colors = {"offline-labeled": OKABE["red"], "mixed-pools": OKABE["orange"], "opposed-pools": OKABE["blue"]}
     # ranks: offline rank by score desc; streaming rank by false fires asc
     off_rank = {m: r for r, m in enumerate(sorted(models, key=lambda m: -offline[m]))}
     st_rank = {m: r for r, m in enumerate(sorted(models, key=lambda m: stream_ff[m]))}
@@ -300,9 +300,9 @@ def fig5_inversion():
                 fontsize=8.6, color=colors[m], weight="bold")
     ax.text(0, 2.55, "offline benchmark\n(fire-rate on clipped audio)", ha="center", fontsize=8)
     ax.text(1, 2.55, "deployment-matched replay\n(false fires, gate on)", ha="center", fontsize=8)
-    ax.text(0.5, -0.62, "“ship v3” → 89 false fires/min      “v8 is broken” → best endpointer",
+    ax.text(0.5, -0.62, "offline “champion” → 89 false fires/min      “broken” opposed-pools → best prior endpointer",
             ha="center", fontsize=7.6, style="italic", color="#444444")
-    ax.set_xlim(-0.55, 1.7)
+    ax.set_xlim(-0.75, 1.9)
     ax.set_ylim(-0.85, 2.95)
     ax.axis("off")
     save(fig, "fig5_inversion")
@@ -321,9 +321,9 @@ def fig6_silence():
     ax.plot(xs, np.polyval(coef, xs), "--", color=OKABE["red"], lw=1.1,
             label=f"linear fit  (r = {r:.3f})")
     ax.set_xlabel("silence in stretch (s)")
-    ax.set_ylabel("spurious fires (ungated v5)")
+    ax.set_ylabel("spurious fires (ungated, mixed-pools)")
     ax.legend(loc="upper left")
-    ax.text(0.97, 0.05, "every v1–v8 training example\nbegan with speech",
+    ax.text(0.97, 0.05, "every pre-diagnosis training example\nbegan with speech",
             transform=ax.transAxes, ha="right", fontsize=7.4,
             style="italic", color="#444444")
     save(fig, "fig6_silence")
