@@ -175,9 +175,11 @@ def build_inputs(processor, examples: list[dict], device, dtype):
     prefix_lens = []
     for e in examples:
         # Prefix: system + user, add_generation_prompt=True (adds the
-        # "<|im_start|>assistant\n" header but no content).
+        # "<|im_start|>assistant\n" header but no content). Examples may
+        # carry a per-example context prompt (v10 spelled/profile schemas)
+        # in e["ctx"]; absent/empty keeps the historical empty system slot.
         msgs_prefix = [
-            {"role": "system", "content": ""},
+            {"role": "system", "content": e.get("ctx", "")},
             {"role": "user", "content": [{"type": "audio"}]},
         ]
         prefix_str = tokenizer.apply_chat_template(
@@ -350,7 +352,7 @@ def main():
             for e in holdout_examples:
                 audio = np.asarray(e["audio"], dtype=np.float32)
                 msgs = [
-                    {"role": "system", "content": ""},
+                    {"role": "system", "content": e.get("ctx", "")},
                     {"role": "user", "content": [{"type": "audio"}]},
                 ]
                 prompt = tokenizer.apply_chat_template(
