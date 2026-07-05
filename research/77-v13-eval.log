@@ -1,0 +1,11 @@
+=== replay v13 snap_step10500 2026-07-05T09:08:34+00:00 ===
+2026-07-05 09:12:14,822 INFO Saved research/77-replay-v13s10500.json
+=== replay v13 snap_step3000 2026-07-05T09:12:15+00:00 ===
+2026-07-05 09:20:36,537 INFO Saved research/77-replay-v13s3000.json
+=== merge v13 snap_step10500 + offline WER 2026-07-05T09:20:37+00:00 ===
+    from src.train_semantic_endpoint import (
+ModuleNotFoundError: No module named 'src'
+    from vllm import LLM, SamplingParams
+ModuleNotFoundError: No module named 'vllm'
+=== ALLDONE 2026-07-05T09:20:38+00:00 ===
+cat: research/77-wer-v13.json: No such file or directory
