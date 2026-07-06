@@ -1,0 +1,39 @@
+=== [1/2] replay dose n_asr=4000 (~20%) 2026-07-06T09:09:32+00:00 ===
+2026-07-06 09:09:48,727 INFO v12 pool: 14730 examples
+2026-07-06 09:10:06,659 INFO added 4000 plain-ASR examples
+2026-07-06 09:10:06,663 INFO v15 schema counts: {'pair_hold': 2221, 'digit_nosil': 220, 'single_sil': 2500, 'spell_email': 360, 'truncated': 1969, 'pair_fire': 2500, 'long_sil': 500, 'spell_name': 360, 'complete_nosil': 1500, 'asr_plain': 4000, 'digit_fire': 500, 'digit_hold': 600, 'silence_only': 800, 'lead_sil': 700}
+2026-07-06 09:10:32,832 INFO wrote data/semantic_endpoint_v17/data.pt (18730 examples)
+=== [2/2] natural biasing 1:1 (800 distractor + 800 relevant) 2026-07-06T09:10:34+00:00 ===
+2026-07-06 09:10:57,490 INFO pool: 18730 examples
+2026-07-06 09:10:58,813 INFO extracting Haiku entities for 3000 candidate utts…
+2026-07-06 09:10:58,816 INFO LLM entities: 3000 texts, 3000 cached, 0 to extract (claude-haiku-4-5)
+2026-07-06 09:10:58,817 INFO candidates with >=1 entities: 1364 / 3000
+2026-07-06 09:10:58,817 INFO distinct entity bank: 1492
+2026-07-06 09:11:08,179 INFO added 1600 natural-biasing examples
+2026-07-06 09:11:44,343 INFO wrote data/semantic_endpoint_v17/data.pt (20330 examples); schemas: {'silence_only': 800, 'pair_hold': 2221, 'truncated': 1969, 'bias_nat_relevant': 800, 'long_sil': 500, 'single_sil': 2500, 'complete_nosil': 1500, 'bias_nat_distractor': 800, 'asr_plain': 4000, 'lead_sil': 700, 'pair_fire': 2500, 'digit_fire': 500, 'spell_email': 360, 'digit_nosil': 220, 'digit_hold': 600, 'spell_name': 360}
+=== v17 pool ready 2026-07-06T09:11:45+00:00 ===
+{
+ "pool": "data/semantic_endpoint_v17/data.pt",
+ "n_pool": 18730,
+ "n_added": 1600,
+ "n_distractor": 800,
+ "n_relevant": 800,
+ "schema_counts": {
+  "silence_only": 800,
+  "pair_hold": 2221,
+  "truncated": 1969,
+  "bias_nat_relevant": 800,
+  "long_sil": 500,
+  "single_sil": 2500,
+  "complete_nosil": 1500,
+  "bias_nat_distractor": 800,
+  "asr_plain": 4000,
+  "lead_sil": 700,
+  "pair_fire": 2500,
+  "digit_fire": 500,
+  "spell_email": 360,
+  "digit_nosil": 220,
+  "digit_hold": 600,
+  "spell_name": 360
+ }
+}

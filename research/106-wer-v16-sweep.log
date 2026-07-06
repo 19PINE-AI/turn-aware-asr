@@ -1,0 +1,13 @@
+=== merge+WER 7500 2026-07-06T09:01:40+00:00 ===
+2026-07-06 09:01:46,764 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+### test-clean: WER=0.0341  marker_fire_rate=0.065
+### test-other: WER=0.0672  marker_fire_rate=0.100
+=== merge+WER 9000 2026-07-06T09:04:13+00:00 ===
+2026-07-06 09:04:20,786 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+### test-clean: WER=0.0331  marker_fire_rate=0.045
+### test-other: WER=0.0640  marker_fire_rate=0.059
+=== merge+WER 12000 2026-07-06T09:06:39+00:00 ===
+2026-07-06 09:06:46,698 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+### test-clean: WER=0.0354  marker_fire_rate=0.057
+### test-other: WER=0.0685  marker_fire_rate=0.087
+=== DONE v16 WER sweep 2026-07-06T09:09:17+00:00 ===
