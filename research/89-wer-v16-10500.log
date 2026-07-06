@@ -1,0 +1,96 @@
+INFO 07-06 03:15:58 [api_utils.py:273] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.28, 'disable_log_stats': True, 'enforce_eager': True, 'limit_mm_per_prompt': {'audio': 1}, 'model': 'checkpoints/merged/v16-step10500'}
+/home/ubuntu/vllm023-venv/lib/python3.10/site-packages/transformers/modeling_rope_utils.py:1036: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:15:58 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:15:59 [model.py:611] Resolved architecture: Qwen3ASRForConditionalGeneration
+INFO 07-06 03:15:59 [model.py:1745] Using max model len 8192
+INFO 07-06 03:15:59 [scheduler.py:239] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-06 03:15:59 [vllm.py:999] Asynchronous scheduling is enabled.
+WARNING 07-06 03:15:59 [vllm.py:1055] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+WARNING 07-06 03:15:59 [vllm.py:1097] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+INFO 07-06 03:15:59 [kernel.py:270] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+INFO 07-06 03:15:59 [vllm.py:1273] Cudagraph is disabled under eager mode
+INFO 07-06 03:15:59 [compilation.py:321] Enabled custom fusions: norm_quant, act_quant
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:15:59 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:15:59 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] `Qwen3ASRProcessor` defines `feature_extractor_class = 'WhisperFeatureExtractor'`, which is deprecated. Register the correct mapping in `AutoFeatureExtractor` instead.
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:15:59 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:16:00 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'interleaved', 'mrope_section'}
+INFO 07-06 03:16:03 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [core.py:113] Initializing a V1 LLM engine (v0.23.0) with config: model='checkpoints/merged/v16-step10500', speculative_config=None, tokenizer='checkpoints/merged/v16-step10500', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=checkpoints/merged/v16-step10500, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'ir_enable_torch_wrap': False, 'splitting_ops': [], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': True, 'fuse_act_quant': True, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native']), enable_flashinfer_autotune=True, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [parallel_state.py:1568] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://155.103.252.95:44351 backend=nccl
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [parallel_state.py:1903] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [topk_topp_sampler.py:39] FlashInfer top-p/top-k sampling disabled via VLLM_USE_FLASHINFER_SAMPLER=0.
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [gpu_model_runner.py:5092] Starting to load model checkpoints/merged/v16-step10500...
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [cuda.py:433] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [mm_encoder_attention.py:372] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+(EngineCore pid=3079993) WARNING 07-06 03:16:04 [vllm.py:1055] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=3079993) WARNING 07-06 03:16:04 [vllm.py:1097] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [kernel.py:270] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=3079993) INFO 07-06 03:16:04 [vllm.py:1273] Cudagraph is disabled under eager mode
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [cuda.py:378] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [flash_attn.py:636] Using FlashAttention version 2
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [weight_utils.py:922] Filesystem type for checkpoints: EXT4. Checkpoint size: 1.46 GiB. Available RAM: 154.56 GiB.
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [weight_utils.py:945] Auto-prefetch is disabled because the filesystem (EXT4) is not a recognized network FS (NFS/Lustre). If you want to force prefetching, start vLLM with --safetensors-load-strategy=prefetch.
+(EngineCore pid=3079993) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=3079993) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.18it/s]
+(EngineCore pid=3079993) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  4.17it/s]
+(EngineCore pid=3079993) 
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [default_loader.py:397] Loading weights took 0.25 seconds
+(EngineCore pid=3079993) INFO 07-06 03:16:05 [gpu_model_runner.py:5187] Model loading took 1.53 GiB memory and 0.712566 seconds
+(EngineCore pid=3079993) INFO 07-06 03:16:06 [gpu_model_runner.py:6200] Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 42 audio items of the maximum feature size.
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [gpu_worker.py:480] Available KV cache memory: 21.12 GiB
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [kv_cache_utils.py:1744] GPU KV cache size: 197,680 tokens
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [kv_cache_utils.py:1745] Maximum concurrency for 8,192 tokens per request: 24.13x
+(EngineCore pid=3079993) 2026-07-06 03:16:07,219 - INFO - autotuner.py:622 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=3079993) 2026-07-06 03:16:07,246 - INFO - autotuner.py:641 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [jit_monitor.py:54] Kernel JIT monitor activated — Triton JIT compilations during inference will be logged as warnings.
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [core.py:313] init engine (profile, create kv cache, warmup model) took 1.52 s
+(EngineCore pid=3079993) WARNING 07-06 03:16:07 [vllm.py:1055] Enforce eager set, disabling torch.compile and CUDAGraphs. This is equivalent to setting -cc.mode=none -cc.cudagraph_mode=none
+(EngineCore pid=3079993) WARNING 07-06 03:16:07 [vllm.py:1097] Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [kernel.py:270] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['vllm_c', 'native'], fused_add_rms_norm=['vllm_c', 'native'])
+(EngineCore pid=3079993) INFO 07-06 03:16:07 [vllm.py:1273] Cudagraph is disabled under eager mode
+### test-clean: 2620 utts
+(EngineCore pid=3079993) WARNING 07-06 03:16:07 [jit_monitor.py:103] Triton kernel JIT compilation during inference: _compute_slot_mapping_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=3079993) WARNING 07-06 03:16:07 [jit_monitor.py:103] Triton kernel JIT compilation during inference: _triton_mrope_forward. This causes a latency spike; consider extending warmup to cover this shape/config.
+  32/2620 (1s)
+  352/2620 (9s)
+  672/2620 (17s)
+  992/2620 (24s)
+  1312/2620 (32s)
+  1632/2620 (40s)
+  1952/2620 (46s)
+  2272/2620 (54s)
+  2592/2620 (62s)
+### test-clean: WER=0.0345  marker_fire_rate=0.053
+### test-other: 2939 utts
+  32/2939 (1s)
+  352/2939 (7s)
+  672/2939 (15s)
+  992/2939 (23s)
+  1312/2939 (30s)
+  1632/2939 (37s)
+  1952/2939 (45s)
+  2272/2939 (52s)
+  2592/2939 (60s)
+  2912/2939 (66s)
+### test-other: WER=0.0669  marker_fire_rate=0.078
+E12_DONE
+(EngineCore pid=3079993) INFO 07-06 03:18:17 [core.py:1178] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=3079993) INFO 07-06 03:18:17 [core.py:1297] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=3079993) INFO 07-06 03:18:17 [core.py:1328] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=3079993) INFO 07-06 03:18:17 [core.py:1191] [shutdown] EngineCore: exiting busy loop

@@ -1,0 +1,8 @@
+=== big probe 10500 2026-07-06T03:19:24+00:00 ===
+2026-07-06 03:35:18,706 INFO Probe B summary: {'name_none': 0.992, 'name_profile': 1.0, 'name_distractor': 0.992, 'email_none': 0.158, 'email_profile': 0.9, 'email_distractor': 0.183, 'email_spelled_none': 0.183, 'email_spelled_profile': 0.9, 'email_natural_none': 0.133, 'email_natural_profile': 0.9, 'intrusion_rate': 0.0}
+2026-07-06 03:35:18,709 INFO Wrote research/90-probe-v16-step10500-big.json
+=== earnings22 10500 2026-07-06T03:35:19+00:00 ===
+2026-07-06 03:40:46,306 INFO   distractor_entity_count          400
+2026-07-06 03:40:46,306 INFO   distractor_hallucination_rate    0.018
+2026-07-06 03:40:46,308 INFO Wrote research/91-biasing-v16-step10500.json
+=== DONE 10500 evals 2026-07-06T03:40:47+00:00 ===

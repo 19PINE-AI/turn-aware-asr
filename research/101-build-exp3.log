@@ -1,0 +1,10 @@
+=== arm A -minimal-pair 2026-07-06T03:38:49+00:00 ===
+2026-07-06 03:39:22,579 INFO AMI same-spk pairs: 40% classified incomplete-A
+2026-07-06 03:39:33,974 INFO Saved data/semantic_endpoint_abl_A/data.pt
+=== arm B -silence 2026-07-06T03:39:35+00:00 ===
+2026-07-06 03:40:07,020 INFO AMI same-spk pairs: 40% classified incomplete-A
+2026-07-06 03:40:18,002 INFO Saved data/semantic_endpoint_abl_B/data.pt
+=== arm C -pause-pair 2026-07-06T03:40:18+00:00 ===
+2026-07-06 03:40:47,918 INFO AMI same-spk pairs: 40% classified incomplete-A
+2026-07-06 03:40:57,788 INFO Saved data/semantic_endpoint_abl_C/data.pt
+=== DONE exp3 pools 2026-07-06T03:40:58+00:00 ===

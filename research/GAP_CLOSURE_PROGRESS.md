@@ -72,3 +72,27 @@ Running in parallel with the GPU chain (engineering on CPU while GPU trains).
 
 ## GPU queue (serial, I control): v16 train (running) -> v16 evals -> gap-3 seed-1
 ## train -> exp-3 arms A/B/C -> exp-4 replay scoring. exp-2/exp-5/gen = light/CPU.
+
+## RESULTS (2026-07-06 ~03:45)
+FOUR GAPS — all closed:
+- Gap 1 natural distractor: v16 Earnings-22 halluc 5.0%->1.8% (uplift 35->25pp). research/99.
+- Gap 2 dictation: scoring artifact, 0 late fires. research/85. (already in paper)
+- Gap 3 oscillation: reproduces under seed-1 (corr -0.88 vs -0.95); 11-eval trajectory +
+  11 snapshots. research/100. checkpoints/semantic_endpoint_v8_seed1_es/.
+- Gap 4 WER: v16@10500 3.45/6.69 vs release 3.73/7.06 (base gap -30%). research/99.
+- v16@10500 = single unified ckpt closing gaps 1+4, at cost to prem(0.16->0.26)/uplift/fire-rate.
+
+5 EXPERIMENTS:
+- dictation-generalization: DONE (in paper). research/93.
+- exp-5 toy task: DONE. research/94 + paper/figures/exp5_toy.pdf.
+- exp-2 marker-prob: agent running (a5d8a558b27e0532b) on gap-3 snapshots.
+- exp-3 ablation: pools built (abl_A/B/C, iso-count verified). scripts/train_exp3_arms.sh
+  ready (baseline+A+B+C, ~6h). NOT yet trained.
+- exp-4 baselines: SmartTurn recall0.68-0.71/false3.2-3.4; LiveKit(oracle) 0.96/6.25;
+  Parakeet-EOU recall0.167/false0.2/wer0.75; Kyutai running. All land on/inside curve,
+  none reach our 0.97@0.3. research/95-exp4-*.
+
+TODO: exp-3 trainings+scoring; exp-4 kyutai; exp-2; consolidated paper pass (fill FIXMEs:
+gap-1 §second+limits, gap-2 already, gap-4 §serving+App C/D tab:wer, gap-3 fig oscillation
+multi-seed + delete single-run caveat, exp-2 §diagnosis, exp-3 §recipe+App C, exp-4 tab:main+
+fig tradeoff, exp-5 §discussion, dictation-gen already) + regen figures + commit.

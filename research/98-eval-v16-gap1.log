@@ -1,0 +1,21 @@
+=== merge 2026-07-06T02:40:19+00:00 ===
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-07-06 02:40:25,567 INFO Tokenizer extended: vocab=151707, eager=151705, end=151706 (new rows initialized)
+2026-07-06 02:40:25,793 INFO Loaded checkpoints/semantic_endpoint_v16_es/snap_step4500.pt (step 4500): 225 trainable tensors
+2026-07-06 02:40:25,884 INFO Merged 112 LoRA layers into base weights
+2026-07-06 02:40:25,884 INFO embed row 151705 (EAGER) L2 = 0.7489
+2026-07-06 02:40:25,884 INFO embed row 151706 (END) L2 = 0.7538
+2026-07-06 02:40:26,789 INFO Saved merged checkpoint to checkpoints/merged/v16-step4500
+2026-07-06 02:40:26,789 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== big dictation+spelled probe 2026-07-06T02:40:27+00:00 ===
+2026-07-06 02:54:40,977 INFO Probe B summary: {'name_none': 0.983, 'name_profile': 0.992, 'name_distractor': 0.983, 'email_none': 0.142, 'email_profile': 0.95, 'email_distractor': 0.15, 'email_spelled_none': 0.217, 'email_spelled_profile': 0.95, 'email_natural_none': 0.067, 'email_natural_profile': 0.95, 'intrusion_rate': 0.0}
+2026-07-06 02:54:40,979 INFO Wrote research/90-probe-v16-step4500-big.json
+=== earnings22 biasing v16 (gap 1) 2026-07-06T02:54:41+00:00 ===
+2026-07-06 03:01:53,784 INFO   distractor_entity_count          400
+2026-07-06 03:01:53,784 INFO   distractor_hallucination_rate    0.018
+2026-07-06 03:01:53,785 INFO Wrote research/91-biasing-v16-step4500.json
+=== earnings22 biasing RELEASE re-baseline on GPU (fair compare) 2026-07-06T03:01:54+00:00 ===
+2026-07-06 03:08:39,503 INFO   distractor_entity_count          400
+2026-07-06 03:08:39,503 INFO   distractor_hallucination_rate    0.050
+2026-07-06 03:08:39,504 INFO Wrote research/91-biasing-release-gpu.json
+=== DONE gap1 eval step 4500 2026-07-06T03:08:40+00:00 ===

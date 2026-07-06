@@ -1,0 +1,9 @@
+=== parakeet_eou dev25 2026-07-06T03:44:06+00:00 ===
+2026-07-06 03:44:23,484 INFO stretch 25/25 (TS3005d) fires: {'eou': 1}
+2026-07-06 03:44:23,555 INFO arm eou        recall 0.167  P50 0.47s  false/min 0.2  resume 0.22  wer 0.753
+2026-07-06 03:44:23,556 INFO Saved research/95-exp4-parakeet-dev25.json
+=== kyutai_vad dev25 2026-07-06T03:44:25+00:00 ===
+2026-07-06 03:46:22,697 INFO arm thr0.6     recall 0.885  P50 0.53s  false/min 14.6  resume 0.81  wer 0.654
+2026-07-06 03:46:22,699 INFO arm thr0.7     recall 0.875  P50 0.58s  false/min 12.5  resume 0.81  wer 0.654
+2026-07-06 03:46:22,701 INFO Saved research/95-exp4-kyutai-dev25.json
+=== DONE exp4 GPU 2026-07-06T03:46:24+00:00 ===

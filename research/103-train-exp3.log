@@ -1,0 +1,85 @@
+=== baseline (full v9) 2026-07-06T03:47:13+00:00 ===
+2026-07-06 03:47:14,106 INFO Loading data data/semantic_endpoint_v9/data.pt…
+2026-07-06 03:47:25,653 INFO Loaded 11221 examples (filtered to ≤ 12 s audio)
+2026-07-06 03:47:25,659 INFO Reserved 128 holdout examples {'complete_nosil': 16, 'pair_hold': 16, 'long_sil': 16, 'truncated': 16, 'pair_fire': 16, 'single_sil': 16, 'silence_only': 16, 'lead_sil': 16}; train set now 11093
+2026-07-06 03:47:25,659 INFO Loading Qwen3-ASR-0.6B base…
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-07-06 03:47:30,719 INFO Tokenizer extended: vocab=151707, eager=151705, end=151706 (new rows initialized)
+2026-07-06 03:47:30,827 INFO Trainable 160.17 M / Total 787.01 M
+2026-07-06 03:47:30,828 INFO AdamW: 224 decay(+LoRA) / 1 no-decay params
+2026-07-06 03:47:30,828 INFO --resume set but no step*.pt found; starting fresh
+2026-07-06 03:47:31,260 INFO step    0  loss 15.6688  lr 2.00e-06  0.38 s/step  free 94805 MB
+2026-07-06 03:47:33,917 INFO step   20  loss 8.7881  lr 4.20e-05  0.12 s/step  free 86914 MB
+2026-07-06 03:47:36,580 INFO step   40  loss 5.3030  lr 8.20e-05  0.12 s/step  free 80547 MB
+2026-07-06 03:47:39,240 INFO step   60  loss 4.4742  lr 1.22e-04  0.11 s/step  free 80547 MB
+2026-07-06 03:47:41,801 INFO step   80  loss 4.4823  lr 1.62e-04  0.11 s/step  free 80547 MB
+2026-07-06 03:47:44,360 INFO step  100  loss 3.4810  lr 2.00e-04  0.11 s/step  free 80547 MB
+2026-07-06 03:47:46,976 INFO step  120  loss 4.2714  lr 2.00e-04  0.11 s/step  free 77330 MB
+2026-07-06 03:47:49,598 INFO step  140  loss 4.7928  lr 2.00e-04  0.11 s/step  free 77330 MB
+2026-07-06 03:47:52,101 INFO step  160  loss 3.8569  lr 2.00e-04  0.11 s/step  free 73926 MB
+2026-07-06 03:47:54,594 INFO step  180  loss 4.2455  lr 2.00e-04  0.11 s/step  free 73926 MB
+2026-07-06 03:47:57,201 INFO step  200  loss 3.7849  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:47:59,732 INFO step  220  loss 4.9289  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:02,311 INFO step  240  loss 4.2250  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:04,857 INFO step  260  loss 4.3083  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:07,368 INFO step  280  loss 4.7224  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:09,927 INFO step  300  loss 3.5973  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:12,512 INFO step  320  loss 4.1534  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:15,082 INFO step  340  loss 4.4796  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:17,576 INFO step  360  loss 4.4267  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:20,122 INFO step  380  loss 4.5270  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:22,693 INFO step  400  loss 4.3237  lr 2.00e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:48:25,297 INFO step  420  loss 3.9192  lr 2.00e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:48:27,951 INFO step  440  loss 3.6600  lr 2.00e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:30,583 INFO step  460  loss 4.9302  lr 2.00e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:48:33,287 INFO step  480  loss 4.6066  lr 2.00e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:48:35,888 INFO step  500  loss 4.0565  lr 1.99e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:48:36,621 INFO Saved step500.pt (resumable)
+2026-07-06 03:48:39,278 INFO step  520  loss 4.2293  lr 1.99e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:48:41,929 INFO step  540  loss 3.6529  lr 1.99e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:48:44,645 INFO step  560  loss 4.3490  lr 1.99e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:47,399 INFO step  580  loss 3.2971  lr 1.99e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:48:50,481 INFO step  600  loss 3.8883  lr 1.99e-04  0.14 s/step  free 70466 MB
+2026-07-06 03:48:53,295 INFO step  620  loss 4.4867  lr 1.99e-04  0.12 s/step  free 66197 MB
+2026-07-06 03:48:56,111 INFO step  640  loss 3.2997  lr 1.99e-04  0.15 s/step  free 66197 MB
+2026-07-06 03:48:58,776 INFO step  660  loss 4.4429  lr 1.99e-04  0.11 s/step  free 66197 MB
+2026-07-06 03:49:01,421 INFO step  680  loss 4.2898  lr 1.99e-04  0.12 s/step  free 66197 MB
+2026-07-06 03:49:04,569 INFO step  700  loss 4.0296  lr 1.99e-04  0.16 s/step  free 66123 MB
+2026-07-06 03:49:07,826 INFO step  720  loss 4.7781  lr 1.99e-04  0.13 s/step  free 66100 MB
+2026-07-06 03:49:10,967 INFO step  740  loss 4.2499  lr 1.99e-04  0.12 s/step  free 66100 MB
+2026-07-06 03:49:14,144 INFO step  760  loss 4.3017  lr 1.99e-04  0.13 s/step  free 66100 MB
+2026-07-06 03:49:17,263 INFO step  780  loss 4.3477  lr 1.98e-04  0.13 s/step  free 66100 MB
+2026-07-06 03:49:20,543 INFO step  800  loss 4.1511  lr 1.98e-04  0.17 s/step  free 66100 MB
+2026-07-06 03:49:23,888 INFO step  820  loss 3.8627  lr 1.98e-04  0.15 s/step  free 66100 MB
+2026-07-06 03:49:27,222 INFO step  840  loss 4.5445  lr 1.98e-04  0.15 s/step  free 66100 MB
+2026-07-06 03:49:30,335 INFO step  860  loss 4.0697  lr 1.98e-04  0.13 s/step  free 66100 MB
+2026-07-06 03:49:33,739 INFO step  880  loss 4.1739  lr 1.98e-04  0.15 s/step  free 66100 MB
+2026-07-06 03:49:36,907 INFO step  900  loss 3.5438  lr 1.98e-04  0.14 s/step  free 66100 MB
+2026-07-06 03:49:40,235 INFO step  920  loss 4.2440  lr 1.98e-04  0.15 s/step  free 66100 MB
+2026-07-06 03:49:43,567 INFO step  940  loss 3.7027  lr 1.98e-04  0.15 s/step  free 66100 MB
+2026-07-06 03:49:46,588 INFO step  960  loss 4.6082  lr 1.98e-04  0.11 s/step  free 66100 MB
+2026-07-06 03:49:49,375 INFO step  980  loss 4.5912  lr 1.97e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:49:52,050 INFO step 1000  loss 3.8006  lr 1.97e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:49:52,773 INFO Saved step1000.pt (resumable)
+2026-07-06 03:49:55,381 INFO step 1020  loss 4.5183  lr 1.97e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:49:58,115 INFO step 1040  loss 4.5095  lr 1.97e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:00,861 INFO step 1060  loss 3.9089  lr 1.97e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:03,563 INFO step 1080  loss 4.3201  lr 1.97e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:06,243 INFO step 1100  loss 4.2575  lr 1.97e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:08,801 INFO step 1120  loss 4.2659  lr 1.97e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:11,454 INFO step 1140  loss 4.3697  lr 1.96e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:14,148 INFO step 1160  loss 3.8610  lr 1.96e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:16,756 INFO step 1180  loss 4.3226  lr 1.96e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:19,452 INFO step 1200  loss 3.9285  lr 1.96e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:22,070 INFO step 1220  loss 3.3821  lr 1.96e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:24,841 INFO step 1240  loss 4.5723  lr 1.96e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:27,578 INFO step 1260  loss 4.5394  lr 1.96e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:30,387 INFO step 1280  loss 4.2494  lr 1.95e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:33,120 INFO step 1300  loss 4.4800  lr 1.95e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:35,781 INFO step 1320  loss 3.3942  lr 1.95e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:38,414 INFO step 1340  loss 4.2302  lr 1.95e-04  0.13 s/step  free 70466 MB
+2026-07-06 03:50:41,172 INFO step 1360  loss 4.5126  lr 1.95e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:43,816 INFO step 1380  loss 3.9168  lr 1.95e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:46,381 INFO step 1400  loss 4.6243  lr 1.94e-04  0.12 s/step  free 70466 MB
+2026-07-06 03:50:49,007 INFO step 1420  loss 3.8255  lr 1.94e-04  0.11 s/step  free 70466 MB
+2026-07-06 03:50:51,560 INFO step 1440  loss 3.9397  lr 1.94e-04  0.11 s/step  free 70466 MB

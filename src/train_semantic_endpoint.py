@@ -710,6 +710,17 @@ def main():
                          m["trail_correct"], m["trail_underfire"],
                          m["no_fire_correct"], m["no_fire_misfire"],
                          score, dt_eval)
+            # Snapshot trainable-only weights at every eval (also for the legacy
+            # score-spec) so the opposed-pools trajectory is retained for the
+            # marker-token-probability analysis (exp-2). Gated on --snapshot-evals.
+            if args.snapshot_evals:
+                snap = {n: p.detach().cpu()
+                        for n, p in model.named_parameters() if p.requires_grad}
+                torch.save({"step": step, "trainable": snap,
+                            "tokenizer_vocab_size": len(tokenizer),
+                            "new_ids": new_ids, "eager_id": eager_id,
+                            "end_id": end_id},
+                           Path(args.checkpoint_dir) / f"snap_step{step}.pt")
             if score > best_score + 1e-6:
                 best_score = score
                 evals_since_best = 0
