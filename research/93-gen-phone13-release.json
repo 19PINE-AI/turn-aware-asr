@@ -1,0 +1,669 @@
+{
+ "checkpoint": "checkpoints/semantic_endpoint_v15_es/unified_release.pt",
+ "confirm_silent_chunks": 0,
+ "digit": {
+  "summary": {
+   "n_items": 60,
+   "premature_per_seq": 0.2,
+   "seqs_with_any_premature": 0.2,
+   "final_recall": 0.117,
+   "final_latency_p50": 0.68,
+   "digit_acc_mean": 1.0,
+   "runtime_s": 330.5
+  },
+  "timeout_baselines": [
+   {
+    "X": 0.5,
+    "premature_per_seq": 3.0,
+    "final_recall": 1.0,
+    "final_latency_s": 0.5
+   },
+   {
+    "X": 1.0,
+    "premature_per_seq": 0.95,
+    "final_recall": 1.0,
+    "final_latency_s": 1.0
+   }
+  ],
+  "per_item": [
+   {
+    "id": 0,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "seven nine five one one five two two six one two nine zero"
+   },
+   {
+    "id": 1,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one one one four zero three nine three nine six two   five seven"
+   },
+   {
+    "id": 2,
+    "n_fires": 1,
+    "fires_s": [
+     10.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6150000000000002,
+    "digit_acc": 1.0,
+    "hyp": "zero eight six two eight four eight two four three zero five zero  "
+   },
+   {
+    "id": 3,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero five eight nine five zero zero nine nine one four one eight"
+   },
+   {
+    "id": 4,
+    "n_fires": 1,
+    "fires_s": [
+     10.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6799999999999997,
+    "digit_acc": 1.0,
+    "hyp": "six seven three six seven six one seven six zero six three nine  "
+   },
+   {
+    "id": 5,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one two three four nine six three four two three nine four five"
+   },
+   {
+    "id": 6,
+    "n_fires": 1,
+    "fires_s": [
+     10.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.577,
+    "digit_acc": 1.0,
+    "hyp": "two one nine seven zero nine four two nine one two nine three  "
+   },
+   {
+    "id": 7,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one eight two two zero three five six three eight seven seven five"
+   },
+   {
+    "id": 8,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six nine eight seven two zero three seven nine five   seven one four"
+   },
+   {
+    "id": 9,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero five two seven four zero one two eight three six zero three"
+   },
+   {
+    "id": 10,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "four four seven two eight three five eight zero eight nine one two"
+   },
+   {
+    "id": 11,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "eight eight six zero seven two three seven seven four two eight   five"
+   },
+   {
+    "id": 12,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five six four zero five four three one one two seven seven six"
+   },
+   {
+    "id": 13,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five three three one three three eight six seven one two zero seven"
+   },
+   {
+    "id": 14,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six six seven zero two one five one three three nine zero three"
+   },
+   {
+    "id": 15,
+    "n_fires": 1,
+    "fires_s": [
+     9.0
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one six two six seven zero eight nine nine six   seven two four"
+   },
+   {
+    "id": 16,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two five five one one eight six eight five nine five   five nine"
+   },
+   {
+    "id": 17,
+    "n_fires": 1,
+    "fires_s": [
+     10.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.9169999999999998,
+    "digit_acc": 1.0,
+    "hyp": "eight two three nine seven five two seven three six zero five nine  "
+   },
+   {
+    "id": 18,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five six two five zero four zero eight zero eight zero two one"
+   },
+   {
+    "id": 19,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five five six two two seven eight two eight one four six four"
+   },
+   {
+    "id": 20,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one six zero nine one three five two four three one nine five"
+   },
+   {
+    "id": 21,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine eight six four zero two five seven zero two five seven nine"
+   },
+   {
+    "id": 22,
+    "n_fires": 1,
+    "fires_s": [
+     12.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 1.3680000000000003,
+    "digit_acc": 1.0,
+    "hyp": "six nine three nine three four five one three four four eight one  "
+   },
+   {
+    "id": 23,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "four six zero six zero one seven zero eight one   six zero two"
+   },
+   {
+    "id": 24,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "seven four four nine five six eight four six two one four three"
+   },
+   {
+    "id": 25,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "eight one six three nine five four two nine four four zero six"
+   },
+   {
+    "id": 26,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two six five nine seven six three five zero two five five zero"
+   },
+   {
+    "id": 27,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one zero zero one three four five four five eight seven   two five"
+   },
+   {
+    "id": 28,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "seven six zero six eight four six two eight one three three three"
+   },
+   {
+    "id": 29,
+    "n_fires": 1,
+    "fires_s": [
+     9.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one five nine one four zero four one eight three   six five three"
+   },
+   {
+    "id": 30,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero nine three seven seven three two eight three eight eight three two"
+   },
+   {
+    "id": 31,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two two four six eight seven nine one one six three nine five"
+   },
+   {
+    "id": 32,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six eight one three nine zero five two one three four two nine"
+   },
+   {
+    "id": 33,
+    "n_fires": 1,
+    "fires_s": [
+     11.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.9100000000000001,
+    "digit_acc": 1.0,
+    "hyp": "six seven four four eight zero five one four seven two four zero  "
+   },
+   {
+    "id": 34,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one zero six six nine eight six seven five six zero four zero"
+   },
+   {
+    "id": 35,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six one one seven nine six three two four eight eight eight nine"
+   },
+   {
+    "id": 36,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two three zero nine six zero one five five six   zero five eight"
+   },
+   {
+    "id": 37,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "four two one three zero eight one four five one   eight eight six"
+   },
+   {
+    "id": 38,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine four two two five seven one two one six eight two two"
+   },
+   {
+    "id": 39,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "two eight six six zero one eight one seven six eight nine five"
+   },
+   {
+    "id": 40,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six two three six five one two nine eight three five four zero"
+   },
+   {
+    "id": 41,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "one nine six three nine six one seven eight one zero nine five"
+   },
+   {
+    "id": 42,
+    "n_fires": 1,
+    "fires_s": [
+     10.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5850000000000009,
+    "digit_acc": 1.0,
+    "hyp": "six eight two zero one eight one six four zero one four five  "
+   },
+   {
+    "id": 43,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six five seven six one three eight zero three seven   two two nine"
+   },
+   {
+    "id": 44,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "three zero seven one nine four eight eight two one zero seven eight"
+   },
+   {
+    "id": 45,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six one eight zero five eight one six three six nine eight seven"
+   },
+   {
+    "id": 46,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "eight one five five seven one six zero eight seven nine zero five"
+   },
+   {
+    "id": 47,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero eight three five five one four one nine six one seven nine"
+   },
+   {
+    "id": 48,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six two zero three seven three two two five six zero five three"
+   },
+   {
+    "id": 49,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six seven four one zero zero five one nine five nine eight eight"
+   },
+   {
+    "id": 50,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "three three five two seven seven two one one seven nine eight eight"
+   },
+   {
+    "id": 51,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero nine one five zero one three one seven four three nine five"
+   },
+   {
+    "id": 52,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine seven eight three eight eight zero four nine four three six seven"
+   },
+   {
+    "id": 53,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero two five eight five six one six seven one four one seven"
+   },
+   {
+    "id": 54,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "six six five two two nine one six seven four nine eight nine"
+   },
+   {
+    "id": 55,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "zero three nine five four nine five one six three two six seven"
+   },
+   {
+    "id": 56,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "five five one one zero four seven six seven eight three eight zero"
+   },
+   {
+    "id": 57,
+    "n_fires": 1,
+    "fires_s": [
+     8.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine one seven four three two eight one two one   four eight nine"
+   },
+   {
+    "id": 58,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine two five four three five seven zero eight five one four zero"
+   },
+   {
+    "id": 59,
+    "n_fires": 0,
+    "fires_s": [],
+    "n_premature": 0,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "nine four zero six one one three three two four seven seven zero"
+   }
+  ]
+ }
+}

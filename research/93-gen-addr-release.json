@@ -1,0 +1,760 @@
+{
+ "checkpoint": "checkpoints/semantic_endpoint_v15_es/unified_release.pt",
+ "confirm_silent_chunks": 0,
+ "digit": {
+  "summary": {
+   "n_items": 60,
+   "premature_per_seq": 0.217,
+   "seqs_with_any_premature": 0.217,
+   "final_recall": 0.933,
+   "final_latency_p50": 0.453,
+   "digit_acc_mean": 0.997,
+   "runtime_s": 84.4
+  },
+  "timeout_baselines": [
+   {
+    "X": 0.5,
+    "premature_per_seq": 0.0,
+    "final_recall": 1.0,
+    "final_latency_s": 0.5
+   },
+   {
+    "X": 1.0,
+    "premature_per_seq": 0.0,
+    "final_recall": 1.0,
+    "final_latency_s": 1.0
+   }
+  ],
+  "per_item": [
+   {
+    "id": 0,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6680000000000001,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is nine five one one cedar lane, apartment five b.  "
+   },
+   {
+    "id": 1,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5119999999999996,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is one two nine zero harbor view crescent, apartment nine a.  "
+   },
+   {
+    "id": 2,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.30600000000000005,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six one one three cedar lane, apartment three d.  "
+   },
+   {
+    "id": 3,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.32399999999999984,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is nine four five three oak street, apartment seven a.  "
+   },
+   {
+    "id": 4,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     4.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.31000000000000005,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   two nine one elm court, apartment one a.  "
+   },
+   {
+    "id": 5,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4500000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three nine three cedar lane, apartment ninety.  "
+   },
+   {
+    "id": 6,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.44599999999999973,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   seven one seven six kingsley drive, apartment two b.  "
+   },
+   {
+    "id": 7,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6840000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four five nine elm court, apartment one a.  "
+   },
+   {
+    "id": 8,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.6379999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   six eight zero maple avenue, apartment zero d.  "
+   },
+   {
+    "id": 9,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.44399999999999995,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight six two kingsley drive, apartment eight c.  "
+   },
+   {
+    "id": 10,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4740000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four three zero cedar lane, apartment five a.  "
+   },
+   {
+    "id": 11,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.4400000000000004,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   five three seven harborview crescent apartment zero c.  "
+   },
+   {
+    "id": 12,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.3360000000000003,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is two six five nine elm court, apartment eight d.  "
+   },
+   {
+    "id": 13,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.34799999999999986,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero four zero cedar lane, apartment six a.  "
+   },
+   {
+    "id": 14,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.2779999999999996,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   seven zero five eight maple avenue, apartment nine c.  "
+   },
+   {
+    "id": 15,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.44399999999999995,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is nine nine one kingsley drive, apartment four a.  "
+   },
+   {
+    "id": 16,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.33000000000000007,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four one two ashford terrace, apartment seven a.  "
+   },
+   {
+    "id": 17,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six two three nine kingsley drive, apartment two d.  "
+   },
+   {
+    "id": 18,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.7160000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three seven zero cedar lane, apartment seven d.  "
+   },
+   {
+    "id": 19,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6079999999999997,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six seven three six oak street, apartment seven d.  "
+   },
+   {
+    "id": 20,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6619999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six zero six three willow way, apartment nine a.  "
+   },
+   {
+    "id": 21,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5179999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is one zero one nine birch boulevard, apartment three c.  "
+   },
+   {
+    "id": 22,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6619999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is two five four kingsley drive, apartment three c.  "
+   },
+   {
+    "id": 23,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.42600000000000016,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight six two cedar lane, apartment one c.  "
+   },
+   {
+    "id": 24,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.69,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero three one elm court, apartment two b.  "
+   },
+   {
+    "id": 25,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.258,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three four two three willow way, apartment nine c.  "
+   },
+   {
+    "id": 26,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.548,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is seven four zero five willow way, apartment five b.  "
+   },
+   {
+    "id": 27,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4980000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is five eight three cedar lane, apartment eight b.  "
+   },
+   {
+    "id": 28,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6139999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three one zero harborview crescent, apartment two a.  "
+   },
+   {
+    "id": 29,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero nine four two cedar lane, apartment nine a.  "
+   },
+   {
+    "id": 30,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4560000000000004,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six one seven elm court, apartment six c.  "
+   },
+   {
+    "id": 31,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is two zero nine harborview crescent, apartment eight a.  "
+   },
+   {
+    "id": 32,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5179999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight zero two seven ashford terrace, apartment two b.  "
+   },
+   {
+    "id": 33,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4500000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is one four three cedar lane, apartment one b.  "
+   },
+   {
+    "id": 34,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.28800000000000026,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three five six ashford terrace, apartment three d.  "
+   },
+   {
+    "id": 35,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.28200000000000003,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four five seven eight elm court, apartment zero c.  "
+   },
+   {
+    "id": 36,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.258,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six seven one nine willow way, apartment six a.  "
+   },
+   {
+    "id": 37,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5640000000000001,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero five two elm court, apartment eight b.  "
+   },
+   {
+    "id": 38,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5419999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero five nine six cedar lane, apartment ninety.  "
+   },
+   {
+    "id": 39,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5459999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three seven nine oak street, apartment five d.  "
+   },
+   {
+    "id": 40,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5899999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is one seven one three ashford terrace, apartment one a.  "
+   },
+   {
+    "id": 41,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.258,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is six seven nine six elm court, apartment four c.  "
+   },
+   {
+    "id": 42,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.46999999999999975,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is nine nine five five maple avenue, apartment four a.  "
+   },
+   {
+    "id": 43,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     4.5
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.54,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   five two seven oak street, apartment four a.  "
+   },
+   {
+    "id": 44,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.504,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight three six elm court, apartment zero b.  "
+   },
+   {
+    "id": 45,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.6379999999999999,
+    "digit_acc": 0.8,
+    "hyp": "the delivery address is   one three six birch boulevard, apartment three c.  "
+   },
+   {
+    "id": 46,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4219999999999997,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three five three seven birch boulevard, apartment one c.  "
+   },
+   {
+    "id": 47,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.3959999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is seven eight zero cedar lane, apartment eight a.  "
+   },
+   {
+    "id": 48,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.33000000000000007,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four four seven two willow way, apartment eight b.  "
+   },
+   {
+    "id": 49,
+    "n_fires": 1,
+    "fires_s": [
+     4.0
+    ],
+    "n_premature": 1,
+    "final_recall": 0,
+    "final_latency_s": null,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight nine one elm court, apartment two b.  "
+   },
+   {
+    "id": 50,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     4.5
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.258,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   seven one zero kingsley drive, apartment one a.  "
+   },
+   {
+    "id": 51,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.4500000000000002,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is seven one zero oak street, apartment zero a.  "
+   },
+   {
+    "id": 52,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.30600000000000005,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three three zero willow way, apartment zero c.  "
+   },
+   {
+    "id": 53,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6139999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is zero seven two three elm court, apartment seven d.  "
+   },
+   {
+    "id": 54,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5219999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is eight five one elm court, apartment six b.  "
+   },
+   {
+    "id": 55,
+    "n_fires": 1,
+    "fires_s": [
+     4.5
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.42600000000000016,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is three two one cedar lane, apartment seven c.  "
+   },
+   {
+    "id": 56,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.3799999999999999,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four one nine four kingsley drive, apartment five d.  "
+   },
+   {
+    "id": 57,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.5419999999999998,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is nine nine six five maple avenue, apartment six c.  "
+   },
+   {
+    "id": 58,
+    "n_fires": 1,
+    "fires_s": [
+     5.0
+    ],
+    "n_premature": 0,
+    "final_recall": 1,
+    "final_latency_s": 0.6680000000000001,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is four three one one ashford terrace, apartment two d.  "
+   },
+   {
+    "id": 59,
+    "n_fires": 2,
+    "fires_s": [
+     1.5,
+     5.0
+    ],
+    "n_premature": 1,
+    "final_recall": 1,
+    "final_latency_s": 0.37399999999999967,
+    "digit_acc": 1.0,
+    "hyp": "the delivery address is   five eight seven four birch boulevard, apartments seven c.  "
+   }
+  ]
+ }
+}

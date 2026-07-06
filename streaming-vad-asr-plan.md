@@ -1,6 +1,6 @@
 # Streaming Context-Aware VAD + ASR Model — Research Plan
 
-**Author:** Bo
+**Author:** Bojie Li (Pine AI) and Noah Shi (University of Washington)
 **Hardware:** 1× NVIDIA RTX Pro 6000 Blackwell (96GB GDDR7)
 **Target:** unified streaming model that replaces the cascaded VAD + ASR pipeline, with low-latency endpoint detection and context-aware transcription.
 

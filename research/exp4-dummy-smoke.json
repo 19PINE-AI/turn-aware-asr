@@ -1,0 +1,372 @@
+{
+  "system": "dummy_rms",
+  "seed": 0,
+  "n_stretches": 3,
+  "chunk_s": 0.5,
+  "license_note": "harness fixture (not a baseline)",
+  "arms": {
+    "0.5": {
+      "summary": {
+        "system": "dummy_rms",
+        "arm": "0.5",
+        "chunk_s": 0.5,
+        "n_stretches": 3,
+        "n_turn_bounds": 17,
+        "n_cont_bounds": 4,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.7700004577636719,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7547049802892348
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ]
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ]
+        },
+        {
+          "meeting_id": "IS1000d",
+          "speaker_id": "FIE081",
+          "n_turn_bounds": 6,
+          "n_cont_bounds": 1,
+          "n_fires": 7,
+          "n_hits": 6,
+          "n_resume_fires": 1,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.6600003242492676,
+            0.6300005912780762,
+            0.5499987602233887,
+            0.5199999809265137,
+            0.8899989128112793,
+            0.9200015068054199
+          ],
+          "speech_s": 12.880000591278076,
+          "fires_s": [
+            3.5,
+            20.0,
+            40.0,
+            45.0,
+            48.0,
+            51.5,
+            55.0
+          ]
+        }
+      ]
+    },
+    "1.0": {
+      "summary": {
+        "system": "dummy_rms",
+        "arm": "1.0",
+        "chunk_s": 0.5,
+        "n_stretches": 3,
+        "n_turn_bounds": 17,
+        "n_cont_bounds": 4,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 0.75,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 1.2700004577636719,
+        "latency_s_p95": 1.4599990844726562,
+        "latency_s_mean": 1.254704980289235
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            1.4599990844726562,
+            1.4599990844726562,
+            1.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            9.0,
+            22.0,
+            24.5,
+            31.5,
+            34.5,
+            58.0
+          ]
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            1.3299980163574219,
+            1.3799972534179688,
+            1.3400001525878906,
+            1.2700004577636719,
+            1.0200004577636719,
+            1.1599998474121094,
+            1.2499961853027344,
+            1.0399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            2.0,
+            14.5,
+            18.5,
+            25.5,
+            27.5,
+            36.5,
+            51.5,
+            59.5
+          ]
+        },
+        {
+          "meeting_id": "IS1000d",
+          "speaker_id": "FIE081",
+          "n_turn_bounds": 6,
+          "n_cont_bounds": 1,
+          "n_fires": 6,
+          "n_hits": 6,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            1.1600003242492676,
+            1.1300005912780762,
+            1.0499987602233887,
+            1.0199999809265137,
+            1.3899989128112793,
+            1.42000150680542
+          ],
+          "speech_s": 12.880000591278076,
+          "fires_s": [
+            4.0,
+            20.5,
+            40.5,
+            45.5,
+            48.5,
+            55.5
+          ]
+        }
+      ]
+    },
+    "1.5": {
+      "summary": {
+        "system": "dummy_rms",
+        "arm": "1.5",
+        "chunk_s": 0.5,
+        "n_stretches": 3,
+        "n_turn_bounds": 17,
+        "n_cont_bounds": 4,
+        "boundary_recall": 0.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 0.0,
+        "dup_or_silence_fires_total": 17
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 3,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 3,
+          "latencies_s": [],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            25.0,
+            35.0,
+            58.5
+          ]
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 8,
+          "latencies_s": [],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            2.5,
+            15.0,
+            19.0,
+            26.0,
+            28.0,
+            37.0,
+            52.0,
+            60.0
+          ]
+        },
+        {
+          "meeting_id": "IS1000d",
+          "speaker_id": "FIE081",
+          "n_turn_bounds": 6,
+          "n_cont_bounds": 1,
+          "n_fires": 6,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 6,
+          "latencies_s": [],
+          "speech_s": 12.880000591278076,
+          "fires_s": [
+            4.5,
+            21.0,
+            41.0,
+            46.0,
+            49.0,
+            56.0
+          ]
+        }
+      ]
+    },
+    "2.0": {
+      "summary": {
+        "system": "dummy_rms",
+        "arm": "2.0",
+        "chunk_s": 0.5,
+        "n_stretches": 3,
+        "n_turn_bounds": 17,
+        "n_cont_bounds": 4,
+        "boundary_recall": 0.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 0.0,
+        "dup_or_silence_fires_total": 15
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 3,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 3,
+          "latencies_s": [],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            25.5,
+            35.5,
+            59.0
+          ]
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 6,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 6,
+          "latencies_s": [],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            3.0,
+            15.5,
+            19.5,
+            28.5,
+            37.5,
+            60.5
+          ]
+        },
+        {
+          "meeting_id": "IS1000d",
+          "speaker_id": "FIE081",
+          "n_turn_bounds": 6,
+          "n_cont_bounds": 1,
+          "n_fires": 6,
+          "n_hits": 0,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 6,
+          "latencies_s": [],
+          "speech_s": 12.880000591278076,
+          "fires_s": [
+            5.0,
+            21.5,
+            41.5,
+            46.5,
+            49.5,
+            56.5
+          ]
+        }
+      ]
+    }
+  }
+}

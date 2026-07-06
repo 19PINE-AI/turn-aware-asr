@@ -1,0 +1,273 @@
+{
+  "system": "kyutai_stt_vad",
+  "seed": 0,
+  "n_stretches": 1,
+  "chunk_s": 0.5,
+  "license_note": "CC-BY-4.0 weights; model kyutai/stt-1b-en_fr-candle (semantic-VAD head 2 = 2.0 s)",
+  "arms": {
+    "thr0.3": {
+      "summary": {
+        "system": "kyutai_stt_vad",
+        "arm": "thr0.3",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 11.106991823897506,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.45999908447265625,
+        "latency_s_p95": 0.45999908447265625,
+        "latency_s_mean": 0.4566650390625,
+        "wer_mean": 0.3829787234042553
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 11,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 5,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.45999908447265625,
+            0.45999908447265625,
+            0.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            11.0,
+            16.5,
+            20.5,
+            21.5,
+            23.5,
+            29.5,
+            30.5,
+            33.5,
+            55.5,
+            57.0
+          ],
+          "wer": 0.3829787234042553
+        }
+      ]
+    },
+    "thr0.4": {
+      "summary": {
+        "system": "kyutai_stt_vad",
+        "arm": "thr0.4",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 11.106991823897506,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 1,
+        "latency_s_p50": 0.45999908447265625,
+        "latency_s_p95": 0.45999908447265625,
+        "latency_s_mean": 0.6233317057291666,
+        "wer_mean": 0.3829787234042553
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 12,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 5,
+          "n_dup_or_silence_fires": 1,
+          "latencies_s": [
+            0.45999908447265625,
+            0.9599990844726562,
+            0.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            11.0,
+            16.5,
+            20.5,
+            21.5,
+            23.5,
+            28.5,
+            31.0,
+            34.0,
+            34.5,
+            55.5,
+            57.0
+          ],
+          "wer": 0.3829787234042553
+        }
+      ]
+    },
+    "thr0.5": {
+      "summary": {
+        "system": "kyutai_stt_vad",
+        "arm": "thr0.5",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 13.328390188677007,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 1,
+        "latency_s_p50": 0.45999908447265625,
+        "latency_s_p95": 0.45999908447265625,
+        "latency_s_mean": 0.6233317057291666,
+        "wer_mean": 0.3829787234042553
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 13,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 6,
+          "n_dup_or_silence_fires": 1,
+          "latencies_s": [
+            0.45999908447265625,
+            0.9599990844726562,
+            0.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            11.0,
+            11.5,
+            16.5,
+            20.5,
+            21.5,
+            23.5,
+            28.5,
+            31.0,
+            34.0,
+            34.5,
+            55.5,
+            57.0
+          ],
+          "wer": 0.3829787234042553
+        }
+      ]
+    },
+    "thr0.6": {
+      "summary": {
+        "system": "kyutai_stt_vad",
+        "arm": "thr0.6",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 15.549788553456507,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 1,
+        "latency_s_p50": 0.45999908447265625,
+        "latency_s_p95": 0.45999908447265625,
+        "latency_s_mean": 0.6233317057291666,
+        "wer_mean": 0.3829787234042553
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 14,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 7,
+          "n_dup_or_silence_fires": 1,
+          "latencies_s": [
+            0.45999908447265625,
+            0.9599990844726562,
+            0.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            9.0,
+            11.0,
+            12.0,
+            16.5,
+            20.5,
+            21.5,
+            23.5,
+            28.0,
+            28.5,
+            31.0,
+            34.0,
+            34.5,
+            56.0,
+            57.0
+          ],
+          "wer": 0.3829787234042553
+        }
+      ]
+    },
+    "thr0.7": {
+      "summary": {
+        "system": "kyutai_stt_vad",
+        "arm": "thr0.7",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 13.328390188677007,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 2,
+        "latency_s_p50": 0.45999908447265625,
+        "latency_s_p95": 0.45999908447265625,
+        "latency_s_mean": 0.6233317057291666,
+        "wer_mean": 0.3829787234042553
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 14,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 6,
+          "n_dup_or_silence_fires": 2,
+          "latencies_s": [
+            0.45999908447265625,
+            0.9599990844726562,
+            0.4499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            9.0,
+            11.5,
+            12.0,
+            16.5,
+            20.5,
+            21.0,
+            21.5,
+            23.5,
+            28.5,
+            31.0,
+            34.0,
+            34.5,
+            56.0,
+            57.0
+          ],
+          "wer": 0.3829787234042553
+        }
+      ]
+    }
+  }
+}

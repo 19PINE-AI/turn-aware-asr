@@ -227,6 +227,13 @@ def main():
     p.add_argument("--out", default="data/semantic_endpoint_v9/data.pt")
     p.add_argument("--transcripts-cache", default="data/semantic_endpoint_v9/ls_transcripts.json")
     p.add_argument("--seed", type=int, default=9)
+    p.add_argument("--drop-schemas", default="",
+                   help="exp-3 ablation: comma list of schema strings to remove "
+                        "(e.g. complete_nosil ; silence_only,lead_sil ; pair_hold)")
+    p.add_argument("--iso-count", action="store_true",
+                   help="after dropping, upsample remaining schemas (with "
+                        "replacement) back to the original total, so the arm "
+                        "controls for data volume (report as primary).")
     args = p.parse_args()
     rng = random.Random(args.seed)
 
@@ -359,6 +366,22 @@ def main():
         cat = np.concatenate([sil(rng.uniform(0.5, 2.0)),
                               trim_tail_silence(u["audio"]), tail()])
         examples.append(ex(cat, f"{u['text']} {M}", "lead_sil", "ls"))
+
+    # ---- exp-3 schema ablation ----
+    drop = {s.strip() for s in args.drop_schemas.split(",") if s.strip()}
+    if drop:
+        n0 = len(examples)
+        kept = [e for e in examples if e["schema"] not in drop]
+        removed = n0 - len(kept)
+        logger.info("drop-schemas %s: removed %d of %d examples", sorted(drop), removed, n0)
+        if not kept:
+            raise SystemExit("drop-schemas removed everything")
+        if args.iso_count and removed > 0:
+            extra = [rng.choice(kept) for _ in range(removed)]  # upsample to original total
+            kept = kept + extra
+            logger.info("iso-count: upsampled %d examples back to %d (volume control)",
+                        removed, len(kept))
+        examples = kept
 
     rng.shuffle(examples)
     counts = defaultdict(int)

@@ -44,8 +44,11 @@ from pathlib import Path
 import numpy as np
 import pyarrow.parquet as pq
 import soundfile as sf
-import torch
 from tqdm import tqdm
+# NOTE: `torch` is imported lazily inside StreamDecoder.step and main() so that
+# the stretch-building / scoring helpers (load_meetings, build_stretches,
+# score_fires) can be imported in torch-free environments — e.g. the lean
+# ONNX-only venv the exp-4 external-baseline harness uses for Smart Turn.
 
 from eval.metrics import wer
 
@@ -210,6 +213,7 @@ class StreamDecoder:
         self.buffer = None
 
     def step(self, chunk: np.ndarray) -> str:
+        import torch
         self.buffer = chunk if self.buffer is None else np.concatenate([self.buffer, chunk])
         device = next(self.model.parameters()).device
         prefix = ""
@@ -474,6 +478,7 @@ def main():
                  sum(1 for s in stretches for e in s["events"] if e["boundary"] == "turn_final"),
                  sum(1 for s in stretches for e in s["events"] if e["boundary"] == "continuation"))
 
+    import torch
     from src.train_semantic_endpoint import (
         load_base_model, extend_tokenizer_and_model,
         apply_lora, freeze_except_lora_and_new_rows,

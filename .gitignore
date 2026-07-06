@@ -31,3 +31,6 @@ eval/results/
 
 # merged inference checkpoints (large, re-derivable via scripts/merge_endpoint_lora.py)
 checkpoints/merged/
+
+# external-baseline venvs (exp-4) — large, re-creatable per eval/external/README.md
+.venv_ext_*/

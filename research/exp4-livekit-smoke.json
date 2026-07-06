@@ -1,0 +1,404 @@
+{
+  "system": "livekit_turn_detector",
+  "seed": 0,
+  "n_stretches": 2,
+  "chunk_s": 0.5,
+  "license_note": "Apache-2.0 (OSI); model livekit/turn-detector. transcript_mode=oracle uses ground-truth words (upper bound); variant-b real transcript needs a GPU STT pass.",
+  "arms": {
+    "thr0.3": {
+      "summary": {
+        "system": "livekit_turn_detector",
+        "arm": "thr0.3",
+        "chunk_s": 0.5,
+        "n_stretches": 2,
+        "n_turn_bounds": 11,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.8299980163574219,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7872713262384589,
+        "wer_mean": 0.0
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ],
+          "wer": 0.0
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ],
+          "wer": 0.0
+        }
+      ]
+    },
+    "thr0.5": {
+      "summary": {
+        "system": "livekit_turn_detector",
+        "arm": "thr0.5",
+        "chunk_s": 0.5,
+        "n_stretches": 2,
+        "n_turn_bounds": 11,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.8299980163574219,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7872713262384589,
+        "wer_mean": 0.0
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ],
+          "wer": 0.0
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ],
+          "wer": 0.0
+        }
+      ]
+    },
+    "thr0.7": {
+      "summary": {
+        "system": "livekit_turn_detector",
+        "arm": "thr0.7",
+        "chunk_s": 0.5,
+        "n_stretches": 2,
+        "n_turn_bounds": 11,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.8299980163574219,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7872713262384589,
+        "wer_mean": 0.0
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ],
+          "wer": 0.0
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ],
+          "wer": 0.0
+        }
+      ]
+    },
+    "thr0.8": {
+      "summary": {
+        "system": "livekit_turn_detector",
+        "arm": "thr0.8",
+        "chunk_s": 0.5,
+        "n_stretches": 2,
+        "n_turn_bounds": 11,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.8299980163574219,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7872713262384589,
+        "wer_mean": 0.0
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ],
+          "wer": 0.0
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ],
+          "wer": 0.0
+        }
+      ]
+    },
+    "thr0.9": {
+      "summary": {
+        "system": "livekit_turn_detector",
+        "arm": "thr0.9",
+        "chunk_s": 0.5,
+        "n_stretches": 2,
+        "n_turn_bounds": 11,
+        "n_cont_bounds": 3,
+        "boundary_recall": 1.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 1.0,
+        "dup_or_silence_fires_total": 0,
+        "latency_s_p50": 0.8299980163574219,
+        "latency_s_p95": 0.9599990844726562,
+        "latency_s_mean": 0.7872713262384589,
+        "wer_mean": 0.0
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 6,
+          "n_hits": 3,
+          "n_resume_fires": 3,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.9599990844726562,
+            0.9599990844726562,
+            0.9499969482421875
+          ],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            8.5,
+            21.5,
+            24.0,
+            31.0,
+            34.0,
+            57.5
+          ],
+          "wer": 0.0
+        },
+        {
+          "meeting_id": "EN2001b",
+          "speaker_id": "MEO069",
+          "n_turn_bounds": 8,
+          "n_cont_bounds": 0,
+          "n_fires": 8,
+          "n_hits": 8,
+          "n_resume_fires": 0,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [
+            0.8299980163574219,
+            0.8799972534179688,
+            0.8400001525878906,
+            0.7700004577636719,
+            0.5200004577636719,
+            0.6599998474121094,
+            0.7499961853027344,
+            0.5399971008300781
+          ],
+          "speech_s": 26.18000030517578,
+          "fires_s": [
+            1.5,
+            14.0,
+            18.0,
+            25.0,
+            27.0,
+            36.0,
+            51.0,
+            59.0
+          ],
+          "wer": 0.0
+        }
+      ]
+    }
+  }
+}

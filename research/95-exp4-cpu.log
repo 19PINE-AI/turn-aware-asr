@@ -1,0 +1,9 @@
+=== exp4 smart_turn dev25 2026-07-06T02:07:27+00:00 ===
+2026-07-06 02:07:56,526 INFO arm thr0.6     recall 0.677  P50 0.64s  false/min 3.2  resume 0.56  wer nan
+2026-07-06 02:07:56,526 INFO arm thr0.7     recall 0.635  P50 0.66s  false/min 3.1  resume 0.56  wer nan
+2026-07-06 02:07:56,529 INFO Saved research/95-exp4-smart_turn-dev25.json
+=== exp4 livekit_turn dev25 2026-07-06T02:07:57+00:00 ===
+2026-07-06 02:08:13,170 INFO arm thr0.8     recall 0.958  P50 0.65s  false/min 6.3  resume 1.00  wer 0.000
+2026-07-06 02:08:13,172 INFO arm thr0.9     recall 0.958  P50 0.65s  false/min 6.3  resume 1.00  wer 0.000
+2026-07-06 02:08:13,174 INFO Saved research/95-exp4-livekit_turn-dev25.json
+=== DONE exp4 CPU 2026-07-06T02:08:13+00:00 ===

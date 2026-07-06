@@ -243,13 +243,17 @@ class Transcriber:
     def __init__(self, backend: str = "pkg", model_name: str = "Qwen/Qwen3-ASR-0.6B"):
         self.backend = backend
         if backend == "pkg":
+            import torch  # noqa: PLC0415
             from qwen_asr import Qwen3ASRModel  # noqa: PLC0415  (heavy import)
             self.model = Qwen3ASRModel.from_pretrained(
                 model_name,
                 cache_dir="data/qwen3-asr-0.6b-pkg",
                 max_inference_batch_size=4,
                 max_new_tokens=256,
+                dtype=torch.bfloat16, device_map="cuda",  # else silently runs on CPU (~9x slower)
             )
+            logging.getLogger(__name__).info(
+                "pkg model device: %s", next(self.model.model.parameters()).device)
         elif backend == "native":
             # TODO: wire the transformers backend via
             # `eval.run_qwen3asr_native.transcribe` (needs mel feature

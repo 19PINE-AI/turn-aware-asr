@@ -1,0 +1,47 @@
+[
+ {
+  "step": 1500,
+  "path": "checkpoints/semantic_endpoint_v16_es/snap_step1500.pt",
+  "digit": {
+   "premature_per_seq": 0.5,
+   "final_recall": 0.68,
+   "digit_acc": 0.996,
+   "final_lat_p50": 0.506
+  },
+  "name_profile": 1.0,
+  "email_profile": 0.925,
+  "name_none": 1.0,
+  "email_none": 0.175,
+  "intrusion": 0.0
+ },
+ {
+  "step": 3000,
+  "path": "checkpoints/semantic_endpoint_v16_es/snap_step3000.pt",
+  "digit": {
+   "premature_per_seq": 0.62,
+   "final_recall": 0.5,
+   "digit_acc": 0.994,
+   "final_lat_p50": 0.433
+  },
+  "name_profile": 1.0,
+  "email_profile": 0.875,
+  "name_none": 1.0,
+  "email_none": 0.15,
+  "intrusion": 0.0
+ },
+ {
+  "step": 4500,
+  "path": "checkpoints/semantic_endpoint_v16_es/snap_step4500.pt",
+  "digit": {
+   "premature_per_seq": 0.28,
+   "final_recall": 0.72,
+   "digit_acc": 0.998,
+   "final_lat_p50": 0.47
+  },
+  "name_profile": 1.0,
+  "email_profile": 0.875,
+  "name_none": 1.0,
+  "email_none": 0.075,
+  "intrusion": 0.0
+ }
+]

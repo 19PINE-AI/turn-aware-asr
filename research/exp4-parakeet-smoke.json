@@ -1,0 +1,43 @@
+{
+  "system": "parakeet_realtime_eou_120m",
+  "seed": 0,
+  "n_stretches": 1,
+  "chunk_s": 0.5,
+  "license_note": "NON-OSI: NVIDIA open-model / research-eval terms \u2014 evaluation-only; note in paper caption",
+  "arms": {
+    "eou": {
+      "summary": {
+        "system": "parakeet_realtime_eou_120m",
+        "arm": "eou",
+        "chunk_s": 0.5,
+        "n_stretches": 1,
+        "n_turn_bounds": 3,
+        "n_cont_bounds": 3,
+        "boundary_recall": 0.0,
+        "false_fires_per_speech_min": 0.0,
+        "resume_after_fire_rate": 0.3333333333333333,
+        "dup_or_silence_fires_total": 0,
+        "wer_mean": 0.48936170212765956
+      },
+      "per_stretch": [
+        {
+          "meeting_id": "IS1007d",
+          "speaker_id": "MIO049",
+          "n_turn_bounds": 3,
+          "n_cont_bounds": 3,
+          "n_fires": 1,
+          "n_hits": 0,
+          "n_resume_fires": 1,
+          "n_false_fires": 0,
+          "n_dup_or_silence_fires": 0,
+          "latencies_s": [],
+          "speech_s": 27.010013580322266,
+          "fires_s": [
+            21.5
+          ],
+          "wer": 0.48936170212765956
+        }
+      ]
+    }
+  }
+}

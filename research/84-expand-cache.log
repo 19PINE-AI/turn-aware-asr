@@ -1,0 +1,800 @@
+2026-07-06 01:05:18,542 INFO candidates in [2.5,14.0]s: 9300
+2026-07-06 01:05:18,544 INFO cache before: 4437 entries
+2026-07-06 01:05:18,545 INFO to transcribe: 6337
+The following generation flags are not valid and may be ignored: ['temperature']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+2026-07-06 01:05:23,347 INFO model device: cuda:0
+base-transcribe:   0%|          | 0/793 [00:00<?, ?it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   0%|          | 1/793 [00:01<15:33,  1.18s/it]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   0%|          | 2/793 [00:01<12:22,  1.07it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   0%|          | 3/793 [00:02<11:36,  1.13it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 4/793 [00:03<11:05,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 5/793 [00:04<10:09,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 6/793 [00:05<10:37,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 7/793 [00:05<10:24,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 8/793 [00:06<10:41,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|          | 9/793 [00:07<10:48,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|▏         | 10/793 [00:08<10:36,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   1%|▏         | 11/793 [00:09<10:17,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 12/793 [00:09<10:02,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 13/793 [00:10<10:20,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 14/793 [00:11<10:02,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 15/793 [00:12<09:59,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 16/793 [00:12<10:01,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 17/793 [00:13<09:49,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 18/793 [00:14<09:54,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   2%|▏         | 19/793 [00:15<10:26,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 20/793 [00:16<10:21,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 21/793 [00:16<10:00,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 22/793 [00:17<10:20,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 23/793 [00:18<09:57,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 24/793 [00:19<10:09,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 25/793 [00:20<10:21,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 26/793 [00:20<10:39,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   3%|▎         | 27/793 [00:21<10:17,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▎         | 28/793 [00:22<10:19,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▎         | 29/793 [00:23<10:08,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 30/793 [00:24<10:09,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 31/793 [00:24<10:09,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 32/793 [00:25<10:06,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 33/793 [00:26<09:55,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 34/793 [00:27<10:02,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   4%|▍         | 35/793 [00:27<09:42,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▍         | 36/793 [00:28<09:21,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▍         | 37/793 [00:29<09:23,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▍         | 38/793 [00:30<09:32,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▍         | 39/793 [00:30<09:14,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▌         | 40/793 [00:31<09:18,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▌         | 41/793 [00:32<09:22,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▌         | 42/793 [00:33<09:12,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   5%|▌         | 43/793 [00:33<09:00,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 44/793 [00:34<09:14,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 45/793 [00:35<09:34,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 46/793 [00:36<09:39,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 47/793 [00:36<09:21,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 48/793 [00:37<09:31,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▌         | 49/793 [00:38<09:44,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▋         | 50/793 [00:39<09:23,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   6%|▋         | 51/793 [00:40<09:34,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 52/793 [00:40<09:36,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 53/793 [00:41<09:26,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 54/793 [00:42<09:17,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 55/793 [00:43<09:10,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 56/793 [00:43<09:44,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 57/793 [00:44<09:55,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 58/793 [00:45<09:33,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   7%|▋         | 59/793 [00:46<09:27,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 60/793 [00:47<09:39,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 61/793 [00:47<09:38,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 62/793 [00:48<09:27,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 63/793 [00:49<09:22,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 64/793 [00:50<09:26,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 65/793 [00:50<09:34,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 66/793 [00:51<10:12,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   8%|▊         | 67/793 [00:52<09:50,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▊         | 68/793 [00:53<09:53,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▊         | 69/793 [00:54<10:01,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 70/793 [00:55<09:57,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 71/793 [00:56<10:16,  1.17it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 72/793 [00:56<09:42,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 73/793 [00:57<09:15,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 74/793 [00:58<08:57,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:   9%|▉         | 75/793 [00:58<08:59,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|▉         | 76/793 [00:59<08:48,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|▉         | 77/793 [01:00<09:07,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|▉         | 78/793 [01:01<09:25,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|▉         | 79/793 [01:02<09:19,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|█         | 80/793 [01:02<08:57,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|█         | 81/793 [01:03<08:31,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|█         | 82/793 [01:04<08:49,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  10%|█         | 83/793 [01:04<08:32,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 84/793 [01:05<08:36,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 85/793 [01:06<08:48,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 86/793 [01:07<08:54,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 87/793 [01:08<09:02,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 88/793 [01:08<08:54,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█         | 89/793 [01:09<08:55,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█▏        | 90/793 [01:10<09:03,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  11%|█▏        | 91/793 [01:11<09:15,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 92/793 [01:12<09:28,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 93/793 [01:12<09:22,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 94/793 [01:13<09:04,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 95/793 [01:14<08:56,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 96/793 [01:15<09:11,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 97/793 [01:15<09:21,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 98/793 [01:16<09:07,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  12%|█▏        | 99/793 [01:17<09:20,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 100/793 [01:18<09:34,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 101/793 [01:19<09:11,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 102/793 [01:19<09:16,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 103/793 [01:20<09:13,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 104/793 [01:21<08:51,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 105/793 [01:22<09:16,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 106/793 [01:23<09:18,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  13%|█▎        | 107/793 [01:23<08:37,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▎        | 108/793 [01:24<08:25,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▎        | 109/793 [01:25<08:09,  1.40it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▍        | 110/793 [01:26<08:36,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▍        | 111/793 [01:26<08:43,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▍        | 112/793 [01:27<08:51,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▍        | 113/793 [01:28<08:30,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  14%|█▍        | 114/793 [01:29<08:29,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▍        | 115/793 [01:29<08:52,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▍        | 116/793 [01:30<08:47,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▍        | 117/793 [01:31<08:29,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▍        | 118/793 [01:32<08:08,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▌        | 119/793 [01:32<08:23,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▌        | 120/793 [01:33<08:26,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▌        | 121/793 [01:34<08:30,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  15%|█▌        | 122/793 [01:35<08:16,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 123/793 [01:35<08:16,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 124/793 [01:36<07:51,  1.42it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 125/793 [01:37<08:12,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 126/793 [01:38<08:29,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 127/793 [01:38<08:29,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▌        | 128/793 [01:39<08:22,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▋        | 129/793 [01:40<08:07,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  16%|█▋        | 130/793 [01:40<08:05,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 131/793 [01:41<08:09,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 132/793 [01:42<08:18,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 133/793 [01:43<08:15,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 134/793 [01:44<08:22,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 135/793 [01:44<08:41,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 136/793 [01:45<08:42,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 137/793 [01:46<08:28,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  17%|█▋        | 138/793 [01:47<08:33,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 139/793 [01:48<08:49,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 140/793 [01:48<08:34,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 141/793 [01:49<08:31,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 142/793 [01:50<08:12,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 143/793 [01:51<08:29,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 144/793 [01:52<08:40,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 145/793 [01:52<08:20,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  18%|█▊        | 146/793 [01:53<08:27,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▊        | 147/793 [01:54<08:33,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▊        | 148/793 [01:55<08:21,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 149/793 [01:55<08:15,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 150/793 [01:56<08:24,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 151/793 [01:57<08:28,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 152/793 [01:58<08:38,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 153/793 [01:59<08:30,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  19%|█▉        | 154/793 [01:59<08:18,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|█▉        | 155/793 [02:00<08:01,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|█▉        | 156/793 [02:01<08:14,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|█▉        | 157/793 [02:02<08:09,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|█▉        | 158/793 [02:02<08:12,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|██        | 159/793 [02:03<07:58,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|██        | 160/793 [02:04<08:00,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|██        | 161/793 [02:05<07:55,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  20%|██        | 162/793 [02:05<07:56,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 163/793 [02:06<08:08,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 164/793 [02:07<08:04,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 165/793 [02:08<08:27,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 166/793 [02:09<08:21,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 167/793 [02:09<07:53,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██        | 168/793 [02:10<07:46,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██▏       | 169/793 [02:11<07:47,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  21%|██▏       | 170/793 [02:12<08:06,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 171/793 [02:12<07:55,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 172/793 [02:13<07:57,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 173/793 [02:14<07:43,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 174/793 [02:15<07:51,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 175/793 [02:15<07:51,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 176/793 [02:16<07:38,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 177/793 [02:17<07:46,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  22%|██▏       | 178/793 [02:18<07:26,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 179/793 [02:18<07:30,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 180/793 [02:19<07:41,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 181/793 [02:20<07:28,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 182/793 [02:21<07:37,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 183/793 [02:21<08:09,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 184/793 [02:22<08:07,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 185/793 [02:23<08:35,  1.18it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  23%|██▎       | 186/793 [02:24<08:18,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▎       | 187/793 [02:25<08:05,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▎       | 188/793 [02:25<07:53,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 189/793 [02:26<07:45,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 190/793 [02:27<07:49,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 191/793 [02:28<07:35,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 192/793 [02:28<07:26,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 193/793 [02:29<07:52,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  24%|██▍       | 194/793 [02:30<07:54,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▍       | 195/793 [02:31<07:34,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▍       | 196/793 [02:31<07:19,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▍       | 197/793 [02:32<07:35,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▍       | 198/793 [02:33<07:20,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▌       | 199/793 [02:34<07:20,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▌       | 200/793 [02:35<07:24,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▌       | 201/793 [02:35<07:24,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  25%|██▌       | 202/793 [02:36<07:21,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 203/793 [02:37<07:27,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 204/793 [02:38<07:35,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 205/793 [02:38<07:37,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 206/793 [02:39<07:45,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 207/793 [02:40<07:19,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▌       | 208/793 [02:41<07:30,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▋       | 209/793 [02:41<07:29,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  26%|██▋       | 210/793 [02:42<07:34,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 211/793 [02:43<07:24,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 212/793 [02:44<07:24,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 213/793 [02:44<07:17,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 214/793 [02:45<07:20,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 215/793 [02:46<07:23,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 216/793 [02:47<07:20,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 217/793 [02:48<07:10,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  27%|██▋       | 218/793 [02:48<07:28,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 219/793 [02:49<07:11,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 220/793 [02:50<07:00,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 221/793 [02:51<07:08,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 222/793 [02:51<07:10,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 223/793 [02:52<07:12,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 224/793 [02:53<07:12,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 225/793 [02:54<07:03,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  28%|██▊       | 226/793 [02:54<07:14,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▊       | 227/793 [02:55<07:23,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 228/793 [02:56<07:29,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 229/793 [02:57<07:20,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 230/793 [02:57<07:13,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 231/793 [02:58<07:06,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 232/793 [02:59<07:12,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  29%|██▉       | 233/793 [03:00<07:12,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|██▉       | 234/793 [03:01<07:03,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|██▉       | 235/793 [03:01<06:57,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|██▉       | 236/793 [03:02<06:47,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|██▉       | 237/793 [03:03<06:48,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|███       | 238/793 [03:03<06:47,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|███       | 239/793 [03:04<06:53,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|███       | 240/793 [03:05<07:11,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  30%|███       | 241/793 [03:06<07:07,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 242/793 [03:07<07:28,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 243/793 [03:08<07:32,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 244/793 [03:08<07:36,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 245/793 [03:09<07:25,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 246/793 [03:10<07:23,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███       | 247/793 [03:11<07:11,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███▏      | 248/793 [03:12<07:24,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  31%|███▏      | 249/793 [03:12<07:23,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 250/793 [03:13<06:58,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 251/793 [03:14<07:04,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 252/793 [03:15<07:12,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 253/793 [03:15<07:00,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 254/793 [03:16<07:01,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 255/793 [03:17<06:40,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 256/793 [03:18<07:08,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  32%|███▏      | 257/793 [03:19<07:02,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 258/793 [03:19<07:00,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 259/793 [03:20<06:44,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 260/793 [03:21<07:00,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 261/793 [03:22<06:57,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 262/793 [03:22<06:47,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 263/793 [03:23<06:50,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 264/793 [03:24<07:01,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  33%|███▎      | 265/793 [03:25<06:54,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▎      | 266/793 [03:26<06:50,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▎      | 267/793 [03:26<06:52,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 268/793 [03:27<06:51,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 269/793 [03:28<06:30,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 270/793 [03:29<06:50,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 271/793 [03:29<06:31,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 272/793 [03:30<06:36,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  34%|███▍      | 273/793 [03:31<06:36,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▍      | 274/793 [03:32<06:38,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▍      | 275/793 [03:33<06:44,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▍      | 276/793 [03:33<07:07,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▍      | 277/793 [03:34<07:00,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▌      | 278/793 [03:35<06:54,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▌      | 279/793 [03:36<06:52,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▌      | 280/793 [03:37<06:46,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  35%|███▌      | 281/793 [03:37<06:38,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 282/793 [03:38<06:30,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 283/793 [03:39<06:22,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 284/793 [03:40<06:35,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 285/793 [03:40<06:29,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 286/793 [03:41<06:35,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▌      | 287/793 [03:42<06:14,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▋      | 288/793 [03:43<06:10,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  36%|███▋      | 289/793 [03:43<06:18,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 290/793 [03:44<06:18,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 291/793 [03:45<06:15,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 292/793 [03:46<06:11,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 293/793 [03:46<06:20,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 294/793 [03:47<06:17,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 295/793 [03:48<06:29,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 296/793 [03:49<06:26,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  37%|███▋      | 297/793 [03:50<06:34,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 298/793 [03:50<06:18,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 299/793 [03:51<05:59,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 300/793 [03:52<05:59,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 301/793 [03:52<06:16,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 302/793 [03:53<06:13,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 303/793 [03:54<06:21,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 304/793 [03:55<06:22,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  38%|███▊      | 305/793 [03:56<06:09,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▊      | 306/793 [03:56<06:14,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▊      | 307/793 [03:57<06:18,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 308/793 [03:58<06:08,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 309/793 [03:59<06:14,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 310/793 [03:59<06:15,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 311/793 [04:00<06:29,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 312/793 [04:01<06:20,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  39%|███▉      | 313/793 [04:02<06:12,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|███▉      | 314/793 [04:02<05:53,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|███▉      | 315/793 [04:03<05:50,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|███▉      | 316/793 [04:04<06:01,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|███▉      | 317/793 [04:05<06:18,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|████      | 318/793 [04:06<06:15,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|████      | 319/793 [04:06<06:19,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|████      | 320/793 [04:07<05:54,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  40%|████      | 321/793 [04:08<05:49,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 322/793 [04:09<06:21,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 323/793 [04:10<06:28,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 324/793 [04:10<06:18,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 325/793 [04:11<06:17,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 326/793 [04:12<06:07,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████      | 327/793 [04:13<06:01,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████▏     | 328/793 [04:14<06:09,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  41%|████▏     | 329/793 [04:14<05:57,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 330/793 [04:15<06:03,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 331/793 [04:16<05:48,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 332/793 [04:17<05:42,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 333/793 [04:17<05:34,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 334/793 [04:18<05:40,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 335/793 [04:19<05:44,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 336/793 [04:20<05:48,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  42%|████▏     | 337/793 [04:20<05:50,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 338/793 [04:21<05:59,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 339/793 [04:22<06:01,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 340/793 [04:23<06:02,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 341/793 [04:24<05:53,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 342/793 [04:24<05:50,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 343/793 [04:25<05:37,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  43%|████▎     | 344/793 [04:26<05:26,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▎     | 345/793 [04:26<05:14,  1.43it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▎     | 346/793 [04:27<05:15,  1.42it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 347/793 [04:28<05:16,  1.41it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 348/793 [04:28<05:10,  1.43it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 349/793 [04:29<05:19,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 350/793 [04:30<05:34,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 351/793 [04:31<05:46,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  44%|████▍     | 352/793 [04:32<05:40,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▍     | 353/793 [04:32<05:35,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▍     | 354/793 [04:33<05:40,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▍     | 355/793 [04:34<05:34,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▍     | 356/793 [04:35<05:34,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▌     | 357/793 [04:35<05:35,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▌     | 358/793 [04:36<05:43,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▌     | 359/793 [04:37<05:35,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  45%|████▌     | 360/793 [04:38<05:49,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 361/793 [04:39<05:47,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 362/793 [04:39<05:33,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 363/793 [04:40<05:37,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 364/793 [04:41<05:34,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 365/793 [04:42<05:29,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▌     | 366/793 [04:43<05:39,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▋     | 367/793 [04:43<05:26,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  46%|████▋     | 368/793 [04:44<05:18,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 369/793 [04:45<05:26,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 370/793 [04:46<05:27,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 371/793 [04:46<05:36,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 372/793 [04:47<05:33,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 373/793 [04:48<05:32,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 374/793 [04:49<05:48,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 375/793 [04:50<05:31,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  47%|████▋     | 376/793 [04:50<05:20,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 377/793 [04:51<05:15,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 378/793 [04:52<05:12,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 379/793 [04:53<05:13,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 380/793 [04:53<05:14,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 381/793 [04:54<05:30,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 382/793 [04:55<05:27,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 383/793 [04:56<05:23,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  48%|████▊     | 384/793 [04:57<05:26,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▊     | 385/793 [04:57<05:21,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▊     | 386/793 [04:58<05:29,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 387/793 [04:59<05:15,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 388/793 [05:00<05:04,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 389/793 [05:00<05:08,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 390/793 [05:01<05:11,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 391/793 [05:02<05:10,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  49%|████▉     | 392/793 [05:03<05:18,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|████▉     | 393/793 [05:04<05:04,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|████▉     | 394/793 [05:04<04:58,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|████▉     | 395/793 [05:05<04:59,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|████▉     | 396/793 [05:06<05:02,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|█████     | 397/793 [05:07<05:06,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|█████     | 398/793 [05:07<05:03,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|█████     | 399/793 [05:08<05:03,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  50%|█████     | 400/793 [05:09<05:03,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 401/793 [05:10<05:03,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 402/793 [05:10<04:58,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 403/793 [05:11<04:58,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 404/793 [05:12<04:53,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 405/793 [05:13<04:56,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████     | 406/793 [05:13<04:52,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████▏    | 407/793 [05:14<04:53,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  51%|█████▏    | 408/793 [05:15<04:44,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 409/793 [05:16<04:43,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 410/793 [05:16<04:29,  1.42it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 411/793 [05:17<04:34,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 412/793 [05:18<04:30,  1.41it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 413/793 [05:19<04:47,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 414/793 [05:19<04:42,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 415/793 [05:20<04:38,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  52%|█████▏    | 416/793 [05:21<04:36,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 417/793 [05:22<04:43,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 418/793 [05:22<04:47,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 419/793 [05:23<04:40,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 420/793 [05:24<04:42,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 421/793 [05:25<04:44,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 422/793 [05:25<04:42,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 423/793 [05:26<04:43,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  53%|█████▎    | 424/793 [05:27<04:37,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▎    | 425/793 [05:28<04:31,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▎    | 426/793 [05:28<04:34,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 427/793 [05:29<04:43,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 428/793 [05:30<04:31,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 429/793 [05:31<04:41,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 430/793 [05:32<04:48,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 431/793 [05:32<04:45,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  54%|█████▍    | 432/793 [05:33<04:52,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▍    | 433/793 [05:34<04:53,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▍    | 434/793 [05:35<04:42,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▍    | 435/793 [05:36<04:43,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▍    | 436/793 [05:36<04:36,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▌    | 437/793 [05:37<04:54,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▌    | 438/793 [05:38<04:32,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▌    | 439/793 [05:39<04:29,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  55%|█████▌    | 440/793 [05:39<04:25,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 441/793 [05:40<04:22,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 442/793 [05:41<04:22,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 443/793 [05:42<04:21,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 444/793 [05:42<04:25,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 445/793 [05:43<04:28,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▌    | 446/793 [05:44<04:28,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▋    | 447/793 [05:45<04:24,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  56%|█████▋    | 448/793 [05:45<04:26,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 449/793 [05:46<04:19,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 450/793 [05:47<04:27,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 451/793 [05:48<04:36,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 452/793 [05:49<04:30,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 453/793 [05:49<04:29,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 454/793 [05:50<04:29,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  57%|█████▋    | 455/793 [05:51<04:27,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 456/793 [05:52<04:32,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 457/793 [05:53<04:37,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 458/793 [05:53<04:26,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 459/793 [05:54<04:19,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 460/793 [05:55<04:22,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 461/793 [05:56<04:18,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 462/793 [05:56<04:16,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  58%|█████▊    | 463/793 [05:57<04:17,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▊    | 464/793 [05:58<04:10,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▊    | 465/793 [05:59<04:07,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 466/793 [05:59<03:59,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 467/793 [06:00<03:58,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 468/793 [06:01<04:00,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 469/793 [06:02<04:02,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 470/793 [06:02<04:04,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  59%|█████▉    | 471/793 [06:03<03:57,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|█████▉    | 472/793 [06:04<03:53,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|█████▉    | 473/793 [06:05<04:01,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|█████▉    | 474/793 [06:05<04:05,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|█████▉    | 475/793 [06:06<03:59,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|██████    | 476/793 [06:07<04:03,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|██████    | 477/793 [06:08<04:17,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|██████    | 478/793 [06:09<04:14,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  60%|██████    | 479/793 [06:09<04:08,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 480/793 [06:10<04:12,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 481/793 [06:11<04:03,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 482/793 [06:12<04:06,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 483/793 [06:13<04:02,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 484/793 [06:13<04:04,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████    | 485/793 [06:14<04:05,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████▏   | 486/793 [06:15<04:05,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  61%|██████▏   | 487/793 [06:16<04:04,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 488/793 [06:17<04:04,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 489/793 [06:17<03:55,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 490/793 [06:18<03:57,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 491/793 [06:19<03:59,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 492/793 [06:20<03:58,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 493/793 [06:20<03:53,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 494/793 [06:21<03:50,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  62%|██████▏   | 495/793 [06:22<03:48,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 496/793 [06:23<03:42,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 497/793 [06:23<03:37,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 498/793 [06:24<03:41,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 499/793 [06:25<03:39,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 500/793 [06:26<03:42,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 501/793 [06:26<03:41,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 502/793 [06:27<03:41,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  63%|██████▎   | 503/793 [06:28<03:44,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▎   | 504/793 [06:29<03:42,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▎   | 505/793 [06:30<03:45,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 506/793 [06:30<03:41,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 507/793 [06:31<03:52,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 508/793 [06:32<03:55,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 509/793 [06:33<03:48,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 510/793 [06:34<03:50,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  64%|██████▍   | 511/793 [06:35<03:47,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▍   | 512/793 [06:35<03:56,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▍   | 513/793 [06:36<03:48,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▍   | 514/793 [06:37<03:50,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▍   | 515/793 [06:38<03:53,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▌   | 516/793 [06:39<03:46,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▌   | 517/793 [06:39<03:36,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▌   | 518/793 [06:40<03:26,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  65%|██████▌   | 519/793 [06:41<03:26,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 520/793 [06:42<03:23,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 521/793 [06:42<03:32,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 522/793 [06:43<03:31,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 523/793 [06:44<03:31,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 524/793 [06:45<03:28,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▌   | 525/793 [06:45<03:23,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▋   | 526/793 [06:46<03:28,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  66%|██████▋   | 527/793 [06:47<03:21,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 528/793 [06:48<03:28,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 529/793 [06:49<03:28,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 530/793 [06:49<03:22,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 531/793 [06:50<03:27,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 532/793 [06:51<03:26,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 533/793 [06:52<03:18,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 534/793 [06:52<03:14,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  67%|██████▋   | 535/793 [06:53<03:12,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 536/793 [06:54<03:12,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 537/793 [06:55<03:10,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 538/793 [06:55<03:09,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 539/793 [06:56<03:25,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 540/793 [06:57<03:25,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 541/793 [06:58<03:21,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 542/793 [06:59<03:15,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  68%|██████▊   | 543/793 [06:59<03:15,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▊   | 544/793 [07:00<03:11,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▊   | 545/793 [07:01<03:00,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 546/793 [07:02<02:57,  1.40it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 547/793 [07:02<03:02,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 548/793 [07:03<02:56,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 549/793 [07:04<02:56,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 550/793 [07:04<02:57,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  69%|██████▉   | 551/793 [07:05<02:56,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|██████▉   | 552/793 [07:06<02:58,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|██████▉   | 553/793 [07:07<03:10,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|██████▉   | 554/793 [07:08<03:01,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|██████▉   | 555/793 [07:08<02:51,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|███████   | 556/793 [07:09<02:57,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|███████   | 557/793 [07:10<03:03,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|███████   | 558/793 [07:11<03:01,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  70%|███████   | 559/793 [07:11<03:04,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 560/793 [07:12<03:03,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 561/793 [07:13<02:58,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 562/793 [07:14<02:56,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 563/793 [07:14<02:55,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 564/793 [07:15<02:55,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████   | 565/793 [07:16<02:51,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  71%|███████▏  | 566/793 [07:17<02:51,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 567/793 [07:17<02:45,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 568/793 [07:18<02:56,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 569/793 [07:19<02:53,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 570/793 [07:20<02:58,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 571/793 [07:21<02:54,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 572/793 [07:21<02:53,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 573/793 [07:22<02:49,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  72%|███████▏  | 574/793 [07:23<02:42,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 575/793 [07:24<02:38,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 576/793 [07:24<02:38,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 577/793 [07:25<02:45,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 578/793 [07:26<02:44,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 579/793 [07:27<02:44,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 580/793 [07:28<02:53,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 581/793 [07:28<02:47,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  73%|███████▎  | 582/793 [07:29<02:42,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▎  | 583/793 [07:30<02:36,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▎  | 584/793 [07:31<02:36,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 585/793 [07:31<02:38,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 586/793 [07:32<02:31,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 587/793 [07:33<02:37,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 588/793 [07:34<02:32,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 589/793 [07:34<02:29,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  74%|███████▍  | 590/793 [07:35<02:29,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▍  | 591/793 [07:36<02:26,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▍  | 592/793 [07:36<02:26,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▍  | 593/793 [07:37<02:28,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▍  | 594/793 [07:38<02:26,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▌  | 595/793 [07:39<02:34,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▌  | 596/793 [07:39<02:30,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▌  | 597/793 [07:40<02:30,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  75%|███████▌  | 598/793 [07:41<02:33,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 599/793 [07:42<02:32,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 600/793 [07:43<02:27,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 601/793 [07:43<02:27,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 602/793 [07:44<02:23,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 603/793 [07:45<02:21,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▌  | 604/793 [07:46<02:21,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▋  | 605/793 [07:46<02:21,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  76%|███████▋  | 606/793 [07:47<02:23,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 607/793 [07:48<02:22,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 608/793 [07:49<02:23,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 609/793 [07:49<02:17,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 610/793 [07:50<02:17,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 611/793 [07:51<02:16,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 612/793 [07:52<02:16,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 613/793 [07:52<02:15,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  77%|███████▋  | 614/793 [07:53<02:13,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 615/793 [07:54<02:11,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 616/793 [07:55<02:13,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 617/793 [07:56<02:25,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 618/793 [07:56<02:23,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 619/793 [07:57<02:25,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 620/793 [08:01<04:28,  1.55s/it]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 621/793 [08:01<03:45,  1.31s/it]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  78%|███████▊  | 622/793 [08:02<03:12,  1.13s/it]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▊  | 623/793 [08:03<02:53,  1.02s/it]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▊  | 624/793 [08:04<02:47,  1.01it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 625/793 [08:04<02:30,  1.11it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 626/793 [08:05<02:23,  1.16it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 627/793 [08:06<02:15,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 628/793 [08:07<02:12,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 629/793 [08:07<02:14,  1.22it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  79%|███████▉  | 630/793 [08:08<02:10,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|███████▉  | 631/793 [08:09<02:07,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|███████▉  | 632/793 [08:10<02:01,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|███████▉  | 633/793 [08:11<02:04,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|███████▉  | 634/793 [08:11<02:03,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|████████  | 635/793 [08:12<02:03,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|████████  | 636/793 [08:13<02:01,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|████████  | 637/793 [08:14<02:01,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  80%|████████  | 638/793 [08:14<01:59,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 639/793 [08:15<02:01,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 640/793 [08:16<01:58,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 641/793 [08:17<02:00,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 642/793 [08:18<01:58,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 643/793 [08:18<02:01,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████  | 644/793 [08:19<02:00,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████▏ | 645/793 [08:20<02:03,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  81%|████████▏ | 646/793 [08:21<01:59,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 647/793 [08:22<01:55,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 648/793 [08:22<01:52,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 649/793 [08:23<01:54,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 650/793 [08:24<01:55,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 651/793 [08:25<01:55,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 652/793 [08:26<01:58,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 653/793 [08:27<01:55,  1.21it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  82%|████████▏ | 654/793 [08:27<01:50,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 655/793 [08:28<01:47,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 656/793 [08:29<01:47,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 657/793 [08:30<01:45,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 658/793 [08:30<01:42,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 659/793 [08:31<01:40,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 660/793 [08:32<01:39,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 661/793 [08:33<01:38,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  83%|████████▎ | 662/793 [08:33<01:38,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▎ | 663/793 [08:34<01:37,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▎ | 664/793 [08:35<01:35,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 665/793 [08:36<01:37,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 666/793 [08:36<01:38,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 667/793 [08:37<01:39,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 668/793 [08:38<01:41,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 669/793 [08:39<01:36,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  84%|████████▍ | 670/793 [08:40<01:35,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▍ | 671/793 [08:40<01:33,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▍ | 672/793 [08:41<01:33,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▍ | 673/793 [08:42<01:35,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▍ | 674/793 [08:43<01:33,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▌ | 675/793 [08:43<01:32,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▌ | 676/793 [08:44<01:32,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▌ | 677/793 [08:45<01:32,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  85%|████████▌ | 678/793 [08:46<01:30,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▌ | 679/793 [08:47<01:28,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▌ | 680/793 [08:47<01:26,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▌ | 681/793 [08:48<01:26,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▌ | 682/793 [08:49<01:25,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▌ | 683/793 [08:50<01:23,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▋ | 684/793 [08:50<01:25,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  86%|████████▋ | 685/793 [08:51<01:30,  1.19it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 686/793 [08:52<01:26,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 687/793 [08:53<01:21,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 688/793 [08:54<01:21,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 689/793 [08:54<01:18,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 690/793 [08:55<01:17,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 691/793 [08:56<01:21,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 692/793 [08:57<01:20,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  87%|████████▋ | 693/793 [08:58<01:19,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 694/793 [08:58<01:16,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 695/793 [08:59<01:16,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 696/793 [09:00<01:15,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 697/793 [09:01<01:15,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 698/793 [09:02<01:16,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 699/793 [09:02<01:15,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 700/793 [09:03<01:12,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  88%|████████▊ | 701/793 [09:04<01:13,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▊ | 702/793 [09:05<01:11,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▊ | 703/793 [09:05<01:09,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 704/793 [09:06<01:08,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 705/793 [09:07<01:07,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 706/793 [09:08<01:04,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 707/793 [09:08<01:03,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 708/793 [09:09<01:04,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  89%|████████▉ | 709/793 [09:10<01:03,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|████████▉ | 710/793 [09:11<01:05,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|████████▉ | 711/793 [09:11<01:03,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|████████▉ | 712/793 [09:12<01:02,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|████████▉ | 713/793 [09:13<00:58,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|█████████ | 714/793 [09:14<00:56,  1.40it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|█████████ | 715/793 [09:14<01:00,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|█████████ | 716/793 [09:15<00:59,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  90%|█████████ | 717/793 [09:16<01:06,  1.15it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 718/793 [09:17<01:02,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 719/793 [09:18<00:59,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 720/793 [09:19<00:59,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 721/793 [09:19<00:58,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 722/793 [09:20<00:55,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████ | 723/793 [09:21<00:54,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████▏| 724/793 [09:22<00:51,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  91%|█████████▏| 725/793 [09:22<00:48,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 726/793 [09:23<00:48,  1.38it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 727/793 [09:24<00:48,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 728/793 [09:24<00:46,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 729/793 [09:25<00:48,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 730/793 [09:26<00:48,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 731/793 [09:27<00:46,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 732/793 [09:28<00:45,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  92%|█████████▏| 733/793 [09:28<00:43,  1.37it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 734/793 [09:29<00:43,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 735/793 [09:30<00:41,  1.39it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 736/793 [09:30<00:42,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 737/793 [09:31<00:42,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 738/793 [09:32<00:40,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 739/793 [09:33<00:39,  1.36it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 740/793 [09:33<00:39,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  93%|█████████▎| 741/793 [09:34<00:39,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▎| 742/793 [09:35<00:38,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▎| 743/793 [09:36<00:38,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 744/793 [09:37<00:38,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 745/793 [09:37<00:38,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 746/793 [09:38<00:36,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 747/793 [09:39<00:36,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 748/793 [09:40<00:35,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  94%|█████████▍| 749/793 [09:40<00:32,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▍| 750/793 [09:41<00:32,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▍| 751/793 [09:42<00:31,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▍| 752/793 [09:43<00:31,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▍| 753/793 [09:44<00:31,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▌| 754/793 [09:44<00:30,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▌| 755/793 [09:45<00:29,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▌| 756/793 [09:46<00:28,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  95%|█████████▌| 757/793 [09:47<00:28,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 758/793 [09:48<00:28,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 759/793 [09:48<00:27,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 760/793 [09:49<00:26,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 761/793 [09:50<00:25,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 762/793 [09:51<00:24,  1.25it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▌| 763/793 [09:51<00:23,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▋| 764/793 [09:52<00:22,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  96%|█████████▋| 765/793 [09:53<00:21,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 766/793 [09:54<00:20,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 767/793 [09:54<00:19,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 768/793 [09:55<00:19,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 769/793 [09:56<00:18,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 770/793 [09:57<00:17,  1.31it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 771/793 [09:58<00:17,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 772/793 [09:59<00:16,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  97%|█████████▋| 773/793 [09:59<00:16,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 774/793 [10:00<00:14,  1.29it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 775/793 [10:01<00:13,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 776/793 [10:01<00:12,  1.35it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 777/793 [10:02<00:12,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 778/793 [10:03<00:11,  1.32it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 779/793 [10:04<00:10,  1.33it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 780/793 [10:04<00:09,  1.34it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  98%|█████████▊| 781/793 [10:05<00:09,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▊| 782/793 [10:06<00:08,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▊| 783/793 [10:07<00:07,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 784/793 [10:08<00:07,  1.24it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 785/793 [10:09<00:06,  1.15it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 786/793 [10:10<00:05,  1.20it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 787/793 [10:10<00:04,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 788/793 [10:11<00:03,  1.27it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe:  99%|█████████▉| 789/793 [10:12<00:03,  1.30it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe: 100%|█████████▉| 790/793 [10:13<00:02,  1.28it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe: 100%|█████████▉| 791/793 [10:13<00:01,  1.23it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe: 100%|█████████▉| 792/793 [10:14<00:00,  1.26it/s]Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+base-transcribe: 100%|██████████| 793/793 [10:15<00:00,  1.41it/s]base-transcribe: 100%|██████████| 793/793 [10:15<00:00,  1.29it/s]
+2026-07-06 01:15:38,578 INFO cache after: 10774 entries (10774 nonempty)

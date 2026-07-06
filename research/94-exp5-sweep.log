@@ -1,0 +1,29 @@
+f=0.00 seed=0  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.001 anticorr=+0.29
+f=0.00 seed=1  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.002 anticorr=+0.13
+f=0.00 seed=2  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.002 anticorr=+0.13
+f=0.10 seed=0  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.001 anticorr=-0.21
+f=0.10 seed=1  final fire=1.00 hold=0.99 overall=1.00 flips=0 fstd=0.002 anticorr=-0.26
+f=0.10 seed=2  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.003 anticorr=-0.40
+f=0.20 seed=0  final fire=1.00 hold=0.99 overall=1.00 flips=0 fstd=0.003 anticorr=-0.42
+f=0.20 seed=1  final fire=1.00 hold=0.99 overall=0.99 flips=0 fstd=0.002 anticorr=-0.50
+f=0.20 seed=2  final fire=1.00 hold=0.99 overall=0.99 flips=0 fstd=0.003 anticorr=-0.53
+f=0.30 seed=0  final fire=1.00 hold=1.00 overall=1.00 flips=0 fstd=0.005 anticorr=-0.39
+f=0.30 seed=1  final fire=1.00 hold=0.99 overall=0.99 flips=0 fstd=0.004 anticorr=-0.32
+f=0.30 seed=2  final fire=1.00 hold=0.99 overall=0.99 flips=0 fstd=0.005 anticorr=-0.63
+f=0.40 seed=0  final fire=0.99 hold=0.99 overall=0.99 flips=0 fstd=0.007 anticorr=-0.44
+f=0.40 seed=1  final fire=1.00 hold=0.97 overall=0.98 flips=0 fstd=0.006 anticorr=-0.51
+f=0.40 seed=2  final fire=0.97 hold=0.99 overall=0.98 flips=0 fstd=0.007 anticorr=-0.52
+f=0.50 seed=0  final fire=0.99 hold=0.98 overall=0.98 flips=0 fstd=0.013 anticorr=-0.39
+f=0.50 seed=1  final fire=0.99 hold=0.97 overall=0.98 flips=0 fstd=0.011 anticorr=-0.57
+f=0.50 seed=2  final fire=0.97 hold=0.97 overall=0.97 flips=0 fstd=0.011 anticorr=-0.58
+f=0.70 seed=0  final fire=0.93 hold=0.88 overall=0.90 flips=0 fstd=0.036 anticorr=-0.60
+f=0.70 seed=1  final fire=0.91 hold=0.92 overall=0.91 flips=0 fstd=0.039 anticorr=-0.70
+f=0.70 seed=2  final fire=0.91 hold=0.93 overall=0.92 flips=0 fstd=0.034 anticorr=-0.58
+f=0.85 seed=0  final fire=0.85 hold=0.70 overall=0.77 flips=5 fstd=0.081 anticorr=-0.82
+f=0.85 seed=1  final fire=0.84 hold=0.78 overall=0.81 flips=9 fstd=0.094 anticorr=-0.84
+f=0.85 seed=2  final fire=0.75 hold=0.81 overall=0.78 flips=11 fstd=0.138 anticorr=-0.84
+f=1.00 seed=0  final fire=0.52 hold=0.41 overall=0.46 flips=15 fstd=0.236 anticorr=-0.99
+f=1.00 seed=1  final fire=0.59 hold=0.44 overall=0.51 flips=20 fstd=0.249 anticorr=-1.00
+f=1.00 seed=2  final fire=0.37 hold=0.61 overall=0.49 flips=14 fstd=0.239 anticorr=-1.00
+
+wrote research/94-exp5-toy-task.json

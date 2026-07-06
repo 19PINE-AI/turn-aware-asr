@@ -1,0 +1,10 @@
+=== replay v15 snap_step6000 2026-07-05T14:54:38+00:00 ===
+2026-07-05 14:57:46,402 INFO Saved research/80-replay-v15s6000.json
+=== replay v15 snap_step9000 2026-07-05T14:57:47+00:00 ===
+2026-07-05 15:06:08,526 INFO Saved research/80-replay-v15s9000.json
+=== merge v15@6000 2026-07-05T15:06:09+00:00 ===
+2026-07-05 15:06:16,570 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== WER v15@6000 2026-07-05T15:06:17+00:00 ===
+(EngineCore pid=2533103) INFO 07-05 15:08:30 [core.py:1328] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=2533103) INFO 07-05 15:08:30 [core.py:1191] [shutdown] EngineCore: exiting busy loop
+=== V15 FINAL DONE 2026-07-05T15:08:32+00:00 ===

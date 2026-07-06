@@ -135,9 +135,11 @@ def main():
     asr = Qwen3ASRModel.from_pretrained(
         "Qwen/Qwen3-ASR-0.6B",
         cache_dir="data/qwen3-asr-0.6b-pkg",
-        max_inference_batch_size=4,
+        max_inference_batch_size=8,
         max_new_tokens=256,
+        dtype=torch.bfloat16, device_map="cuda",  # else silently runs on CPU (~9x slower)
     )
+    logger.info("base model device: %s", next(asr.model.parameters()).device)
 
     # Transcribe candidates (with cache)
     cache_path = Path(args.transcripts_cache)
