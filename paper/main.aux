@@ -77,10 +77,10 @@
 \newlabel{fig:inversion}{{7}{11}{\textbf {The ranking inversion.} Model ranking on the legacy offline benchmark (left) versus the deployment-matched replay benchmark (right). The offline champion is the worst live model.\relax }{figure.caption.16}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure\nobreakspace  {}\ref  {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph  {median} 0.30, matching the development set; the \S  \ref  {sec:serving} force-flush bounds this tail).\relax }}{11}{table.caption.17}\protected@file@percent }
 \newlabel{tab:main}{{5}{11}{\textbf {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph {median} 0.30, matching the development set; the \S \ref {sec:serving} force-flush bounds this tail).\relax }{table.caption.17}{}}
-\@writefile{toc}{\contentsline {paragraph}{External turn-aware systems on the same protocol.}{11}{paragraph*.18}\protected@file@percent }
 \citation{delrio2022earnings22}
 \citation{qwen3asr2026}
 \citation{contextualearnings2026}
+\@writefile{toc}{\contentsline {paragraph}{External turn-aware systems on the same protocol.}{12}{paragraph*.18}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {7}The same leak on a second axis: context}{12}{section.7}\protected@file@percent }
 \newlabel{sec:second}{{7}{12}{The same leak on a second axis: context}{section.7}{}}
 \@writefile{toc}{\contentsline {paragraph}{Context biasing works, and survives session length.}{12}{paragraph*.19}\protected@file@percent }
@@ -134,6 +134,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{17}{section.10}\protected@file@percent }
 \newlabel{sec:related}{{10}{17}{Related work}{section.10}{}}
 \@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{17}{paragraph*.34}\protected@file@percent }
 \citation{graves2012sequence}
 \citation{radford2023whisper}
 \citation{wan2026streaming}
@@ -155,11 +156,10 @@
 \bibcite{bijwadia2023unified}{{2}{2023}{{Bijwadia et~al.}}{{Bijwadia, Chang, Li, Sainath, Zhang, and He}}}
 \bibcite{carletta2005ami}{{3}{2005}{{Carletta et~al.}}{{}}}
 \bibcite{chang2019joint}{{4}{2019}{{Chang et~al.}}{{Chang, Prabhavalkar, He, Sainath, and Simko}}}
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.34}\protected@file@percent }
+\bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
 \@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.36}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.37}\protected@file@percent }
-\bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
 \bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
 \bibcite{defossez2024moshi}{{7}{2024}{{D{\'e}fossez et~al.}}{{D{\'e}fossez, Mazar{\'e}, Orsini, Royer, P{\'e}rez, J{\'e}gou, Grave, and Zeghidour}}}
 \bibcite{delrio2022earnings22}{{8}{2022}{{Del~Rio et~al.}}{{Del~Rio, Ha, McNamara, Miller, and Chandra}}}
@@ -219,16 +219,19 @@
 \@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{24}{paragraph*.44}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }}{24}{table.caption.45}\protected@file@percent }
 \newlabel{tab:seeds}{{9}{24}{Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }{table.caption.45}{}}
-\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{24}{paragraph*.46}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{24}{table.caption.47}\protected@file@percent }
-\newlabel{tab:wer}{{10}{24}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.47}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{24}{appendix.D}\protected@file@percent }
-\newlabel{app:recipe}{{D}{24}{Training-recipe notes}{appendix.D}{}}
-\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{24}{paragraph*.48}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Schema ablation.}{24}{paragraph*.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Schema ablation on the v9 endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }}{24}{table.caption.47}\protected@file@percent }
+\newlabel{tab:ablation}{{10}{24}{Schema ablation on the v9 endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }{table.caption.47}{}}
+\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{24}{paragraph*.48}\protected@file@percent }
 \citation{jordan2024muon}
-\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{25}{paragraph*.49}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{25}{paragraph*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{25}{paragraph*.51}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{25}{appendix.E}\protected@file@percent }
-\newlabel{app:repro}{{E}{25}{Reproducibility}{appendix.E}{}}
-\gdef \@abspage@last{25}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{25}{table.caption.49}\protected@file@percent }
+\newlabel{tab:wer}{{11}{25}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.49}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{25}{appendix.D}\protected@file@percent }
+\newlabel{app:recipe}{{D}{25}{Training-recipe notes}{appendix.D}{}}
+\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{25}{paragraph*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{25}{paragraph*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{25}{paragraph*.52}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{25}{paragraph*.53}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{26}{appendix.E}\protected@file@percent }
+\newlabel{app:repro}{{E}{26}{Reproducibility}{appendix.E}{}}
+\gdef \@abspage@last{26}
