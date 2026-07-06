@@ -79,15 +79,24 @@ def timeline(ax, x0, x1, y):
 def fig1_oscillation():
     v8 = json.load(open(ROOT / "checkpoints/semantic_endpoint_v8_es/eval_log.json"))
     v9 = json.load(open(ROOT / "checkpoints/semantic_endpoint_v9_es/eval_log.json"))
+    # second seed of the opposed-pools recipe (data regenerated; only the seed changed)
+    v8b_path = ROOT / "checkpoints/semantic_endpoint_v8_seed1_es/eval_log.json"
+    v8b = json.load(open(v8b_path)) if v8b_path.exists() else None
     fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.5), sharey=True)
 
     ax = axes[0]
     steps = [e["step"] / 1000 for e in v8]
     fire = [e["single"] for e in v8]
     hold = [e["no_fire_correct"] for e in v8]
-    ax.plot(steps, fire, "-o", ms=3.5, color=OKABE["red"], label="fire class (single)")
-    ax.plot(steps, hold, "-s", ms=3.5, color=OKABE["blue"], label="hold class (no-fire)")
-    ax.set_title("opposed-pools: clairvoyant labels", fontsize=9.5)
+    ax.plot(steps, fire, "-o", ms=3.5, color=OKABE["red"], label="fire class (seed 0)")
+    ax.plot(steps, hold, "-s", ms=3.5, color=OKABE["blue"], label="hold class (seed 0)")
+    if v8b is not None:  # multi-seed: the oscillation reproduces
+        sb = [e["step"] / 1000 for e in v8b]
+        ax.plot(sb, [e["single"] for e in v8b], "--o", ms=2.5, lw=1.0,
+                color=OKABE["red"], alpha=0.45, label="fire class (seed 1)")
+        ax.plot(sb, [e["no_fire_correct"] for e in v8b], "--s", ms=2.5, lw=1.0,
+                color=OKABE["blue"], alpha=0.45, label="hold class (seed 1)")
+    ax.set_title("opposed-pools: clairvoyant labels (2 seeds)", fontsize=9.5)
     ax.set_xlabel("training step (k)")
     ax.set_ylabel("holdout accuracy")
     ax.set_ylim(0, 1.08)
@@ -234,13 +243,27 @@ def fig3_tradeoff():
     ax.annotate("unified release\nR=0.94", (0.39, 1.03), textcoords="offset points",
                 xytext=(6, 4), fontsize=7.0, weight="bold", color="#1f6f9e")
 
+    # external open turn-aware systems on the same protocol (exp-4; as-shipped,
+    # public thresholds swept). None reaches the causal model's corner.
+    ext = [("Parakeet-EOU", 0.47, 0.2, 0.17, (6, -3)),
+           ("Kyutai VAD", 0.53, 14.6, 0.88, (-4, 6)),
+           ("Smart Turn v3", 0.64, 3.4, 0.71, (6, 3)),
+           ("LiveKit (oracle)", 0.65, 6.25, 0.96, (6, 2))]
+    for name, lat, ff, rec, off in ext:
+        ax.scatter([lat], [ff], s=44, color=OKABE.get("brown", "#8a5a2b"),
+                   marker="X", zorder=3, edgecolor="black", lw=0.4)
+        ax.annotate(f"{name}\nR={rec:.2f}", (lat, ff), textcoords="offset points",
+                    xytext=off, fontsize=6.0, color=OKABE.get("brown", "#8a5a2b"))
+    ax.plot([], [], marker="X", color=OKABE.get("brown", "#8a5a2b"), lw=0,
+            label="external turn-aware (as-shipped)")
+
     ax.set_yscale("log")
     ax.set_yticks([0.05, 0.3, 1, 3, 10, 30])
     ax.set_yticklabels(["0*", "0.3", "1", "3", "10", "30"])
     ax.set_xlabel("median end-of-turn latency P50 (s)")
     ax.set_ylabel("false fires / speech-minute")
     ax.set_xlim(0.25, 1.55)
-    ax.legend(loc="upper right", fontsize=7.2)
+    ax.legend(loc="upper right", fontsize=6.6)
     save(fig, "fig3_tradeoff")
 
 

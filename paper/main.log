@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  6 JUL 2026 04:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  6 JUL 2026 05:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -979,7 +979,7 @@ File: figures//fig3_tradeoff.pdf Graphic file (type pdf)
 Package pdftex.def Info: figures//fig3_tradeoff.pdf  used on input line 89.
 (pdftex.def)             Requested size: 322.61447pt x 202.98706pt.
  [3 <./figures//fig3_tradeoff.pdf>]
-<figures//fig8_system.pdf, id=235, 377.66385pt x 122.53378pt>
+<figures//fig8_system.pdf, id=244, 377.66385pt x 122.53378pt>
 File: figures//fig8_system.pdf Graphic file (type pdf)
 <use figures//fig8_system.pdf>
 Package pdftex.def Info: figures//fig8_system.pdf  used on input line 144.
@@ -993,14 +993,14 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<figures//fig1_oscillation.pdf, id=261, 413.30879pt x 184.6072pt>
+<figures//fig1_oscillation.pdf, id=270, 413.30879pt x 184.6072pt>
 File: figures//fig1_oscillation.pdf Graphic file (type pdf)
 <use figures//fig1_oscillation.pdf>
 Package pdftex.def Info: figures//fig1_oscillation.pdf  used on input line 197.
 
 (pdftex.def)             Requested size: 448.0749pt x 200.14743pt.
  [5 <./figures//fig8_system.pdf>] [6] [7 <./figures//fig1_oscillation.pdf>]
-<figures//fig2_contradictions.pdf, id=412, 389.35461pt x 199.3652pt>
+<figures//fig2_contradictions.pdf, id=423, 389.35461pt x 199.3652pt>
 File: figures//fig2_contradictions.pdf Graphic file (type pdf)
 <use figures//fig2_contradictions.pdf>
 Package pdftex.def Info: figures//fig2_contradictions.pdf  used on input line 2
@@ -1008,45 +1008,45 @@ Package pdftex.def Info: figures//fig2_contradictions.pdf  used on input line 2
 (pdftex.def)             Requested size: 448.0749pt x 229.4355pt.
 
 [8 <./figures//fig2_contradictions.pdf>]
-<figures//fig9_minimalpair.pdf, id=512, 389.35461pt x 105.83942pt>
+<figures//fig9_minimalpair.pdf, id=523, 389.35461pt x 105.83942pt>
 File: figures//fig9_minimalpair.pdf Graphic file (type pdf)
 <use figures//fig9_minimalpair.pdf>
 Package pdftex.def Info: figures//fig9_minimalpair.pdf  used on input line 251.
 
 (pdftex.def)             Requested size: 448.0749pt x 121.80318pt.
  [9 <./figures//fig9_minimalpair.pdf>]
-<figures//fig6_silence.pdf, id=614, 274.00124pt x 184.33574pt>
+<figures//fig6_silence.pdf, id=625, 274.00124pt x 184.33574pt>
 File: figures//fig6_silence.pdf Graphic file (type pdf)
 <use figures//fig6_silence.pdf>
 Package pdftex.def Info: figures//fig6_silence.pdf  used on input line 289.
 (pdftex.def)             Requested size: 215.07404pt x 144.68979pt.
-<figures//fig5_inversion.pdf, id=615, 326.48651pt x 164.26971pt>
+<figures//fig5_inversion.pdf, id=626, 326.48651pt x 164.26971pt>
 File: figures//fig5_inversion.pdf Graphic file (type pdf)
 <use figures//fig5_inversion.pdf>
 Package pdftex.def Info: figures//fig5_inversion.pdf  used on input line 295.
 (pdftex.def)             Requested size: 215.07404pt x 108.21278pt.
 
 [10] [11 <./figures//fig6_silence.pdf> <./figures//fig5_inversion.pdf>]
-<figures//fig4_biasing.pdf, id=804, 405.2992pt x 184.01122pt>
+<figures//fig4_biasing.pdf, id=818, 405.2992pt x 184.01122pt>
 File: figures//fig4_biasing.pdf Graphic file (type pdf)
 <use figures//fig4_biasing.pdf>
 Package pdftex.def Info: figures//fig4_biasing.pdf  used on input line 336.
 (pdftex.def)             Requested size: 448.0749pt x 203.43779pt.
 
-[12 <./figures//fig4_biasing.pdf>] [13]
-<figures//fig11_twoaxes.pdf, id=919, 389.35461pt x 199.11055pt>
+[12] [13 <./figures//fig4_biasing.pdf>]
+<figures//fig11_twoaxes.pdf, id=934, 389.35461pt x 199.11055pt>
 File: figures//fig11_twoaxes.pdf Graphic file (type pdf)
 <use figures//fig11_twoaxes.pdf>
 Package pdftex.def Info: figures//fig11_twoaxes.pdf  used on input line 373.
 (pdftex.def)             Requested size: 448.0749pt x 229.14243pt.
- [14 <./figures//fig11_twoaxes.pdf>]
-<figures//fig7_serving.pdf, id=1057, 421.86671pt x 182.59291pt>
+ [14]
+<figures//fig7_serving.pdf, id=959, 421.86671pt x 182.59291pt>
 File: figures//fig7_serving.pdf Graphic file (type pdf)
 <use figures//fig7_serving.pdf>
 Package pdftex.def Info: figures//fig7_serving.pdf  used on input line 389.
 (pdftex.def)             Requested size: 448.0749pt x 193.94597pt.
-
-[15] [16 <./figures//fig7_serving.pdf>] [17] (./main.bbl [18] [19]
+ [15 <./figures//fig11_twoaxes.pdf>] [16 <./figures//fig7_serving.pdf>] [17] (.
+/main.bbl [18] [19]
 Underfull \hbox (badness 10000) in paragraph at lines 163--168
 \T1/cmtt/m/n/10.95 / / livekit . com / blog / improved-[]end-[]of-[]turn-[]mode
 l-[]cuts-[]voice-[]ai-[]interruptions-[]39$[][]\T1/ppl/m/n/10.95 (+20) .
@@ -1089,32 +1089,56 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: A5C09DC961E3E24A5208A5A15F3D4DFA;3436.
  ) 
 Here is how much of TeX's memory you used:
- 29312 strings out of 480171
- 561516 string characters out of 5894489
+ 29321 strings out of 480171
+ 561660 string characters out of 5894489
  886712 words of memory out of 5000000
  46059 multiletter control sequences out of 15000+600000
  553876 words of font info for 512 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 83i,12n,80p,2011b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpaz
-o/fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-palatino/uplri8a.pfb>
-Output written on main.pdf (25 pages, 580697 bytes).
+ 83i,12n,80p,2011b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{table.caption.44} has been referenced but does no
+t exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.40} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.38} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.28} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.46} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.25} has been referenced but does not
+ exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{table.caption.21} has been referenced but does not 
+exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{figure.caption.19} has been referenced but does not
+ exist, replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/
+texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/
+fplmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+</usr/share/texmf/fonts/type1/public/cm-super/sfit1095.pfb></usr/share/texmf/fo
+nts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/pa
+latino/uplri8a.pfb>
+Output written on main.pdf (25 pages, 586351 bytes).
 PDF statistics:
- 1467 PDF objects out of 1728 (max. 8388607)
- 688 compressed objects within 7 object streams
- 146 named destinations out of 1000 (max. 500000)
+ 1490 PDF objects out of 1728 (max. 8388607)
+ 700 compressed objects within 7 object streams
+ 155 named destinations out of 1000 (max. 500000)
  90823 words of extra memory for PDF output out of 106986 (max. 10000000)
 

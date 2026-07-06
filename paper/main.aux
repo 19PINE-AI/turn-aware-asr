@@ -77,39 +77,40 @@
 \newlabel{fig:inversion}{{7}{11}{\textbf {The ranking inversion.} Model ranking on the legacy offline benchmark (left) versus the deployment-matched replay benchmark (right). The offline champion is the worst live model.\relax }{figure.caption.16}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure\nobreakspace  {}\ref  {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph  {median} 0.30, matching the development set; the \S  \ref  {sec:serving} force-flush bounds this tail).\relax }}{11}{table.caption.17}\protected@file@percent }
 \newlabel{tab:main}{{5}{11}{\textbf {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph {median} 0.30, matching the development set; the \S \ref {sec:serving} force-flush bounds this tail).\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {paragraph}{External turn-aware systems on the same protocol.}{11}{paragraph*.18}\protected@file@percent }
 \citation{delrio2022earnings22}
 \citation{qwen3asr2026}
 \citation{contextualearnings2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Context biasing, measured.} (a)\nobreakspace  {}Earnings-22 entity recall without context, with the relevant hotword prefix, and hallucination under a distractor prefix (150 utterances). (b)\nobreakspace  {}Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }}{12}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:biasing}{{8}{12}{\textbf {Context biasing, measured.} (a)~Earnings-22 entity recall without context, with the relevant hotword prefix, and hallucination under a distractor prefix (150 utterances). (b)~Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}The same leak on a second axis: context}{12}{section.7}\protected@file@percent }
 \newlabel{sec:second}{{7}{12}{The same leak on a second axis: context}{section.7}{}}
-\@writefile{toc}{\contentsline {paragraph}{Context biasing works, and survives session length.}{12}{paragraph*.18}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The copying trap.}{12}{paragraph*.20}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix\nobreakspace  {}\ref  {app:tables}.\relax }}{13}{table.caption.21}\protected@file@percent }
-\newlabel{tab:dictation}{{6}{13}{\textbf {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix~\ref {app:tables}.\relax }{table.caption.21}{}}
-\@writefile{toc}{\contentsline {paragraph}{One released model, four behaviors.}{13}{paragraph*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Which frontiers are real.}{13}{paragraph*.23}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {One failure class, two instances.} Temporal axis (\S  \ref  {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S  \ref  {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }}{14}{figure.caption.25}\protected@file@percent }
-\newlabel{fig:twoaxes}{{9}{14}{\textbf {One failure class, two instances.} Temporal axis (\S \ref {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S \ref {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {paragraph}{The principle, stated once.}{14}{paragraph*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context biasing works, and survives session length.}{12}{paragraph*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The copying trap.}{12}{paragraph*.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Context biasing, measured.} (a)\nobreakspace  {}Earnings-22 entity recall without context, with the relevant hotword prefix, and hallucination under a distractor prefix (150 utterances). (b)\nobreakspace  {}Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }}{13}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:biasing}{{8}{13}{\textbf {Context biasing, measured.} (a)~Earnings-22 entity recall without context, with the relevant hotword prefix, and hallucination under a distractor prefix (150 utterances). (b)~Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }{figure.caption.20}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix\nobreakspace  {}\ref  {app:tables}.\relax }}{13}{table.caption.22}\protected@file@percent }
+\newlabel{tab:dictation}{{6}{13}{\textbf {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix~\ref {app:tables}.\relax }{table.caption.22}{}}
+\@writefile{toc}{\contentsline {paragraph}{One released model, four behaviors.}{13}{paragraph*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Which frontiers are real.}{14}{paragraph*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The principle, stated once.}{14}{paragraph*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}The released system in practice}{14}{section.8}\protected@file@percent }
+\newlabel{sec:serving}{{8}{14}{The released system in practice}{section.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{Offline cost, measured and attributed.}{14}{paragraph*.27}\protected@file@percent }
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
-\@writefile{toc}{\contentsline {section}{\numberline {8}The released system in practice}{15}{section.8}\protected@file@percent }
-\newlabel{sec:serving}{{8}{15}{The released system in practice}{section.8}{}}
-\@writefile{toc}{\contentsline {paragraph}{Offline cost, measured and attributed.}{15}{paragraph*.26}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Serving on stock vLLM.}{15}{paragraph*.27}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{15}{section.9}\protected@file@percent }
-\newlabel{sec:discussion}{{9}{15}{Discussion}{section.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{A checklist.}{15}{paragraph*.29}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {One failure class, two instances.} Temporal axis (\S  \ref  {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S  \ref  {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }}{15}{figure.caption.26}\protected@file@percent }
+\newlabel{fig:twoaxes}{{9}{15}{\textbf {One failure class, two instances.} Temporal axis (\S \ref {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S \ref {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {paragraph}{Serving on stock vLLM.}{15}{paragraph*.28}\protected@file@percent }
 \citation{ekstedt2022vap}
 \citation{ma2019stacl}
 \citation{dehaan2019causal}
 \citation{schaeffer2023mirage}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)\nobreakspace  {}Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }}{16}{figure.caption.28}\protected@file@percent }
-\newlabel{fig:serving}{{10}{16}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)~Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {paragraph}{Who else is likely affected.}{16}{paragraph*.30}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)\nobreakspace  {}Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }}{16}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:serving}{{10}{16}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)~Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{16}{section.9}\protected@file@percent }
+\newlabel{sec:discussion}{{9}{16}{Discussion}{section.9}{}}
+\@writefile{toc}{\contentsline {paragraph}{A checklist.}{16}{paragraph*.30}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Who else is likely affected.}{16}{paragraph*.31}\protected@file@percent }
 \citation{silero2021vad}
 \citation{raux2008optimizing}
 \citation{shannon2017improved}
@@ -135,12 +136,11 @@
 \citation{qwen3asr2026}
 \citation{kyutai2025stt,defossez2024moshi}
 \citation{defossez2024moshi}
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{paragraph*.31}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{paragraph*.32}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{17}{section.10}\protected@file@percent }
 \newlabel{sec:related}{{10}{17}{Related work}{section.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{17}{paragraph*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{17}{paragraph*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{17}{paragraph*.34}\protected@file@percent }
 \citation{pundak2018deep}
 \citation{brasr2025}
 \citation{hotwordgrpo2025}
@@ -159,9 +159,10 @@
 \bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
 \bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
 \bibcite{defossez2024moshi}{{7}{2024}{{D{\'e}fossez et~al.}}{{D{\'e}fossez, Mazar{\'e}, Orsini, Royer, P{\'e}rez, J{\'e}gou, Grave, and Zeghidour}}}
+\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.37}\protected@file@percent }
 \bibcite{delrio2022earnings22}{{8}{2022}{{Del~Rio et~al.}}{{Del~Rio, Ha, McNamara, Miller, and Chandra}}}
-\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.36}\protected@file@percent }
 \bibcite{contextualearnings2026}{{9}{2026}{{Durmus et~al.}}{{Durmus, Cen, Pacheco, Okan, and Orhon}}}
 \bibcite{ekstedt2020turngpt}{{10}{2020}{{Ekstedt and Skantze}}{{}}}
 \bibcite{ekstedt2022vap}{{11}{2022}{{Ekstedt and Skantze}}{{}}}
@@ -207,27 +208,27 @@
 \newlabel{app:eval}{{B}{22}{Benchmark specification and the corrected classifier}{appendix.B}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{22}{appendix.C}\protected@file@percent }
 \newlabel{app:tables}{{C}{22}{Additional results}{appendix.C}{}}
-\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{22}{paragraph*.37}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{22}{table.caption.38}\protected@file@percent }
-\newlabel{tab:appconfirm}{{7}{22}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.38}{}}
-\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{23}{paragraph*.39}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{23}{table.caption.40}\protected@file@percent }
-\newlabel{tab:apptimeout}{{8}{23}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.40}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{23}{paragraph*.41}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Probe confidence intervals and the dictation scoring window.}{23}{paragraph*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{24}{paragraph*.43}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }}{24}{table.caption.44}\protected@file@percent }
-\newlabel{tab:seeds}{{9}{24}{Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }{table.caption.44}{}}
-\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{24}{paragraph*.45}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{24}{table.caption.46}\protected@file@percent }
-\newlabel{tab:wer}{{10}{24}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.46}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{22}{paragraph*.38}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{22}{table.caption.39}\protected@file@percent }
+\newlabel{tab:appconfirm}{{7}{22}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{23}{paragraph*.40}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{23}{table.caption.41}\protected@file@percent }
+\newlabel{tab:apptimeout}{{8}{23}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.41}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{23}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Probe confidence intervals and the dictation scoring window.}{23}{paragraph*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{24}{paragraph*.44}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }}{24}{table.caption.45}\protected@file@percent }
+\newlabel{tab:seeds}{{9}{24}{Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.\relax }{table.caption.45}{}}
+\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{24}{paragraph*.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{24}{table.caption.47}\protected@file@percent }
+\newlabel{tab:wer}{{10}{24}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.47}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{24}{appendix.D}\protected@file@percent }
 \newlabel{app:recipe}{{D}{24}{Training-recipe notes}{appendix.D}{}}
-\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{24}{paragraph*.47}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{24}{paragraph*.48}\protected@file@percent }
 \citation{jordan2024muon}
-\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{25}{paragraph*.48}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{25}{paragraph*.49}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{25}{paragraph*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{25}{paragraph*.49}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{25}{paragraph*.50}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{25}{paragraph*.51}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{25}{appendix.E}\protected@file@percent }
 \newlabel{app:repro}{{E}{25}{Reproducibility}{appendix.E}{}}
 \gdef \@abspage@last{25}
