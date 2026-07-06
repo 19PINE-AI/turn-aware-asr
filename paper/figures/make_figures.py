@@ -273,19 +273,24 @@ def fig4_biasing():
     e4 = json.load(open(R / "69-e4-pinned-ctx.json"))["summary"]["by_age"]
     fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.5),
                              gridspec_kw={"width_ratios": [1, 1.35]})
-    # (a) uplift bars
+    # (a) uplift bars (base-model capability) + the released model's distractor
+    # hallucination, which the natural-speech counterfactual drives below base
     ax = axes[0]
     bars = [("no context", 66.7, OKABE["grey"]),
-            ("relevant\nprefix", 95.6, OKABE["green"]),
-            ("distractor\nhallucination", 3.7, OKABE["red"])]
-    xs = np.arange(3)
+            ("relevant\nprefix", 95.6, OKABE["green"])]
     for i, (lab, v, c) in enumerate(bars):
         ax.bar(i, v, 0.62, color=c, alpha=0.92)
         ax.text(i, v + 1.6, f"{v:.1f}%", ha="center", fontsize=8, weight="bold")
+    # paired distractor-hallucination bars: base vs released (rank-32 counterfactual)
+    ax.bar(2 - 0.16, 3.7, 0.30, color=OKABE["red"], alpha=0.45)
+    ax.bar(2 + 0.16, 2.0, 0.30, color=OKABE["red"], alpha=0.92)
+    ax.text(2 - 0.16, 3.7 + 1.6, "3.7%", ha="center", fontsize=7, color=OKABE["red"])
+    ax.text(2 + 0.16, 2.0 + 1.6, "2.0%", ha="center", fontsize=7, weight="bold", color=OKABE["red"])
     ax.annotate("", xy=(1, 95.6), xytext=(1, 66.7 + 1),
                 arrowprops=dict(arrowstyle="->", color=OKABE["black"], lw=1.0))
     ax.text(1.09, 80, "+28.9 pp", fontsize=8, weight="bold", rotation=90, va="center")
-    ax.set_xticks(xs, [b[0] for b in bars], fontsize=7.4)
+    ax.set_xticks([0, 1, 2], ["no context", "relevant\nprefix",
+                              "distractor halluc.\nbase / released"], fontsize=7.0)
     ax.set_ylabel("entity recall / rate (%)")
     ax.set_ylim(0, 108)
     ax.set_title("Earnings-22 hotword biasing", fontsize=9)
