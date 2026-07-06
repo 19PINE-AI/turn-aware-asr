@@ -91,38 +91,6 @@ Our contributions:
   \label{fig:tradeoff}
 \end{figure}
 
-%% ═══ FIXME placeholders — results in flight (2026-07-06), do not delete until filled ═══
-%% FIXME(gap-1 natural distractor): counterfactual (disagreeing-context) training applied to
-%%   natural-speech biasing — expected to cut the released model's 6.3% Earnings-22 distractor
-%%   hallucination. Lands in §sec:second "Which frontiers are real" + Limitations.
-%% FIXME(gap-2 WER): larger plain-ASR replay fraction — expected to shrink the offline WER
-%%   regression. Lands in §sec:serving offline-cost paragraph + App. C (tab:wer) + App. D.
-%% FIXME(gap-3 dictation): delta-based rescoring per research/85 is already incorporated
-%%   (§sec:second + App. C). If the 0.25 s-chunk confirmation run lands, update the
-%%   grid-quantization sentence in App. C.
-%% FIXME(gap-4 oscillation): seeded opposed-pools rerun — if oscillation reproduces under
-%%   fresh seeds, upgrade Fig. oscillation (left) to multi-seed and delete the single-run
-%%   caveat in Limitations.
-%% Full specs (how to run + how to interpret) for ALL of exp-2/3/4/5 + dictation-generalization:
-%%   research/86-exp3-schema-ablation-exp4-external-baselines.md
-%% -- pre-submission, priority --
-%% FIXME(exp-3 schema ablation): retrain the causal recipe minus (a) minimal pairs 1-2,
-%%   (b) silence schemas 7-8, (c) pause pair 5 — attributes the endpointing win to recipe
-%%   components. One paragraph in §sec:recipe + table in App. C.
-%% FIXME(exp-4 external baselines): Kyutai STT semantic-VAD, Parakeet-EOU, Smart Turn v3,
-%%   LiveKit detector on the replay benchmark — rows in tab:main, points in Fig. tradeoff,
-%%   and removes the "no external baselines" limitation.
-%% -- cheap, recommended (landing spots marked inline in §diagnosis, §serving, §discussion) --
-%% FIXME(exp-2 logit-level): marker-token probability (not argmax) across opposed-pools
-%%   checkpoints; distinguishes mode circulation from threshold-flapping. Lands in
-%%   §sec:diagnosis "Why oscillation, specifically" (needs retained v8 checkpoints).
-%% DONE(dictation-generalization, 2026-07-06, research/93-gen-findings.md): filled in
-%%   Limitations — addresses transfer (1.00 on-time recall), 16-digit cards do not
-%%   (fires ~3s early at learned 10-digit point, 0 recall), transcription unaffected.
-%% -- optional flagship (ICLR-tier; skip for fast arXiv) --
-%% FIXME(exp-5 toy task): synthetic stream with a tunable clairvoyant-label fraction; show
-%%   oscillation onset + phantom frontier vs. that fraction, outside speech. Lands in
-%%   §sec:discussion "Who else is likely affected" as demonstrated-mechanism evidence.
 
 \section{The task, and why a threshold cannot solve it}
 \label{sec:task}
@@ -363,8 +331,7 @@ Dictation was fixed immediately; context introduced the trap. Trained only on ex
 
 \paragraph{One released model, four behaviors.} The released checkpoint --- a rank-32 adapter trained on one pool of ${\sim}20$k examples --- endpoints conversation, holds through dictation (0.16 premature fires per number under the shipped scoring window --- better than every timeout setting --- at 0.998 digit accuracy), grounds spelled entities in context (names 100\%, emails 93\% exact), and ignores a wrong profile (0.8\% intrusion), with no deployment-time checkpoint swap. The shipped dictation window is in fact conservative: a re-analysis scoring each fire by its offset from the true end of speech shows the residual ``premature'' fires land ${\sim}0.15$--$0.25$\,s \emph{after} the last digit, just past the window's $+0.25$\,s cutoff; delta-based scoring gives 0.07 genuine mid-sequence fires per number, 0.968 on-time final recall, and zero late fires (Appendix~\ref{app:tables}). On a large held-out replay set (100 stretches, 384 turn-final boundaries) the released model scores 0.982 boundary recall at 1.30 false fires per speech-minute, P50 0.38\,s --- still strictly inside the timeout family of Figure~\ref{fig:tradeoff} --- and the capability is a property of the recipe rather than a lucky checkpoint: retraining under three seeds gives premature-fire rate $0.16\pm0.00$, email-with-context accuracy $0.90\pm0.07$, and intrusion $0.000\pm0.000$ (Appendix~\ref{app:tables}).
 
-\paragraph{Which frontiers are real.} Folding four behaviors into one adapter costs endpointing precision: 0.97 false fires per speech-minute versus 0.3 for the pure-endpointing checkpoint of \S\ref{sec:results}, a genuine capacity trade-off we report and do not tune away (a deployment that only needs turn-taking can run the pure checkpoint). This is the one frontier that survives the diagnosis: the endpoint recall-versus-precision frontier dissolved when the labels became causal, but the breadth-versus-precision cost at fixed adapter capacity does not --- and it recedes with capacity, which is why the release uses a rank-32 adapter. At rank-32 the added replay and biasing schemas leave endpointing recall intact (0.95 versus 0.97) rather than eroding it, as they did at rank-16. The context axis carries the same lesson. The spelled-entity counterfactual (\S\ref{sec:second}) drives wrong-profile intrusion to zero but does not, by itself, cover \emph{natural-speech} distractors: an entity list naming companies absent from the audio is hallucinated 6.3\% of the time. The same counterfactual construction applied to natural-speech biasing --- context is an entity list disagreeing with the audio, target follows the audio --- is folded into the released pool and cuts that hallucination to 2.0\% (below the base model's 3.7\%) while preserving a $+28.2$\,pp entity-recall uplift, matching the base model's biasing capability. The residual cost is on absolute entity recall, which the anti-hallucination pressure lowers slightly; the aggressiveness of the counterfactual sets where on that recall-versus-hallucination curve the model sits.
-%% FIXME(gap-1): natural-distractor counterfactual result lands here when the run completes.
+\paragraph{Which frontiers are real.} Folding four behaviors into one adapter costs endpointing precision: 0.97 false fires per speech-minute versus 0.3 for the pure-endpointing checkpoint of \S\ref{sec:results}, a genuine capacity trade-off we report and do not tune away (a deployment that only needs turn-taking can run the pure checkpoint). This is the one frontier that survives the diagnosis: the endpoint recall-versus-precision frontier dissolved when the labels became causal, but the breadth-versus-precision cost at fixed adapter capacity does not --- and it recedes with capacity, which is why the release uses a rank-32 adapter. At rank-32 the added replay and biasing schemas leave endpointing recall intact (0.95 versus 0.97) rather than eroding it, as they did at rank-16. The context axis carries the same lesson. The spelled-entity counterfactual (\S\ref{sec:second}) drives wrong-profile intrusion to zero but does not, by itself, cover \emph{natural-speech} distractors: an entity list naming companies absent from the audio is hallucinated 6.3\% of the time. The same counterfactual construction applied to natural-speech biasing --- context is an entity list disagreeing with the audio, target follows the audio --- is folded into the released pool and cuts that hallucination to 2.0\% (below the base model's 3.7\%) while preserving a $+28.2$\,pp entity-recall uplift, close to the base model's raw biasing capability. The residual cost is on absolute entity recall, which the anti-hallucination pressure lowers slightly; the aggressiveness of the counterfactual sets where on that recall-versus-hallucination curve the model sits.
 
 \paragraph{The principle, stated once.} Two instances now sit side by side (Figure~\ref{fig:twoaxes}). A streaming model may act only on its causal prefix, so its supervision must make the target a function of that prefix and of signals that remain trustworthy at decision time. The temporal leak (labels that peek at the future) manufactured oscillation and a phantom frontier; the contextual leak (a side input that always matched the audio in training) manufactured copying. Same disease --- the target depends on something the model cannot trust when it must act --- and same cure: a minimal-pair or counterfactual construction that makes the untrustworthy signal uninformative by design.
 
@@ -379,7 +346,7 @@ Dictation was fixed immediately; context introduced the trap. Trained only on ex
 \label{sec:serving}
 
 The release is the merged unified checkpoint, the label-spec builder and training code, the dictation and spelled-entity probes, and the replay benchmark.
-\paragraph{Offline cost, measured and attributed.} The endpoint fine-tune costs $+1.1$/$+2.7$\,pp WER on LibriSpeech test-clean/test-other (Appendix~\ref{app:tables}, Table~\ref{tab:wer}). The mechanical explanation --- marker fires truncating the decode --- is falsified by intervention: banning the marker tokens at decode time drops fires to zero and does not move WER. The regression is distributional drift from a narrow-schema fine-tune; mixing plain transcription examples into the pool (the standard mitigation, exercised in the released model) recovers part of it, and Appendix~\ref{app:recipe} documents the full attribution, an AdamW weight-decay hazard for recipes that train a few vocabulary rows against a frozen embedding, and one negative result (Muon underperforms AdamW on these LoRA factors). Streaming WER, the deployment-relevant number, is unaffected.
+\paragraph{Offline cost, measured and attributed.} The endpoint fine-tune costs $+1.1$/$+2.7$\,pp WER on LibriSpeech test-clean/test-other (Appendix~\ref{app:tables}, Table~\ref{tab:wer}). The mechanical explanation --- marker fires truncating the decode --- is falsified by intervention: banning the marker tokens at decode time drops fires to zero and does not move WER. The regression is distributional drift from a narrow-schema fine-tune; mixing plain transcription examples into the pool (the standard mitigation, exercised in the released model) recovers most of it, and Appendix~\ref{app:recipe} documents the full attribution, an AdamW weight-decay hazard for recipes that train a few vocabulary rows against a frozen embedding, and one negative result (Muon underperforms AdamW on these LoRA factors). Streaming WER, the deployment-relevant number, is unaffected.
 
 \paragraph{Serving on stock vLLM.} Three findings from running the model on shared-GPU vLLM \citep{kwon2023vllm} rather than a simulator (Figure~\ref{fig:serving}). The natural flat-cost serving shape --- appending each 0.5\,s chunk as a new audio placeholder in a resident request --- is out of distribution for a model trained on single segments and destroys it (88\% WER); bounded re-feed of the last window is the correct primitive (3.8\%). The vLLM path reproduces the endpoint behavior at 84\,ms median per chunk, $5.4\times$ faster than the transformers simulator used during development --- latency claims made on $O(T^2)$ re-decode simulators overstate the cost of this approach by that factor. And bounding every resident state matters: a 20\,s force-flush fixes both the WER tail and the compute tail, and per-frame P95 stays flat through 8 concurrent sessions on a 0.15-GPU slice (a contention-caveated lower bound; the shape, not the constant, is the result). The in-engine efficiency variant --- windowed KV with the \ctx{} prefix pinned as an attention sink \citep{xiao2024streamingllm} --- is validated in a companion systems paper \citep{li2026metronome}.
 
@@ -507,7 +474,7 @@ Full protocol: 0.5\,s chunks; committed-prefix incremental decoding (emitted tex
 
 \begin{table}[h]
   \centering\small
-  \caption{Released recipe under three training seeds (best checkpoint each, common probe set). Seed 0 is the released checkpoint.}
+  \caption{Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table~\ref{tab:dictation}). Seed 0 is the released checkpoint.}
   \label{tab:seeds}
   \begin{tabular}{lccc}
     \toprule
@@ -522,17 +489,17 @@ Full protocol: 0.5\,s chunks; committed-prefix incremental decoding (emitted tex
   \end{tabular}
 \end{table}
 
-\paragraph{Schema ablation.} Table~\ref{tab:ablation}. We retrain the endpointing recipe on the v9 pool with one construction removed at a time (iso-count: the dropped quota is redistributed across the remaining schemas, holding volume fixed), select each arm on the holdout composite, and score on the 25-stretch replay set. Each construction has a distinct predicted failure; two of three reproduce it. Removing the \textbf{minimal pair} (schema 2) makes silence optional again: gated false fires rise $1.08{\to}5.28$ per speech-minute and the confirm horizon cancels 34 candidates versus 10 --- the row-4 pathology and its crutch return. Removing the \textbf{silence schemas} (7--8) costs silence-competence: ungated, the model emits 1458 markers on silence versus 8, masked in the gated numbers by the energy gate. Removing the \textbf{pause pair} (schema 5) does not raise false fires; the model is mildly more conservative (recall $0.948{\to}0.906$, false fires $1.08{\to}0.43$), so pause discrimination is largely covered by schema 4's complete-A gaps.
+\paragraph{Schema ablation.} Table~\ref{tab:ablation}. We retrain the endpointing recipe on the full endpointing pool with one construction removed at a time (iso-count: the dropped quota is redistributed across the remaining schemas, holding volume fixed), select each arm on the holdout composite, and score on the 25-stretch replay set. Each construction has a distinct predicted failure; two of three reproduce it. Removing the \textbf{minimal pair} (schema 2) makes silence optional again: gated false fires rise $1.08{\to}5.28$ per speech-minute and the confirm horizon cancels 34 candidates versus 10 --- the row-4 pathology and its crutch return. Removing the \textbf{silence schemas} (7--8) costs silence-competence: ungated, the model emits 1458 markers on silence versus 8, masked in the gated numbers by the energy gate. Removing the \textbf{pause pair} (schema 5) does not raise false fires; the model is mildly more conservative (recall $0.948{\to}0.906$, false fires $1.08{\to}0.43$), so pause discrimination is largely covered by schema 4's complete-A gaps.
 
 \begin{table}[h]
   \centering\small
-  \caption{Schema ablation on the v9 endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.}
+  \caption{Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.}
   \label{tab:ablation}
   \begin{tabular}{lccccc}
     \toprule
     Arm & Recall\,$\uparrow$ & False/min\,$\downarrow$ & Silence-fires\,$\downarrow$ & $h{=}1$ cancels & Predicted failure? \\
     \midrule
-    baseline (full v9) & 0.948 & 1.08 & 8 & 10 & --- \\
+    baseline (full pool) & 0.948 & 1.08 & 8 & 10 & --- \\
     $-$minimal pair (\#2) & 0.906 & 5.28 & 5 & 34 & yes (silence optional) \\
     $-$silence (\#7--8) & 0.969 & 1.94 & 1458 & 12 & yes (silence spray) \\
     $-$pause pair (\#5) & 0.906 & 0.43 & 8 & 4 & no (redundant) \\
@@ -540,7 +507,7 @@ Full protocol: 0.5\,s chunks; committed-prefix incremental decoding (emitted tex
   \end{tabular}
 \end{table}
 
-\paragraph{Offline WER regression.} Table~\ref{tab:wer}. The fine-tune costs $+1.1$/$+2.7$\,pp on the full official LibriSpeech splits (single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' is the fraction of clips where the model emitted the endpoint marker; offline clips end at or near end-of-speech, and the base model never fires because its marker rows are untrained. Banning the markers at decode time zeroes the fires without moving WER, which rules out decode truncation as the cause; Appendix~\ref{app:recipe} attributes the regression to narrow-schema drift and quantifies the plain-ASR-replay mitigation. The released unified model --- which folds a 20\% plain-ASR-replay fraction into a rank-32 adapter (\S\ref{sec:results}) --- recovers most of the gap, scoring 3.5\%/6.9\%.
+\paragraph{Offline WER regression.} Table~\ref{tab:wer}. The fine-tune costs $+1.1$/$+2.7$\,pp on the full official LibriSpeech splits (single-shot decode on vLLM, jiwer/whisper normalization). ``Fires'' is the fraction of clips where the model emitted the endpoint marker; offline clips end at or near end-of-speech, and the base model never fires because its marker rows are untrained. Banning the markers at decode time zeroes the fires without moving WER, which rules out decode truncation as the cause; Appendix~\ref{app:recipe} attributes the regression to narrow-schema drift and quantifies the plain-ASR-replay mitigation. The released unified model --- which folds a 20\% plain-ASR-replay fraction into a rank-32 adapter (\S\ref{sec:second}) --- recovers most of the gap, scoring 3.5\%/6.9\%.
 
 \begin{table}[h]
   \centering\small
@@ -566,7 +533,7 @@ The unified model (\S\ref{sec:second}) uses the same LoRA fine-tune as the rest 
 
 \paragraph{A weight-decay bug worth fixing, but not the WER culprit.} We reserve two vocabulary rows as markers and train them by unfreezing \texttt{embed\_tokens}/\texttt{lm\_head} and masking gradients to those two rows. But AdamW's \emph{decoupled} weight decay applies $p \leftarrow p - \eta\lambda p$ to \emph{every} row regardless of gradient, so at $\eta{=}2\!\times\!10^{-4},\lambda{=}0.01$ the entire (tied) 151k-row matrix shrinks ${\sim}2.4\%$ over 12k steps --- silently degrading the base model's vocabulary and output head. This is a general hazard for any recipe that adds a few trainable vocabulary rows to a frozen embedding, and we fix it with a $\lambda{=}0$ group. The negative half: in a controlled comparison on identical data, the fix (plus cosine schedule) did \emph{not} lower offline WER --- the fixed unified checkpoint scores 3.9\%/7.3\% (clean/other) versus 3.6\%/7.0\% without it, within checkpoint-selection noise and in the wrong direction. The offline-WER regression is therefore \emph{not} caused by the weight-decay bug; it is narrow-schema drift from fine-tuning on ${\sim}12$k examples with no plain-ASR replay data. We keep the fix for its base-model-preservation rationale, not for a WER win we cannot demonstrate.
 
-\paragraph{Plain-ASR replay: the fix that does move WER.} The released model mixes ${\sim}4$k plain transcription examples (audio $\to$ transcript, no marker, no context) into the ${\sim}20$k-example pool --- a 20\% fraction. They teach the model that a complete utterance with no context is simply to be transcribed, recovering offline WER from 3.9\%/7.9\% (recipe fixes, no replay) to 3.5\%/6.9\% and cutting spurious offline marker fires from ${\sim}10$--$20\%$ to 3.2\%. The replay fraction trades against endpointing sharpness at fixed adapter capacity; raising the LoRA rank from 16 to 32 buys back that sharpness, which is why the released checkpoint is rank-32 (\S\ref{sec:results}).
+\paragraph{Plain-ASR replay: the fix that does move WER.} The released model mixes ${\sim}4$k plain transcription examples (audio $\to$ transcript, no marker, no context) into the ${\sim}20$k-example pool --- a 20\% fraction. They teach the model that a complete utterance with no context is simply to be transcribed, recovering offline WER from 3.9\%/7.9\% (recipe fixes, no replay) to 3.5\%/6.9\% and cutting spurious offline marker fires from ${\sim}10$--$20\%$ to 3.2\%. The replay fraction trades against endpointing sharpness at fixed adapter capacity; raising the LoRA rank from 16 to 32 buys back that sharpness, which is why the released checkpoint is rank-32 (\S\ref{sec:second}).
 
 \paragraph{Cosine decay.} A cosine schedule from $2\!\times\!10^{-4}$ to $10^{-5}$ after a 100-step warmup gives the most stable, highest holdout-composite trajectory (plateau $0.992$ from step 6k) and a slightly less trigger-happy final checkpoint than the constant schedule.
 
