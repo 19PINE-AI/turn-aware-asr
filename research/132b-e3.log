@@ -1,0 +1,87 @@
+2026-07-06 21:21:34,514 INFO Built 25 stretches (22.2 min)
+INFO 07-06 21:21:37 [utils.py:233] non-default args: {'trust_remote_code': True, 'max_model_len': 8192, 'enable_prefix_caching': True, 'gpu_memory_utilization': 0.3, 'disable_log_stats': True, 'limit_mm_per_prompt': {'audio': 1}, 'model': 'checkpoints/merged/qwen3-asr-0.6b-endpoint-unified'}
+/home/ubuntu/sglang-venv/lib/python3.10/site-packages/transformers/modeling_rope_utils.py:1034: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:37 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:37 [model.py:549] Resolved architecture: Qwen3ASRForConditionalGeneration
+INFO 07-06 21:21:37 [model.py:1678] Using max model len 8192
+INFO 07-06 21:21:37 [scheduler.py:238] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-06 21:21:37 [vllm.py:790] Asynchronous scheduling is enabled.
+/home/ubuntu/sglang-venv/lib/python3.10/site-packages/transformers/modeling_rope_utils.py:1034: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:37 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] `Qwen3ASRProcessor` defines `feature_extractor_class = 'WhisperFeatureExtractor'`, which is deprecated. Register the correct mapping in `AutoFeatureExtractor` instead.
+/home/ubuntu/sglang-venv/lib/python3.10/site-packages/transformers/modeling_rope_utils.py:1034: FutureWarning: `rope_config_validation` is deprecated and has been removed. Its functionality has been moved to RotaryEmbeddingConfigMixin.validate_rope method. PreTrainedConfig inherits this class, so please call self.validate_rope() instead. Also, make sure to use the new rope_parameters syntax. You can call self.standardize_rope_params() in the meantime.
+  warnings.warn(
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:38 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:39 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='default': {'mrope_interleaved', 'mrope_section', 'interleaved'}
+INFO 07-06 21:21:41 [qwen3_asr.py:417] thinker_config is None. Initializing thinker model with default values
+(EngineCore pid=3867089) INFO 07-06 21:21:42 [core.py:105] Initializing a V1 LLM engine (v0.19.0) with config: model='checkpoints/merged/qwen3-asr-0.6b-endpoint-unified', speculative_config=None, tokenizer='checkpoints/merged/qwen3-asr-0.6b-endpoint-unified', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=checkpoints/merged/qwen3-asr-0.6b-endpoint-unified, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'splitting_ops': ['vllm::unified_attention', 'vllm::unified_attention_with_output', 'vllm::unified_mla_attention', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::gdn_attention_core', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_images_per_batch': 0, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': True, 'static_all_moe_layers': []}
+(EngineCore pid=3867089) INFO 07-06 21:21:42 [parallel_state.py:1400] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://155.103.252.95:45723 backend=nccl
+(EngineCore pid=3867089) INFO 07-06 21:21:42 [parallel_state.py:1716] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=3867089) INFO 07-06 21:21:42 [gpu_model_runner.py:4735] Starting to load model checkpoints/merged/qwen3-asr-0.6b-endpoint-unified...
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [cuda.py:390] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [mm_encoder_attention.py:230] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [cuda.py:334] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [flash_attn.py:596] Using FlashAttention version 2
+(EngineCore pid=3867089) <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+(EngineCore pid=3867089) <frozen importlib._bootstrap_external>:1184: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+(EngineCore pid=3867089) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=3867089) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.38it/s]
+(EngineCore pid=3867089) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  5.38it/s]
+(EngineCore pid=3867089) 
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [default_loader.py:384] Loading weights took 0.22 seconds
+(EngineCore pid=3867089) INFO 07-06 21:21:43 [gpu_model_runner.py:4820] Model loading took 1.53 GiB memory and 0.541867 seconds
+(EngineCore pid=3867089) INFO 07-06 21:21:44 [gpu_model_runner.py:5753] Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 42 audio items of the maximum feature size.
+(EngineCore pid=3867089) INFO 07-06 21:21:45 [backends.py:1051] Using cache directory: /home/ubuntu/.cache/vllm/torch_compile_cache/0093b7f69a/rank_0_0/backbone for vLLM's torch.compile
+(EngineCore pid=3867089) INFO 07-06 21:21:45 [backends.py:1111] Dynamo bytecode transform time: 1.39 s
+(EngineCore pid=3867089) INFO 07-06 21:21:46 [backends.py:285] Directly load the compiled graph(s) for compile range (1, 16384) from the cache, took 0.699 s
+(EngineCore pid=3867089) INFO 07-06 21:21:46 [decorators.py:303] Directly load AOT compilation from path /home/ubuntu/.cache/vllm/torch_compile_cache/torch_aot_compile/351ed85e2ac9c5d1ebfca1369cde18dc78b10abb54f8f41d164f33dae978bb55/rank_0_0/model
+(EngineCore pid=3867089) INFO 07-06 21:21:46 [monitor.py:48] torch.compile took 2.44 s in total
+(EngineCore pid=3867089) INFO 07-06 21:21:46 [monitor.py:76] Initial profiling/warmup run took 0.00 s
+(EngineCore pid=3867089) INFO 07-06 21:21:47 [kv_cache_utils.py:829] Overriding num_gpu_blocks=0 with num_gpu_blocks_override=512
+(EngineCore pid=3867089) INFO 07-06 21:21:47 [gpu_model_runner.py:5876] Profiling CUDA graph memory: PIECEWISE=51 (largest=512), FULL=51 (largest=512)
+(EngineCore pid=3867089) INFO 07-06 21:21:47 [gpu_model_runner.py:5955] Estimated CUDA graph memory: 0.29 GiB total
+(EngineCore pid=3867089) INFO 07-06 21:21:48 [gpu_worker.py:436] Available KV cache memory: 22.98 GiB
+(EngineCore pid=3867089) INFO 07-06 21:21:48 [gpu_worker.py:470] In v0.19, CUDA graph memory profiling will be enabled by default (VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=1), which more accurately accounts for CUDA graph memory during KV cache allocation. To try it now, set VLLM_MEMORY_PROFILER_ESTIMATE_CUDAGRAPHS=1 and increase --gpu-memory-utilization from 0.3000 to 0.3031 to maintain the same effective KV cache size.
+(EngineCore pid=3867089) INFO 07-06 21:21:48 [kv_cache_utils.py:1319] GPU KV cache size: 215,168 tokens
+(EngineCore pid=3867089) INFO 07-06 21:21:48 [kv_cache_utils.py:1324] Maximum concurrency for 8,192 tokens per request: 26.27x
+(EngineCore pid=3867089) 2026-07-06 21:21:48,096 - INFO - autotuner.py:262 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=3867089) 2026-07-06 21:21:48,101 - INFO - autotuner.py:268 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=3867089) Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  16%|█▌        | 8/51 [00:00<00:00, 75.50it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  31%|███▏      | 16/51 [00:00<00:00, 71.96it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  47%|████▋     | 24/51 [00:00<00:00, 71.71it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 32/51 [00:00<00:00, 67.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  78%|███████▊  | 40/51 [00:00<00:00, 69.04it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  94%|█████████▍| 48/51 [00:00<00:00, 70.13it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 51/51 [00:00<00:00, 69.47it/s]
+(EngineCore pid=3867089) Capturing CUDA graphs (decode, FULL):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  16%|█▌        | 8/51 [00:00<00:00, 79.06it/s]Capturing CUDA graphs (decode, FULL):  33%|███▎      | 17/51 [00:00<00:00, 81.41it/s]Capturing CUDA graphs (decode, FULL):  51%|█████     | 26/51 [00:00<00:00, 81.62it/s]Capturing CUDA graphs (decode, FULL):  69%|██████▊   | 35/51 [00:00<00:00, 82.51it/s]Capturing CUDA graphs (decode, FULL):  86%|████████▋ | 44/51 [00:00<00:00, 83.53it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 51/51 [00:00<00:00, 83.17it/s]
+(EngineCore pid=3867089) INFO 07-06 21:21:49 [gpu_model_runner.py:6046] Graph capturing finished in 2 secs, took 0.29 GiB
+(EngineCore pid=3867089) INFO 07-06 21:21:49 [gpu_worker.py:597] CUDA graph pool memory: 0.29 GiB (actual), 0.29 GiB (estimated), difference: 0.0 GiB (1.4%).
+(EngineCore pid=3867089) INFO 07-06 21:21:49 [core.py:283] init engine (profile, create kv cache, warmup model) took 5.86 seconds
+2026-07-06 21:22:18,007 INFO == E3 vLLM REPLAY == median 21 ms / chunk (sim baseline 455 ms), P95 31 ms
+2026-07-06 21:22:18,007 INFO   mode                             vllm_committed
+2026-07-06 21:22:18,007 INFO   chunk_s                          0.500
+2026-07-06 21:22:18,007 INFO   n_stretches                      25
+2026-07-06 21:22:18,007 INFO   n_turn_bounds                    96
+2026-07-06 21:22:18,007 INFO   n_cont_bounds                    27
+2026-07-06 21:22:18,007 INFO   boundary_recall                  0.958
+2026-07-06 21:22:18,007 INFO   false_fires_per_speech_min       1.294
+2026-07-06 21:22:18,007 INFO   resume_after_fire_rate           1.000
+2026-07-06 21:22:18,007 INFO   dup_or_silence_fires_total       2
+2026-07-06 21:22:18,007 INFO   wer_mean                         0.405
+2026-07-06 21:22:18,007 INFO   median_chunk_ms                  20.755
+2026-07-06 21:22:18,007 INFO   latency_s_p50                    0.390
+2026-07-06 21:22:18,007 INFO   latency_s_p95                    0.640
+2026-07-06 21:22:18,007 INFO   latency_s_mean                   0.392
+2026-07-06 21:22:18,007 INFO   chunk_compute_ms_median          21.195
+2026-07-06 21:22:18,007 INFO   chunk_compute_ms_p95             30.794
+2026-07-06 21:22:18,007 INFO   chunk_compute_ms_vs_sim_455      0.047
+2026-07-06 21:22:18,009 INFO Saved research/132-e3-serving-v18.json
+(EngineCore pid=3867089) INFO 07-06 21:22:18 [core.py:1210] Shutdown initiated (timeout=0)
+(EngineCore pid=3867089) INFO 07-06 21:22:18 [core.py:1233] Shutdown complete

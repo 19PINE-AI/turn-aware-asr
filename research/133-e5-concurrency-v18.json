@@ -1,0 +1,78 @@
+{
+  "per_n": [
+    {
+      "n": 1,
+      "n_frames_decoded": 62,
+      "mean_batch_size": 1.0,
+      "frame_ms_p50": 20.822699181735516,
+      "frame_ms_p95": 28.130597295239564,
+      "frame_ms_mean": 21.68438308722069,
+      "frame_ms_max": 61.566317453980446,
+      "per_session_lat_ms_p50": 20.822699181735516,
+      "per_session_lat_ms_p95": 28.130597295239564,
+      "frame_budget_ms": 500.0,
+      "within_budget_p95": true
+    },
+    {
+      "n": 2,
+      "n_frames_decoded": 87,
+      "mean_batch_size": 1.4252873563218391,
+      "frame_ms_p50": 21.70114405453205,
+      "frame_ms_p95": 30.922531150281433,
+      "frame_ms_mean": 21.686087394582813,
+      "frame_ms_max": 38.558206520974636,
+      "per_session_lat_ms_p50": 23.39215064421296,
+      "per_session_lat_ms_p95": 32.944203633815036,
+      "frame_budget_ms": 500.0,
+      "within_budget_p95": true
+    },
+    {
+      "n": 4,
+      "n_frames_decoded": 111,
+      "mean_batch_size": 1.945945945945946,
+      "frame_ms_p50": 21.6137683019042,
+      "frame_ms_p95": 36.70196048915386,
+      "frame_ms_mean": 22.857881830753506,
+      "frame_ms_max": 43.05324796587229,
+      "per_session_lat_ms_p50": 25.043603964149952,
+      "per_session_lat_ms_p95": 38.90356048941612,
+      "frame_budget_ms": 500.0,
+      "within_budget_p95": true
+    },
+    {
+      "n": 8,
+      "n_frames_decoded": 120,
+      "mean_batch_size": 3.4166666666666665,
+      "frame_ms_p50": 30.62907699495554,
+      "frame_ms_p95": 43.99524866603315,
+      "frame_ms_mean": 31.871481713217992,
+      "frame_ms_max": 50.90232565999031,
+      "per_session_lat_ms_p50": 31.9612305611372,
+      "per_session_lat_ms_p95": 44.22863945364952,
+      "frame_budget_ms": 500.0,
+      "within_budget_p95": true
+    },
+    {
+      "n": 16,
+      "n_frames_decoded": 120,
+      "mean_batch_size": 8.141666666666667,
+      "frame_ms_p50": 53.74152213335037,
+      "frame_ms_p95": 77.49934000894427,
+      "frame_ms_mean": 56.70835409934322,
+      "frame_ms_max": 143.56337115168571,
+      "per_session_lat_ms_p50": 55.336988531053066,
+      "per_session_lat_ms_p95": 78.12094688415527,
+      "frame_budget_ms": 500.0,
+      "within_budget_p95": true
+    }
+  ],
+  "n_star_estimate": 16,
+  "model_dir": "checkpoints/merged/qwen3-asr-0.6b-endpoint-unified",
+  "gpu_mem": 0.15,
+  "frame_s": 0.5,
+  "window_s": 16.0,
+  "max_frames": 120,
+  "n_stretches": 16,
+  "dry_run": false,
+  "caveat": "If the GPU had a co-tenant, absolute latencies are contaminated by contention; the SHAPE (growth with N) and relative N* are still informative, a calibrated N* needs a solo GPU."
+}
