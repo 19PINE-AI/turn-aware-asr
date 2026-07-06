@@ -1,0 +1,24 @@
+=== merge 9000 2026-07-06T12:33:46+00:00 ===
+2026-07-06 12:33:52,948 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== big probe 2026-07-06T12:33:53+00:00 ===
+2026-07-06 12:45:52,642 INFO Probe B summary: {'name_none': 0.975, 'name_profile': 1.0, 'name_distractor': 0.958, 'email_none': 0.108, 'email_profile': 0.933, 'email_distractor': 0.133, 'email_spelled_none': 0.1, 'email_spelled_profile': 0.9, 'email_natural_none': 0.117, 'email_natural_profile': 0.967, 'intrusion_rate': 0.008}
+2026-07-06 12:45:52,644 INFO Wrote research/119-probe-v18-9000.json
+=== earnings22 2026-07-06T12:45:53+00:00 ===
+2026-07-06 12:51:00,224 INFO   distractor_hallucination_rate    0.020
+2026-07-06 12:51:00,225 INFO Wrote research/120-biasing-v18-9000.json
+=== WER 2026-07-06T12:51:00+00:00 ===
+### test-clean: WER=0.0349  marker_fire_rate=0.032
+### test-other: WER=0.0690  marker_fire_rate=0.047
+=== DONE v18 step 9000 2026-07-06T12:53:09+00:00 ===
+=== merge 10500 2026-07-06T12:53:09+00:00 ===
+2026-07-06 12:53:16,295 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== big probe 2026-07-06T12:53:16+00:00 ===
+2026-07-06 13:05:04,554 INFO Probe B summary: {'name_none': 0.983, 'name_profile': 1.0, 'name_distractor': 0.967, 'email_none': 0.125, 'email_profile': 0.933, 'email_distractor': 0.117, 'email_spelled_none': 0.15, 'email_spelled_profile': 0.917, 'email_natural_none': 0.1, 'email_natural_profile': 0.95, 'intrusion_rate': 0.004}
+2026-07-06 13:05:04,557 INFO Wrote research/119-probe-v18-10500.json
+=== earnings22 2026-07-06T13:05:05+00:00 ===
+2026-07-06 13:10:16,267 INFO   distractor_hallucination_rate    0.020
+2026-07-06 13:10:16,269 INFO Wrote research/120-biasing-v18-10500.json
+=== WER 2026-07-06T13:10:16+00:00 ===
+### test-clean: WER=0.0343  marker_fire_rate=0.048
+### test-other: WER=0.0799  marker_fire_rate=0.077
+=== DONE v18 step 10500 2026-07-06T13:12:35+00:00 ===

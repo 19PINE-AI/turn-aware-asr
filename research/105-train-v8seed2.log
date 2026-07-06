@@ -347,3 +347,1282 @@ Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
 2026-07-06 09:12:39,451 INFO step 4100  loss 4.3647  lr 2.00e-04  0.13 s/step  free 66352 MB
 2026-07-06 09:12:42,501 INFO step 4120  loss 4.1562  lr 2.00e-04  0.13 s/step  free 66352 MB
 2026-07-06 09:12:45,613 INFO step 4140  loss 3.8211  lr 2.00e-04  0.15 s/step  free 66352 MB
+2026-07-06 09:12:48,756 INFO step 4160  loss 3.8144  lr 2.00e-04  0.14 s/step  free 66352 MB
+2026-07-06 09:12:51,821 INFO step 4180  loss 4.4423  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:12:54,920 INFO step 4200  loss 4.0100  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:12:58,005 INFO step 4220  loss 3.8714  lr 2.00e-04  0.16 s/step  free 66352 MB
+2026-07-06 09:13:01,040 INFO step 4240  loss 3.5122  lr 2.00e-04  0.14 s/step  free 66352 MB
+2026-07-06 09:13:04,050 INFO step 4260  loss 3.3197  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:07,273 INFO step 4280  loss 4.0998  lr 2.00e-04  0.17 s/step  free 66352 MB
+2026-07-06 09:13:10,280 INFO step 4300  loss 2.9633  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:13,348 INFO step 4320  loss 3.4510  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:16,369 INFO step 4340  loss 3.8620  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:19,503 INFO step 4360  loss 3.9782  lr 2.00e-04  0.15 s/step  free 66352 MB
+2026-07-06 09:13:22,616 INFO step 4380  loss 3.7588  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:25,653 INFO step 4400  loss 3.7972  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:28,684 INFO step 4420  loss 4.2282  lr 2.00e-04  0.14 s/step  free 66352 MB
+2026-07-06 09:13:31,893 INFO step 4440  loss 3.6331  lr 2.00e-04  0.19 s/step  free 66352 MB
+2026-07-06 09:13:34,861 INFO step 4460  loss 4.1669  lr 2.00e-04  0.12 s/step  free 66352 MB
+2026-07-06 09:13:37,899 INFO step 4480  loss 3.3956  lr 2.00e-04  0.13 s/step  free 66352 MB
+2026-07-06 09:13:41,250 INFO step 4500  loss 3.5819  lr 2.00e-04  0.14 s/step  free 66352 MB
+2026-07-06 09:13:42,059 INFO Saved step4500.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:14:14,202 INFO EVAL step  4500  S=0.40 D=1.00 disfl-✓=1.00 disfl-✗=0.00 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.90 nf-✗=0.10 score=2.800 (32.1s)
+2026-07-06 09:14:14,987 INFO   ↳ new BEST: score 2.800 saved to checkpoints/semantic_endpoint_v8_seed2_es/best.pt
+2026-07-06 09:14:20,180 INFO step 4520  loss 3.9474  lr 2.00e-04  0.26 s/step  free 48212 MB
+2026-07-06 09:14:25,363 INFO step 4540  loss 3.2972  lr 2.00e-04  0.25 s/step  free 44431 MB
+2026-07-06 09:14:30,572 INFO step 4560  loss 4.5433  lr 2.00e-04  0.23 s/step  free 44431 MB
+2026-07-06 09:14:35,830 INFO step 4580  loss 2.8455  lr 2.00e-04  0.31 s/step  free 44431 MB
+2026-07-06 09:14:40,906 INFO step 4600  loss 3.9503  lr 2.00e-04  0.24 s/step  free 44431 MB
+2026-07-06 09:14:46,224 INFO step 4620  loss 3.4848  lr 2.00e-04  0.28 s/step  free 44431 MB
+2026-07-06 09:14:51,525 INFO step 4640  loss 4.3318  lr 2.00e-04  0.24 s/step  free 44431 MB
+2026-07-06 09:14:56,772 INFO step 4660  loss 4.0020  lr 2.00e-04  0.25 s/step  free 44431 MB
+2026-07-06 09:15:01,715 INFO step 4680  loss 3.6856  lr 2.00e-04  0.24 s/step  free 44431 MB
+2026-07-06 09:15:06,531 INFO step 4700  loss 3.9424  lr 2.00e-04  0.18 s/step  free 40637 MB
+2026-07-06 09:15:11,767 INFO step 4720  loss 4.2333  lr 2.00e-04  0.23 s/step  free 40637 MB
+2026-07-06 09:15:16,903 INFO step 4740  loss 3.5924  lr 2.00e-04  0.23 s/step  free 40637 MB
+2026-07-06 09:15:21,918 INFO step 4760  loss 3.0197  lr 2.00e-04  0.30 s/step  free 40637 MB
+2026-07-06 09:15:26,603 INFO step 4780  loss 4.6184  lr 2.00e-04  0.20 s/step  free 40637 MB
+2026-07-06 09:15:31,929 INFO step 4800  loss 3.3889  lr 2.00e-04  0.23 s/step  free 40637 MB
+2026-07-06 09:15:36,866 INFO step 4820  loss 3.2367  lr 2.00e-04  0.23 s/step  free 36781 MB
+2026-07-06 09:15:41,899 INFO step 4840  loss 4.4324  lr 2.00e-04  0.23 s/step  free 36781 MB
+2026-07-06 09:15:46,801 INFO step 4860  loss 3.9801  lr 2.00e-04  0.17 s/step  free 36781 MB
+2026-07-06 09:15:51,893 INFO step 4880  loss 3.8801  lr 2.00e-04  0.19 s/step  free 36778 MB
+2026-07-06 09:15:56,896 INFO step 4900  loss 3.7939  lr 2.00e-04  0.18 s/step  free 36778 MB
+2026-07-06 09:16:02,296 INFO step 4920  loss 3.7217  lr 2.00e-04  0.18 s/step  free 36778 MB
+2026-07-06 09:16:07,047 INFO step 4940  loss 4.2066  lr 2.00e-04  0.24 s/step  free 36778 MB
+2026-07-06 09:16:12,375 INFO step 4960  loss 3.8126  lr 2.00e-04  0.23 s/step  free 36778 MB
+2026-07-06 09:16:17,550 INFO step 4980  loss 3.6723  lr 2.00e-04  0.22 s/step  free 36778 MB
+2026-07-06 09:16:22,485 INFO step 5000  loss 4.0964  lr 2.00e-04  0.25 s/step  free 36778 MB
+2026-07-06 09:16:23,330 INFO Saved step5000.pt (resumable)
+2026-07-06 09:16:28,648 INFO step 5020  loss 4.0979  lr 2.00e-04  0.26 s/step  free 36778 MB
+2026-07-06 09:16:33,580 INFO step 5040  loss 3.2489  lr 2.00e-04  0.14 s/step  free 36778 MB
+2026-07-06 09:16:38,495 INFO step 5060  loss 3.6093  lr 2.00e-04  0.27 s/step  free 36778 MB
+2026-07-06 09:16:43,586 INFO step 5080  loss 3.0348  lr 2.00e-04  0.20 s/step  free 36778 MB
+2026-07-06 09:16:48,750 INFO step 5100  loss 3.7482  lr 2.00e-04  0.23 s/step  free 36778 MB
+2026-07-06 09:16:53,981 INFO step 5120  loss 3.6803  lr 2.00e-04  0.17 s/step  free 36778 MB
+2026-07-06 09:16:59,047 INFO step 5140  loss 4.3398  lr 2.00e-04  0.26 s/step  free 36778 MB
+2026-07-06 09:17:04,013 INFO step 5160  loss 3.8861  lr 2.00e-04  0.24 s/step  free 36778 MB
+2026-07-06 09:17:09,082 INFO step 5180  loss 3.5610  lr 2.00e-04  0.16 s/step  free 36778 MB
+2026-07-06 09:17:14,204 INFO step 5200  loss 3.6543  lr 2.00e-04  0.22 s/step  free 36778 MB
+2026-07-06 09:17:19,555 INFO step 5220  loss 4.5344  lr 2.00e-04  0.25 s/step  free 36778 MB
+2026-07-06 09:17:24,574 INFO step 5240  loss 4.0083  lr 2.00e-04  0.19 s/step  free 36778 MB
+2026-07-06 09:17:29,678 INFO step 5260  loss 3.7482  lr 2.00e-04  0.25 s/step  free 36778 MB
+2026-07-06 09:17:34,825 INFO step 5280  loss 4.2170  lr 2.00e-04  0.25 s/step  free 32853 MB
+2026-07-06 09:17:39,724 INFO step 5300  loss 3.9674  lr 2.00e-04  0.27 s/step  free 32853 MB
+2026-07-06 09:17:44,994 INFO step 5320  loss 4.5590  lr 2.00e-04  0.27 s/step  free 32853 MB
+2026-07-06 09:17:49,863 INFO step 5340  loss 3.4135  lr 2.00e-04  0.25 s/step  free 32834 MB
+2026-07-06 09:17:55,076 INFO step 5360  loss 3.7644  lr 2.00e-04  0.22 s/step  free 32834 MB
+2026-07-06 09:18:00,171 INFO step 5380  loss 3.6460  lr 2.00e-04  0.21 s/step  free 32834 MB
+2026-07-06 09:18:05,184 INFO step 5400  loss 3.6041  lr 2.00e-04  0.17 s/step  free 32834 MB
+2026-07-06 09:18:10,521 INFO step 5420  loss 3.3671  lr 2.00e-04  0.17 s/step  free 32834 MB
+2026-07-06 09:18:15,401 INFO step 5440  loss 3.2875  lr 2.00e-04  0.22 s/step  free 32834 MB
+2026-07-06 09:18:20,263 INFO step 5460  loss 3.6794  lr 2.00e-04  0.13 s/step  free 32832 MB
+2026-07-06 09:18:24,685 INFO step 5480  loss 3.5364  lr 2.00e-04  0.15 s/step  free 32832 MB
+2026-07-06 09:18:29,620 INFO step 5500  loss 4.1303  lr 2.00e-04  0.25 s/step  free 32832 MB
+2026-07-06 09:18:30,414 INFO Saved step5500.pt (resumable)
+2026-07-06 09:18:35,350 INFO step 5520  loss 4.0757  lr 2.00e-04  0.23 s/step  free 32832 MB
+2026-07-06 09:18:40,407 INFO step 5540  loss 3.5076  lr 2.00e-04  0.27 s/step  free 32832 MB
+2026-07-06 09:18:45,427 INFO step 5560  loss 3.8441  lr 2.00e-04  0.19 s/step  free 32832 MB
+2026-07-06 09:18:50,411 INFO step 5580  loss 4.0118  lr 2.00e-04  0.22 s/step  free 32832 MB
+2026-07-06 09:18:55,442 INFO step 5600  loss 4.3749  lr 2.00e-04  0.23 s/step  free 32832 MB
+2026-07-06 09:19:00,733 INFO step 5620  loss 4.2727  lr 2.00e-04  0.25 s/step  free 32832 MB
+2026-07-06 09:19:05,642 INFO step 5640  loss 3.4495  lr 2.00e-04  0.14 s/step  free 32832 MB
+2026-07-06 09:19:10,713 INFO step 5660  loss 3.8129  lr 2.00e-04  0.18 s/step  free 32832 MB
+2026-07-06 09:19:15,771 INFO step 5680  loss 2.7968  lr 2.00e-04  0.20 s/step  free 32832 MB
+2026-07-06 09:19:20,692 INFO step 5700  loss 4.0652  lr 2.00e-04  0.26 s/step  free 32832 MB
+2026-07-06 09:19:25,714 INFO step 5720  loss 4.0647  lr 2.00e-04  0.22 s/step  free 32832 MB
+2026-07-06 09:19:30,597 INFO step 5740  loss 4.5385  lr 2.00e-04  0.24 s/step  free 32832 MB
+2026-07-06 09:19:35,817 INFO step 5760  loss 4.2161  lr 2.00e-04  0.20 s/step  free 32832 MB
+2026-07-06 09:19:40,982 INFO step 5780  loss 3.5173  lr 2.00e-04  0.21 s/step  free 32832 MB
+2026-07-06 09:19:45,848 INFO step 5800  loss 4.1074  lr 2.00e-04  0.19 s/step  free 32832 MB
+2026-07-06 09:19:50,799 INFO step 5820  loss 4.3776  lr 2.00e-04  0.22 s/step  free 32832 MB
+2026-07-06 09:19:55,902 INFO step 5840  loss 3.6885  lr 2.00e-04  0.24 s/step  free 32832 MB
+2026-07-06 09:20:00,683 INFO step 5860  loss 4.0683  lr 2.00e-04  0.15 s/step  free 32832 MB
+2026-07-06 09:20:05,788 INFO step 5880  loss 3.5696  lr 2.00e-04  0.22 s/step  free 32832 MB
+2026-07-06 09:20:10,844 INFO step 5900  loss 3.5865  lr 2.00e-04  0.26 s/step  free 32832 MB
+2026-07-06 09:20:16,060 INFO step 5920  loss 4.0305  lr 2.00e-04  0.26 s/step  free 32832 MB
+2026-07-06 09:20:21,358 INFO step 5940  loss 3.6583  lr 2.00e-04  0.24 s/step  free 32832 MB
+2026-07-06 09:20:26,500 INFO step 5960  loss 4.4519  lr 2.00e-04  0.26 s/step  free 32832 MB
+2026-07-06 09:20:31,581 INFO step 5980  loss 4.4866  lr 2.00e-04  0.25 s/step  free 32832 MB
+2026-07-06 09:20:36,861 INFO step 6000  loss 3.0157  lr 2.00e-04  0.22 s/step  free 32832 MB
+2026-07-06 09:20:37,682 INFO Saved step6000.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:21:04,505 INFO EVAL step  6000  S=0.50 D=1.00 disfl-✓=1.00 disfl-✗=0.00 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.80 nf-✗=0.20 score=2.700 (26.8s)
+2026-07-06 09:21:04,783 INFO   ↳ no improvement (1 / 100)
+2026-07-06 09:21:08,637 INFO step 6020  loss 4.1463  lr 2.00e-04  0.16 s/step  free 32829 MB
+2026-07-06 09:21:12,459 INFO step 6040  loss 4.0004  lr 2.00e-04  0.17 s/step  free 32829 MB
+2026-07-06 09:21:16,469 INFO step 6060  loss 3.9236  lr 2.00e-04  0.17 s/step  free 32829 MB
+2026-07-06 09:21:20,635 INFO step 6080  loss 4.4149  lr 2.00e-04  0.20 s/step  free 32827 MB
+2026-07-06 09:21:24,546 INFO step 6100  loss 3.7181  lr 2.00e-04  0.17 s/step  free 32827 MB
+2026-07-06 09:21:28,552 INFO step 6120  loss 4.0146  lr 2.00e-04  0.21 s/step  free 32827 MB
+2026-07-06 09:21:32,351 INFO step 6140  loss 3.9396  lr 2.00e-04  0.20 s/step  free 32827 MB
+2026-07-06 09:21:36,454 INFO step 6160  loss 3.6209  lr 2.00e-04  0.17 s/step  free 32827 MB
+2026-07-06 09:21:40,834 INFO step 6180  loss 3.6885  lr 2.00e-04  0.14 s/step  free 32827 MB
+2026-07-06 09:21:46,016 INFO step 6200  loss 4.2505  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:21:50,749 INFO step 6220  loss 4.4759  lr 2.00e-04  0.15 s/step  free 32827 MB
+2026-07-06 09:21:55,734 INFO step 6240  loss 3.6300  lr 2.00e-04  0.17 s/step  free 32827 MB
+2026-07-06 09:22:00,564 INFO step 6260  loss 3.2206  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:22:05,642 INFO step 6280  loss 3.4519  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:22:10,684 INFO step 6300  loss 3.8938  lr 2.00e-04  0.18 s/step  free 32827 MB
+2026-07-06 09:22:15,872 INFO step 6320  loss 4.4301  lr 2.00e-04  0.26 s/step  free 32827 MB
+2026-07-06 09:22:20,863 INFO step 6340  loss 3.5781  lr 2.00e-04  0.19 s/step  free 32827 MB
+2026-07-06 09:22:25,828 INFO step 6360  loss 4.0978  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:22:30,801 INFO step 6380  loss 3.5339  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:22:35,852 INFO step 6400  loss 4.0764  lr 2.00e-04  0.16 s/step  free 32827 MB
+2026-07-06 09:22:40,863 INFO step 6420  loss 4.1497  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:22:45,810 INFO step 6440  loss 3.8495  lr 2.00e-04  0.19 s/step  free 32827 MB
+2026-07-06 09:22:51,090 INFO step 6460  loss 4.5603  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:22:56,364 INFO step 6480  loss 4.1420  lr 2.00e-04  0.17 s/step  free 32827 MB
+2026-07-06 09:23:01,343 INFO step 6500  loss 3.1162  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:23:02,135 INFO Saved step6500.pt (resumable)
+2026-07-06 09:23:07,094 INFO step 6520  loss 3.4468  lr 2.00e-04  0.21 s/step  free 32827 MB
+2026-07-06 09:23:12,029 INFO step 6540  loss 3.9217  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:23:17,240 INFO step 6560  loss 4.1618  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:23:22,265 INFO step 6580  loss 3.6964  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:23:27,121 INFO step 6600  loss 4.2144  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:23:32,118 INFO step 6620  loss 4.1229  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:23:37,109 INFO step 6640  loss 3.6361  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:23:42,252 INFO step 6660  loss 3.6910  lr 2.00e-04  0.14 s/step  free 32827 MB
+2026-07-06 09:23:47,083 INFO step 6680  loss 3.8374  lr 2.00e-04  0.22 s/step  free 32827 MB
+2026-07-06 09:23:51,883 INFO step 6700  loss 4.5720  lr 2.00e-04  0.15 s/step  free 32827 MB
+2026-07-06 09:23:56,789 INFO step 6720  loss 3.5301  lr 2.00e-04  0.14 s/step  free 32827 MB
+2026-07-06 09:24:01,150 INFO step 6740  loss 4.5590  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:24:06,266 INFO step 6760  loss 3.5236  lr 2.00e-04  0.22 s/step  free 32827 MB
+2026-07-06 09:24:11,165 INFO step 6780  loss 3.4324  lr 2.00e-04  0.22 s/step  free 32827 MB
+2026-07-06 09:24:16,372 INFO step 6800  loss 3.9939  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:24:21,549 INFO step 6820  loss 4.1986  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:24:26,610 INFO step 6840  loss 3.9987  lr 2.00e-04  0.27 s/step  free 32827 MB
+2026-07-06 09:24:31,569 INFO step 6860  loss 4.0523  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:24:36,724 INFO step 6880  loss 4.1409  lr 2.00e-04  0.27 s/step  free 32827 MB
+2026-07-06 09:24:41,940 INFO step 6900  loss 3.4963  lr 2.00e-04  0.14 s/step  free 32827 MB
+2026-07-06 09:24:46,679 INFO step 6920  loss 3.1021  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:24:51,847 INFO step 6940  loss 2.9677  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:24:56,638 INFO step 6960  loss 3.5905  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:25:01,667 INFO step 6980  loss 3.7538  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:25:06,665 INFO step 7000  loss 3.5613  lr 2.00e-04  0.20 s/step  free 32827 MB
+2026-07-06 09:25:07,501 INFO Saved step7000.pt (resumable)
+2026-07-06 09:25:12,672 INFO step 7020  loss 3.5096  lr 2.00e-04  0.17 s/step  free 32827 MB
+2026-07-06 09:25:17,667 INFO step 7040  loss 3.9332  lr 2.00e-04  0.14 s/step  free 32827 MB
+2026-07-06 09:25:22,649 INFO step 7060  loss 3.7175  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:25:27,709 INFO step 7080  loss 3.1498  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:25:32,675 INFO step 7100  loss 3.7330  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:25:37,678 INFO step 7120  loss 4.1380  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:25:42,590 INFO step 7140  loss 4.2515  lr 2.00e-04  0.27 s/step  free 32827 MB
+2026-07-06 09:25:47,496 INFO step 7160  loss 3.3896  lr 2.00e-04  0.20 s/step  free 32827 MB
+2026-07-06 09:25:52,517 INFO step 7180  loss 4.2959  lr 2.00e-04  0.26 s/step  free 32827 MB
+2026-07-06 09:25:57,703 INFO step 7200  loss 3.3822  lr 2.00e-04  0.21 s/step  free 32827 MB
+2026-07-06 09:26:02,899 INFO step 7220  loss 4.2518  lr 2.00e-04  0.26 s/step  free 32827 MB
+2026-07-06 09:26:07,755 INFO step 7240  loss 4.3088  lr 2.00e-04  0.23 s/step  free 32827 MB
+2026-07-06 09:26:12,840 INFO step 7260  loss 3.0706  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:26:17,392 INFO step 7280  loss 3.9274  lr 2.00e-04  0.25 s/step  free 32827 MB
+2026-07-06 09:26:22,514 INFO step 7300  loss 3.9780  lr 2.00e-04  0.21 s/step  free 32827 MB
+2026-07-06 09:26:27,480 INFO step 7320  loss 4.5364  lr 2.00e-04  0.27 s/step  free 32827 MB
+2026-07-06 09:26:32,591 INFO step 7340  loss 3.7094  lr 2.00e-04  0.15 s/step  free 32827 MB
+2026-07-06 09:26:37,615 INFO step 7360  loss 4.2142  lr 2.00e-04  0.24 s/step  free 32827 MB
+2026-07-06 09:26:42,677 INFO step 7380  loss 3.2076  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:26:46,715 INFO step 7400  loss 3.1052  lr 2.00e-04  0.18 s/step  free 35329 MB
+2026-07-06 09:26:51,686 INFO step 7420  loss 3.7004  lr 2.00e-04  0.23 s/step  free 34623 MB
+2026-07-06 09:26:56,500 INFO step 7440  loss 3.3316  lr 2.00e-04  0.22 s/step  free 34568 MB
+2026-07-06 09:27:01,615 INFO step 7460  loss 3.9224  lr 2.00e-04  0.23 s/step  free 34564 MB
+2026-07-06 09:27:06,627 INFO step 7480  loss 3.1845  lr 2.00e-04  0.29 s/step  free 34505 MB
+2026-07-06 09:27:11,719 INFO step 7500  loss 4.0358  lr 2.00e-04  0.24 s/step  free 34505 MB
+2026-07-06 09:27:12,506 INFO Saved step7500.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:27:47,732 INFO EVAL step  7500  S=0.60 D=1.00 disfl-✓=0.90 disfl-✗=0.10 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.90 nf-✗=0.10 score=2.700 (35.2s)
+2026-07-06 09:27:47,993 INFO   ↳ no improvement (2 / 100)
+2026-07-06 09:27:53,003 INFO step 7520  loss 4.1331  lr 2.00e-04  0.24 s/step  free 33941 MB
+2026-07-06 09:27:58,391 INFO step 7540  loss 3.8388  lr 2.00e-04  0.22 s/step  free 33828 MB
+2026-07-06 09:28:03,534 INFO step 7560  loss 3.5608  lr 2.00e-04  0.22 s/step  free 33828 MB
+2026-07-06 09:28:08,496 INFO step 7580  loss 3.9392  lr 2.00e-04  0.25 s/step  free 33828 MB
+2026-07-06 09:28:13,426 INFO step 7600  loss 4.0619  lr 2.00e-04  0.16 s/step  free 33828 MB
+2026-07-06 09:28:18,529 INFO step 7620  loss 3.6878  lr 2.00e-04  0.22 s/step  free 33828 MB
+2026-07-06 09:28:22,411 INFO step 7640  loss 3.7026  lr 2.00e-04  0.21 s/step  free 33828 MB
+2026-07-06 09:28:26,394 INFO step 7660  loss 3.8079  lr 2.00e-04  0.20 s/step  free 33828 MB
+2026-07-06 09:28:30,267 INFO step 7680  loss 4.0255  lr 2.00e-04  0.19 s/step  free 33828 MB
+2026-07-06 09:28:34,054 INFO step 7700  loss 3.9541  lr 2.00e-04  0.19 s/step  free 33828 MB
+2026-07-06 09:28:37,957 INFO step 7720  loss 3.9844  lr 2.00e-04  0.19 s/step  free 33698 MB
+2026-07-06 09:28:41,797 INFO step 7740  loss 3.6129  lr 2.00e-04  0.15 s/step  free 33559 MB
+2026-07-06 09:28:45,547 INFO step 7760  loss 3.9323  lr 2.00e-04  0.15 s/step  free 33559 MB
+2026-07-06 09:28:49,497 INFO step 7780  loss 2.9394  lr 2.00e-04  0.15 s/step  free 33559 MB
+2026-07-06 09:28:53,416 INFO step 7800  loss 3.7786  lr 2.00e-04  0.18 s/step  free 33559 MB
+2026-07-06 09:28:57,278 INFO step 7820  loss 3.1078  lr 2.00e-04  0.18 s/step  free 33559 MB
+2026-07-06 09:29:01,220 INFO step 7840  loss 4.1236  lr 2.00e-04  0.14 s/step  free 33559 MB
+2026-07-06 09:29:05,103 INFO step 7860  loss 3.6377  lr 2.00e-04  0.20 s/step  free 33559 MB
+2026-07-06 09:29:08,880 INFO step 7880  loss 3.7615  lr 2.00e-04  0.18 s/step  free 33559 MB
+2026-07-06 09:29:12,765 INFO step 7900  loss 3.7886  lr 2.00e-04  0.20 s/step  free 33559 MB
+2026-07-06 09:29:16,770 INFO step 7920  loss 4.1580  lr 2.00e-04  0.19 s/step  free 33559 MB
+2026-07-06 09:29:20,722 INFO step 7940  loss 3.1949  lr 2.00e-04  0.17 s/step  free 33559 MB
+2026-07-06 09:29:24,668 INFO step 7960  loss 4.0485  lr 2.00e-04  0.15 s/step  free 33559 MB
+2026-07-06 09:29:29,443 INFO step 7980  loss 4.3014  lr 2.00e-04  0.24 s/step  free 33559 MB
+2026-07-06 09:29:34,624 INFO step 8000  loss 4.0230  lr 2.00e-04  0.27 s/step  free 33559 MB
+2026-07-06 09:29:35,420 INFO Saved step8000.pt (resumable)
+2026-07-06 09:29:40,506 INFO step 8020  loss 3.8296  lr 2.00e-04  0.24 s/step  free 33540 MB
+2026-07-06 09:29:45,423 INFO step 8040  loss 2.8924  lr 2.00e-04  0.19 s/step  free 33540 MB
+2026-07-06 09:29:50,616 INFO step 8060  loss 3.6656  lr 2.00e-04  0.23 s/step  free 33540 MB
+2026-07-06 09:29:55,608 INFO step 8080  loss 3.2985  lr 2.00e-04  0.22 s/step  free 33540 MB
+2026-07-06 09:30:00,760 INFO step 8100  loss 3.8627  lr 2.00e-04  0.27 s/step  free 33540 MB
+2026-07-06 09:30:05,584 INFO step 8120  loss 3.8977  lr 2.00e-04  0.14 s/step  free 33540 MB
+2026-07-06 09:30:10,607 INFO step 8140  loss 3.6905  lr 2.00e-04  0.15 s/step  free 33540 MB
+2026-07-06 09:30:15,700 INFO step 8160  loss 4.3824  lr 2.00e-04  0.23 s/step  free 33540 MB
+2026-07-06 09:30:20,680 INFO step 8180  loss 3.7384  lr 2.00e-04  0.25 s/step  free 33540 MB
+2026-07-06 09:30:25,746 INFO step 8200  loss 3.6352  lr 2.00e-04  0.26 s/step  free 33540 MB
+2026-07-06 09:30:30,799 INFO step 8220  loss 4.4129  lr 2.00e-04  0.24 s/step  free 33540 MB
+2026-07-06 09:30:35,671 INFO step 8240  loss 3.2272  lr 2.00e-04  0.24 s/step  free 33540 MB
+2026-07-06 09:30:40,622 INFO step 8260  loss 4.2893  lr 2.00e-04  0.19 s/step  free 33540 MB
+2026-07-06 09:30:45,428 INFO step 8280  loss 3.5896  lr 2.00e-04  0.25 s/step  free 33540 MB
+2026-07-06 09:30:50,656 INFO step 8300  loss 4.0171  lr 2.00e-04  0.26 s/step  free 33540 MB
+2026-07-06 09:30:55,653 INFO step 8320  loss 4.0057  lr 2.00e-04  0.26 s/step  free 33540 MB
+2026-07-06 09:31:00,853 INFO step 8340  loss 3.5547  lr 2.00e-04  0.27 s/step  free 33540 MB
+2026-07-06 09:31:06,046 INFO step 8360  loss 4.4512  lr 2.00e-04  0.33 s/step  free 33540 MB
+2026-07-06 09:31:10,884 INFO step 8380  loss 3.9906  lr 2.00e-04  0.14 s/step  free 33540 MB
+2026-07-06 09:31:15,711 INFO step 8400  loss 4.4323  lr 2.00e-04  0.27 s/step  free 33540 MB
+2026-07-06 09:31:20,490 INFO step 8420  loss 3.1057  lr 2.00e-04  0.16 s/step  free 33540 MB
+2026-07-06 09:31:25,517 INFO step 8440  loss 4.4179  lr 2.00e-04  0.16 s/step  free 33540 MB
+2026-07-06 09:31:30,486 INFO step 8460  loss 4.3088  lr 2.00e-04  0.28 s/step  free 33540 MB
+2026-07-06 09:31:35,523 INFO step 8480  loss 4.0287  lr 2.00e-04  0.23 s/step  free 33540 MB
+2026-07-06 09:31:40,387 INFO step 8500  loss 4.0649  lr 2.00e-04  0.16 s/step  free 33540 MB
+2026-07-06 09:31:41,197 INFO Saved step8500.pt (resumable)
+2026-07-06 09:31:46,190 INFO step 8520  loss 3.7949  lr 2.00e-04  0.20 s/step  free 33400 MB
+2026-07-06 09:31:51,330 INFO step 8540  loss 3.7776  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:31:56,210 INFO step 8560  loss 3.9896  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:32:01,305 INFO step 8580  loss 3.5919  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:32:06,489 INFO step 8600  loss 3.9509  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:32:11,588 INFO step 8620  loss 3.4052  lr 2.00e-04  0.20 s/step  free 33400 MB
+2026-07-06 09:32:16,756 INFO step 8640  loss 3.8146  lr 2.00e-04  0.30 s/step  free 33400 MB
+2026-07-06 09:32:21,707 INFO step 8660  loss 3.5683  lr 2.00e-04  0.27 s/step  free 33400 MB
+2026-07-06 09:32:26,538 INFO step 8680  loss 3.4828  lr 2.00e-04  0.21 s/step  free 33400 MB
+2026-07-06 09:32:31,593 INFO step 8700  loss 4.2328  lr 2.00e-04  0.23 s/step  free 33400 MB
+2026-07-06 09:32:36,632 INFO step 8720  loss 4.5690  lr 2.00e-04  0.27 s/step  free 33400 MB
+2026-07-06 09:32:41,712 INFO step 8740  loss 3.7356  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:32:46,865 INFO step 8760  loss 4.0931  lr 2.00e-04  0.28 s/step  free 33400 MB
+2026-07-06 09:32:51,729 INFO step 8780  loss 3.8569  lr 2.00e-04  0.20 s/step  free 33400 MB
+2026-07-06 09:32:56,627 INFO step 8800  loss 2.2549  lr 2.00e-04  0.20 s/step  free 33400 MB
+2026-07-06 09:33:01,672 INFO step 8820  loss 3.7456  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:33:06,845 INFO step 8840  loss 4.5926  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:33:12,101 INFO step 8860  loss 4.6024  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:33:16,988 INFO step 8880  loss 4.1761  lr 2.00e-04  0.22 s/step  free 33400 MB
+2026-07-06 09:33:21,859 INFO step 8900  loss 4.0561  lr 2.00e-04  0.29 s/step  free 33400 MB
+2026-07-06 09:33:26,722 INFO step 8920  loss 3.2429  lr 2.00e-04  0.20 s/step  free 33400 MB
+2026-07-06 09:33:31,865 INFO step 8940  loss 3.3137  lr 2.00e-04  0.17 s/step  free 33400 MB
+2026-07-06 09:33:36,932 INFO step 8960  loss 3.3538  lr 2.00e-04  0.19 s/step  free 33400 MB
+2026-07-06 09:33:41,965 INFO step 8980  loss 4.3207  lr 2.00e-04  0.26 s/step  free 33400 MB
+2026-07-06 09:33:47,120 INFO step 9000  loss 3.6869  lr 2.00e-04  0.17 s/step  free 33400 MB
+2026-07-06 09:33:47,935 INFO Saved step9000.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:34:22,569 INFO EVAL step  9000  S=0.50 D=0.90 disfl-✓=0.90 disfl-✗=0.10 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.80 nf-✗=0.20 score=2.500 (34.6s)
+2026-07-06 09:34:22,824 INFO   ↳ no improvement (3 / 100)
+2026-07-06 09:34:28,013 INFO step 9020  loss 4.5228  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:34:33,126 INFO step 9040  loss 3.8809  lr 2.00e-04  0.27 s/step  free 33400 MB
+2026-07-06 09:34:38,269 INFO step 9060  loss 2.6828  lr 2.00e-04  0.23 s/step  free 33400 MB
+2026-07-06 09:34:43,196 INFO step 9080  loss 3.0128  lr 2.00e-04  0.21 s/step  free 33400 MB
+2026-07-06 09:34:48,310 INFO step 9100  loss 4.1070  lr 2.00e-04  0.28 s/step  free 33400 MB
+2026-07-06 09:34:53,506 INFO step 9120  loss 3.1189  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:34:58,615 INFO step 9140  loss 3.7399  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:35:03,689 INFO step 9160  loss 3.3199  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:35:08,842 INFO step 9180  loss 3.5222  lr 2.00e-04  0.22 s/step  free 33400 MB
+2026-07-06 09:35:13,752 INFO step 9200  loss 4.2013  lr 2.00e-04  0.21 s/step  free 33400 MB
+2026-07-06 09:35:18,900 INFO step 9220  loss 3.0130  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:35:23,868 INFO step 9240  loss 3.8740  lr 2.00e-04  0.19 s/step  free 33400 MB
+2026-07-06 09:35:28,941 INFO step 9260  loss 3.2247  lr 2.00e-04  0.26 s/step  free 33400 MB
+2026-07-06 09:35:34,035 INFO step 9280  loss 3.2462  lr 2.00e-04  0.23 s/step  free 33400 MB
+2026-07-06 09:35:38,854 INFO step 9300  loss 3.5734  lr 2.00e-04  0.23 s/step  free 33400 MB
+2026-07-06 09:35:44,115 INFO step 9320  loss 3.8185  lr 2.00e-04  0.24 s/step  free 33400 MB
+2026-07-06 09:35:49,192 INFO step 9340  loss 3.6728  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:35:54,154 INFO step 9360  loss 3.5444  lr 2.00e-04  0.19 s/step  free 33400 MB
+2026-07-06 09:35:59,161 INFO step 9380  loss 3.9635  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:36:04,115 INFO step 9400  loss 3.9338  lr 2.00e-04  0.25 s/step  free 33400 MB
+2026-07-06 09:36:07,799 INFO step 9420  loss 4.4039  lr 2.00e-04  0.14 s/step  free 33400 MB
+2026-07-06 09:36:10,811 INFO step 9440  loss 4.0682  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:36:13,971 INFO step 9460  loss 4.0520  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:36:17,026 INFO step 9480  loss 3.9806  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:36:20,167 INFO step 9500  loss 4.1595  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:36:20,988 INFO Saved step9500.pt (resumable)
+2026-07-06 09:36:23,882 INFO step 9520  loss 2.9827  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:26,903 INFO step 9540  loss 4.3961  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:30,042 INFO step 9560  loss 3.0580  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:33,046 INFO step 9580  loss 3.9154  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:36,197 INFO step 9600  loss 3.4799  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:36:39,248 INFO step 9620  loss 3.8449  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:36:42,176 INFO step 9640  loss 3.5074  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:45,177 INFO step 9660  loss 3.6902  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:36:48,156 INFO step 9680  loss 2.6464  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:36:51,197 INFO step 9700  loss 3.1370  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:36:54,352 INFO step 9720  loss 4.0790  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:36:57,401 INFO step 9740  loss 3.1798  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:37:00,535 INFO step 9760  loss 3.7962  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:37:03,673 INFO step 9780  loss 3.6797  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:37:07,801 INFO step 9800  loss 4.0659  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:37:11,860 INFO step 9820  loss 2.5556  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:15,962 INFO step 9840  loss 3.4839  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:19,927 INFO step 9860  loss 4.3142  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:37:23,926 INFO step 9880  loss 3.8602  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:28,075 INFO step 9900  loss 3.4096  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:37:32,193 INFO step 9920  loss 3.4512  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:37:36,360 INFO step 9940  loss 3.8679  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:40,283 INFO step 9960  loss 3.0913  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:37:44,477 INFO step 9980  loss 3.2511  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:48,744 INFO step 10000  loss 3.7665  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:37:49,563 INFO Saved step10000.pt (resumable)
+2026-07-06 09:37:53,704 INFO step 10020  loss 3.0768  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:37:57,822 INFO step 10040  loss 4.4334  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:38:02,206 INFO step 10060  loss 4.2981  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:38:06,413 INFO step 10080  loss 3.4947  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:38:10,418 INFO step 10100  loss 4.4950  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:38:14,630 INFO step 10120  loss 3.7940  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:38:18,771 INFO step 10140  loss 4.2370  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:38:22,821 INFO step 10160  loss 4.4475  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:38:26,759 INFO step 10180  loss 4.2491  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:38:30,870 INFO step 10200  loss 3.4143  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:38:35,036 INFO step 10220  loss 4.3946  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:38:38,845 INFO step 10240  loss 4.1698  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:38:42,782 INFO step 10260  loss 3.7549  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:38:46,779 INFO step 10280  loss 3.9390  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:38:50,852 INFO step 10300  loss 4.0504  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:38:54,673 INFO step 10320  loss 3.3397  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:38:58,938 INFO step 10340  loss 3.9914  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:39:03,076 INFO step 10360  loss 3.5471  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:39:07,100 INFO step 10380  loss 4.0785  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:39:11,116 INFO step 10400  loss 3.3189  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:39:15,180 INFO step 10420  loss 3.9911  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:39:19,465 INFO step 10440  loss 4.2574  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:39:23,373 INFO step 10460  loss 3.8958  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:39:27,557 INFO step 10480  loss 3.7571  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:39:31,882 INFO step 10500  loss 2.7367  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:39:32,690 INFO Saved step10500.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:40:04,224 INFO EVAL step 10500  S=0.60 D=0.90 disfl-✓=1.00 disfl-✗=0.00 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.90 nf-✗=0.10 score=2.700 (31.5s)
+2026-07-06 09:40:04,487 INFO   ↳ no improvement (4 / 100)
+2026-07-06 09:40:08,651 INFO step 10520  loss 3.3247  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:40:12,588 INFO step 10540  loss 3.5103  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:40:16,700 INFO step 10560  loss 4.0332  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:40:21,075 INFO step 10580  loss 3.9252  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:40:25,253 INFO step 10600  loss 2.9288  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:40:29,234 INFO step 10620  loss 4.2434  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:40:32,755 INFO step 10640  loss 3.3411  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:40:36,718 INFO step 10660  loss 4.0568  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:40:40,912 INFO step 10680  loss 4.4516  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:40:44,950 INFO step 10700  loss 3.5516  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:40:49,056 INFO step 10720  loss 3.5191  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:40:53,142 INFO step 10740  loss 4.3598  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:40:57,190 INFO step 10760  loss 4.1321  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:41:01,392 INFO step 10780  loss 3.3160  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:41:05,651 INFO step 10800  loss 3.5795  lr 2.00e-04  0.26 s/step  free 37168 MB
+2026-07-06 09:41:09,691 INFO step 10820  loss 3.7908  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:41:13,645 INFO step 10840  loss 4.4536  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:41:17,889 INFO step 10860  loss 4.2273  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:41:21,879 INFO step 10880  loss 3.9448  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:41:26,051 INFO step 10900  loss 3.7645  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:41:30,138 INFO step 10920  loss 3.9397  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:41:34,254 INFO step 10940  loss 4.2336  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:41:38,415 INFO step 10960  loss 3.7767  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:41:42,329 INFO step 10980  loss 4.0076  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:41:46,567 INFO step 11000  loss 3.8073  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:41:47,388 INFO Saved step11000.pt (resumable)
+2026-07-06 09:41:51,564 INFO step 11020  loss 4.1914  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:41:55,766 INFO step 11040  loss 4.0358  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:41:59,845 INFO step 11060  loss 3.9934  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:42:03,913 INFO step 11080  loss 2.9914  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:42:08,087 INFO step 11100  loss 3.7208  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:42:12,152 INFO step 11120  loss 4.3480  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:42:16,156 INFO step 11140  loss 4.1195  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:42:19,334 INFO step 11160  loss 3.2469  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:22,404 INFO step 11180  loss 3.8523  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:42:25,404 INFO step 11200  loss 4.3583  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:42:28,421 INFO step 11220  loss 3.8042  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:31,420 INFO step 11240  loss 3.2866  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:42:34,445 INFO step 11260  loss 3.5396  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:42:37,370 INFO step 11280  loss 3.7038  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:42:40,412 INFO step 11300  loss 2.9071  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:43,444 INFO step 11320  loss 3.7518  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:46,435 INFO step 11340  loss 4.1750  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:49,527 INFO step 11360  loss 3.8858  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:42:52,626 INFO step 11380  loss 3.6362  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:42:55,822 INFO step 11400  loss 3.1182  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:42:58,918 INFO step 11420  loss 4.3031  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:43:02,099 INFO step 11440  loss 3.5152  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:43:05,294 INFO step 11460  loss 4.1956  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:43:08,356 INFO step 11480  loss 4.2469  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:43:11,403 INFO step 11500  loss 3.4974  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:43:12,181 INFO Saved step11500.pt (resumable)
+2026-07-06 09:43:15,205 INFO step 11520  loss 4.1362  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:43:18,883 INFO step 11540  loss 4.5143  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:43:23,184 INFO step 11560  loss 3.5313  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:43:27,215 INFO step 11580  loss 3.5830  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:43:31,450 INFO step 11600  loss 3.5542  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:43:35,522 INFO step 11620  loss 3.0903  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:43:39,711 INFO step 11640  loss 3.9904  lr 2.00e-04  0.23 s/step  free 37168 MB
+2026-07-06 09:43:43,825 INFO step 11660  loss 3.5483  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:43:48,161 INFO step 11680  loss 3.6686  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:43:51,939 INFO step 11700  loss 4.2967  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:43:55,959 INFO step 11720  loss 4.2701  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:44:00,146 INFO step 11740  loss 3.5810  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:44:04,286 INFO step 11760  loss 3.5989  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:44:08,499 INFO step 11780  loss 4.0998  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:44:12,687 INFO step 11800  loss 4.5795  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:44:16,872 INFO step 11820  loss 3.1611  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:44:21,059 INFO step 11840  loss 4.1132  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:44:25,228 INFO step 11860  loss 3.6316  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:44:29,428 INFO step 11880  loss 3.0172  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:44:33,574 INFO step 11900  loss 3.7611  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:44:37,563 INFO step 11920  loss 4.0533  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:44:41,699 INFO step 11940  loss 4.4033  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:44:45,830 INFO step 11960  loss 3.9592  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:44:49,749 INFO step 11980  loss 4.1171  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:44:53,740 INFO step 12000  loss 4.2457  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:44:54,537 INFO Saved step12000.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:45:26,466 INFO EVAL step 12000  S=0.70 D=1.00 disfl-✓=1.00 disfl-✗=0.00 trunc-✓=0.80 trunc-✗=0.20 trail-✓=1.00 trail-✗=0.00 nf-✓=0.90 nf-✗=0.10 score=2.700 (31.9s)
+2026-07-06 09:45:26,733 INFO   ↳ no improvement (5 / 100)
+2026-07-06 09:45:30,804 INFO step 12020  loss 3.7025  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:45:35,126 INFO step 12040  loss 4.4006  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:45:39,200 INFO step 12060  loss 3.9974  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:45:43,447 INFO step 12080  loss 4.1827  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:45:47,547 INFO step 12100  loss 4.6016  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:45:51,799 INFO step 12120  loss 3.3860  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:45:55,950 INFO step 12140  loss 2.5664  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:46:00,171 INFO step 12160  loss 2.3358  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:46:04,376 INFO step 12180  loss 3.0146  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:46:08,518 INFO step 12200  loss 3.6896  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:46:12,853 INFO step 12220  loss 3.8579  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:46:17,019 INFO step 12240  loss 3.2317  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:46:21,111 INFO step 12260  loss 3.4215  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:46:25,247 INFO step 12280  loss 3.0160  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:46:29,330 INFO step 12300  loss 4.5151  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:46:33,461 INFO step 12320  loss 3.5369  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:46:37,594 INFO step 12340  loss 3.4874  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:46:41,679 INFO step 12360  loss 3.9310  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:46:45,242 INFO step 12380  loss 3.6885  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:46:49,348 INFO step 12400  loss 3.9378  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:46:53,410 INFO step 12420  loss 3.9801  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:46:57,564 INFO step 12440  loss 3.3300  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:47:01,926 INFO step 12460  loss 4.1768  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:47:06,340 INFO step 12480  loss 4.3959  lr 2.00e-04  0.24 s/step  free 37168 MB
+2026-07-06 09:47:10,624 INFO step 12500  loss 4.1391  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:47:11,428 INFO Saved step12500.pt (resumable)
+2026-07-06 09:47:15,473 INFO step 12520  loss 4.3687  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:47:19,817 INFO step 12540  loss 4.3899  lr 2.00e-04  0.25 s/step  free 37168 MB
+2026-07-06 09:47:23,788 INFO step 12560  loss 3.7625  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:47:27,980 INFO step 12580  loss 3.8830  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:47:32,261 INFO step 12600  loss 3.2406  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:47:36,419 INFO step 12620  loss 3.8971  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:47:40,392 INFO step 12640  loss 3.2878  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:47:44,537 INFO step 12660  loss 3.8709  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:47:48,377 INFO step 12680  loss 4.3165  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:47:52,607 INFO step 12700  loss 3.5206  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:47:56,650 INFO step 12720  loss 3.1307  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:48:00,872 INFO step 12740  loss 3.7217  lr 2.00e-04  0.24 s/step  free 37168 MB
+2026-07-06 09:48:04,842 INFO step 12760  loss 4.2187  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:48:08,859 INFO step 12780  loss 4.0227  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:48:12,711 INFO step 12800  loss 3.6841  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:48:16,873 INFO step 12820  loss 4.2536  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:48:20,727 INFO step 12840  loss 3.7092  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:48:24,711 INFO step 12860  loss 4.3307  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:48:28,906 INFO step 12880  loss 4.0090  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:48:32,897 INFO step 12900  loss 3.3460  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:48:36,050 INFO step 12920  loss 4.0806  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:48:39,342 INFO step 12940  loss 3.6170  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:48:42,389 INFO step 12960  loss 3.5999  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:48:45,443 INFO step 12980  loss 4.3252  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:48:48,551 INFO step 13000  loss 3.8550  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:48:49,335 INFO Saved step13000.pt (resumable)
+2026-07-06 09:48:52,474 INFO step 13020  loss 3.8152  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:48:55,433 INFO step 13040  loss 4.2508  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:48:58,567 INFO step 13060  loss 4.2501  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:49:01,495 INFO step 13080  loss 3.6474  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:49:04,527 INFO step 13100  loss 3.3516  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:49:07,473 INFO step 13120  loss 3.1100  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:49:10,601 INFO step 13140  loss 4.3092  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:49:13,633 INFO step 13160  loss 4.0486  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:49:16,682 INFO step 13180  loss 3.9386  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:49:19,640 INFO step 13200  loss 4.2703  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:49:22,550 INFO step 13220  loss 3.0383  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:49:25,523 INFO step 13240  loss 4.1121  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:49:28,457 INFO step 13260  loss 3.1093  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:49:31,505 INFO step 13280  loss 3.3096  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:49:35,285 INFO step 13300  loss 3.1152  lr 2.00e-04  0.26 s/step  free 37168 MB
+2026-07-06 09:49:39,517 INFO step 13320  loss 3.9958  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:49:43,646 INFO step 13340  loss 4.0190  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:49:47,699 INFO step 13360  loss 4.4325  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:49:51,770 INFO step 13380  loss 4.1557  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:49:55,852 INFO step 13400  loss 3.6342  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:50:00,006 INFO step 13420  loss 3.6652  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:50:04,333 INFO step 13440  loss 4.3751  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:50:08,460 INFO step 13460  loss 4.3248  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:50:12,452 INFO step 13480  loss 3.9198  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:50:16,412 INFO step 13500  loss 2.8037  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:50:17,204 INFO Saved step13500.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:50:49,823 INFO EVAL step 13500  S=0.80 D=1.00 disfl-✓=0.80 disfl-✗=0.20 trunc-✓=0.80 trunc-✗=0.20 trail-✓=1.00 trail-✗=0.00 nf-✓=0.60 nf-✗=0.40 score=2.200 (32.6s)
+2026-07-06 09:50:50,093 INFO   ↳ no improvement (6 / 100)
+2026-07-06 09:50:54,301 INFO step 13520  loss 3.7701  lr 2.00e-04  0.23 s/step  free 37168 MB
+2026-07-06 09:50:58,424 INFO step 13540  loss 3.6244  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:51:02,569 INFO step 13560  loss 4.0378  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:51:06,763 INFO step 13580  loss 3.5395  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:51:10,703 INFO step 13600  loss 3.2931  lr 2.00e-04  0.11 s/step  free 37168 MB
+2026-07-06 09:51:14,609 INFO step 13620  loss 4.4717  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:51:18,517 INFO step 13640  loss 4.1446  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:51:22,665 INFO step 13660  loss 3.8042  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:51:26,648 INFO step 13680  loss 4.1991  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:51:30,692 INFO step 13700  loss 4.2783  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:51:34,849 INFO step 13720  loss 3.3439  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:51:38,789 INFO step 13740  loss 4.4404  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:51:42,827 INFO step 13760  loss 4.0850  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:51:46,882 INFO step 13780  loss 3.2570  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:51:50,830 INFO step 13800  loss 4.0835  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:51:54,881 INFO step 13820  loss 3.7907  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:51:59,081 INFO step 13840  loss 4.3477  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:52:03,311 INFO step 13860  loss 3.9899  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:52:07,623 INFO step 13880  loss 3.8226  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:52:11,835 INFO step 13900  loss 4.1248  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:52:15,840 INFO step 13920  loss 3.7011  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:52:19,696 INFO step 13940  loss 3.9568  lr 2.00e-04  0.23 s/step  free 37168 MB
+2026-07-06 09:52:23,862 INFO step 13960  loss 4.2827  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:52:28,161 INFO step 13980  loss 3.9729  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:52:32,342 INFO step 14000  loss 4.0580  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:52:33,144 INFO Saved step14000.pt (resumable)
+2026-07-06 09:52:37,322 INFO step 14020  loss 3.5988  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:52:41,489 INFO step 14040  loss 4.5839  lr 2.00e-04  0.23 s/step  free 37168 MB
+2026-07-06 09:52:45,357 INFO step 14060  loss 4.1479  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:52:49,579 INFO step 14080  loss 3.8635  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:52:53,742 INFO step 14100  loss 3.3009  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:52:57,742 INFO step 14120  loss 4.5075  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:53:01,296 INFO step 14140  loss 3.6569  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:53:05,251 INFO step 14160  loss 3.6998  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:53:09,206 INFO step 14180  loss 2.8784  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:53:13,461 INFO step 14200  loss 2.9757  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:53:17,857 INFO step 14220  loss 3.6359  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:53:21,637 INFO step 14240  loss 4.4254  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:53:25,722 INFO step 14260  loss 3.9382  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:53:29,835 INFO step 14280  loss 4.2175  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:53:33,988 INFO step 14300  loss 4.0393  lr 2.00e-04  0.23 s/step  free 37168 MB
+2026-07-06 09:53:38,268 INFO step 14320  loss 3.8959  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:53:42,304 INFO step 14340  loss 4.1400  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:53:46,253 INFO step 14360  loss 3.3442  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:53:50,314 INFO step 14380  loss 4.0581  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:53:54,837 INFO step 14400  loss 3.7251  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:53:58,843 INFO step 14420  loss 4.2416  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:54:03,028 INFO step 14440  loss 3.0887  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:54:07,331 INFO step 14460  loss 4.4397  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:54:11,246 INFO step 14480  loss 4.1466  lr 2.00e-04  0.20 s/step  free 37168 MB
+2026-07-06 09:54:15,206 INFO step 14500  loss 4.3514  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:54:16,002 INFO Saved step14500.pt (resumable)
+2026-07-06 09:54:20,235 INFO step 14520  loss 4.4668  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:54:24,254 INFO step 14540  loss 3.9870  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:54:28,323 INFO step 14560  loss 3.7454  lr 2.00e-04  0.17 s/step  free 37168 MB
+2026-07-06 09:54:32,533 INFO step 14580  loss 3.7666  lr 2.00e-04  0.19 s/step  free 37168 MB
+2026-07-06 09:54:36,439 INFO step 14600  loss 4.3551  lr 2.00e-04  0.21 s/step  free 37168 MB
+2026-07-06 09:54:40,590 INFO step 14620  loss 3.6437  lr 2.00e-04  0.22 s/step  free 37168 MB
+2026-07-06 09:54:44,886 INFO step 14640  loss 2.9042  lr 2.00e-04  0.18 s/step  free 37168 MB
+2026-07-06 09:54:48,878 INFO step 14660  loss 4.3166  lr 2.00e-04  0.12 s/step  free 37168 MB
+2026-07-06 09:54:52,041 INFO step 14680  loss 4.3542  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:54:55,106 INFO step 14700  loss 3.8770  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:54:58,040 INFO step 14720  loss 4.4722  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:01,019 INFO step 14740  loss 4.2721  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:55:04,020 INFO step 14760  loss 3.8652  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:07,145 INFO step 14780  loss 3.7122  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:10,216 INFO step 14800  loss 3.5987  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:13,156 INFO step 14820  loss 4.2201  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:55:16,166 INFO step 14840  loss 4.0524  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:55:19,184 INFO step 14860  loss 4.0120  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:55:22,103 INFO step 14880  loss 4.0962  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:25,172 INFO step 14900  loss 4.4046  lr 2.00e-04  0.15 s/step  free 37168 MB
+2026-07-06 09:55:28,238 INFO step 14920  loss 3.9870  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:31,193 INFO step 14940  loss 4.4632  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:55:34,211 INFO step 14960  loss 4.3798  lr 2.00e-04  0.14 s/step  free 37168 MB
+2026-07-06 09:55:37,274 INFO step 14980  loss 4.0023  lr 2.00e-04  0.16 s/step  free 37168 MB
+2026-07-06 09:55:40,273 INFO step 15000  loss 4.3729  lr 2.00e-04  0.13 s/step  free 37168 MB
+2026-07-06 09:55:41,080 INFO Saved step15000.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 09:56:11,157 INFO EVAL step 15000  S=0.40 D=0.90 disfl-✓=1.00 disfl-✗=0.00 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.80 nf-✗=0.20 score=2.600 (30.1s)
+2026-07-06 09:56:11,416 INFO   ↳ no improvement (7 / 100)
+2026-07-06 09:56:15,624 INFO step 15020  loss 4.3829  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 09:56:19,820 INFO step 15040  loss 4.0365  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:56:24,001 INFO step 15060  loss 3.4233  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:56:27,993 INFO step 15080  loss 3.4114  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 09:56:32,173 INFO step 15100  loss 3.5823  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 09:56:36,244 INFO step 15120  loss 3.9998  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:56:40,342 INFO step 15140  loss 3.2343  lr 2.00e-04  0.12 s/step  free 37166 MB
+2026-07-06 09:56:44,460 INFO step 15160  loss 4.0888  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:56:48,731 INFO step 15180  loss 3.4442  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:56:52,547 INFO step 15200  loss 2.6893  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 09:56:56,638 INFO step 15220  loss 4.1301  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:57:00,767 INFO step 15240  loss 3.6758  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:57:04,744 INFO step 15260  loss 2.8522  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:57:08,823 INFO step 15280  loss 4.3775  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 09:57:12,897 INFO step 15300  loss 4.4198  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:57:17,112 INFO step 15320  loss 3.4463  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 09:57:21,402 INFO step 15340  loss 4.2171  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:57:25,467 INFO step 15360  loss 2.9316  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:57:29,301 INFO step 15380  loss 3.2454  lr 2.00e-04  0.11 s/step  free 37166 MB
+2026-07-06 09:57:33,452 INFO step 15400  loss 3.7722  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:57:37,573 INFO step 15420  loss 2.5886  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:57:41,887 INFO step 15440  loss 3.7291  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 09:57:45,779 INFO step 15460  loss 2.6043  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 09:57:49,980 INFO step 15480  loss 3.4515  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 09:57:54,025 INFO step 15500  loss 3.9639  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 09:57:54,837 INFO Saved step15500.pt (resumable)
+2026-07-06 09:57:59,019 INFO step 15520  loss 4.3941  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:58:03,239 INFO step 15540  loss 3.3837  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 09:58:07,388 INFO step 15560  loss 3.2568  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 09:58:11,558 INFO step 15580  loss 4.4730  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 09:58:15,780 INFO step 15600  loss 4.1858  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 09:58:19,977 INFO step 15620  loss 4.0821  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 09:58:24,064 INFO step 15640  loss 3.9203  lr 2.00e-04  0.23 s/step  free 37166 MB
+2026-07-06 09:58:28,227 INFO step 15660  loss 3.6979  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 09:58:32,312 INFO step 15680  loss 3.6199  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:58:36,528 INFO step 15700  loss 3.6782  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:58:40,746 INFO step 15720  loss 3.0727  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:58:44,951 INFO step 15740  loss 3.5722  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 09:58:49,003 INFO step 15760  loss 3.5480  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:58:53,071 INFO step 15780  loss 4.1327  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 09:58:57,271 INFO step 15800  loss 4.2379  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:59:01,324 INFO step 15820  loss 3.3856  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 09:59:05,626 INFO step 15840  loss 4.0507  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:59:09,691 INFO step 15860  loss 3.5412  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:59:13,867 INFO step 15880  loss 3.4157  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:59:18,048 INFO step 15900  loss 3.8014  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:59:21,874 INFO step 15920  loss 4.7009  lr 2.00e-04  0.23 s/step  free 37166 MB
+2026-07-06 09:59:26,061 INFO step 15940  loss 4.3338  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:59:30,114 INFO step 15960  loss 3.3523  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 09:59:34,290 INFO step 15980  loss 4.5039  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 09:59:38,583 INFO step 16000  loss 4.3401  lr 2.00e-04  0.23 s/step  free 37166 MB
+2026-07-06 09:59:39,391 INFO Saved step16000.pt (resumable)
+2026-07-06 09:59:43,415 INFO step 16020  loss 3.9740  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 09:59:47,460 INFO step 16040  loss 3.0047  lr 2.00e-04  0.12 s/step  free 37166 MB
+2026-07-06 09:59:51,703 INFO step 16060  loss 4.0949  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:59:55,912 INFO step 16080  loss 4.1820  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 09:59:59,991 INFO step 16100  loss 4.2297  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:00:04,021 INFO step 16120  loss 4.0956  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:00:08,120 INFO step 16140  loss 3.7445  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:00:12,438 INFO step 16160  loss 4.1114  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:00:16,599 INFO step 16180  loss 2.8676  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:00:20,784 INFO step 16200  loss 3.3069  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:00:24,996 INFO step 16220  loss 4.4943  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:00:29,096 INFO step 16240  loss 3.5384  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:00:33,274 INFO step 16260  loss 3.2141  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:00:37,376 INFO step 16280  loss 3.9267  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:00:41,429 INFO step 16300  loss 3.6172  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:00:45,525 INFO step 16320  loss 4.1420  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:00:49,615 INFO step 16340  loss 3.9606  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 10:00:53,711 INFO step 16360  loss 4.0773  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 10:00:57,942 INFO step 16380  loss 3.2152  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:01:02,175 INFO step 16400  loss 3.5262  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:01:06,277 INFO step 16420  loss 4.0014  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:01:09,404 INFO step 16440  loss 3.8963  lr 2.00e-04  0.12 s/step  free 37166 MB
+2026-07-06 10:01:12,538 INFO step 16460  loss 3.8037  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 10:01:15,574 INFO step 16480  loss 3.7982  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:01:18,522 INFO step 16500  loss 4.3204  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:01:19,302 INFO Saved step16500.pt (resumable)
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 10:01:43,449 INFO EVAL step 16500  S=0.50 D=1.00 disfl-✓=0.90 disfl-✗=0.10 trunc-✓=0.90 trunc-✗=0.10 trail-✓=1.00 trail-✗=0.00 nf-✓=0.90 nf-✗=0.10 score=2.700 (24.1s)
+2026-07-06 10:01:43,705 INFO   ↳ no improvement (8 / 100)
+2026-07-06 10:01:46,741 INFO step 16520  loss 3.4822  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:01:49,723 INFO step 16540  loss 4.4708  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:01:52,796 INFO step 16560  loss 3.4295  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:01:55,828 INFO step 16580  loss 4.5017  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 10:01:58,850 INFO step 16600  loss 3.5163  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:02:02,609 INFO step 16620  loss 3.6048  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:02:06,686 INFO step 16640  loss 3.1390  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:02:10,760 INFO step 16660  loss 2.5965  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:02:14,882 INFO step 16680  loss 4.3136  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 10:02:18,958 INFO step 16700  loss 3.4618  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:02:23,180 INFO step 16720  loss 3.5904  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:02:27,109 INFO step 16740  loss 3.8984  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:02:31,172 INFO step 16760  loss 3.9677  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:02:35,425 INFO step 16780  loss 4.0397  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:02:39,624 INFO step 16800  loss 3.8187  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:02:43,598 INFO step 16820  loss 3.8506  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:02:47,663 INFO step 16840  loss 3.1585  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:02:51,884 INFO step 16860  loss 3.9559  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:02:56,139 INFO step 16880  loss 3.2532  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:03:00,330 INFO step 16900  loss 4.2432  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:03:04,374 INFO step 16920  loss 4.1007  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:03:08,552 INFO step 16940  loss 3.9871  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:03:12,545 INFO step 16960  loss 3.6910  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:03:16,914 INFO step 16980  loss 4.2045  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:03:20,974 INFO step 17000  loss 3.3925  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:03:21,764 INFO Saved step17000.pt (resumable)
+2026-07-06 10:03:25,984 INFO step 17020  loss 3.3761  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:03:30,514 INFO step 17040  loss 4.5335  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:03:34,805 INFO step 17060  loss 3.9433  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:03:39,007 INFO step 17080  loss 3.1561  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:03:43,096 INFO step 17100  loss 4.2062  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:03:47,198 INFO step 17120  loss 3.9047  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:03:50,727 INFO step 17140  loss 3.8001  lr 2.00e-04  0.12 s/step  free 37166 MB
+2026-07-06 10:03:55,011 INFO step 17160  loss 3.4747  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:03:58,990 INFO step 17180  loss 4.1144  lr 2.00e-04  0.24 s/step  free 37166 MB
+2026-07-06 10:04:03,307 INFO step 17200  loss 2.3347  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:04:07,476 INFO step 17220  loss 3.8021  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:04:11,641 INFO step 17240  loss 2.5111  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:04:15,721 INFO step 17260  loss 3.6227  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:04:19,653 INFO step 17280  loss 3.3244  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:04:23,606 INFO step 17300  loss 4.2610  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 10:04:27,869 INFO step 17320  loss 3.8429  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:04:31,875 INFO step 17340  loss 4.1003  lr 2.00e-04  0.14 s/step  free 37166 MB
+2026-07-06 10:04:35,927 INFO step 17360  loss 4.2785  lr 2.00e-04  0.13 s/step  free 37166 MB
+2026-07-06 10:04:40,188 INFO step 17380  loss 3.9596  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:04:44,157 INFO step 17400  loss 3.8973  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 10:04:48,131 INFO step 17420  loss 3.6535  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:04:52,302 INFO step 17440  loss 3.6065  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 10:04:56,517 INFO step 17460  loss 3.3130  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:05:00,774 INFO step 17480  loss 4.1524  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:05:05,137 INFO step 17500  loss 3.9186  lr 2.00e-04  0.21 s/step  free 37166 MB
+2026-07-06 10:05:05,925 INFO Saved step17500.pt (resumable)
+2026-07-06 10:05:10,244 INFO step 17520  loss 3.6123  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:05:14,499 INFO step 17540  loss 3.4593  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:05:18,952 INFO step 17560  loss 3.6138  lr 2.00e-04  0.27 s/step  free 37166 MB
+2026-07-06 10:05:23,060 INFO step 17580  loss 4.5664  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:05:27,115 INFO step 17600  loss 4.6691  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:05:31,034 INFO step 17620  loss 3.0544  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:05:35,164 INFO step 17640  loss 3.9431  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:05:38,909 INFO step 17660  loss 4.1244  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 10:05:43,096 INFO step 17680  loss 4.2637  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:05:47,264 INFO step 17700  loss 3.5355  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:05:51,368 INFO step 17720  loss 3.6701  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:05:55,220 INFO step 17740  loss 3.5499  lr 2.00e-04  0.15 s/step  free 37166 MB
+2026-07-06 10:05:59,273 INFO step 17760  loss 3.8996  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:06:03,469 INFO step 17780  loss 2.5281  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:06:07,572 INFO step 17800  loss 3.1458  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:06:11,622 INFO step 17820  loss 2.4778  lr 2.00e-04  0.17 s/step  free 37166 MB
+2026-07-06 10:06:15,818 INFO step 17840  loss 4.0072  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 10:06:20,221 INFO step 17860  loss 3.7656  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:06:24,416 INFO step 17880  loss 2.6796  lr 2.00e-04  0.22 s/step  free 37166 MB
+2026-07-06 10:06:28,509 INFO step 17900  loss 4.4799  lr 2.00e-04  0.19 s/step  free 37166 MB
+2026-07-06 10:06:32,701 INFO step 17920  loss 3.9280  lr 2.00e-04  0.20 s/step  free 37166 MB
+2026-07-06 10:06:36,834 INFO step 17940  loss 3.4205  lr 2.00e-04  0.16 s/step  free 37166 MB
+2026-07-06 10:06:40,958 INFO step 17960  loss 3.5399  lr 2.00e-04  0.12 s/step  free 37166 MB
+2026-07-06 10:06:45,102 INFO step 17980  loss 3.7602  lr 2.00e-04  0.18 s/step  free 37166 MB
+2026-07-06 10:06:49,159 INFO Wrote eval log to checkpoints/semantic_endpoint_v8_seed2_es/eval_log.json (best score 2.800)
+2026-07-06 10:06:49,464 INFO Saved final checkpoints/semantic_endpoint_v8_seed2_es/step18000.pt

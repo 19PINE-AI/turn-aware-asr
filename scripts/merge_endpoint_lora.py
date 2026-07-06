@@ -44,10 +44,11 @@ def main():
     model, tokenizer, processor = load_base_model()
     model = model.bfloat16()
     new_ids, eager_id, end_id = extend_tokenizer_and_model(model, tokenizer, processor)
-    apply_lora(model.thinker, rank=16, alpha=32)
-    freeze_except_lora_and_new_rows(model, new_ids)
-
     ckpt = torch.load(args.checkpoint, weights_only=False, map_location="cpu")
+    # infer LoRA rank from the checkpoint (supports r16 and r32 pools)
+    _rank = next(v.shape[0] for k, v in ckpt["trainable"].items() if "lora_A" in k)
+    apply_lora(model.thinker, rank=_rank, alpha=2 * _rank)
+    freeze_except_lora_and_new_rows(model, new_ids)
     missing, unexpected = model.load_state_dict(ckpt["trainable"], strict=False)
     assert not unexpected, f"unexpected keys: {unexpected[:5]}"
     logger.info("Loaded %s (step %s): %d trainable tensors",

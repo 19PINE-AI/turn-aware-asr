@@ -71,3 +71,20 @@ regress. This is the multi-task capacity trade-off the paper already frames (fol
 behaviors into one rank-16 adapter costs precision); the pure-endpointing / prior release
 checkpoint remains available. Both gap fixes are demonstrated; the trade-off is measured,
 not hidden.
+
+## Finer v16 WER sweep + full 9000 eval (2026-07-06) — the rank-16 capacity ceiling
+WER by v16 checkpoint: 4500 4.73/8.94(fire9.5%), 7500 3.41/6.72(6.5%),
+9000 3.31/6.40(4.5%), 10500 3.45/6.69(5.3%), 12000 3.54/6.85(5.7%). 9000 = WER sweet spot.
+
+Full axis comparison (all GPU, n=300 earnings / 250 dictation):
+| ckpt | WER c/o | halluc | uplift | dict-prem | email+ | intr |
+|---|---|---|---|---|---|---|
+| v15 release@6000 | 3.73/7.06 | 5.0% | +35.3 | 0.16 | 0.94 | 0 |
+| v16@9000 | 3.31/6.40 | 1.8% | +28.2 | 0.324 | 0.90 | 0 |
+| v16@10500 | 3.45/6.69 | 1.8% | +24.7 | 0.256 | 0.90 | 0 |
+
+No single rank-16 v16 checkpoint dominates: 9000 wins WER+uplift+halluc but dictation
+premature regresses to 0.32; 10500 improves premature to 0.26 but loses WER/uplift. The
+premature<->WER tension is the fixed-capacity ceiling of the rank-16 adapter -> motivates
+v17 (rank-32 + rebalanced pool: 20% replay, 1:1 biasing). If v17 holds premature<=0.20 at
+WER~3.3/6.4 + halluc<=2% + uplift>=28, it dominates both v15 and v16 = clean release.

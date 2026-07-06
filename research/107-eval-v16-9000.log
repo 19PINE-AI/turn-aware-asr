@@ -1,1 +1,7 @@
 === big probe 9000 2026-07-06T09:07:39+00:00 ===
+2026-07-06 09:26:41,527 INFO Probe B summary: {'name_none': 0.992, 'name_profile': 1.0, 'name_distractor': 0.992, 'email_none': 0.15, 'email_profile': 0.9, 'email_distractor': 0.233, 'email_spelled_none': 0.2, 'email_spelled_profile': 0.9, 'email_natural_none': 0.1, 'email_natural_profile': 0.9, 'intrusion_rate': 0.0}
+2026-07-06 09:26:41,532 INFO Wrote research/90-probe-v16-step9000-big.json
+=== earnings22 9000 2026-07-06T09:26:42+00:00 ===
+2026-07-06 09:36:07,357 INFO   distractor_hallucination_rate    0.018
+2026-07-06 09:36:07,358 INFO Wrote research/91-biasing-v16-step9000.json
+=== DONE 9000 2026-07-06T09:36:08+00:00 ===

@@ -1,0 +1,317 @@
+{
+  "checkpoint": "checkpoints/semantic_endpoint_v18_es/snap_step9000.pt",
+  "summary": {
+    "n_examples": 30,
+    "n_detected": 30,
+    "detection_rate": 1.0,
+    "chunk_s": 0.5,
+    "latency_s_p50": 0.20500000000000007,
+    "latency_s_p95": 0.5500000000000007,
+    "latency_s_mean": -1.1714499999999999,
+    "latency_s_min": -5.9005,
+    "latency_s_max": 0.6000000000000001,
+    "median_chunk_inference_ms": 189.7814003750682
+  },
+  "per_example": [
+    {
+      "audio_end_s": 8.35,
+      "first_end_chunk_idx": 17,
+      "first_end_t": 8.5,
+      "latency_s": 0.15000000000000036,
+      "n_chunks_run": 17,
+      "median_chunk_ms": 442.58295092731714,
+      "final_text": "What kind of an accident was it, Redcoat? And how did it happen? He asked, \"Broadwing the hawk tried to catch me.\" <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.55725,
+      "first_end_chunk_idx": 14,
+      "first_end_t": 7.0,
+      "latency_s": 0.4427500000000002,
+      "n_chunks_run": 14,
+      "median_chunk_ms": 339.34600511565804,
+      "final_text": "Detain him on some pretext or other because he is rather difficult to get hold of, and I want to see him. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.355,
+      "first_end_chunk_idx": 15,
+      "first_end_t": 7.5,
+      "latency_s": 0.14499999999999957,
+      "n_chunks_run": 15,
+      "median_chunk_ms": 322.0716593787074,
+      "final_text": "He should know their produce, their plants, their minerals, their waters, their animals, their seasons, their climates, their heats and cold. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 3.2835625,
+      "first_end_chunk_idx": 3,
+      "first_end_t": 1.5,
+      "latency_s": -1.7835625,
+      "n_chunks_run": 3,
+      "median_chunk_ms": 142.82700885087252,
+      "final_text": "It was impossible. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 4.955,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": 0.5449999999999999,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 174.08612929284573,
+      "final_text": "Entered the tap room, they emerged thence a moment later. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 4.595,
+      "first_end_chunk_idx": 10,
+      "first_end_t": 5.0,
+      "latency_s": 0.40500000000000025,
+      "n_chunks_run": 10,
+      "median_chunk_ms": 221.55728051438928,
+      "final_text": "I was entirely without friends\u2014nay, even so much as without acquaintance. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.4005,
+      "first_end_chunk_idx": 1,
+      "first_end_t": 0.5,
+      "latency_s": -5.9005,
+      "n_chunks_run": 1,
+      "median_chunk_ms": 127.0652199164033,
+      "final_text": "YES <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 8.2315625,
+      "first_end_chunk_idx": 6,
+      "first_end_t": 3.0,
+      "latency_s": -5.231562500000001,
+      "n_chunks_run": 6,
+      "median_chunk_ms": 135.59325318783522,
+      "final_text": "With all these families and others with them. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 2.9,
+      "first_end_chunk_idx": 7,
+      "first_end_t": 3.5,
+      "latency_s": 0.6000000000000001,
+      "n_chunks_run": 7,
+      "median_chunk_ms": 142.23582204431295,
+      "final_text": "Only confide your trouble in me. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 5.175,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": 0.3250000000000002,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 261.1551461741328,
+      "final_text": "If by striking upon the wash basin of Umagai, I could make honourable money come to me. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.985625,
+      "first_end_chunk_idx": 5,
+      "first_end_t": 2.5,
+      "latency_s": -4.485625,
+      "n_chunks_run": 5,
+      "median_chunk_ms": 170.8346363157034,
+      "final_text": "Then I passed on my way. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.025,
+      "first_end_chunk_idx": 7,
+      "first_end_t": 3.5,
+      "latency_s": 0.4750000000000001,
+      "n_chunks_run": 7,
+      "median_chunk_ms": 126.8385499715805,
+      "final_text": "Say she was a little dandy. I tell you. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 5.115,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": 0.3849999999999998,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 193.8497070223093,
+      "final_text": "The expression of his eye contradicted his figurative and boastful language. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.9683125,
+      "first_end_chunk_idx": 8,
+      "first_end_t": 4.0,
+      "latency_s": -2.9683124999999997,
+      "n_chunks_run": 8,
+      "median_chunk_ms": 227.116784080863,
+      "final_text": "After the bell had been rolled into the swamp, there was of course. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 4.295,
+      "first_end_chunk_idx": 9,
+      "first_end_t": 4.5,
+      "latency_s": 0.20500000000000007,
+      "n_chunks_run": 9,
+      "median_chunk_ms": 185.71309372782707,
+      "final_text": "Beholding a possible life which she had sent herself away from. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 5.688125,
+      "first_end_chunk_idx": 6,
+      "first_end_t": 3.0,
+      "latency_s": -2.6881250000000003,
+      "n_chunks_run": 6,
+      "median_chunk_ms": 195.71281969547272,
+      "final_text": "And to the pond, which contained the fish. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.296625,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -1.2966250000000001,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 119.81732910498977,
+      "final_text": "And the great blue hill floats. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 4.8170625,
+      "first_end_chunk_idx": 6,
+      "first_end_t": 3.0,
+      "latency_s": -1.8170624999999996,
+      "n_chunks_run": 6,
+      "median_chunk_ms": 166.40295926481485,
+      "final_text": "Bake with a little white wine and melted butter. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 4.905,
+      "first_end_chunk_idx": 11,
+      "first_end_t": 5.5,
+      "latency_s": 0.5949999999999998,
+      "n_chunks_run": 11,
+      "median_chunk_ms": 205.36793861538172,
+      "final_text": "What quarrelling, Markham! cried the latter, addressing himself to me. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.07,
+      "first_end_chunk_idx": 13,
+      "first_end_t": 6.5,
+      "latency_s": 0.4299999999999997,
+      "n_chunks_run": 13,
+      "median_chunk_ms": 281.38731978833675,
+      "final_text": "The count clung to Louisa's side, but also tried to make himself agreeable to her cousins. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 5.3385625,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -3.3385625,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 149.11689702421427,
+      "final_text": "How are you? Did you sleep? <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 4.742125,
+      "first_end_chunk_idx": 10,
+      "first_end_t": 5.0,
+      "latency_s": 0.2578750000000003,
+      "n_chunks_run": 10,
+      "median_chunk_ms": 158.2809379324317,
+      "final_text": "He knew every line in that sharp profile. Thank you. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 3.4675625,
+      "first_end_chunk_idx": 4,
+      "first_end_t": 2.0,
+      "latency_s": -1.4675625,
+      "n_chunks_run": 4,
+      "median_chunk_ms": 112.65381472185254,
+      "final_text": "And showed so much taste. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.505,
+      "first_end_chunk_idx": 16,
+      "first_end_t": 8.0,
+      "latency_s": 0.4950000000000001,
+      "n_chunks_run": 16,
+      "median_chunk_ms": 262.83791568130255,
+      "final_text": "Silence for a couple of minutes. Then Grandcourt said, \"What men are invited here with their wives?\" <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 8.7028125,
+      "first_end_chunk_idx": 10,
+      "first_end_t": 5.0,
+      "latency_s": -3.7028125000000003,
+      "n_chunks_run": 10,
+      "median_chunk_ms": 232.34323924407363,
+      "final_text": "The Channing's themselves were silent; they could not see the way at all clear. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 7.915,
+      "first_end_chunk_idx": 7,
+      "first_end_t": 3.5,
+      "latency_s": -4.415,
+      "n_chunks_run": 7,
+      "median_chunk_ms": 169.67193596065044,
+      "final_text": "And that without doubt he had a human father. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 8.76,
+      "first_end_chunk_idx": 18,
+      "first_end_t": 9.0,
+      "latency_s": 0.2400000000000002,
+      "n_chunks_run": 18,
+      "median_chunk_ms": 305.64613128080964,
+      "final_text": "Scratched and with broken handles, the closed colonial desk, the miserly rag carpet, all seemed mutely asking as Bobby did. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 6.2938125,
+      "first_end_chunk_idx": 7,
+      "first_end_t": 3.5,
+      "latency_s": -2.7938124999999996,
+      "n_chunks_run": 7,
+      "median_chunk_ms": 142.63946749269962,
+      "final_text": "Beyond the southern boundary of the territory. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "disfluency"
+    },
+    {
+      "audio_end_s": 8.95,
+      "first_end_chunk_idx": 19,
+      "first_end_t": 9.5,
+      "latency_s": 0.5500000000000007,
+      "n_chunks_run": 19,
+      "median_chunk_ms": 397.3427368327975,
+      "final_text": "Overpowered now and again by the crash of brass and thunder of drums, as the benefit societies and democratic guilds, each headed by a banner. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    },
+    {
+      "audio_end_s": 8.5,
+      "first_end_chunk_idx": 18,
+      "first_end_t": 9.0,
+      "latency_s": 0.5,
+      "n_chunks_run": 18,
+      "median_chunk_ms": 359.53978821635246,
+      "final_text": "Had been sufficient to open the eyes of many and to recover them from the astonishment with which at first they had been seized. <EAGER_END_SPEECH><END_SPEECH>",
+      "schema": "single"
+    }
+  ]
+}

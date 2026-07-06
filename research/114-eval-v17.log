@@ -1,0 +1,24 @@
+=== merge 9000 2026-07-06T10:32:16+00:00 ===
+2026-07-06 10:32:23,555 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== big probe 2026-07-06T10:32:24+00:00 ===
+2026-07-06 10:44:08,378 INFO Probe B summary: {'name_none': 0.958, 'name_profile': 0.992, 'name_distractor': 0.983, 'email_none': 0.083, 'email_profile': 0.958, 'email_distractor': 0.108, 'email_spelled_none': 0.133, 'email_spelled_profile': 1.0, 'email_natural_none': 0.033, 'email_natural_profile': 0.917, 'intrusion_rate': 0.0}
+2026-07-06 10:44:08,380 INFO Wrote research/111-probe-v17-9000.json
+=== earnings22 2026-07-06T10:44:09+00:00 ===
+2026-07-06 10:49:18,200 INFO   distractor_hallucination_rate    0.022
+2026-07-06 10:49:18,202 INFO Wrote research/112-biasing-v17-9000.json
+=== WER 2026-07-06T10:49:18+00:00 ===
+### test-clean: WER=0.0337  marker_fire_rate=0.022
+### test-other: WER=0.0687  marker_fire_rate=0.025
+=== DONE v17 step 9000 2026-07-06T10:51:26+00:00 ===
+=== merge 7500 2026-07-06T10:51:26+00:00 ===
+2026-07-06 10:51:33,095 INFO Parity check: transcribe a marker-bearing clip via transformers from this dir and compare against the LoRA path.
+=== big probe 2026-07-06T10:51:33+00:00 ===
+2026-07-06 11:03:23,401 INFO Probe B summary: {'name_none': 0.983, 'name_profile': 0.992, 'name_distractor': 0.983, 'email_none': 0.075, 'email_profile': 0.917, 'email_distractor': 0.083, 'email_spelled_none': 0.133, 'email_spelled_profile': 0.967, 'email_natural_none': 0.017, 'email_natural_profile': 0.867, 'intrusion_rate': 0.0}
+2026-07-06 11:03:23,403 INFO Wrote research/111-probe-v17-7500.json
+=== earnings22 2026-07-06T11:03:24+00:00 ===
+2026-07-06 11:08:53,145 INFO   distractor_hallucination_rate    0.022
+2026-07-06 11:08:53,147 INFO Wrote research/112-biasing-v17-7500.json
+=== WER 2026-07-06T11:08:53+00:00 ===
+### test-clean: WER=0.0375  marker_fire_rate=0.035
+### test-other: WER=0.0741  marker_fire_rate=0.059
+=== DONE v17 step 7500 2026-07-06T11:11:08+00:00 ===

@@ -1,0 +1,15 @@
+{
+  "model": "checkpoints/merged/v17-step7500",
+  "results": {
+    "test-clean": {
+      "n": 2620,
+      "wer": 0.03750760803408399,
+      "marker_fire_rate": 0.03549618320610687
+    },
+    "test-other": {
+      "n": 2939,
+      "wer": 0.07405001623903865,
+      "marker_fire_rate": 0.058863559033684926
+    }
+  }
+}

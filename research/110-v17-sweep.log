@@ -1,0 +1,10 @@
+=== v17 probe sweep 2026-07-06T10:09:42+00:00 ===
+Setting `pad_token_id` to `eos_token_id`:151645 for open-end generation.
+2026-07-06 10:31:11,168 INFO B[79/80] email hit none=0 profile=1 distractor=0
+2026-07-06 10:31:11,168 INFO step 10500  prem=0.36 rec=0.80 | name+=1.00 email+=0.80 | intrusion=0.000
+2026-07-06 10:31:11,168 INFO === 3 checkpoints pass the unified gate (prem<=0.6, email+>=0.85, intrusion<=0.06) ===
+2026-07-06 10:31:11,168 INFO   step  1500  prem=0.12 email+=0.88 intrusion=0.000
+2026-07-06 10:31:11,168 INFO   step  3000  prem=0.26 email+=0.88 intrusion=0.000
+2026-07-06 10:31:11,168 INFO   step  7500  prem=0.34 email+=0.85 intrusion=0.000
+2026-07-06 10:31:11,171 INFO Wrote research/110-v17-probe-sweep.json
+=== v17 sweep done; eval STEP passed as arg below ===

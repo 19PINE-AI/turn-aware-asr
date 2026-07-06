@@ -1,0 +1,39 @@
+=== [1/2] replay n_asr=4000 (~20%) 2026-07-06T11:32:19+00:00 ===
+2026-07-06 11:32:34,610 INFO v12 pool: 14730 examples
+2026-07-06 11:32:51,125 INFO added 4000 plain-ASR examples
+2026-07-06 11:32:51,130 INFO v15 schema counts: {'pair_hold': 2221, 'digit_nosil': 220, 'single_sil': 2500, 'spell_email': 360, 'truncated': 1969, 'pair_fire': 2500, 'long_sil': 500, 'spell_name': 360, 'complete_nosil': 1500, 'asr_plain': 4000, 'digit_fire': 500, 'digit_hold': 600, 'silence_only': 800, 'lead_sil': 700}
+2026-07-06 11:33:15,344 INFO wrote data/semantic_endpoint_v18/data.pt (18730 examples)
+=== [2/2] gentler biasing: 1000 relevant : 500 distractor, 1 conflict entity 2026-07-06T11:33:16+00:00 ===
+2026-07-06 11:33:38,146 INFO pool: 18730 examples
+2026-07-06 11:33:38,649 INFO extracting Haiku entities for 3000 candidate utts…
+2026-07-06 11:33:38,651 INFO LLM entities: 3000 texts, 3000 cached, 0 to extract (claude-haiku-4-5)
+2026-07-06 11:33:38,652 INFO candidates with >=1 entities: 1364 / 3000
+2026-07-06 11:33:38,652 INFO distinct entity bank: 1492
+2026-07-06 11:33:46,411 INFO added 1500 natural-biasing examples
+2026-07-06 11:34:19,812 INFO wrote data/semantic_endpoint_v18/data.pt (20230 examples); schemas: {'silence_only': 800, 'single_sil': 2500, 'asr_plain': 4000, 'complete_nosil': 1500, 'digit_fire': 500, 'bias_nat_relevant': 1000, 'truncated': 1969, 'pair_fire': 2500, 'pair_hold': 2221, 'spell_email': 360, 'spell_name': 360, 'bias_nat_distractor': 500, 'digit_hold': 600, 'digit_nosil': 220, 'lead_sil': 700, 'long_sil': 500}
+=== v18 pool ready 2026-07-06T11:34:20+00:00 ===
+{
+ "pool": "data/semantic_endpoint_v18/data.pt",
+ "n_pool": 18730,
+ "n_added": 1500,
+ "n_distractor": 500,
+ "n_relevant": 1000,
+ "schema_counts": {
+  "silence_only": 800,
+  "single_sil": 2500,
+  "asr_plain": 4000,
+  "complete_nosil": 1500,
+  "digit_fire": 500,
+  "bias_nat_relevant": 1000,
+  "truncated": 1969,
+  "pair_fire": 2500,
+  "pair_hold": 2221,
+  "spell_email": 360,
+  "spell_name": 360,
+  "bias_nat_distractor": 500,
+  "digit_hold": 600,
+  "digit_nosil": 220,
+  "lead_sil": 700,
+  "long_sil": 500
+ }
+}

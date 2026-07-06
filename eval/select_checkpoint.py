@@ -58,7 +58,11 @@ def main():
     model, tokenizer, processor = load_base_model()
     model = model.cuda().bfloat16()
     new_ids, _, _ = extend_tokenizer_and_model(model, tokenizer, processor)
-    apply_lora(model.thinker, rank=16, alpha=32)
+    # infer LoRA rank from the first checkpoint (supports r16 and r32 pools)
+    _probe = torch.load(paths[0], weights_only=False, map_location="cpu")["trainable"]
+    _rank = next(v.shape[0] for k, v in _probe.items() if "lora_A" in k)
+    logger.info("LoRA rank inferred from checkpoint: %d", _rank)
+    apply_lora(model.thinker, rank=_rank, alpha=2 * _rank)
     freeze_except_lora_and_new_rows(model, new_ids)
 
     digit_items = json.loads(Path(args.probes + "/digit_probe.json").read_text())

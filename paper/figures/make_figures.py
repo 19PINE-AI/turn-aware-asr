@@ -236,11 +236,12 @@ def fig3_tradeoff():
                zorder=4, edgecolor="black", lw=0.5)
     ax.annotate("causal endpointer\nR=0.97", (0.39, 0.323), textcoords="offset points",
                 xytext=(-14, 10), fontsize=7.0, weight="bold", color=OKABE["green"])
-    # released unified model (all four behaviors): a little endpointing precision
-    # traded for dictation + context + intrusion-resistance
-    ax.scatter([0.39], [1.03], s=150, color=OKABE["sky"], marker="D",
+    # released unified model (rank-32, all four behaviors + WER/biasing fixes):
+    # a little endpointing precision traded for dictation + context + intrusion-
+    # resistance, at preserved recall (dev-25, same set as the pure point)
+    ax.scatter([0.39], [0.97], s=150, color=OKABE["sky"], marker="D",
                zorder=4, edgecolor="black", lw=0.5)
-    ax.annotate("unified release\nR=0.94", (0.39, 1.03), textcoords="offset points",
+    ax.annotate("unified release\nR=0.95", (0.39, 0.97), textcoords="offset points",
                 xytext=(6, 4), fontsize=7.0, weight="bold", color="#1f6f9e")
 
     # external open turn-aware systems on the same protocol (exp-4; as-shipped,
