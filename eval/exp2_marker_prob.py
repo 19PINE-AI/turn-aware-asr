@@ -188,7 +188,6 @@ def run(args) -> dict:
     logger.info("Scoring %d snapshots", len(paths))
 
     # Optional: cross-check against the recorded argmax oscillation.
-    elog_path = Path(args.glob).parent.parent / Path(args.glob).parent.name / "eval_log.json"
     elog = {}
     cand = Path(paths[0]).parent / "eval_log.json"
     if cand.exists():
