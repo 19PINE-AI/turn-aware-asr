@@ -51,8 +51,8 @@
 \@writefile{toc}{\contentsline {paragraph}{The experiment.}{6}{paragraph*.7}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }}{6}{table.caption.8}\protected@file@percent }
 \newlabel{tab:silappend}{{3}{6}{\textbf {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }{table.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor. Right: the causal recipe of \S  \ref  {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }}{7}{figure.caption.6}\protected@file@percent }
-\newlabel{fig:oscillation}{{3}{7}{\textbf {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor. Right: the causal recipe of \S \ref {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S  \ref  {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }}{7}{figure.caption.6}\protected@file@percent }
+\newlabel{fig:oscillation}{{3}{7}{\textbf {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S \ref {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }{figure.caption.6}{}}
 \@writefile{toc}{\contentsline {paragraph}{The diagnosis.}{7}{paragraph*.9}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Two ways offline-derived supervision leaks the future.} (a)\nobreakspace  {}Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph  {hold}. (b)\nobreakspace  {}Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }}{8}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:contradictions}{{4}{8}{\textbf {Two ways offline-derived supervision leaks the future.} (a)~Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph {hold}. (b)~Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }{figure.caption.10}{}}
@@ -130,17 +130,16 @@
 \citation{ekstedt2022vap}
 \citation{stivers2009universals}
 \citation{levinson2015timing}
+\@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{paragraph*.32}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{17}{section.10}\protected@file@percent }
+\newlabel{sec:related}{{10}{17}{Related work}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.33}\protected@file@percent }
 \citation{graves2012sequence}
 \citation{radford2023whisper}
 \citation{wan2026streaming}
 \citation{qwen3asr2026}
 \citation{kyutai2025stt,defossez2024moshi}
 \citation{defossez2024moshi}
-\@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{paragraph*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{17}{section.10}\protected@file@percent }
-\newlabel{sec:related}{{10}{17}{Related work}{section.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.33}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{17}{paragraph*.34}\protected@file@percent }
 \citation{pundak2018deep}
 \citation{brasr2025}
 \citation{hotwordgrpo2025}
@@ -156,12 +155,13 @@
 \bibcite{bijwadia2023unified}{{2}{2023}{{Bijwadia et~al.}}{{Bijwadia, Chang, Li, Sainath, Zhang, and He}}}
 \bibcite{carletta2005ami}{{3}{2005}{{Carletta et~al.}}{{}}}
 \bibcite{chang2019joint}{{4}{2019}{{Chang et~al.}}{{Chang, Prabhavalkar, He, Sainath, and Simko}}}
-\bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
-\bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
-\bibcite{defossez2024moshi}{{7}{2024}{{D{\'e}fossez et~al.}}{{D{\'e}fossez, Mazar{\'e}, Orsini, Royer, P{\'e}rez, J{\'e}gou, Grave, and Zeghidour}}}
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.34}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.35}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.36}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.37}\protected@file@percent }
+\bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
+\bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
+\bibcite{defossez2024moshi}{{7}{2024}{{D{\'e}fossez et~al.}}{{D{\'e}fossez, Mazar{\'e}, Orsini, Royer, P{\'e}rez, J{\'e}gou, Grave, and Zeghidour}}}
 \bibcite{delrio2022earnings22}{{8}{2022}{{Del~Rio et~al.}}{{Del~Rio, Ha, McNamara, Miller, and Chandra}}}
 \bibcite{contextualearnings2026}{{9}{2026}{{Durmus et~al.}}{{Durmus, Cen, Pacheco, Okan, and Orhon}}}
 \bibcite{ekstedt2020turngpt}{{10}{2020}{{Ekstedt and Skantze}}{{}}}
