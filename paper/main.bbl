@@ -1,4 +1,4 @@
-\begin{thebibliography}{46}
+\begin{thebibliography}{47}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -141,11 +141,10 @@ Bo~Li, Shuo-Yiin Chang, Tara~N. Sainath, Ruoming Pang, Yanzhang He, Trevor
 \newblock Towards fast and accurate streaming end-to-end asr.
 \newblock In \emph{ICASSP}, 2020.
 
-\bibitem[Li(2026)]{li2026metronome}
+\bibitem[Li(2026)]{li2026uac}
 Bojie Li.
-\newblock Metronome: Bounded-state serving for real-time multimodal streams,
-  2026.
-\newblock Companion paper, under submission.
+\newblock User as code: Executable memory for personalized agents, 2026.
+\newblock arXiv:2606.16707.
 
 \bibitem[Li et~al.(2026)Li, Wu, Hou, and Li]{uaf2026}
 Yadong Li, Guoxin Wu, Haiping Hou, and Biye Li.
@@ -174,6 +173,12 @@ Mingbo Ma, Liang Huang, Hao Xiong, Renjie Zheng, Kaibo Liu, Baigong Zheng,
 \newblock {STACL}: Simultaneous translation with implicit anticipation and
   controllable latency using prefix-to-prefix framework.
 \newblock In \emph{ACL}, 2019.
+
+\bibitem[Meng and Li(2026)]{li2026metronome}
+Jiaying Meng and Bojie Li.
+\newblock Metronome: Bound the cache, keep the beat for real-time interaction
+  model serving, 2026.
+\newblock arXiv:2607.02640.
 
 \bibitem[Novitasari et~al.(2026)Novitasari, Fukuda, Gakuto, and
   Saon]{commoncues2026}
