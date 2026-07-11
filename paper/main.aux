@@ -225,6 +225,7 @@
 \bibcite{fastturn2026}{{44}{2026}{{Wang et~al.}}{{Wang, Xue, He, Hu, Wang, Wu, Ji, Zheng, Chen, Zhu, and Xie}}}
 \bibcite{xiao2024streamingllm}{{45}{2024}{{Xiao et~al.}}{{Xiao, Tian, Chen, Han, and Lewis}}}
 \bibcite{jalturn2026}{{46}{2026}{{Yang et~al.}}{{Yang, Pan, Qiu, and Bai}}}
+\citation{silero2021vad}
 \@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{25}{appendix.A}\protected@file@percent }
 \newlabel{app:labels}{{A}{25}{Label-specification details}{appendix.A}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{25}{appendix.B}\protected@file@percent }
@@ -232,13 +233,12 @@
 \@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{25}{appendix.C}\protected@file@percent }
 \newlabel{app:tables}{{C}{25}{Additional results}{appendix.C}{}}
 \@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{25}{paragraph*.40}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate). WER is a fraction, unbounded above through insertions.\relax }}{25}{table.caption.41}\protected@file@percent }
-\newlabel{tab:appconfirm}{{9}{25}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate). WER is a fraction, unbounded above through insertions.\relax }{table.caption.41}{}}
-\citation{silero2021vad}
-\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{26}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{25}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{25}{paragraph*.44}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = resume-after-fire rate over continuation boundaries (a cost metric, not an error rate). WER is a fraction, unbounded above through insertions.\relax }}{26}{table.caption.41}\protected@file@percent }
+\newlabel{tab:appconfirm}{{9}{26}{All gated arms on the 25-stretch development benchmark. Resume = resume-after-fire rate over continuation boundaries (a cost metric, not an error rate). WER is a fraction, unbounded above through insertions.\relax }{table.caption.41}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{26}{table.caption.43}\protected@file@percent }
 \newlabel{tab:apptimeout}{{10}{26}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.43}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{26}{paragraph*.44}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Probe confidence intervals and the dictation scoring window.}{26}{paragraph*.45}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{27}{paragraph*.46}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table\nobreakspace  {}\ref  {tab:dictation}). Seed 0 is the released checkpoint.\relax }}{27}{table.caption.47}\protected@file@percent }
@@ -264,6 +264,4 @@
 \newlabel{app:serving}{{G}{30}{Serving details}{appendix.G}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)\nobreakspace  {}Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }}{30}{figure.caption.55}\protected@file@percent }
 \newlabel{fig:serving}{{12}{30}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)~Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }{figure.caption.55}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {H}Reproducibility}{30}{appendix.H}\protected@file@percent }
-\newlabel{app:repro}{{H}{30}{Reproducibility}{appendix.H}{}}
-\gdef \@abspage@last{31}
+\gdef \@abspage@last{30}
