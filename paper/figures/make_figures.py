@@ -75,6 +75,75 @@ def timeline(ax, x0, x1, y):
     ax.plot([x0, x1], [y, y], color="#555555", lw=0.9, zorder=1)
 
 
+# ================================================================ F0: teaser
+def fig0_teaser():
+    """Headline figure: the two turns no timeout can get right, and what the
+    turn-aware model does on each. Pure illustration, schematic time axis."""
+    fig, ax = plt.subplots(figsize=(7.2, 2.9))
+    ax.set_xlim(0, 12.6)
+    ax.set_ylim(0, 5.1)
+    ax.axis("off")
+    ax.grid(False)
+
+    RED, GREEN, GREY = "#c23b22", "#00694f", "#555555"
+
+    def cross(x, y, label=None, dy=0.40, above=False):
+        ax.scatter([x], [y], marker="X", s=95, color=RED, zorder=5,
+                   edgecolor="black", lw=0.4)
+        if label:
+            if above:
+                ax.text(x, y + dy, label, ha="center", va="bottom",
+                        fontsize=7.4, color=RED)
+            else:
+                ax.text(x, y - dy, label, ha="center", va="top",
+                        fontsize=7.4, color=RED)
+
+    def star(x, y, label=None, dy=0.40):
+        ax.scatter([x], [y], marker="*", s=210, color=OKABE["green"], zorder=5,
+                   edgecolor="black", lw=0.4)
+        if label:
+            ax.text(x, y - dy, label, ha="center", va="top", fontsize=7.4,
+                    color=GREEN, weight="bold")
+
+    # ---- Turn 1: the pause that means "wait" (1 s of audio ~ 1.1 units)
+    yA = 3.9
+    ax.text(0.15, yA + 0.58, "Turn 1: the pause that means “wait”",
+            fontsize=8.6, style="italic")
+    timeline(ax, 0.15, 12.45, yA)
+    speech_block(ax, 0.3, 2.1, yA, label="“four one five …”")
+    speech_block(ax, 3.1, 4.9, yA, label="“five five five …”")
+    speech_block(ax, 6.1, 8.3, yA, label="“zero one nine two.”")
+    ax.text(2.6, yA + 0.30, "0.9 s", ha="center", fontsize=7.0, color=GREY)
+    ax.text(5.5, yA + 0.30, "1.1 s", ha="center", fontsize=7.0, color=GREY)
+    cross(2.85, yA, "0.7 s timeout\nfires mid-number")
+    cross(5.85, yA)
+    star(8.75, yA, "ours: +0.39 s")
+    ax.text(4.55, yA - 1.30, "ours: holds — six digits predict four more",
+            ha="center", fontsize=7.4, color=GREEN)
+
+    # ---- Turn 2: the completion that means "go"
+    yB = 1.45
+    ax.text(0.15, yB + 0.58, "Turn 2: the completion that means “go”",
+            fontsize=8.6, style="italic")
+    timeline(ax, 0.15, 12.45, yB)
+    speech_block(ax, 0.3, 3.1, yB, label="“Hello? I’m still here.”")
+    star(3.55, yB)
+    ax.text(3.15, yB - 0.40, "ours: +0.39 s —\nthought complete", ha="center",
+            va="top", fontsize=7.4, color=GREEN, weight="bold")
+    cross(4.2, yB)
+    ax.text(4.65, yB - 0.40, "1.0 s timeout: still waiting", ha="left",
+            va="top", fontsize=7.4, color=RED)
+
+    # legend, in the empty right half of the lower row
+    ax.scatter([9.6], [1.05], marker="X", s=70, color=RED, edgecolor="black", lw=0.4)
+    ax.text(9.85, 1.05, "silence timeout", va="center", fontsize=7.8)
+    ax.scatter([9.6], [0.55], marker="*", s=150, color=OKABE["green"],
+               edgecolor="black", lw=0.4)
+    ax.text(9.85, 0.55, "turn-aware ASR (this work)", va="center", fontsize=7.8)
+
+    save(fig, "fig0_teaser")
+
+
 # ================================================================ F1: oscillation
 def fig1_oscillation():
     v8 = json.load(open(ROOT / "checkpoints/semantic_endpoint_v8_es/eval_log.json"))
@@ -197,9 +266,16 @@ def fig2_contradictions():
 def fig3_tradeoff():
     rms = json.load(open(R / "71-timeout-rms-seed0.json"))["arms"]
     sil = json.load(open(R / "71-timeout-silero-seed0.json"))["arms"]
-    fig, ax = plt.subplots(figsize=(4.9, 3.3))
+    fig, ax = plt.subplots(figsize=(6.2, 4.2))
 
-    def fam(arms, color, name, marker):
+    # darker text variants of the marker colors: annotation text must hold
+    # contrast against the white background even at print size
+    TEXT = {OKABE["orange"]: "#8a6100", OKABE["purple"]: "#9c4f76",
+            OKABE["grey"]: "#595959", OKABE["green"]: "#00694f",
+            OKABE["sky"]: "#145a85", "#8a5a2b": "#6f4820"}
+
+    def fam(arms, color, name, marker, over=None):
+        over = over or {}
         pts = []
         for x, a in sorted(arms.items(), key=lambda kv: float(kv[0])):
             s = a["summary"]
@@ -209,62 +285,69 @@ def fig3_tradeoff():
                         max(s["false_fires_per_speech_min"], 0.05), s["boundary_recall"]))
         usable = [p for p in pts if p[3] >= 0.5]
         lame = [p for p in pts if p[3] < 0.5]
-        ax.plot([p[1] for p in usable], [p[2] for p in usable], "-", color=color, lw=1.2, zorder=2)
+        ax.plot([p[1] for p in usable], [p[2] for p in usable], "-", color=color, lw=1.5, zorder=2)
         for X, lat, ff, rec in usable:
-            ax.scatter([lat], [ff], s=46, color=color, marker=marker, zorder=3)
-            off = (6, 4) if not (name.startswith("RMS") and X == 1.0) else (-14, -17)
+            ax.scatter([lat], [ff], s=58, color=color, marker=marker, zorder=3)
+            if X in over:
+                dx, dy, ha = over[X]
+            else:
+                (dx, dy), ha = ((7, 5), "left") if not (name.startswith("RMS") and X == 1.0) else ((-20, -24), "left")
             ax.annotate(f"X={X:g}s\nR={rec:.2f}", (lat, ff), textcoords="offset points",
-                        xytext=off, fontsize=6.4, color=color)
+                        xytext=(dx, dy), fontsize=8.2, color=TEXT[color], ha=ha)
         for X, lat, ff, rec in lame:
-            ax.scatter([lat], [ff], s=40, facecolors="none", edgecolors=color,
+            ax.scatter([lat], [ff], s=50, facecolors="none", edgecolors=color,
                        marker=marker, zorder=3)
+            dx, dy, ha = over.get(X, (7, -12, "left"))
             ax.annotate(f"X={X:g}s  R={rec:.2f} (misses)", (lat, ff), textcoords="offset points",
-                        xytext=(6, -9), fontsize=6.4, color=color, alpha=0.85)
-        ax.plot([], [], marker=marker, color=color, lw=1.2, label=name)
+                        xytext=(dx, dy), fontsize=8.2, color=TEXT[color], ha=ha)
+        ax.plot([], [], marker=marker, color=color, lw=1.5, label=name)
 
-    fam(rms, OKABE["orange"], "RMS + timeout", "o")
-    fam(sil, OKABE["purple"], "Silero VAD + timeout", "^")
+    fam(rms, OKABE["orange"], "RMS + timeout", "o",
+        over={2.0: (7, 4, "left")})
+    fam(sil, OKABE["purple"], "Silero VAD + timeout", "^",
+        over={0.5: (-7, -16, "right"), 1.5: (7, 6, "left"), 2.0: (7, -3, "left")})
 
     # prior checkpoints (best policies) and the causal model
-    priors = [("mixed-pools + confirm h=1", 0.68, 3.2, 0.927, (7, -13)),
-              ("opposed-pools + confirm h=1", 0.77, 0.05, 0.938, (6, 2))]
+    priors = [("mixed-pools + confirm h=1", 0.68, 3.2, 0.927, (8, -17)),
+              ("opposed-pools + confirm h=1", 0.77, 0.05, 0.938, (7, 3))]
     for name, lat, ff, rec, off in priors:
-        ax.scatter([lat], [ff], s=40, color=OKABE["grey"], marker="D", zorder=3)
+        ax.scatter([lat], [ff], s=50, color=OKABE["grey"], marker="D", zorder=3)
         ax.annotate(f"{name}\nR={rec:.2f}", (lat, ff), textcoords="offset points",
-                    xytext=off, fontsize=6.2, color=OKABE["grey"])
-    ax.scatter([0.39], [0.323], s=230, color=OKABE["green"], marker="*",
+                    xytext=off, fontsize=8.0, color=TEXT[OKABE["grey"]])
+    ax.scatter([0.39], [0.323], s=300, color=OKABE["green"], marker="*",
                zorder=4, edgecolor="black", lw=0.5)
     ax.annotate("causal endpointer\nR=0.97", (0.39, 0.323), textcoords="offset points",
-                xytext=(-14, 10), fontsize=7.0, weight="bold", color=OKABE["green"])
+                xytext=(-18, 13), fontsize=9.2, weight="bold", color=TEXT[OKABE["green"]])
     # released unified model (rank-32, all four behaviors + WER/biasing fixes):
     # a little endpointing precision traded for dictation + context + intrusion-
     # resistance, at preserved recall (dev-25, same set as the pure point)
-    ax.scatter([0.39], [0.97], s=150, color=OKABE["sky"], marker="D",
+    ax.scatter([0.39], [0.97], s=190, color=OKABE["sky"], marker="D",
                zorder=4, edgecolor="black", lw=0.5)
     ax.annotate("unified release\nR=0.95", (0.39, 0.97), textcoords="offset points",
-                xytext=(6, 4), fontsize=7.0, weight="bold", color="#1f6f9e")
+                xytext=(7, 5), fontsize=9.2, weight="bold", color=TEXT[OKABE["sky"]])
 
     # external open turn-aware systems on the same protocol (exp-4; as-shipped,
     # public thresholds swept). None reaches the causal model's corner.
-    ext = [("Parakeet-EOU", 0.47, 0.2, 0.17, (6, -3)),
-           ("Kyutai VAD", 0.53, 14.6, 0.88, (-4, 6)),
-           ("Smart Turn v3", 0.64, 3.4, 0.71, (6, 3)),
-           ("LiveKit (oracle)", 0.65, 6.25, 0.96, (6, 2))]
-    for name, lat, ff, rec, off in ext:
-        ax.scatter([lat], [ff], s=44, color=OKABE.get("brown", "#8a5a2b"),
+    ext = [("Parakeet-EOU", 0.47, 0.2, 0.17, (-4, -12), "right"),
+           ("Kyutai VAD", 0.53, 14.6, 0.88, (7, 5), "left"),
+           ("Smart Turn v3", 0.64, 3.4, 0.71, (7, 4), "left"),
+           ("LiveKit (oracle)", 0.65, 6.25, 0.96, (-7, -6), "right")]
+    for name, lat, ff, rec, off, ha in ext:
+        ax.scatter([lat], [ff], s=54, color="#8a5a2b",
                    marker="X", zorder=3, edgecolor="black", lw=0.4)
         ax.annotate(f"{name}\nR={rec:.2f}", (lat, ff), textcoords="offset points",
-                    xytext=off, fontsize=6.0, color=OKABE.get("brown", "#8a5a2b"))
-    ax.plot([], [], marker="X", color=OKABE.get("brown", "#8a5a2b"), lw=0,
+                    xytext=off, fontsize=7.8, color=TEXT["#8a5a2b"], ha=ha)
+    ax.plot([], [], marker="X", color="#8a5a2b", lw=0,
             label="external turn-aware (as-shipped)")
 
     ax.set_yscale("log")
     ax.set_yticks([0.05, 0.3, 1, 3, 10, 30])
     ax.set_yticklabels(["0*", "0.3", "1", "3", "10", "30"])
-    ax.set_xlabel("median end-of-turn latency P50 (s)")
-    ax.set_ylabel("false fires / speech-minute")
+    ax.set_xlabel("median end-of-turn latency P50 (s)", fontsize=11)
+    ax.set_ylabel("false fires / speech-minute", fontsize=11)
+    ax.tick_params(labelsize=10)
     ax.set_xlim(0.25, 1.55)
-    ax.legend(loc="upper right", fontsize=6.6)
+    ax.legend(loc="upper right", fontsize=9)
     save(fig, "fig3_tradeoff")
 
 
@@ -415,9 +498,9 @@ def fig7_serving():
 
 # ================================================================ F8: system diagram
 def fig8_system():
-    fig, ax = plt.subplots(figsize=(6.6, 2.15))
-    ax.set_xlim(0, 13.4)
-    ax.set_ylim(0, 4.0)
+    fig, ax = plt.subplots(figsize=(7.4, 2.35))
+    ax.set_xlim(0, 15.2)
+    ax.set_ylim(0, 4.1)
     ax.axis("off")
 
     def box(x, y, w, h, text, fc, ec, fs=7.6, weight="normal", tc="black"):
@@ -434,30 +517,30 @@ def fig8_system():
 
     # audio chunks
     for i in range(4):
-        box(0.25 + i * 0.42, 1.45, 0.34, 0.9, "", "#cfe8f7", "#3182bd")
-    ax.text(1.1, 0.82, "0.5 s audio chunks", ha="center", fontsize=6.8)
-    arrow(2.1, 1.9, 2.75, 1.9)
+        box(0.25 + i * 0.46, 1.45, 0.38, 0.9, "", "#cfe8f7", "#3182bd")
+    ax.text(1.2, 0.78, "0.5 s audio chunks", ha="center", fontsize=7.2)
+    arrow(2.15, 1.9, 2.75, 1.9)
 
-    box(2.8, 1.35, 1.5, 1.1, "energy\ngate", "#fff3cd", "#c9a227")
-    ax.text(3.55, 0.82, "silent chunks\nskip the LM", ha="center", fontsize=6.0, color="#666666")
-    arrow(4.3, 1.9, 5.0, 1.9)
+    box(2.8, 1.35, 1.6, 1.1, "energy\ngate", "#fff3cd", "#c9a227", fs=8.0)
+    ax.text(3.6, 0.62, "silent chunks\nskip the LM", ha="center", fontsize=6.8, color="#555555")
+    arrow(4.4, 1.9, 4.95, 1.9)
 
-    box(5.05, 0.7, 3.3, 2.5, "", "#f0f0f0", "#888888")
-    ax.text(6.7, 2.92, "Qwen3-ASR-0.6B + LoRA (merged)", ha="center", fontsize=7.2, weight="bold")
-    box(5.3, 1.75, 1.3, 0.85, "audio\nencoder", "#dbe9f6", "#3182bd", fs=6.8)
-    box(6.75, 1.75, 1.45, 0.85, "LM decoder\n+2 marker rows", "#dbe9f6", "#3182bd", fs=6.2)
-    box(5.3, 0.85, 2.85, 0.6, "committed transcript prefix (bounded re-feed)", "#eeeeee", "#999999", fs=6.2)
-    arrow(6.6, 2.17, 6.85, 2.17)
+    box(5.0, 0.62, 4.7, 2.62, "", "#f0f0f0", "#888888")
+    ax.text(7.35, 2.88, "Qwen3-ASR-0.6B + LoRA (merged)", ha="center", fontsize=7.8, weight="bold")
+    box(5.25, 1.75, 1.7, 0.85, "audio\nencoder", "#dbe9f6", "#3182bd", fs=7.5)
+    box(7.15, 1.75, 2.3, 0.85, "LM decoder\n+2 marker rows", "#dbe9f6", "#3182bd", fs=7.2)
+    box(5.25, 0.82, 4.2, 0.6, "committed transcript prefix (bounded re-feed)", "#eeeeee", "#999999", fs=6.5)
+    arrow(6.95, 2.17, 7.15, 2.17)
 
-    box(5.65, 3.35, 2.1, 0.55, "⟨CTX⟩ hotword prefix", "#e2f0e5", "#2e7d32", fs=6.8)
-    arrow(6.7, 3.35, 6.7, 3.22, color="#2e7d32")
+    box(6.0, 3.42, 2.6, 0.55, "⟨CTX⟩ hotword prefix", "#e2f0e5", "#2e7d32", fs=7.5)
+    arrow(7.3, 3.42, 7.3, 3.28, color="#2e7d32")
 
-    arrow(8.35, 1.9, 9.05, 1.9)
-    box(9.1, 1.35, 1.9, 1.1, "policy knobs\nconfirm h · flush", "#fde2cf", "#d55e00", fs=6.8)
-    arrow(11.0, 2.15, 11.7, 2.6)
-    arrow(11.0, 1.65, 11.7, 1.2)
-    box(11.75, 2.35, 1.5, 0.75, "transcript\nsegments", "#e8e8f8", "#5555aa", fs=6.8)
-    box(11.75, 0.85, 1.5, 0.75, "END events\n(≈EagerEndOfTurn)", "#f8e2e2", "#aa3333", fs=6.4)
+    arrow(9.7, 1.9, 10.3, 1.9)
+    box(10.35, 1.35, 2.15, 1.1, "policy knobs\nconfirm h · flush", "#fde2cf", "#d55e00", fs=7.5)
+    arrow(12.5, 2.15, 13.0, 2.6)
+    arrow(12.5, 1.65, 13.0, 1.2)
+    box(13.05, 2.35, 1.9, 0.78, "transcript\nsegments", "#e8e8f8", "#5555aa", fs=7.5)
+    box(13.05, 0.82, 1.9, 0.78, "END events\n≈EagerEndOfTurn", "#f8e2e2", "#aa3333", fs=6.6)
     save(fig, "fig8_system")
 
 
@@ -576,7 +659,7 @@ def fig10_landscape():
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for fn in [fig1_oscillation, fig2_contradictions, fig3_tradeoff, fig4_biasing,
+    for fn in [fig0_teaser, fig1_oscillation, fig2_contradictions, fig3_tradeoff, fig4_biasing,
                fig5_inversion, fig6_silence, fig7_serving, fig8_system, fig9_minimalpair,
                fig10_landscape, fig11_twoaxes]:
         try:
