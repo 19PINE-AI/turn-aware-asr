@@ -380,7 +380,7 @@ The failure reproduces outside speech, with no acoustics and no pretraining (set
 \end{enumerate}
 \end{tcolorbox}
 
-\paragraph{Limitations.} Single-speaker, single-channel English; the mixed-channel meeting shape is future work. The dictation capability transfers zero-shot to shorter enumerations but not to longer-than-trained ones (on 16-digit card numbers the model fires at its learned ten-digit completeness point, transcription unaffected), so a learned completeness judge remains the general lever beyond pattern-specific schemas. The unified adapter's breadth-versus-precision and recall-versus-hallucination costs are quantified in \S\ref{sec:released}, and a turn-taking-only deployment can run the pure endpointing checkpoint; concurrency numbers are contention-caveated lower bounds from a shared GPU (Appendix~\ref{app:serving}).
+\paragraph{Limitations.} Single-speaker, single-channel English; meetings with several speakers on mixed channels are future work. The dictation capability transfers zero-shot to shorter enumerations but not to longer-than-trained ones (on 16-digit card numbers the model fires at its learned ten-digit completeness point, transcription unaffected), so a learned completeness judge remains the general lever beyond pattern-specific schemas. The unified adapter's breadth-versus-precision and recall-versus-hallucination costs are quantified in \S\ref{sec:released}, and a turn-taking-only deployment can run the pure endpointing checkpoint; concurrency numbers are lower bounds measured on a shared GPU under contention (Appendix~\ref{app:serving}).
 
 \section{Related work}
 \label{sec:related}
