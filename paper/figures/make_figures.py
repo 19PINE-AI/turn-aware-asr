@@ -118,7 +118,7 @@ def fig0_teaser():
     cross(2.85, yA, "0.7 s timeout\nfires mid-number")
     cross(5.85, yA)
     star(8.75, yA, "ours: +0.39 s")
-    ax.text(4.55, yA - 1.12, "ours: holds — six digits predict four more",
+    ax.text(4.55, yA - 1.12, "ours: holds (six digits predict four more)",
             ha="center", fontsize=7.4, color=GREEN)
 
     # ---- Turn 2: the completion that means "go"
@@ -151,7 +151,7 @@ def fig1_oscillation():
     # second seed of the opposed-pools recipe (data regenerated; only the seed changed)
     v8b_path = ROOT / "checkpoints/semantic_endpoint_v8_seed1_es/eval_log.json"
     v8b = json.load(open(v8b_path)) if v8b_path.exists() else None
-    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.5), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(6.6, 2.9), sharey=True)
 
     ax = axes[0]
     steps = [e["step"] / 1000 for e in v8]
@@ -176,7 +176,8 @@ def fig1_oscillation():
     ax.annotate("no-fire-mode", xy=(12, 0.10), xytext=(12.3, 0.26),
                 fontsize=7.5, color=OKABE["blue"],
                 arrowprops=dict(arrowstyle="-", color=OKABE["blue"], lw=0.7))
-    ax.legend(loc="center left", fontsize=7.2)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.30), ncol=2,
+              fontsize=7.2, frameon=False, columnspacing=1.2, handletextpad=0.5)
 
     ax = axes[1]
     steps = [e["step"] / 1000 for e in v9]
@@ -192,7 +193,9 @@ def fig1_oscillation():
             va="bottom", rotation=90)
     ax.set_title("causal labels (only the supervision changed)", fontsize=9.5)
     ax.set_xlabel("training step (k)")
-    ax.legend(loc="lower center", fontsize=7.2)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.30), ncol=2,
+              fontsize=7.2, frameon=False, columnspacing=1.2, handletextpad=0.5)
+    fig.subplots_adjust(bottom=0.34)
     save(fig, "fig1_oscillation")
 
 
@@ -525,11 +528,11 @@ def fig8_system():
     ax.text(3.6, 0.62, "silent chunks\nskip the LM", ha="center", fontsize=6.8, color="#555555")
     arrow(4.4, 1.9, 4.95, 1.9)
 
-    box(5.0, 0.62, 4.7, 2.62, "", "#f0f0f0", "#888888")
+    box(5.0, 0.48, 4.7, 2.76, "", "#f0f0f0", "#888888")
     ax.text(7.35, 2.88, "Qwen3-ASR-0.6B + LoRA (merged)", ha="center", fontsize=7.8, weight="bold")
     box(5.25, 1.75, 1.7, 0.85, "audio\nencoder", "#dbe9f6", "#3182bd", fs=7.5)
     box(7.15, 1.75, 2.3, 0.85, "LM decoder\n+2 marker rows", "#dbe9f6", "#3182bd", fs=7.2)
-    box(5.25, 0.82, 4.2, 0.6, "committed transcript prefix (bounded re-feed)", "#eeeeee", "#999999", fs=6.5)
+    box(5.25, 0.65, 4.2, 0.85, "committed transcript prefix\n(bounded re-feed)", "#eeeeee", "#999999", fs=6.8)
     arrow(6.95, 2.17, 7.15, 2.17)
 
     box(6.0, 3.42, 2.6, 0.55, "⟨CTX⟩ hotword prefix", "#e2f0e5", "#2e7d32", fs=7.5)
@@ -540,7 +543,7 @@ def fig8_system():
     arrow(12.5, 2.15, 13.0, 2.6)
     arrow(12.5, 1.65, 13.0, 1.2)
     box(13.05, 2.35, 1.9, 0.78, "transcript\nsegments", "#e8e8f8", "#5555aa", fs=7.5)
-    box(13.05, 0.82, 1.9, 0.78, "END events\n≈EagerEndOfTurn", "#f8e2e2", "#aa3333", fs=6.6)
+    box(13.05, 0.72, 1.9, 0.98, "END events\n(same shape as\nEagerEndOfTurn)", "#f8e2e2", "#aa3333", fs=6.4)
     save(fig, "fig8_system")
 
 
