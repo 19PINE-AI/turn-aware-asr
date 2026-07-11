@@ -146,7 +146,7 @@ Clairvoyance is target leakage transposed into time, and the class is wider than
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig12_pauses}
-  \caption{\textbf{Two real pauses, 90\,ms apart in length; the label is decided by the future.} Held-out AMI pauses from the replay benchmark, texts and gaps verbatim. At the decision point the prefixes are indistinguishable, so the class is a function of audio after $t$, exactly what a clairvoyant label encodes.}
+  \caption{\textbf{Clairvoyant labels.} Two real pauses, 90\,ms apart in length, from held-out AMI stretches of the replay benchmark (texts and gaps verbatim); the label is decided by the future. At the decision point the prefixes are indistinguishable, so the class is a function of audio after $t$, exactly what a clairvoyant label encodes.}
   \label{fig:expauses}
 \end{figure}
 
@@ -160,7 +160,7 @@ Two constructions carry the semantics-versus-silence discrimination that \S\ref{
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig13_rule}
-  \caption{\textbf{The labeling rule, firing live.} In deployment-matched replay, ``did you prepare'' is complete at 23.04\,s, 0.3\,s of silence is observed by 23.34\,s, and the recorded fire lands at the next 0.5\,s chunk boundary (latency $+0.46$\,s). Waveform and fire timestamp verbatim from the recorded causal-model replay.}
+  \caption{\textbf{Supervising end-of-turn detection.} In deployment-matched replay, ``did you prepare'' is complete at 23.04\,s, 0.3\,s of silence is observed by 23.34\,s, and the recorded fire lands at the next 0.5\,s chunk boundary (latency $+0.46$\,s). Waveform and fire timestamp verbatim from the recorded causal-model replay.}
   \label{fig:exrule}
 \end{figure}
 
@@ -194,14 +194,14 @@ Matched-context supervision alone, however, reintroduces the \S\ref{sec:principl
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig14_dictation}
-  \caption{\textbf{Dictation probe item 0: identical audio, two supervisions.} The conversational-only model reads each digit group as a finished thought and fires five times inside the number; the dictation schemas hold through both pauses and fire once, $+0.42$\,s after the last digit. Fires verbatim from the recorded probe results.}
+  \caption{\textbf{Supervising dictation.} Probe item 0, identical audio under two supervisions: the conversational-only model reads each digit group as a finished thought and fires five times inside the number; the dictation schemas hold through both pauses and fire once, $+0.42$\,s after the last digit. Fires verbatim from the recorded probe results.}
   \label{fig:exdictation}
 \end{figure}
 
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig15_context}
-  \caption{\textbf{The context leak and its counterfactual cure, verbatim.} Under a wrong-user profile, the matched-only model writes the profile's email instead of the audio's (copying); the counterfactually trained release follows the audio. Outputs from the recorded spelled-entity probes.}
+  \caption{\textbf{Supervising context biasing.} Under a wrong-user profile, the matched-only model writes the profile's email instead of the audio's (copying); the counterfactually trained release follows the audio. Outputs from the recorded spelled-entity probes.}
   \label{fig:exctx}
 \end{figure}
 
