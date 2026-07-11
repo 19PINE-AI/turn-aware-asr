@@ -303,7 +303,7 @@ def make_figure(result: dict, out_pdf: str):
     ax.set_ylim(-0.03, 1.03)
     ax.set_xlabel("training step")
     ax.set_ylabel(r"marker probability $P_{\mathrm{fire}}$")
-    ax.set_title("Opposed-pools oscillation: mode circulation, not flapping",
+    ax.set_title("Opposed-pools oscillation: two confident modes, no wobbling threshold",
                  fontsize=9)
     ax.text(x[0], 0.5, " 0.5 boundary", va="bottom", ha="left",
             fontsize=6.5, color=OK["grey"])

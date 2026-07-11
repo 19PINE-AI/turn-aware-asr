@@ -170,10 +170,10 @@ def fig1_oscillation():
     ax.set_ylabel("holdout accuracy")
     ax.set_ylim(0, 1.08)
     # annotate the two attractors
-    ax.annotate("fire-mode", xy=(6, 0.95), xytext=(4.2, 1.03),
+    ax.annotate("fire mode", xy=(6, 0.95), xytext=(4.2, 1.03),
                 fontsize=7.5, color=OKABE["red"],
                 arrowprops=dict(arrowstyle="-", color=OKABE["red"], lw=0.7))
-    ax.annotate("no-fire-mode", xy=(12, 0.10), xytext=(12.3, 0.26),
+    ax.annotate("no-fire mode", xy=(12, 0.10), xytext=(12.3, 0.26),
                 fontsize=7.5, color=OKABE["blue"],
                 arrowprops=dict(arrowstyle="-", color=OKABE["blue"], lw=0.7))
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.30), ncol=2,
