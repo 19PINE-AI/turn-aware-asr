@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  6 JUL 2026 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2026.4.16)  11 JUL 2026 05:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -973,13 +973,13 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 8.33606pt on input line 78.
  [2]
-<figures//fig3_tradeoff.pdf, id=126, 347.62608pt x 218.7273pt>
+<figures//fig3_tradeoff.pdf, id=134, 347.62608pt x 218.7273pt>
 File: figures//fig3_tradeoff.pdf Graphic file (type pdf)
 <use figures//fig3_tradeoff.pdf>
 Package pdftex.def Info: figures//fig3_tradeoff.pdf  used on input line 89.
 (pdftex.def)             Requested size: 322.61447pt x 202.98706pt.
  [3 <./figures//fig3_tradeoff.pdf>]
-<figures//fig8_system.pdf, id=244, 377.66385pt x 122.53378pt>
+<figures//fig8_system.pdf, id=252, 377.66385pt x 122.53378pt>
 File: figures//fig8_system.pdf Graphic file (type pdf)
 <use figures//fig8_system.pdf>
 Package pdftex.def Info: figures//fig8_system.pdf  used on input line 112.
@@ -993,65 +993,68 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<figures//fig1_oscillation.pdf, id=268, 413.30879pt x 184.6072pt>
+<figures//fig1_oscillation.pdf, id=276, 413.30879pt x 184.6072pt>
 File: figures//fig1_oscillation.pdf Graphic file (type pdf)
 <use figures//fig1_oscillation.pdf>
 Package pdftex.def Info: figures//fig1_oscillation.pdf  used on input line 165.
 
 (pdftex.def)             Requested size: 448.0749pt x 200.14743pt.
- [5 <./figures//fig8_system.pdf>] [6] [7 <./figures//fig1_oscillation.pdf>]
-<figures//fig2_contradictions.pdf, id=421, 389.35461pt x 199.3652pt>
+ [5 <./figures//fig8_system.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6] [7 <./figures//fig1_oscillation.pdf>]
+<figures//fig2_contradictions.pdf, id=430, 389.35461pt x 199.3652pt>
 File: figures//fig2_contradictions.pdf Graphic file (type pdf)
 <use figures//fig2_contradictions.pdf>
 Package pdftex.def Info: figures//fig2_contradictions.pdf  used on input line 2
 00.
 (pdftex.def)             Requested size: 448.0749pt x 229.4355pt.
-
-[8 <./figures//fig2_contradictions.pdf>]
-<figures//fig9_minimalpair.pdf, id=523, 389.35461pt x 105.83942pt>
+ [8 <./figures//fig2_contradictions.pdf>]
+<figures//fig9_minimalpair.pdf, id=535, 389.35461pt x 105.83942pt>
 File: figures//fig9_minimalpair.pdf Graphic file (type pdf)
 <use figures//fig9_minimalpair.pdf>
 Package pdftex.def Info: figures//fig9_minimalpair.pdf  used on input line 219.
 
 (pdftex.def)             Requested size: 448.0749pt x 121.80318pt.
  [9 <./figures//fig9_minimalpair.pdf>]
-<figures//fig6_silence.pdf, id=626, 274.00124pt x 184.33574pt>
+<figures//fig6_silence.pdf, id=638, 274.00124pt x 184.33574pt>
 File: figures//fig6_silence.pdf Graphic file (type pdf)
 <use figures//fig6_silence.pdf>
 Package pdftex.def Info: figures//fig6_silence.pdf  used on input line 257.
 (pdftex.def)             Requested size: 215.07404pt x 144.68979pt.
-<figures//fig5_inversion.pdf, id=627, 326.48651pt x 164.26971pt>
+<figures//fig5_inversion.pdf, id=639, 326.48651pt x 164.26971pt>
 File: figures//fig5_inversion.pdf Graphic file (type pdf)
 <use figures//fig5_inversion.pdf>
 Package pdftex.def Info: figures//fig5_inversion.pdf  used on input line 263.
 (pdftex.def)             Requested size: 215.07404pt x 108.21278pt.
-
-[10] [11 <./figures//fig6_silence.pdf> <./figures//fig5_inversion.pdf>]
-<figures//fig4_biasing.pdf, id=818, 405.2992pt x 184.01122pt>
+ [10] [11 <./figures//fig6_silence.pdf> <./figures//fig5_inversion.pdf>]
+<figures//fig4_biasing.pdf, id=830, 405.2992pt x 184.01122pt>
 File: figures//fig4_biasing.pdf Graphic file (type pdf)
 <use figures//fig4_biasing.pdf>
 Package pdftex.def Info: figures//fig4_biasing.pdf  used on input line 304.
 (pdftex.def)             Requested size: 448.0749pt x 203.43779pt.
-
-[12] [13 <./figures//fig4_biasing.pdf>]
-<figures//fig11_twoaxes.pdf, id=935, 389.35461pt x 199.11055pt>
+ [12] [13 <./figures//fig4_biasing.pdf>]
+[14]
+<figures//fig11_twoaxes.pdf, id=958, 389.35461pt x 199.11055pt>
 File: figures//fig11_twoaxes.pdf Graphic file (type pdf)
 <use figures//fig11_twoaxes.pdf>
 Package pdftex.def Info: figures//fig11_twoaxes.pdf  used on input line 340.
 (pdftex.def)             Requested size: 448.0749pt x 229.14243pt.
- [14] [15 <./figures//fig11_twoaxes.pdf>]
-<figures//fig7_serving.pdf, id=1083, 421.86671pt x 182.59291pt>
+ [15 <./figures//fig11_twoaxes.pdf>]
+<figures//fig7_serving.pdf, id=1098, 421.86671pt x 182.59291pt>
 File: figures//fig7_serving.pdf Graphic file (type pdf)
 <use figures//fig7_serving.pdf>
 Package pdftex.def Info: figures//fig7_serving.pdf  used on input line 355.
 (pdftex.def)             Requested size: 448.0749pt x 193.94597pt.
- [16 <./figures//fig7_serving.pdf>] [17] (./main.bbl [18] [19]
+ [16 <./figures//fig7_serving.pdf>]
+[17] [18] (./main.bbl [19]
 Underfull \hbox (badness 10000) in paragraph at lines 163--168
 \T1/cmtt/m/n/10.95 / / livekit . com / blog / improved-[]end-[]of-[]turn-[]mode
 l-[]cuts-[]voice-[]ai-[]interruptions-[]39$[][]\T1/ppl/m/n/10.95 (+20) .
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 205--211
 []\T1/ppl/m/n/10.95 (+20) Pine AI.  Pine AI: The most nat-u-ral human-computer 
 in-ter-face is
@@ -1069,7 +1072,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--211
 ace-[]is-[]your-[]voice$[][]\T1/ppl/m/n/10.95 (+20) .  Ac-cessed
  []
 
-[20]) [21]
+[21]) [22]
 Overfull \hbox (1.50615pt too wide) in paragraph at lines 412--413
 \T1/ppl/m/n/10.95 (-20) tamped at the chunk bound-ary where \T1/cmtt/m/n/10.95 
 <END_SPEECH> \T1/ppl/m/n/10.95 (-20) first ap-pears; re-call win-dow $\OT1/zplm
@@ -1078,25 +1081,39 @@ Overfull \hbox (1.50615pt too wide) in paragraph at lines 412--413
 0) s
  []
 
-[22
+[23
 
-] [23]
-Overfull \hbox (2.10146pt too wide) in paragraph at lines 498--508
+] [24] [25]
+Overfull \hbox (2.10146pt too wide) in paragraph at lines 518--528
  [][] 
  []
 
-[24] [25] [26] (./main.aux)
+[26]
+<figures//exp2_marker_prob.pdf, id=1413, 291.6496pt x 211.56854pt>
+File: figures//exp2_marker_prob.pdf Graphic file (type pdf)
+<use figures//exp2_marker_prob.pdf>
+Package pdftex.def Info: figures//exp2_marker_prob.pdf  used on input line 556.
+
+(pdftex.def)             Requested size: 268.84767pt x 195.04248pt.
+ [27 <./figures//exp2_marker_prob.pdf>]
+<figures//exp5_toy.pdf, id=1506, 540.30263pt x 209.918pt>
+File: figures//exp5_toy.pdf Graphic file (type pdf)
+<use figures//exp5_toy.pdf>
+Package pdftex.def Info: figures//exp5_toy.pdf  used on input line 569.
+(pdftex.def)             Requested size: 448.0749pt x 174.09094pt.
+ [28 <./figures//exp5_toy.pdf>]
+[29] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A5C09DC961E3E24A5208A5A15F3D4DFA;3436.
+(rerunfilecheck)             Checksum: 60DA07525574134271E33F251F2E73B4;3934.
  ) 
 Here is how much of TeX's memory you used:
- 29326 strings out of 480171
- 561666 string characters out of 5894489
- 887326 words of memory out of 5000000
- 46060 multiletter control sequences out of 15000+600000
- 554247 words of font info for 518 fonts, out of 8000000 for 9000
+ 29405 strings out of 480171
+ 562800 string characters out of 5894489
+ 889449 words of memory out of 5000000
+ 46087 multiletter control sequences out of 15000+600000
+ 557177 words of font info for 547 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 83i,12n,80p,2011b,521s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 83i,12n,80p,2174b,539s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texliv
 e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
@@ -1112,10 +1129,10 @@ m-super/sftt1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb
 mf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 palatino/uplri8a.pfb>
-Output written on main.pdf (26 pages, 590719 bytes).
+Output written on main.pdf (29 pages, 673012 bytes).
 PDF statistics:
- 1494 PDF objects out of 1728 (max. 8388607)
- 700 compressed objects within 7 object streams
- 150 named destinations out of 1000 (max. 500000)
- 90823 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1704 PDF objects out of 1728 (max. 8388607)
+ 768 compressed objects within 8 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 92897 words of extra memory for PDF output out of 106986 (max. 10000000)
 

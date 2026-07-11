@@ -44,16 +44,16 @@
 \newlabel{tab:matrix}{{1}{5}{The landscape (verified July 2026; discussion in \S \ref {sec:related}). ``Turn detectors'' are separate models beside a recognizer; ``cascade'' is VAD + silence timeout + separate ASR, the deployed default and our measured baseline.\relax }{table.caption.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Eight recipes hit the same wall}{5}{section.3}\protected@file@percent }
 \newlabel{sec:wall}{{3}{5}{Eight recipes hit the same wall}{section.3}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {The supervision-composition record.} Eight recipes, one architecture; each row adds one labeled pool (cumulative). ``Early'' latencies are negative: the model fires seconds before the turn ends. Row 7 anticipates \S  \ref  {sec:fix}.\relax }}{6}{table.caption.5}\protected@file@percent }
-\newlabel{tab:composition}{{2}{6}{\textbf {The supervision-composition record.} Eight recipes, one architecture; each row adds one labeled pool (cumulative). ``Early'' latencies are negative: the model fires seconds before the turn ends. Row 7 anticipates \S \ref {sec:fix}.\relax }{table.caption.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces \textbf  {The supervision-composition record.} Eight recipe iterations, one architecture, compressed into six rows: rows 1 and 2 each span two iterations (a data scale-up; a truncation-dose increase), and each later row adds one labeled pool to the mix above it, except row 6, which \emph  {replaces} row 5's same-audio hold pool with disjoint audio. ``Early'' latencies are negative: the model fires seconds before the turn ends. Row 7 anticipates \S  \ref  {sec:fix}.\relax }}{6}{table.caption.5}\protected@file@percent }
+\newlabel{tab:composition}{{2}{6}{\textbf {The supervision-composition record.} Eight recipe iterations, one architecture, compressed into six rows: rows 1 and 2 each span two iterations (a data scale-up; a truncation-dose increase), and each later row adds one labeled pool to the mix above it, except row 6, which \emph {replaces} row 5's same-audio hold pool with disjoint audio. ``Early'' latencies are negative: the model fires seconds before the turn ends. Row 7 anticipates \S \ref {sec:fix}.\relax }{table.caption.5}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}One second of silence: the intervention, and the diagnosis}{6}{section.4}\protected@file@percent }
 \newlabel{sec:diagnosis}{{4}{6}{One second of silence: the intervention, and the diagnosis}{section.4}{}}
 \@writefile{toc}{\contentsline {paragraph}{The experiment.}{6}{paragraph*.7}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }}{6}{table.caption.8}\protected@file@percent }
-\newlabel{tab:silappend}{{3}{6}{\textbf {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }{table.caption.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{The diagnosis.}{6}{paragraph*.9}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S  \ref  {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }}{7}{figure.caption.6}\protected@file@percent }
 \newlabel{fig:oscillation}{{3}{7}{\textbf {The fingerprint of contradictory supervision.} Left: under the opposed-pools recipe, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S \ref {sec:fix} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {paragraph}{The diagnosis.}{7}{paragraph*.9}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces \textbf  {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }}{7}{table.caption.8}\protected@file@percent }
+\newlabel{tab:silappend}{{3}{7}{\textbf {The silence-append intervention.} Fire recall on complete single utterances from the legacy offline benchmark, before and after appending 1.0\,s of silence to each clip.\relax }{table.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Two ways offline-derived supervision leaks the future.} (a)\nobreakspace  {}Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph  {hold}. (b)\nobreakspace  {}Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }}{8}{figure.caption.10}\protected@file@percent }
 \newlabel{fig:contradictions}{{4}{8}{\textbf {Two ways offline-derived supervision leaks the future.} (a)~Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph {hold}. (b)~Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }{figure.caption.10}{}}
 \@writefile{toc}{\contentsline {paragraph}{Why oscillation, specifically.}{8}{paragraph*.11}\protected@file@percent }
@@ -63,20 +63,20 @@
 \newlabel{sec:fix}{{5}{9}{The fix: causal labels, and a benchmark to match}{section.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}One labeling rule}{9}{subsection.5.1}\protected@file@percent }
 \newlabel{sec:recipe}{{5.1}{9}{One labeling rule}{subsection.5.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}A deployment-matched benchmark}{9}{subsection.5.2}\protected@file@percent }
-\newlabel{sec:bench}{{5.2}{9}{A deployment-matched benchmark}{subsection.5.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \texttt  {<EAGER\_END\_SPEECH>}\texttt  {<END\_SPEECH>}.\relax }}{10}{table.caption.13}\protected@file@percent }
 \newlabel{tab:schemas}{{4}{10}{The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \eager \fire .\relax }{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}A deployment-matched benchmark}{10}{subsection.5.2}\protected@file@percent }
+\newlabel{sec:bench}{{5.2}{10}{A deployment-matched benchmark}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Material and ground truth.}{10}{paragraph*.14}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Two properties of the measurement itself.}{10}{paragraph*.15}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Results: one checkpoint dominates}{10}{section.6}\protected@file@percent }
-\newlabel{sec:results}{{6}{10}{Results: one checkpoint dominates}{section.6}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Silence incompetence.} Spurious fires of the ungated mixed-pools model track the silence content of each stretch almost perfectly; ungated recall is therefore uninterpretable.\relax }}{11}{figure.caption.16}\protected@file@percent }
 \newlabel{fig:silence}{{6}{11}{\textbf {Silence incompetence.} Spurious fires of the ungated mixed-pools model track the silence content of each stretch almost perfectly; ungated recall is therefore uninterpretable.\relax }{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {The ranking inversion.} Model ranking on the legacy offline benchmark (left) versus the deployment-matched replay benchmark (right). The offline champion is the worst live model.\relax }}{11}{figure.caption.16}\protected@file@percent }
 \newlabel{fig:inversion}{{7}{11}{\textbf {The ranking inversion.} Model ranking on the legacy offline benchmark (left) versus the deployment-matched replay benchmark (right). The offline champion is the worst live model.\relax }{figure.caption.16}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure\nobreakspace  {}\ref  {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph  {median} 0.30, matching the development set; the \S  \ref  {sec:serving} force-flush bounds this tail).\relax }}{11}{table.caption.17}\protected@file@percent }
-\newlabel{tab:main}{{5}{11}{\textbf {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set drawn after all development ended. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (fresh-set WER \emph {median} 0.30, matching the development set; the \S \ref {sec:serving} force-flush bounds this tail).\relax }{table.caption.17}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces \textbf  {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure\nobreakspace  {}\ref  {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set (50 stretches, 184 turn-final boundaries) drawn after all development ended. WER is a fraction; means can exceed 1 through insertions. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (WER \emph  {median} 0.30 on both stretch sets; the \S  \ref  {sec:serving} force-flush bounds this tail).\relax }}{11}{table.caption.17}\protected@file@percent }
+\newlabel{tab:main}{{5}{11}{\textbf {Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref {fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark (96 turn-final boundaries). Last row: a fresh $2\times $-larger stretch set (50 stretches, 184 turn-final boundaries) drawn after all development ended. WER is a fraction; means can exceed 1 through insertions. $^{\dagger }$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (WER \emph {median} 0.30 on both stretch sets; the \S \ref {sec:serving} force-flush bounds this tail).\relax }{table.caption.17}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results: one checkpoint dominates}{11}{section.6}\protected@file@percent }
+\newlabel{sec:results}{{6}{11}{Results: one checkpoint dominates}{section.6}{}}
 \citation{delrio2022earnings22}
 \citation{qwen3asr2026}
 \citation{contextualearnings2026}
@@ -87,30 +87,29 @@
 \@writefile{toc}{\contentsline {paragraph}{The copying trap.}{12}{paragraph*.21}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {Context biasing, measured.} (a)\nobreakspace  {}Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)\nobreakspace  {}Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }}{13}{figure.caption.20}\protected@file@percent }
 \newlabel{fig:biasing}{{8}{13}{\textbf {Context biasing, measured.} (a)~Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)~Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }{figure.caption.20}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix\nobreakspace  {}\ref  {app:tables}.\relax }}{13}{table.caption.22}\protected@file@percent }
-\newlabel{tab:dictation}{{6}{13}{\textbf {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix~\ref {app:tables}.\relax }{table.caption.22}{}}
 \@writefile{toc}{\contentsline {paragraph}{One released model, four behaviors.}{13}{paragraph*.23}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix\nobreakspace  {}\ref  {app:tables}. The conversational-only model's nonzero intrusion is the base model's native context-following, which that fine-tune leaves untouched.\relax }}{14}{table.caption.22}\protected@file@percent }
+\newlabel{tab:dictation}{{6}{14}{\textbf {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix~\ref {app:tables}. The conversational-only model's nonzero intrusion is the base model's native context-following, which that fine-tune leaves untouched.\relax }{table.caption.22}{}}
 \@writefile{toc}{\contentsline {paragraph}{Which frontiers are real.}{14}{paragraph*.24}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The principle, stated once.}{14}{paragraph*.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {8}The released system in practice}{14}{section.8}\protected@file@percent }
-\newlabel{sec:serving}{{8}{14}{The released system in practice}{section.8}{}}
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces \textbf  {One failure class, two instances.} Temporal axis (\S  \ref  {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S  \ref  {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }}{15}{figure.caption.26}\protected@file@percent }
 \newlabel{fig:twoaxes}{{9}{15}{\textbf {One failure class, two instances.} Temporal axis (\S \ref {sec:diagnosis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S \ref {sec:second}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}The released system in practice}{15}{section.8}\protected@file@percent }
+\newlabel{sec:serving}{{8}{15}{The released system in practice}{section.8}{}}
 \@writefile{toc}{\contentsline {paragraph}{Offline cost, measured and attributed.}{15}{paragraph*.27}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Serving on stock vLLM.}{15}{paragraph*.28}\protected@file@percent }
-\citation{ekstedt2022vap}
-\citation{ma2019stacl}
-\citation{dehaan2019causal}
-\citation{schaeffer2023mirage}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces \textbf  {Serving on real infrastructure.} (a)\nobreakspace  {}Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)\nobreakspace  {}Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)\nobreakspace  {}Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }}{16}{figure.caption.29}\protected@file@percent }
 \newlabel{fig:serving}{{10}{16}{\textbf {Serving on real infrastructure.} (a)~Feeding shape: per-chunk placeholders are out-of-distribution; bounded re-feed is correct. (b)~Per-chunk compute on vLLM vs.\ the transformers simulator; the force-flush bounds the P95 tail. (c)~Concurrent sessions per engine on a 0.15-GPU slice: flat to $N{=}8$, cliff at 16.\relax }{figure.caption.29}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {9}Discussion}{16}{section.9}\protected@file@percent }
 \newlabel{sec:discussion}{{9}{16}{Discussion}{section.9}{}}
 \@writefile{toc}{\contentsline {paragraph}{A checklist.}{16}{paragraph*.30}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Who else is likely affected.}{16}{paragraph*.31}\protected@file@percent }
+\citation{ekstedt2022vap}
+\citation{ma2019stacl}
+\citation{dehaan2019causal}
+\citation{schaeffer2023mirage}
 \citation{silero2021vad}
 \citation{raux2008optimizing}
 \citation{shannon2017improved}
@@ -125,10 +124,8 @@
 \citation{deepgram2026flux}
 \citation{openai2025semanticvad}
 \citation{assemblyai2025universalstreaming}
+\@writefile{toc}{\contentsline {paragraph}{Who else is likely affected.}{17}{paragraph*.31}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Limitations.}{17}{paragraph*.32}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{17}{section.10}\protected@file@percent }
-\newlabel{sec:related}{{10}{17}{Related work}{section.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{17}{paragraph*.33}\protected@file@percent }
 \citation{skantze2021review}
 \citation{ekstedt2020turngpt}
 \citation{ekstedt2022vap}
@@ -148,16 +145,19 @@
 \citation{kwon2023vllm}
 \citation{xiao2024streamingllm}
 \citation{li2026metronome}
+\@writefile{toc}{\contentsline {section}{\numberline {10}Related work}{18}{section.10}\protected@file@percent }
+\newlabel{sec:related}{{10}{18}{Related work}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{Endpointing and end-of-turn detection.}{18}{paragraph*.33}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.34}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.35}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.36}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.37}\protected@file@percent }
 \citation{pineai2026whispercoding}
 \bibstyle{plainnat}
 \bibdata{refs}
 \bibcite{assemblyai2025universalstreaming}{{1}{2025}{{AssemblyAI}}{{}}}
 \bibcite{bijwadia2023unified}{{2}{2023}{{Bijwadia et~al.}}{{Bijwadia, Chang, Li, Sainath, Zhang, and He}}}
 \bibcite{carletta2005ami}{{3}{2005}{{Carletta et~al.}}{{}}}
-\@writefile{toc}{\contentsline {paragraph}{Turn-taking in dialogue.}{18}{paragraph*.34}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Streaming and unified ASR.}{18}{paragraph*.35}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Context biasing.}{18}{paragraph*.36}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Serving.}{18}{paragraph*.37}\protected@file@percent }
 \bibcite{chang2019joint}{{4}{2019}{{Chang et~al.}}{{Chang, Prabhavalkar, He, Sainath, and Simko}}}
 \bibcite{dehaan2019causal}{{5}{2019}{{de~Haan et~al.}}{{de~Haan, Jayaraman, and Levine}}}
 \bibcite{deepgram2026flux}{{6}{2026}{{Deepgram}}{{}}}
@@ -201,37 +201,48 @@
 \bibcite{fastturn2026}{{44}{2026}{{Wang et~al.}}{{Wang, Xue, He, Hu, Wang, Wu, Ji, Zheng, Chen, Zhu, and Xie}}}
 \bibcite{xiao2024streamingllm}{{45}{2024}{{Xiao et~al.}}{{Xiao, Tian, Chen, Han, and Lewis}}}
 \bibcite{jalturn2026}{{46}{2026}{{Yang et~al.}}{{Yang, Pan, Qiu, and Bai}}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{23}{appendix.A}\protected@file@percent }
+\newlabel{app:labels}{{A}{23}{Label-specification details}{appendix.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{23}{appendix.B}\protected@file@percent }
+\newlabel{app:eval}{{B}{23}{Benchmark specification and the corrected classifier}{appendix.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{23}{appendix.C}\protected@file@percent }
+\newlabel{app:tables}{{C}{23}{Additional results}{appendix.C}{}}
+\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{23}{paragraph*.38}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate). WER is a fraction, unbounded above through insertions.\relax }}{23}{table.caption.39}\protected@file@percent }
+\newlabel{tab:appconfirm}{{7}{23}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate). WER is a fraction, unbounded above through insertions.\relax }{table.caption.39}{}}
 \citation{silero2021vad}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Label-specification details}{22}{appendix.A}\protected@file@percent }
-\newlabel{app:labels}{{A}{22}{Label-specification details}{appendix.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Benchmark specification and the corrected classifier}{22}{appendix.B}\protected@file@percent }
-\newlabel{app:eval}{{B}{22}{Benchmark specification and the corrected classifier}{appendix.B}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Additional results}{22}{appendix.C}\protected@file@percent }
-\newlabel{app:tables}{{C}{22}{Additional results}{appendix.C}{}}
-\@writefile{toc}{\contentsline {paragraph}{Gated arms and the confirm-horizon sweep.}{22}{paragraph*.38}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces All gated arms on the 25-stretch development benchmark. Resume = \texttt  {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }}{22}{table.caption.39}\protected@file@percent }
-\newlabel{tab:appconfirm}{{7}{22}{All gated arms on the 25-stretch development benchmark. Resume = \texttt {resume\_after\_fire} rate over continuation boundaries (a cost knob, not an error rate).\relax }{table.caption.39}{}}
-\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{23}{paragraph*.40}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{23}{table.caption.41}\protected@file@percent }
-\newlabel{tab:apptimeout}{{8}{23}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.41}{}}
-\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{23}{paragraph*.42}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Probe confidence intervals and the dictation scoring window.}{23}{paragraph*.43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{24}{paragraph*.44}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table\nobreakspace  {}\ref  {tab:dictation}). Seed 0 is the released checkpoint.\relax }}{24}{table.caption.45}\protected@file@percent }
-\newlabel{tab:seeds}{{9}{24}{Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table~\ref {tab:dictation}). Seed 0 is the released checkpoint.\relax }{table.caption.45}{}}
-\@writefile{toc}{\contentsline {paragraph}{Schema ablation.}{24}{paragraph*.46}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }}{24}{table.caption.47}\protected@file@percent }
-\newlabel{tab:ablation}{{10}{24}{Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }{table.caption.47}{}}
-\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{24}{paragraph*.48}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{25}{table.caption.49}\protected@file@percent }
-\newlabel{tab:wer}{{11}{25}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.49}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {D}Training-recipe notes}{25}{appendix.D}\protected@file@percent }
-\newlabel{app:recipe}{{D}{25}{Training-recipe notes}{appendix.D}{}}
-\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{25}{paragraph*.50}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{25}{paragraph*.51}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The full timeout family.}{24}{paragraph*.40}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }}{24}{table.caption.41}\protected@file@percent }
+\newlabel{tab:apptimeout}{{8}{24}{Silence-timeout cascade, all settings, on the development (dev) and fresh confirmation (conf) stretch sets.\relax }{table.caption.41}{}}
+\@writefile{toc}{\contentsline {paragraph}{Fresh-set confirmation.}{24}{paragraph*.42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Probe confidence intervals and the dictation scoring window.}{24}{paragraph*.43}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Released-model endpointing across sets.}{25}{paragraph*.44}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces The released unified checkpoint (rank-32) on the replay benchmark, both stretch sets, alongside the pure-endpointing causal checkpoint. dev = 25-stretch development set (96 turn-final boundaries); held-out 100 = the 100-stretch set (384 boundaries); fresh 50 = the post-development confirmation set (184 boundaries).\relax }}{25}{table.caption.45}\protected@file@percent }
+\newlabel{tab:released}{{9}{25}{The released unified checkpoint (rank-32) on the replay benchmark, both stretch sets, alongside the pure-endpointing causal checkpoint. dev = 25-stretch development set (96 turn-final boundaries); held-out 100 = the 100-stretch set (384 boundaries); fresh 50 = the post-development confirmation set (184 boundaries).\relax }{table.caption.45}{}}
+\@writefile{toc}{\contentsline {paragraph}{Seed robustness of the released recipe.}{25}{paragraph*.46}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table\nobreakspace  {}\ref  {tab:dictation}). Seed 0 is the released checkpoint.\relax }}{25}{table.caption.47}\protected@file@percent }
+\newlabel{tab:seeds}{{10}{25}{Released recipe under three training seeds (best checkpoint each, smaller common probe set; the released checkpoint's enlarged-probe figures --- email $0.93$, intrusion $0.8\%$ --- are in Table~\ref {tab:dictation}). Seed 0 is the released checkpoint.\relax }{table.caption.47}{}}
+\@writefile{toc}{\contentsline {paragraph}{Schema ablation.}{25}{paragraph*.48}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). Each arm is an independent retrain selected on the holdout composite, so the baseline here (0.948/1.08) is a different checkpoint from the causal model of Table\nobreakspace  {}\ref  {tab:main} (0.969/0.3). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }}{26}{table.caption.49}\protected@file@percent }
+\newlabel{tab:ablation}{{11}{26}{Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). Each arm is an independent retrain selected on the holdout composite, so the baseline here (0.948/1.08) is a different checkpoint from the causal model of Table~\ref {tab:main} (0.969/0.3). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }{table.caption.49}{}}
+\@writefile{toc}{\contentsline {paragraph}{Offline WER regression.}{26}{paragraph*.50}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Offline WER (LibriSpeech, full official splits).\relax }}{26}{table.caption.51}\protected@file@percent }
+\newlabel{tab:wer}{{12}{26}{Offline WER (LibriSpeech, full official splits).\relax }{table.caption.51}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}The logit-level oscillation probe}{26}{appendix.D}\protected@file@percent }
+\newlabel{app:markerprob}{{D}{26}{The logit-level oscillation probe}{appendix.D}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces \textbf  {Mode circulation, not threshold flapping.} Mean marker-commit probability $P_{\text  {fire}}$ for fire-labeled (complete utterance) and hold-labeled (incomplete) holdout examples across the opposed-pools run; small dots are per-example values. The two classes swing in lockstep as the weights orbit between the fire-mode and no-fire-mode attractors; no example hovers persistently at the 0.5 decision boundary.\relax }}{27}{figure.caption.52}\protected@file@percent }
+\newlabel{fig:markerprob}{{11}{27}{\textbf {Mode circulation, not threshold flapping.} Mean marker-commit probability $P_{\text {fire}}$ for fire-labeled (complete utterance) and hold-labeled (incomplete) holdout examples across the opposed-pools run; small dots are per-example values. The two classes swing in lockstep as the weights orbit between the fire-mode and no-fire-mode attractors; no example hovers persistently at the 0.5 decision boundary.\relax }{figure.caption.52}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {E}The synthetic clairvoyant-fraction experiment}{27}{appendix.E}\protected@file@percent }
+\newlabel{app:toy}{{E}{27}{The synthetic clairvoyant-fraction experiment}{appendix.E}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces \textbf  {The mechanism, isolated.} A ${\sim }30$k-parameter transformer on a synthetic stream with a tunable clairvoyant-label fraction $f$. (a)\nobreakspace  {}Holdout trajectories: monotone convergence at $f{=}0$, visible noise at $f{=}0.7$, bistable mode-oscillation at $f{=}1.0$. (b)\nobreakspace  {}Every checkpoint's (fire recall, hold precision), colored by $f$: the causal run collapses to one top-right point; high $f$ spreads checkpoints into an anti-diagonal cloud --- a phantom Pareto frontier traced by one oscillating model.\relax }}{28}{figure.caption.53}\protected@file@percent }
+\newlabel{fig:toy}{{12}{28}{\textbf {The mechanism, isolated.} A ${\sim }30$k-parameter transformer on a synthetic stream with a tunable clairvoyant-label fraction $f$. (a)~Holdout trajectories: monotone convergence at $f{=}0$, visible noise at $f{=}0.7$, bistable mode-oscillation at $f{=}1.0$. (b)~Every checkpoint's (fire recall, hold precision), colored by $f$: the causal run collapses to one top-right point; high $f$ spreads checkpoints into an anti-diagonal cloud --- a phantom Pareto frontier traced by one oscillating model.\relax }{figure.caption.53}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Training-recipe notes}{28}{appendix.F}\protected@file@percent }
+\newlabel{app:recipe}{{F}{28}{Training-recipe notes}{appendix.F}{}}
+\@writefile{toc}{\contentsline {paragraph}{A weight-decay bug worth fixing, but not the WER culprit.}{28}{paragraph*.54}\protected@file@percent }
 \citation{jordan2024muon}
-\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{26}{paragraph*.52}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{26}{paragraph*.53}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {E}Reproducibility}{26}{appendix.E}\protected@file@percent }
-\newlabel{app:repro}{{E}{26}{Reproducibility}{appendix.E}{}}
-\gdef \@abspage@last{26}
+\@writefile{toc}{\contentsline {paragraph}{Plain-ASR replay: the fix that does move WER.}{29}{paragraph*.55}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Cosine decay.}{29}{paragraph*.56}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Muon underperforms AdamW here.}{29}{paragraph*.57}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {G}Reproducibility}{29}{appendix.G}\protected@file@percent }
+\newlabel{app:repro}{{G}{29}{Reproducibility}{appendix.G}{}}
+\gdef \@abspage@last{29}
