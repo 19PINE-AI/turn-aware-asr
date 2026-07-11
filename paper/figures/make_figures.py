@@ -684,7 +684,8 @@ def fig12_pauses():
                          label="resumes at +1.92 s")
         else:
             ax.text(dp + 1.55, y, "silence continues…", fontsize=7.0, ha="center",
-                    va="center", color=GREY, style="italic")
+                    va="center", color=GREY, style="italic", zorder=5,
+                    bbox=dict(boxstyle="round,pad=0.22", fc="white", ec="none"))
         ax.text(8.8, y + 0.28, src, fontsize=6.6, color=GREY, va="center")
         ax.text(8.8, y - 0.24, f"class: {cls}", fontsize=7.2, color=lc, va="center")
         _chip(ax, 12.0, y, lab, lc)
