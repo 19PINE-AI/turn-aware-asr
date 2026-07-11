@@ -20,13 +20,13 @@
 \citation{skantze2021review}
 \citation{deepgram2026flux}
 \citation{openai2025semanticvad}
-\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
-\newlabel{sec:intro}{{1}{1}{Introduction}{section.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {No timeout gets both turns right.} At 0.7\,s it interrupts the dictated number twice; at 1.0\,s it still keeps the user waiting after ``I'm still here.'' Ours holds through the pauses and fires 0.39\,s after the thought completes.\relax }}{1}{figure.caption.1}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:teaser}{{1}{1}{\textbf {No timeout gets both turns right.} At 0.7\,s it interrupts the dictated number twice; at 1.0\,s it still keeps the user waiting after ``I'm still here.'' Ours holds through the pauses and fires 0.39\,s after the thought completes.\relax }{figure.caption.1}{}}
 \citation{hu2022lora}
 \citation{qwen3asr2026}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces \textbf  {The problem, and the system, in one example.} No silence timeout handles both turns: at 0.7\,s it interrupts the dictated number twice, and at 1.0\,s it still leaves the user waiting after a completed thought. A turn-aware model reads completeness and silence jointly, so it holds through the number's 0.9--1.1\,s pauses and fires 0.39\,s after the finished thought. \S  \ref  {sec:recipe} trains this behavior with causal labels; Figure\nobreakspace  {}\ref  {fig:tradeoff} and Table\nobreakspace  {}\ref  {tab:dictation} quantify it.\relax }}{2}{figure.caption.1}\protected@file@percent }
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:teaser}{{1}{2}{\textbf {The problem, and the system, in one example.} No silence timeout handles both turns: at 0.7\,s it interrupts the dictated number twice, and at 1.0\,s it still leaves the user waiting after a completed thought. A turn-aware model reads completeness and silence jointly, so it holds through the number's 0.9--1.1\,s pauses and fires 0.39\,s after the finished thought. \S \ref {sec:recipe} trains this behavior with causal labels; Figure~\ref {fig:tradeoff} and Table~\ref {tab:dictation} quantify it.\relax }{figure.caption.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{section.1}\protected@file@percent }
+\newlabel{sec:intro}{{1}{2}{Introduction}{section.1}{}}
 \citation{livekit2026eou}
 \citation{stivers2009universals}
 \citation{skantze2021review}
@@ -51,10 +51,10 @@
 \newlabel{sec:principle}{{3.1}{5}{The constraint, and the failure class it forbids}{subsection.3.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {One failure class, two instances.} Temporal axis (\S  \ref  {sec:recipe}, \S  \ref  {sec:analysis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S  \ref  {sec:ctxrecipe}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }}{6}{figure.caption.6}\protected@file@percent }
 \newlabel{fig:twoaxes}{{4}{6}{\textbf {One failure class, two instances.} Temporal axis (\S \ref {sec:recipe}, \S \ref {sec:analysis}): labels that peek at the future manufacture a phantom frontier; the fix is the minimal pair, the same utterance $\pm $ an observable silence tail. Contextual axis (\S \ref {sec:ctxrecipe}): a context prefix that always matches the audio becomes a copyable shortcut; the fix is the counterfactual twin, the same audio with a matching and a disagreeing context, target following the audio.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The endpointing recipe}{6}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:recipe}{{3.2}{6}{The endpointing recipe}{subsection.3.2}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \texttt  {<EAGER\_END\_SPEECH>}\texttt  {<END\_SPEECH>}.\relax }}{7}{table.caption.7}\protected@file@percent }
 \newlabel{tab:schemas}{{2}{7}{The eight training schemas (${\sim }12$k examples; LibriSpeech and AMI roughly 50/50). $M$ = \eager \fire .\relax }{table.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The endpointing recipe}{7}{subsection.3.2}\protected@file@percent }
-\newlabel{sec:recipe}{{3.2}{7}{The endpointing recipe}{subsection.3.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The dictation and context constructions}{7}{subsection.3.3}\protected@file@percent }
 \newlabel{sec:ctxrecipe}{{3.3}{7}{The dictation and context constructions}{subsection.3.3}{}}
 \citation{delrio2022earnings22}
@@ -74,18 +74,21 @@
 \newlabel{sec:endpointresults}{{5.1}{9}{Endpointing: one checkpoint dominates}{subsection.5.1}{}}
 \citation{qwen3asr2026}
 \citation{contextualearnings2026}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Context biasing, measured.} (a)\nobreakspace  {}Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)\nobreakspace  {}Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }}{10}{figure.caption.13}\protected@file@percent }
+\newlabel{fig:biasing}{{5}{10}{\textbf {Context biasing, measured.} (a)~Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)~Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {paragraph}{External turn-aware systems on the same protocol.}{10}{paragraph*.11}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Context biasing, dictation, and the copying result}{10}{subsection.5.2}\protected@file@percent }
 \newlabel{sec:ctxresults}{{5.2}{10}{Context biasing, dictation, and the copying result}{subsection.5.2}{}}
 \@writefile{toc}{\contentsline {paragraph}{Context biasing works, and survives session length.}{10}{paragraph*.12}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Dictation, and the copying result.}{10}{paragraph*.14}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The released unified model}{10}{subsection.5.3}\protected@file@percent }
-\newlabel{sec:released}{{5.3}{10}{The released unified model}{subsection.5.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Context biasing, measured.} (a)\nobreakspace  {}Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)\nobreakspace  {}Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }}{11}{figure.caption.13}\protected@file@percent }
-\newlabel{fig:biasing}{{5}{11}{\textbf {Context biasing, measured.} (a)~Earnings-22 base-model entity recall without context and with the relevant hotword prefix ($+28.9$\,pp), and the distractor-prefix hallucination rate for the base model versus the released rank-32 model whose natural-speech counterfactual drives it from 3.7\% to 2.0\%. (b)~Recall vs.\ seconds of unrelated speech between prefix and target: the advantage does not decay with session age.\relax }{figure.caption.13}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces \textbf  {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix\nobreakspace  {}\ref  {app:tables}. The conversational-only model's nonzero intrusion is the base model's native context-following, which that fine-tune leaves untouched.\relax }}{11}{table.caption.15}\protected@file@percent }
 \newlabel{tab:dictation}{{4}{11}{\textbf {Dictation and spelled-entity probes.} Premature fires per dictated 10-digit number, final-boundary recall, digit accuracy; exact-match on spelled names/emails without/with the profile; wrong-profile intrusion. Conversational-only and released rows are scored on enlarged probes (250 sequences; 240 spelled items over 120 identities); the intermediate row uses the smaller original probes. Confidence intervals and a scoring-window sensitivity analysis are in Appendix~\ref {app:tables}. The conversational-only model's nonzero intrusion is the base model's native context-following, which that fine-tune leaves untouched.\relax }{table.caption.15}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3}The released unified model}{11}{subsection.5.3}\protected@file@percent }
+\newlabel{sec:released}{{5.3}{11}{The released unified model}{subsection.5.3}{}}
 \@writefile{toc}{\contentsline {paragraph}{Which frontiers are real.}{11}{paragraph*.16}\protected@file@percent }
+\citation{kwon2023vllm}
+\citation{xiao2024streamingllm}
+\citation{li2026metronome}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Schema ablation}{12}{subsection.5.4}\protected@file@percent }
 \newlabel{sec:ablation}{{5.4}{12}{Schema ablation}{subsection.5.4}{}}
 \@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Schema ablation on the endpointing pool (iso-count; 25-stretch replay, best checkpoint each). Each arm is an independent retrain selected on the holdout composite, so the baseline here (0.948/1.08) is a different checkpoint from the causal model of Table\nobreakspace  {}\ref  {tab:main} (0.969/0.3). ``Silence-fires'' is the ungated marker count on silence; ``$h{=}1$ cancels'' is the confirm-horizon crutch metric.\relax }}{12}{table.caption.17}\protected@file@percent }
@@ -93,10 +96,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}Costs: offline WER, and serving}{12}{subsection.5.5}\protected@file@percent }
 \newlabel{sec:costs}{{5.5}{12}{Costs: offline WER, and serving}{subsection.5.5}{}}
 \@writefile{toc}{\contentsline {paragraph}{Offline cost, measured and attributed.}{12}{paragraph*.18}\protected@file@percent }
-\citation{kwon2023vllm}
-\citation{xiao2024streamingllm}
-\citation{li2026metronome}
-\@writefile{toc}{\contentsline {paragraph}{Serving on stock vLLM.}{13}{paragraph*.19}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Serving on stock vLLM.}{12}{paragraph*.19}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Analysis: how clairvoyant labels manufacture a trade-off}{13}{section.6}\protected@file@percent }
 \newlabel{sec:analysis}{{6}{13}{Analysis: how clairvoyant labels manufacture a trade-off}{section.6}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}The composition record}{13}{subsection.6.1}\protected@file@percent }
@@ -112,10 +112,10 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {The fingerprint of contradictory supervision.} Left: under the opposed-pools composition, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S  \ref  {sec:recipe} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }}{15}{figure.caption.21}\protected@file@percent }
 \newlabel{fig:oscillation}{{6}{15}{\textbf {The fingerprint of contradictory supervision.} Left: under the opposed-pools composition, holdout accuracy oscillates for the entire run between a fire-mode and a no-fire-mode attractor, reproducibly across two training seeds (solid, dashed) --- the oscillation is a property of the labels, not a seed. Right: the causal recipe of \S \ref {sec:recipe} --- same architecture, adapter, and data volume, only the labels changed --- climbs monotonically, with both classes at ceiling simultaneously from step 3k on.\relax }{figure.caption.21}{}}
 \@writefile{toc}{\contentsline {paragraph}{Why oscillation, specifically.}{15}{paragraph*.26}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}The mechanism, isolated}{15}{subsection.6.3}\protected@file@percent }
+\newlabel{sec:toy}{{6.3}{15}{The mechanism, isolated}{subsection.6.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces \textbf  {Two ways offline-derived supervision leaks the future.} (a)\nobreakspace  {}Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph  {hold}. (b)\nobreakspace  {}Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }}{16}{figure.caption.25}\protected@file@percent }
 \newlabel{fig:contradictions}{{7}{16}{\textbf {Two ways offline-derived supervision leaks the future.} (a)~Offline clips inherit forced-alignment cuts at end of speech, so the offline pool demands a fire on exactly the prefix the streaming pool labels \emph {hold}. (b)~Disfluency-vs-boundary pause labels are keyed on who speaks next; at the decision point the two classes' silence-gap distributions overlap almost completely.\relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}The mechanism, isolated}{16}{subsection.6.3}\protected@file@percent }
-\newlabel{sec:toy}{{6.3}{16}{The mechanism, isolated}{subsection.6.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.4}Evaluation is where the leak enters}{16}{subsection.6.4}\protected@file@percent }
 \newlabel{sec:inversion}{{6.4}{16}{Evaluation is where the leak enters}{subsection.6.4}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces \textbf  {The mechanism, isolated.} A ${\sim }30$k-parameter transformer on a synthetic stream with a tunable clairvoyant-label fraction $f$. (a)\nobreakspace  {}Holdout trajectories: monotone convergence at $f{=}0$, visible noise at $f{=}0.7$, bistable mode-oscillation at $f{=}1.0$. (b)\nobreakspace  {}Every checkpoint's (fire recall, hold precision), colored by $f$: the causal run collapses to one top-right point; high $f$ spreads checkpoints into an anti-diagonal cloud --- a phantom Pareto frontier traced by one oscillating model.\relax }}{17}{figure.caption.27}\protected@file@percent }

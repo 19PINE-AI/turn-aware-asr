@@ -79,15 +79,15 @@ def timeline(ax, x0, x1, y):
 def fig0_teaser():
     """Headline figure: the two turns no timeout can get right, and what the
     turn-aware model does on each. Pure illustration, schematic time axis."""
-    fig, ax = plt.subplots(figsize=(7.2, 2.9))
+    fig, ax = plt.subplots(figsize=(7.2, 2.3))
     ax.set_xlim(0, 12.6)
-    ax.set_ylim(0, 5.1)
+    ax.set_ylim(0.15, 4.15)
     ax.axis("off")
     ax.grid(False)
 
     RED, GREEN, GREY = "#c23b22", "#00694f", "#555555"
 
-    def cross(x, y, label=None, dy=0.40, above=False):
+    def cross(x, y, label=None, dy=0.38, above=False):
         ax.scatter([x], [y], marker="X", s=95, color=RED, zorder=5,
                    edgecolor="black", lw=0.4)
         if label:
@@ -98,7 +98,7 @@ def fig0_teaser():
                 ax.text(x, y - dy, label, ha="center", va="top",
                         fontsize=7.4, color=RED)
 
-    def star(x, y, label=None, dy=0.40):
+    def star(x, y, label=None, dy=0.38):
         ax.scatter([x], [y], marker="*", s=210, color=OKABE["green"], zorder=5,
                    edgecolor="black", lw=0.4)
         if label:
@@ -106,40 +106,40 @@ def fig0_teaser():
                     color=GREEN, weight="bold")
 
     # ---- Turn 1: the pause that means "wait" (1 s of audio ~ 1.1 units)
-    yA = 3.9
-    ax.text(0.15, yA + 0.58, "Turn 1: the pause that means “wait”",
+    yA = 3.35
+    ax.text(0.15, yA + 0.52, "Turn 1: the pause that means “wait”",
             fontsize=8.6, style="italic")
     timeline(ax, 0.15, 12.45, yA)
     speech_block(ax, 0.3, 2.1, yA, label="“four one five …”")
     speech_block(ax, 3.1, 4.9, yA, label="“five five five …”")
     speech_block(ax, 6.1, 8.3, yA, label="“zero one nine two.”")
-    ax.text(2.6, yA + 0.30, "0.9 s", ha="center", fontsize=7.0, color=GREY)
-    ax.text(5.5, yA + 0.30, "1.1 s", ha="center", fontsize=7.0, color=GREY)
+    ax.text(2.6, yA + 0.28, "0.9 s", ha="center", fontsize=7.0, color=GREY)
+    ax.text(5.5, yA + 0.28, "1.1 s", ha="center", fontsize=7.0, color=GREY)
     cross(2.85, yA, "0.7 s timeout\nfires mid-number")
     cross(5.85, yA)
     star(8.75, yA, "ours: +0.39 s")
-    ax.text(4.55, yA - 1.30, "ours: holds — six digits predict four more",
+    ax.text(4.55, yA - 1.12, "ours: holds — six digits predict four more",
             ha="center", fontsize=7.4, color=GREEN)
 
     # ---- Turn 2: the completion that means "go"
-    yB = 1.45
-    ax.text(0.15, yB + 0.58, "Turn 2: the completion that means “go”",
+    yB = 1.15
+    ax.text(0.15, yB + 0.52, "Turn 2: the completion that means “go”",
             fontsize=8.6, style="italic")
     timeline(ax, 0.15, 12.45, yB)
     speech_block(ax, 0.3, 3.1, yB, label="“Hello? I’m still here.”")
     star(3.55, yB)
-    ax.text(3.15, yB - 0.40, "ours: +0.39 s —\nthought complete", ha="center",
+    ax.text(3.15, yB - 0.38, "ours: +0.39 s —\nthought complete", ha="center",
             va="top", fontsize=7.4, color=GREEN, weight="bold")
     cross(4.2, yB)
-    ax.text(4.65, yB - 0.40, "1.0 s timeout: still waiting", ha="left",
+    ax.text(4.65, yB - 0.38, "1.0 s timeout: still waiting", ha="left",
             va="top", fontsize=7.4, color=RED)
 
     # legend, in the empty right half of the lower row
-    ax.scatter([9.6], [1.05], marker="X", s=70, color=RED, edgecolor="black", lw=0.4)
-    ax.text(9.85, 1.05, "silence timeout", va="center", fontsize=7.8)
-    ax.scatter([9.6], [0.55], marker="*", s=150, color=OKABE["green"],
+    ax.scatter([9.6], [0.85], marker="X", s=70, color=RED, edgecolor="black", lw=0.4)
+    ax.text(9.85, 0.85, "silence timeout", va="center", fontsize=7.8)
+    ax.scatter([9.6], [0.42], marker="*", s=150, color=OKABE["green"],
                edgecolor="black", lw=0.4)
-    ax.text(9.85, 0.55, "turn-aware ASR (this work)", va="center", fontsize=7.8)
+    ax.text(9.85, 0.42, "turn-aware ASR (this work)", va="center", fontsize=7.8)
 
     save(fig, "fig0_teaser")
 

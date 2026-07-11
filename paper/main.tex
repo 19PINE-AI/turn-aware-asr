@@ -56,22 +56,23 @@
 \maketitle
 
 \begin{abstract}
-Every voice agent must decide, in real time, whether the user has finished talking. The deployed default decides from acoustics alone --- a voice-activity detector plus a silence timeout --- while frontier commercial recognizers have moved the decision into the ASR model, where the words are; every member of this \emph{turn-aware} class is closed. We present, to our knowledge, the first open turn-aware streaming ASR system with a published training recipe: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn semantically, handles dictation, and grounds transcription in session context. On a deployment-matched streaming benchmark it reaches 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires per speech-minute, replicated on a fresh test set --- an operating point no silence timeout reaches at any setting. The recipe rests on one principle: every label for a streaming decision must be computable from the input up to the decision point. Supervision inherited from offline corpora violates it, and the resulting \emph{clairvoyant} labels manufactured, across eight controlled supervision compositions, training oscillation and a phantom recall-versus-precision frontier: a one-variable intervention --- appending one second of silence to the evaluation clips --- raised a ``broken'' model's fire recall from 0.10 to 1.00. The same leak recurred on the context axis, where a biasing prefix became a copyable shortcut (40\% wrong-profile intrusion); counterfactual examples in which context and audio disagree cut intrusion to 0.8\% while retaining most of a $+28.9$\,pp entity-recall benefit. Weights, recipe, and benchmark are released.
+Every voice agent must decide, in real time, whether the user has finished talking. The deployed default decides from acoustics alone --- a voice-activity detector plus a silence timeout --- while frontier commercial recognizers have moved the decision into the ASR model, where the words are; every member of this \emph{turn-aware} class is closed. We present, to our knowledge, the first open turn-aware streaming ASR system with a published training recipe: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn semantically, handles dictation, and grounds transcription in session context. On a deployment-matched streaming benchmark it reaches 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires per speech-minute, replicated on a fresh test set --- an operating point no silence timeout reaches. The recipe rests on one principle: every label for a streaming decision must be computable from the input up to the decision point. Supervision inherited from offline corpora violates it, and the resulting \emph{clairvoyant} labels manufactured, across eight controlled supervision compositions, training oscillation and a phantom recall-versus-precision frontier: appending one second of silence to the evaluation clips raised a ``broken'' model's fire recall from 0.10 to 1.00. The same leak recurred on the context axis: a biasing prefix became a copyable shortcut (40\% wrong-profile intrusion); counterfactual examples where context and audio disagree cut intrusion to 0.8\% while keeping most of a $+28.9$\,pp entity-recall benefit. Weights, recipe, and benchmark are released.
 \end{abstract}
 
+\vspace{-0.3em}
 \begin{center}
 \small
-Code: \url{https://github.com/19PINE-AI/turn-aware-asr} \\
-Website: \url{https://01.me/research/turn-aware-asr}
+Code: \href{https://github.com/19PINE-AI/turn-aware-asr}{\texttt{github.com/19PINE-AI/turn-aware-asr}} \;\textbullet\; Website: \href{https://01.me/research/turn-aware-asr}{\texttt{01.me/research/turn-aware-asr}}
 \end{center}
-\vspace{-0.4em}
+\vspace{-0.5em}
 
-\begin{figure}[h]
+{\setlength{\intextsep}{6pt plus 2pt minus 2pt}%
+\begin{figure}[h!]
   \centering
-  \includegraphics[width=\linewidth]{fig0_teaser}
-  \caption{\textbf{The problem, and the system, in one example.} No silence timeout handles both turns: at 0.7\,s it interrupts the dictated number twice, and at 1.0\,s it still leaves the user waiting after a completed thought. A turn-aware model reads completeness and silence jointly, so it holds through the number's 0.9--1.1\,s pauses and fires 0.39\,s after the finished thought. \S\ref{sec:recipe} trains this behavior with causal labels; Figure~\ref{fig:tradeoff} and Table~\ref{tab:dictation} quantify it.}
+  \includegraphics[width=0.95\linewidth]{fig0_teaser}
+  \caption{\textbf{No timeout gets both turns right.} At 0.7\,s it interrupts the dictated number twice; at 1.0\,s it still keeps the user waiting after ``I'm still here.'' Ours holds through the pauses and fires 0.39\,s after the thought completes.}
   \label{fig:teaser}
-\end{figure}
+\end{figure}}
 
 \section{Introduction}
 \label{sec:intro}
