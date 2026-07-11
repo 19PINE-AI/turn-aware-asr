@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { COL, linScale, logScale, XAxis, Star, polyline } from './chart.jsx'
 
-const W = 720, H = 440, ML = 64, MR = 20, MT = 18, MB = 52
+const W = 720, H = 420, ML = 64, MR = 20, MT = 16, MB = 52
+const INK = '#3d4148'
 
 export default function TradeoffChart({ data }) {
   const [hover, setHover] = useState(null)
@@ -44,6 +45,25 @@ export default function TradeoffChart({ data }) {
     )
   }
 
+  // direct labels, each positioned to clear its known neighbours
+  const label = (px, py, txt, { anchor = 'start', dx = 0, dy = 0, bold = false } = {}) => (
+    <text x={px + dx} y={py + dy} textAnchor={anchor} fontSize={bold ? 12.5 : 11}
+      fontWeight={bold ? 700 : 500} fill={INK}
+      style={{ paintOrder: 'stroke', stroke: '#fff', strokeWidth: 3.5 }}>{txt}</text>
+  )
+  const ext = Object.fromEntries(data.external.map(p => [p.name, p]))
+  const pri = Object.fromEntries(data.priors.map(p => [p.name.split(' ')[0], p]))
+  const P = (p) => [x(p.lat), y(ffv(p.ff))]
+
+  const legend = [
+    [COL.green, 'causal endpointer (ours)'],
+    [COL.sky, 'released unified model'],
+    [COL.grey, 'prior supervision compositions'],
+    [COL.amber, 'RMS + timeout family'],
+    [COL.purple, 'Silero VAD + timeout family'],
+    [COL.brown, 'external turn-aware (as-shipped)'],
+  ]
+
   return (
     <div className="card">
       <h3>The causal model escapes the timeout curve</h3>
@@ -80,37 +100,26 @@ export default function TradeoffChart({ data }) {
               info={{ name: `${p.name} (as-shipped)`, lat: p.lat, ff: p.ff, recall: p.recall }} />
           ))}
 
-          <g onMouseEnter={() => setHover({ px: x(data.unified.lat), py: y(ffv(data.unified.ff)), name: data.unified.name, ...data.unified })}
-            onMouseLeave={() => setHover(null)}>
-            <Dot px={x(data.unified.lat)} py={y(ffv(data.unified.ff))} color={COL.sky} shape="D" size={8}
-              info={{ name: data.unified.name, lat: data.unified.lat, ff: data.unified.ff, recall: data.unified.recall }} />
-          </g>
+          <Dot px={x(data.unified.lat)} py={y(ffv(data.unified.ff))} color={COL.sky} shape="D" size={8}
+            info={{ name: data.unified.name, lat: data.unified.lat, ff: data.unified.ff, recall: data.unified.recall }} />
           <g onMouseEnter={() => setHover({ px: x(data.ours.lat), py: y(ffv(data.ours.ff)), name: data.ours.name, ...data.ours })}
             onMouseLeave={() => setHover(null)} style={{ cursor: 'pointer' }}>
             <Star cx={x(data.ours.lat)} cy={y(ffv(data.ours.ff))} r={14} />
           </g>
-          <text x={x(0.39)} y={y(0.32) - 18} textAnchor="middle" fontSize={12.5} fontWeight={700} fill={COL.green}>
-            causal endpointer · R=0.97
-          </text>
-          <text x={x(0.39) + 14} y={y(0.97) + 4} fontSize={11.5} fontWeight={600} fill={COL.sky}>
-            unified release · R=0.95
-          </text>
-          <text x={x(data.external[1].lat) + 12} y={y(data.external[1].ff) + 4} fontSize={11} fill={COL.brown}>Kyutai VAD</text>
-          <text x={x(data.external[3].lat) + 12} y={y(data.external[3].ff) + 4} fontSize={11} fill={COL.brown}>LiveKit (oracle)</text>
-          <text x={x(data.external[2].lat) + 12} y={y(data.external[2].ff) + 4} fontSize={11} fill={COL.brown}>Smart Turn v3</text>
-          <text x={x(data.external[0].lat) + 12} y={y(Math.max(data.external[0].ff, 0.05)) + 4} fontSize={11} fill={COL.brown}>Parakeet-EOU (R=0.17)</text>
 
-          {/* legend */}
-          <g transform={`translate(${W - 250}, ${MT + 4})`} fontSize={11.5}>
-            {[[COL.amber, 'RMS + timeout family'], [COL.purple, 'Silero VAD + timeout family'],
-              [COL.grey, 'prior supervision compositions'], [COL.brown, 'external turn-aware (as-shipped)'],
-              [COL.green, 'causal endpointer (ours)'], [COL.sky, 'released unified model']].map(([c, t], i) => (
-              <g key={i} transform={`translate(0, ${i * 18})`}>
-                <rect x={0} y={-8} width={11} height={11} rx={3} fill={c} />
-                <text x={17} y={2} fill="#4a4f57">{t}</text>
-              </g>
-            ))}
-          </g>
+          {/* direct labels — offsets chosen to clear coincident neighbours */}
+          {label(...P(data.ours), 'causal endpointer · R=0.97', { anchor: 'start', dx: -28, dy: -22, bold: true })}
+          {label(...P(data.unified), 'unified release · R=0.95', { anchor: 'start', dx: 14, dy: 4, bold: true })}
+          {/* Kyutai sits on the Silero X=0.5 point → label to the left */}
+          {label(...P(ext['Kyutai VAD']), 'Kyutai VAD', { anchor: 'end', dx: -13, dy: 4 })}
+          {/* LiveKit coincides with RMS X=0.5 → label up-right, clear of both */}
+          {label(...P(ext['LiveKit (oracle)']), 'LiveKit (oracle)', { anchor: 'start', dx: 12, dy: -10 })}
+          {/* Smart Turn abuts the mixed-pools diamond → label left, prior label right */}
+          {label(...P(ext['Smart Turn v3']), 'Smart Turn v3', { anchor: 'end', dx: -13, dy: 4 })}
+          {label(...P(pri['mixed-pools']), 'mixed-pools + confirm h=1', { anchor: 'start', dx: 12, dy: 4 })}
+          {/* Parakeet shares its y with RMS X=2.0 and sits under the causal star → label below */}
+          {label(...P(ext['Parakeet-EOU']), 'Parakeet-EOU · R=0.17', { anchor: 'middle', dy: 24 })}
+          {label(...P(pri['opposed-pools']), 'opposed-pools + confirm h=1', { anchor: 'middle', dy: -14 })}
         </svg>
         {hover && (
           <div style={{
@@ -124,11 +133,16 @@ export default function TradeoffChart({ data }) {
           </div>
         )}
       </div>
+      <div className="legend">
+        {legend.map(([c, t], i) => (
+          <span key={i}><i style={{ background: c }} /> {t}</span>
+        ))}
+      </div>
       <p className="note">
-        Points with open interiors in the paper (recall &lt; 0.5) are unusable operating points.
-        “0*” = zero false fires plotted at 0.05. External systems were run as-shipped through the
-        identical benchmark, sweeping their public thresholds — the first measurement of the open
-        turn-aware class on a common protocol.
+        Timeout points with recall &lt; 0.5 are unusable operating points (X = 1.5–2 s misses most
+        turns). “0*” = zero false fires plotted at 0.05. External systems were run as-shipped
+        through the identical benchmark, sweeping their public thresholds — the first measurement
+        of the open turn-aware class on a common protocol.
       </p>
     </div>
   )

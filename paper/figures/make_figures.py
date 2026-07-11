@@ -306,9 +306,11 @@ def fig3_tradeoff():
         ax.plot([], [], marker=marker, color=color, lw=1.5, label=name)
 
     fam(rms, OKABE["orange"], "RMS + timeout", "o",
-        over={2.0: (7, 4, "left")})
+        over={0.5: (8, -3, "left"), 2.0: (7, 4, "left")})
     fam(sil, OKABE["purple"], "Silero VAD + timeout", "^",
-        over={0.5: (-7, -16, "right"), 1.5: (7, 6, "left"), 2.0: (7, -3, "left")})
+        over={0.5: (-8, -3, "right"), 1.5: (7, 6, "left"), 2.0: (7, -3, "left")})
+    ext_handle = ax.plot([], [], marker="X", color="#8a5a2b", lw=0,
+                         label="external turn-aware (as-shipped)")
 
     # prior checkpoints (best policies) and the causal model
     priors = [("mixed-pools + confirm h=1", 0.68, 3.2, 0.927, (8, -17)),
@@ -332,16 +334,14 @@ def fig3_tradeoff():
     # external open turn-aware systems on the same protocol (exp-4; as-shipped,
     # public thresholds swept). None reaches the causal model's corner.
     ext = [("Parakeet-EOU", 0.47, 0.2, 0.17, (-4, -12), "right"),
-           ("Kyutai VAD", 0.53, 14.6, 0.88, (7, 5), "left"),
-           ("Smart Turn v3", 0.64, 3.4, 0.71, (7, 4), "left"),
-           ("LiveKit (oracle)", 0.65, 6.25, 0.96, (-7, -6), "right")]
+           ("Kyutai VAD", 0.53, 14.6, 0.88, (10, 4), "left"),
+           ("Smart Turn v3", 0.64, 3.4, 0.71, (-9, -14), "right"),
+           ("LiveKit (oracle)", 0.65, 6.25, 0.96, (-9, -3), "right")]
     for name, lat, ff, rec, off, ha in ext:
         ax.scatter([lat], [ff], s=54, color="#8a5a2b",
                    marker="X", zorder=3, edgecolor="black", lw=0.4)
         ax.annotate(f"{name}\nR={rec:.2f}", (lat, ff), textcoords="offset points",
                     xytext=off, fontsize=7.8, color=TEXT["#8a5a2b"], ha=ha)
-    ax.plot([], [], marker="X", color="#8a5a2b", lw=0,
-            label="external turn-aware (as-shipped)")
 
     ax.set_yscale("log")
     ax.set_yticks([0.05, 0.3, 1, 3, 10, 30])
@@ -350,7 +350,11 @@ def fig3_tradeoff():
     ax.set_ylabel("false fires / speech-minute", fontsize=11)
     ax.tick_params(labelsize=10)
     ax.set_xlim(0.25, 1.55)
-    ax.legend(loc="upper right", fontsize=9)
+    # legend OUTSIDE the plot area (a row above the axes), so it cannot
+    # collide with the threshold annotations in the upper region
+    ax.legend(loc="lower left", bbox_to_anchor=(-0.02, 1.01), ncol=3,
+              fontsize=8.6, frameon=False, columnspacing=1.1, handletextpad=0.4,
+              borderaxespad=0)
     save(fig, "fig3_tradeoff")
 
 
@@ -623,6 +627,154 @@ def fig11_twoaxes():
             "$\\Rightarrow$ 40% wrong-profile intrusion; the counterfactual twin removes it",
             fontsize=6.6, ha="center", color="#444444")
     save(fig, "fig11_twoaxes")
+
+
+# ================================================================ F12: one real example per §3 subsection
+def fig12_supervision_examples():
+    """Three real examples from the recorded evaluation artifacts, one per §3
+    subsection. Nothing is synthetic: texts, gaps, waveforms, and fire
+    timestamps are read from the benchmark material and the recorded result
+    files (62-replay-v9gate, 74/75-dictation-probe, 119-probe-v18)."""
+    import sys
+    import soundfile as sf
+    sys.path.insert(0, str(ROOT))
+    from eval.streaming_replay_eval import load_meetings, build_stretches, SR
+    import random
+
+    # real material -------------------------------------------------------
+    split = json.load(open(ROOT / "data/semantic_endpoint_v3/meeting_split.json"))
+    meetings = load_meetings(ROOT / "data/ami/ihm", set(split["eval_meeting_ids"]))
+    st0 = build_stretches(meetings, random.Random(0), 1)[0]   # IS1007d / MIO049
+    assert st0["meeting_id"] == "IS1007d"
+    digit_audio, dsr = sf.read(ROOT / "data/probes/digit_wavs/digit_000.wav", dtype="float32")
+    assert dsr == SR
+    v9_fires = json.load(open(R / "74-dictation-probe-v9.json"))["digit"]["per_item"][0]["fires_s"]
+    v11_fires = json.load(open(R / "75-dictation-probe-v11.json"))["digit"]["per_item"][0]["fires_s"]
+
+    fig = plt.figure(figsize=(7.0, 4.95))
+    gs = fig.add_gridspec(4, 1, height_ratios=[1.16, 0.92, 1.18, 0.98], hspace=0.80)
+    GREY = "#555555"
+
+    def chip(ax, x, y, txt, color, fs=7.2):
+        ax.text(x, y, txt, fontsize=fs, va="center", ha="center", weight="bold",
+                color="white", bbox=dict(boxstyle="round,pad=0.22", fc=color, ec="none"),
+                zorder=6)
+
+    # ---- (a) §3.1: the label is a function of the future -----------------
+    ax = fig.add_subplot(gs[0]); ax.set_xlim(0, 12.4); ax.set_ylim(-0.62, 2.45)
+    ax.axis("off"); ax.grid(False)
+    ax.text(0, 2.3, "(a)  §3.1 — two real pauses, 90 ms apart in length; the label is decided by the future",
+            fontsize=8.4, weight="bold")
+    dp = 3.0 + 1.6          # decision point drawn ~1.6 s into each pause
+    for row, (txt, gap, resumes, cls, lab, lc, src) in enumerate([
+            ("“can i close this”", 1.92, True, "continuation", "HOLD", OKABE["blue"], "AMI TS3012d \u00b7 MTD045PM"),
+            ("“did you manage”", 2.01, False, "turn-final", "FIRE", OKABE["red"], "AMI TS3012c \u00b7 MTD046ID")]):
+        y = 1.5 - row * 1.06
+        timeline(ax, 0.3, 8.6, y)
+        speech_block(ax, 0.5, 3.0, y, label=txt)
+        ax.text((3.0 + dp) / 2 + 0.02, y + 0.33, f"pause {gap:.2f} s", fontsize=6.4,
+                ha="center", color=GREY)
+        ax.plot([dp, dp], [y - 0.34, y + 0.34], color=OKABE["black"], lw=1.3)
+        if resumes:
+            speech_block(ax, dp + 0.35, dp + 2.6, y, color="#e8e6e0", ec="#9aa0a8",
+                         label="resumes at +1.92 s", alpha=1.0)
+        else:
+            ax.text(dp + 1.55, y, "silence continues…", fontsize=6.4, ha="center",
+                    va="center", color=GREY, style="italic")
+        ax.text(8.85, y + 0.24, src, fontsize=6.0, color=GREY, va="center")
+        ax.text(8.85, y - 0.20, f"class: {cls}", fontsize=6.6, color=lc, va="center")
+        chip(ax, 11.85, y, lab, lc)
+    ax.plot([dp, dp], [0.1, 1.9], color="#444444", lw=0.6, ls=":")
+    ax.text(dp, -0.42, "decision point $t$: the two prefixes are indistinguishable — the class is a function of audio after $t$",
+            fontsize=6.6, color="#444444", ha="center")
+
+    # ---- (b) §3.2: the causal rule firing on real audio ------------------
+    ax = fig.add_subplot(gs[1])
+    t0, t1 = 21.6, 25.4
+    seg = st0["audio"][int(t0 * SR):int(t1 * SR)]
+    tt = np.linspace(t0, t1, len(seg))
+    ax.fill_between(tt, seg, -seg, color="#9aa7b4", lw=0)
+    ax.set_xlim(t0, t1); ax.set_ylim(-0.35, 0.38)
+    ax.set_yticks([]); ax.grid(False)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.spines["bottom"].set_visible(True)
+    for k in np.arange(np.ceil(t0 / 0.5) * 0.5, t1, 0.5):     # the 0.5 s chunk grid
+        ax.axvline(k, color="#dddddd", lw=0.5, zorder=0)
+    ax.set_xticks([22, 23, 24, 25])
+    ax.set_xticklabels(["22 s", "23 s", "24 s", "25 s"], fontsize=6.5)
+    ax.text(t0, 0.47, "(b)  §3.2 — the labeling rule, firing live: complete words AND ≥0.3 s observed silence",
+            fontsize=8.4, weight="bold")
+    ax.annotate("“did you prepare” — complete\n(speech ends 23.04 s)", xy=(23.04, 0.12),
+                xytext=(21.72, 0.21), fontsize=6.6, color=OKABE["blue"],
+                arrowprops=dict(arrowstyle="->", color=OKABE["blue"], lw=0.7))
+    ax.axvspan(23.04, 23.34, color=OKABE["yellow"], alpha=0.45, zorder=1)
+    ax.text(23.19, -0.28, "0.3 s silence\nobserved", fontsize=6.0, ha="center", color="#8a6d1a")
+    ax.scatter([23.5], [0.0], marker="*", s=200, color=OKABE["green"], zorder=5,
+               edgecolor="black", lw=0.4)
+    ax.annotate("recorded fire: 23.5 s — the first chunk boundary\nwith both conditions true (latency +0.46 s)",
+                xy=(23.5, 0.05), xytext=(23.75, 0.22), fontsize=6.6, color="#00694f",
+                arrowprops=dict(arrowstyle="->", color="#00694f", lw=0.7))
+    ax.text(25.35, -0.28, "AMI IS1007d, spkr MIO049 — replay of the causal model (62-replay)",
+            fontsize=6.0, ha="right", color=GREY)
+
+    # ---- (c) §3.3 dictation: same audio, with vs without the schemas -----
+    ax = fig.add_subplot(gs[2])
+    td = np.linspace(0, len(digit_audio) / SR, len(digit_audio))
+    ax.fill_between(td, digit_audio * 0.55 + 0.62, -digit_audio * 0.55 + 0.62, color="#9aa7b4", lw=0)
+    ax.set_xlim(0, 9.4); ax.set_ylim(-1.15, 1.28)
+    ax.set_yticks([]); ax.grid(False)
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.spines["bottom"].set_visible(True)
+    ax.set_xticks(range(0, 10))
+    ax.set_xticklabels([f"{s} s" for s in range(0, 10)], fontsize=6.5)
+    ax.text(0, 1.42, "(c)  §3.3 — dictation probe item 0 (“981 · 514 · 2351”): identical audio, two supervisions",
+            fontsize=8.4, weight="bold")
+    for (a, b) in [(1.70, 2.41), (4.14, 4.82)]:
+        ax.axvspan(a, b, ymin=0.62, ymax=0.98, color=OKABE["yellow"], alpha=0.4)
+        ax.text((a + b) / 2, 1.16, "pause", fontsize=6.0, ha="center", color="#8a6d1a")
+    ax.axvline(7.08, color=GREY, lw=0.8, ls=":")
+    ax.text(7.08, 1.16, "last digit ends", fontsize=6.0, ha="center", color=GREY)
+    lane_lab = {-0.22: "conversational-only", -1.0: "+ dictation schemas"}
+    for y, fires in [(-0.22, v9_fires), (-1.0, v11_fires)]:
+        ax.plot([1.35, 9.4], [y, y], color="#e0ddd4", lw=0.8, zorder=1)
+        ax.text(1.25, y, lane_lab[y], fontsize=6.4, color="#333333", ha="right", va="center")
+        for f in fires:
+            if f <= 7.08:
+                ax.scatter([f], [y], marker="X", s=52, color=OKABE["red"], zorder=5,
+                           edgecolor="black", lw=0.3)
+            else:
+                ax.scatter([f], [y], marker="*", s=150, color=OKABE["green"], zorder=5,
+                           edgecolor="black", lw=0.4)
+    ax.text(4.0, -0.61, "5 premature fires — the agent interrupts mid-number",
+            fontsize=6.4, color=OKABE["red"], ha="center")
+    ax.text(8.62, -1.0, "one fire, +0.42 s", fontsize=6.4, color="#00694f", ha="center", va="center")
+
+    # ---- (d) §3.3 context: copying vs the counterfactual twin ------------
+    ax = fig.add_subplot(gs[3]); ax.set_xlim(0, 12.4); ax.set_ylim(-0.72, 2.45)
+    ax.axis("off"); ax.grid(False)
+    ax.text(0, 2.3, "(d)  §3.3 — spelled-entity probe under a wrong-user profile: matched-only training copies; the counterfactual grounds",
+            fontsize=8.4, weight="bold")
+    rows = [
+        ("matched-only ctx supervision (11.3%→40% intrusion):", "COPIED THE CTX", OKABE["red"],
+         "audio says marcus.szymanski@acmecorp.io", "wrote tomasz.wojciechowski@outlook.com"),
+        ("+ counterfactual twin (released model, 0.8%):", "FOLLOWED AUDIO", OKABE["green"],
+         "audio says ignatius.yankovic@pine.ai", "wrote ignatius.yankovic@pine.ai"),
+    ]
+    for row, (model, lab, lc, audio_txt, out) in enumerate(rows):
+        y = 1.62 - row * 1.14
+        ax.text(0.0, y, model, fontsize=6.8, va="center", color="#333333", weight="bold")
+        chip(ax, 11.3, y - 0.46, lab, lc, fs=6.4)
+        ax.text(0.35, y - 0.46, audio_txt, fontsize=6.6, va="center", family="monospace")
+        ax.text(5.6, y - 0.46, "→", fontsize=7.5, va="center", color=GREY)
+        ax.text(6.0, y - 0.46, out, fontsize=6.6, va="center", family="monospace",
+                color=lc)
+    ax.text(0.0, -0.52, "ctx in both rows: a different user's profile (name, email, phone); "
+            "outputs verbatim from the recorded probe results (75-dictation-probe-v11, 119-probe-v18).",
+            fontsize=6.0, color=GREY)
+
+    save(fig, "fig12_supervision_examples")
 
 
 # ================================================================ F10: landscape quadrant
