@@ -1,0 +1,254 @@
+{
+  "source": "dictation probe #0 (data/probes/digit_wavs/digit_000.wav); unified r32 checkpoints/semantic_endpoint_v18_es/snap_step9000.pt",
+  "scenario": "dictation",
+  "ctx": "User profile \u2014 name: Priya Raman; email: priya.raman@gmail.com; plan: business tier.",
+  "hotwords": [
+    "prototype",
+    "remote control",
+    "presentation",
+    "share folder",
+    "conceptual design"
+  ],
+  "win_t0": 18.0,
+  "win_t1": 24.5,
+  "chunk_s": 0.5,
+  "ours_fires": [
+    7.5
+  ],
+  "ours_rows": [
+    {
+      "k": 0,
+      "t_end": 0.5,
+      "rms": 0.024270156398415565,
+      "gated": false,
+      "prompt_prefix": "",
+      "gen": "language English<asr_text>NINE",
+      "text": "NINE",
+      "compute_ms": 296.4,
+      "fired": false
+    },
+    {
+      "k": 1,
+      "t_end": 1.0,
+      "rms": 0.022315645590424538,
+      "gated": false,
+      "prompt_prefix": "language",
+      "gen": "English<asr_text>nine eight",
+      "text": "nine eight",
+      "compute_ms": 83.7,
+      "fired": false
+    },
+    {
+      "k": 2,
+      "t_end": 1.5,
+      "rms": 0.02478172816336155,
+      "gated": false,
+      "prompt_prefix": "language",
+      "gen": "English<asr_text>nine eight four",
+      "text": "nine eight four",
+      "compute_ms": 119.9,
+      "fired": false
+    },
+    {
+      "k": 3,
+      "t_end": 2.0,
+      "rms": 0.015641137957572937,
+      "gated": false,
+      "prompt_prefix": "language English",
+      "gen": "<asr_text>nine eight one",
+      "text": "nine eight one",
+      "compute_ms": 80.5,
+      "fired": false
+    },
+    {
+      "k": 4,
+      "t_end": 2.5,
+      "rms": 0.02506181225180626,
+      "gated": false,
+      "prompt_prefix": "language English",
+      "gen": "<asr_text>nine eight one five",
+      "text": "nine eight one five",
+      "compute_ms": 96.6,
+      "fired": false
+    },
+    {
+      "k": 5,
+      "t_end": 3.0,
+      "rms": 0.03222055733203888,
+      "gated": false,
+      "prompt_prefix": "",
+      "gen": "nine eight one five",
+      "text": "nine eight one five",
+      "compute_ms": 80.6,
+      "fired": false
+    },
+    {
+      "k": 6,
+      "t_end": 3.5,
+      "rms": 0.032279517501592636,
+      "gated": false,
+      "prompt_prefix": "",
+      "gen": "nine eight one five one",
+      "text": "nine eight one five one",
+      "compute_ms": 112.0,
+      "fired": false
+    },
+    {
+      "k": 7,
+      "t_end": 4.0,
+      "rms": 0.05884341523051262,
+      "gated": false,
+      "prompt_prefix": "nine",
+      "gen": "eight one five one four",
+      "text": "nine eight one five one four",
+      "compute_ms": 97.1,
+      "fired": false
+    },
+    {
+      "k": 8,
+      "t_end": 4.5,
+      "rms": 0.004893985111266375,
+      "gated": false,
+      "prompt_prefix": "nine eight",
+      "gen": "one five one four",
+      "text": "nine eight one five one four",
+      "compute_ms": 90.1,
+      "fired": false
+    },
+    {
+      "k": 9,
+      "t_end": 5.0,
+      "rms": 0.047524288296699524,
+      "gated": false,
+      "prompt_prefix": "nine eight",
+      "gen": "one five one four two",
+      "text": "nine eight one five one four two",
+      "compute_ms": 95.9,
+      "fired": false
+    },
+    {
+      "k": 10,
+      "t_end": 5.5,
+      "rms": 0.012177444994449615,
+      "gated": false,
+      "prompt_prefix": "nine eight one",
+      "gen": "five one four two three",
+      "text": "nine eight one five one four two three",
+      "compute_ms": 100.4,
+      "fired": false
+    },
+    {
+      "k": 11,
+      "t_end": 6.0,
+      "rms": 0.04229329526424408,
+      "gated": false,
+      "prompt_prefix": "nine eight one five",
+      "gen": "one four two three",
+      "text": "nine eight one five one four two three",
+      "compute_ms": 82.1,
+      "fired": false
+    },
+    {
+      "k": 12,
+      "t_end": 6.5,
+      "rms": 0.03328850492835045,
+      "gated": false,
+      "prompt_prefix": "nine eight one five",
+      "gen": "one four two three five",
+      "text": "nine eight one five one four two three five",
+      "compute_ms": 124.6,
+      "fired": false
+    },
+    {
+      "k": 13,
+      "t_end": 7.0,
+      "rms": 0.026114147156476974,
+      "gated": false,
+      "prompt_prefix": "nine eight one five one",
+      "gen": "four two three five one",
+      "text": "nine eight one five one four two three five one",
+      "compute_ms": 102.9,
+      "fired": false
+    },
+    {
+      "k": 14,
+      "t_end": 7.5,
+      "rms": 0.0009077016147784889,
+      "gated": false,
+      "prompt_prefix": "nine eight one five one four",
+      "gen": "two three five one <EAGER_END_SPEECH><END_SPEECH>",
+      "text": "nine eight one five one four two three five one <EAGER_END_SPEECH><END_SPEECH>",
+      "compute_ms": 128.4,
+      "fired": true
+    },
+    {
+      "k": 15,
+      "t_end": 8.0,
+      "rms": 0.0,
+      "gated": true,
+      "prompt_prefix": "",
+      "gen": "",
+      "text": "",
+      "compute_ms": 0.0,
+      "fired": false
+    },
+    {
+      "k": 16,
+      "t_end": 8.5,
+      "rms": 0.0,
+      "gated": true,
+      "prompt_prefix": "",
+      "gen": "",
+      "text": "",
+      "compute_ms": 0.0,
+      "fired": false
+    },
+    {
+      "k": 17,
+      "t_end": 9.0,
+      "rms": 0.0,
+      "gated": true,
+      "prompt_prefix": "",
+      "gen": "",
+      "text": "",
+      "compute_ms": 0.0,
+      "fired": false
+    },
+    {
+      "k": 18,
+      "t_end": 9.5,
+      "rms": 0.0,
+      "gated": true,
+      "prompt_prefix": "",
+      "gen": "",
+      "text": "",
+      "compute_ms": 0.0,
+      "fired": false
+    }
+  ],
+  "timeout_x": 1.0,
+  "timeout_fires": [
+    8.0
+  ],
+  "silence_run": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5
+  ]
+}

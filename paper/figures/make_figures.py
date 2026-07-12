@@ -923,12 +923,160 @@ def fig10_landscape():
     save(fig, "fig10_landscape")
 
 
+def fig17_decodetape():
+    """§2 — how a streaming turn-aware recognizer decodes, cascade vs ours,
+    on a real per-chunk trace (research/130-decode-trace.json: unified r32 on
+    dictation probe #0). Panel a: cascade (separate ASR + silence-timeout).
+    Panel b: ours (endpoint token emitted inline, one decode per 0.5 s chunk).
+    """
+    import soundfile as sf
+    tr = json.load(open(R / "130-decode-trace.json"))
+    audio, sr = sf.read(ROOT / "data/probes/digit_wavs/digit_000.wav", dtype="float32")
+    dur = len(audio) / sr
+    # compact peak envelope (keeps the visual, drops the file size)
+    step = max(1, len(audio) // 2400)
+    n = (len(audio) // step) * step
+    env = np.abs(audio[:n]).reshape(-1, step).max(axis=1)
+    env = env / max(env.max(), 1e-6)
+    ta = np.linspace(0, dur, len(env))
+    PAUSES = [(1.70, 2.41), (4.14, 4.82)]
+    LAST = 7.08
+    OURS_FIRE = tr["ours_fires"][0]                       # 7.5
+    lat = OURS_FIRE - LAST
+
+    GREEN, RED, YEL, BLU = OKABE["green"], OKABE["red"], "#c9a227", OKABE["blue"]
+    GREY = "#666666"
+    fig, ax = plt.subplots(figsize=(7.2, 5.15))
+    ax.set_xlim(-2.75, 10.7)
+    ax.set_ylim(0, 10.5)
+    ax.axis("off")
+    ax.grid(False)
+
+    def wave(yc, amp, hl=None):
+        ax.fill_between(ta, yc + env * amp, yc - env * amp, color="#9aa7b4", lw=0)
+        for k in np.arange(0.5, dur, 0.5):                # 0.5 s chunk grid
+            ax.axvline(k, ymin=0, ymax=1, color="#e4e2da", lw=0.4, zorder=0)
+        for (a, b) in PAUSES:
+            ax.add_patch(Rectangle((a, yc - amp - 0.05), b - a, 2 * (amp + 0.05),
+                                   color=YEL, alpha=0.22, lw=0, zorder=1))
+
+    def chip(x, y, txt, color, fs=7.0):
+        ax.text(x, y, txt, fontsize=fs, va="center", ha="center", weight="bold",
+                color="white", zorder=6,
+                bbox=dict(boxstyle="round,pad=0.24", fc=color, ec="none"))
+
+    def pbox(x, y, w, h, lines, ec, fc="#fbfbf8", fs=6.5):
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.04,rounding_size=0.08",
+                                    fc=fc, ec=ec, lw=1.0, zorder=4))
+        yy = y + h - 0.26
+        for t, c, wt in lines:
+            ax.text(x + 0.16, yy, t, fontsize=fs, va="top", ha="left", color=c,
+                    weight=wt, zorder=5)
+            yy -= 0.30
+
+    DIG = "nine  eight  one   five  one  four   two  three  five  one"
+
+    # ---- pinned CTX header ----
+    ax.add_patch(FancyBboxPatch((-2.55, 9.62), 12.9, 0.66,
+                                boxstyle="round,pad=0.04,rounding_size=0.08",
+                                fc="#e9f3ec", ec="#2e7d32", lw=1.0, zorder=3))
+    ax.text(-2.4, 9.95, "context, pinned in the system slot for the whole session",
+            fontsize=6.7, style="italic", color="#2e7d32", va="center", ha="left")
+    ax.text(-2.4, 9.72, r"$\langle$sys$\rangle$ User profile — name: Priya Raman; "
+            r"email: priya.raman@gmail.com; plan: business tier $\langle$/sys$\rangle$",
+            fontsize=6.9, color="#1b4d24", va="center", ha="left", family="monospace")
+
+    # ================= PANEL (a): CASCADE =================
+    ax.text(-2.7, 9.05, "(a)  The usual pipeline — a separate recognizer  +  a silence timer",
+            fontsize=8.6, weight="bold", ha="left", color="#333333")
+    wave(8.05, 0.34)
+    ax.text(-2.7, 8.05, "audio\n(caller reads\na 10-digit no.)", fontsize=6.6, color=GREY,
+            ha="left", va="center")
+    for (a, b) in PAUSES:
+        ax.text((a + b) / 2, 8.52, "pause", fontsize=6.2, ha="center", color="#8a6d1a")
+
+    # ASR lane (transcript only, no marker)
+    ax.text(-2.7, 7.34, "recognizer\noutput:", fontsize=6.8, color="#333333", ha="left", va="center")
+    ax.add_patch(FancyBboxPatch((0.05, 7.12), 8.9, 0.46, boxstyle="round,pad=0.03,rounding_size=0.06",
+                                fc="#eef1f4", ec="#9aa7b4", lw=0.8, zorder=3))
+    ax.text(0.25, 7.35, DIG, fontsize=6.6, family="monospace", va="center", ha="left", color="#222222")
+    ax.text(9.15, 7.35, "transcript\ntokens only", fontsize=6.3, color=GREY, va="center", ha="left")
+
+    # silence-timeout lane
+    ax.text(-2.7, 6.5, "turn-end call\n(silence timer):", fontsize=6.8, color="#333333", ha="left", va="center")
+    # responsive 0.5s timeout barges into the pauses
+    for (a, b) in PAUSES:
+        ax.scatter([b + 0.5], [6.5], marker="X", s=52, color=RED, zorder=5, edgecolor="black", lw=0.3)
+    ax.scatter([LAST + 0.5], [6.5], marker="X", s=52, color=RED, zorder=5, edgecolor="black", lw=0.3)
+    ax.text(2.0, 6.06, r"responsive timeout ($X{=}0.5$ s): fires inside the pauses — "
+            "2 premature / number", fontsize=6.4, color=RED, ha="left")
+    # patient 1.0s timeout — late
+    ax.scatter([tr["timeout_fires"][0]], [6.5], marker="*", s=150, color="#b0872a",
+               zorder=5, edgecolor="black", lw=0.3)
+    ax.text(tr["timeout_fires"][0] + 0.18, 6.5, f"patient ($X{{=}}1.0$ s):\n+{tr['timeout_fires'][0]-LAST:.1f} s, slow",
+            fontsize=6.2, color="#8a6d1a", va="center", ha="left")
+    ax.text(2.0, 5.72, "the clock is blind to the digits: no single timeout is both prompt and pause-proof",
+            fontsize=6.6, color="#333333", style="italic", ha="left")
+
+    ax.plot([-2.7, 10.4], [5.4, 5.4], color="#cfcdc4", lw=0.7)
+
+    # ================= PANEL (b): OURS =================
+    ax.text(-2.7, 5.05, "(b)  Ours — the recognizer emits the transcript AND the end-of-turn token, inline",
+            fontsize=8.6, weight="bold", ha="left", color="#1b5e20")
+    wave(4.05, 0.34)
+    # trigger arrows at each 0.5 s boundary
+    for k in np.arange(0.5, dur + 0.01, 0.5):
+        ax.annotate("", xy=(k, 4.45), xytext=(k, 4.66),
+                    arrowprops=dict(arrowstyle="-|>", color=BLU, lw=0.7, mutation_scale=6))
+    ax.text(-2.7, 4.05, "audio", fontsize=6.6, color=GREY, ha="left", va="center")
+    ax.text(4.5, 4.82, "one decode per 0.5 s audio chunk  (≈ 0.1 s compute each, well inside real time)",
+            fontsize=6.6, color=BLU, ha="center")
+
+    # committed transcript lane + HOLD / FIRE marks
+    ax.text(-2.7, 3.42, "decode\noutput:", fontsize=6.8, color="#333333", ha="left", va="center")
+    ax.add_patch(FancyBboxPatch((0.05, 3.2), 8.9, 0.46, boxstyle="round,pad=0.03,rounding_size=0.06",
+                                fc="#eaf3ec", ec=GREEN, lw=0.9, zorder=3))
+    ax.text(0.25, 3.43, DIG, fontsize=6.6, family="monospace", va="center", ha="left", color="#123")
+    ax.annotate("", xy=(9.28, 3.43), xytext=(8.98, 3.43),
+                arrowprops=dict(arrowstyle="-|>", color=GREEN, lw=0.8, mutation_scale=7))
+    chip(9.75, 3.43, r"$\langle$END_SPEECH$\rangle$", GREEN, fs=6.3)
+    for (a, b) in PAUSES:
+        ax.text((a + b) / 2, 3.02, "held", fontsize=6.2, ha="center", color=GREEN, weight="bold")
+
+    # zoom boxes: one HOLD (pause), one FIRE (end)
+    pbox(-2.55, 1.30, 5.35, 1.60, [
+        (r"at a pause  (t = 4.5 s)", GREY, "bold"),
+        (r"$\langle$sys$\rangle$ …priya.raman@gmail.com…", "#1b4d24", "normal"),
+        (r"$\langle$audio 0.0–4.8 s$\rangle$", "#333333", "normal"),
+        (r"$\langle$asst$\rangle$ nine eight one · five one four", "#123", "normal"),
+        (r"model emits:  → four …   (no $\langle$END$\rangle$)", GREEN, "bold"),
+    ], GREEN)
+    pbox(3.15, 1.30, 5.4, 1.60, [
+        (r"at the turn end  (t = 7.5 s)", GREY, "bold"),
+        (r"$\langle$sys$\rangle$ …priya.raman@gmail.com…", "#1b4d24", "normal"),
+        (r"$\langle$audio 0.0–7.5 s$\rangle$", "#333333", "normal"),
+        (r"$\langle$asst$\rangle$ …two three five one", "#123", "normal"),
+        (r"model emits:  → $\langle$END_SPEECH$\rangle$", GREEN, "bold"),
+    ], RED)
+    ax.text(-2.4, 0.74, "HOLD — the 3-3-4 pattern predicts more digits",
+            fontsize=6.6, color="#8a6d1a", ha="left", va="center")
+    ax.text(3.3, 0.74, rf"FIRE — complete + 0.3 s silence heard,  +{lat:.2f} s",
+            fontsize=6.6, color=RED, ha="left", va="center")
+    ax.text(8.75, 1.9, "can output:\nany word, plus\ntwo markers\n"
+            r"{$\langle$EAGER_END$\rangle$,"
+            "\n" r"$\langle$END_SPEECH$\rangle$}",
+            fontsize=6.3, color="#333333", ha="left", va="center")
+    ax.text(10.4, 0.32, "real per-chunk replay · unified r32 checkpoint · dictation probe #0",
+            fontsize=6.0, color="#999999", ha="right")
+    save(fig, "fig17_decodetape")
+
+
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
     for fn in [fig0_teaser, fig16_scenarios, fig1_oscillation, fig2_contradictions, fig3_tradeoff,
                fig4_biasing, fig5_inversion, fig6_silence, fig7_serving, fig8_system, fig9_minimalpair,
                fig10_landscape, fig11_twoaxes,
-               fig12_pauses, fig13_rule, fig14_dictation, fig15_context]:
+               fig12_pauses, fig13_rule, fig14_dictation, fig15_context, fig17_decodetape]:
         try:
             fn()
         except Exception:
