@@ -66,7 +66,7 @@
 \maketitle
 
 \begin{abstract}
-Every voice agent must decide, in real time, whether the user has finished talking. Deployed systems decide from acoustics alone: a voice-activity detector plus a fixed silence timeout. Frontier commercial recognizers instead decide inside the ASR model, where the words are, but every member of this \emph{turn-aware} class is closed. We present, to our knowledge, the first open turn-aware streaming ASR system with a published training recipe: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn from meaning and silence jointly, handles dictation, and grounds transcription in session context. On a streaming benchmark that reproduces deployment conditions it reaches 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires (spurious end-of-turn signals) per speech-minute, replicated on a fresh test set; no silence timeout reaches this operating point. The recipe rests on one principle: every label for a streaming decision must be computable from the input up to the decision point. Labels inherited from offline corpora violate this, because offline data encodes the future; we call such labels \emph{clairvoyant}. Across eight controlled revisions of the training labels, clairvoyant supervision produced training oscillation and an apparent recall-versus-precision trade-off, and a single intervention exposed the trade-off as an artifact: appending one second of silence to the evaluation clips raised a ``broken'' model's end-of-turn recall from 0.10 to 1.00. The same leak recurred with context: a biasing prefix that always matched the audio became a shortcut the model copied (40\% wrong-profile intrusion), and counterfactual examples where context and audio disagree cut intrusion to 0.8\% while keeping most of a $+28.9$\,pp entity-recall benefit. Weights, recipe, and benchmark are released.
+Every voice agent must decide, in real time, whether the user has finished talking. Deployed systems decide from acoustics alone, via a voice-activity detector plus a silence timeout; frontier commercial recognizers decide inside the ASR model, where the words are, but that \emph{turn-aware} class is entirely closed. We present, to our knowledge, the first open turn-aware streaming ASR system with a published training recipe: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn from meaning and silence jointly, handles dictation, and grounds transcription in session context. On a deployment-matched streaming benchmark it reaches 0.97 boundary recall at 0.39\,s median latency with 0.3 false fires per speech-minute, replicated on a fresh test set; no silence timeout reaches this operating point. The recipe rests on one principle: every label for a streaming decision must be computable from the input up to the decision point. Labels inherited from offline corpora violate this, because offline data encodes the future; such \emph{clairvoyant} labels manufactured training oscillation and a phantom recall-versus-precision trade-off, exposed by one intervention: appending one second of silence to the evaluation clips raised a ``broken'' model's end-of-turn recall from 0.10 to 1.00. The same leak recurred with context, where an always-matching biasing prefix became a shortcut the model copied (40\% wrong-profile intrusion); counterfactual examples where context and audio disagree cut intrusion to 0.8\% while keeping most of a $+28.9$\,pp entity-recall benefit.
 \end{abstract}
 
 \vspace{-0.3em}
@@ -79,7 +79,7 @@ Code: \href{https://github.com/19PINE-AI/turn-aware-asr}{\texttt{github.com/19PI
 {\setlength{\intextsep}{6pt plus 2pt minus 2pt}%
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=0.95\linewidth]{fig0_teaser}
+  \includegraphics[width=\linewidth]{fig0_teaser}
   \caption{\textbf{No timeout gets both turns right.} At 0.7\,s it interrupts the dictated number twice; at 1.0\,s it still keeps the user waiting after ``I'm still here.'' Ours holds through the pauses and fires 0.39\,s after the thought completes.}
   \label{fig:teaser}
 \end{figure}}
@@ -108,7 +108,7 @@ The principle is not specific to time. Trained only on examples where the biasin
 
 Our contributions:
 \begin{enumerate}\itemsep2pt
-  \item \textbf{The first open turn-aware streaming ASR system, with its training recipe and benchmark.} One labeling rule and two pair constructions yield a single small model that transcribes, emits in-transcript end-of-turn events, holds through dictation, and grounds transcription in context, beating every silence-timeout setting. Weights, recipe, and a deployment-matched benchmark, under which the historical model ranking \emph{inverts}, are released.
+  \item \textbf{The first open turn-aware streaming ASR system, with its training recipe and benchmark.} One labeling rule and two pair constructions yield a single small model that transcribes, emits in-transcript end-of-turn events, holds through dictation, and grounds transcription in context, beating every silence-timeout setting on a deployment-matched benchmark under which the historical model ranking \emph{inverts}.
   \item \textbf{A failure class, with a diagnosis by intervention.} Clairvoyant labels (streaming supervision that depends on post-decision input) manufacture training oscillation and phantom capability trade-offs. A one-variable experiment falsifies the frontier that eight supervision compositions had appeared to trace; a synthetic study isolates the mechanism.
   \item \textbf{Evidence that the principle generalizes.} The contextual analog of the temporal leak, context copying under matched-only training, is cured by the analogous counterfactual construction, folding dictation and context grounding into the same checkpoint. Both instances distill into a checklist for streaming supervision pipelines.
 \end{enumerate}
@@ -236,17 +236,17 @@ Each \S\ref{sec:task} scenario has a dedicated probe, and both run through the e
 
 \begin{table}[t]
   \centering\small
-  \caption{\textbf{Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref{fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark. Last row: the fresh twice-larger confirmation set drawn after all development ended. WER is a fraction; means can exceed 1 through insertions. $^{\dagger}$WER mean dominated by long-monologue repetition loops when no force-flush bounds the segment (WER \emph{median} 0.30 on both stretch sets; the force-flush of Appendix~\ref{app:serving} bounds this tail).}
+  \caption{\textbf{Main endpointing result} (deployment-matched replay, energy gate on; the latency-vs-false-fire view is Figure~\ref{fig:tradeoff}). Rows 1--4: the 25-stretch development benchmark. Last row: the fresh twice-larger confirmation set drawn after all development ended. WER is the per-stretch \emph{median} streaming WER; the corresponding means, dominated by long-monologue repetition loops when no force-flush bounds the segment, are in Appendix~\ref{app:tables}, and the force-flush of Appendix~\ref{app:serving} bounds that tail.}
   \label{tab:main}
   \begin{tabular}{lccccc}
     \toprule
-    Policy & Recall\,$\uparrow$ & P50\,$\downarrow$ & P95\,$\downarrow$ & False/min\,$\downarrow$ & WER$_\text{mean}$\,$\downarrow$ \\
+    Policy & Recall\,$\uparrow$ & P50\,$\downarrow$ & P95\,$\downarrow$ & False/min\,$\downarrow$ & WER$_\text{med}$\,$\downarrow$ \\
     \midrule
-    mixed-pools + gate + confirm $h{=}1$ & 0.927 & 0.68\,s & 1.27\,s & 3.2 & 0.36 \\
-    opposed-pools + gate + confirm $h{=}1$ & 0.938 & 0.77\,s & 1.06\,s & 0.0 & 4.96$^{\dagger}$ \\
-    \textbf{causal + gate (ours)} & \textbf{0.969} & \textbf{0.39\,s} & \textbf{0.70\,s} & \textbf{0.3} & 1.43$^{\dagger}$ \\
-    causal + gate + confirm $h{=}1$ & 0.969 & 0.89\,s & 1.20\,s & 0.0 & 1.43$^{\dagger}$ \\
-    causal + gate, fresh 50-stretch set & 0.924 & 0.42\,s & 0.70\,s & 0.2 & 4.63$^{\dagger}$ \\
+    mixed-pools + gate + confirm $h{=}1$ & 0.927 & 0.68\,s & 1.27\,s & 3.2 & 0.31 \\
+    opposed-pools + gate + confirm $h{=}1$ & 0.938 & 0.77\,s & 1.06\,s & 0.0 & 0.27 \\
+    \textbf{causal + gate (ours)} & \textbf{0.969} & \textbf{0.39\,s} & \textbf{0.70\,s} & \textbf{0.3} & 0.28 \\
+    causal + gate + confirm $h{=}1$ & 0.969 & 0.89\,s & 1.20\,s & 0.0 & 0.28 \\
+    causal + gate, fresh 50-stretch set & 0.924 & 0.42\,s & 0.70\,s & 0.2 & 0.30 \\
     \bottomrule
   \end{tabular}
 \end{table}

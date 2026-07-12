@@ -110,9 +110,9 @@ def fig0_teaser():
     ax.text(0.15, yA + 0.52, "Turn 1: the pause that means “wait”",
             fontsize=8.6, style="italic")
     timeline(ax, 0.15, 12.45, yA)
-    speech_block(ax, 0.3, 2.1, yA, label="“four one five …”")
-    speech_block(ax, 3.1, 4.9, yA, label="“five five five …”")
-    speech_block(ax, 6.1, 8.3, yA, label="“zero one nine two.”")
+    speech_block(ax, 0.3, 2.1, yA, label="“nine eight one …”")
+    speech_block(ax, 3.1, 4.9, yA, label="“five one four …”")
+    speech_block(ax, 6.1, 8.3, yA, label="“two three five one.”")
     ax.text(2.6, yA + 0.28, "0.9 s", ha="center", fontsize=7.0, color=GREY)
     ax.text(5.5, yA + 0.28, "1.1 s", ha="center", fontsize=7.0, color=GREY)
     cross(2.85, yA, "0.7 s timeout\nfires mid-number")
