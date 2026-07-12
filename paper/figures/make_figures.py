@@ -60,7 +60,7 @@ def save(fig, name):
     print(f"  wrote {name}.pdf")
 
 
-def speech_block(ax, x0, x1, y, h=0.34, color="#9ecae1", ec="#3182bd", label=None, hatch=None, alpha=1.0):
+def speech_block(ax, x0, x1, y, h=0.34, color="#9ecae1", ec="#3182bd", label=None, hatch=None, alpha=1.0, fs=7.2):
     """A rounded 'speech' block on a timeline."""
     b = FancyBboxPatch((x0, y - h / 2), x1 - x0, h,
                        boxstyle="round,pad=0.015,rounding_size=0.06",
@@ -68,7 +68,7 @@ def speech_block(ax, x0, x1, y, h=0.34, color="#9ecae1", ec="#3182bd", label=Non
     ax.add_patch(b)
     if label:
         ax.text((x0 + x1) / 2, y, label, ha="center", va="center",
-                fontsize=7.2, zorder=4)
+                fontsize=fs, zorder=4)
 
 
 def timeline(ax, x0, x1, y):
@@ -77,8 +77,10 @@ def timeline(ax, x0, x1, y):
 
 # ================================================================ F0: teaser
 def fig0_teaser():
-    """Headline figure: the two turns no timeout can get right, and what the
-    turn-aware model does on each. Pure illustration, schematic time axis."""
+    """Headline figure: two turns no single silence timeout can get right, and
+    what the turn-aware model does on each. Pure illustration, schematic time
+    axis. One 'hold-through' turn (a dictated number) and one 'fire-now'
+    completion; the full three-scenario treatment is fig16_scenarios (§2)."""
     fig, ax = plt.subplots(figsize=(7.2, 2.3))
     ax.set_xlim(0, 12.6)
     ax.set_ylim(0.15, 4.15)
@@ -107,7 +109,7 @@ def fig0_teaser():
 
     # ---- Turn 1: the pause that means "wait" (1 s of audio ~ 1.1 units)
     yA = 3.35
-    ax.text(0.15, yA + 0.52, "Turn 1: the pause that means “wait”",
+    ax.text(0.15, yA + 0.52, "Turn 1 — the pause that means “wait”",
             fontsize=8.6, style="italic")
     timeline(ax, 0.15, 12.45, yA)
     speech_block(ax, 0.3, 2.1, yA, label="“nine eight one …”")
@@ -123,7 +125,7 @@ def fig0_teaser():
 
     # ---- Turn 2: the completion that means "go"
     yB = 1.15
-    ax.text(0.15, yB + 0.52, "Turn 2: the completion that means “go”",
+    ax.text(0.15, yB + 0.52, "Turn 2 — the completion that means “go”",
             fontsize=8.6, style="italic")
     timeline(ax, 0.15, 12.45, yB)
     speech_block(ax, 0.3, 3.1, yB, label="“Hello? I’m still here.”")
@@ -142,6 +144,90 @@ def fig0_teaser():
     ax.text(9.85, 0.42, "turn-aware ASR (this work)", va="center", fontsize=7.8)
 
     save(fig, "fig0_teaser")
+
+
+# ============================================ F16: three-scenario problem setup
+def fig16_scenarios():
+    """Comprehensive companion to the teaser (Figure 1), placed in the problem
+    formulation. All three motivating turns, each decision point annotated with
+    the causal read (completeness + observed silence) versus what a fixed
+    silence timeout does. Pure illustration, schematic time axis."""
+    fig, ax = plt.subplots(figsize=(7.2, 4.2))
+    ax.set_xlim(0, 12.9)
+    ax.set_ylim(0.05, 5.95)
+    ax.axis("off")
+    ax.grid(False)
+
+    GREEN, GREY = "#00694f", "#5b5b5b"
+
+    def tmo(x, y, label=None):
+        ax.scatter([x], [y], marker="X", s=78, color="#c23b22", zorder=5,
+                   edgecolor="black", lw=0.4)
+        if label:
+            ax.text(x, y + 0.24, label, ha="center", va="bottom",
+                    fontsize=6.5, color="#c23b22")
+
+    def star(x, y):
+        ax.scatter([x], [y], marker="*", s=185, color=OKABE["green"], zorder=6,
+                   edgecolor="black", lw=0.4)
+
+    def read(x, y, label, fire=False):
+        ax.text(x, y - 0.27, label, ha="center", va="top", fontsize=6.5,
+                color=(GREEN if fire else GREY),
+                style=("normal" if fire else "italic"),
+                weight=("bold" if fire else "normal"))
+
+    # (1) dictated number — hold through the pauses
+    y = 5.15
+    ax.text(0.1, y + 0.54,
+            "(1) Dictated number — the words say “more to come”: hold through the pauses",
+            fontsize=8.3, style="italic")
+    timeline(ax, 0.1, 12.8, y)
+    for a, b, t in [(0.3, 2.1, "“nine eight one”"), (3.3, 5.1, "“five one four”"),
+                    (6.3, 8.7, "“two three five one.”")]:
+        speech_block(ax, a, b, y, label=t)
+    tmo(2.7, y, "0.7 s timeout fires"); read(2.7, y, "3 digits — incomplete → hold")
+    tmo(5.7, y); read(5.7, y, "6 digits — incomplete → hold")
+    star(9.1, y); read(9.1, y, "10 digits complete\n+ 0.3 s silence → fire  (+0.39 s)", fire=True)
+
+    # (2) long question — short clauses sized to fit inside the blocks
+    y = 3.05
+    ax.text(0.1, y + 0.54,
+            "(2) Long question — clause pauses inside one turn: hold through them",
+            fontsize=8.3, style="italic")
+    timeline(ax, 0.1, 12.8, y)
+    for a, b, t in [(0.3, 3.0, "“the request times out”"),
+                    (3.7, 6.4, "“and the retry fails,”"),
+                    (7.1, 9.5, "“what should we do?”")]:
+        speech_block(ax, a, b, y, label=t, fs=6.5)
+    tmo(3.35, y, "timeout fires"); read(3.35, y, "subordinate clause → hold")
+    tmo(6.75, y); read(6.75, y, "still mid-question → hold")
+    star(9.9, y); read(9.9, y, "question complete\n+ silence → fire  (+0.40 s)", fire=True)
+
+    # (3) completed turn — model fires at near-zero silence; timeout keeps counting
+    y = 1.05
+    ax.text(0.1, y + 0.54,
+            "(3) Completed turn — no pause to wait out: fire at near-zero silence",
+            fontsize=8.3, style="italic")
+    timeline(ax, 0.1, 12.8, y)
+    speech_block(ax, 0.3, 3.7, y, label="“That’s everything, thanks.”", fs=6.6)
+    star(4.05, y)
+    ax.text(3.55, y - 0.30, "complete + 0.3 s silence\n→ fires +0.39 s", ha="center",
+            va="top", fontsize=6.5, color=GREEN, weight="bold")
+    tmo(4.9, y)
+    ax.text(4.62, y + 0.24, "1.0 s timeout", ha="left", va="bottom",
+            fontsize=6.5, color="#c23b22")
+    ax.text(5.4, y - 0.30, "still counting silence", ha="left", va="top",
+            fontsize=6.5, color=GREY, style="italic")
+
+    # legend, empty right half of the completion row
+    ax.scatter([9.7], [1.30], marker="X", s=64, color="#c23b22", edgecolor="black", lw=0.4)
+    ax.text(9.92, 1.30, "silence-timeout fire", va="center", fontsize=7.4)
+    ax.scatter([9.7], [0.88], marker="*", s=140, color=OKABE["green"],
+               edgecolor="black", lw=0.4)
+    ax.text(9.92, 0.88, "turn-aware fire (this work)", va="center", fontsize=7.4)
+
+    save(fig, "fig16_scenarios")
 
 
 # ================================================================ F1: oscillation
@@ -839,8 +925,8 @@ def fig10_landscape():
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
-    for fn in [fig0_teaser, fig1_oscillation, fig2_contradictions, fig3_tradeoff, fig4_biasing,
-               fig5_inversion, fig6_silence, fig7_serving, fig8_system, fig9_minimalpair,
+    for fn in [fig0_teaser, fig16_scenarios, fig1_oscillation, fig2_contradictions, fig3_tradeoff,
+               fig4_biasing, fig5_inversion, fig6_silence, fig7_serving, fig8_system, fig9_minimalpair,
                fig10_landscape, fig11_twoaxes,
                fig12_pauses, fig13_rule, fig14_dictation, fig15_context]:
         try:
