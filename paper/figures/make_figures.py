@@ -983,8 +983,8 @@ def fig17_decodetape():
     ax.text(-2.4, 9.95, "context, pinned in the system slot for the whole session",
             fontsize=6.7, style="italic", color="#2e7d32", va="center", ha="left")
     ax.text(-2.4, 9.72, r"$\langle$sys$\rangle$ User profile — name: Priya Raman; "
-            r"email: priya.raman@gmail.com; plan: business tier $\langle$/sys$\rangle$",
-            fontsize=6.9, color="#1b4d24", va="center", ha="left", family="monospace")
+            r"email: priya.raman@gmail.com $\langle$/sys$\rangle$",
+            fontsize=6.7, color="#1b4d24", va="center", ha="left", family="monospace")
 
     # ================= PANEL (a): CASCADE =================
     ax.text(-2.7, 9.05, "(a)  The usual pipeline — a separate recognizer  +  a silence timer",
@@ -1040,18 +1040,20 @@ def fig17_decodetape():
     ax.annotate("", xy=(9.28, 3.43), xytext=(8.98, 3.43),
                 arrowprops=dict(arrowstyle="-|>", color=GREEN, lw=0.8, mutation_scale=7))
     chip(9.75, 3.43, r"$\langle$END_SPEECH$\rangle$", GREEN, fs=6.3)
-    for (a, b) in PAUSES:
-        ax.text((a + b) / 2, 3.02, "held", fontsize=6.2, ha="center", color=GREEN, weight="bold")
+    for (a, b) in PAUSES:                                  # label each pause "held", inside its box
+        ax.text((a + b) / 2, 4.05, "held", fontsize=6.0, ha="center", va="center",
+                color="#0b6b4f", weight="bold", zorder=6,
+                bbox=dict(boxstyle="round,pad=0.14", fc="white", ec="none", alpha=0.7))
 
     # zoom boxes: one HOLD (pause), one FIRE (end)
-    pbox(-2.55, 1.30, 5.35, 1.60, [
+    pbox(-2.55, 1.08, 5.35, 1.82, [
         (r"at a pause  (t = 4.5 s)", GREY, "bold"),
         (r"$\langle$sys$\rangle$ …priya.raman@gmail.com…", "#1b4d24", "normal"),
         (r"$\langle$audio 0.0–4.8 s$\rangle$", "#333333", "normal"),
         (r"$\langle$asst$\rangle$ nine eight one · five one four", "#123", "normal"),
         (r"model emits:  → four …   (no $\langle$END$\rangle$)", GREEN, "bold"),
     ], GREEN)
-    pbox(3.15, 1.30, 5.4, 1.60, [
+    pbox(3.15, 1.08, 5.4, 1.82, [
         (r"at the turn end  (t = 7.5 s)", GREY, "bold"),
         (r"$\langle$sys$\rangle$ …priya.raman@gmail.com…", "#1b4d24", "normal"),
         (r"$\langle$audio 0.0–7.5 s$\rangle$", "#333333", "normal"),

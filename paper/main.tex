@@ -126,7 +126,7 @@ Our contributions:
 \begin{figure}[t]
   \centering
   \includegraphics[width=\linewidth]{fig17_decodetape}
-  \caption{\textbf{How the turn-end decision moves inside the recognizer} (one real per-chunk run of our model on dictation probe~\#0; prompts and outputs shown verbatim). \textbf{(a)}~The usual pipeline runs a separate recognizer that only ever outputs words, and leaves the turn-end call to a downstream timer watching for silence: blind to the digits, a short timer fires inside the pauses between digit groups while a long one lags. \textbf{(b)}~Ours runs one decode per 0.5\,s chunk---its input is the pinned profile, the recent audio, and the words committed so far---and emits the end-of-turn marker \emph{in the same step}, as one more token from the same vocabulary as the words. It waits through both pauses because the digit pattern promises more, then fires 0.42\,s after the last digit. The transcript is identical in both panels; only where the turn-end decision is made differs.}
+  \caption{\textbf{How the turn-end decision moves inside the recognizer} (one real per-chunk run on dictation probe~\#0; prompts and outputs verbatim). \textbf{(a)}~The usual pipeline outputs only words and leaves the turn-end call to a downstream silence timer, blind to the digits: a short timeout fires inside the pauses, a long one lags. \textbf{(b)}~Ours emits the end-of-turn marker \emph{in the same decode} as the words---holding through both pauses, then firing 0.42\,s after the last digit. The transcript is identical in both panels; only where the decision is made differs.}
   \label{fig:decodetape}
 \end{figure}
 
