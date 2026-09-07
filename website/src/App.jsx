@@ -14,7 +14,7 @@ export default function App() {
           <a href="#method">How it works</a>
           <a href="#results">Results</a>
           <a href="#explorer">Trajectory explorer</a>
-          <a href="https://arxiv.org/abs/2609.04225" target="_blank" rel="noreferrer">Paper ↗</a>
+          <a className="hide-sm" href="https://arxiv.org/abs/2609.04225" target="_blank" rel="noreferrer">Paper ↗</a>
           <a className="hide-sm" href="https://github.com/19PINE-AI/turn-aware-asr" target="_blank" rel="noreferrer">Code ↗</a>
         </div>
       </nav>
