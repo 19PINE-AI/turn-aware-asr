@@ -24,13 +24,15 @@ The checkpoints are research prototypes trained on approximately 20,000 synthesi
 ## Setup
 
 ```bash
+git clone https://github.com/19PINE-AI/turn-aware-asr.git
+cd turn-aware-asr
 python3.11 -m venv .venv && source .venv/bin/activate
 pip install --upgrade pip wheel
 pip install --index-url https://download.pytorch.org/whl/cu128 torch torchaudio
 pip install -r requirements.txt
-# Optional, GPU-bound:
-pip install transformer_engine[torch] flash-attn --no-build-isolation
 ```
+
+See [REPRODUCING.md](REPRODUCING.md) for environment versions, dataset prerequisites, recipe entry points, and checkpoint availability.
 
 ## Repository layout
 
@@ -63,4 +65,4 @@ The experiment scripts document their data and checkpoint paths; datasets and mo
 
 ## License
 
-Code: Apache 2.0. AuT encoder weights extracted from `Qwen/Qwen3-ASR-0.6B` retain their original Apache 2.0 license.
+Code: [Apache 2.0](LICENSE). AuT encoder weights extracted from `Qwen/Qwen3-ASR-0.6B` retain their original Apache 2.0 license.

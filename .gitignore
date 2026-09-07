@@ -34,3 +34,9 @@ checkpoints/merged/
 
 # external-baseline venvs (exp-4) — large, re-creatable per eval/external/README.md
 .venv_ext_*/
+
+# Local credentials and publication correspondence
+.env
+.env.*
+!.env.example
+paper/arxiv_moderation_email.txt
