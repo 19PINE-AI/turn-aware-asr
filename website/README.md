@@ -1,60 +1,81 @@
-# Paper website — *The Trade-off Was in the Labels*
+# Paper website
 
-[Paper: arXiv:2609.04225](https://arxiv.org/abs/2609.04225) · [Live website](https://01.me/research/turn-aware-asr/)
+[Project README](../README.md) · [Live site](https://01.me/research/turn-aware-asr/) · [Paper](https://arxiv.org/abs/2609.04225)
 
-Includes the published abstract, PDF link, and BibTeX citation.
+A static React/Vite site explaining the method and showing recorded results.
+The trajectory explorer plays audio alongside saved transcripts and turn
+boundaries; it does not run a model in the browser.
 
-A React (Vite) site for the paper, in three sections:
+## Run locally
 
-1. **How it works** — interactive teaser (timeout-dilemma slider), system diagram,
-   the clairvoyant-label failure class, the causal recipe (minimal pair /
-   counterfactual twin / eight schemas), and the supervision checklist.
-2. **Key results** — every headline figure redrawn as interactive SVG from the
-   original result files (`research/*.json`, checkpoint eval logs): trade-off
-   frontier, main table, composition record, oscillation curves, silence-append
-   intervention, ranking inversion, biasing, dictation, silence scatter, and the
-   synthetic clairvoyant-fraction study.
-3. **Trajectory explorer** — audio playback + timeline visualization of **all
-   original recorded trajectories**: the streaming replay benchmark (dev-25 with
-   7 model arms, 15 external-system arms, 4 timeout arms; the 100-stretch
-   held-out set; the fresh 50-stretch confirmation set), the dictation probes
-   (250 + 50 items, three models), the spelled-entity probe (240 items × 3
-   context conditions), and Earnings-22 biasing (base + released models, 300
-   utterances × 3 context conditions).
+Requirements: Node.js 18 or later and npm. From the repository root:
 
-## Data provenance
+```bash
+cd website
+npm ci
+npm run dev
+```
 
-`scripts/export_data.py` (run from the **repo root** with the project venv)
-regenerates everything under `public/audio/` and `public/data/`:
+A fresh clone can build the site code, but **result charts and audio exploration
+require generated data**. The `public/data/` and `public/audio/` directories are
+excluded from Git. Use the live site to explore the complete results immediately,
+or prepare the data below for local development.
+
+## Prepare result data and audio
+
+Requirements: the project Python environment, `ffmpeg`, the recorded files in
+`research/`, and the source benchmark/probe audio under `data/`.
+See the [training guide](../REPRODUCING.md#prepare-the-data) for corpus prerequisites
+and inspect [`scripts/export_data.py`](scripts/export_data.py) for exact inputs.
+
+Run from the **repository root**, not `website/`:
 
 ```bash
 .venv/bin/python website/scripts/export_data.py
 ```
 
-- Benchmark stretch audio is rebuilt with the *same deterministic builder and
-  seeds* the evaluations used (`eval.streaming_replay_eval.build_stretches`,
-  seed 0 for dev-25/held-out-100, seed 1 for fresh-50) and validated
-  event-by-event against the recorded replay JSONs; the recomputed RMS-timeout
-  fires match the recorded per-stretch counts exactly, confirming sample-exact
-  audio.
-- All fires, hypotheses, latencies, and summaries come verbatim from
-  `research/*.json` — nothing is re-run through a model.
-- Probe/earnings audio is transcoded from `data/probes*`, `data/earnings22`.
+This generates approximately 78 MB of MP3 and JSON assets under `website/public/`.
+It reconstructs benchmark audio with the same stretch builder and seeds used by
+the evaluations: seed 0 for development/100-stretch sets and seed 1 for the fresh
+50-stretch set. It validates reconstructed events against recorded replay JSONs.
+Probe and Earnings-22 audio are transcoded from the local source files.
 
-Total generated payload ≈ 78 MB (lazy-loaded MP3s + ~1.7 MB JSON). These
-generated directories are gitignored; run the export before building/deploying.
+Transcripts, fires, latencies, and summaries come from the recorded results.
+Exporting assets does not rerun model inference. Missing source audio or data
+must be prepared before the export can produce a complete site.
 
-## Develop / build / deploy
+## Build and check
+
+From `website/`, after generating the data:
 
 ```bash
-npm install
-npm run dev        # local dev server
-npm run build      # static site in dist/ (self-contained, relative paths)
+npm run build
+npm run preview
+node scripts/smoke.mjs
 ```
 
-`vite.config.js` uses `base: './'`, so `dist/` can be served from any path
-(e.g. `01.me/research/turn-aware-asr`). No server-side code is needed.
+The smoke script uses Playwright and `/usr/bin/chromium-browser`. It visits the
+explorer tabs, saves screenshots under `shots/`, and reports browser console
+errors. Inspect that report; console errors are collected but do not currently
+set a failing exit status.
 
-`scripts/smoke.mjs` is a headless render test (requires the devDependency
-`playwright` and a system Chromium): it loads the built site, walks the
-explorer tabs, and fails on any console error.
+The output is `dist/`. Vite uses `base: './'`, so the complete directory can be
+served from a subpath such as `/research/turn-aware-asr/`. Deploy assets before
+replacing `index.html` so the page always refers to available bundles.
+
+## Where to edit
+
+| Content | Source |
+| --- | --- |
+| Title, summary, paper links, headline numbers | [`src/components/Hero.jsx`](src/components/Hero.jsx) |
+| Published abstract and citation | [`src/components/Publication.jsx`](src/components/Publication.jsx) |
+| Method explanation and interactive examples | [`src/components/method/`](src/components/method/) |
+| Result charts and tables | [`src/components/results/`](src/components/results/) |
+| Audio and trajectory explorer | [`src/components/explorer/`](src/components/explorer/) |
+| Navigation and page structure | [`src/App.jsx`](src/App.jsx) |
+| Search metadata | [`index.html`](index.html) |
+| Visual styling | [`src/styles.css`](src/styles.css) |
+| Result/audio export | [`scripts/export_data.py`](scripts/export_data.py) |
+
+Keep the pure endpointing model's headline numbers distinct from the unified
+model's results. Update paper details against [arXiv:2609.04225](https://arxiv.org/abs/2609.04225).

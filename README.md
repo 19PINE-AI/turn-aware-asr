@@ -1,52 +1,73 @@
-# The Trade-off Was in the Labels: Causal Supervision for Turn-Aware Streaming ASR
+# Turn-Aware Streaming ASR
 
-**Bojie Li (Pine AI) · Noah Shi (University of Washington)**
+**Teach a speech recognizer to transcribe and decide when the speaker has finished.**
 
-[Paper: arXiv:2609.04225](https://arxiv.org/abs/2609.04225) · [PDF](https://arxiv.org/pdf/2609.04225) · [Interactive website](https://01.me/research/turn-aware-asr/)
+Code and experiments for **The Trade-off Was in the Labels: Causal Supervision for Turn-Aware Streaming ASR** · Bojie Li and Noah Shi.
 
-The code, training recipe, and benchmark accompanying the paper. A small LoRA adapter on **Qwen3-ASR-0.6B**, trained in hours on one GPU, adds semantic end-of-turn detection, dictation handling, and context-grounded transcription to streaming ASR.
+[Paper · arXiv:2609.04225](https://arxiv.org/abs/2609.04225) · [PDF](https://arxiv.org/pdf/2609.04225) · [Interactive demos and results](https://01.me/research/turn-aware-asr/) · [Training guide](REPRODUCING.md)
 
-## Abstract
+## What does the model learn?
 
-A voice agent must decide, moment to moment, whether the user has finished; silence rarely settles it: a caller reading a phone number pauses mid-digits, a one-word "Stop!" ends a turn, a long question carries pauses longer than real turn-gaps. A voice-activity detector plus a silence timeout (the deployed default) cannot separate these, because within-turn pauses routinely exceed between-turn gaps; what distinguishes them is whether the words so far form a complete thought: what a recognizer computes to produce a transcript. We present the first open training recipe and benchmark for turn-aware streaming ASR: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn from meaning and silence, handles dictation, and grounds transcription in context. On a deployment-matched benchmark it reaches 0.97 boundary recall at 0.39 s median latency with 0.3 false fires per speech-minute, replicated on a fresh test set; no silence timeout reaches this point. The recipe rests on one principle: every streaming-decision label must be computable from input up to the decision point. Offline corpora violate it, encoding the future; such clairvoyant labels manufactured oscillation and a phantom recall-versus-precision trade-off, exposed when one appended second of silence raised a "broken" model's end-of-turn recall from 0.10 to 1.00. The same leak recurred with context: an always-matching biasing prefix became a copied shortcut (40% intrusion), and counterfactuals disagreeing with the audio cut this to 0.8% while keeping most of a +28.9 pp entity-recall benefit.
+A pause does not always mean a turn is over. Someone dictating a phone number may pause between digits; someone finishing a sentence may expect an immediate response.
 
-## Method and results
+We fine-tune **Qwen3-ASR-0.6B** with a small **LoRA adapter** to:
 
-Every streaming-decision label must be computable from input available **up to the decision point**. Causal minimal pairs teach when to hold or fire; counterfactual context examples teach the model to use hints while respecting the audio.
+- **Transcribe** the speech heard so far.
+- **End a turn** when the words form a complete thought and sufficient silence has been heard.
+- **Keep listening** through unfinished thoughts and pauses within dictated numbers.
+- **Use context** such as names or vocabulary hints while following what the audio actually says.
 
-- **Endpointing:** the pure endpointing model reaches 0.97 boundary recall, 0.39 s median latency, and 0.3 false fires per speech-minute on the deployment-matched benchmark, with confirmation on a fresh test set. No silence timeout reaches this operating point.
-- **Label diagnosis:** appending one second of silence raises a previously “broken” model’s end-of-turn recall from 0.10 to 1.00, exposing future-dependent labels and an artificial recall-versus-precision trade-off.
-- **Context grounding:** counterfactual examples reduce context intrusion from 40% to 0.8% while retaining most of a +28.9 percentage-point entity-recall benefit.
-- **Unified model:** one adapter combines transcription, turn detection, dictation, and context biasing. Its breadth has a measured precision cost; the endpointing figures above describe the pure endpointing model, not every configuration.
+Training predicts the next transcript token, including special turn-ending tokens. The audio encoder and original model weights stay frozen; training updates LoRA weights and the new token rows. The unified paper configuration uses LoRA rank 32 and approximately 20,000 constructed examples.
 
-The checkpoints are research prototypes trained on approximately 20,000 synthesized examples. Endpointing evidence is limited to single-speaker, single-channel English from held-out AMI meetings; see the paper for generalization, completeness-heuristic, and unified-model limitations.
+**The labeling rule:** a decision must depend only on audio and context available at that point. Do not label a turn as finished merely because an offline audio file ends there.
 
-## Setup
+## What does the training data look like?
 
-```bash
-git clone https://github.com/19PINE-AI/turn-aware-asr.git
-cd turn-aware-asr
-python3.11 -m venv .venv && source .venv/bin/activate
-pip install --upgrade pip wheel
-pip install --index-url https://download.pytorch.org/whl/cu128 torch torchaudio
-pip install -r requirements.txt
+The trainer reads a **PyTorch `.pt` file containing a list of dictionaries**. Each example has a **mono, 16 kHz waveform** and a **target transcript**:
+
+```python
+{
+    "audio": waveform,          # 1-D numpy float32 array, sampled at 16,000 Hz
+    "text": "Please call me tomorrow. <EAGER_END_SPEECH><END_SPEECH>",
+    "ctx": "",                  # optional context, placed in the system prompt
+    "schema": "single_sil",     # example category, used for held-out evaluation
+    "source": "custom",         # provenance metadata
+    "audio_end_s": len(waveform) / 16000,
+}
 ```
 
-See [REPRODUCING.md](REPRODUCING.md) for environment versions, dataset prerequisites, recipe entry points, and checkpoint availability.
+Here, the waveform must include the completed sentence **and observed trailing silence**. The target marker pair is `<EAGER_END_SPEECH><END_SPEECH>`; **omit it to teach the model to keep listening**. The trainer adds the Qwen chat template and ASR wrapper itself.
 
-## Repository layout
-
-| Path | Contents |
+| Audio available at the decision point | Target behavior |
 | --- | --- |
-| [`src/`](src/) | Model components and training code, including `train_semantic_endpoint.py` |
-| [`eval/`](eval/) | Data construction, streaming replay, metrics, and external-system evaluation |
-| [`scripts/`](scripts/) | Training, evaluation, and serving launch scripts |
-| [`research/`](research/) | Experiment records and recorded evaluation results |
-| [`paper/`](paper/) | Paper source and figures |
-| [`website/`](website/) | Interactive paper website and trajectory explorer |
-| `data/` | Local datasets and generated training pools (gitignored) |
+| Complete sentence, no trailing silence yet | Transcribe; no turn marker |
+| Same sentence with observed trailing silence | Transcribe, then emit the marker pair |
+| Unfinished phrase followed by a pause | Transcribe; keep listening |
+| Speech with a conflicting name in the context | Transcribe the spoken name, not the hint |
 
-The experiment scripts document their data and checkpoint paths; datasets and model checkpoints are not included in this Git repository. Website build and data-export instructions are in [`website/README.md`](website/README.md).
+The causal endpointing recipe uses at least 0.3 s of observed silence for its positive examples. Silence duration alone does not determine the label. See the [data-format guide](docs/data-format.md) for required fields, a runnable save example, and labeling examples.
+
+## Where should I start?
+
+| I want to… | Start here |
+| --- | --- |
+| Understand the result or listen to examples | [Interactive website](https://01.me/research/turn-aware-asr/) |
+| Train on my own labeled audio | [Setup and training](REPRODUCING.md#train-on-your-own-data), then [data format](docs/data-format.md) |
+| Reproduce the paper's experiments | [Paper recipe and evaluation](REPRODUCING.md#reproduce-the-paper) |
+| Find the relevant implementation | [Code and experiment map](docs/code-map.md) |
+| Edit the paper website | [Website guide](website/README.md) |
+
+**Available now:** training/evaluation code, recorded results, paper source, and website source. **Not bundled:** model checkpoints, dataset audio, generated training pools, or the website's generated audio/data. There is currently no checkpoint download linked from this repository; using a trained model requires your own checkpoint.
+
+## Main results
+
+| Result | Paper finding |
+| --- | --- |
+| Pure endpointing model | 0.97 boundary recall, 0.39 s median latency, 0.3 false fires per speech-minute; confirmed on a fresh test set |
+| Context grounding | Counterfactual examples reduce context intrusion from 40% to 0.8%, retaining most of a +28.9 percentage-point entity-recall benefit |
+| Label diagnosis | Adding one second of silence raises a previously “broken” model's turn-ending recall from 0.10 to 1.00 |
+
+The endpointing row describes the **pure endpointing model**, not the broader unified model. These are research prototypes; endpointing evidence covers single-speaker, single-channel English from held-out AMI meetings. See the [paper](https://arxiv.org/abs/2609.04225) for configuration-specific results and limitations.
 
 ## Citation
 
