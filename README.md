@@ -1,23 +1,25 @@
-# streaming-vad-asr
+# The Trade-off Was in the Labels: Causal Supervision for Turn-Aware Streaming ASR
 
-Streaming context-aware VAD + ASR — a unified Kyutai-style delayed-streams model that replaces the cascaded VAD → ASR pipeline. Built on Qwen3-0.6B with the AuT audio encoder extracted from Qwen3-ASR-0.6B.
+**Bojie Li (Pine AI) · Noah Shi (University of Washington)**
 
-**Status:** Backbone validated. Qwen3-ASR-0.6B reproduces the paper's 2.11% LibriSpeech test-clean WER (we measured 2.09% on 200 utts). Phase 1 fine-tuning was abandoned in favor of using the open-weights model directly — see `research/13-phase1-failure-analysis.md` and `research/14-qwen3asr-baseline-validated.md` for the pivot. Project differentiators (endpoint head, context-biasing benchmarks) are layered on top of this base.
+[Paper: arXiv:2609.04225](https://arxiv.org/abs/2609.04225) · [PDF](https://arxiv.org/pdf/2609.04225) · [Interactive website](https://01.me/research/turn-aware-asr/)
 
-## Key design choices
+The code, training recipe, and benchmark accompanying the paper. A small LoRA adapter on **Qwen3-ASR-0.6B**, trained in hours on one GPU, adds semantic end-of-turn detection, dictation handling, and context-grounded transcription to streaming ASR.
 
-| Choice | Rationale |
-|---|---|
-| AuT encoder (Apache 2.0, extractable from `Qwen/Qwen3-ASR-0.6B`) | 40 M h pretrain; 12.5 Hz continuous output; SOTA WER |
-| Qwen3-0.6B backbone | 0.6B → 1.7B stretch; LLM-init transfers cleanly |
-| `<\|audio_pad\|>` placeholder + 2-MLP projector | No vocab extension; matches Qwen3-ASR pattern |
-| Randomized 1–8 s attention window during training | Single checkpoint serves streaming + offline |
-| Decoupled 0-delay acoustic endpoint head | The actual differentiator — Qwen3-ASR has no VAD/endpointing |
-| Hotword recall + distractor-hallucination as lead chart | Qwen3-ASR claims context biasing but reports zero numbers |
+## Abstract
 
-## Hardware
+A voice agent must decide, moment to moment, whether the user has finished; silence rarely settles it: a caller reading a phone number pauses mid-digits, a one-word "Stop!" ends a turn, a long question carries pauses longer than real turn-gaps. A voice-activity detector plus a silence timeout (the deployed default) cannot separate these, because within-turn pauses routinely exceed between-turn gaps; what distinguishes them is whether the words so far form a complete thought: what a recognizer computes to produce a transcript. We present the first open training recipe and benchmark for turn-aware streaming ASR: a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU, that transcribes, detects end-of-turn from meaning and silence, handles dictation, and grounds transcription in context. On a deployment-matched benchmark it reaches 0.97 boundary recall at 0.39 s median latency with 0.3 false fires per speech-minute, replicated on a fresh test set; no silence timeout reaches this point. The recipe rests on one principle: every streaming-decision label must be computable from input up to the decision point. Offline corpora violate it, encoding the future; such clairvoyant labels manufactured oscillation and a phantom recall-versus-precision trade-off, exposed when one appended second of silence raised a "broken" model's end-of-turn recall from 0.10 to 1.00. The same leak recurred with context: an always-matching biasing prefix became a copied shortcut (40% intrusion), and counterfactuals disagreeing with the audio cut this to 0.8% while keeping most of a +28.9 pp entity-recall benefit.
 
-Single RTX Pro 6000 Blackwell, 96 GB GDDR7. Targets ≤ 25 ms wall-clock per 240 ms streaming tick.
+## Method and results
+
+Every streaming-decision label must be computable from input available **up to the decision point**. Causal minimal pairs teach when to hold or fire; counterfactual context examples teach the model to use hints while respecting the audio.
+
+- **Endpointing:** the pure endpointing model reaches 0.97 boundary recall, 0.39 s median latency, and 0.3 false fires per speech-minute on the deployment-matched benchmark, with confirmation on a fresh test set. No silence timeout reaches this operating point.
+- **Label diagnosis:** appending one second of silence raises a previously “broken” model’s end-of-turn recall from 0.10 to 1.00, exposing future-dependent labels and an artificial recall-versus-precision trade-off.
+- **Context grounding:** counterfactual examples reduce context intrusion from 40% to 0.8% while retaining most of a +28.9 percentage-point entity-recall benefit.
+- **Unified model:** one adapter combines transcription, turn detection, dictation, and context biasing. Its breadth has a measured precision cost; the endpointing figures above describe the pure endpointing model, not every configuration.
+
+The checkpoints are research prototypes trained on approximately 20,000 synthesized examples. Endpointing evidence is limited to single-speaker, single-channel English from held-out AMI meetings; see the paper for generalization, completeness-heuristic, and unified-model limitations.
 
 ## Setup
 
@@ -30,14 +32,33 @@ pip install -r requirements.txt
 pip install transformer_engine[torch] flash-attn --no-build-isolation
 ```
 
-## Layout
+## Repository layout
 
-```
-src/             # model, data loader, training loop
-eval/            # streaming simulator, metrics, gate predicates
-scripts/         # extract_aut.py, download_data.py, etc.
-data/            # pre-tokenized audio (gitignored)
-research/        # plan, synthesis, deep-dives — read 00-synthesis.md first
+| Path | Contents |
+| --- | --- |
+| [`src/`](src/) | Model components and training code, including `train_semantic_endpoint.py` |
+| [`eval/`](eval/) | Data construction, streaming replay, metrics, and external-system evaluation |
+| [`scripts/`](scripts/) | Training, evaluation, and serving launch scripts |
+| [`research/`](research/) | Experiment records and recorded evaluation results |
+| [`paper/`](paper/) | Paper source and figures |
+| [`website/`](website/) | Interactive paper website and trajectory explorer |
+| `data/` | Local datasets and generated training pools (gitignored) |
+
+The experiment scripts document their data and checkpoint paths; datasets and model checkpoints are not included in this Git repository. Website build and data-export instructions are in [`website/README.md`](website/README.md).
+
+## Citation
+
+```bibtex
+@misc{li2026tradeofflabels,
+  title = {The Trade-off Was in the Labels: Causal Supervision for Turn-Aware Streaming ASR},
+  author = {Bojie Li and Noah Shi},
+  year = {2026},
+  eprint = {2609.04225},
+  archivePrefix = {arXiv},
+  primaryClass = {eess.AS},
+  doi = {10.48550/arXiv.2609.04225},
+  url = {https://arxiv.org/abs/2609.04225}
+}
 ```
 
 ## License

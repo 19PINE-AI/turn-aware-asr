@@ -1,4 +1,5 @@
 import React from 'react'
+import Publication from './components/Publication.jsx'
 import Hero from './components/Hero.jsx'
 import Method from './components/method/Method.jsx'
 import Results from './components/results/Results.jsx'
@@ -13,6 +14,7 @@ export default function App() {
           <a href="#method">How it works</a>
           <a href="#results">Results</a>
           <a href="#explorer">Trajectory explorer</a>
+          <a href="https://arxiv.org/abs/2609.04225" target="_blank" rel="noreferrer">Paper ↗</a>
           <a className="hide-sm" href="https://github.com/19PINE-AI/turn-aware-asr" target="_blank" rel="noreferrer">Code ↗</a>
         </div>
       </nav>
@@ -20,6 +22,7 @@ export default function App() {
       <Method />
       <Results />
       <Explorer />
+      <Publication />
       <footer className="footer">
         <div className="wrap">
           <div>

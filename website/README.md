@@ -1,5 +1,9 @@
 # Paper website — *The Trade-off Was in the Labels*
 
+[Paper: arXiv:2609.04225](https://arxiv.org/abs/2609.04225) · [Live website](https://01.me/research/turn-aware-asr/)
+
+Includes the published abstract, PDF link, and BibTeX citation.
+
 A React (Vite) site for the paper, in three sections:
 
 1. **How it works** — interactive teaser (timeout-dilemma slider), system diagram,

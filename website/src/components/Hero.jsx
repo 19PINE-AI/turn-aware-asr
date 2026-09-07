@@ -11,22 +11,25 @@ export default function Hero() {
   return (
     <header className="hero">
       <div className="wrap">
-        <div className="kicker">Open weights · training recipe · benchmark</div>
+        <div className="kicker">arXiv:2609.04225 · Open training recipe · benchmark</div>
         <h1>The Trade-off Was in the Labels</h1>
         <div className="subtitle">Causal Supervision for Turn-Aware Streaming ASR</div>
         <div className="authors">
           <b>Bojie Li</b> (Pine AI) &nbsp;·&nbsp; <b>Noah Shi</b> (University of Washington)
         </div>
         <p className="lede" style={{ marginTop: 18 }}>
-          Every voice agent must decide, in real time, whether you have finished talking.
-          We present the first <b>open</b> turn-aware streaming ASR system with a published training
-          recipe — a small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU — and show
-          that the recall-versus-precision “frontier” that haunted eight successive supervision
-          compositions was manufactured by <b>clairvoyant labels</b>: supervision that peeks at
-          audio after the decision point.
+          A small LoRA adapter on Qwen3-ASR-0.6B, trained in hours on one GPU,
+          transcribes, detects end-of-turn from meaning and silence, handles dictation,
+          and grounds transcription in context. We present the first <b>open training
+          recipe and benchmark</b> for turn-aware streaming ASR. Its core rule:
+          every streaming-decision label must be computable from input up to the
+          decision point. Violating this rule manufactured a phantom recall-versus-precision
+          trade-off through <b>clairvoyant labels</b>.
         </p>
         <div className="links">
-          <a className="btn primary" href="https://github.com/19PINE-AI/turn-aware-asr" target="_blank" rel="noreferrer">Code &amp; weights</a>
+          <a className="btn primary" href="https://arxiv.org/abs/2609.04225" target="_blank" rel="noreferrer">Paper · arXiv:2609.04225</a>
+          <a className="btn" href="https://arxiv.org/pdf/2609.04225" target="_blank" rel="noreferrer">PDF</a>
+          <a className="btn" href="https://github.com/19PINE-AI/turn-aware-asr" target="_blank" rel="noreferrer">Code &amp; training recipe</a>
           <a className="btn" href="#explorer">Explore the raw trajectories ↓</a>
         </div>
         <div className="statstrip">
